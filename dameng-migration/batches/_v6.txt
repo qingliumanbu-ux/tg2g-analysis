@@ -1,0 +1,3 @@
+L72-L79 append=False first=sqlstr = " insert into tcaai05(rec_creator, rec_create_time,dept_code,accou
+L90-L94 append=False first=sqlstr = " delete from tcaai06"
+L103-L115 append=False first=sqlstr = " insert into tcaai06 (rec_creator,rec_create_time,account_period,

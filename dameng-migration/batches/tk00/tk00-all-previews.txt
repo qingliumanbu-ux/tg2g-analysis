@@ -1,0 +1,8 @@
+######## p_tksm_12020/tksm12_inq.cpp
+### CHANGE-269  原行 65-72
+  L69 前: " select st_no,sum(prod_wt) prod_wt,sum(CO2_WT) CO2_WT,decode(trim(@equ_no),'',' ','其他') equ_no,decode(trim(@gx_div),'',' ','其他') gx_div,decode(sum(prod_wt),0,0,round(sum(CO2_WT)/sum(PROD_WT),6)) CO2_WT_UNIT"
+  L69 后: " select st_no,sum(prod_wt) prod_wt,sum(CO2_WT) CO2_WT,CASE WHEN trim(@equ_no) IS NULL OR trim(@equ_no) = '' THEN ' ' ELSE '其他' END equ_no,CASE WHEN trim(@gx_div) IS NULL OR trim(@gx_div) = '' THEN ' ' ELSE '其他' END gx_div,decode(sum(prod_wt),0,0,round(sum(CO2_WT)/sum(PROD_WT),6)
+### CHANGE-270  原行 130-137
+  L134 前: " select sum(prod_wt) prod_wt,sum(CO2_WT) CO2_WT,decode(trim(@equ_no),'',' ','其他') equ_no,decode(trim(@gx_div),'',' ','其他') gx_div,decode(sum(prod_wt),0,0,round(sum(CO2_WT)/sum(PROD_WT),6)) CO2_WT_UNIT"
+  L134 后: " select sum(prod_wt) prod_wt,sum(CO2_WT) CO2_WT,CASE WHEN trim(@equ_no) IS NULL OR trim(@equ_no) = '' THEN ' ' ELSE '其他' END equ_no,CASE WHEN trim(@gx_div) IS NULL OR trim(@gx_div) = '' THEN ' ' ELSE '其他' END gx_div,decode(sum(prod_wt),0,0,round(sum(CO2_WT)/sum(PROD_WT),6)) CO2_
+

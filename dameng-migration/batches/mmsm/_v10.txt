@@ -1,0 +1,14 @@
+627						min_heat_no = cmd_inq.GetString(1);
+628						max_heat_no = cmd_inq.GetString(2);
+629						Log::Info("", __FUNCTION__, "min_heat_no =[{0}]", min_heat_no);
+630						Log::Info("", __FUNCTION__, "max_heat_no =[{0}]", max_heat_no);
+631						Log::Info("", __FUNCTION__, "begin_time =[{0}]", begin_time);
+632						Log::Info("", __FUNCTION__, "end_time =[{0}]", end_time);
+633						sqlstr =
+634							" SELECT * FROM ("
+635							" SELECT PRE_HEAT_NO,NEXT_HEAT_NO,CAST(SUBSTR(PRE_HEAT_NO,3) AS INT) AS PRE1,CAST(SUBSTR(NEXT_HEAT_NO,3) AS INT) AS PRE2 FROM ("
+636							" SELECT L2_PROC_NO AS PRE_HEAT_NO,LEAD(L2_PROC_NO,1,' ') OVER (ORDER BY L2_PROC_NO) NEXT_HEAT_NO FROM ( "
+637							" SELECT DISTINCT L2_PROC_NO FROM TMMSMGY06 WHERE L2_PROC_NO <=@max_heat_no and L2_PROC_NO >=@min_heat_no"
+638							" ORDER BY L2_PROC_NO))) "
+639							" WHERE PRE2-PRE1<>1"
+640							;

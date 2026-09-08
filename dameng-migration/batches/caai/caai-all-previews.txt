@@ -1,0 +1,96 @@
+######## libCAAI/f_caai_check1.cpp
+### CHANGE-242  原行 32-43
+  L41 前: " and dept_code = decode(trim(@dept_code),'',dept_code,@dept_code)"
+  L41 后: " and dept_code = CASE WHEN trim(@dept_code) IS NULL OR trim(@dept_code) = '' THEN dept_code ELSE @dept_code END"
+### CHANGE-243  原行 55-66
+  L62 前: " and dept_code = decode(trim(@dept_code),'',dept_code,@dept_code)"
+  L62 后: " and dept_code = CASE WHEN trim(@dept_code) IS NULL OR trim(@dept_code) = '' THEN dept_code ELSE @dept_code END"
+### CHANGE-244  原行 77-88
+  L86 前: " and dept_code = decode(trim(@dept_code),'',dept_code,@dept_code)"
+  L86 后: " and dept_code = CASE WHEN trim(@dept_code) IS NULL OR trim(@dept_code) = '' THEN dept_code ELSE @dept_code END"
+### CHANGE-245  原行 99-110
+  L107 前: " and dept_code = decode(trim(@dept_code),'',dept_code,@dept_code)"
+  L107 后: " and dept_code = CASE WHEN trim(@dept_code) IS NULL OR trim(@dept_code) = '' THEN dept_code ELSE @dept_code END"
+### CHANGE-246  原行 119-132
+  L130 前: " and dept_code = decode(trim(@dept_code),'',dept_code,@dept_code)"
+  L130 后: " and dept_code = CASE WHEN trim(@dept_code) IS NULL OR trim(@dept_code) = '' THEN dept_code ELSE @dept_code END"
+### CHANGE-247  原行 182-188
+  L186 前: " and dept_code = decode(trim(@dept_code), '', dept_code, @dept_code)"
+  L186 后: " and dept_code = CASE WHEN trim(@dept_code) IS NULL OR trim(@dept_code) = '' THEN dept_code ELSE @dept_code END"
+### CHANGE-248  原行 196-208
+  L205 前: " AND not exists (SELECT 1 FROM tcaaia1 t2 WHERE  t1.RELATION_NO = t2.RELATION_NO and t1.sub_Backlog_code = t2.sub_Backlog_code and t1.stats_period = t2.stats_period and  PRO_FLAG = 'O'  and dept_code = decode(trim(@dept_code), '', dept_code, @dept_code) and  t2.STATS_PERIOD = @s
+  L205 后: " AND not exists (SELECT 1 FROM tcaaia1 t2 WHERE  t1.RELATION_NO = t2.RELATION_NO and t1.sub_Backlog_code = t2.sub_Backlog_code and t1.stats_period = t2.stats_period and  PRO_FLAG = 'O'  and dept_code = CASE WHEN trim(@dept_code) IS NULL OR trim(@dept_code) = '' THEN dept_code EL
+  L206 前: " and dept_code = decode(trim(@dept_code), '', dept_code, @dept_code)"
+  L206 后: " and dept_code = CASE WHEN trim(@dept_code) IS NULL OR trim(@dept_code) = '' THEN dept_code ELSE @dept_code END"
+### CHANGE-249  原行 216-226
+  L223 前: " AND not exists (SELECT 1 FROM tcaaia1 t2 WHERE  t1.RELATION_NO = t2.RELATION_NO and t1.sub_Backlog_code = t2.sub_Backlog_code and t1.stats_period = t2.stats_period and  PRO_FLAG = 'I'  and dept_code = decode(trim(@dept_code), '', dept_code, @dept_code) and  t2.STATS_PERIOD = @s
+  L223 后: " AND not exists (SELECT 1 FROM tcaaia1 t2 WHERE  t1.RELATION_NO = t2.RELATION_NO and t1.sub_Backlog_code = t2.sub_Backlog_code and t1.stats_period = t2.stats_period and  PRO_FLAG = 'I'  and dept_code = CASE WHEN trim(@dept_code) IS NULL OR trim(@dept_code) = '' THEN dept_code EL
+  L224 前: " and dept_code = decode(trim(@dept_code), '', dept_code, @dept_code)"
+  L224 后: " and dept_code = CASE WHEN trim(@dept_code) IS NULL OR trim(@dept_code) = '' THEN dept_code ELSE @dept_code END"
+
+######## libCAAI/f_caai_ft.cpp
+### CHANGE-242  原行 260-266
+  L261 前: " SELECT  t1.DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, t1.sub_backlog_code, equ_no, t1.sg_sign, t1.mat_thick, t1.mat_width,SUM(DECODE(CAL_RATE,'',0,CAL_RATE)*divvy_basic_n) wt"
+  L261 后: " SELECT  t1.DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, t1.sub_backlog_code, equ_no, t1.sg_sign, t1.mat_thick, t1.mat_width,SUM(CASE WHEN CAL_RATE IS NULL OR CAL_RATE = '' THEN 0 ELSE CAL_RATE END*divvy_basic_n) wt"
+### CHANGE-243  原行 318-326
+  L321 前: " SELECT t1.product_code,t1.DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, t1.sub_backlog_code, equ_no, t1.sg_sign, t1.mat_thick, t1.mat_width,t1.VFREE1,t1.VFREE2,@mat_code mat_code,cast(SUM(DECODE(CAL_RATE,'',0,CAL_RATE)*divvy_basic_n)/@sum_wt*
+  L321 后: " SELECT t1.product_code,t1.DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, t1.sub_backlog_code, equ_no, t1.sg_sign, t1.mat_thick, t1.mat_width,t1.VFREE1,t1.VFREE2,@mat_code mat_code,cast(SUM(CASE WHEN CAL_RATE IS NULL OR CAL_RATE = '' THEN 0 ELS
+### CHANGE-244  原行 332-340
+  L335 前: " SELECT t1.product_code,t1.DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, t1.sub_backlog_code, equ_no, t1.sg_sign, t1.mat_thick, t1.mat_width,t1.VFREE1,t1.VFREE2,@mat_code mat_code,SUM(DECODE(CAL_RATE,'',0,CAL_RATE)*divvy_basic_n)/@sum_wt*@use_
+  L335 后: " SELECT t1.product_code,t1.DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, t1.sub_backlog_code, equ_no, t1.sg_sign, t1.mat_thick, t1.mat_width,t1.VFREE1,t1.VFREE2,@mat_code mat_code,SUM(CASE WHEN CAL_RATE IS NULL OR CAL_RATE = '' THEN 0 ELSE CAL
+### CHANGE-245  原行 364-370
+  L368 前: " HAVING SUM(DECODE(CAL_RATE,'',0,CAL_RATE)*divvy_basic_n)!=0 "
+  L368 后: " HAVING SUM(CASE WHEN CAL_RATE IS NULL OR CAL_RATE = '' THEN 0 ELSE CAL_RATE END*divvy_basic_n)!=0 "
+
+######## libCAAI/f_caai_ny.cpp
+### CHANGE-242  原行 113-124
+  L114 前: " SELECT @datenow,  t1.DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, t1.sub_backlog_code, equ_no, t1.sg_sign, t1.mat_thick, t1.mat_width,t1.MAT_CODE,t1.mat_name,'7',SUM(DECODE(CAL_RATE,'',0,CAL_RATE)*WT) "
+  L114 后: " SELECT @datenow,  t1.DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, t1.sub_backlog_code, equ_no, t1.sg_sign, t1.mat_thick, t1.mat_width,t1.MAT_CODE,t1.mat_name,'7',SUM(CASE WHEN CAL_RATE IS NULL OR CAL_RATE = '' THEN 0 ELSE CAL_RATE END*WT) "
+  L123 前: " HAVING SUM(DECODE(CAL_RATE,'',0,CAL_RATE)*WT)!=0 "
+  L123 后: " HAVING SUM(CASE WHEN CAL_RATE IS NULL OR CAL_RATE = '' THEN 0 ELSE CAL_RATE END*WT)!=0 "
+
+######## libCAAI/f_caai_rate.cpp
+### CHANGE-242  原行 36-41
+  L38 前: " AND sub_backlog_code = decode(trim(@sub_backlog_code), '', sub_backlog_code, @sub_backlog_code)"
+  L38 后: " AND sub_backlog_code = CASE WHEN trim(@sub_backlog_code) IS NULL OR trim(@sub_backlog_code) = '' THEN sub_backlog_code ELSE @sub_backlog_code END"
+### CHANGE-243  原行 48-57
+  L52 前: " AND sub_backlog_code = decode(trim(@sub_backlog_code),'',sub_backlog_code,@sub_backlog_code)"
+  L52 后: " AND sub_backlog_code = CASE WHEN trim(@sub_backlog_code) IS NULL OR trim(@sub_backlog_code) = '' THEN sub_backlog_code ELSE @sub_backlog_code END"
+### CHANGE-244  原行 71-76
+  L73 前: " AND sub_backlog_code = decode(trim(@sub_backlog_code), '', sub_backlog_code, @sub_backlog_code)"
+  L73 后: " AND sub_backlog_code = CASE WHEN trim(@sub_backlog_code) IS NULL OR trim(@sub_backlog_code) = '' THEN sub_backlog_code ELSE @sub_backlog_code END"
+### CHANGE-245  原行 83-94
+  L88 前: " AND sub_backlog_code = decode(trim(@sub_backlog_code),'',sub_backlog_code,@sub_backlog_code)"
+  L88 后: " AND sub_backlog_code = CASE WHEN trim(@sub_backlog_code) IS NULL OR trim(@sub_backlog_code) = '' THEN sub_backlog_code ELSE @sub_backlog_code END"
+### CHANGE-246  原行 106-112
+  L108 前: " AND sub_backlog_code = decode(trim(@sub_backlog_code), '', sub_backlog_code, @sub_backlog_code)"
+  L108 后: " AND sub_backlog_code = CASE WHEN trim(@sub_backlog_code) IS NULL OR trim(@sub_backlog_code) = '' THEN sub_backlog_code ELSE @sub_backlog_code END"
+### CHANGE-247  原行 119-130
+  L124 前: " AND sub_backlog_code = decode(trim(@sub_backlog_code),'',sub_backlog_code,@sub_backlog_code)"
+  L124 后: " AND sub_backlog_code = CASE WHEN trim(@sub_backlog_code) IS NULL OR trim(@sub_backlog_code) = '' THEN sub_backlog_code ELSE @sub_backlog_code END"
+
+######## libCAAI/f_caai_sj.cpp
+### CHANGE-242  原行 50-82
+  L81 前: " where  decode(mat_code, '', ' ', mat_code) != ' '"
+  L81 后: " where  CASE WHEN mat_code IS NULL OR mat_code = '' THEN ' ' ELSE mat_code END != ' '"
+
+######## p_caac_3820/caaib1_ins.cpp
+### CHANGE-242  原行 46-52
+  L46 前: sqlstr = "select  @project_id||decode (key_seq,'','000001',trim(to_char(to_number(nvl(key_seq,0))+1, '000000'))) from ("
+  L46 后: sqlstr = "select  @project_id||CASE WHEN key_seq IS NULL OR key_seq = '' THEN '000001' ELSE trim(to_char(to_number(nvl(key_seq,0))+1, '000000')) END from ("
+
+######## p_caai_3840/caais2_ins.cpp
+### CHANGE-242  原行 85-93
+  L85 前: sqlstr = "select  @data_from||decode (key_seq,'','00001',trim(to_char(to_number(nvl(key_seq,0))+1, '00000'))) from ("
+  L85 后: sqlstr = "select  @data_from||CASE WHEN key_seq IS NULL OR key_seq = '' THEN '00001' ELSE trim(to_char(to_number(nvl(key_seq,0))+1, '00000')) END from ("
+
+######## p_caai_3860/caai_ins_start.cpp
+### CHANGE-242  原行 314-319
+  L317 前: " AND dept_code = decode(trim(@dept_code), '', sub_backlog_code, @dept_code)"
+  L317 后: " AND dept_code = CASE WHEN trim(@dept_code) IS NULL OR trim(@dept_code) = '' THEN sub_backlog_code ELSE @dept_code END"
+
+######## p_caai_3860/caai_start.cpp
+### CHANGE-242  原行 167-172
+  L170 前: " AND dept_code = decode(trim(@dept_code), '', sub_backlog_code, @dept_code)"
+  L170 后: " AND dept_code = CASE WHEN trim(@dept_code) IS NULL OR trim(@dept_code) = '' THEN sub_backlog_code ELSE @dept_code END"
+

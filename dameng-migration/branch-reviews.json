@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "scope": "首批数据库业务分支、序列、锁、元数据、日期、空值与错误处理静态审查；不是全部候选项已审查的声明。",
+  "assumptions": [
+    "迁移方向依据方案为 Oracle 到 DM8；源库具体版本和目标实例参数未取得。",
+    "用户已确认 BM2 的连接、命令、模型、参数绑定、分页、类型转换及事务已适配；本清单不重复要求实现这些能力。",
+    "亲读源码采用 UTF-8/GB18030 解码。代码可达分支是静态判断，生产启用状态、BM2 DatabaseKind 映射及 DM8 运行结果均未实测。",
+    "出现 Oracle/DB2 语法不是已证实不兼容；优先级表示验证和排查顺序。",
+    "GC00 的 gc00_GetTs/gc00_GetTsCol 为传入表名/列名的通用 SELECT 入口；系统目录查询实际证据见本清单的 GCPM/MM00/MMTP/TMSM 条目。"
+  ],
+  "items": [
+    {
+      "id": "BR-001",
+      "title": "流水号默认分支去掉行锁，需确认 DM8 实际分支",
+      "priority": "P1",
+      "status": "static_reviewed_runtime_pending",
+      "module": "GCPM/libGCPM",
+      "evidence": [
+        {"path": "Server/GCPM/libGCPM/f_GetNextSeq_pm.cpp", "line": 182, "role": "按 DatabaseKind 选择流水号查询"},
+        {"path": "Server/GCPM/libGCPM/f_GetNextSeq_pm.cpp", "line": 188, "role": "Oracle 分支保留 FOR UPDATE"},
+        {"path": "Server/GCPM/libGCPM/f_GetNextSeq_pm.cpp", "line": 194, "role": "default 分支无 FOR UPDATE"},
+        {"path": "Server/GCPM/libGCPM/f_GetNextSeq_pm.cpp", "line": 214, "role": "读取后在应用内递增 SEQ_NOW"},
+        {"path": "Server/GCPM/libGCPM/f_GetNextSeq_pm.cpp", "line": 286, "role": "按 SEQ_NAME 回写结果"}
+      ],
+      "finding": "源码中 Oracle 与 default 的锁语义确实不同。若 DM8 被映射到 default，已有序号的读取-递增-回写路径不再请求该行锁，可能影响并发唯一性；当前未取得实际映射，不能认定 DM8 已发生重复号。首次创建还走 Query 后 Insert，需一并验证唯一约束与竞争结果。",
+      "recommendation": "先从适配版 BM2 的合同或测试日志确认 DatabaseKind 和最终 SQL，再按项目选定的并发控制方式保证完整取号事务。不要猜测或硬编码 DM 枚举值。",
+      "validation": "在隔离测试库中并发请求同一现有序号及同一新序号；核对返回唯一性、最终计数、超时/回滚、日/月/年切换和最大值循环。记录锁保持到事务结束的证据。",
+      "dependencies": ["适配版 BM2 的 DatabaseKind 实际映射", "TGCPM21 的主键/唯一约束及初始数据", "DM8 并发测试环境", "调用方事务边界和生产启用清单"]
+    },
+    {
+      "id": "BR-002",
+      "title": "数据库序列调用与迁移后序列状态需一起验收",
+      "priority": "P1",
+      "status": "static_reviewed_runtime_pending",
+      "module": "MM00/libMM00",
+      "evidence": [
+        {"path": "Server/MM00/libMM00/f_mm0011.cpp", "line": 26, "role": "公共取数据库流水号函数"},
+        {"path": "Server/MM00/libMM00/f_mm0011.cpp", "line": 67, "role": "DB2 分支访问 SYSIBM.SYSDUMMY1"},
+        {"path": "Server/MM00/libMM00/f_mm0011.cpp", "line": 74, "role": "Oracle/default 使用 SeqName.NEXTVAL、TO_CHAR、LPAD 和 DUAL"},
+        {"path": "Server/MM00/libMM00/f_mm0011.cpp", "line": 82, "role": "结果作为字符串流水号返回"}
+      ],
+      "finding": "这是一条完整序列表达式的业务 SQL，BM2 绑定支持不等于已经验证该表达式或迁移后的序列值。default 与 Oracle 相同，不能据缺少 DM case 判定必须改。即使查询可执行，也需确保对象所属模式、授权、补零长度及切换时的序列位置不会与历史业务号冲突。",
+      "recommendation": "盘点函数调用涉及的实际序列及业务号规则，在 DM8 上验证原表达式。迁移任务同时携带序列定义、状态及切换后的安全起点；保留原有号段和循环约定。",
+      "validation": "逐个实际序列核对首个迁移后值、并发唯一性、补零长度、达到位宽边界的结果，以及失败回滚后业务是否允许跳号。",
+      "dependencies": ["实际序列名与调用业务清单", "Oracle 序列定义和切换时状态", "目标模式/授权", "DM8 表达式与并发验证环境"]
+    },
+    {
+      "id": "BR-003",
+      "title": "表结构查询依赖系统目录、权限和模式范围",
+      "priority": "P2",
+      "status": "static_reviewed_runtime_pending",
+      "module": "GCPM/p_gcpm_29640; TMSM/p_tmsm_7130",
+      "evidence": [
+        {"path": "Server/GCPM/p_gcpm_29640/gcpmz6_inqmx.cpp", "line": 103, "role": "Oracle 分支返回列名、类型、长度、精度及序号"},
+        {"path": "Server/GCPM/p_gcpm_29640/gcpmz6_inqmx.cpp", "line": 148, "role": "default 同样查询 ALL_TAB_COLUMNS/ALL_COL_COMMENTS"},
+        {"path": "Server/GCPM/p_gcpm_29640/gcpmz6_inqmx.cpp", "line": 158, "role": "只按 TABLE_NAME 筛选，没有固定 OWNER 条件"},
+        {"path": "Server/TMSM/p_tmsm_7130/tm009a_inq.cpp", "line": 42, "role": "工器具字段查询读取 USER_TAB_COLUMNS 与 USER_COL_COMMENTS"}
+      ],
+      "finding": "两个实际入口直接读取目录视图。GCPM 对两个目录的 OWNER 做关联但没有按业务模式过滤；迁移后多模式同名表、权限差异或目录输出差异可能影响结果。TMSM 则依赖当前用户拥有的对象。未验证目标目录兼容性及实际授权，不能直接认定视图不存在。",
+      "recommendation": "用业务账号逐项验证目录访问和返回契约，明确业务模式；仅在实测发现目录或范围不一致时适配查询，避免凭关键字机械替换。",
+      "validation": "覆盖实际业务表、带注释的列、数值精度、小数位、同名跨模式表及无权访问对象，比较列集合、顺序、类型、长度和标题。",
+      "dependencies": ["业务模式和对象授权清单", "DM8 目录视图实测结果", "表结构/注释迁移结果", "两服务的使用页面清单"]
+    },
+    {
+      "id": "BR-004",
+      "title": "字段类型识别只把 VARCHAR2 当作字符型",
+      "priority": "P2",
+      "status": "static_reviewed_runtime_pending",
+      "module": "MM00/p_mm00_18010",
+      "evidence": [
+        {"path": "Server/MM00/p_mm00_18010/mm0097code_inq.cpp", "line": 71, "role": "所有已列数据库分支与 default 合流"},
+        {"path": "Server/MM00/p_mm00_18010/mm0097code_inq.cpp", "line": 80, "role": "DATA_TYPE 为 VARCHAR2 返回 C，否则返回 N"},
+        {"path": "Server/MM00/p_mm00_18010/mm0097code_inq.cpp", "line": 82, "role": "读取 USER_TAB_COLUMNS/USER_COL_COMMENTS"},
+        {"path": "Server/MM00/p_mm00_18010/mm0097code_inq.cpp", "line": 86, "role": "面向按物料种类命名的 TMMxx96 表"}
+      ],
+      "finding": "业务自己把目录类型名称映射成 C/N，超出了 BM2 已支持的值类型转换范围。若迁移工具或目标目录返回其他字符类型名称，该条件会把这些列归入 N；这是有条件的类型识别风险，不是已证实 DM8 必然返回不同名称。",
+      "recommendation": "先比较实际 TMMxx96 列迁移前后的类型及目录名称，梳理调用端对 C/N 的含义，再定义覆盖现有字段的类型映射规则。",
+      "validation": "以实际字段加字符、长字符、整数和带小数数值的边界样例验证 ITEM_TYPE、ITEM_LEN 和页面编辑/提交行为；不把日期等未知类型默认为数值。",
+      "dependencies": ["TMMxx96 实际 DDL", "DM8 目录类型返回值", "调用端 ITEM_TYPE 消费逻辑"]
+    },
+    {
+      "id": "BR-005",
+      "title": "材料跟踪按目录长度截取拼接履历，需核对字节和字符单位",
+      "priority": "P1",
+      "status": "static_reviewed_runtime_pending",
+      "module": "MMTP/libMMTP",
+      "evidence": [
+        {"path": "Server/MMTP/libMMTP/f_mmtp_mat_track.cpp", "line": 962, "role": "修改方式 13/14 会拼接口值并在超长时舍弃原数据片段"},
+        {"path": "Server/MMTP/libMMTP/f_mmtp_mat_track.cpp", "line": 987, "role": "Oracle/default 从 USER_TAB_COLUMNS 取 DATA_LENGTH"},
+        {"path": "Server/MMTP/libMMTP/f_mmtp_mat_track.cpp", "line": 993, "role": "目录查询结果用作 itemLength"},
+        {"path": "Server/MMTP/libMMTP/f_mmtp_mat_track.cpp", "line": 1023, "role": "与 CString.GetLength 的拼接长度比较"},
+        {"path": "Server/MMTP/libMMTP/f_mmtp_mat_track.cpp", "line": 1035, "role": "反向拼接也使用相同长度比较"}
+      ],
+      "finding": "字段长度不只影响数据库能否插入，还直接决定业务保留哪些履历片段。目录长度单位、目标字段 BYTE/CHAR 语义及 CString 的运行时编码若不一致，可能造成超长写入或过早舍弃。实际编码和字段定义未取得，不能先判定有数据截断。",
+      "recommendation": "将这一行为纳入 UTF-8 和字段长度迁移专项，记录表/列、长度单位、模型字符串长度契约及现有拼接策略；只修正验证后不一致的换算。",
+      "validation": "对启用修改方式 13/14 的字段使用中英文混合、多字节字符、分隔符、空值、恰好上限和超限样例，对比保留片段、插入结果与回读结果。",
+      "dependencies": ["材料跟踪事件配置及启用的 ITEM_UPD_MODE", "TMMxx01 字段 DDL/长度语义", "BM2 CString 编码和长度单位合同", "DM8 字符集与目录结果"]
+    },
+    {
+      "id": "BR-006",
+      "title": "工器具时长查询在所有分支使用 DB2 形式日期表达式",
+      "priority": "P2",
+      "status": "static_reviewed_runtime_pending",
+      "module": "TMSM/p_tmsm_7160",
+      "evidence": [
+        {"path": "Server/TMSM/p_tmsm_7160/tmsme59_inq.cpp", "line": 79, "role": "Oracle/default 与 DB2 等分支合流"},
+        {"path": "Server/TMSM/p_tmsm_7160/tmsme59_inq.cpp", "line": 86, "role": "DAYS(DATE(TIMESTAMP(...))) 并访问 SYSIBM.SYSDUMMY1"},
+        {"path": "Server/TMSM/p_tmsm_7160/tmsme59_inq.cpp", "line": 113, "role": "TIMESTAMPDIFF(8, CHAR(...)) 计算小时"},
+        {"path": "Server/TMSM/p_tmsm_7160/tmsme59_inq.cpp", "line": 141, "role": "TIMESTAMPDIFF(4, CHAR(...)) 计算分钟"}
+      ],
+      "finding": "这里的 DB_KIND_ORACLE 标签没有选择 Oracle 专用 SQL，实际表达式含 SYSIBM/DAYS/TIMESTAMPDIFF 形式。需要确认源码是否对应现网已启用版本、是否有兼容对象，以及目标能否执行并保持时长单位；源码本身不能证明生产库是 DB2。",
+      "recommendation": "以实际启用服务和输入格式为准采集 SQL，建立天/小时/分钟结果基准后在 DM8 验证。若需转换，按业务时长定义转换，不能仅替换函数名称。",
+      "validation": "覆盖不足一分钟、跨日跨月跨年、闰日、反向时间、空时间和长时间区间，对比天数/小时数/分钟数及舍入规则。",
+      "dependencies": ["该服务现网启用与发布版本", "TTMSM66 时间字段 DDL和真实格式", "目标 SQL 能力及可能的兼容对象", "Oracle 基准结果与 DM8 测试库"]
+    },
+    {
+      "id": "BR-007",
+      "title": "垛位推荐时间窗口依赖时间差表达式及边界语义",
+      "priority": "P1",
+      "status": "static_reviewed_runtime_pending",
+      "module": "WM00/libWM00",
+      "evidence": [
+        {"path": "Server/WM00/libWM00/f_wm00_pile_comf.cpp", "line": 73, "role": "日志描述为 18 小时窗口"},
+        {"path": "Server/WM00/libWM00/f_wm00_pile_comf.cpp", "line": 76, "role": "实际筛选 TIMESTAMPDIFF(4, ...) <= 24 * 60"},
+        {"path": "Server/WM00/libWM00/f_wm00_pile_comf.cpp", "line": 77, "role": "筛选后按更新时间及垛位号排序"},
+        {"path": "Server/WM00/libWM00/f_wm00_pile_comf.cpp", "line": 83, "role": "查询结果驱动推荐遍历"},
+        {"path": "Server/WM00/libWM00/f_wm00_pile_comf.cpp", "line": 256, "role": "同文件另一路径重复时间窗口表达式"}
+      ],
+      "finding": "表达式决定哪些垛位进入推荐及顺序，是业务结果验证点。已有日志写 18 小时、SQL 写 24 小时的差异，不能在迁移时自行选择新的阈值。函数形式或精度变化即使不报错，也可能改变边界候选集。",
+      "recommendation": "先按已部署 SQL 固定基准并请业务确认窗口含义；DM8 改写如有必要应保持筛选、排序和并列规则。阈值修订作为另一个经确认的业务变更。",
+      "validation": "固定测试时间，覆盖 18 小时、24 小时前后一分钟/一秒、空时间、未来时间以及并列更新时间；比较完整候选顺序和最终推荐垛位。",
+      "dependencies": ["库区推荐功能启用范围", "FIELDNO_UPTIME 类型及值格式", "18/24 小时业务口径", "固定时钟和候选数据的 DM8 回放环境"]
+    },
+    {
+      "id": "BR-008",
+      "title": "作业计划清理依赖 TRIM 后空串与 NULL 的一致性",
+      "priority": "P1",
+      "status": "static_reviewed_runtime_pending",
+      "module": "PSSM/libPSSM",
+      "evidence": [
+        {"path": "Server/PSSM/libPSSM/f_pssm27_upd_plno_n.cpp", "line": 63, "role": "应用层对计划号执行 TrimOrBlank"},
+        {"path": "Server/PSSM/libPSSM/f_pssm27_upd_plno_n.cpp", "line": 102, "role": "MAX 查询值再经 TrimOrBlank 判空"},
+        {"path": "Server/PSSM/libPSSM/f_pssm27_upd_plno_n.cpp", "line": 111, "role": "DELETE 使用 TRIM(SM_PLAN_NO) IS NULL"},
+        {"path": "Server/PSSM/libPSSM/f_pssm27_upd_plno_n.cpp", "line": 119, "role": "清理后插入新的计划记录"}
+      ],
+      "finding": "应用用空格表示空号，SQL 用 TRIM(...) IS NULL 清理空记录；若目标空字符串语义或字段填充规则与源库不同，可能改变删除集合及后续插入结果。BM2 已适配值转换，并不能替代这条谓词的语义验证。",
+      "recommendation": "根据实际字段及目标实例设置，明确 NULL、空串、全空格分别代表什么，先用原谓词验证；仅在集合不一致时修改条件或迁移数据转换规则。",
+      "validation": "为 NULL、空串、单空格、多空格、有效号和带前后空格号分别建样例；比较迁移前后 MAX 结果、删除主键集合、插入记录及事务回滚。",
+      "dependencies": ["TPSSM27.SM_PLAN_NO 类型和历史空值分布", "DM8 实际空串/字符比较配置", "作业计划更新调用链与回归数据"]
+    },
+    {
+      "id": "BR-009",
+      "title": "生产实绩汇总的空值拼接与日期差需要结果对账",
+      "priority": "P2",
+      "status": "static_reviewed_runtime_pending",
+      "module": "MMSM/p_mmsm_17580",
+      "evidence": [
+        {"path": "Server/MMSM/p_mmsm_17580/mmsmtk_inq.cpp", "line": 52, "role": "SUM 的空值以 NVL 转为零"},
+        {"path": "Server/MMSM/p_mmsm_17580/mmsmtk_inq.cpp", "line": 53, "role": "多个 NVL(..., '') 经 || 拼接 BACKLOG_EA"},
+        {"path": "Server/MMSM/p_mmsm_17580/mmsmtk_inq.cpp", "line": 64, "role": "TO_DATE 相减后经 TO_NUMBER 和乘法换算秒"},
+        {"path": "Server/MMSM/p_mmsm_17580/mmsmtk_inq.cpp", "line": 93, "role": "返回完整汇总结果"}
+      ],
+      "finding": "这条 SQL 同时依赖空子查询、空字符串拼接、日期差数值单位和 ROUND。看到 NVL/TO_DATE 不代表 DM8 不支持；验收必须检查输出字符串及工序秒数，不能只记录 SQL 执行成功。",
+      "recommendation": "将汇总 SQL 和输入时间区间纳入 Oracle/DM8 双库结果对比，保留实际字段名称、类型及数值精度合同。",
+      "validation": "使用工序全部缺失、部分缺失、零值、跨日工序、结束时间为空、具有小数时长和完整炉次的样例，核对 BACKLOG_EA、产量、各工序时长和行数。",
+      "dependencies": ["相关 TMMSM 工序表结构及脱敏炉次样例", "日期字段现网格式", "DM8 空值/日期差实测结果", "生产实绩报表基准"]
+    },
+    {
+      "id": "BR-010",
+      "title": "重复数据提示依赖 GetCode 等于 1 的错误分类",
+      "priority": "P2",
+      "status": "static_reviewed_runtime_pending",
+      "module": "MMSM/p_mmsm_17660; FBSM/libFBSM",
+      "evidence": [
+        {"path": "Server/MMSM/p_mmsm_17660/mmsmjccjl_add2.cpp", "line": 50, "role": "循环插入导入数据"},
+        {"path": "Server/MMSM/p_mmsm_17660/mmsmjccjl_add2.cpp", "line": 58, "role": "GetCode == 1 显示重复导入"},
+        {"path": "Server/FBSM/libFBSM/f_fbsm10_copy.cpp", "line": 61, "role": "同类错误码分支显示无法重复插入"}
+      ],
+      "finding": "业务错误提示依赖数字错误码；用户确认的 BM2 适配能力并未明确包含错误码归一化合同。若适配层保留该错误分类，可不修改；若暴露目标库错误码，重复数据可能被报告为一般故障。源码显示两分支都返回失败，本条不声称事务回滚失效。",
+      "recommendation": "核实适配版异常错误分类约定，用真实约束违反验证。必要时依据平台提供的稳定分类调整判断，不猜测 DM8 错误码数字。",
+      "validation": "在隔离库中触发唯一约束重复、非空约束、长度超限和其他数据库错误，分别核对提示分类、失败返回及整批回滚；包含并发 QueryCount 后 Insert 的冲突场景。",
+      "dependencies": ["BM2 异常码/分类合同", "相关唯一约束及导入入口", "DM8 可控故障验证环境"]
+    },
+    {
+      "id": "BR-011",
+      "title": "生产报表含混合方言和递归日期序列",
+      "priority": "P2",
+      "status": "static_reviewed_runtime_pending",
+      "module": "WMSM/p_wmsm_8170",
+      "evidence": [
+        {"path": "Server/WMSM/p_wmsm_8170/wmfm01_inq.cpp", "line": 234, "role": "配置表名为 TFOSMT02 时进入稳定周期报表"},
+        {"path": "Server/WMSM/p_wmsm_8170/wmfm01_inq.cpp", "line": 247, "role": "DECODE、DAYS、日期减 1 DAYS 混用"},
+        {"path": "Server/WMSM/p_wmsm_8170/wmfm01_inq.cpp", "line": 248, "role": "MAX 以两个表达式参数取值"},
+        {"path": "Server/WMSM/p_wmsm_8170/wmfm01_inq.cpp", "line": 280, "role": "TFOSMT03A 使用递归 WITH 日期序列及 SYSIBM.SYSDUMMY1"},
+        {"path": "Server/WMSM/p_wmsm_8170/wmfm01_inq.cpp", "line": 298, "role": "执行日期序列与日报 LEFT JOIN"}
+      ],
+      "finding": "可达 else-if 报表分支中使用混合方言，不是前面的 if(false) 模板代码。是否进入分支取决于现场报表配置。NULL 比较、二元 MAX、递归日期生成和日期算术均需验证；不能因为同一个 switch 列出了 Oracle 就认为已经适配。",
+      "recommendation": "取得现场启用的报表表名配置，对每个实际分支整理最终 SQL 和结果基准；如转换表达式，保留缺日报补行、日期范围及稳定周期口径。",
+      "validation": "覆盖月份切换、闰日、缺失日报、多个历史断点、备注为空和周期为空，核对每日行数、日期顺序、周期值与缺省值。",
+      "dependencies": ["TFOSMT95B 等报表配置的启用数据", "相关报表表结构", "稳定周期及缺日报口径", "Oracle 基准和 DM8 测试环境"]
+    },
+    {
+      "id": "BR-012",
+      "title": "通用查询分支作为保留并回归的对照样例",
+      "priority": "P3",
+      "status": "static_reviewed_runtime_pending",
+      "module": "MM00/libMM00",
+      "evidence": [
+        {"path": "Server/MM00/libMM00/f_mm0016.cpp", "line": 55, "role": "多个 DatabaseKind 标签及 default 合流"},
+        {"path": "Server/MM00/libMM00/f_mm0016.cpp", "line": 62, "role": "TEP0002 上普通投影和等值条件"},
+        {"path": "Server/MM00/libMM00/f_mm0016.cpp", "line": 71, "role": "使用已确认适配的参数绑定"},
+        {"path": "Server/MM00/libMM00/f_mm0016.cpp", "line": 90, "role": "按厂别取系统别的另一路普通查询"}
+      ],
+      "finding": "该处虽然命中 DB_KIND 和数据库 API，但现有 SQL 是简单查询，所有分支内容一致；静态审查未发现需要仅因迁移而修改的方言内容。把此类文件全部计为必改会扩大范围。",
+      "recommendation": "保留源码，作为 BM2 适配版下的回归项；若业务账号、对象名、数据或实测返回不一致，再定位具体原因。",
+      "validation": "以库区号、厂别、不存在代码和空输入运行现有入口，比较系统别与错误结果；确认 TEP0002 字典数据一致。",
+      "dependencies": ["TEP0002 字典迁移数据", "DM8 业务账号和回归环境"]
+    }
+  ]
+}

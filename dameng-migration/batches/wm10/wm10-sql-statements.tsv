@@ -1,0 +1,36 @@
+file	start	end	preview
+libWM10/f_gettable_name.cpp	32	34	if (Db::QueryCDecimal("SELECT COUNT(1) FROM TMMCR01 WHERE MAT_NO='" + mat_no + "'")>0)
+libWM10/f_gettable_name.cpp	36	38	else if (Db::QueryCDecimal("SELECT COUNT(1) FROM TMMHR01 WHERE MAT_NO='" + mat_no + "'")>0)
+libWM10/f_gettable_name.cpp	40	42	else if (Db::QueryCDecimal("SELECT COUNT(1) FROM TMMBW01 WHERE MAT_NO='" + mat_no + "'")>0)
+libWM10/f_gettable_name.cpp	44	46	else if (Db::QueryCDecimal("SELECT COUNT(1) FROM TMMSM01 WHERE MAT_NO='" + mat_no + "'")>0)
+libWM10/f_gettable_name.cpp	48	50	else if (Db::QueryCDecimal("SELECT COUNT(1) FROM TMMHP01 WHERE MAT_NO='" + mat_no + "'")>0)
+libWM10/f_wm_mm0099.cpp	86	89	" SELECT EVENT_ID FROM TWM0B"
+libWM10/f_wm_mm0099.cpp	168	169	" SELECT FACTORY_DIV,MAT_LINE_TYPE FROM TWM01"
+libWM10/f_wm_modi_pile_layerno.cpp	59	65	" select * "
+libWM10/f_wm_stock_in.cpp	57	62	Db::Execute("DELETE FROM TWMA0 WHERE MAT_NO='" + bcls_rec->Tables[0].Rows[i]["MAT_NO"].ToString() + "'");
+libWM10/f_wm_stock_out.cpp	47	52	Db::Execute("DELETE FROM TWMA0 WHERE MAT_NO='" + bcls_rec->Tables[0].Rows[i]["MAT_NO"].ToString() + "'");
+libWM10/f_wm_stock_update.cpp	129	133	sqlstr = "select a.mat_no,a.layerno from twma2 a where "
+libWM10/f_wm_stock_update.cpp	137	138	sqlstr = "update twma2 set LAYERNO=" + (twma2_old["LAYERNO"].ToDecimal() + j).ToString() + " where mat_no='" + t_up_mat.Rows[j]["MAT_NO"].ToString() + "'";
+libWM10/f_wm_stock_update.cpp	180	182	c_layerno = Db::QueryCDecimal("SELECT COUNT(1) FROM TWMA2 WHERE STOCK_PLACE_NO='" + c_stock_place_no + "'") + 1;
+libWM10/f_wmhrhr_crane_make.cpp	89	90	sqlstr = " SELECT COUNT(1) FROM TMMSM01"
+libWM10/f_wmhrhr_crane_make.cpp	100	101	sqlstr = " SELECT COUNT(1) FROM TMMHR01"
+libWM10/f_wmhrhr_crane_make.cpp	168	169	sqlstr = "SELECT mat_no,mat_kind,mat_shape_flag,mat_act_thick,mat_act_width,mat_act_len,mat_act_wt"
+libWM10/f_wmhrhr_crane_make.cpp	216	227	sqlstr = "  SELECT a.rowno rownum,a.stock_no,                    "
+libWM10/f_wmhrhr_crane_make.cpp	663	665	sqlstr = "SELECT a.mat_no,a.stock_no,a.hall_no,a.stock_place_no,a.layerno,b.mat_kind,"
+p_wm10_8630/wm11_inq.cpp	110	111	sqlstr = "SELECT table_name FROM ALL_TABLES WHERE table_name IN( 'TMMCR01','TMMHR01','TMMSM01','TMMHP01','TMMBW01')";
+p_wm10_8630/wm11_inq.cpp	122	122	sqlstr = "SELECT  B.*,A.STOCK_OPER_ORDER,A.STOCK_NO FROM TWMA0 A ," + table_name + " B WHERE A.MAT_NO=B.MAT_NO AND A.STOCK_OPER_ORDER LIKE '1%'";
+p_wm10_8630/wm11_inq.cpp	123	124	sqlstr_count = "SELECT COUNT(1) FROM TWMA0 A ," + table_name + " B WHERE A.MAT_NO=B.MAT_NO AND A.STOCK_OPER_ORDER LIKE '1%'";
+p_wm10_8630/wm12_inq.cpp	110	111	sqlstr = "SELECT table_name FROM ALL_TABLES WHERE table_name IN( 'TMMCR01','TMMHR01','TMMSM01','TMMHP01','TMMBW01')";
+p_wm10_8630/wm12_inq.cpp	122	122	sqlstr = "SELECT  B.*,A.STOCK_OPER_ORDER,A.STOCK_NO FROM TWMA0 A ," + table_name + " B WHERE A.MAT_NO=B.MAT_NO AND A.STOCK_OPER_ORDER LIKE '2%'";
+p_wm10_8630/wm12_inq.cpp	123	124	sqlstr_count = "SELECT COUNT(1) FROM TWMA0 A ," + table_name + " B WHERE A.MAT_NO=B.MAT_NO AND A.STOCK_OPER_ORDER LIKE '2%'";
+p_wm10_8630/wm17_inq.cpp	110	111	sqlstr = "SELECT table_name FROM ALL_TABLES WHERE table_name IN( 'TMMCR01','TMMHR01','TMMSM01','TMMHP01','TMMBW01')";
+p_wm10_8630/wm17_inq.cpp	122	122	sqlstr = "SELECT  B.*,A.STOCK_NO,A.STOCK_PLACE_NO,A.LAYERNO FROM TWMA2 A ," + table_name + " B WHERE A.MAT_NO=B.MAT_NO AND B.IN_FLAG='1'";
+p_wm10_8630/wm17_inq.cpp	123	124	sqlstr_count = "SELECT COUNT(1) FROM TWMA0 A ," + table_name + " B WHERE A.MAT_NO=B.MAT_NO AND B.IN_FLAG='1'";
+p_wm10_8630/wm17_inq_mat.cpp	94	96	" SELECT * FROM TMMCR01 A LEFT JOIN TWMA2 B ON A.MAT_NO=B.MAT_NO "
+p_wm10_8630/wm17_inq_mat.cpp	101	105	" SELECT *"
+p_wm10_8630/wma2_inq.cpp	110	111	sqlstr = "SELECT table_name FROM ALL_TABLES WHERE table_name IN( 'TMMCR01','TMMHR01','TMMSM01','TMMHP01','TMMBW01')";
+p_wm10_8630/wma2_inq.cpp	122	122	sqlstr = "SELECT  B.*,A.STOCK_NO,A.STOCK_PLACE_NO,A.LAYERNO FROM TWMA2 A ," + table_name + " B WHERE A.MAT_NO=B.MAT_NO AND B.IN_FLAG='1'";
+p_wm10_8630/wma2_inq.cpp	123	124	sqlstr_count = "SELECT COUNT(1) FROM TWMA0 A ," + table_name + " B WHERE A.MAT_NO=B.MAT_NO AND B.IN_FLAG='1'";
+p_wm10_8630/wma4_inq.cpp	99	99	sqlstr = "SELECT * FROM TWMA4 A  WHERE 1=1";
+p_wm10_8630/wma4_inq.cpp	100	101	sqlstr_count = "SELECT COUNT(1) FROM TWMA4 A  WHERE 1=1";
+p_wm10_8640/wm17_mov.cpp	58	60	stock_no_old = Db::QueryCString("SELECT STOCK_NO FROM TWMA2 WHERE MAT_NO='" + mat_no + "'");

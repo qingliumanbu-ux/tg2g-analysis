@@ -1,0 +1,39 @@
+1118					//CDecimal hourDiff = GetHourDiff(CDateTime::Now().ToString("yyyyMMddHHmmss"), v_slab_cut_time);
+1119					//CDecimal hourDiff = TIMESTAMPDIFF(8,CHAR(CURRENT TIMESTAMP-TO_DATE(v_slab_cut_time,'YYYYMMDDHH24MISS')));
+1120					if(v_slab_cut_time.Trim().GetLength() == 14)
+1121					{
+1122	// DM8 适配 CHANGE-165:查询当前时间减切断时间的小时数,写入 IN_STOCK_DURA(在库时长)。
+1123	// 改写原因：DB2 两参数 TIMESTAMPDIFF(8=小时,当前时间减切断时间的小时数,写入 IN_STOCK_DURA 在库时长) 在 DM8 无对应写法,按 HR-002 确认口径①(实际完整时长)
+1124	//   改为 DATEDIFF(SECOND,起点=切断时间,终点=当前时间)/3600,整数除法与 DB2 截断行为一致。
+1125	//   timestamp(x,格式串) 改为 TO_TIMESTAMP(x,'YYYYMMDDHH24MISS'):时间为 14 位值(HR-001 已确认),原格式串 yyyy-MM-DD hh:mm:ss 与值不匹配;
+1126	//   当前时点沿用 CURRENT_TIMESTAMP(DM 官方函数手册支持);SYSIBM 辅助表改为 DUAL;依据 DM 官方文档,DM8 尚未实测。
+1127	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+1128	// 原 SQL（完整保留）：
+1129						// sqlstr_COLDTIME="select timestampdiff(8,char(current timestamp - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+1130	// DM8 SQL：
+1131						sqlstr_COLDTIME="select DATEDIFF(SECOND, TO_TIMESTAMP('"+v_slab_cut_time+"','YYYYMMDDHH24MISS'), CURRENT_TIMESTAMP) / 3600 from DUAL";
+1132						comma.SetCommandText(sqlstr_COLDTIME);
+1133						comma.ExecuteReader();
+1134						if(comma.Read())
+1135						{
+1136							CDecimal in_stock_dura = comma.GetDecimal(1);  //在库时间
+1137							if(in_stock_dura > 999999)
+1138							{
+1139								in_stock_dura = 999999;
+1140							}
+1141							//Log::Trace("",__FUNCTION__,"in_stock_dura b= [{0}]", (const char*)in_stock_dura);
+1142							bcls_ret->Tables["MMSMIS02A1_INQ"].Rows[row]["IN_STOCK_DURA"] = in_stock_dura;
+1143						}
+1144						comma.Close();
+1145						if(v_in_stock_hot_time.Trim().GetLength() == 14)
+1146						{
+1147	// DM8 适配 CHANGE-166:查询切断到热装入库的小时数,写入 IN_STOCK_TIME_DURA。
+1148	// 改写原因：DB2 两参数 TIMESTAMPDIFF(8=小时,切断到热装入库的小时数,写入 IN_STOCK_TIME_DURA) 在 DM8 无对应写法,按 HR-002 确认口径①(实际完整时长)
+1149	//   改为 DATEDIFF(SECOND,起点=切断时间,终点=热装入库时间)/3600,整数除法与 DB2 截断行为一致。
+1150	//   timestamp(x,格式串) 改为 TO_TIMESTAMP(x,'YYYYMMDDHH24MISS'):时间为 14 位值(HR-001 已确认),原格式串 yyyy-MM-DD hh:mm:ss 与值不匹配;
+1151	//   SYSIBM 辅助表改为 DUAL;依据 DM 官方文档,DM8 尚未实测。
+1152	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+1153	// 原 SQL（完整保留）：
+1154							// sqlstr_COLDTIME="select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+1155	// DM8 SQL：
+1156							sqlstr_COLDTIME="select DATEDIFF(SECOND, TO_TIMESTAMP('"+v_slab_cut_time+"','YYYYMMDDHH24MISS'), TO_TIMESTAMP('"+v_in_stock_hot_time+"','YYYYMMDDHH24MISS')) / 3600 from DUAL";

@@ -1,0 +1,18 @@
+总行数: 374
+
+48		CString sqlstr = "";
+86				// DM8 适配 CHANGE-01：按日历日期计算结束时间减开始时间的天数。
+90				// sqlstr = "select DAYS(DATE(TIMESTAMP ('" + ttmsm66["CHANGE_TIME"].ToString() + "'))) - DAYS(DATE(TIMESTAMP ('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) from 
+92				sqlstr = "select DATEDIFF(DAY, CAST('" + ttmsm66["REC_CREATE_TIME"].ToString() + "' AS TIMESTAMP), CAST('" + ttmsm66["CHANGE_TIME"].ToString() + "' AS TIMESTAMP)) from
+119				sqlstr = "select TIMESTAMPDIFF(8, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) from SYSI
+120				//sqlstr = "select timestampdiff(8, char(timestamp(sysdate) - timestamp('2023-05-25 10:14:01'))) AS "间隔小时" from ttmsm66
+147				sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) from SYSI
+148				//sqlstr = "select timestampdiff(8, char(timestamp(sysdate) - timestamp('2023-05-25 10:14:01'))) AS "间隔分钟" from ttmsm66
+179			sqlstr = " SELECT * FROM TTMSM52 ORDER BY CRANENO ";
+201							sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["SUSPEND_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["DEV_NAME"].ToString
+224							sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["D_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["SUSPEND_TIME"].ToString()
+262							sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["REPAIR_END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["REPAIR_START_TIM
+291				// DM8 适配 CHANGE-110：对运行时分钟值做 ROUND 汇总计算;SYSIBM.SYSDUMMY1 辅助表改为 DUAL;计算口径与参数保持不变。
+292				// 改写原因：DM 支持 DUAL 辅助表(官方文档);纯算术表达式无方言差异;同函数 TIMESTAMPDIFF 语句属 HR-002,另行处理;DM8 尚未实测。
+295				// sqlstr = "SELECT ROUND(" + use_time.ToString() + "/60,2),ROUND(" + prep_time.ToString() + "/60,2),ROUND((" + all_time.ToString() + " - " + use_time.ToString() + " -
+299				sqlstr = "SELECT ROUND(" + use_time.ToString() + "/60,2),ROUND(" + prep_time.ToString() + "/60,2),ROUND((" + all_time.ToString() + " - " + use_time.ToString() + " - " 

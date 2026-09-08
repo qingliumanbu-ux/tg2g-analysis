@@ -1,0 +1,51 @@
+[
+  {
+    "path": "Client/PS/PSSMB/FormPSSM18.resx",
+    "encoded_payload_count": 1,
+    "mimetypes": [
+      "application/x-microsoft.net.object.bytearray.base64"
+    ]
+  },
+  {
+    "path": "Client/PS/PSSMB/FormPSSM182.resx",
+    "encoded_payload_count": 1,
+    "mimetypes": [
+      "application/x-microsoft.net.object.bytearray.base64"
+    ]
+  },
+  {
+    "path": "Client/PS/PSSMBS2N/FormPSSM18.resx",
+    "encoded_payload_count": 1,
+    "mimetypes": [
+      "application/x-microsoft.net.object.bytearray.base64"
+    ]
+  },
+  {
+    "path": "Client/PS/PSSMBS2N/FormPSSM182.resx",
+    "encoded_payload_count": 1,
+    "mimetypes": [
+      "application/x-microsoft.net.object.bytearray.base64"
+    ]
+  },
+  {
+    "path": "Client/PS/PSSMBS2N/FormPSSM18Z.resx",
+    "encoded_payload_count": 1,
+    "mimetypes": [
+      "application/x-microsoft.net.object.bytearray.base64"
+    ]
+  },
+  {
+    "path": "Client/PS/PSSMBS2N/FormPSSM19QS2N.resx",
+    "encoded_payload_count": 1,
+    "mimetypes": [
+      "application/x-microsoft.net.object.bytearray.base64"
+    ]
+  },
+  {
+    "path": "Client/MM/MM00/FormMM0005A2S2N.resx",
+    "encoded_payload_count": 1,
+    "mimetypes": [
+      "application/x-microsoft.net.object.bytearray.base64"
+    ]
+  }
+]

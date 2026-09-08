@@ -1,0 +1,53 @@
+128	保留注释	// 时间格式:HR-001 确认全库时间为 YYYYMMDDHH24MISS(14位紧凑),用 TO_TIMESTAMP 显式指定。
+129	保留注释	// 原 SQL(完整保留):
+130	保留注释	// // sqlstr = "select TIMESTAMPDIFF(8, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'
+131	保留注释	// DM8 SQL:
+132	活动代码	select DATEDIFF(SECOND, TO_TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'','YYYYMMDDHH24MISS'), TO_TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() +
+133	保留注释	// DM8 SQL：
+134	活动代码	sqlstr = "select TIMESTAMPDIFF(8, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) fr
+135	保留注释	//sqlstr = "select timestampdiff(8, char(timestamp(sysdate) - timestamp('2023-05-25 10:14:01'))) AS "间隔小时" from ttmsm66
+136	活动代码	break;
+137	活动代码	}
+138	活动代码	cmd_inq.Parameters.Clear();
+139	活动代码	cmd_inq.SetCommandText(sqlstr);
+140	活动代码	
+141	活动代码	Log::Trace("", "", "时间差小时语句 sqlstr：{0}", sqlstr);
+142	活动代码	cmd_inq.ExecuteReader();
+143	活动代码	
+144	活动代码	if (cmd_inq.Read())
+145	活动代码	{
+146	活动代码	hours_diffx = cmd_inq.GetDecimal(1);
+147	活动代码	}
+148	活动代码	else
+149	活动代码	{
+150	活动代码	hours_diffx = 0;
+151	活动代码	}
+152	活动代码	cmd_inq.Close();
+153	活动代码	Log::Trace("", "", "小时差计算值 days_diffx：{0}", hours_diffx.ToString());
+154	活动代码	
+155	活动代码	switch (conn->DatabaseKind)
+156	活动代码	{
+157	活动代码	case DB_KIND_DB2:	        // DB2 数据库（未开Oracle兼容）
+158	活动代码	case DB_KIND_DB2_ORACLE:	// DB2 数据库（开Oracle兼容）
+159	活动代码	case DB_KIND_MSSQL:	        // MS SQL Server数据库
+160	活动代码	case DB_KIND_ORACLE:	    // Oracle 数据库
+161	活动代码	default:
+162	保留注释	// DM8 适配 CHANGE-342:查询。SYSIBM 辅助表改为 DUAL。
+163	保留注释	// 改写原因：SYSIBM 辅助表改为 DUAL；依据 DM 官方文档,DM8 尚未实测。
+164	保留注释	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+165	保留注释	// 原 SQL（完整保留）：
+166	保留注释	// DM8 适配 CHANGE-EXEC-098:分钟差:从 REC_CREATE_TIME 到 CHANGE_TIME 实际经过的完整分钟数。
+167	保留注释	// 改写原因:DB2 两参数 TIMESTAMPDIFF(按DB2估算)改为 DM8 标准写法(实际完整时长)。
+168	保留注释	// 口径:HR-002 已确认选①实际完整时长——不满 1 个单位不算,与 DB2 原行为一致。
+169	保留注释	// 改写公式:DB2 TIMESTAMPDIFF(N, TS1-TS2) → DM8 DATEDIFF(SECOND, TS2, TS1) / 除数
+170	保留注释	//   其中除数:秒=1, 分=60, 时=3600;整数除法自动舍去不满整数的部分。
+171	保留注释	// 时间格式:HR-001 确认全库时间为 YYYYMMDDHH24MISS(14位紧凑),用 TO_TIMESTAMP 显式指定。
+172	保留注释	// 原 SQL(完整保留):
+173	保留注释	// // sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'
+174	保留注释	// DM8 SQL:
+175	活动代码	select DATEDIFF(SECOND, TO_TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'','YYYYMMDDHH24MISS'), TO_TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() +
+176	保留注释	// DM8 SQL：
+177	活动代码	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) fr
+178	保留注释	//sqlstr = "select timestampdiff(8, char(timestamp(sysdate) - timestamp('2023-05-25 10:14:01'))) AS "间隔分钟" from ttmsm66
+179	活动代码	break;
+180	活动代码	}

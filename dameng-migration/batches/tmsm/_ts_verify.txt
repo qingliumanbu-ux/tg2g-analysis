@@ -1,0 +1,50 @@
+123				// DM8 适配 CHANGE-EXEC-097:小时差:从 REC_CREATE_TIME 到 CHANGE_TIME 实际经过的完整小时数。
+124				// 改写原因:DB2 两参数 TIMESTAMPDIFF(按DB2估算)改为 DM8 标准写法(实际完整时长)。
+125				// 口径:HR-002 已确认选①实际完整时长——不满 1 个单位不算,与 DB2 原行为一致。
+126				// 改写公式:DB2 TIMESTAMPDIFF(N, TS1-TS2) → DM8 DATEDIFF(SECOND, TS2, TS1) / 除数
+127				//   其中除数:秒=1, 分=60, 时=3600;整数除法自动舍去不满整数的部分。
+128				// 时间格式:HR-001 确认全库时间为 YYYYMMDDHH24MISS(14位紧凑),用 TO_TIMESTAMP 显式指定。
+129				// 原 SQL(完整保留):
+130				// // sqlstr = "select TIMESTAMPDIFF(8, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) fro
+131				// DM8 SQL:
+---
+166				// DM8 适配 CHANGE-EXEC-098:分钟差:从 REC_CREATE_TIME 到 CHANGE_TIME 实际经过的完整分钟数。
+167				// 改写原因:DB2 两参数 TIMESTAMPDIFF(按DB2估算)改为 DM8 标准写法(实际完整时长)。
+168				// 口径:HR-002 已确认选①实际完整时长——不满 1 个单位不算,与 DB2 原行为一致。
+169				// 改写公式:DB2 TIMESTAMPDIFF(N, TS1-TS2) → DM8 DATEDIFF(SECOND, TS2, TS1) / 除数
+170				//   其中除数:秒=1, 分=60, 时=3600;整数除法自动舍去不满整数的部分。
+171				// 时间格式:HR-001 确认全库时间为 YYYYMMDDHH24MISS(14位紧凑),用 TO_TIMESTAMP 显式指定。
+172				// 原 SQL(完整保留):
+173				// // sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) fro
+174				// DM8 SQL:
+---
+235							// DM8 适配 CHANGE-EXEC-099:暂停时间差分钟数:从 DEV_NAME(实际存暂停开始时间)到 SUSPEND_TIME 实际经过的完整分钟数。
+236							// 改写原因:DB2 两参数 TIMESTAMPDIFF(按DB2估算)改为 DM8 标准写法(实际完整时长)。
+237							// 口径:HR-002 已确认选①实际完整时长——不满 1 个单位不算,与 DB2 原行为一致。
+238							// 改写公式:DB2 TIMESTAMPDIFF(N, TS1-TS2) → DM8 DATEDIFF(SECOND, TS2, TS1) / 除数
+239							//   其中除数:秒=1, 分=60, 时=3600;整数除法自动舍去不满整数的部分。
+240							// 时间格式:HR-001 确认全库时间为 YYYYMMDDHH24MISS(14位紧凑),用 TO_TIMESTAMP 显式指定。
+241							// 原 SQL(完整保留):
+242							// // sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["SUSPEND_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["DEV_NAME"].To
+243							// DM8 SQL:
+---
+273							// DM8 适配 CHANGE-EXEC-100:使用时间差分钟数:从 SUSPEND_TIME 到 D_TIME 实际经过的完整分钟数。
+274							// 改写原因:DB2 两参数 TIMESTAMPDIFF(按DB2估算)改为 DM8 标准写法(实际完整时长)。
+275							// 口径:HR-002 已确认选①实际完整时长——不满 1 个单位不算,与 DB2 原行为一致。
+276							// 改写公式:DB2 TIMESTAMPDIFF(N, TS1-TS2) → DM8 DATEDIFF(SECOND, TS2, TS1) / 除数
+277							//   其中除数:秒=1, 分=60, 时=3600;整数除法自动舍去不满整数的部分。
+278							// 时间格式:HR-001 确认全库时间为 YYYYMMDDHH24MISS(14位紧凑),用 TO_TIMESTAMP 显式指定。
+279							// 原 SQL(完整保留):
+280							// // sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["D_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["SUSPEND_TIME"].ToSt
+281							// DM8 SQL:
+---
+326							// DM8 适配 CHANGE-EXEC-101:修理时间差分钟数:从 REPAIR_START_TIME 到 REPAIR_END_TIME 实际经过的完整分钟数。
+327							// 改写原因:DB2 两参数 TIMESTAMPDIFF(按DB2估算)改为 DM8 标准写法(实际完整时长)。
+328							// 口径:HR-002 已确认选①实际完整时长——不满 1 个单位不算,与 DB2 原行为一致。
+329							// 改写公式:DB2 TIMESTAMPDIFF(N, TS1-TS2) → DM8 DATEDIFF(SECOND, TS2, TS1) / 除数
+330							//   其中除数:秒=1, 分=60, 时=3600;整数除法自动舍去不满整数的部分。
+331							// 时间格式:HR-001 确认全库时间为 YYYYMMDDHH24MISS(14位紧凑),用 TO_TIMESTAMP 显式指定。
+332							// 原 SQL(完整保留):
+333							// // sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["REPAIR_END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["REPAIR_STA
+334							// DM8 SQL:
+---

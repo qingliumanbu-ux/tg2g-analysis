@@ -1,0 +1,9 @@
+### CHANGE-362  原行 128-129
+  L129 前: " (POSSTR(A.WHOLE_BACKLOG,@v_whole_backlog_code1)-POSSTR(A.WHOLE_BACKLOG,@v_whole_backlog_code1)/2 *2)>0)";
+  L129 后: " (INSTR(A.WHOLE_BACKLOG, @v_whole_backlog_code1)-INSTR(A.WHOLE_BACKLOG, @v_whole_backlog_code1)/2 *2)>0)";
+### CHANGE-363  原行 133-134
+  L134 前: " (POSSTR(A.WHOLE_BACKLOG,@v_whole_backlog_code2)-POSSTR(A.WHOLE_BACKLOG,@v_whole_backlog_code2)/2 *2)>0)";
+  L134 后: " (INSTR(A.WHOLE_BACKLOG, @v_whole_backlog_code2)-INSTR(A.WHOLE_BACKLOG, @v_whole_backlog_code2)/2 *2)>0)";
+### CHANGE-364  原行 139-140
+  L140 前: " (POSSTR(A.WHOLE_BACKLOG,@v_whole_backlog_code3)-POSSTR(A.WHOLE_BACKLOG,@v_whole_backlog_code3)/2 *2)>0)";
+  L140 后: " (INSTR(A.WHOLE_BACKLOG, @v_whole_backlog_code3)-INSTR(A.WHOLE_BACKLOG, @v_whole_backlog_code3)/2 *2)>0)";

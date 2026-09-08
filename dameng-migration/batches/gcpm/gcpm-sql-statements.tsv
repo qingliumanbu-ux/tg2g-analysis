@@ -1,0 +1,510 @@
+file	start	end	preview
+libGCPM/f_GetNextSeq_pm.cpp	97	102	CString  c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_name   ";
+libGCPM/f_GetNextSeq_pm.cpp	103	105	CString  c_sql_condition2 = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_name   ";
+libGCPM/f_GetNextSeq_pm.cpp	138	141	Log::Trace("", __FUNCTION__, "insert== v_seq_name=[{0}]", v_seq_name);
+libGCPM/f_GetNextSeq_pm.cpp	167	168	sqlstr = "insert into tgcpm21,seq_name =[" + tgcpm21["SEQ_NAME"].ToString() + "]";
+libGCPM/f_GetNextSeq_pm.cpp	174	174	Log::Trace("", __FUNCTION__, "update== v_seq_name=[{0}]", v_seq_name);
+libGCPM/f_GetNextSeq_pm.cpp	179	179	c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_name for update  ";
+libGCPM/f_GetNextSeq_pm.cpp	185	186	c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_name    ";
+libGCPM/f_GetNextSeq_pm.cpp	188	189	c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_name for update  "; //oracle 的行锁
+libGCPM/f_GetNextSeq_pm.cpp	191	192	c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_name FOR UPDATE with rs  "; //db2 的行锁
+libGCPM/f_GetNextSeq_pm.cpp	194	195	c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_name  "; //default
+libGCPM/f_GetNextSeq_pm.cpp	286	290	c_sql_condition = " update tgcpm21 t "
+libGCPM/f_GetNextSeq_pm.cpp	299	311	Log::Trace("", __FUNCTION__, "update end.== tgcpm21.SEQ_NAME. =[{0}]", tgcpm21["SEQ_NAME"].ToString());
+libGCPM/f_edsetcustominfo_mm.cpp	75	79	CString  c_sql_condition  =  " SELECT  t.* FROM tmm0099 t  "
+libGCPM/f_edsetcustominfo_mm.cpp	159	160	c_sql_condition = " SELECT COUNT(1) FROM tmm0099 t  ";
+libGCPM/f_edsetcustominfo_mm.cpp	193	195	c_sql_condition = " SELECT t.SEQ_NO,t.ITEM_KIND,t.ITEM_ENAME,t.ITEM_CNAME  "
+p_gcpm_1300/gcpmz1_del.cpp	65	66	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz1_del.cpp	72	83	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz1_del.cpp	97	102	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_1300/gcpmz1_del.cpp	138	140	c_sql_condition = "delete  from tgcpmz1 t "
+p_gcpm_1300/gcpmz1_get.cpp	70	74	CString  c_sql_condition  =  " SELECT  1 FROM XX " ; //
+p_gcpm_1300/gcpmz1_get.cpp	75	83	CString  c_sql_condition2 = " SELECT  1 FROM XX "; //
+p_gcpm_1300/gcpmz1_get.cpp	91	92	c_sql_condition2 = "select max(t.seq_no) + 1 from tgcpm01 t ";
+p_gcpm_1300/gcpmz1_get.cpp	98	106	c_sql_condition =  "  select DISTINCT "
+p_gcpm_1300/gcpmz1_get.cpp	120	123	c_sql_condition2 = "select t.FUNC_CNAME from tgcpmz1 t "
+p_gcpm_1300/gcpmz1_get.cpp	146	153	c_sql_condition2 = " insert into tgcpm01(PROJECT_NO,SEQ_NO "
+p_gcpm_1300/gcpmz1_get.cpp	154	165	"  select 'zy_pro',@seq_no "
+p_gcpm_1300/gcpmz1_get.cpp	186	187	c_sql_condition2 = "select max(t.seq_no) + 1 from tgcpm01 t ";
+p_gcpm_1300/gcpmz1_get.cpp	200	210	c_sql_condition = "  select   "
+p_gcpm_1300/gcpmz1_get.cpp	228	245	c_sql_condition2 = " insert into tgcpm01(PROJECT_NO,SEQ_NO "
+p_gcpm_1300/gcpmz1_init.cpp	60	61	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz1_init.cpp	67	78	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz1_init.cpp	102	102	CString v_sql_oralce = "  select  substr(t.dllname,1,4) as MOID ";//ORACLE 是从1#位置开始
+p_gcpm_1300/gcpmz1_init.cpp	103	103	CString v_sql_db2 = "  select  substr(t.dllname,1,4) as MOID "; //DB2是从1#位置开始
+p_gcpm_1300/gcpmz1_init.cpp	107	120	c_sql_condition = //"  select  substr(t.dllname,1,4) as MOID " //二级模块
+p_gcpm_1300/gcpmz1_inq.cpp	56	57	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_1300/gcpmz1_inq.cpp	63	75	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_1300/gcpmz1_inq.cpp	98	110	c_sql_condition = "  select  t.*   from tgcpmz1 t  " ;
+p_gcpm_1300/gcpmz1_inq.cpp	137	138	c_sql_condition = "  select  t.*   from tgcpmz1 t  ";
+p_gcpm_1300/gcpmz1_inq.cpp	165	168	c_sql_condition2 = " select count(1) from  v_gcpmz1_sx t "
+p_gcpm_1300/gcpmz1_ins.cpp	69	70	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz1_ins.cpp	76	89	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz1_ins.cpp	115	120	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_1300/gcpmz1_ins.cpp	151	156	c_sql_condition = "select count(1) from tgcpmz1 t "
+p_gcpm_1300/gcpmz1_ins.cpp	251	252	sqlstr = "insert into tgcpmz1";
+p_gcpm_1300/gcpmz1_ins2.cpp	70	71	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_1300/gcpmz1_ins2.cpp	77	90	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_1300/gcpmz1_ins2.cpp	122	127	c_sql_condition = "select count(1) from tgcpmz1 t "
+p_gcpm_1300/gcpmz1_ins2.cpp	183	186	c_sql_condition = "select  t.program_desc,t.sub_system_ename   "
+p_gcpm_1300/gcpmz1_ins2.cpp	201	204	c_sql_condition = "select  t.srv_id   "
+p_gcpm_1300/gcpmz1_ins2.cpp	236	244	c_sql_condition = "select  t.func_name,a.program_desc "
+p_gcpm_1300/gcpmz1_ins2.cpp	321	322	sqlstr = "insert into tgcpmz1";
+p_gcpm_1300/gcpmz1_sx.cpp	50	51	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz1_sx.cpp	57	68	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz1_sx.cpp	88	89	c_sql_condition = "  select  t.*   from v_gcpmz1_sx t  "
+p_gcpm_1300/gcpmz1_upd.cpp	81	82	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz1_upd.cpp	88	94	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz1_upd.cpp	138	143	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_1300/gcpmz1_upd.cpp	168	173	c_sql_condition = "select   t.description " //画面名称   //应PSSM反馈，这里只显示中文描述。
+p_gcpm_1300/gcpmz1_upd.cpp	194	198	c_sql_condition = "select   t.name || '[' || t.description || ']'   " //按钮代码+按钮名称
+p_gcpm_1300/gcpmz1_upd.cpp	238	242	c_sql_condition = "select T.FORM_CALL_MODE "  //画面调用方式
+p_gcpm_1300/gcpmz1_upd.cpp	263	269	c_sql_condition = "select  T.KEYVALUE_6,T.TABLE_NAME " //母画面，业务表名称。
+p_gcpm_1300/gcpmz1_upd.cpp	351	356	c_sql_condition = " SELECT  T.SERVICE_NAME "
+p_gcpm_1300/gcpmz1_upd.cpp	434	437	c_sql_condition = "select  t.FUNC_DESC   "
+p_gcpm_1300/gcpmz1_upd.cpp	517	521	c_sql_condition = "select  t.program_desc   "
+p_gcpm_1300/gcpmz1_upd.cpp	554	557	c_sql_condition = "select  t.srv_id   "
+p_gcpm_1300/gcpmz1_upd.cpp	600	608	c_sql_condition = "select  t.func_name,a.program_desc "
+p_gcpm_1300/gcpmz1_upd.cpp	694	698	c_sql_condition = "select t.ITEM_ENAME from ted54 t "
+p_gcpm_1300/gcpmz1_upd.cpp	762	763	sqlstr = "update  tgcpmz1 ,TRACK_SEQ_NO[" + tgcpmz1["TRACK_SEQ_NO"].ToString() + "]";
+p_gcpm_1300/gcpmz1_upd.cpp	840	844	c_sql_condition = "select T.FORM_CALL_MODE "  //画面调用方式
+p_gcpm_1300/gcpmz1_upd.cpp	860	874	c_sql_condition = "select  t.FORM_BASE_NAME,T.FORM_NAME "
+p_gcpm_1300/gcpmz1_upd.cpp	883	897	c_sql_condition = "select  t.FORM_BASE_NAME,T.FORM_NAME "//BASE画面， 画面。
+p_gcpm_1300/gcpmz1_upd.cpp	1014	1017	c_sql_condition = " update tgcpmz1 t "
+p_gcpm_1300/gcpmz1_upd.cpp	1029	1031	c_sql_condition = " select min(t.seq_no) from tgcpmz1 t "
+p_gcpm_1300/gcpmz1_upd.cpp	1058	1063	c_sql_condition = " update tgcpmz1 t "
+p_gcpm_1300/gcpmz1_upd2.cpp	65	66	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz1_upd2.cpp	72	77	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz1_upd2.cpp	103	108	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_1300/gcpmz1_upd2.cpp	128	131	c_sql_condition = "select t.code || '_' || t.code_desc_1_content from tgcpmsi00 t "
+p_gcpm_1300/gcpmz1_upd2.cpp	148	152	c_sql_condition = "update tgcpmz1 t "
+p_gcpm_1300/gcpmz2_dels.cpp	62	63	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_dels.cpp	69	77	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_dels.cpp	108	110	c_sql_condition = "delete from  tea01 t "
+p_gcpm_1300/gcpmz2_dels.cpp	119	121	c_sql_condition = "delete from  tea03 t "
+p_gcpm_1300/gcpmz2_dels.cpp	130	132	c_sql_condition = "delete from  tea05 t "
+p_gcpm_1300/gcpmz2_dels.cpp	141	143	c_sql_condition = "delete from  tea07 t "
+p_gcpm_1300/gcpmz2_dels.cpp	152	154	c_sql_condition = "delete from  tea07 t "
+p_gcpm_1300/gcpmz2_dels2.cpp	62	63	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_dels2.cpp	69	77	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_dels2.cpp	133	135	c_sql_condition = "delete from  tea05 t "
+p_gcpm_1300/gcpmz2_dels2.cpp	144	146	c_sql_condition = "delete from  tea07 t "
+p_gcpm_1300/gcpmz2_dels2.cpp	155	157	c_sql_condition = "delete from  tea07 t "
+p_gcpm_1300/gcpmz2_dels2.cpp	170	172	c_sql_condition = "delete from  tea11 t "
+p_gcpm_1300/gcpmz2_form_word.cpp	65	66	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_form_word.cpp	72	85	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_form_word.cpp	112	115	c_sql_condition = "  select t.*  from tgcpmz1 t  "
+p_gcpm_1300/gcpmz2_form_word.cpp	177	180	c_sql_condition = "  select t.*  from tgcpmz1 t  "
+p_gcpm_1300/gcpmz2_form_word.cpp	243	246	c_sql_condition = "  select t.*  from tgcpmz1 t  "
+p_gcpm_1300/gcpmz2_from_ea08.cpp	84	85	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_from_ea08.cpp	91	96	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_from_ea08.cpp	217	223	c_sql_condition = " select t.svc_name,t.func_id "
+p_gcpm_1300/gcpmz2_from_ea08.cpp	270	275	c_sql_condition = " update tgcpmz1 t  "
+p_gcpm_1300/gcpmz2_fun_upd.cpp	61	62	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_fun_upd.cpp	68	73	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_fun_upd.cpp	136	139	c_sql_condition = "update  tea03 t "
+p_gcpm_1300/gcpmz2_gnx.cpp	68	69	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_gnx.cpp	75	87	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_gnx.cpp	109	111	c_sql_condition = "  select  t.* "
+p_gcpm_1300/gcpmz2_inq.cpp	62	63	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_inq.cpp	69	82	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_inq.cpp	109	111	c_sql_condition = "  select  t.* "
+p_gcpm_1300/gcpmz2_inq_db.cpp	60	61	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_1300/gcpmz2_inq_db.cpp	67	76	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_1300/gcpmz2_inq_db.cpp	97	99	c_sql_condition = "SELECT  T.* "
+p_gcpm_1300/gcpmz2_inqdll.cpp	70	71	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_inqdll.cpp	77	85	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_inqdll.cpp	108	110	c_sql_condition = " select t.dllname,count(DISTINCT t.form_code) AS num  "
+p_gcpm_1300/gcpmz2_inqf.cpp	65	66	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  " ;
+p_gcpm_1300/gcpmz2_inqf.cpp	72	83	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_inqf.cpp	132	134	c_sql_condition = "  select  distinct t.DLLNAME,t.FORM_CODE "
+p_gcpm_1300/gcpmz2_inqf.cpp	170	174	c_sql_condition2 = "select t.* from tgcpmz1 t "
+p_gcpm_1300/gcpmz2_inqf.cpp	189	193	c_sql_condition2 = "select t.code_desc_2_content from tgcpmsi00 t "
+p_gcpm_1300/gcpmz2_inqs.cpp	63	64	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_inqs.cpp	70	79	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_inqs.cpp	157	170	c_sql_condition = " select t.* " // t.svc_name,t.program_desc,t.func_type,t.sub_system_ename,t.code_line
+p_gcpm_1300/gcpmz2_inqs.cpp	175	188	c_sql_condition = " select  t.* " //t.svc_name,t.program_desc,t.func_type,t.sub_system_ename,t.code_line
+p_gcpm_1300/gcpmz2_inqs_id.cpp	60	61	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_1300/gcpmz2_inqs_id.cpp	67	76	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_1300/gcpmz2_inqs_id.cpp	114	120	c_sql_condition = "SELECT SRV_ID,SRV_NAME,SUB_SYSTEM_ENAME"
+p_gcpm_1300/gcpmz2_inqs_id.cpp	156	158	c_sql_condition = " SELECT COUNT(1) FROM  tea01 t "
+p_gcpm_1300/gcpmz2_moid_upd.cpp	61	62	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_moid_upd.cpp	68	73	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_moid_upd.cpp	122	125	c_sql_condition = "update  tea00 t "
+p_gcpm_1300/gcpmz2_moid_upd.cpp	135	138	c_sql_condition = "update  tea03 t "
+p_gcpm_1300/gcpmz2_toea08.cpp	84	85	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_toea08.cpp	91	96	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_toea08.cpp	157	158	c_sql_condition = " delete from tea08 t where t.form_name = @form_name ";
+p_gcpm_1300/gcpmz2_toea08.cpp	168	172	c_sql_condition = " select t.* "
+p_gcpm_1300/gcpmz2_toea08.cpp	231	232	c_sql_condition2 = " insert into tea08 " + v_column_name + v_column_value;
+p_gcpm_1300/gcpmz2_toea08.cpp	284	287	c_sql_condition2 = "select  t.program_desc   "
+p_gcpm_1300/gcpmz2_toea08.cpp	302	305	c_sql_condition2 = "select  t.srv_id   "
+p_gcpm_1300/gcpmz2_toea08.cpp	345	346	c_sql_condition2 = " insert into tea08 " + v_column_name + v_column_value;
+p_gcpm_1300/gcpmz2_updf.cpp	60	61	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_updf.cpp	67	73	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_updf.cpp	111	114	c_sql_condition = "update tgcpmz1 t "
+p_gcpm_1300/gcpmz2_upds.cpp	60	61	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_upds.cpp	67	73	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2_upds.cpp	111	114	c_sql_condition = "update tea03 t "
+p_gcpm_1300/gcpmz2epg_inq.cpp	54	61	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2epg_inq.cpp	62	70	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_1300/gcpmz2epg_inq.cpp	103	112	c_sql_condition = " select  substr(t.moid,1,2) as main_moid "//一级模块
+p_gcpm_1300/gcpmz2epg_inq.cpp	202	207	c_sql_condition = " select  COUNT(T.SVC_NAME)  "
+p_gcpm_1300/gcpmz2epg_inq.cpp	218	225	c_sql_condition = " select  COUNT(T.SVC_NAME)  "
+p_gcpm_29620/gcpmsi01_del.cpp	75	76	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi01_del.cpp	82	115	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi01_del.cpp	150	153	c_sql_condition = "select count(1) from tgcpmsi01 t "
+p_gcpm_29620/gcpmsi01_del.cpp	174	177	c_sql_condition = "delete from tgcpmsi01 t "
+p_gcpm_29620/gcpmsi01_inq.cpp	57	58	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi01_inq.cpp	64	72	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi01_inq.cpp	111	113	c_sql_condition = " select t.*  from tgcpmsi01 t ";
+p_gcpm_29620/gcpmsi01_ins.cpp	59	60	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi01_ins.cpp	66	101	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi01_ins.cpp	131	134	c_sql_condition = "select count(1) from tgcpmsi01 t "
+p_gcpm_29620/gcpmsi01_ins.cpp	162	163	sqlstr = "insert into tgcpmsi01";
+p_gcpm_29620/gcpmsi01_upd.cpp	73	74	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi01_upd.cpp	80	111	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi01_upd.cpp	141	144	c_sql_condition = "select count(1) from tgcpmsi01 t "
+p_gcpm_29620/gcpmsi01_upd.cpp	170	181	c_sql_condition = "update tgcpmsi01 t "
+p_gcpm_29620/gcpmsi02_chk.cpp	63	64	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsi02_chk.cpp	112	116	c_sql_condition = "select COUNT(1) "
+p_gcpm_29620/gcpmsi02_chk.cpp	139	144	c_sql_condition = "select count(1) from tgcpmsi02 t "
+p_gcpm_29620/gcpmsi02_chk.cpp	173	182	c_sql_condition = " select t.maker_remark  " //指定操作者。
+p_gcpm_29620/gcpmsi02_cmt.cpp	76	77	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_cmt.cpp	83	87	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_cmt.cpp	126	131	c_sql_condition = "select t.FORM_CODE "
+p_gcpm_29620/gcpmsi02_cmt.cpp	164	168	c_sql_condition = "select t.CODE_DESC_2_CONTENT "
+p_gcpm_29620/gcpmsi02_cmt.cpp	194	196	c_sql_condition = "delete from tesformpara t "
+p_gcpm_29620/gcpmsi02_cmt.cpp	208	211	c_sql_condition = "insert into tesformpara(form_name,form_base_name "
+p_gcpm_29620/gcpmsi02_cmt.cpp	226	230	c_sql_condition = " update tgcpmsi02 t "
+p_gcpm_29620/gcpmsi02_del.cpp	76	77	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_del.cpp	83	87	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_del.cpp	120	123	c_sql_condition = "select count(1) from tgcpmsi02 t "
+p_gcpm_29620/gcpmsi02_del.cpp	143	146	c_sql_condition = "delete from tgcpmsi02 t "
+p_gcpm_29620/gcpmsi02_import.cpp	64	65	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_import.cpp	71	76	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_import.cpp	169	170	sqlstr = "insert into tgcpmsi02";
+p_gcpm_29620/gcpmsi02_init.cpp	76	77	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_init.cpp	83	87	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_init.cpp	125	129	c_sql_condition = "select t.* "
+p_gcpm_29620/gcpmsi02_init.cpp	266	277	c_sql_condition = "update tgcpmsi02 t "
+p_gcpm_29620/gcpmsi02_inq.cpp	60	61	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_inq.cpp	67	75	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_inq.cpp	123	125	c_sql_condition = " select t.*  from tgcpmsi02 t ";
+p_gcpm_29620/gcpmsi02_ins.cpp	67	68	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsi02_ins.cpp	74	79	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsi02_ins.cpp	125	129	c_sql_condition = "select MAX(t.seq_no) + 1 "
+p_gcpm_29620/gcpmsi02_ins.cpp	172	173	sqlstr = "insert into tgcpmsi02";
+p_gcpm_29620/gcpmsi02_main_chk.cpp	74	75	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_main_chk.cpp	81	85	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_main_chk.cpp	119	122	c_sql_condition = "select t.* from tgcpmsi02 t "
+p_gcpm_29620/gcpmsi02_upd.cpp	73	74	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_upd.cpp	80	84	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29620/gcpmsi02_upd.cpp	116	119	c_sql_condition = "select count(1) from tgcpmsi02 t "
+p_gcpm_29620/gcpmsi02_upd.cpp	172	173	sqlstr = "update tgcpmsi02.";
+p_gcpm_29620/gcpmsi99_del.cpp	79	80	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsi99_del.cpp	106	108	c_sql_condition = "delete  from tgcpmsi99 t "
+p_gcpm_29620/gcpmsi_chk.cpp	63	64	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsi_chk.cpp	112	116	c_sql_condition = "select t.code_desc_3_content "
+p_gcpm_29620/gcpmsi_chk.cpp	143	148	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_29620/gcpmsi_chk.cpp	177	186	c_sql_condition = " select t.maker_remark  " //指定操作者。
+p_gcpm_29620/gcpmsi_inq.cpp	62	63	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsi_inq.cpp	101	108	c_sql_condition = " select   t.OPERATE_MODE " //操作模式=1/2=调用SERVICE/执行SQL
+p_gcpm_29620/gcpmsi_inq.cpp	158	162	c_sql_condition = " select  t.item_ename,t.item_type "
+p_gcpm_29620/gcpmsi_inq2.cpp	64	65	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsi_inq2.cpp	115	122	c_sql_condition = " select   t.OPERATE_MODE " //操作模式=1/2=调用SERVICE/执行SQL
+p_gcpm_29620/gcpmsi_inq2.cpp	172	176	c_sql_condition = " select  t.item_ename,t.item_type "
+p_gcpm_29620/gcpmsi_sql.cpp	68	69	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsi_sql.cpp	106	109	if (v_sql_chk.Trim().ToUpper() == "SELECT")
+p_gcpm_29620/gcpmsi_sql.cpp	130	134	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_29620/gcpmsied54_del.cpp	79	80	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsied54_del.cpp	159	164	c_sql_condition = " select t.item_key_flag,t.item_ename,t.item_cname,t.item_type "
+p_gcpm_29620/gcpmsied54_del.cpp	216	221	c_sql_condition = " select t.item_key_flag,t.item_ename,t.item_cname,t.item_type "
+p_gcpm_29620/gcpmsied54_del.cpp	319	320	c_sql_condition = " select " + v_select_item + " from " + v_table_name + c_sql_where;
+p_gcpm_29620/gcpmsied54_del.cpp	337	338	c_sql_condition = " delete from " + v_table_name + c_sql_where;
+p_gcpm_29620/gcpmsied54_del.cpp	343	362	Log::Trace("", __FUNCTION__, " delete,c_sql_condition[{0}]", c_sql_condition);
+p_gcpm_29620/gcpmsied54_del.cpp	379	380	c_sql_condition = " insert into tgcpmsi99 " + v_column_name + v_column_value;
+p_gcpm_29620/gcpmsied54_inq.cpp	63	64	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsied54_inq.cpp	133	138	c_sql_condition = " select  t.item_ename,t.item_type "
+p_gcpm_29620/gcpmsied54_inq.cpp	258	263	c_sql_condition = " select t.item_key_flag,t.item_ename,t.item_cname "
+p_gcpm_29620/gcpmsied54_inq.cpp	299	300	c_sql_condition = " select *  from " + v_table_name + c_sql_where + c_sql_orderBy;
+p_gcpm_29620/gcpmsied54_inq2.cpp	65	66	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsied54_inq2.cpp	69	73	CString c_sql_condition2 = " SELECT COUNT(1) FROM tpmof01 t ";
+p_gcpm_29620/gcpmsied54_inq2.cpp	153	158	c_sql_condition = " select  t.item_ename,t.item_type "
+p_gcpm_29620/gcpmsied54_inq2.cpp	280	285	c_sql_condition = " select t.item_key_flag,t.item_ename,t.item_cname "
+p_gcpm_29620/gcpmsied54_inq2.cpp	321	322	c_sql_condition = " select *  from " + v_table_name + c_sql_where + c_sql_orderBy;
+p_gcpm_29620/gcpmsied54_inq2.cpp	333	334	c_sql_condition2 = " select COUNT(1)  from " + v_table_name + c_sql_where;
+p_gcpm_29620/gcpmsied54_ins.cpp	78	79	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsied54_ins.cpp	181	187	c_sql_condition = " select t.item_key_flag,t.item_ename,t.item_cname,t.item_type "
+p_gcpm_29620/gcpmsied54_ins.cpp	227	232	c_sql_condition = " select t.item_key_flag,t.item_ename,t.item_cname,t.item_type "
+p_gcpm_29620/gcpmsied54_ins.cpp	460	461	c_sql_condition = " select COUNT(1) from " + v_table_name + c_sql_where;
+p_gcpm_29620/gcpmsied54_ins.cpp	483	484	c_sql_condition = " insert into " + v_table_name + v_column_name + v_column_value;
+p_gcpm_29620/gcpmsied54_ins.cpp	524	525	c_sql_condition = " insert into tgcpmsi99 " + v_column_name + v_column_value;
+p_gcpm_29620/gcpmsied54_qt.cpp	86	87	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsied54_tj.cpp	63	64	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsied54_tj.cpp	131	135	c_sql_condition = " select  t.item_ename,t.item_type "
+p_gcpm_29620/gcpmsied54_tj.cpp	247	251	c_sql_condition = " SELECT  " + c_sql_sel_col + c_sql_groupNo +  ",COUNT(1) as TOTAL_NUM  from " + v_table_name + c_sql_where + c_sql_groupBy + c_sql_orderBy;
+p_gcpm_29620/gcpmsied54_upd.cpp	80	81	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29620/gcpmsied54_upd.cpp	167	172	c_sql_condition = " select t.item_key_flag,t.item_ename,t.item_cname,t.item_type "
+p_gcpm_29620/gcpmsied54_upd.cpp	224	230	c_sql_condition = " select t.item_key_flag,t.item_ename,t.item_cname,t.item_type "
+p_gcpm_29620/gcpmsied54_upd.cpp	266	273	c_sql_condition = " select t.item_key_flag,t.item_ename,t.item_cname,t.item_type "
+p_gcpm_29620/gcpmsied54_upd.cpp	463	464	c_sql_condition = " update " + v_table_name +  c_sql_upd + c_sql_where;
+p_gcpm_29620/gcpmsied54_upd.cpp	476	477	c_sql_condition = " select " + v_select_item + " from " + v_table_name + c_sql_where;
+p_gcpm_29620/gcpmsied54_upd.cpp	519	520	c_sql_condition = " insert into tgcpmsi99 " + v_column_name + v_column_value;
+p_gcpm_29620/gcpmsied54_upd.cpp	527	543	Log::Trace("", __FUNCTION__, "insert 履历表,OK");
+p_gcpm_29640/gcpm21_ins.cpp	70	76	CString  c_sql_condition =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpm21_ins.cpp	77	85	CString  c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpm21_ins.cpp	133	136	c_sql_condition = " SELECT COUNT(1) "
+p_gcpm_29640/gcpm21_ins.cpp	158	159	sqlstr = "insert into tgcpm21 ,seq_name is[" + tgcpm21["SEQ_NAME"].ToString() + "]";
+p_gcpm_29640/gcpm21_upd.cpp	69	75	CString  c_sql_condition =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpm21_upd.cpp	76	79	CString  c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpm21_upd.cpp	132	135	c_sql_condition = " SELECT COUNT(1) "
+p_gcpm_29640/gcpm21_upd.cpp	167	168	sqlstr = "update tgcpm21 ,seq_name is[" + tgcpm21["SEQ_NAME"].ToString() + "]";
+p_gcpm_29640/gcpma2_ins.cpp	87	93	CString c_sql_condition  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpma2_ins.cpp	94	98	CString c_sql_condition2  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpma2_ins.cpp	129	131	c_sql_condition = " select NVL(max(t.SEQ_NO),0) + 1 from tgcpma2 t "
+p_gcpm_29640/gcpma2_ins.cpp	156	159	c_sql_condition = " select t.code_desc_1_content from tep0002 t "
+p_gcpm_29640/gcpma2_ins.cpp	181	182	sqlstr = "insert into tgcpma2，项目需求[" + tgcpma2.REMARK_DESC + "]";
+p_gcpm_29640/gcpma2_upd.cpp	87	93	CString c_sql_condition  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpma2_upd.cpp	94	98	CString c_sql_condition2  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpma2_upd.cpp	127	130	c_sql_condition = " select t.code_desc_1_content from tep0002 t "
+p_gcpm_29640/gcpma2_upd.cpp	153	153	sqlstr = "update tgcpma2，项目号[" + tgcpma2.SEQ_NO.ToString() + "]";
+p_gcpm_29640/gcpma2_upd.cpp	157	158	sqlstr = "delete tgcpma2，项目号[" + tgcpma2.SEQ_NO.ToString() + "]";
+p_gcpm_29640/gcpma2_upd.cpp	160	161	sqlstr = "insert tgcpma2，项目号[" + tgcpma2.SEQ_NO.ToString() + "]";
+p_gcpm_29640/gcpma4_chk.cpp	88	94	CString c_sql_condition  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpma4_chk.cpp	95	99	CString c_sql_condition2  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpma4_chk.cpp	125	128	c_sql_condition = " update tgcpma4 t "
+p_gcpm_29640/gcpma4_chk.cpp	160	167	c_sql_condition =  " update tgcpma4 t "
+p_gcpm_29640/gcpma4_chk.cpp	176	183	c_sql_condition = " update tgcpma4 t "
+p_gcpm_29640/gcpma4_ins.cpp	88	94	CString c_sql_condition  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpma4_ins.cpp	95	152	CString c_sql_condition2  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpma4_ins.cpp	159	165	c_sql_condition = "		SELECT aa.table_ename  "
+p_gcpm_29640/gcpma4_ins.cpp	180	183	c_sql_condition2 = "select count(1) from tgcpma4 t "
+p_gcpm_29640/gcpma4_ins.cpp	201	209	c_sql_condition = "		SELECT aa.table_ename,aa.model_table_ename "
+p_gcpm_29640/gcpma4_ins.cpp	227	230	c_sql_condition2 = " insert into tgcpma4 (VIEW_POS,TABLE_ENAME"
+p_gcpm_29640/gcpma4_ins.cpp	231	238	" select 1,@table_ename"
+p_gcpm_29640/gcpma4_ins.cpp	253	256	c_sql_condition2 = " insert into tgcpma4 (VIEW_POS,TABLE_ENAME"
+p_gcpm_29640/gcpma4_ins.cpp	257	267	" select 1,aa.table_ename "
+p_gcpm_29640/gcpmea03_upd.cpp	81	82	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmea03_upd.cpp	88	94	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmea03_upd.cpp	171	175	c_sql_condition = "update tgcpmea03 t "
+p_gcpm_29640/gcpmep01_2gcpm.cpp	41	42	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmep01_2gcpm.cpp	75	77	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_29640/gcpmep01_2gcpm.cpp	111	119	c_sql_condition = "insert into tgcpmsi00 ( "
+p_gcpm_29640/gcpmep01_2gcpm.cpp	120	130	" select @rec_creator,@rec_create_time"
+p_gcpm_29640/gcpmep01_2gcpm.cpp	141	142	Log::Trace("", __FUNCTION__, "insert into tgcpmsi00,代码编号[{0}]"
+p_gcpm_29640/gcpmep01_do.cpp	41	42	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmep01_do.cpp	78	80	c_sql_condition = "select count(1) from tep0001 t "
+p_gcpm_29640/gcpmep01_do.cpp	115	127	c_sql_condition = "insert into tep0001 ( "
+p_gcpm_29640/gcpmep01_do.cpp	144	144	Log::Trace("", __FUNCTION__, "insert into tep0001,代码编号[{0}]", tgcpmep01.CODE_CLASS);
+p_gcpm_29640/gcpmep01_do.cpp	149	161	c_sql_condition = "insert into tep0001_res ( "
+p_gcpm_29640/gcpmep01_do.cpp	174	189	Log::Trace("", __FUNCTION__, "insert into tep0001_res,代码编号[{0}]", tgcpmep01.CODE_CLASS);
+p_gcpm_29640/gcpmep01_do.cpp	229	238	c_sql_condition = "update tep0001 t "
+p_gcpm_29640/gcpmep01_do.cpp	252	252	Log::Trace("", __FUNCTION__, "update tep0001,代码编号[{0}]", tgcpmep01.CODE_CLASS);
+p_gcpm_29640/gcpmep01_do.cpp	260	269	c_sql_condition = "update tep0001_res t "
+p_gcpm_29640/gcpmep01_do.cpp	282	295	Log::Trace("", __FUNCTION__, "update tep0001_res,代码编号[{0}]", tgcpmep01.CODE_CLASS);
+p_gcpm_29640/gcpmep01_do.cpp	332	334	c_sql_condition = "delete from tep0001 t "
+p_gcpm_29640/gcpmep01_do.cpp	342	344	c_sql_condition = "delete from tep0001_res t "
+p_gcpm_29640/gcpmep01_do.cpp	351	353	c_sql_condition = "delete from tep0002 t "
+p_gcpm_29640/gcpmep01_do.cpp	360	362	c_sql_condition = "delete from tep0002_res t "
+p_gcpm_29640/gcpmep01_inq.cpp	56	57	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmep01_inq.cpp	63	72	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmep01_inq.cpp	101	103	c_sql_condition = " select t.*  from tep0001 t ";
+p_gcpm_29640/gcpmep01mx_do.cpp	41	42	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmep01mx_do.cpp	94	97	c_sql_condition = "select count(1) from tep0002 t "
+p_gcpm_29640/gcpmep01mx_do.cpp	132	144	c_sql_condition = "insert into tep0002 ( "
+p_gcpm_29640/gcpmep01mx_do.cpp	161	163	Log::Trace("", __FUNCTION__, "insert into tep0002,代码编号[{0}]代码[{1}]"
+p_gcpm_29640/gcpmep01mx_do.cpp	168	180	c_sql_condition = "insert into tep0002_res ( "
+p_gcpm_29640/gcpmep01mx_do.cpp	193	194	Log::Trace("", __FUNCTION__, "insert into tep0002_res,代码编号[{0}]"
+p_gcpm_29640/gcpmep01mx_do.cpp	253	262	c_sql_condition = "update tep0002 t "
+p_gcpm_29640/gcpmep01mx_do.cpp	275	275	Log::Trace("", __FUNCTION__, "update tep0002,代码编号[{0}]", tgcpmep01mx.CODE_CLASS);
+p_gcpm_29640/gcpmep01mx_do.cpp	283	293	c_sql_condition = "update tep0002_res t "
+p_gcpm_29640/gcpmep01mx_do.cpp	306	319	Log::Trace("", __FUNCTION__, "update tep0002_res,代码编号[{0}]", tgcpmep01mx.CODE_CLASS);
+p_gcpm_29640/gcpmep01mx_do.cpp	359	362	c_sql_condition = "delete from tep0002 t "
+p_gcpm_29640/gcpmep01mx_do.cpp	371	375	c_sql_condition = "delete from tep0002_res t "
+p_gcpm_29640/gcpmep01mx_inq.cpp	59	60	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmep01mx_inq.cpp	66	75	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmep01mx_inq.cpp	102	108	c_sql_condition = " select   "
+p_gcpm_29640/gcpmep01mx_inq.cpp	137	140	c_sql_condition = " select t.CODE_DESC_1_NAME,t.CODE_DESC_2_NAME "
+p_gcpm_29640/gcpmrpt_chk.cpp	61	62	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmrpt_chk.cpp	85	89	c_sql_condition = "select t.code_desc_4_content,t.code_desc_5_content "
+p_gcpm_29640/gcpmz54_inq.cpp	64	65	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmz54_inq.cpp	71	84	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmz54_inq.cpp	94	95	c_sql_condition = "  select  t.*  from ted54  t"
+p_gcpm_29640/gcpmz5_del.cpp	78	79	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmz5_del.cpp	85	94	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmz5_del.cpp	95	99	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_29640/gcpmz5_del.cpp	130	132	c_sql_condition = "delete from  ted53 t "
+p_gcpm_29640/gcpmz5_del.cpp	139	139	Log::Trace("", __FUNCTION__, "delete from ted53");
+p_gcpm_29640/gcpmz5_del.cpp	143	145	c_sql_condition = "delete from  ted53_res t "
+p_gcpm_29640/gcpmz5_del.cpp	151	151	Log::Trace("", __FUNCTION__, "delete from ted53_res");
+p_gcpm_29640/gcpmz5_del.cpp	156	158	c_sql_condition = "delete from  ted54 t "
+p_gcpm_29640/gcpmz5_del.cpp	165	165	Log::Trace("", __FUNCTION__, "delete from ted54");
+p_gcpm_29640/gcpmz5_del.cpp	169	171	c_sql_condition = "delete from  ted54_res t "
+p_gcpm_29640/gcpmz5_del.cpp	177	184	Log::Trace("", __FUNCTION__, "delete from ted54_res");
+p_gcpm_29640/gcpmz5_del.cpp	207	208	c_sql_condition = " insert into tgcpmsi99 " + v_column_name + v_column_value;
+p_gcpm_29640/gcpmz5_inq.cpp	64	65	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmz5_inq.cpp	71	84	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmz5_inq.cpp	94	95	c_sql_condition = "  select  t.*  from ted53  t"
+p_gcpm_29640/gcpmz5_upd.cpp	65	66	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmz5_upd.cpp	72	80	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmz5_upd.cpp	81	85	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_29640/gcpmz5_upd.cpp	115	118	c_sql_condition = "update ted53 t "
+p_gcpm_29640/gcpmz5_upd.cpp	129	132	c_sql_condition = "update ted54 t "
+p_gcpm_29640/gcpmz6_del.cpp	58	59	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmz6_del.cpp	65	74	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmz6_del.cpp	82	85	c_sql_condition = "update ttadt00 t "
+p_gcpm_29640/gcpmz6_del_not.cpp	58	59	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmz6_del_not.cpp	65	74	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29640/gcpmz6_del_not.cpp	82	85	c_sql_condition = "update ttadt00 t "
+p_gcpm_29640/gcpmz6_del_sql.cpp	56	57	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmz6_del_sql.cpp	63	70	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmz6_del_sql.cpp	94	96	v_sql_msg = " DELETE FROM  " + v_table_ename + "  ;     --" + v_table_cname;
+p_gcpm_29640/gcpmz6_inq.cpp	59	60	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmz6_inq.cpp	66	105	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmz6_inq.cpp	153	161	c_sql_condition = "SELECT t.table_name as table_ename" //表名称英文
+p_gcpm_29640/gcpmz6_inq.cpp	174	181	c_sql_condition = "SELECT  t.name  as table_ename " //表名称英文
+p_gcpm_29640/gcpmz6_inq.cpp	186	194	c_sql_condition = "SELECT t.table_name as table_ename" //表名称英文
+p_gcpm_29640/gcpmz6_inqmx.cpp	63	64	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmz6_inqmx.cpp	70	74	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmz6_inqmx.cpp	75	82	CString    c_sql_condition3 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29640/gcpmz6_inqmx.cpp	103	115	c_sql_condition = "SELECT  DISTINCT t1.column_name AS item_ename"
+p_gcpm_29640/gcpmz6_inqmx.cpp	121	130	c_sql_condition = "SELECT t.name AS item_ename"//列代码。
+p_gcpm_29640/gcpmz6_inqmx.cpp	134	143	c_sql_condition = "select SC.name as item_ename"
+p_gcpm_29640/gcpmz6_inqmx.cpp	148	160	c_sql_condition = "SELECT  DISTINCT t1.column_name AS item_ename"
+p_gcpm_29640/gcpmz6_inqmx.cpp	231	239	c_sql_condition = " SELECT  DISTINCT aa.ITEM_ENAME,aa.ITEM_CNAME "//字段英文， 字段中文
+p_gcpm_29660/gcpm0096_inq.cpp	60	61	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpm0096_inq.cpp	67	74	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpm0096_inq.cpp	101	104	c_sql_condition = " select t.* from " + v_table_name + " t "
+p_gcpm_29660/gcpm0096_inq.cpp	105	107	" select a.* from " + v_table_name_h + " a "
+p_gcpm_29660/gcpm21_ins.cpp	70	76	CString  c_sql_condition =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpm21_ins.cpp	77	85	CString  c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29660/gcpm21_ins.cpp	133	136	c_sql_condition = " SELECT COUNT(1) "
+p_gcpm_29660/gcpm21_ins.cpp	158	159	sqlstr = "insert into tgcpm21 ,seq_name is[" + tgcpm21.SEQ_NAME + "]";
+p_gcpm_29660/gcpm21_upd.cpp	69	75	CString  c_sql_condition =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpm21_upd.cpp	76	79	CString  c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29660/gcpm21_upd.cpp	132	135	c_sql_condition = " SELECT COUNT(1) "
+p_gcpm_29660/gcpm21_upd.cpp	167	168	sqlstr = "update tgcpm21 ,seq_name is[" + tgcpm21.SEQ_NAME + "]";
+p_gcpm_29660/gcpma2_ins.cpp	87	93	CString c_sql_condition  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpma2_ins.cpp	94	98	CString c_sql_condition2  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpma2_ins.cpp	129	131	c_sql_condition = " select NVL(max(t.SEQ_NO),0) + 1 from tgcpma2 t "
+p_gcpm_29660/gcpma2_ins.cpp	156	159	c_sql_condition = " select t.code_desc_1_content from tgcpmsi00 t "
+p_gcpm_29660/gcpma2_ins.cpp	181	182	sqlstr = "insert into tgcpma2，项目需求[" + tgcpma2["REMARK_DESC"].ToString() + "]";
+p_gcpm_29660/gcpma2_upd.cpp	87	93	CString c_sql_condition  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpma2_upd.cpp	94	98	CString c_sql_condition2  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpma2_upd.cpp	127	130	c_sql_condition = " select t.code_desc_1_content from tgcpmsi00 t "
+p_gcpm_29660/gcpma2_upd.cpp	153	153	sqlstr = "update tgcpma2，项目号[" + tgcpma2["SEQ_NO"].ToDecimal().ToString() + "]";
+p_gcpm_29660/gcpma2_upd.cpp	157	158	sqlstr = "delete tgcpma2，项目号[" + tgcpma2["SEQ_NO"].ToDecimal().ToString() + "]";
+p_gcpm_29660/gcpma2_upd.cpp	160	161	sqlstr = "insert tgcpma2，项目号[" + tgcpma2["SEQ_NO"].ToDecimal().ToString() + "]";
+p_gcpm_29660/gcpma4_chk.cpp	88	94	CString c_sql_condition  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpma4_chk.cpp	95	99	CString c_sql_condition2  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpma4_chk.cpp	125	128	c_sql_condition = " update tgcpma4 t "
+p_gcpm_29660/gcpma4_chk.cpp	160	167	c_sql_condition =  " update tgcpma4 t "
+p_gcpm_29660/gcpma4_chk.cpp	176	183	c_sql_condition = " update tgcpma4 t "
+p_gcpm_29660/gcpma4_ins.cpp	88	94	CString c_sql_condition  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpma4_ins.cpp	95	152	CString c_sql_condition2  =  " SELECT  t.* FROM tpmof03 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpma4_ins.cpp	159	165	c_sql_condition = "		SELECT aa.table_ename  "
+p_gcpm_29660/gcpma4_ins.cpp	180	183	c_sql_condition2 = "select count(1) from tgcpma4 t "
+p_gcpm_29660/gcpma4_ins.cpp	201	209	c_sql_condition = "		SELECT aa.table_ename,aa.model_table_ename "
+p_gcpm_29660/gcpma4_ins.cpp	227	230	c_sql_condition2 = " insert into tgcpma4 (VIEW_POS,TABLE_ENAME"
+p_gcpm_29660/gcpma4_ins.cpp	231	238	" select 1,@table_ename"
+p_gcpm_29660/gcpma4_ins.cpp	253	256	c_sql_condition2 = " insert into tgcpma4 (VIEW_POS,TABLE_ENAME"
+p_gcpm_29660/gcpma4_ins.cpp	257	267	" select 1,aa.table_ename "
+p_gcpm_29660/gcpmea03_upd.cpp	81	82	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpmea03_upd.cpp	88	94	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29660/gcpmea03_upd.cpp	171	175	c_sql_condition = "update tgcpmea03 t "
+p_gcpm_29660/gcpmrpt_chk.cpp	61	62	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29660/gcpmrpt_chk.cpp	85	89	c_sql_condition = "select t.code_desc_4_content,t.code_desc_5_content "
+p_gcpm_29680/gcpmdm01_cpy.cpp	64	65	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29680/gcpmdm01_cpy.cpp	71	79	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29680/gcpmdm01_cpy.cpp	109	111	c_sql_condition = " select COUNT(1) from tgcpmdm01 "
+p_gcpm_29680/gcpmdm01_cpy.cpp	128	130	c_sql_condition = " select COUNT(1) from tgcpmdm01 "
+p_gcpm_29680/gcpmdm01_cpy.cpp	148	150	c_sql_condition = " select * from tgcpmdm01 "
+p_gcpm_29680/gcpmdm01_cpy.cpp	173	175	c_sql_condition = " select * from tgcpmdm02 "
+p_gcpm_29680/gcpmdm01_cpy.cpp	199	201	c_sql_condition = " select * from tgcpmdm03 "
+p_gcpm_29680/gcpmdm01_do.cpp	49	50	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29680/gcpmdm01_do.cpp	56	57	CString  c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29680/gcpmdm01_do.cpp	71	76	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_29680/gcpmdm01_do.cpp	134	136	c_sql_condition = "select count(1) from tgcpmdm01 t "
+p_gcpm_29680/gcpmdm01_do.cpp	161	162	sqlstr = "insert into tgcpmdm01,代码编号[" + tgcpmdm01["CODE_CLASS"].ToString() + "]";
+p_gcpm_29680/gcpmdm01_do.cpp	208	210	c_sql_condition = "select count(1) from tgcpmdm01 t "
+p_gcpm_29680/gcpmdm01_do.cpp	245	253	sqlstr = "update tgcpmdm01,事件号[" + tgcpmdm01["CODE_CLASS"].ToString() + "]";
+p_gcpm_29680/gcpmdm01_do.cpp	267	269	c_sql_condition = " delete from tgcpmdm02 t "
+p_gcpm_29680/gcpmdm01_do.cpp	278	280	c_sql_condition = " delete from tgcpmdm03 t "
+p_gcpm_29680/gcpmdm01_do.cpp	321	323	c_sql_condition = "select t.* from tgcpmdm02 t "
+p_gcpm_29680/gcpmdm01_do.cpp	346	349	c_sql_condition2 = " delete from tgcpmdm03 t "
+p_gcpm_29680/gcpmdm01_do.cpp	367	370	c_sql_condition2 = "select MAX(t.seq_no) + 1 "
+p_gcpm_29680/gcpmdm01_do.cpp	396	399	c_sql_condition2 = "select count(1) from tgcpmdm03 t "
+p_gcpm_29680/gcpmdm01_do.cpp	423	426	c_sql_condition2 = "select MAX(t.seq_no) + 1 "
+p_gcpm_29680/gcpmdm01_do.cpp	489	491	c_sql_condition = "select count(1) from tgcpmdm01 t "
+p_gcpm_29680/gcpmdm01_do.cpp	509	511	c_sql_condition = "delete from tgcpmdm01 t "
+p_gcpm_29680/gcpmdm01_do.cpp	521	523	c_sql_condition = "delete from tgcpmdm02 t "
+p_gcpm_29680/gcpmdm01_do.cpp	533	535	c_sql_condition = "delete from tgcpmdm03 t "
+p_gcpm_29680/gcpmdm01_inq.cpp	60	61	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29680/gcpmdm01_inq.cpp	67	75	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29680/gcpmdm01_inq.cpp	105	107	c_sql_condition = " select t.*  from tgcpmdm01 t ";
+p_gcpm_29680/gcpmdm02_do.cpp	45	46	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29680/gcpmdm02_do.cpp	60	65	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_29680/gcpmdm02_do.cpp	121	124	c_sql_condition = "select count(1) from tgcpmdm02 t "
+p_gcpm_29680/gcpmdm02_do.cpp	151	152	sqlstr = "insert into tgcpmdm02,代码编号[" + tgcpmdm02["CODE_CLASS"].ToString() + "]";
+p_gcpm_29680/gcpmdm02_do.cpp	194	197	c_sql_condition = "select count(1) from tgcpmdm02 t "
+p_gcpm_29680/gcpmdm02_do.cpp	233	240	sqlstr = "update tgcpmdm02,事件号[" + tgcpmdm02["CODE_CLASS"].ToString() + "]";
+p_gcpm_29680/gcpmdm02_do.cpp	280	283	c_sql_condition = "select count(1) from tgcpmdm02 t "
+p_gcpm_29680/gcpmdm02_do.cpp	304	307	c_sql_condition = "delete from tgcpmdm02 t "
+p_gcpm_29680/gcpmdm02_inq.cpp	61	62	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29680/gcpmdm02_inq.cpp	68	76	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29680/gcpmdm02_inq.cpp	98	100	c_sql_condition = " select t.*  from tgcpmdm02 t ";
+p_gcpm_29680/gcpmdm03_do.cpp	45	46	CString  c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29680/gcpmdm03_do.cpp	60	65	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_29680/gcpmdm03_do.cpp	125	127	c_sql_condition = "select MAX(seq_no)+1 from tgcpmdm03 t "
+p_gcpm_29680/gcpmdm03_do.cpp	146	147	sqlstr = "insert into tgcpmdm03,代码编号[" + tgcpmdm03["CODE_CLASS"].ToString() + "]";
+p_gcpm_29680/gcpmdm03_do.cpp	193	196	c_sql_condition = "select count(1) from tgcpmdm03 t "
+p_gcpm_29680/gcpmdm03_do.cpp	235	243	sqlstr = "update tgcpmdm03,事件号[" + tgcpmdm03["CODE_CLASS"].ToString() + "]";
+p_gcpm_29680/gcpmdm03_do.cpp	286	289	c_sql_condition = "select count(1) from tgcpmdm03 t "
+p_gcpm_29680/gcpmdm03_do.cpp	311	314	c_sql_condition = "delete from tgcpmdm03 t "
+p_gcpm_29680/gcpmdm03_inq.cpp	61	62	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29680/gcpmdm03_inq.cpp	68	76	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_29680/gcpmdm03_inq.cpp	97	105	c_sql_condition = " select t.*  from tgcpmdm03 t ";
+p_gcpm_29680/gcpmdm03_tj.cpp	62	63	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29680/gcpmdm03_tj.cpp	69	73	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29680/gcpmdm03_tj.cpp	74	82	CString    c_sql_condition3 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_29680/gcpmdm03_tj.cpp	119	125	c_sql_condition = " select distinct t.ITEM_ENAME,t.CONDITION_01  "
+p_gcpm_29680/gcpmdm03_tj.cpp	154	159	c_sql_condition2 = " select "
+p_gcpm_29680/gcpmdm03_tj.cpp	184	191	c_sql_condition2 = " select t.* "
+p_gcpm_29680/gcpmdm03_tj.cpp	222	227	c_sql_condition3 = " select "
+p_gcpm_9320/gcpm_tele.cpp	70	71	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_9320/gcpm_tele.cpp	77	88	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_9320/gcpmsi00_del.cpp	58	59	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_9320/gcpmsi00_del.cpp	65	68	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_9320/gcpmsi00_del.cpp	69	73	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_9320/gcpmsi00_del.cpp	122	125	c_sql_condition = "delete from tgcpmsi00 t "
+p_gcpm_9320/gcpmsi00_inq.cpp	57	58	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_9320/gcpmsi00_inq.cpp	64	72	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_9320/gcpmsi00_inq.cpp	103	105	c_sql_condition = " select t.*  from tgcpmsi00 t ";
+p_gcpm_9320/gcpmsi00_inq2.cpp	54	55	CString    c_sql_condition  =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_9320/gcpmsi00_inq2.cpp	61	63	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_9320/gcpmsi00_inq2.cpp	80	85	c_sql_condition = " SELECT t.code,t.code_desc_1_content "
+p_gcpm_9320/gcpmsi00_ins.cpp	59	60	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_9320/gcpmsi00_ins.cpp	66	68	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_9320/gcpmsi00_ins.cpp	69	73	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_9320/gcpmsi00_ins.cpp	123	126	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_9320/gcpmsi00_ins.cpp	154	155	sqlstr = "insert into tgcpmsi00";
+p_gcpm_9320/gcpmsi00_upd.cpp	74	75	CString    c_sql_condition = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_9320/gcpmsi00_upd.cpp	81	83	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_9320/gcpmsi00_upd.cpp	84	88	c_sql_condition = "select count(1) from tgcpmsi00 t "
+p_gcpm_9320/gcpmsi00_upd.cpp	135	138	c_sql_condition = "select t.* from tgcpmsi00 t "
+p_gcpm_9320/gcpmsi00_upd.cpp	153	156	c_sql_condition = "delete from  tgcpmsi00 t "
+p_gcpm_9320/gcpmsi00_upd.cpp	177	178	sqlstr = "insert into tgcpmsi00";
+p_gcpm_9320/gcpmsiUi_inq.cpp	58	60	CString    c_sql_condition  = "  SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_9320/gcpmsiUi_inq.cpp	66	73	CString    c_sql_condition2 =  " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no" ;
+p_gcpm_9320/gcpmsiUi_inq.cpp	87	95	c_sql_condition = " select * from " + v_table_name ;
+p_gcpm_9320/gcpmsiUi_inq2.cpp	62	64	CString    c_sql_condition = "  SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_9320/gcpmsiUi_inq2.cpp	70	76	CString    c_sql_condition2 = " SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_9320/gcpmsiUi_inq2.cpp	110	110	c_sql_condition = " select * from " + v_table_name;
+p_gcpm_9320/gcpmsiUi_inq2.cpp	111	118	c_sql_condition2 = " select COUNT(1)  from " + v_table_name;
+p_gcpm_9320/gcpmsiUi_save.cpp	43	45	CString    c_sql_condition = "  SELECT  t.* FROM tpmof01 t  where t.order_no = @order_no";
+p_gcpm_9320/gcpmsiUi_save.cpp	77	81	c_sql_condition = "select t.table_name,t.key_fields  "
+p_gcpm_9320/gcpmsiUi_save.cpp	161	162	sqlstr = "insert into table["+ v_table_name +"]";
+p_gcpm_9320/gcpmsiUi_save.cpp	184	185	sqlstr = "update table[" + v_table_name + "]";
+p_gcpm_9320/gcpmsiUi_save.cpp	205	206	sqlstr = "delete from table[" + v_table_name + "]";
+p_gcpm_9320/gcpmsiUi_save.cpp	225	226	sqlstr = "insert into tgcpmsi99 ";

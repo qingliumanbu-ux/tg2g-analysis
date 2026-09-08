@@ -1,0 +1,4 @@
+113	// DM8 适配 CHANGE-HR003:删除无计划号记录(NULL/空串/纯空格一起删除)。
+116	//   改为 COALESCE(TRIM(x), '') = '' 确保任何配置下 NULL/空串/纯空格都能命中。
+118	// "   AND TRIM(SM_PLAN_NO)is NULL ";
+120	"   AND TRIM(SM_PLAN_NO)is NULL ";

@@ -1,0 +1,73 @@
+file	line	text
+libQMTS/f_210010_snd.cpp	155	"			'036') MINUS"
+libQMTS/f_210010_snd.cpp	236	tqmtsfgb["SEQ_NO"] = Db::QueryCString("SELECT NVL(MAX(SEQ_NO),0)+1 FROM TQMTSFGB WHERE HEAT_NO='" + heat_no + "'");
+libQMTS/f_qmtjp_00.cpp	86	sqlstr = "SELECT NVL(MAX(SEQ_ID)+1,0) FROM TQMTS99 ";
+libQMTS/f_qmts25_jud.cpp	167	sqlstr = "SELECT NVL(TRIM(O_GAS_DIV),'0'),NVL(TRIM(N_GAS_DIV),'0'),NVL(TRIM(H_GAS_DIV),'0') "
+libQMTS/f_qmts_24_ins.cpp	103	sqlstr = "SELECT * FROM tpssm11 WHERE heat_no = (select HEAT_NO from vpssm12 where PROC_NO=@heat_no and PRE_SOLUTION_FLAG=1 and ROWNUM=1) "
+libQMTS/f_qmts_24_ins.cpp	105	" SELECT * FROM tpssm41 WHERE heat_no = (select HEAT_NO from vpssm12 where PROC_NO =@heat_no and PRE_SOLUTION_FLAG = 1 and ROWNUM = 1) ";
+libQMTS/f_qmts_30_ins.cpp	116	sqlstr = " SELECT T2.ELM_NAME, CASE WHEN (decode(SUBSTR(ELM_ACT,1,1),'.','0'||ELM_ACT,ELM_ACT)) IS NULL THEN '无检验或缺失' ELSE (decode(SUBSTR(ELM_ACT,1,1),'.','0'||ELM_ACT,ELM_ACT)) END, SPE_MIN, SPE_MAX, T1.ELM_OK FROM(SELECT * FROM tqmts25 WH
+libQMTS/f_qmts_call_judge.cpp	62	tgzyq["IDCARD"] = datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT TWMSMZHZLLL_SEQ.NEXTVAL FROM DUAL");
+libQMTS/f_qmts_elm_catch.cpp	58	" minus "
+libQMTS/f_qmts_inqy.cpp	176	"   AND to_date(REC_CREATE_TIME, 'yyyymmddhh24miss') >= sysdate-7 "
+libQMTS/f_qmts_inqy.cpp	193	"   AND to_date(REC_CREATE_TIME, 'yyyymmddhh24miss') >= sysdate-7 "
+libQMTS/f_qmts_jud_pono.cpp	312	"   AND REP_ELM_SEL_FLAG ='1' fetch first 1 rows only ";//代表成分标记
+libQMTS/f_qmts_rep_sel.cpp	162	"				SYSDATE AS SAMPLETIME,"
+libQMTS/f_qmts_rep_sel.cpp	163	"				SYSDATE AS ANALYSISTIME,"
+libQMTS/f_t82306_snd.cpp	134	" SELECT MAX(RECV_MAT_TIME) RECV_MAT_TIME, SUM(NVL(RECEIVE_WEIGHT, 0)) RECEIVE_WEIGHT FROM TMMSM01 WHERE CONCESS_CON_FLAG!='1'  and mat_no not in (select in_mat_no  from tmmsm35) and SM_PLAN_NO = '" + tmmsm31["SM_PLAN_NOL2"].ToString() + "'
+libQMTS/f_t82306_snd.cpp	136	" SELECT MAX(RECV_MAT_TIME), SUM(NVL(RECEIVE_WEIGHT, 0)) RECEIVE_WEIGHT FROM HMMSM01 WHERE CONCESS_CON_FLAG!='1'  and mat_no not in (select in_mat_no  from tmmsm35) and SM_PLAN_NO = '" + tmmsm31["SM_PLAN_NOL2"].ToString() + "' "
+p_qmts_4700/qmtifa_inq.cpp	98	sql="SELECT "+sql_selectCols+" FROM "+sql_fromTable+" WHERE "+sql_where+" "+sql_orderBy+ " FETCH FIRST "+ nfetchRowsStr +" ROWS ONLY";
+p_qmts_4750/qmts02_upd.cpp	117	"  FETCH FIRST ROW ONLY ";
+p_qmts_4750/qmts9a_inq.cpp	176	"   FROM (SELECT ROWNUM ROW_ID,A.* "
+p_qmts_4800/qmbs25s_inqe.cpp	115	"'036') MINUS"
+p_qmts_4800/qmts0r_pro.cpp	58	slab_cut_time1 = cmd_inq.GetDateTime(1).AddDays(+1).ToString("yyyy-MM-dd");
+p_qmts_4800/qmts0r_pro1.cpp	74	slab_cut_time1 = cmd_inq.GetDateTime(1).AddDays(+1).ToString("yyyy-MM-dd");
+p_qmts_4800/qmts21m_inq_23.cpp	189	"  FETCH FIRST 1 ROWS ONLY ");
+p_qmts_4800/qmts21m_inq_23.cpp	212	" AND PURE_DEGAS_DURATION > 0 ORDER  BY START_TIME DESC FETCH  FIRST 1 ROWS ONLY");
+p_qmts_4800/qmts23_inq.cpp	126	sqlstr = sqlstr + "                    AND FIN_ST_NO LIKE DECODE(@s_st_empty_flag,'1',' ','%') "
+p_qmts_4800/qmts23_inq.cpp	137	"   FROM (SELECT ROWNUM ROW_ID,A.* "
+p_qmts_4800/qmts23_inq.cpp	150	sqlstr = sqlstr + "                    AND FIN_ST_NO LIKE DECODE(@s_st_empty_flag,'1',' ','%') "
+p_qmts_4800/qmts23_inq.cpp	206	sqlstr = sqlstr + "    AND FIN_ST_NO LIKE DECODE(@s_st_empty_flag,'1',' ','%') ";
+p_qmts_4800/qmts25_inq.cpp	209	"   FROM (SELECT ROWNUM ROW_ID,A.* "
+p_qmts_4800/qmts25_inq_test.cpp	242	"   FROM (SELECT ROWNUM ROW_ID,A.* "
+p_qmts_4800/qmts26_inq.cpp	197	"   FROM (SELECT ROWNUM ROW_ID,A.* "
+p_qmts_4800/qmtscb_add.cpp	142	sqlstr = " select decode(USE_CR,0,0,round(UNIT_PRICE/USE_CR,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_add.cpp	156	sqlstr = " select decode(USE_NI,0,0,round(UNIT_PRICE/USE_NI,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_add.cpp	169	sqlstr = " select decode(USE_MO,0,0,round(UNIT_PRICE/USE_MO,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_add.cpp	610	"nvl(MAX(SEQ_NO),0) as SEQ_NO "
+p_qmts_4800/qmtscb_batch.cpp	49	bcls_rec2.Tables[0].Rows[0]["STAT_DATE"] = CDateTime::Now().AddDays(-3).ToString("yyyyMMddHHmmss");
+p_qmts_4800/qmtscb_del.cpp	410	sqlstr = "SELECT  LPAD(TO_CHAR(RESUME_SEQ_NO.NEXTVAL), 8, '0') FROM DUAL ";
+p_qmts_4800/qmtscb_edit.cpp	145	sqlstr = " select decode(USE_CR,0,0,round(UNIT_PRICE/USE_CR,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_edit.cpp	160	sqlstr = " select decode(USE_NI,0,0,round(UNIT_PRICE/USE_NI,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_edit.cpp	174	sqlstr = " select decode(USE_MO,0,0,round(UNIT_PRICE/USE_MO,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_edit.cpp	257	sqlstr = " select decode(USE_CR,0,0,round(UNIT_PRICE/USE_CR,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_edit.cpp	272	sqlstr = " select decode(USE_NI,0,0,round(UNIT_PRICE/USE_NI,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_edit.cpp	286	sqlstr = " select decode(USE_MO,0,0,round(UNIT_PRICE/USE_MO,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	141	sqlstr = " select decode(USE_CR,0,0,round(UNIT_PRICE/USE_CR,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	156	sqlstr = " select decode(USE_NI,0,0,round(UNIT_PRICE/USE_NI,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	170	sqlstr = " select decode(USE_MO,0,0,round(UNIT_PRICE/USE_MO,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	272	sqlstr = " select decode(USE_CR,0,0,round(UNIT_PRICE/USE_CR,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	287	sqlstr = " select decode(USE_NI,0,0,round(UNIT_PRICE/USE_NI,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	301	sqlstr = " select decode(USE_MO,0,0,round(UNIT_PRICE/USE_MO,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	771	"nvl(MAX(SEQ_NO),0) as SEQ_NO "
+p_qmts_4860/mmsm_drcl_pro.cpp	94	sqlstr = "SELECT  ROUND(SUM(MAT_ACT_WT)) MAT_ACT_WT, substr(to_date(sysdate - 1), 0, 2) RECV_TIME FROM VMMSMTS_CGCL";
+p_qmts_4860/mmsm_drcl_pro.cpp	177	sqlstr = "SELECT ROUND(SUM(MEND_BEFORE_WEIGHT)), COUNT(MEND_BEFORE_WEIGHT), substr(to_date(sysdate - 1), 0, 2) DATE_TIME_TO "
+p_qmts_4860/mmsm_drcl_pro.cpp	178	"FROM TMMSM34 WHERE SUBSTR(REC_CREATE_TIME, 1, 8) = TO_CHAR(to_date(sysdate - 1), 'YYYYMMDD')";
+p_qmts_4860/mmsm_drcl_pro.cpp	199	sqlstr = "SELECT ROUND(SUM(MAT_ACT_WT)), substr(to_date(sysdate - 1), 0, 2) DATE_TIME_TO  FROM MMSM_MR_KC WHERE C_DIV = '2'";
+p_qmts_4860/mmsm_mrts_pro.cpp	32	CString datetime = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");
+p_qmts_4860/mmsm_mrts_pro.cpp	33	CString date_r = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_qmts_4860/mmsm_mrts_pro.cpp	248	sqlstr = "SELECT  ROUND(SUM(MAT_ACT_WT)) MAT_ACT_WT, substr(to_date(sysdate - 1), 0, 2) RECV_TIME FROM VMMSMTS_CGCL";
+p_qmts_4860/mmsm_wlxxsb_pro.cpp	38	CString datetime1 = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");
+p_qmts_4860/mmsm_xium_pro.cpp	60	sqlstr = "SELECT ROUND(SUM(MEND_BEFORE_WEIGHT)), COUNT(MEND_BEFORE_WEIGHT), substr(to_date(sysdate - 1), 0, 2) DATE_TIME_TO "
+p_qmts_4860/mmsm_xium_pro.cpp	61	"FROM TMMSM34 WHERE SUBSTR(REC_CREATE_TIME, 1, 8) = TO_CHAR(to_date(sysdate - 1), 'YYYYMMDD')";
+p_qmts_4860/qmts_dyts_pro.cpp	36	CString datetime1 = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");
+p_qmts_4860/qmts_nqsj_pro.cpp	31	CString datetime1 = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_qmts_4860/qmts_nqsjday_pro.cpp	31	CString datetime1 = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_qmts_4860/qmts_qm_test.cpp	23	CString dateS = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_qmts_4860/qmts_qm_test2.cpp	23	CString dateS = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_qmts_4860/qmts_qm_test3.cpp	22	CString dateS = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_qmts_4860/qmts_qm_test4.cpp	22	CString dateS = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_qmts_4860/qmts_qm_test5.cpp	22	CString dateS = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_qmts_4860/qmts_qm_test6.cpp	22	CString dateS = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_qmts_4860/qmts_tmsm203_ts.cpp	89	strSql += " CASE WHEN ((TRUNC(SYSDATE) - TO_DATE(TRIM(t.TIME_2),'yyyymmdd')) > 0 AND t.CHECK_FLAG = '0') THEN '1' ELSE '0' END AS IS_ABNORMAL, ";
+p_qmts_4860/qmts_tmsm203_ts.cpp	90	strSql += " CASE WHEN ((TO_DATE(TRIM(t.TIME_2),'yyyymmdd') -TRUNC(SYSDATE)) < t.PERD_DD1 AND t.CHECK_FLAG = '0') THEN '1' ELSE '0' END AS IS_ADVENT ";
+p_qmts_4860/wmsm_chbj_pro.cpp	64	sqlstr = "SELECT ROUND(SUM(MAT_ACT_WT)), substr(to_date(sysdate - 1), 0, 2) DATE_TIME_TO  FROM MMSM_MR_KC WHERE C_DIV = '2'";

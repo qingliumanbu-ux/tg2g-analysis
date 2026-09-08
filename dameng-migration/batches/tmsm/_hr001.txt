@@ -1,0 +1,55 @@
+51		CString s_userid("");
+52	
+53		/* 数据库操作类定义 */
+54		CDbCommand cmd_inq(conn);
+55		CDataTable dt_dev;
+56		CDataTable dt_temp;
+57	
+58		try
+59		{
+60			// 获取前台传入参数
+61			s_userid = s.userid;
+62	
+63			ttmsm66.MergeFrom(bcls_rec->Tables[0].Rows[0]);
+64			Log::Trace("", __FUNCTION__, "ttmsm66.DEV_NO	= [{0}]", (const char*)ttmsm66["DEV_NO"].ToString());
+65	
+66			if (ttmsm66["DEV_NO"].ToString().Trim() != "")
+67			{
+68				sqlwhere += " AND DEV_NO = @dev_no ";
+69			}
+70			if (ttmsm66["REC_CREATE_TIME"].ToString().Trim() != "")
+71			{
+72				sqlwhere += "  AND CHANGE_TIME >= @begin_time ";
+73			}
+74			if (ttmsm66["CHANGE_TIME"].ToString().Trim() != "")
+75			{
+76				sqlwhere += "  AND CHANGE_TIME <= @end_time ";
+77			}
+78	
+79			switch (conn->DatabaseKind)
+80			{
+81			case DB_KIND_DB2:	        // DB2 数据库（未开Oracle兼容）
+82			case DB_KIND_DB2_ORACLE:	// DB2 数据库（开Oracle兼容）
+83			case DB_KIND_MSSQL:	        // MS SQL Server数据库
+84			case DB_KIND_ORACLE:	    // Oracle 数据库
+85			default:
+86				// DM8 适配 CHANGE-01：按日历日期计算结束时间减开始时间的天数。
+87				// 改写原因：DAYS/SYSIBM.SYSDUMMY1 改为 DATEDIFF/DUAL；CAST 的实际输入格式待验证。
+88				// 本共用分支面向 DM8，其他 DB_KIND 标签也会执行此 SQL。
+89				// 原 SQL（完整保留）：
+90				// sqlstr = "select DAYS(DATE(TIMESTAMP ('" + ttmsm66["CHANGE_TIME"].ToString() + "'))) - DAYS(DATE(TIMESTAMP ('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) from SYSIBM.SYS
+91				// DM8 SQL：
+92				sqlstr = "select DATEDIFF(DAY, CAST('" + ttmsm66["REC_CREATE_TIME"].ToString() + "' AS TIMESTAMP), CAST('" + ttmsm66["CHANGE_TIME"].ToString() + "' AS TIMESTAMP)) from DUAL";
+93				break;
+94			}
+95			cmd_inq.Parameters.Clear();
+96			cmd_inq.SetCommandText(sqlstr);
+97	
+98			Log::Trace("", "", "时间差天数语句 sqlstr：{0}", sqlstr);
+99			cmd_inq.ExecuteReader();
+100	
+101			if (cmd_inq.Read())
+102			{
+103				days_diffx = cmd_inq.GetDecimal(1);
+104			}
+105			else

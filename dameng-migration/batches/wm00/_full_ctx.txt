@@ -1,0 +1,90 @@
+126					doFlag = 0;
+127					goto l_return;
+128				}
+129	
+130				if (0 == strcmp(x1j197b.loc_code, "39"))//20180509增加在线宽度数据上传
+131				{
+132					EXEC SQL
+133						UPDATE TMMSM01
+134						SET DEFECT_WT = :x1j197b.head_width,
+135							SPARE_ITEM_N3 = : x1j197b.tail_width
+136							WHERE mat_no = : tmmsm01.mat_no AND mat_position = '1'
+137							;
+138	
+139					if (sqlca.sqlcode == M_NO_DATA_FOUND)
+140					{
+141						EDLog(1, 1, "处理失败，板坯号码不存在！");
+142						doFlag = 0;
+143						s.sqlcode = 0;
+144						goto l_return;
+145					}
+146					else
+147					{
+148						//增加对板坯宽度的处理（2019-6-13）
+149						//取宽度控制开关							
+150						// DM8 适配 CHANGE-EXEC-001:按板坯号查 tmmsm01;EXEC SQL 改为 CDbCommand(方案B试点)。
+151						// 改写原因:EXEC SQL 需 DB2 预编译器;方案B 改为 CDbCommand 消除预编译器依赖。
+152						// 注意:方案A/B 并存,后期确认构建系统支持 DM dpc 后二选一。
+153						// 原方案A(EXEC SQL,完整保留):
+154						// EXEC SQL select * into :tmmsm01 from tmmsm01 where mat_no = : tmmsm01.mat_no and mat_position in('1', '2');
+155						// 原 sqlca 判断(完整保留):
+156						// if (sqlca.sqlcode == M_NO_DATA_FOUND)
+157						// 方案B(CDbCommand):
+158							sqlstr = " SELECT * FROM tmmsm01 WHERE mat_no = ? AND mat_position IN('1','2')";
+159							cmd_inq.SetCommandText(sqlstr);
+160							cmd_inq.Parameters.Set("mat_no", tmmsm01.mat_no);
+161							cmd_inq.ExecuteQuery(tmmsm01);
+162							if (tmmsm01.Rows.get_Count() == 0)  // 等价于 sqlca.sqlcode == M_NO_DATA_FOUND
+163						{
+164							EDLog(1, 1, "板坯不在炼钢范围内，不处置！");
+165							doFlag = 0;
+166							s.sqlcode = 0;
+167							goto l_return;
+168						}
+169						EXEC SQL select * into :tep0002 from tep0002 where code_class = 'YMWD' and code = : tmmsm01.strand_no;
+170						EDLog(1, 1, " **************%s  ----tmmsm01.mat_no *****************", tmmsm01.mat_no);
+171						EDLog(1, 1, " **************%s  ----tmmsm01.mat_position ***********", tmmsm01.mat_position);
+172	
+173						if (0 != strcmp(tep0002.code_desc_1_content, "OFF") && 0 == strcmp(tmmsm01.mat_position, "1") && 0 == strcmp(tmmsm01.slab_out_place, " "))//参与宽度控制标定
+174						{
+175							EDLog(1, 1, "执行宽度修订程序.板坯去向 = 【%s】", tmmsm01.mat_destion);
+176	
+177							//获取板坯宽度修正的拉速阈值
+178							strcpy(v_code_strand, tmmsm01.strand_no);
+179							if (0 == strcmp(tmmsm01.strand_no, "5") || 0 == strcmp(tmmsm01.strand_no, "6"))
+180							{
+181								strcat(v_code_strand, "A");
+182							}
+183							else if (0 == strcmp(tmmsm01.strand_no, "7") || 0 == strcmp(tmmsm01.strand_no, "8"))
+184							{
+185								strcat(v_code_strand, "B");
+186							}
+187	
+188							EXEC SQL
+189								select cast(COALESCE(CODE_DESC_3_CONTENT, '1000') as double) / 1000, cast(COALESCE(CODE_DESC_4_CONTENT, '1000') as double) / 1000
+190							into :d_spd_threshold_max, : d_spd_threshold_min
+191								  from tep0002
+192							where code_class = 'YMWD' and code = : v_code_strand;
+193							if (sqlca.sqlcode == M_NO_DATA_FOUND)
+194							{
+195								EDLog(1, 1, "拉速阈值查询出错！");
+196								d_spd_threshold_max = 1.30;
+197								d_spd_threshold_min = 1.0;
+198							}
+199	
+200							//读板坯的切割信息
+201							EXEC SQL
+202								SELECT cast_spd_max, cast_spd_min, slab_tapper_width_start
+203							INTO : f_cast_spd_max, : f_cast_spd_min, : f_slab_tapper_width_start
+204								   FROM tmmsm33
+205								   WHERE slab_no = : tmmsm01.mat_no;
+206							if (sqlca.sqlcode == M_NO_DATA_FOUND)
+207							{
+208								EDLog(1, 1, "切割表中无数据，采用默认数据！");
+209								f_cast_spd_max = atof(tep0002.code_desc_3_content);//最大拉速
+210								f_cast_spd_min = atof(tep0002.code_desc_3_content);//最小拉速
+211								f_slab_tapper_width_start = 0;//调宽开始点
+212								sprintf(tep0002.code_desc_3_content, "%.1f", 0.0);
+213							}
+214							else
+215							{

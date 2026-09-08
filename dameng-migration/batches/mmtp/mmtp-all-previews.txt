@@ -1,0 +1,10 @@
+######## libMMTP/f_mmtp_data_query.cpp
+### CHANGE-271  原行 372-372
+  L372 前: sqlstrTotal += " FROM sysibm.sysdummy1";
+  L372 后: sqlstrTotal += " FROM DUAL";
+
+######## p_mmtp_18030/mmtp_loadQuery.cpp
+### CHANGE-271  原行 545-546
+  L546 前: "' AND creator = (SELECT current schema FROM sysibm.sysdummy1)";
+  L546 后: "' AND creator = (SELECT current schema FROM DUAL)";
+

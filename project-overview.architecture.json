@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "太钢二炼钢 · 项目全景",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1260,
+      640
+    ]
+  },
+  "components": [
+    {
+      "id": "web-clients",
+      "type": "frontend",
+      "label": "9 个 Web 前端",
+      "sublabel": "Vue 3 / TypeScript / Vite",
+      "pos": [
+        40,
+        300
+      ],
+      "size": [
+        220,
+        80
+      ]
+    },
+    {
+      "id": "platform-contract",
+      "type": "external",
+      "label": "共享平台接口",
+      "sublabel": "EFX / ERX / EIX / EPTF",
+      "tag": "远程组件与服务接口",
+      "pos": [
+        360,
+        300
+      ],
+      "size": [
+        220,
+        80
+      ]
+    },
+    {
+      "id": "business-services",
+      "type": "backend",
+      "label": "21 个 C++ 模块",
+      "sublabel": "BM2 服务入口 + 业务函数",
+      "pos": [
+        680,
+        300
+      ],
+      "size": [
+        220,
+        80
+      ]
+    },
+    {
+      "id": "business-data",
+      "type": "database",
+      "label": "业务数据表",
+      "sublabel": "CDbConnection / CModel",
+      "tag": "数据库实例与版本待核实",
+      "pos": [
+        1000,
+        300
+      ],
+      "size": [
+        220,
+        80
+      ]
+    },
+    {
+      "id": "desktop-clients",
+      "type": "frontend",
+      "label": "C# 客户端源码",
+      "sublabel": "Client/MM · Client/PS",
+      "tag": "与 Web 的替代关系待确认",
+      "pos": [
+        40,
+        80
+      ],
+      "size": [
+        220,
+        90
+      ]
+    },
+    {
+      "id": "plant-systems",
+      "type": "external",
+      "label": "L2 / L4 周边系统",
+      "sublabel": "计划下发 · 实绩与电文处理",
+      "tag": "源码引用，未联机验证",
+      "pos": [
+        680,
+        80
+      ],
+      "size": [
+        250,
+        90
+      ]
+    },
+    {
+      "id": "shared-config",
+      "type": "backend",
+      "label": "配置与公共能力",
+      "sublabel": "GC00 / GCPM / GCTP / MMTP",
+      "tag": "页面布局、数据集、通用服务",
+      "pos": [
+        680,
+        500
+      ],
+      "size": [
+        285,
+        90
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "web-platform",
+      "from": "web-clients",
+      "to": "platform-contract",
+      "label": "组件加载",
+      "variant": "emphasis"
+    },
+    {
+      "id": "platform-service",
+      "from": "platform-contract",
+      "to": "business-services",
+      "label": "服务名调用",
+      "variant": "emphasis"
+    },
+    {
+      "id": "services-sql",
+      "from": "business-services",
+      "to": "business-data",
+      "label": "SQL 读写",
+      "variant": "emphasis"
+    },
+    {
+      "id": "telegrams",
+      "from": "plant-systems",
+      "to": "business-services",
+      "label": "电文接收",
+      "fromSide": "bottom",
+      "toSide": "top"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "生产业务主线",
+      "items": [
+        "计划与工艺：PSSM / APBD",
+        "生产与物料：MMSM / MM00",
+        "质量与配包：QMTS / TMSM"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "配套业务覆盖",
+      "items": [
+        "仓储与发货：WM00 / WMSM / SMSM",
+        "配料与核算：FBSM / CAAI / TK00",
+        "运行管控：FOSMT；详表见分析报告"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "这张图的证据边界",
+      "items": [
+        "基于本地源码，非生产部署拓扑",
+        "C# 与配置模块位置表示分类，未画未核实连线",
+        "平台实现、数据库与联调环境待确认"
+      ]
+    }
+  ]
+}

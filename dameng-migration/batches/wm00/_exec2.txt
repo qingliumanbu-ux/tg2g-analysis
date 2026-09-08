@@ -1,0 +1,39 @@
+80	//EXEC SQL DECLARE tqmts9p_q CURSOR FOR
+132	EXEC SQL
+150	EXEC SQL select * into :tmmsm01 from tmmsm01 where mat_no = : tmmsm01.mat_no and mat_position in('1', '2');
+158	EXEC SQL select * into :tep0002 from tep0002 where code_class = 'YMWD' and code = : tmmsm01.strand_no;
+177	EXEC SQL
+190	EXEC SQL
+502	EXEC SQL
+606	EXEC SQL
+633	EXEC SQL
+641	EXEC SQL
+654	EXEC SQL
+683	EXEC SQL
+704	EXEC SQL select * into :tmmsm01 from tmmsm01 where mat_no = : tmmsm01.mat_no and mat_position  in('1', '2');
+721	EXEC SQL select * into :tep0002 from tep0002 where code_class = 'YMHP' and code = '09';
+725	//EXEC SQL select * into :tmmsm01 from tmmsm01 where mat_no =:tmmsm01.mat_no and mat_position in ('1','2');
+737	EXEC SQL OPEN tqmts9p_q;
+740	EXEC SQL FETCH tqmts9p_q INTO : tqmts9p;
+754	EXEC SQL CLOSE tqmts9p_q;
+758	EXEC SQL OPEN tqmts9p_q;
+761	EXEC SQL FETCH tqmts9p_q INTO : tqmts9p;
+775	EXEC SQL CLOSE tqmts9p_q;
+811	EXEC SQL select * into :tmmsm01 from tmmsm01 where mat_no = : tmmsm01.mat_no and mat_position = '1';
+823	EXEC SQL select rest_roller_no into : v_rest_roller_no from tymsm44 where mat_no = : tymsm44.mat_no;
+833	EXEC SQL select * into :tep0002 from tep0002 where code_class = 'YMHP' and code = : tymsm44.rest_roller_no;
+883	EXEC SQL select count(1) into :v_num from tymsm44 where mat_no = : tmmsm01.mat_no;
+887	EXEC SQL
+894	EXEC SQL
+907	EXEC SQL
+969	EXEC SQL
+978	EXEC SQL
+992	EXEC SQL
+1018	EXEC SQL
+1045	EXEC SQL
+1052	EXEC SQL
+1063	EXEC SQL
+1109	//EXEC SQL select * into :tmmsm01 from tmmsm01 where mat_no=:tmmsm01.mat_no;
+1133	/*EXEC SQL delete from tymsm44 where mat_no =:tmmsm01.mat_no;*/
+1135	EXEC SQL UPDATE tymsm44 SET REST_ROLLER_NO = 'R1' WHERE MAT_NO = :tmmsm01.mat_no;
+1140	EXEC SQL

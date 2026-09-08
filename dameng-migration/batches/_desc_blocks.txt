@@ -1,0 +1,2 @@
+Server\GCTP\libGCTP\f_gctp_getTableItem.cpp L102: // DM8 适配 CHANGE-361:查询。SYSIBM 辅助表改为 DUAL。
+Server\MMTP\libMMTP\f_mmtp_mat_track.cpp L982: // DM8 适配 CHANGE-360:查询。SYSIBM 辅助表改为 DUAL。

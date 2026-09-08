@@ -1,0 +1,83 @@
+{
+  "scope": "application_sql_conversion_only",
+  "batch_status": "two_expressions_converted_not_entire_services",
+  "runtime_executed": false,
+  "checks": [
+    "Original snapshot hashes matched",
+    "Only targeted ASCII SQL fragments changed",
+    "Line counts and CRLF counts preserved",
+    "Original encoding remains decodable",
+    "DM official function/query/date syntax reviewed"
+  ],
+  "changes": [
+    {
+      "id": "CHANGE-01",
+      "review_id": "BR-006",
+      "path": "Server/TMSM/p_tmsm_7160/tmsme59_inq.cpp",
+      "state": "converted_static_reviewed_runtime_not_run",
+      "before_sha256": "bab170eae406b8796bcd2d641b8826c42e6aaa48c9efcf67aa809fc7c0e144b2",
+      "after_sha256": "a6e88573e772f2bad9f61eb1e71aa6759338ed9df1710b21f4663babb5e0a09c",
+      "encoding": "gb18030",
+      "line_count_unchanged": true,
+      "changed_lines": [
+        {
+          "line": 86,
+          "before": "\t\t\tsqlstr = \"select DAYS(DATE(TIMESTAMP ('\" + ttmsm66[\"CHANGE_TIME\"].ToString() + \"'))) - DAYS(DATE(TIMESTAMP ('\" + ttmsm66[\"REC_CREATE_TIME\"].ToString() + \"'))) from SYSIBM.SYSDUMMY1\";",
+          "after": "\t\t\tsqlstr = \"select DATEDIFF(DAY, CAST('\" + ttmsm66[\"REC_CREATE_TIME\"].ToString() + \"' AS TIMESTAMP), CAST('\" + ttmsm66[\"CHANGE_TIME\"].ToString() + \"' AS TIMESTAMP)) from DUAL\";"
+        }
+      ],
+      "source_ids": [
+        "DM-FUNCTION",
+        "DM-SEQUENCE"
+      ],
+      "purpose": "用 DM 原生表达式计算两个输入的日历日差，避免依赖 DAYS/SYSIBM 兼容对象。",
+      "before_sql_template": "select DAYS(DATE(TIMESTAMP ('<CHANGE_TIME>'))) - DAYS(DATE(TIMESTAMP ('<REC_CREATE_TIME>'))) from SYSIBM.SYSDUMMY1",
+      "after_sql_template": "select DATEDIFF(DAY, CAST('<REC_CREATE_TIME>' AS TIMESTAMP), CAST('<CHANGE_TIME>' AS TIMESTAMP)) from DUAL"
+    },
+    {
+      "id": "CHANGE-02",
+      "review_id": "BR-011",
+      "path": "Server/WMSM/p_wmsm_8170/wmfm01_inq.cpp",
+      "state": "converted_static_reviewed_runtime_not_run",
+      "before_sha256": "28102104447a0b2d86c29a0f9be0e9ef43f018c76bf321ce0f2b5b100990aa47",
+      "after_sha256": "2e8084386f59bdaaa8c7da5cc115542c66bbc3d9c06c8b6e993c5d4e90665ee8",
+      "encoding": "gb18030",
+      "line_count_unchanged": true,
+      "changed_lines": [
+        {
+          "line": 281,
+          "before": "\t\t\t\t\t\t\" (SELECT 1, TO_DATE(@DATE_TIME,'YYYYMMDD') - 3 DAY\"",
+          "after": "\t\t\t\t\t\t\" (SELECT 1, TO_DATE(@DATE_TIME,'YYYYMMDD') - 3\""
+        },
+        {
+          "line": 282,
+          "before": "\t\t\t\t\t\t\" FROM SYSIBM.SYSDUMMY1\"",
+          "after": "\t\t\t\t\t\t\" FROM DUAL\""
+        },
+        {
+          "line": 285,
+          "before": "\t\t\t\t\t\t\" SELECT LEVEL + 1,TIME + 1 DAY\"",
+          "after": "\t\t\t\t\t\t\" SELECT LEVEL + 1,TIME + 1\""
+        },
+        {
+          "line": 286,
+          "before": "\t\t\t\t\t\t\" FROM SYSIBM.SYSDUMMY1, A\"",
+          "after": "\t\t\t\t\t\t\" FROM DUAL, A\""
+        },
+        {
+          "line": 287,
+          "before": "\t\t\t\t\t\t\" WHERE A.TIME < TO_DATE(@DATE_TIME,'YYYYMMDD') - 1 DAY)\"",
+          "after": "\t\t\t\t\t\t\" WHERE A.TIME < TO_DATE(@DATE_TIME,'YYYYMMDD') - 1)\""
+        }
+      ],
+      "source_ids": [
+        "DM-DATE",
+        "DM-QUERY",
+        "DM-SEQUENCE"
+      ],
+      "purpose": "把最近三天的递归日期生成片段写为文档支持的 DM 原生日期运算。",
+      "before_sql_template": "WITH A(LEVEL, TIME) AS (SELECT 1, TO_DATE(@DATE_TIME,'YYYYMMDD') - 3 DAY FROM SYSIBM.SYSDUMMY1 WHERE 1=1 UNION ALL SELECT LEVEL + 1, TIME + 1 DAY FROM SYSIBM.SYSDUMMY1, A WHERE A.TIME < TO_DATE(@DATE_TIME,'YYYYMMDD') - 1 DAY)",
+      "after_sql_template": "WITH A(LEVEL, TIME) AS (SELECT 1, TO_DATE(@DATE_TIME,'YYYYMMDD') - 3 FROM DUAL WHERE 1=1 UNION ALL SELECT LEVEL + 1, TIME + 1 FROM DUAL, A WHERE A.TIME < TO_DATE(@DATE_TIME,'YYYYMMDD') - 1)"
+    }
+  ]
+}

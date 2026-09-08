@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-06",
+  "scope": "feasibility_review_document_links_and_existing_baseline_integrity",
+  "baseline_files_read": 6338,
+  "missing_baseline_files": [],
+  "changed_from_original_baseline": [
+    {
+      "path": "Server/TMSM/p_tmsm_7160/tmsme59_inq.cpp",
+      "sha256": "a6e88573e772f2bad9f61eb1e71aa6759338ed9df1710b21f4663babb5e0a09c"
+    },
+    {
+      "path": "Server/WMSM/p_wmsm_8170/wmfm01_inq.cpp",
+      "sha256": "2e8084386f59bdaaa8c7da5cc115542c66bbc3d9c06c8b6e993c5d4e90665ee8"
+    }
+  ],
+  "only_two_preexisting_changes": true,
+  "documents_checked": [
+    "analysis/dameng-migration/后台SQL达梦适配可行性与执行方案.md",
+    "analysis/dameng-migration/README.md",
+    "analysis/dameng-migration/review-20260906-official.md",
+    "analysis/dameng-migration/review-20260906-changes.md"
+  ],
+  "local_link_occurrences_checked": 46,
+  "broken_local_links": [],
+  "out_of_range_source_links": [],
+  "database_executed": false,
+  "application_built": false,
+  "note": "This checks all original inventory entries, not discovery of newly added files. Original scans and conversion statuses remain historical evidence; this review did not change business code."
+}

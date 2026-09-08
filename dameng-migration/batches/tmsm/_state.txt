@@ -1,0 +1,7 @@
+86	[CHANGE-01 在位] // DM8 适配 CHANGE-01：按日历日期计算结束时间减开始时间的天数。
+119	sqlstr = "select TIMESTAMPDIFF(8, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() 
+147	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() 
+201	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["SUSPEND_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["DEV_N
+224	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["D_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["SUSPEND_TIM
+262	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["REPAIR_END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["RE
+292	// 改写原因：DM 支持 DUAL 辅助表(官方文档);纯算术表达式无方言差异;同函数 TIMESTAMPDIFF 语句属 HR-002,另行处理;DM8 尚未实测。

@@ -1,0 +1,172 @@
+[
+  {
+    "file": "太钢自主可控替换方案_0721.docx",
+    "sha256": "b5c60e6012689f49a90d8b5b21faa8033f16499d65d08869ca04305c6cb271d2",
+    "bytes": 2378290,
+    "source_stats_may_be_stale": {
+      "Pages": "68",
+      "Words": "19139",
+      "Paragraphs": "2679"
+    },
+    "blocks": 874,
+    "media": [
+      {
+        "file": "image1.png",
+        "bytes": 164700,
+        "sha256": "b676398b2bafb7e2d717858ea55cc6cd34e07938200cc1157a43507900e00487"
+      },
+      {
+        "file": "image2.png",
+        "bytes": 161728,
+        "sha256": "3cc4ef5e19417c580a78e0437b2d161c1a25f4f1420561958a735a9cb5abf654"
+      },
+      {
+        "file": "image3.png",
+        "bytes": 84808,
+        "sha256": "42ef564060ce11664422da06af6603475cc0f93613f3744cdedde7a783252a83"
+      },
+      {
+        "file": "image4.png",
+        "bytes": 64958,
+        "sha256": "f65cc3fa9e7dd636294da56b5195f36a32e612f72739680831abc1e0c53e5c35"
+      },
+      {
+        "file": "image5.png",
+        "bytes": 106338,
+        "sha256": "bb0dabbb016b1b693f663145e4731984f2df4b3bde612e6fba052859a92b8798"
+      },
+      {
+        "file": "image9.png",
+        "bytes": 44354,
+        "sha256": "0653e0553e98bf0571dc30fdada0a708566682a4f4ec264ed260cf4a0eeca0bd"
+      },
+      {
+        "file": "image10.png",
+        "bytes": 130012,
+        "sha256": "d8ebacb718f233cb05d5fe5a1be42576275fc1f735eea4f8570ac08272d37f87"
+      },
+      {
+        "file": "image11.png",
+        "bytes": 17511,
+        "sha256": "444215fb0405ac0c2fbfe175d969feae95459242dbfb747220fa6c99f79795bd"
+      },
+      {
+        "file": "image12.png",
+        "bytes": 263010,
+        "sha256": "13cb288bb63c26bcb69597bd37b0fc13afdf99aebc89542fd5ef5730bf3b8f9a"
+      },
+      {
+        "file": "image13.png",
+        "bytes": 376035,
+        "sha256": "8ba4258247d446fba3d2ee59827ff5f7de694aaad91947243dd7b75d62baac91"
+      },
+      {
+        "file": "image14.png",
+        "bytes": 103497,
+        "sha256": "891e043923d5e35560fd9e86af33bf553b3218daa22c320a7f85e72949ee3932"
+      },
+      {
+        "file": "image6.emf",
+        "bytes": 320388,
+        "sha256": "d7b5098e6330f60abb4b7cc5ed8623b2c84beeb46e851240e663277377b7278a"
+      },
+      {
+        "file": "image8.png",
+        "bytes": 149693,
+        "sha256": "78df5439aae22b1663005096155bd410cbc796cbafac02f3f084cb8dbb534658"
+      },
+      {
+        "file": "image7.emf",
+        "bytes": 1313324,
+        "sha256": "42153f13925581f3f4b29742468607105611b4d407e7b584b7c7f25636fc6584"
+      }
+    ],
+    "insertions": 0,
+    "deletions": 0
+  },
+  {
+    "file": "太钢集团2026年深化自主可控改造项目(二钢北区MES).docx",
+    "sha256": "4edf45c3796089ea6d8b226a20dff2fc9a16ffe237e872f5b5377675819cf916",
+    "bytes": 2376925,
+    "source_stats_may_be_stale": {
+      "Pages": "1",
+      "Words": "18310",
+      "Paragraphs": "3000"
+    },
+    "blocks": 851,
+    "media": [
+      {
+        "file": "image1.png",
+        "bytes": 164700,
+        "sha256": "b676398b2bafb7e2d717858ea55cc6cd34e07938200cc1157a43507900e00487"
+      },
+      {
+        "file": "image2.png",
+        "bytes": 161728,
+        "sha256": "3cc4ef5e19417c580a78e0437b2d161c1a25f4f1420561958a735a9cb5abf654"
+      },
+      {
+        "file": "image3.png",
+        "bytes": 84808,
+        "sha256": "42ef564060ce11664422da06af6603475cc0f93613f3744cdedde7a783252a83"
+      },
+      {
+        "file": "image4.png",
+        "bytes": 64958,
+        "sha256": "f65cc3fa9e7dd636294da56b5195f36a32e612f72739680831abc1e0c53e5c35"
+      },
+      {
+        "file": "image5.png",
+        "bytes": 106338,
+        "sha256": "bb0dabbb016b1b693f663145e4731984f2df4b3bde612e6fba052859a92b8798"
+      },
+      {
+        "file": "image9.png",
+        "bytes": 44354,
+        "sha256": "0653e0553e98bf0571dc30fdada0a708566682a4f4ec264ed260cf4a0eeca0bd"
+      },
+      {
+        "file": "image10.png",
+        "bytes": 130012,
+        "sha256": "d8ebacb718f233cb05d5fe5a1be42576275fc1f735eea4f8570ac08272d37f87"
+      },
+      {
+        "file": "image11.png",
+        "bytes": 17511,
+        "sha256": "444215fb0405ac0c2fbfe175d969feae95459242dbfb747220fa6c99f79795bd"
+      },
+      {
+        "file": "image12.png",
+        "bytes": 263010,
+        "sha256": "13cb288bb63c26bcb69597bd37b0fc13afdf99aebc89542fd5ef5730bf3b8f9a"
+      },
+      {
+        "file": "image13.png",
+        "bytes": 376035,
+        "sha256": "8ba4258247d446fba3d2ee59827ff5f7de694aaad91947243dd7b75d62baac91"
+      },
+      {
+        "file": "image14.png",
+        "bytes": 103497,
+        "sha256": "891e043923d5e35560fd9e86af33bf553b3218daa22c320a7f85e72949ee3932"
+      },
+      {
+        "file": "image6.emf",
+        "bytes": 320388,
+        "sha256": "d7b5098e6330f60abb4b7cc5ed8623b2c84beeb46e851240e663277377b7278a"
+      },
+      {
+        "file": "image8.png",
+        "bytes": 149693,
+        "sha256": "78df5439aae22b1663005096155bd410cbc796cbafac02f3f084cb8dbb534658"
+      },
+      {
+        "file": "image7.emf",
+        "bytes": 1313324,
+        "sha256": "42153f13925581f3f4b29742468607105611b4d407e7b584b7c7f25636fc6584"
+      }
+    ],
+    "insertions": 0,
+    "deletions": 0
+  }
+]

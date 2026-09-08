@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "candidate_files": 5155,
+  "coverage_files": 6338,
+  "archive_candidates": 113,
+  "review_items": 25,
+  "review_locations": 113,
+  "pilot_source_files": 8,
+  "pilot_evidence_locations": 28,
+  "business_scopes": 8,
+  "counterparties": 21,
+  "local_links_checked": 181,
+  "broken_local_links": [],
+  "source_snapshot_changed_files": [],
+  "runtime_tests_executed": false,
+  "scope": "CSV/JSON completeness and references, reviewed evidence bounds, pilot source hashes and line text, local links; not Oracle/DM8 runtime validation"
+}

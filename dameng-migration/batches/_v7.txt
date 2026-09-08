@@ -1,0 +1,10 @@
+L97-L97 append=False first=CString  c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name =
+L103-L103 append=False first=CString  c_sql_condition2 = " SELECT  t.* FROM tgcpm21 t  where t.seq_name 
+L167-L167 append=False first=sqlstr = "insert into tgcpm21,seq_name =[" + tgcpm21["SEQ_NAME"].ToString()
+L179-L179 append=False first=c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_nam
+L185-L185 append=False first=c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_nam
+L188-L189 append=False first=c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_nam
+L191-L192 append=False first=c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_nam
+L194-L195 append=False first=c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_nam
+L286-L290 append=False first=c_sql_condition = " update tgcpm21 t "
+L291-L291 append=False first=sqlstr = c_sql_condition;

@@ -1,0 +1,6 @@
+### CHANGE-151  原行 78-78
+  L78 前: sqlstr = "SELECT MAX(SUBSTR(SLAG_PROC_NO, 5, 5)) + 1 FROM TMMSM71 WHERE  SUBSTR(SLAG_PROC_NO, 1, 2) = (SELECT substr(to_char(current date,'yyyy'),3,2) FROM sysibm.sysdummy1)";
+  L78 后: sqlstr = "SELECT MAX(SUBSTR(SLAG_PROC_NO, 5, 5)) + 1 FROM TMMSM71 WHERE  SUBSTR(SLAG_PROC_NO, 1, 2) = (SELECT substr(to_char(CURRENT_DATE,'yyyy'),3,2) FROM DUAL)";
+### CHANGE-152  原行 86-86
+  L86 前: sqlstr = "SELECT MAX(SUBSTR(SLAG_PROC_NO, 5, 5)) + 1 FROM TMMSM71 WHERE  SUBSTR(SLAG_PROC_NO, 1, 2) = (SELECT substr(to_char(current date,'yyyy'),3,2)  FROM DUAL)";
+  L86 后: sqlstr = "SELECT MAX(SUBSTR(SLAG_PROC_NO, 5, 5)) + 1 FROM TMMSM71 WHERE  SUBSTR(SLAG_PROC_NO, 1, 2) = (SELECT substr(to_char(CURRENT_DATE,'yyyy'),3,2)  FROM DUAL)";

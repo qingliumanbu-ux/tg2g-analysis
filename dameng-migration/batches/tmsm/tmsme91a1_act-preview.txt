@@ -1,0 +1,3 @@
+### CHANGE-111  原行 94-102
+  L100 前: "DEV_CHANGE_TIMES = decode(trim('" + ttmsm92["CHILD_DEV_NAME"].ToString() + "'), '', DEV_CHANGE_TIMES, DEV_CHANGE_TIMES + 1)"			/*状态*/
+  L100 后: "DEV_CHANGE_TIMES = CASE WHEN trim('" + ttmsm92["CHILD_DEV_NAME"].ToString() + "') IS NULL OR trim('" + ttmsm92["CHILD_DEV_NAME"].ToString() + "') = '' THEN DEV_CHANGE_TIMES ELSE DEV_CHANGE_TIMES + 1 END"			/*状态*/

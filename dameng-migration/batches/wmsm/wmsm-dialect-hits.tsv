@@ -1,0 +1,362 @@
+file	line	text
+libWMSM/f_wmhrsm_cranecmd_make.cpp	84	sqlstr = "select mat_no from twma2 where stock_place_no ='" + bcls_rec->Tables["WM_CMD"].Rows[i]["STOCK_PLACE_NO_FROM"].ToString() + "'where mat_no not in (select mat_no from twma7) order by LAYERNO DESC  FETCH FIRST "+ bcls_rec->Tables["WM
+libWMSM/f_wmsm_6380.cpp	92	twm41dj["C_DELIVERYID"] = "6240" + c_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+libWMSM/f_wmsm_auto_db.cpp	112	CString v_practice_no = "XG6240" + datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(ZC_SJ.NEXTVAL), 4, '0') FROM DUAl");
+libWMSM/f_wmsm_auto_db.cpp	210	twm41dj["C_DELIVERYID"] = "6240" + datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+libWMSM/f_wmsm_craneCmd_C_2E.cpp	136	" FROM twma0 a, twma2 b, twm04 c,twma1 d WHERE b.stock_place_no = c.stock_place_no(+) AND a.mat_no = b.mat_no AND a.mat_no = d.mat_no"
+libWMSM/f_wmsm_craneCmd_S_2C_do.cpp	596	sqlstr = "select mat_no from twm000f where stock_place_no_fin=' ' and rownum<6 order by plan_exec_seq_no";
+libWMSM/f_wmsm_craneCmd_seq_update.cpp	48	sqlstr = "CREATE SEQUENCE seqTest INCREMENT BY 1 START WITH 1 NOMAXvalue NOCYCLE CACHE 10";
+libWMSM/f_wmsm_load_proc.cpp	93	sysdate           LOAD_END_TIME,																						  \
+libWMSM/f_wmsm_load_proc.cpp	104	sysdate           PLAN_LOAD_END_TIME,																					  \
+libWMSM/f_wmsm_load_proc.cpp	118	sysdate,WL_LOAD.nextval,DECODE(ARCHIVE_FLAG,'1','j','g'),'1'																													  \
+libWMSM/f_wmsm_load_proc.cpp	121	and MAT_NO = NVL('" + bcls_rec->Tables["21A009"].Rows[0]["MAT_NO"].ToString() + "',' ') ";
+libWMSM/f_wmsm_load_proc.cpp	142	sysdate             CONFIRM_TIME,																										 \
+libWMSM/f_wmsm_load_proc.cpp	158	WL_LOAD.nextval,																														  \
+libWMSM/f_wmsm_load_proc.cpp	161	DECODE(ARCHIVE_FLAG, '1', 'j', 'g')																										 \
+libWMSM/f_wmsm_slab_check.cpp	139	" SELECT * FROM tqmts9cc WHERE STRAND_NO = @mat_destion  AND STEEL_GROUP =@v_hardness_group FETCH FIRST 1 ROWS ONLY "
+libWMSM/f_wmsm_slab_check.cpp	168	" SELECT * FROM tqmts9cc WHERE STRAND_NO = @mat_destion  AND STEEL_GROUP =@v_hardness_group FETCH FIRST 1 ROWS ONLY "
+libWMSM/f_wmsm_slab_check.cpp	184	" SELECT * FROM tqmts9cc WHERE STRAND_NO = @mat_destion  AND STEEL_GROUP =@v_hardness_group FETCH FIRST 1 ROWS ONLY "
+libWMSM/f_wmsm_slab_check.cpp	197	" SELECT * FROM tqmts9cc WHERE STRAND_NO = @mat_destion  AND STEEL_GROUP ='00' FETCH FIRST 1 ROWS ONLY "
+libWMSM/f_wmsm_slab_no.cpp	112	(LISTAGG(DISTINCT(SLAB_NO), '/') WITHIN GROUP(ORDER BY SLAB_NO)) SLAB_NO1\
+libWMSM/f_wmsm_slab_no.cpp	185	(LISTAGG(DISTINCT(SLAB_NO), '/') WITHIN GROUP(ORDER BY SLAB_NO)) LSLAB_NO\
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	62	sqlstr = "CREATE SEQUENCE  SEQ_30  START WITH 100000 INCREMENT BY 1 MINVALUE 100000   MAXVALUE 199999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	72	sqlstr = "CREATE SEQUENCE  SEQ_1C  START WITH 200000 INCREMENT BY 1 MINVALUE 200000   MAXVALUE 299999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	82	sqlstr = "CREATE SEQUENCE  SEQ_2B  START WITH 300000 INCREMENT BY 1 MINVALUE 300000   MAXVALUE 399999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	92	sqlstr = "CREATE SEQUENCE  SEQ_2C  START WITH 400000 INCREMENT BY 1 MINVALUE 400000   MAXVALUE 499999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	102	sqlstr = "CREATE SEQUENCE  SEQ_1A  START WITH 500000 INCREMENT BY 1 MINVALUE 500000   MAXVALUE 599999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	112	sqlstr = "CREATE SEQUENCE  SEQ_1B  START WITH 600000 INCREMENT BY 1 MINVALUE 600000   MAXVALUE 699999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	122	sqlstr = "CREATE SEQUENCE  SEQ_1G  START WITH 700000 INCREMENT BY 1 MINVALUE 700000   MAXVALUE 799999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	132	sqlstr = "CREATE SEQUENCE  SEQ_2A  START WITH 800000 INCREMENT BY 1 MINVALUE 800000   MAXVALUE 899999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	142	sqlstr = "CREATE SEQUENCE  SEQ_2E  START WITH 900000 INCREMENT BY 1 MINVALUE 900000   MAXVALUE 999999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	152	sqlstr = "CREATE SEQUENCE  SEQ_2G  START WITH 1000000 INCREMENT BY 1 MINVALUE 1000000   MAXVALUE 1099999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	162	sqlstr = "CREATE SEQUENCE  SEQ_31  START WITH 1100000 INCREMENT BY 1 MINVALUE 1100000   MAXVALUE 1199999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	172	sqlstr = "CREATE SEQUENCE  SEQ_32  START WITH 1200000 INCREMENT BY 1 MINVALUE 1200000   MAXVALUE 1299999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	182	sqlstr = "CREATE SEQUENCE  SEQ_1D  START WITH 1300000 INCREMENT BY 1 MINVALUE 1300000   MAXVALUE 1399999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	192	sqlstr = "CREATE SEQUENCE  SEQ_1Z  START WITH 1400000 INCREMENT BY 1 MINVALUE 1400000   MAXVALUE 1499999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	213	sqlstr = "select " + seq_name + ".nextval from dual";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	247	sqlstr = "CREATE SEQUENCE  SEQ_BATCH  START WITH 1000001 INCREMENT BY 1 MINVALUE 1000001   MAXVALUE 9999999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	258	sqlstr = "CREATE SEQUENCE  SEQ_BATCH_INS  START WITH 1 INCREMENT BY 1 MINVALUE 1   MAXVALUE 10000  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	269	sqlstr = "CREATE SEQUENCE  SEQ_BATCH_2C  START WITH 10001 INCREMENT BY 1 MINVALUE 10001   MAXVALUE 1000000  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	280	sqlstr = "CREATE SEQUENCE  SEQ_BATCH_GROUP  START WITH 1 INCREMENT BY 1 MINVALUE 1   MAXVALUE 9999999  CYCLE NOCACHE ORDER";
+libWMSM/f_wmsmsm_cranecmd_update.cpp	148	sqlstr = "select " + SEQ_NO + ".nextval from dual";
+libWMSM/f_wmsmsm_stock_out.cpp	162	v_practice_no= "XG6240" + v_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(ZC_SJ.NEXTVAL), 4, '0') FROM DUAl");
+libWMSM/f_wmsmsm_stock_out.cpp	405	twm41dj["C_DELIVERYID"] = "6240" + v_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+libWMSM/f_wmsmsm_stock_out_db.cpp	322	twm41dj["C_DELIVERYID"] = "6240" + v_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+libWMSM/f_wmsmsm_stock_out_tg.cpp	201	v_practice_no = "XG6240" + v_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(ZC_SJ.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8110/wmsm01gg_inq1.cpp	133	listagg(SLAB_NO, '/'),\
+p_wmsm_8110/wmsm01gg_inq1.cpp	136	decode(max(LSLAB_NO_LENGTH), 0, max(SLAB_LEN), max(LSLAB_NO_LENGTH))             SLAB_LEN,\
+p_wmsm_8110/wmsm01gg_inq1.cpp	137	decode(max(LSLAB_NO_LENGTH_MAX), 0, max(SLAB_MAX_LEN),\
+p_wmsm_8110/wmsm01gg_inq1.cpp	139	decode(max(LSLAB_NO_LENGTH_MIN), 0, max(SLAB_MIN_LEN),\
+p_wmsm_8110/wmsm01gg_inq1.cpp	155	LEFT JOIN TMMSM33BPGG T33 ON DECODE(T10.SLAB_DEST, '41', '6', T10.C_DIV) = T33.ST_NO AND\
+p_wmsm_8110/wmsm01gg_inq1.cpp	156	DECODE(SUBSTR(T03.MATIRAL_CODE, 2, 2), 'AA', 'J', 'AB', 'Z') = T33.SLAB_TYPE\
+p_wmsm_8110/wmsm01gg_inq1.cpp	209	listagg(SLAB_NO, '/'),\
+p_wmsm_8110/wmsm01gg_inq1.cpp	212	decode(max(LSLAB_NO_LENGTH), 0, max(SLAB_LEN), max(LSLAB_NO_LENGTH)) SLAB_LEN,\
+p_wmsm_8110/wmsm01gg_inq1.cpp	213	decode(max(LSLAB_NO_LENGTH_MAX), 0, max(SLAB_MAX_LEN),\
+p_wmsm_8110/wmsm01gg_inq1.cpp	215	decode(max(LSLAB_NO_LENGTH_MIN), 0, max(SLAB_MIN_LEN),\
+p_wmsm_8110/wmsm01gg_inq1.cpp	231	LEFT JOIN TMMSM33BPGG T33 ON DECODE(T10.SLAB_DEST, '41', '6', T10.C_DIV) = T33.ST_NO AND\
+p_wmsm_8110/wmsm01gg_inq1.cpp	232	DECODE(SUBSTR(T03.MATIRAL_CODE, 2, 2), 'AA', 'J', 'AB', 'Z') = T33.SLAB_TYPE\
+p_wmsm_8110/wmsm01gg_inq1.cpp	247	sqlstr = " select decode(LSLAB_NO_LENGTH, 0, SLAB_LEN, LSLAB_NO_LENGTH)             SLAB_LEN,\
+p_wmsm_8110/wmsm01gg_inq1.cpp	248	decode(LSLAB_NO_LENGTH_MAX, 0, SLAB_MAX_LEN, LSLAB_NO_LENGTH_MAX) SLAB_MAX_LEN,\
+p_wmsm_8110/wmsm01gg_inq1.cpp	249	decode(LSLAB_NO_LENGTH_MIN, 0, SLAB_MIN_LEN, LSLAB_NO_LENGTH_MIN) SLAB_MIN_LEN,\
+p_wmsm_8110/wmsmsm11_inq.cpp	180	nvl(TWM41.I_RESERVECOL3, twma1.MAT_LEN)        MAT_LEN,\
+p_wmsm_8110/wmsmsm11_inq.cpp	181	nvl(TWM41.DELIVERY_WIDTH, twma1.MAT_WIDTH)     MAT_WIDTH,\
+p_wmsm_8110/wmsmsm11_inq.cpp	182	nvl(TWM41.DELIVERY_THICKNESS, twma1.MAT_THICK) MAT_THICK,\
+p_wmsm_8110/wmsmsm11_inq.cpp	183	nvl(TWM41.N_SENDAMOUNT, twma1.MAT_WT)          MAT_WT\
+p_wmsm_8110/wmsmsm17_inq.cpp	195	" SELECT A.STOCK_NO, A.STOCK_PLACE_NO, SUM(NVL(C.MAT_NUM, 0)) MAT_NUM, SUM(NVL(C.MAT_ACT_WT, 0)) MAT_WT"
+p_wmsm_8110/wmsmsm17_inq.cpp	209	" SELECT A.STOCK_NO, A.STOCK_PLACE_NO, SUM(NVL(C.MAT_NUM, 0)) MAT_NUM, SUM(NVL(C.MAT_ACT_WT, 0)) MAT_WT"
+p_wmsm_8110/wmsmsma2_inq.cpp	318	" listagg(DEFECT_CODE1),"
+p_wmsm_8110/wmsmsma2_inq.cpp	319	" listagg(DEFECT_CODE2),"
+p_wmsm_8110/wmsmsma2_inq.cpp	320	" listagg(DEFECT_CODE3),"
+p_wmsm_8110/wmsmsma2_inq.cpp	321	" listagg(DEFECT_CODE4),"
+p_wmsm_8110/wmsmsma2_inq.cpp	322	" listagg(DEFECT_SURF1),"
+p_wmsm_8110/wmsmsma2_inq.cpp	323	" listagg(DEFECT_SURF2),"
+p_wmsm_8110/wmsmsma2_inq.cpp	324	" listagg(DEFECT_SURF3),"
+p_wmsm_8110/wmsmsma2_inq.cpp	325	" listagg(DEFECT_SURF4),"
+p_wmsm_8110/wmsmsma2_inq_h.cpp	165	NVL(MIN(SLAB_CUT_TIME),' ')                                                                            SLAB_CUT_TIME,\
+p_wmsm_8110/wmsmsma2_inq_h.cpp	168	(SYSDATE - TO_DATE(MIN(T2.SLAB_CUT_TIME), 'yyyy-mm-dd hh24-mi-ss')) * 24) ELSE 0 end TIME_SPAN_HOUR,\
+p_wmsm_8110/wmsmsma2_inq_h.cpp	171	(SYSDATE - TO_DATE(MIN(T2.SLAB_CUT_TIME), 'yyyy-mm-dd hh24-mi-ss')) *\
+p_wmsm_8110/wmsmsma2_inq_m.cpp	89	"	(SYSDATE - TO_DATE(T2.SLAB_CUT_TIME, 'yyyy-mm-dd hh24-mi-ss')) * 24) end TIME_SPAN_HOUR, "
+p_wmsm_8110/wmsmsma2_inq_m.cpp	92	" 	(SYSDATE - TO_DATE((T2.SLAB_CUT_TIME), 'yyyy-mm-dd hh24-mi-ss')) * "
+p_wmsm_8120/wm0c_app.cpp	47	CString datetime_next = CDateTime::Now().AddDays(+1).ToString("yyyyMMddHHmmss");
+p_wmsm_8120/wm0c_planCancel.cpp	37	CString datetime_next = CDateTime::Now().AddDays(+1).ToString("yyyyMMddHHmmss");
+p_wmsm_8120/wmsmplan_f3.cpp	123	twmsm60["PLAN_END_TIME"] = CDateTime::Now().AddDays(+1).ToString("yyyyMMdd") + "000000";
+p_wmsm_8120/wmsmplan_f3.cpp	141	sqlstr = " SELECT LPAD(TO_CHAR(WM_PLANID_SEQ.NEXTVAL), 4, '0') FROM DUAl ";
+p_wmsm_8120/wmsmsm12p_zc.cpp	95	load_scheme_no= bcls_rec->Tables[0].Rows[0]["UNLOAD_CODE"].ToString()+ datetime.SubstringNE(2,12) + Db::QueryCString("SELECT LPAD(TO_CHAR(YZ_SJ.NEXTVAL), 2, '0') FROM DUAl");
+p_wmsm_8120/wmsmsm12p_zc.cpp	97	CString v_practice_no = "XG6240" + datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(ZC_SJ.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8120/wmsmsmj3_rcm.cpp	68	sqlstr = "select crane_no from twm06 where hall_no = decode('" + twm04["HALL_NO"].ToString().Trim() + "', 'S00', hall_no, '" + twm04["HALL_NO"].ToString().Trim() + "') and crane_no = CASE WHEN '" + v_crane_no + "' IS NULL OR '" + v_crane_no
+p_wmsm_8130/wmsm01_ponoslab_inq.cpp	79	(LISTAGG(DISTINCT(SLAB_NO), '/') WITHIN GROUP(ORDER BY SLAB_NO)) SLAB_NO1																	   \
+p_wmsm_8130/wmsm01q0_inq1.cpp	148	WHERE T02.IDX_NO(+) = T0X.ELM_STD_IDX_A\
+p_wmsm_8130/wmsm01q0q_inq1.cpp	139	WHERE T02.IDX_NO(+) = T0X.ELM_STD_IDX_A\
+p_wmsm_8130/wmsm02_sg_inq.cpp	62	CString sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,nvl(a.SLAB_DEST,' ') AS A,   "
+p_wmsm_8130/wmsm02_sg_inq.cpp	63	"nvl(a.slab_print_mode,' ')AS B ,nvl(a.slab_burr_type,' ')AS C,nvl(b.prec_slab_no,  ' ')AS PREC_SLAB_NO ,nvl(a.fix_flag,' '),nvl(a.qual_id,' ')as D,nvl(a.auto_wt_flag,' '),nvl(a.hot_send_flag,' ')  "
+p_wmsm_8130/wmsm02_sg_inq.cpp	91	sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,nvl(a.SLAB_DEST,' ') AS A,   "
+p_wmsm_8130/wmsm02_sg_inq.cpp	92	"nvl(a.slab_print_mode,' ')AS B ,nvl(a.slab_burr_type,' ')AS C,nvl(b.prec_slab_no,  ' '),nvl(a.fix_flag,' '),nvl(a.qual_id,' ')as D,nvl(a.auto_wt_flag,' '),nvl(a.hot_send_flag,' ')  "
+p_wmsm_8130/wmsm02_sg_inq.cpp	119	sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,nvl(a.SLAB_DEST,' ') AS A,   "
+p_wmsm_8130/wmsm02_sg_inq.cpp	120	"nvl(a.slab_print_mode,' ')AS B ,nvl(a.slab_burr_type,' ')AS C,nvl(b.prec_slab_no,  ' '),nvl(a.fix_flag,' '),nvl(a.qual_id,' ')as D,nvl(a.auto_wt_flag,' '),nvl(a.hot_send_flag,' ')  "
+p_wmsm_8130/wmsm02_sg_inq.cpp	146	sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,nvl(a.SLAB_DEST,' ') AS A,   "
+p_wmsm_8130/wmsm02_sg_inq.cpp	147	"nvl(a.slab_print_mode,' ')AS B ,nvl(a.slab_burr_type,' ')AS C,nvl(b.prec_slab_no,  ' '),nvl(a.fix_flag,' '),nvl(a.qual_id,' ')as D,nvl(a.auto_wt_flag,' '),nvl(a.hot_send_flag,' ')  "
+p_wmsm_8130/wmsm02_sg_inq.cpp	175	sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,nvl(a.SLAB_DEST,' ') AS A,   "
+p_wmsm_8130/wmsm02_sg_inq.cpp	176	"nvl(a.slab_print_mode,' ')AS B ,nvl(a.slab_burr_type,' ')AS C,nvl(b.prec_slab_no,  ' '),nvl(a.fix_flag,' '),nvl(a.qual_id,' ')as D,nvl(a.auto_wt_flag,' '),nvl(a.hot_send_flag,' ')  "
+p_wmsm_8130/wmsm02_sg_inq.cpp	232	sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,nvl(a.SLAB_DEST,' ') AS A,   "
+p_wmsm_8130/wmsm02_sg_inq.cpp	233	"nvl(a.slab_print_mode,' ')AS B ,nvl(a.slab_burr_type,' ')AS C,nvl(b.prec_slab_no,  ' '),nvl(a.fix_flag,' '),nvl(a.qual_id,' ')as D,nvl(a.auto_wt_flag,' '),nvl(a.hot_send_flag,' ')  "
+p_wmsm_8130/wmsm02_sg_inq.cpp	307	sql = "SELECT  mat_no,nvl(hold_flag,' '),stock_place_no  as location,nvl(slab_cut_time,' ') as slab_cut_time,' ',' ',' ',nvl(prec_slab_no,  ' '),nvl(fix_flag,' '),' ',' ',' '  "
+p_wmsm_8130/wmsm02_sg_inq.cpp	333	sql = "SELECT  mat_no, nvl(hold_flag, ' '), stock_place_no  as location, nvl(slab_cut_time, ' ') as slab_cut_time, ' ', ' ', ' ', nvl(prec_slab_no, ' '), nvl(fix_flag, ' '), ' ', ' ', ' '  "
+p_wmsm_8130/wmsm02_sg_inq.cpp	360	sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,' ',' ',' ',  "
+p_wmsm_8130/wmsm02_sg_inq.cpp	361	"nvl(b.prec_slab_no,  ' '),nvl(a.fix_flag,' '),nvl(a.qual_id,' '),nvl(a.auto_wt_flag,' '),nvl(a.hot_send_flag,' ')  "
+p_wmsm_8130/wmsm02_sg_inq.cpp	392	sql = " SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,' ',' ',' ',   "
+p_wmsm_8130/wmsm02_sg_inq.cpp	393	"nvl(b.prec_slab_no,  ' '),nvl(a.fix_flag,' '),nvl(a.qual_id,' '),nvl(a.auto_wt_flag,' '),nvl(a.hot_send_flag,' ')    "
+p_wmsm_8130/wmsmsm12_push.cpp	226	twm41dj["C_DELIVERYID"] = "6240" + datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8130/wmsmsm12_ruturn_verify.cpp	87	sqlstr = " select * from(select * from TWM41DJ where 1 = 1 AND C_BATCHUNIT = '"+ twm41dj["C_BATCHUNIT"].ToString()+"'  order by REC_CREATE_TIME desc) where ROWNUM = 1 ";
+p_wmsm_8130/wmsmsm12_ruturn_verify.cpp	143	twm41dj["C_DELIVERYID"] = "6240" + datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8140/sm0004_inq_m1.cpp	127	sqlstr1 = CString("select (select stock_place_no from hmmsm01 where mat_no = t.mat_no fetch first 1 rows only) stock_place_no, t.* from hsmpe02 t where stacking_no = @stacking_no and bill_of_lading_no = @bill_of_lading_no ");
+p_wmsm_8140/wmsmcpjk_auto.cpp	35	CString date_time_o = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_wmsm_8140/wmsmcpjk_auto.cpp	52	to_char(sysdate, 'yyyyMMdd') DATA_DAY,\
+p_wmsm_8140/wmsmcpjk_auto.cpp	53	to_char(sysdate, 'hh24')     DATA_HOUR,\
+p_wmsm_8140/wmsmcpjk_auto.cpp	69	AND TRAN_END_TIME >= to_char(sysdate - 1 / 2, 'yyyyMMddHH24miss'))\
+p_wmsm_8140/wmsmdm_auto.cpp	66	SELECT 钢种, to_char(sysdate, 'yyyyMMdd') DATA_DAY, COUNT(1) COU,SUM(MAT_WT) SUM_WT\
+p_wmsm_8140/wmsmhrzc_auto.cpp	118	CString	v_practice_no = "XG6240" + temp.Tables[0].Rows[i]["REC_CREATE_TIME"].ToString().SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(ZC_SJ.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8140/wmsmhrzc_auto.cpp	301	twm41dj["C_DELIVERYID"] = "6240" + temp.Tables[0].Rows[i]["REC_CREATE_TIME"].ToString().SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8140/wmsmhsl_inq.cpp	70	ROUND(SUM(DECODE(C_ISHOTSEND, '1', MAT_ACT_WT, 0)), 3)                         NI_2250_H,\
+p_wmsm_8140/wmsmhsl_inq.cpp	71	ROUND(SUM(DECODE(C_ISHOTSEND, '1', MAT_ACT_WT, 0)) / SUM(MAT_ACT_WT), 4) * 100 NI_2250_L\
+p_wmsm_8140/wmsmhsl_inq.cpp	78	ROUND(SUM(DECODE(C_ISHOTSEND, '1', MAT_ACT_WT, 0)), 3)                         CR_2250_H,\
+p_wmsm_8140/wmsmhsl_inq.cpp	79	ROUND(SUM(DECODE(C_ISHOTSEND, '1', MAT_ACT_WT, 0)) / SUM(MAT_ACT_WT), 4) * 100 CR_2250_L\
+p_wmsm_8140/wmsmhsl_inq.cpp	86	ROUND(SUM(DECODE(C_ISHOTSEND, '1', MAT_ACT_WT, 0)), 3)                         C_2250_H,\
+p_wmsm_8140/wmsmhsl_inq.cpp	87	ROUND(SUM(DECODE(C_ISHOTSEND, '1', MAT_ACT_WT, 0)) / SUM(MAT_ACT_WT), 4) * 100 C_2250_L\
+p_wmsm_8140/wmsmhsl_inq.cpp	94	ROUND(SUM(DECODE(C_ISHOTSEND, '1', MAT_ACT_WT, 0)), 3)                         C_1549_H,\
+p_wmsm_8140/wmsmhsl_inq.cpp	95	ROUND(SUM(DECODE(C_ISHOTSEND, '1', MAT_ACT_WT, 0)) / SUM(MAT_ACT_WT), 4) * 100 C_1549_L\
+p_wmsm_8140/wmsmrsl_inq.cpp	78	select decode(TRAN_TIME, ' ', TRAN_END_TIME, TRAN_TIME)                TRAN_TIME,\
+p_wmsm_8140/wmsmrsl_inq.cpp	79	SUBSTR(decode(TRAN_TIME, ' ', TRAN_END_TIME, TRAN_TIME), 1, 8) tran_date,\
+p_wmsm_8140/wmsmsc_inq1.cpp	85	sqlstr = " SELECT STRAND_NO, case when MAT_NO like '1A%' then SUBSTR(MAT_NO, 10) else SUBSTR(MAT_NO, 9) end MAT_NO, decode(MEND_FLAG,'1','X',' ')MEND_FLAG, round(MAT_LEN/1000,3) MAT_LEN, MAT_WT\
+p_wmsm_8140/wmsmscjc_auto.cpp	35	CString date_time_o = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_wmsm_8140/wmsmscjc_auto.cpp	95	nvl(mm3.sc_mat_wt, 0)  sc_mat_wt,\
+p_wmsm_8140/wmsmscjc_auto.cpp	96	nvl(mm3.sc_count, 0)   sc_count,\
+p_wmsm_8140/wmsmscjc_auto.cpp	97	nvl(mm4.jc_mat_wt, 0)  jc_mat_wt,\
+p_wmsm_8140/wmsmscjc_auto.cpp	98	nvl(mm4.jc_count, 0)   jc_count,\
+p_wmsm_8140/wmsmsjwz_auto.cpp	68	to_char(sysdate, 'yyyyMMdd') DATA_DAY,\
+p_wmsm_8140/wmsmsjwz_auto.cpp	69	to_char(sysdate, 'hh24')     DATA_HOUR,\
+p_wmsm_8140/wmsmsm20bd_bat.cpp	98	s_date_from = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_wmsm_8140/wmsmsm20bd_bat.cpp	99	s_date_to = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_wmsm_8140/wmsmsm20bd_bat.cpp	278	cmd_inq.Parameters.Set("report_date", dt_date.AddDays(-1).ToString("yyyyMMdd"));
+p_wmsm_8140/wmsmsm20bd_bat.cpp	839	dt_date = dt_date.AddDays(1);
+p_wmsm_8140/wmsmsm20bm_bat.cpp	95	s_month_from = CDateTime::Now().AddDays(-1).ToString("yyyyMM");
+p_wmsm_8140/wmsmsm20bm_bat.cpp	96	s_month_to = CDateTime::Now().AddDays(-1).ToString("yyyyMM");
+p_wmsm_8140/wmsmsm20bm_bat.cpp	114	cal_time_to = dt_date.AddMonths(1).AddDays(-1).ToString("yyyyMMdd") + "235959";
+p_wmsm_8140/wmsmzdqx_auto.cpp	68	to_char(sysdate, 'yyyyMMdd') DATA_DAY,\
+p_wmsm_8140/wmsmzdqx_auto.cpp	69	to_char(sysdate, 'hh24')     DATA_HOUR,\
+p_wmsm_8140/wmsmzhiliu_auto.cpp	69	to_char(sysdate, 'yyyyMMdd'),\
+p_wmsm_8140/wmsmzhiliu_auto.cpp	84	from(select decode(C_DIV, '1', '不锈钢', '碳钢') as                           钢种分类1,\
+p_wmsm_8140/wmsmzhiliu_auto.cpp	92	((sysdate -\
+p_wmsm_8170/fosmt00b_inq.cpp	229	sqlstr = " select to_char(ROWNUM) row_no,PROD_DATE,BACK_S1,BACK_S2,BACK_S3,BACK_S4,BACK_S5,BACK_S6 from TWMSMFOSM01 where PAGE_ID='"+ tbl +"' and  PROD_DATE= to_char(to_date('" + date_time + "','yyyyMMdd')-1,'yyyyMMdd') ";
+p_wmsm_8170/fosmt00b_inq.cpp	419	CString dt1 = dt.AddDays(-1).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	420	CString dt2 = dt.AddDays(-2).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	421	CString dt3 = dt.AddDays(-3).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	422	CString dt4 = dt.AddDays(-4).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	423	CString dt5 = dt.AddDays(-5).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	431	bcls_ret->Tables["S_" + tbl].Rows[i]["ITEM_CNAME"] = dt.AddDays(-1).ToString("yyyy") + "年";
+p_wmsm_8170/fosmt00b_inq.cpp	459	CString dt1 = dt.AddDays(-1).ToString("yyyy年MM月dd日");
+p_wmsm_8170/fosmt00b_inq.cpp	472	CString dt1 = dt.AddDays(-1).AddYears(-1).ToString("yyyy年实绩").SubstringNE(2);
+p_wmsm_8170/fosmt00b_inq.cpp	473	CString dt2 = dt.AddDays(-1).ToString("yyyy年目标").SubstringNE(2);
+p_wmsm_8170/fosmt00b_inq.cpp	474	CString dt3 = dt.AddDays(-1).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	475	CString dt4 = dt.AddDays(-2).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	476	CString dt5 = dt.AddDays(-3).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	508	CString dt1 = dt.AddDays(-1).ToString("yyyy年MM月") + "产量累计(t)";
+p_wmsm_8170/fosmt00b_inq.cpp	521	CString dt1 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() - 1).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	522	CString dt2 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() + 0).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	523	CString dt3 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() + 1).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	524	CString dt4 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() + 2).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	525	CString dt5 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() + 3).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	526	CString dt6 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() + 4).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	527	CString dt7 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() + 5).ToString("dd");
+p_wmsm_8170/fosmt00b_inq.cpp	568	CString dt1 = dt.AddDays(-7).ToString("MM月dd日");
+p_wmsm_8170/fosmt00b_inq.cpp	569	CString dt2 = dt.AddDays(-6).ToString("MM月dd日");
+p_wmsm_8170/fosmt00b_inq.cpp	570	CString dt3 = dt.AddDays(-5).ToString("MM月dd日");
+p_wmsm_8170/fosmt00b_inq.cpp	571	CString dt4 = dt.AddDays(-4).ToString("MM月dd日");
+p_wmsm_8170/fosmt00b_inq.cpp	572	CString dt5 = dt.AddDays(-3).ToString("MM月dd日");
+p_wmsm_8170/fosmt00b_inq.cpp	573	CString dt6 = dt.AddDays(-2).ToString("MM月dd日");
+p_wmsm_8170/fosmt00b_inq.cpp	574	CString dt7 = dt.AddDays(-1).ToString("MM月dd日");
+p_wmsm_8170/wmfm01_inq.cpp	229	sqlstr = " select ROWNUM row_no,BACK_S1,BACK_S2,BACK_S3,BACK_S4,BACK_S5,BACK_S6 from TWMSMFOSM01 where PROD_DATE= to_char(to_date('" + date_time + "','yyyyMMdd')-1,'yyyyMMdd') ";
+p_wmsm_8170/wmfm01_inq.cpp	269	" CASE WHEN C.TOTAL_OPERATE_CYCLE IS NULL OR CASE WHEN B.REMARK IS NULL THEN DATEDIFF(DAY, TO_DATE(C.BREAKDN_DATE,'YYYYMMDD'), TO_DATE(@DATE_TIME,'YYYYMMDD') - 1) ELSE B.TOTAL_OPERATE_CYCLE END IS NULL THEN NULL ELSE GREATEST(C.TOTAL_OPERAT
+p_wmsm_8170/wmfm01_inq.cpp	388	" DECODE(SUM(PRODUCT_CHARGE_1), 0, 0, ROUND(100.0 * SUM(CC_REMAIN_NUM_1) / SUM(PRODUCT_CHARGE_1),1)) CC_REMAIN_RATE_1,"
+p_wmsm_8170/wmfm01_inq.cpp	389	" DECODE(SUM(PRODUCT_CHARGE_2), 0, 0, ROUND(100.0 * SUM(CC_REMAIN_NUM_2) / SUM(PRODUCT_CHARGE_2),1)) CC_REMAIN_RATE_2,"
+p_wmsm_8170/wmfm01_inq.cpp	392	" DECODE(MAX(CAST(B1.REMARK AS INTEGER) + CAST(B2.REMARK AS INTEGER)), 0, 0, SUM(TOTAL_SLAB_WT) / MAX(CAST(B1.REMARK AS INTEGER) + CAST(B2.REMARK AS INTEGER)) * 100) PROD_PROGRESS,"
+p_wmsm_8170/wmfm01_inq.cpp	393	" DECODE(MAX(CAST(B1.REMARK AS INTEGER)), 0, 0, SUM(SLAB_WT_1) / MAX(CAST(B1.REMARK AS INTEGER)) * 100) PROD_PROGRESS_1,"
+p_wmsm_8170/wmfm01_inq.cpp	394	" DECODE(MAX(CAST(B2.REMARK AS INTEGER)), 0, 0, SUM(SLAB_WT_2) / MAX(CAST(B2.REMARK AS INTEGER)) * 100) PROD_PROGRESS_2,"
+p_wmsm_8170/wmfm01_inq.cpp	2149	" 100 * CAST(ROUND(DECODE(PRODUCT_CHARGE,0,0,CAST(QUALIFIED_CHARGE AS DECIMAL)/CAST(PRODUCT_CHARGE AS DECIMAL)), 4) AS DECIMAL(5,4)) QUALIFIED_RATE, REMARK"
+p_wmsm_8170/wmfm01_inq.cpp	2159	" 100 * CAST(ROUND(DECODE(SUM(PRODUCT_CHARGE),0,0,CAST(SUM(QUALIFIED_CHARGE) AS DECIMAL)/CAST(SUM(PRODUCT_CHARGE) AS DECIMAL)), 4) AS DECIMAL(5,4)) QUALIFIED_RATE, ' ' REMARK"
+p_wmsm_8170/wmfm01_inq.cpp	2170	" 100 * CAST(ROUND(DECODE(SUM(PRODUCT_CHARGE),0,0,CAST(SUM(QUALIFIED_CHARGE) AS DECIMAL)/CAST(SUM(PRODUCT_CHARGE) AS DECIMAL)), 4) AS DECIMAL(5,4)) QUALIFIED_RATE, ' ' REMARK"
+p_wmsm_8170/wmfm01_inq.cpp	2181	" 100 * CAST(ROUND(DECODE(SUM(PRODUCT_CHARGE),0,0,CAST(SUM(QUALIFIED_CHARGE) AS DECIMAL)/CAST(SUM(PRODUCT_CHARGE) AS DECIMAL)), 4) AS DECIMAL(5,4)) QUALIFIED_RATE, ' ' REMARK"
+p_wmsm_8170/wmfm01_inq.cpp	2192	" 100 * CAST(ROUND(DECODE(SUM(PRODUCT_CHARGE),0,0,CAST(SUM(QUALIFIED_CHARGE) AS DECIMAL)/CAST(SUM(PRODUCT_CHARGE) AS DECIMAL)), 4) AS DECIMAL(5,4)) QUALIFIED_RATE, ' ' REMARK"
+p_wmsm_8170/wmfm01_inq.cpp	2199	" 100 * CAST(ROUND(DECODE(SUM(PRODUCT_CHARGE),0,0,CAST(SUM(QUALIFIED_CHARGE) AS DECIMAL)/CAST(SUM(PRODUCT_CHARGE) AS DECIMAL)), 4) AS DECIMAL(5,4)) QUALIFIED_RATE, ' ' REMARK"
+p_wmsm_8170/wmfm01_inq.cpp	2204	" 100 * CAST(ROUND(DECODE(SUM(PRODUCT_CHARGE),0,0,CAST(SUM(QUALIFIED_CHARGE) AS DECIMAL)/CAST(SUM(PRODUCT_CHARGE) AS DECIMAL)), 4) AS DECIMAL(5,4)) QUALIFIED_RATE, ' ' REMARK"
+p_wmsm_8170/wmfm01_inq.cpp	2249	" DECODE(SUM(A.PRODUCT_CHARGE),0,0,ROUND(100.00 * SUM(A.QUALIFIED_CHARGE) / SUM(A.PRODUCT_CHARGE), 2)) QUALIFIED_RATE_1,"
+p_wmsm_8170/wmfm01_inq.cpp	2250	" DECODE(SUM(B.PRODUCT_CHARGE),0,0,ROUND(100.00 * SUM(B.QUALIFIED_CHARGE) / SUM(B.PRODUCT_CHARGE), 2)) QUALIFIED_RATE_2"
+p_wmsm_8170/wmfm01_inq.cpp	2293	" DECODE(SUM(PRODUCT_CHARGE),0,0,ROUND(100.00 * SUM(QUALIFIED_CHARGE) / SUM(PRODUCT_CHARGE), 2)) QUALIFIED_RATE"
+p_wmsm_8170/wmfm01_inq.cpp	2896	" ELSE DECODE(C2.REMARK_2,0,0,C2.REMARK_1 / C2.REMARK_2)"
+p_wmsm_8170/wmfm01_inq.cpp	2900	" ELSE DECODE(D2.REMARK_2,0,0,D2.REMARK_1 / D2.REMARK_2)"
+p_wmsm_8170/wmfm01_inq.cpp	2903	" ELSE DECODE((C2.REMARK_2 + D2.REMARK_2),0,0,(C2.REMARK_1 + D2.REMARK_1) / (C2.REMARK_2 + D2.REMARK_2))"
+p_wmsm_8170/wmfm01_inq.cpp	2970	" THEN ROUND(COALESCE(DECODE(D.REMARK_2,0,0,D.REMARK_1 / D.REMARK_2),0),0)"
+p_wmsm_8170/wmfm01_inq.cpp	2973	" ELSE ROUND(COALESCE(DECODE(D.REMARK_2,0,0,D.REMARK_1 / D.REMARK_2),0),2)"
+p_wmsm_8170/wmfm01_inq.cpp	3404	" DECODE(A.PRODUCT_CHARGE,0,0, ROUND(100.00 * A.QUALIFIED_CHARGE / A.PRODUCT_CHARGE,2)) QUALIFIED_RATE_1, CASE WHEN 0 IS NULL OR A.ACT_COSTING IS NULL THEN NULL ELSE GREATEST(0, A.ACT_COSTING) END ACT_COSTING_1,"
+p_wmsm_8170/wmfm01_inq.cpp	3406	" DECODE(B.PRODUCT_CHARGE,0,0,ROUND(100.00 * B.QUALIFIED_CHARGE / B.PRODUCT_CHARGE,2)) QUALIFIED_RATE_2, CASE WHEN 0 IS NULL OR B.ACT_COSTING IS NULL THEN NULL ELSE GREATEST(0, B.ACT_COSTING) END ACT_COSTING_2,"
+p_wmsm_8170/wmfm01_inq.cpp	3407	" CASE WHEN 0 IS NULL OR A.ACT_COSTING IS NULL THEN NULL ELSE GREATEST(0, A.ACT_COSTING) END + CASE WHEN 0 IS NULL OR B.ACT_COSTING IS NULL THEN NULL ELSE GREATEST(0, B.ACT_COSTING) END ACT_COSTING_TOTAL"
+p_wmsm_8170/wmfm01_inq.cpp	4252	" DECODE(SUM(TO_NUMBER(REMARK2)), 0, 0, SUM(TO_NUMBER(REMARK1)) / SUM(TO_NUMBER(REMARK2)))"
+p_wmsm_8170/wmfm01_inq.cpp	4253	" - DECODE(SUM(TO_NUMBER(REMARK4)), 0, 0, SUM(TO_NUMBER(REMARK3)) / SUM(TO_NUMBER(REMARK4)))"
+p_wmsm_8170/wmfm01_inq.cpp	4254	" - DECODE(SUM(TO_NUMBER(REMARK6)), 0, 0, SUM(TO_NUMBER(REMARK5)) / SUM(TO_NUMBER(REMARK6)))"
+p_wmsm_8170/wmfm01_inq.cpp	4256	" DECODE(SUM(TO_NUMBER(REMARK2)), 0, 0, SUM(TO_NUMBER(REMARK1)) / SUM(TO_NUMBER(REMARK2)))"
+p_wmsm_8170/wmfm01_inq.cpp	4257	" - DECODE(SUM(TO_NUMBER(REMARK4)), 0, 0, SUM(TO_NUMBER(REMARK3)) / SUM(TO_NUMBER(REMARK4)))"
+p_wmsm_8170/wmfm01_inq.cpp	4258	" ELSE DECODE(SUM(TO_NUMBER(REMARK2)), 0, 0, SUM(TO_NUMBER(REMARK1)) / SUM(TO_NUMBER(REMARK2)))"
+p_wmsm_8170/wmfm01_inq.cpp	4269	" DECODE(SUM(TO_NUMBER(REMARK2)), 0, 0, SUM(TO_NUMBER(REMARK1)) / SUM(TO_NUMBER(REMARK2)))"
+p_wmsm_8170/wmfm01_inq.cpp	4270	" - DECODE(SUM(TO_NUMBER(REMARK4)), 0, 0, SUM(TO_NUMBER(REMARK3)) / SUM(TO_NUMBER(REMARK4)))"
+p_wmsm_8170/wmfm01_inq.cpp	4271	" - DECODE(SUM(TO_NUMBER(REMARK6)), 0, 0, SUM(TO_NUMBER(REMARK5)) / SUM(TO_NUMBER(REMARK6)))"
+p_wmsm_8170/wmfm01_inq.cpp	4273	" DECODE(SUM(TO_NUMBER(REMARK2)), 0, 0, SUM(TO_NUMBER(REMARK1)) / SUM(TO_NUMBER(REMARK2)))"
+p_wmsm_8170/wmfm01_inq.cpp	4274	" - DECODE(SUM(TO_NUMBER(REMARK4)), 0, 0, SUM(TO_NUMBER(REMARK3)) / SUM(TO_NUMBER(REMARK4)))"
+p_wmsm_8170/wmfm01_inq.cpp	4275	" ELSE DECODE(SUM(TO_NUMBER(REMARK2)), 0, 0, SUM(TO_NUMBER(REMARK1)) / SUM(TO_NUMBER(REMARK2)))"
+p_wmsm_8170/wmfm01_inq.cpp	4390	" DECODE(SUM(TO_NUMBER(REMARK2)), 0, 0, SUM(TO_NUMBER(REMARK1)) / SUM(TO_NUMBER(REMARK2)))"
+p_wmsm_8170/wmfm01_inq.cpp	4391	" - DECODE(SUM(TO_NUMBER(REMARK4)), 0, 0, SUM(TO_NUMBER(REMARK3)) / SUM(TO_NUMBER(REMARK4)))"
+p_wmsm_8170/wmfm01_inq.cpp	4392	" - DECODE(SUM(TO_NUMBER(REMARK6)), 0, 0, SUM(TO_NUMBER(REMARK5)) / SUM(TO_NUMBER(REMARK6)))"
+p_wmsm_8170/wmfm01_inq.cpp	4394	" DECODE(SUM(TO_NUMBER(REMARK2)), 0, 0, SUM(TO_NUMBER(REMARK1)) / SUM(TO_NUMBER(REMARK2)))"
+p_wmsm_8170/wmfm01_inq.cpp	4395	" - DECODE(SUM(TO_NUMBER(REMARK4)), 0, 0, SUM(TO_NUMBER(REMARK3)) / SUM(TO_NUMBER(REMARK4)))"
+p_wmsm_8170/wmfm01_inq.cpp	4396	" ELSE DECODE(SUM(TO_NUMBER(REMARK2)), 0, 0, SUM(TO_NUMBER(REMARK1)) / SUM(TO_NUMBER(REMARK2)))"
+p_wmsm_8170/wmfm01_inq.cpp	4407	" DECODE(SUM(TO_NUMBER(REMARK2)), 0, 0, SUM(TO_NUMBER(REMARK1)) / SUM(TO_NUMBER(REMARK2)))"
+p_wmsm_8170/wmfm01_inq.cpp	4408	" - DECODE(SUM(TO_NUMBER(REMARK4)), 0, 0, SUM(TO_NUMBER(REMARK3)) / SUM(TO_NUMBER(REMARK4)))"
+p_wmsm_8170/wmfm01_inq.cpp	4409	" - DECODE(SUM(TO_NUMBER(REMARK6)), 0, 0, SUM(TO_NUMBER(REMARK5)) / SUM(TO_NUMBER(REMARK6)))"
+p_wmsm_8170/wmfm01_inq.cpp	4411	" DECODE(SUM(TO_NUMBER(REMARK2)), 0, 0, SUM(TO_NUMBER(REMARK1)) / SUM(TO_NUMBER(REMARK2)))"
+p_wmsm_8170/wmfm01_inq.cpp	4412	" - DECODE(SUM(TO_NUMBER(REMARK4)), 0, 0, SUM(TO_NUMBER(REMARK3)) / SUM(TO_NUMBER(REMARK4)))"
+p_wmsm_8170/wmfm01_inq.cpp	4413	" ELSE DECODE(SUM(TO_NUMBER(REMARK2)), 0, 0, SUM(TO_NUMBER(REMARK1)) / SUM(TO_NUMBER(REMARK2)))"
+p_wmsm_8170/wmfm01_inq.cpp	4642	CString dt1 = dt.AddDays(-1).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4643	CString dt2 = dt.AddDays(-2).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4644	CString dt3 = dt.AddDays(-3).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4645	CString dt4 = dt.AddDays(-4).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4646	CString dt5 = dt.AddDays(-5).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4654	bcls_ret->Tables["S_" + tbl].Rows[i]["ITEM_CNAME"] = dt.AddDays(-1).ToString("yyyy") + "年";
+p_wmsm_8170/wmfm01_inq.cpp	4682	CString dt1 = dt.AddDays(-1).ToString("yyyy年MM月dd日");
+p_wmsm_8170/wmfm01_inq.cpp	4695	CString dt1 = dt.AddDays(-1).AddYears(-1).ToString("yyyy年实绩").SubstringNE(2);
+p_wmsm_8170/wmfm01_inq.cpp	4696	CString dt2 = dt.AddDays(-1).ToString("yyyy年目标").SubstringNE(2);
+p_wmsm_8170/wmfm01_inq.cpp	4697	CString dt3 = dt.AddDays(-1).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4698	CString dt4 = dt.AddDays(-2).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4699	CString dt5 = dt.AddDays(-3).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4731	CString dt1 = dt.AddDays(-1).ToString("yyyy年MM月") + "产量累计(t)";
+p_wmsm_8170/wmfm01_inq.cpp	4744	CString dt1 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() - 1).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4745	CString dt2 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() + 0).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4746	CString dt3 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() + 1).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4747	CString dt4 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() + 2).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4748	CString dt5 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() + 3).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4749	CString dt6 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() + 4).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4750	CString dt7 = dt.AddDays(-dt.AddDays(-1).DayOfWeek() + 5).ToString("dd");
+p_wmsm_8170/wmfm01_inq.cpp	4791	CString dt1 = dt.AddDays(-7).ToString("MM月dd日");
+p_wmsm_8170/wmfm01_inq.cpp	4792	CString dt2 = dt.AddDays(-6).ToString("MM月dd日");
+p_wmsm_8170/wmfm01_inq.cpp	4793	CString dt3 = dt.AddDays(-5).ToString("MM月dd日");
+p_wmsm_8170/wmfm01_inq.cpp	4794	CString dt4 = dt.AddDays(-4).ToString("MM月dd日");
+p_wmsm_8170/wmfm01_inq.cpp	4795	CString dt5 = dt.AddDays(-3).ToString("MM月dd日");
+p_wmsm_8170/wmfm01_inq.cpp	4796	CString dt6 = dt.AddDays(-2).ToString("MM月dd日");
+p_wmsm_8170/wmfm01_inq.cpp	4797	CString dt7 = dt.AddDays(-1).ToString("MM月dd日");
+p_wmsm_8170/wmsm33c_f4.cpp	59	TO_CHAR(SYSDATE, 'yyyyMMddhh24miss') REC_CREATE_TIME,\
+p_wmsm_8170/wmsm33c_f8.cpp	85	CString v_unit_code = Db::QueryCString("select UNIT_CODE from TMMSM33C_GGL where ST_NO='" + tmmsm33c["ST_NO"].ToString() + "' and rownum=1");
+p_wmsm_8170/wmsm33c_f8.cpp	133	CString SeqNo = Db::QueryCString("SELECT LPAD(TO_CHAR(MMLC_2AYL.NEXTVAL),5 ,'0') FROM DUAL");
+p_wmsm_8170/wmsm33c_f9.cpp	136	CString SeqNo = Db::QueryCString("SELECT LPAD(TO_CHAR(MMLC_2AYL.NEXTVAL),5 ,'0') FROM DUAL");
+p_wmsm_8180/wmsmfosm_auto.cpp	59	CString time_lastday = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");
+p_wmsm_8180/wmsmfosm_auto.cpp	76	where ROWNUM = 1) \
+p_wmsm_8180/wmsmfosm_auto.cpp	85	select '1' c_div, '02' work_code, 'AOD各班当月平均炉数' work_name, T.count,  case when PROD_SHIFT_GROUP='A' THEN '甲' when PROD_SHIFT_GROUP='B' THEN '乙' when PROD_SHIFT_GROUP='C' THEN '丙' when PROD_SHIFT_GROUP='D' THEN '丁' end PROD_SHIFT_GROUP, ROWN
+p_wmsm_8180/wmsmfosm_auto.cpp	108	where ROWNUM = 1) \
+p_wmsm_8180/wmsmfosm_auto.cpp	117	select '1' c_div, '04' work_code, '合金熔化炉当月各班平均冶炼炉数' work_name, T.count,  case when PROD_SHIFT_GROUP='A' THEN '甲' when PROD_SHIFT_GROUP='B' THEN '乙' when PROD_SHIFT_GROUP='C' THEN '丙' when PROD_SHIFT_GROUP='D' THEN '丁' end PROD_SHIFT_GROUP, 
+p_wmsm_8180/wmsmfosm_auto.cpp	136	select '0', '01', '班组板坯交库量', t.sum_w,  case when HAND_OVER_GROUP='A' THEN '甲' when HAND_OVER_GROUP='B' THEN '乙' when HAND_OVER_GROUP='C' THEN '丙' when HAND_OVER_GROUP='D' THEN '丁' end HAND_OVER_GROUP, ROWNUM, ' '\
+p_wmsm_8180/wmsmfosm_auto.cpp	150	select '0', '02', '班组修磨量', t.sum_w,  case when MEND_SHIFT='A' THEN '甲' when MEND_SHIFT='B' THEN '乙' when MEND_SHIFT='C' THEN '丙' when MEND_SHIFT='D' THEN '丁' end MEND_SHIFT, ROWNUM, ' '\
+p_wmsm_8180/wmsmfosm_auto.cpp	163	select '0', '03', '班组产量', t.sum_w,  case when PROD_SHIFT_GROUP='A' THEN '甲' when PROD_SHIFT_GROUP='B' THEN '乙' when PROD_SHIFT_GROUP='C' THEN '丙' when PROD_SHIFT_GROUP='D' THEN '丁' end PROD_SHIFT_GROUP, ROWNUM, ' '\
+p_wmsm_8180/wmsmfosm_auto.cpp	180	SELECT '2', '01', '当月班组BOF总炉数', COUNT,  case when PROD_SHIFT_GROUP='A' THEN '甲' when PROD_SHIFT_GROUP='B' THEN '乙' when PROD_SHIFT_GROUP='C' THEN '丙' when PROD_SHIFT_GROUP='D' THEN '丁' end PROD_SHIFT_GROUP, ROWNUM, ' ' FROM(\
+p_wmsm_8180/wmsmfosm_auto.cpp	190	SELECT '2', '02', '当月班组BOF总产量', sum_wt,  case when PROD_SHIFT_GROUP='A' THEN '甲' when PROD_SHIFT_GROUP='B' THEN '乙' when PROD_SHIFT_GROUP='C' THEN '丙' when PROD_SHIFT_GROUP='D' THEN '丁' end PROD_SHIFT_GROUP, ROWNUM, ' ' FROM(\
+p_wmsm_8180/wmsmfosm_auto.cpp	200	select '2', '03', '当月班组BOF冶炼周期', TIME_SPAN,  case when PROD_SHIFT_GROUP='A' THEN '甲' when PROD_SHIFT_GROUP='B' THEN '乙' when PROD_SHIFT_GROUP='C' THEN '丙' when PROD_SHIFT_GROUP='D' THEN '丁' end PROD_SHIFT_GROUP, ROWNUM, ' ' from(\
+p_wmsm_8180/wmsmfosm_auto.cpp	222	SELECT '2', '04', '溅渣结束到兑铁', TIME_SPAN,  case when PROD_SHIFT_GROUP='A' THEN '甲' when PROD_SHIFT_GROUP='B' THEN '乙' when PROD_SHIFT_GROUP='C' THEN '丙' when PROD_SHIFT_GROUP='D' THEN '丁' end PROD_SHIFT_GROUP, ROWNUM, ' '\
+p_wmsm_8180/wmsmfosm_auto.cpp	241	select '2', '05', '当月班组LF精炼时间', TIME_SPAN,  case when PROD_SHIFT_GROUP='A' THEN '甲' when PROD_SHIFT_GROUP='B' THEN '乙' when PROD_SHIFT_GROUP='C' THEN '丙' when PROD_SHIFT_GROUP='D' THEN '丁' end PROD_SHIFT_GROUP, ROWNUM, ' '\
+p_wmsm_8180/wmsmpcgz_inq.cpp	92	" AND((c.START_TIME_REAL >= TO_CHAR(SYSDATE - 6.0/24, 'YYYYMMDDHH24MISS')"
+p_wmsm_8180/wmsmpcgz_inq.cpp	93	" AND c.START_TIME_REAL <= TO_CHAR(SYSDATE + 1, 'YYYYMMDDHH24MISS')"
+p_wmsm_8180/wmsmpcgz_inq.cpp	118	" AND((c.START_TIME_REAL >= TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')"
+p_wmsm_8180/wmsmpcgz_inq.cpp	119	" AND c.START_TIME_REAL <= TO_CHAR(SYSDATE + 1, 'YYYYMMDDHH24MISS')"
+p_wmsm_8180/wmsmyry_inq.cpp	529	sql = "SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.OUT_STEEL_TIME,T2.IDCARD FROM (\
+p_wmsm_8180/wmsmyry_inq.cpp	536	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	543	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	550	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	557	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	564	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	581	sql = "SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.OUT_STEEL_TIME,T2.IDCARD FROM (\
+p_wmsm_8180/wmsmyry_inq.cpp	588	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	595	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	602	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	609	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	616	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	629	sql = "SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.OUT_STEEL_TIME,T2.IDCARD FROM (\
+p_wmsm_8180/wmsmyry_inq.cpp	636	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	643	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	650	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	657	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	664	SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	678	sql = "SELECT * FROM (SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.OUT_STEEL_TIME,T2.IDCARD FROM (\
+p_wmsm_8180/wmsmyry_inq.cpp	684	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	686	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	692	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	694	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	700	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	702	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	708	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	710	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	716	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')";
+p_wmsm_8180/wmsmyry_inq.cpp	724	sql = "SELECT * FROM (SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.OUT_STEEL_TIME,T2.IDCARD FROM (\
+p_wmsm_8180/wmsmyry_inq.cpp	730	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	732	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	738	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	740	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	746	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	748	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	754	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	756	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	762	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')";
+p_wmsm_8180/wmsmyry_inq.cpp	770	sql = "SELECT * FROM (SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.OUT_STEEL_TIME,T2.IDCARD FROM (\
+p_wmsm_8180/wmsmyry_inq.cpp	776	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	778	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	784	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	786	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	792	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	794	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	800	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	802	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	808	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')";
+p_wmsm_8180/wmsmyry_inq.cpp	816	sql = "SELECT * FROM (SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.OUT_STEEL_TIME,T2.IDCARD FROM (\
+p_wmsm_8180/wmsmyry_inq.cpp	822	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	824	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	830	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	832	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	838	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	840	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	846	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	848	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	854	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')";
+p_wmsm_8180/wmsmyry_inq.cpp	863	sql = "SELECT * FROM (SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.OUT_STEEL_TIME,T2.IDCARD FROM (\
+p_wmsm_8180/wmsmyry_inq.cpp	869	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	871	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	877	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	879	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	885	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	887	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	893	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	895	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	901	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')";
+p_wmsm_8180/wmsmyry_inq.cpp	909	sql = "SELECT * FROM (SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.OUT_STEEL_TIME,T2.IDCARD FROM (\
+p_wmsm_8180/wmsmyry_inq.cpp	915	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	917	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	923	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	925	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	931	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	933	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	939	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')\
+p_wmsm_8180/wmsmyry_inq.cpp	941	SELECT * FROM(SELECT DECODE(T2.HEAT_NO, T2.HEAT_NO_OLD, T2.HEAT_NO_OLD, T2.HEAT_NO) AS HEAT_NO, T2.HEAT_NO_OLD, T.FACTORY_2, T2.ST_NO, T2.SAP_ERP_PRCSPATH, T2.OUT_STEEL_TIME, T2.IDCARD FROM(\
+p_wmsm_8180/wmsmyry_inq.cpp	947	WHERE OUT_STEEL_TIME = ' ' OR OUT_STEEL_TIME>to_char(sysdate, 'yyyyMMddHH24miss')";
+p_wmsm_8180/wmsmyry_upd.cpp	60	twmsmyryts["IDCARD"] = datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT TWMSMYRYTS_SEQ.NEXTVAL FROM DUAL");
+p_wmsm_8180/wmsmyryccm_inq.cpp	104	sql = " SELECT MEMO_DETAIL FROM (SELECT FACTORY_2,LISTAGG(MEMO_DETAIL,';'||chr(10)) AS MEMO_DETAIL FROM TWMSMYRYTS T GROUP BY FACTORY_2)T WHERE T.FACTORY_2 = 'AOD'";
+p_wmsm_8180/wmsmyryccm_inq.cpp	115	sql = " SELECT MEMO_DETAIL FROM (SELECT FACTORY_2,LISTAGG(MEMO_DETAIL,';'||chr(10)) AS MEMO_DETAIL FROM TWMSMYRYTS T GROUP BY FACTORY_2)T WHERE T.FACTORY_2 = 'AMF'";
+p_wmsm_8180/wmsmyryccm_inq.cpp	126	sql = " SELECT MEMO_DETAIL FROM (SELECT FACTORY_2,LISTAGG(MEMO_DETAIL,';'||chr(10)) AS MEMO_DETAIL FROM TWMSMYRYTS T GROUP BY FACTORY_2)T WHERE T.FACTORY_2 = 'EAF'";
+p_wmsm_8180/wmsmyryccm_inq.cpp	139	WHERE T.REC_CREATE_TIME > to_char(sysdate - 1, 'yyyyMMddHH24miss') AND T.HEAT_NO = ' ' \
+p_wmsm_8190/cm_a02111_rcv.cpp	132	twm41dj["C_DELIVERYID"] = "6240" + c_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8190/cm_a02114_rcv.cpp	148	twm41dj["C_DELIVERYID"] = "6240" + c_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8190/cm_p3t801_rcv.cpp	108	CString	v_practice_no = "XG6240" + c_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(ZC_SJ.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8190/cm_p3t801_rcv.cpp	325	twm41dj["C_DELIVERYID"] = "6240" + c_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8190/wmsm60_snd_bat.cpp	160	twmsm60["PLAN_END_TIME"] = CDateTime::Now().AddDays(+1).ToString("yyyyMMdd")+"000000";
+p_wmsm_8190/wmsm60_snd_bat.cpp	169	sqlstr = " SELECT LPAD(TO_CHAR(WM_PLANID_SEQ.NEXTVAL), 4, '0') FROM DUAl ";

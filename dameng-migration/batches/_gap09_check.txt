@@ -1,0 +1,38 @@
+total=766
+66			case DB_KIND_ORACLE:	        // Oracle 数据库
+67			default:
+68	
+69	
+70	// DM8 适配 CHANGE-141:查询连铸生产日报(当日/累计,含#连铸与系列合计)的产量、节奏、时长与作业率指标。
+71	// 改写原因：①SYSIBM 辅助表改为 DUAL(首轮,编号 CHANGE-381,并入本块);②HOUR/MINUTE/SECOND 标注时长改为 DM 官方文档示例的小数天运算(+ 3 HOUR → + 3.0/24 等),时间跨度保持;
+72	//   ③DB2 两参数 TIMESTAMPDIFF(2=秒/4=分钟/16=天,起点-终点) 按 HR-006 确认口径①(实际完整时长)改为 DATEDIFF(SECOND,起点,终点),
+73	//   分钟/天再 /60、/86400,整数除法与 DB2 截断行为一致;digits(cast(... as bigint)) 供 right() 取位的原写法保持不变;依据 DM 官方文档,DM8 尚未实测。
+74	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+75	// 原 SQL（完整保留）：
+76				// sqlstr = "select *  from  ( select mm.zjh xh,mm.zjh||'#连铸' zjh,mm.drls,mm.ljls,mm.drjzgsl,mm.ljjzgsl,mm.drgpqgl,mm.ljgpqgl,mm.drjzzzq,mm.ljjzzzq,	 "
+77					// "mm.drzq, mm.ljzq, mm.drdlcs, mm.ljdlcs, mm.drylcs, mm.ljylcs, mm.drzbgs, mm.ljzbgs, mm.drdzbsm, mm.ljdzbsm, mm.drxxpz, mm.ljxxpz, "
+78					// "nvl(nn.drtjsj, 0) drtjsj, case when nvl(mm.drls, 0) >= 1 then nvl(nn.drzjzyl, 100) else 0 end drzjzyl, nvl(nn.ljtjsj, 0) ljtjsj, case when "
+79					// "nvl(mm.ljls, 0) >= 1 then nvl(nn.ljzjzyl, 100) else 0 end ljzjzyl from(select zjh, sum(drls) drls, sum(ljls) ljls, sum(drjzgsl) drjzgsl, "
+80					// "sum(ljjzgsl) ljjzgsl, sum(drgpqgl) drgpqgl, sum(ljgpqgl) ljgpqgl, sum(drjzzzq) drjzzzq, sum(ljjzzzq) ljjzzzq, sum(drzq) drzq, sum(ljzq) ljzq, "
+81					// "sum(drdlcs) drdlcs, sum(ljdlcs) ljdlcs, sum(drylcs) drylcs, sum(ljylcs) ljylcs, sum(drzbgs) drzbgs, sum(ljzbgs) ljzbgs, decode(sum(drzbgs), "
+82					// "0, 0, cast(sum(drzbls) *1.0 / sum(drzbgs) as decimal(10, 1))) drdzbsm, decode(sum(ljzbgs), 0, 0, cast(sum(ljzbls) *1.0 / sum(ljzbgs) as "
+...
+DM8 SQL markers at: [356]
+353					// "substr(cast_no, 2, 1) in('1', '2', '3') and(substr(cast_no, 1, 6), cast_div_no) in(select substr(cast_no, 1, 6), max(cast_div_no) from tmmsm31 group by substr(cas
+354					// "1, 6))) sjc where xjc.cast_no = sjc.cast_no + 1 and sjc.CLOSE_TIME<>' ' and xjc.open_time<>' ' order by xjc.CAST_NO desc) where sjc = 1)where rq >= @datetime1	 an
+355					// "rq< @datetime2 group by zjh) group by zjh)  group by zjh)  nn	on  mm.zjh = nn.zjh )  WHERE XH >= 5 order by xh ";
+356	// DM8 SQL：
+357				sqlstr = "select *  from  ( select mm.zjh xh,mm.zjh||'#连铸' "
+358					"zjh,mm.drls,mm.ljls,mm.drjzgsl,mm.ljjzgsl,mm.drgpqgl,mm.ljgpqgl,mm.drjzzzq,mm.ljjzzzq,	 mm.drzq, mm.ljzq, mm.drdlcs, "
+359					"mm.ljdlcs, mm.drylcs, mm.ljylcs, mm.drzbgs, mm.ljzbgs, mm.drdzbsm, mm.ljdzbsm, mm.drxxpz, mm.ljxxpz, nvl(nn.drtjsj, 0) "
+360					"drtjsj, case when nvl(mm.drls, 0) >= 1 then nvl(nn.drzjzyl, 100) else 0 end drzjzyl, nvl(nn.ljtjsj, 0) ljtjsj, case "
+361					"when nvl(mm.ljls, 0) >= 1 then nvl(nn.ljzjzyl, 100) else 0 end ljzjzyl from(select zjh, sum(drls) drls, sum(ljls) ljls, "
+362					"sum(drjzgsl) drjzgsl, sum(ljjzgsl) ljjzgsl, sum(drgpqgl) drgpqgl, sum(ljgpqgl) ljgpqgl, sum(drjzzzq) drjzzzq, "
+363					"sum(ljjzzzq) ljjzzzq, sum(drzq) drzq, sum(ljzq) ljzq, sum(drdlcs) drdlcs, sum(ljdlcs) ljdlcs, sum(drylcs) drylcs, "
+...
+72	//   ③DB2 两参数 TIMESTAMPDIFF(2=秒/4=分钟/16=天,起点-终点) 按 HR-006 确认口径①(实际完整时长)改为 DATEDIFF(SECOND,起点,终点),
+433	"3.0/24, 'yyyymmdd') rq, right(digits(cast((DATEDIFF(SECOND, (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24), "
+434	"(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24)) / 60) as  bigint)), 4) sjc1, right(digits(cast((DATEDIFF(SECOND, "
+active tsd residue=0
+CHANGE-381 remains=1
+381 original preserved (SYSIBM in comments)=1

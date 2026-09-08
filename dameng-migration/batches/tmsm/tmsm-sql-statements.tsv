@@ -1,0 +1,576 @@
+file	start	end	preview
+libTMSM/f_t8z_23m_snd.cpp	44	45	sqlstr = " select * from TMMSM11 where 1=1 and HEAT_NO in (SELECT IRON_LTREAT_NO FROM TMMSM21 WHERE HEAT_NO = '" + bcls_rec->Tables[1].Rows[0]["HEAT_NO"].ToStri
+libTMSM/f_t8z_23m_snd.cpp	53	55	sqlstr = " select BUNKER_NO,SUM(STOCK_WT) STOCK_WT from TMMSM85 where BUNKER_NO IN ('0B03','0B06','0B08') GROUP BY BUNKER_NO ";
+libTMSM/f_t8z_23m_snd.cpp	57	59	sqlstr = " select BUNKER_NO,SUM(STOCK_WT) STOCK_WT from TMMSM85 where BUNKER_NO IN ('1B16','1B17','1B19') GROUP BY BUNKER_NO ";
+libTMSM/f_t8z_23m_snd.cpp	61	64	sqlstr = " select BUNKER_NO,SUM(STOCK_WT) STOCK_WT from TMMSM85 where BUNKER_NO IN ('2B17') GROUP BY BUNKER_NO ";
+libTMSM/f_t8z_23m_snd.cpp	92	95	sqlstr = " select BUNKER_NO,SUM(STOCK_WT) STOCK_WT from TMMSM85 where BUNKER_NO IN ('H11','H12','H13','H14','H15','H16','H17','H18') GROUP BY BUNKER_NO  ORDER B
+libTMSM/f_t8z_23m_snd.cpp	97	100	sqlstr = " select BUNKER_NO,SUM(STOCK_WT) STOCK_WT from TMMSM85 where BUNKER_NO IN ('H21','H22','H23','H24','H25','H26','H27','H28') GROUP BY BUNKER_NO ORDER BY
+libTMSM/f_t8z_23m_snd.cpp	152	153	sqlstr = " SELECT * FROM TPSSM12 WHERE HEAT_NO = '" + bcls_rec->Tables[1].Rows[0]["HEAT_NO"].ToString() + "' ";
+libTMSM/f_tm0097_proc.cpp	75	80	sqlstr = " select TM1.EVENT_CALL_TYPE_CODE, TM0.TABLE_NAME,TM0.LOG_KEY_VALUE1\
+libTMSM/f_tm0097_proc.cpp	99	101	sqlstr = "SELECT  LISTAGG(COLUMN_NAME,',') FROM "
+libTMSM/f_tm0097_proc.cpp	105	107	sqlstr = " SELECT LISTAGG(COLUMN_NAME, ',') "
+libTMSM/f_tm0097_proc.cpp	109	111	sqlstr = " SELECT LISTAGG(COLUMN_NAME, ',') "
+libTMSM/f_tm0097_proc.cpp	181	182	sqlstr = "SELECT * FROM TTM0099 WHERE 1=1 AND EVENT_ID ='" + c_event_id + "' AND STATION_ID ='" + c_station_id + "'";
+libTMSM/f_tmsm01_60105.cpp	89	93	sqlstr = "SELECT MAX(LADLE_NO), " //出钢记号
+libTMSM/f_tmsm01_60105.cpp	121	125	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm01_60105.cpp	138	139	sqlstr = "SELECT MAX(MAINT_TYPE) " //维修类型    epep03 tms3
+libTMSM/f_tmsm01_60105.cpp	157	160	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm01_60105.cpp	203	217	sqlstr = "SELECT LD_TYPE,"//    钢包类型
+libTMSM/f_tmsm01_60105.cpp	344	352	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm01_60105.cpp	358	365	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm01_60106.cpp	68	74	sqlstr = "SELECT LADLE_NO," // 钢包号,
+libTMSM/f_tmsm01_60106.cpp	139	141	sqlstr = "SELECT MAX(ST_NO) " //出钢记号   20230602不知道LO_TAP_PLAN对应哪个产品化表，暂时
+libTMSM/f_tmsm01_60106.cpp	168	169	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + datetime + "')  - TIMESTAMP('" + usage_st + "'))) from DUAL";
+libTMSM/f_tmsm01_60106.cpp	218	227	sqlstr = "UPDATE HTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm01_60108.cpp	66	72	sqlstr = "SELECT LADLE_NO " // 钢包号,
+libTMSM/f_tmsm01_60108.cpp	96	101	sqlstr = "SELECT MAX(ST_NO), " //出钢记号   20230602不知道LO_TAP_PLAN对应哪个产品化表，暂时
+libTMSM/f_tmsm01_60108.cpp	126	134	sqlstr = "UPDATE HTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm01_upd_ar.cpp	90	91	sqlstr = "select ladle_status,use_seq_no FROM TTMSM01 WHERE FACTORY_DIV = '" + ttmsm01["FACTORY_DIV"].ToString() + "'  AND LADLE_NO = '" + ttmsm01["LADLE_NO"].T
+libTMSM/f_tmsm01_upd_ar.cpp	125	129	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + ttmsm01["REC_REVISOR"].ToString() + "',"
+libTMSM/f_tmsm11_60107.cpp	59	60	sqlstr = "select MAX(LADLE_NO) FROM TTMSM01 WHERE HEAT_NO= @htno";
+libTMSM/f_tmsm11_60107.cpp	82	85	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	94	97	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	106	109	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	118	121	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	130	133	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	142	145	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	154	157	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	166	169	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	178	181	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	190	193	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	202	205	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	214	217	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	226	229	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	238	241	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	250	253	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60107.cpp	262	265	sqlstr = "UPDATE TTMSM01 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60110.cpp	61	64	sqlstr = "UPDATE TTMSM11 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60110.cpp	73	76	sqlstr = "UPDATE TTMSM11 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60110.cpp	86	89	sqlstr = "UPDATE TTMSM11 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60110.cpp	98	101	sqlstr = "UPDATE TTMSM11 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60110.cpp	110	113	sqlstr = "UPDATE TTMSM11 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60110.cpp	122	125	sqlstr = "UPDATE TTMSM11 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60110.cpp	134	137	sqlstr = "UPDATE TTMSM11 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60110.cpp	146	149	sqlstr = "UPDATE TTMSM11 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm11_60110.cpp	158	161	sqlstr = "UPDATE TTMSM11 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm21_60115.cpp	60	61	sqlstr = "select MAX(TD_NO_1),MAX(TD_NO_2),MAX(TD_LIFE_1),MAX(TD_LIFE_2) FROM TMMSM31 WHERE PONO= @pono";
+libTMSM/f_tmsm21_60115.cpp	94	97	sqlstr = "UPDATE TMMSM31 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm21_60115.cpp	101	104	sqlstr = "UPDATE TMMSM31 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm21_60115.cpp	109	112	sqlstr = "UPDATE TTMSM21 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm21_60116.cpp	71	72	sqlstr = "SELECT USE_SEQ_NO+1 FROM TTMSM21 WHERE REC_CREATE_TIME = (SELECT MAX(REC_CREATE_TIME) FROM TTMSM21 )";
+libTMSM/f_tmsm21_60116.cpp	98	99	sqlstr = " SELECT COUNT(1) FROM TTMSM21"
+libTMSM/f_tmsm31_61001.cpp	58	59	sqlstr = "select MAX(MOLD_NO1),MAX(MOLD_NO2) FROM TMMSM31 WHERE PONO= @pono";
+libTMSM/f_tmsm31_61001.cpp	90	91	sqlstr = " SELECT * FROM TTMSM31 WHERE MOLD_NO = '" + l_cs_no1.Trim() + "'"
+libTMSM/f_tmsm31_61001.cpp	106	110	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	115	119	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	124	128	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	133	137	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	148	151	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	156	159	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	164	167	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	172	175	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	215	216	sqlstr = " SELECT * FROM TTMSM31 WHERE MOLD_NO = '" + l_cs_no2.Trim() + "'"
+libTMSM/f_tmsm31_61001.cpp	231	235	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	240	244	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	249	253	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	258	262	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	273	276	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	281	285	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	290	293	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm31_61001.cpp	298	301	sqlstr = "UPDATE TTMSM41 SET REC_REVISOR= '" + userid + "',"
+libTMSM/f_tmsm97_trace.cpp	55	56	sqlstr = " select to_char(CURRENT_TIMESTAMP,'YYYYMMDDHH24MISSFF6')  from dual";
+libTMSM/f_tmsm_getnextseq.cpp	79	81	sqlstr = CString("SELECT count(*) FROM user_sequences t where t.sequence_name = '" + seq_name.Trim() + "' ");
+libTMSM/f_tmsm_getnextseq.cpp	118	119	sqlstr = CString("select " + seq_name.Trim() + ".nextval from dual ");
+libTMSM/f_tmsm_ironld.cpp	120	123	sqlstr = " SELECT COUNT(1) FROM TTMSM11 "
+libTMSM/f_tmsm_ironld.cpp	167	170	sqlstr = " SELECT COUNT(1) FROM TTMSM11 "
+libTMSM/f_tmsm_ironld.cpp	219	222	sqlstr = " SELECT COUNT(1) FROM TTMSM11 "
+libTMSM/f_tmsm_ld.cpp	170	173	sqlstr = " SELECT COUNT(1) FROM TTMSM01 "
+libTMSM/f_tmsm_ld.cpp	194	197	sqlstr1 = " SELECT LOAD_STEEL_WT_TOTAL FROM TTMSM01 "
+libTMSM/f_tmsm_ld.cpp	265	268	sqlstr = " SELECT COUNT(1) FROM TTMSM01 "
+libTMSM/f_tmsm_ld.cpp	328	331	sqlstr = " SELECT COUNT(1) FROM TTMSM01 "
+libTMSM/f_tmsm_mm.cpp	188	191	sqlstr = " SELECT COUNT(1) FROM TTMSM11 "
+libTMSM/f_tmsm_mm.cpp	213	217	sqlstr1 = " SELECT MODEL_ID,IS_STANDARD_JAR,TPD_NO,IS_IRON_LTREAT,IRON_LTREAT_NO,MOLTIRON_WT "
+libTMSM/f_tmsm_mm.cpp	233	235	sqlstr1 = " SELECT * "
+libTMSM/f_tmsm_mm.cpp	328	331	sqlstr = " SELECT COUNT(1) FROM TTMSM11 "
+libTMSM/f_tmsm_mm.cpp	353	357	sqlstr1 = " SELECT MODEL_ID,IS_STANDARD_JAR,TPD_NO,IS_IRON_LTREAT,IRON_LTREAT_NO,MOLTIRON_WT "
+libTMSM/f_tmsm_mm.cpp	373	375	sqlstr1 = " SELECT * "
+libTMSM/f_tmsm_mm.cpp	472	475	sqlstr = " SELECT COUNT(1) FROM TTMSM11 "
+libTMSM/f_tmsm_mm.cpp	497	501	sqlstr1 = " SELECT MODEL_ID,IS_STANDARD_JAR,TPD_NO,IS_IRON_LTREAT,IRON_LTREAT_NO,MOLTIRON_WT "
+libTMSM/f_tmsm_mm.cpp	517	519	sqlstr1 = " SELECT * "
+libTMSM/f_tmsm_mm.cpp	612	615	sqlstr = " SELECT COUNT(1) FROM TTMSM11 "
+libTMSM/f_tmsm_mm.cpp	637	641	sqlstr1 = " SELECT * "
+libTMSM/f_tmsm_mm.cpp	652	654	sqlstr1 = " SELECT * "
+libTMSM/f_tmsm_mm.cpp	708	712	sqlstr1 =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+libTMSM/f_tmsm_mm.cpp	781	785	sqlstr = " SELECT LADLE_NO "
+libTMSM/f_tmsm_mm.cpp	823	826	sqlstr = " SELECT COUNT(1) FROM TTMSM01 "
+libTMSM/f_tmsm_mm.cpp	848	851	sqlstr1 = " SELECT LOAD_STEEL_WT_TOTAL FROM TTMSM01 "
+libTMSM/f_tmsm_mm.cpp	927	930	sqlstr = " SELECT COUNT(1) FROM TTMSM01 "
+libTMSM/f_tmsm_mm.cpp	1015	1018	sqlstr = " SELECT COUNT(1) FROM TTMSM01 "
+libTMSM/f_tmsm_mm.cpp	1043	1046	sqlstr1 = " SELECT LOAD_STEEL_WT_TOTAL FROM TTMSM01 "
+libTMSM/f_tmsm_mm.cpp	1079	1083	sqlstr1 =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+libTMSM/f_tmsm_mm.cpp	1169	1172	sqlstr = " SELECT COUNT(1) FROM TTMSM21 "
+libTMSM/f_tmsm_mm.cpp	1197	1201	sqlstr1 =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+libTMSM/f_tmsm_mm.cpp	1370	1373	sqlstr = " SELECT COUNT(1) FROM TTMSM31 "
+libTMSM/f_tmsm_mm.cpp	1398	1402	sqlstr1 =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+libTMSM/f_tmsm_plan.cpp	180	183	sqlstr = " SELECT COUNT(1) FROM TTMSM02 "
+libTMSM/f_tmsm_plan.cpp	294	296	sqlstr = " DELETE TTMSM02 "
+libTMSM/f_tmsm_plan.cpp	370	373	sqlstr = " SELECT LADLE_LIFE FROM TTMSM01 "
+libTMSM/f_tmsm_plan.cpp	428	431	sqlstr = " SELECT USAGE_ST FROM TTMSM01 "
+libTMSM/f_tmsm_plan.cpp	443	447	sqlstr = " SELECT COUNT(1) FROM TTMSM09 "
+libTMSM/f_tmsm_plan.cpp	507	513	sqlstr = " SELECT SLIP_BOARD_USE_TIMES, SEN_TIMES_UPPER,NOZZLE_BRICK_TIMES, "
+libTMSM/f_tmsm_plan.cpp	570	574	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+libTMSM/f_tmsm_plan.cpp	608	612	sqlstr =	" SELECT * "
+libTMSM/f_tmsm_trace97.cpp	98	99	sqlstr = " select to_char(CURRENT_TIMESTAMP,'YYYYMMDDHH24MISSFF6')  from dual";
+p_tmsm_7110/tmsm11av_inq.cpp	80	90	sql = " WITH TM11 AS (SELECT * \
+p_tmsm_7110/tmsm11av_inq.cpp	98	101	sql = " select * from ttmsm11 where 1=1  ";
+p_tmsm_7110/tmsm121av_inq.cpp	119	128	sqlstr ="SELECT gi.*,SUM(gi.onlion_time) OVER(PARTITION BY gi.group_id ORDER BY gi.LADLE_LIFE) AS SUM_ONLION_TIME"
+p_tmsm_7110/tmsm121av_inq.cpp	136	145	sqlstr = "SELECT gi.*,SUM(gi.onlion_time) OVER(PARTITION BY gi.group_id ORDER BY gi.LADLE_LIFE) AS SUM_ONLION_TIME"
+p_tmsm_7110/tmsm121av_inq.cpp	153	162	sqlstr ="SELECT gi.*,SUM(gi.onlion_time) OVER(PARTITION BY gi.group_id ORDER BY gi.LADLE_LIFE) AS SUM_ONLION_TIME"
+p_tmsm_7110/tmsm121av_ins1.cpp	84	85	CString v_pre_cast_end = Db::QueryCString("select CAST_END_TIME from ttmsm12 A where LADLE_NO = '" + ttmsm12["LADLE_NO"].ToString().Trim() + "' AND LD_TYPE = 'T
+p_tmsm_7110/tmsm121av_ins1.cpp	91	92	sqlstr = " SELECT * FROM TMMSM27 WHERE HEAT_NO='" + ttmsm12["HEAT_NO"].ToString() + "' ";
+p_tmsm_7110/tmsm121av_ins1.cpp	105	106	sqlstr = " SELECT * FROM TMMSM21 WHERE HEAT_NO='" + ttmsm12["HEAT_NO"].ToString() + "' ";
+p_tmsm_7110/tmsm121av_ins1.cpp	125	126	ttmsm12["OUT_STEEL_TIME"] = Db::QueryCString("SELECT TO_CHAR(TO_DATE('" + ttmsm12["PRE_HEAT_CAST_E_TIME"].ToString().Trim() + "', 'YYYY-MM-DD HH24:MI:SS') + 120
+p_tmsm_7110/tmsm121av_ins1.cpp	129	130	CString v_cast_end = Db::QueryCString(" SELECT END_TIME FROM TMMSM31 WHERE HEAT_NO='" + ttmsm12["HEAT_NO"].ToString() + "' ");
+p_tmsm_7110/tmsm121av_ins1.cpp	133	135	ttmsm12["BACK_C1"] = Db::QueryCString(" SELECT WORK_MAKER FROM TTMSM11 WHERE LADLE_NO='TS"+ ttmsm12["LADLE_NO"].ToString() +"' AND RESUME_SEQ_NO =(SELECT MAX(RE
+p_tmsm_7110/tmsm121av_ins1.cpp	166	167	CString v_pre_cast_end = Db::QueryCString("select CAST_END_TIME from ttmsm12 A where LADLE_NO = '" + ttmsm12["LADLE_NO"].ToString().Trim() + "' AND LD_TYPE = 'T
+p_tmsm_7110/tmsm121av_ins1.cpp	172	173	sqlstr = " SELECT * FROM TMMSM27 WHERE HEAT_NO='" + ttmsm12["HEAT_NO"].ToString() + "' ";
+p_tmsm_7110/tmsm121av_ins1.cpp	186	187	sqlstr = " SELECT * FROM TMMSM21 WHERE HEAT_NO='" + ttmsm12["HEAT_NO"].ToString() + "' ";
+p_tmsm_7110/tmsm121av_ins1.cpp	206	207	ttmsm12["OUT_STEEL_TIME"] = Db::QueryCString("SELECT TO_CHAR(TO_DATE('" + ttmsm12["PRE_HEAT_CAST_E_TIME"].ToString().Trim() + "', 'YYYY-MM-DD HH24:MI:SS') + 120
+p_tmsm_7110/tmsm121av_ins1.cpp	210	211	CString v_cast_end = Db::QueryCString(" SELECT END_TIME FROM TMMSM31 WHERE HEAT_NO='" + ttmsm12["HEAT_NO"].ToString() + "' ");
+p_tmsm_7110/tmsm121av_ins1.cpp	214	216	ttmsm12["BACK_C1"] = Db::QueryCString(" SELECT WORK_MAKER FROM TTMSM11 WHERE LADLE_NO='TS" + ttmsm12["LADLE_NO"].ToString() + "' AND RESUME_SEQ_NO =(SELECT MAX(
+p_tmsm_7110/tmsm121av_ins1.cpp	247	248	CString v_pre_cast_end = Db::QueryCString("select CAST_END_TIME from ttmsm12 A where LADLE_NO = '" + ttmsm12["LADLE_NO"].ToString().Trim() + "' AND LD_TYPE = 'T
+p_tmsm_7110/tmsm121av_ins1.cpp	253	254	sqlstr = " SELECT * FROM TMMSM27 WHERE HEAT_NO='" + ttmsm12["HEAT_NO"].ToString() + "' ";
+p_tmsm_7110/tmsm121av_ins1.cpp	267	268	sqlstr = " SELECT * FROM TMMSM21 WHERE HEAT_NO='" + ttmsm12["HEAT_NO"].ToString() + "' ";
+p_tmsm_7110/tmsm121av_ins1.cpp	287	288	ttmsm12["OUT_STEEL_TIME"] = Db::QueryCString("SELECT TO_CHAR(TO_DATE('" + ttmsm12["PRE_HEAT_CAST_E_TIME"].ToString().Trim() + "', 'YYYY-MM-DD HH24:MI:SS') + 120
+p_tmsm_7110/tmsm121av_ins1.cpp	291	292	CString v_cast_end = Db::QueryCString(" SELECT END_TIME FROM TMMSM31 WHERE HEAT_NO='" + ttmsm12["HEAT_NO"].ToString() + "' ");
+p_tmsm_7110/tmsm121av_ins1.cpp	295	297	ttmsm12["BACK_C1"] = Db::QueryCString(" SELECT WORK_MAKER FROM TTMSM11 WHERE LADLE_NO='TS" + ttmsm12["LADLE_NO"].ToString() + "' AND RESUME_SEQ_NO =(SELECT MAX(
+p_tmsm_7110/tmsm121av_upd.cpp	98	99	ttmsm12["BACK_C1"] = Db::QueryCString(" SELECT WORK_MAKER FROM TTMSM11 WHERE LADLE_NO='TS" + ttmsm12["LADLE_NO"].ToString() + "' AND RESUME_SEQ_NO =(SELECT MAX(
+p_tmsm_7110/tmsm121av_upd.cpp	154	155	ttmsm12["BACK_C1"] = Db::QueryCString(" SELECT WORK_MAKER FROM TTMSM11 WHERE LADLE_NO='TS" + ttmsm12["LADLE_NO"].ToString() + "' AND RESUME_SEQ_NO =(SELECT MAX(
+p_tmsm_7110/tmsm121av_upd.cpp	214	215	ttmsm12["BACK_C1"] = Db::QueryCString(" SELECT WORK_MAKER FROM TTMSM11 WHERE LADLE_NO='TS" + ttmsm12["LADLE_NO"].ToString() + "' AND RESUME_SEQ_NO =(SELECT MAX(
+p_tmsm_7110/tmsm12av_inq.cpp	108	117	sqlstr = "select t_sumed.* from (SELECT t.*,SUM(t.onlion_time) OVER(PARTITION BY t.group_id ORDER BY t.LADLE_LIFE) AS SUM_ONLION_TIME"
+p_tmsm_7110/tmsm12av_inq1.cpp	51	64	sqlstr = " select LADLE_LIFE,\
+p_tmsm_7110/tmsm12av_ins.cpp	54	59	sqlstr=" select SUBSTR(HEAT_NO,0,1) NEW_HEAT_NO1,lpad(substr(A.HEAT_NO, 2) + 1,7,'0') NEW_HEAT_NO2,A.*\
+p_tmsm_7110/tmsm13av_bat.cpp	79	80	sqlstr = " select * from ttmsm13 where KEY_1=(select max(KEY_1) from ttmsm13 where KEY_1<'" + ttmsm13["KEY_1"].ToString() + "' and C_DIV ='" + ttmsm13["C_DIV"].
+p_tmsm_7110/tmsm13av_bat.cpp	86	87	sqlstr = " select CODE from TWMSMZD02 where CODE_CLASS='" + code_class + "' ";
+p_tmsm_7110/tmsm13av_bat.cpp	93	95	sqlstr1 = " select LADLE_LIFE, NOZZLE_BRICK_LIFE, UP_NOZZLE_LIFE, SLIDE_LIFE, DOWN_NOZZLE_LIFE, BOTTOM_BLOW1_LIFE, BOTTOM_BLOW2_LIFE from ttmsm12 WHERE LADLE_NO
+p_tmsm_7110/tmsm13av_bat.cpp	114	117	CString l_status = Db::QueryCString(" SELECT LADLE_STATUS FROM TTMSM11 WHERE LADLE_NO='" + ttmsm13["LADLE_NO"].ToString() + "' AND RESUME_SEQ_NO =(SELECT MAX(RE
+p_tmsm_7110/tmsm13av_inq.cpp	55	56	sqlstr = " select * from ttmsm13 where 1=1 and DATE_C='" + bcls_rec->Tables[0].Rows[0]["DATE_C"].ToString().SubstringNE(0, 8) + "' and  SHIFT_NO='1' AND C_DIV='
+p_tmsm_7110/tmsm13av_inq.cpp	62	63	sqlstr = " select * from ttmsm13 where 1=1 and DATE_C='" + bcls_rec->Tables[0].Rows[0]["DATE_C"].ToString().SubstringNE(0, 8) + "' and  SHIFT_NO='2' AND C_DIV='
+p_tmsm_7110/tmsm13av_inq.cpp	69	70	sqlstr = " select * from ttmsm13 where 1=1 and DATE_C='" + bcls_rec->Tables[0].Rows[0]["DATE_C"].ToString().SubstringNE(0, 8) + "' and  SHIFT_NO='3' AND C_DIV='
+p_tmsm_7110/tmsm13av_inq.cpp	82	83	sqlstr = " select * from ttmsm13 where KEY_1=(select max(KEY_1) from ttmsm13 where KEY_1<'" + ttmsm13["KEY_1"].ToString() + "' and C_DIV ='" + c_div + "') ";
+p_tmsm_7110/tmsm13av_inq.cpp	89	90	sqlstr = " select CODE from TWMSMZD02 where CODE_CLASS='TM01' ";
+p_tmsm_7110/tmsm13av_inq.cpp	96	98	sqlstr1 = " select LADLE_LIFE, NOZZLE_BRICK_LIFE, UP_NOZZLE_LIFE, SLIDE_LIFE, DOWN_NOZZLE_LIFE, BOTTOM_BLOW1_LIFE, BOTTOM_BLOW2_LIFE from ttmsm12 WHERE LADLE_NO
+p_tmsm_7110/tmsm13av_inq.cpp	109	110	CString l_status = Db::QueryCString(" SELECT LADLE_STATUS FROM TTMSM11 WHERE LADLE_NO='" + ttmsm13["LADLE_NO"].ToString() + "' AND RESUME_SEQ_NO =(SELECT MAX(RE
+p_tmsm_7110/tmsm13av_ins.cpp	97	98	sqlstr = " select * from ttmsm13 where KEY_1=(select max(KEY_1) from ttmsm13 where KEY_1<'" + ttmsm13["KEY_1"].ToString() + "' and C_DIV ='" + ttmsm13["C_DIV"].
+p_tmsm_7110/tmsm13av_ins.cpp	104	105	sqlstr = " select CODE from TWMSMZD02 where CODE_CLASS='" + code_class + "' ";
+p_tmsm_7110/tmsm13av_ins.cpp	111	113	sqlstr1 = " select LADLE_LIFE, NOZZLE_BRICK_LIFE, UP_NOZZLE_LIFE, SLIDE_LIFE, DOWN_NOZZLE_LIFE, BOTTOM_BLOW1_LIFE, BOTTOM_BLOW2_LIFE from ttmsm12 WHERE LADLE_NO
+p_tmsm_7110/tmsm14av_f3.cpp	63	64	sqlstr = "SELECT count(*) FROM TTMSM14 WHERE DATE_C = @DATE_C "
+p_tmsm_7110/tmsm14av_f3.cpp	83	84	sqlstr_inq = " SELECT MAX(SEQ_NO) FROM TTMSM14";
+p_tmsm_7110/tmsm14av_inq.cpp	81	82	sqlstr = " select * from " + table_name + " where 1 = 1";
+p_tmsm_7110/tmsm15av_f3.cpp	34	35	sqlstr = " delete from ttmsm15 where DATE_C = '" + ttmsm15["DATE_C"].ToString() + "' AND CC_MACH_NO = '" + ttmsm15["CC_MACH_NO"].ToString() + "' AND STRAND_DIV 
+p_tmsm_7110/tmsm15av_f5.cpp	49	50	sqlstr = " delete from ttmsm15  where CC_MACH_NO = '" + ttmsm15["CC_MACH_NO"].ToString() + "' AND STRAND_DIV = '" + ttmsm15["STRAND_DIV"].ToString() + "' ";
+p_tmsm_7110/tmsm15av_inq.cpp	77	77	sqlstr = " select * from TTMSM15 where 1 = 1";
+p_tmsm_7110/tmsm15av_inq.cpp	80	83	sqlstr = " select * from (select * from tTMSM15 union select * from hTMSM15) where 1 = 1";
+p_tmsm_7110/tmsm15av_ins.cpp	60	69	sqlstr = " SELECT TO_NUMBER(T1.CODE_DESC_1_CONTENT) SEQ_NO,\
+p_tmsm_7110/tmsm16av_f3.cpp	33	34	sqlstr = " delete from ttmsm16 where DATE_C = '" + ttmsm16["DATE_C"].ToString() + "' AND CC_MACH_NO = '" + ttmsm16["CC_MACH_NO"].ToString() + "' AND STRAND_DIV 
+p_tmsm_7110/tmsm16av_f5.cpp	49	50	sqlstr = " delete from ttmsm16  where CC_MACH_NO = '" + ttmsm16["CC_MACH_NO"].ToString() + "' AND STRAND_DIV = '" + ttmsm16["STRAND_DIV"].ToString() + "' ";
+p_tmsm_7110/tmsm16av_inq.cpp	73	73	sqlstr = " select * from TTMSM16 where 1 = 1";
+p_tmsm_7110/tmsm16av_inq.cpp	76	78	sqlstr = " select * from (select * from tTMSM16 union select * from hTMSM16) where 1 = 1";
+p_tmsm_7110/tmsm16av_ins.cpp	60	66	sqlstr = " SELECT TO_NUMBER(T1.CODE) SEQ_NO,\
+p_tmsm_7110/tmsm171av_f3.cpp	114	115	sqlstr = "SELECT count(*) FROM TTMSM171 WHERE DATE_C = @DATE_C "
+p_tmsm_7110/tmsm171av_inq.cpp	86	87	sqlstr = " select * from " + table_name + " where 1 = 1";
+p_tmsm_7110/tmsm171av_inq.cpp	101	102	sqlstrmaxdate = " select max(date_c) date_c from " + table_name + " where 1=1";
+p_tmsm_7110/tmsm171av_inq.cpp	111	111	sqlstrbefore = " select * from " + table_name + " where date_c= " + date_c_maxdate + " order by SEQ_NO asc";
+p_tmsm_7110/tmsm171av_inq.cpp	115	120	sqlstrbefore = " select * from " + table_name + " where 1 = 1 order by SEQ_NO asc";
+p_tmsm_7110/tmsm171av_inq.cpp	143	145	sqlstrinit = "select * from TTM0003 where 1=1 order by SEQ_NO asc"; //扇形段初始化基表
+p_tmsm_7110/tmsm17av_f3.cpp	59	62	sqlstr = "SELECT COUNT(*) FROM TTMSM17 WHERE CCMACH_DESC = @CCMACH_DESC "
+p_tmsm_7110/tmsm17av_inq.cpp	79	80	sqlstr = " select * from " + table_name + " where 1 = 1";
+p_tmsm_7110/tmsm181av_f3.cpp	46	47	sqlstr = "SELECT count(*) FROM TTMSM181 WHERE DATE_C = @DATE_C "
+p_tmsm_7110/tmsm181av_inq.cpp	85	86	sqlstr = " select * from " + table_name + " where 1 = 1";
+p_tmsm_7110/tmsm181av_inq.cpp	97	98	sqlstrmaxdate = " select max(date_c) date_c from " + table_name + " where 1=1";
+p_tmsm_7110/tmsm181av_inq.cpp	107	107	sqlstrbefore = " select * from " + table_name + " where date_c= " + date_c_maxdate + " order by SEQ_NO asc";
+p_tmsm_7110/tmsm181av_inq.cpp	111	116	sqlstrbefore = " select * from " + table_name + " where 1 = 1 order by SEQ_NO asc";
+p_tmsm_7110/tmsm181av_inq.cpp	141	143	sqlstrinit = " select * from TTM0001 where 1=1 order by SEQ_NO asc";
+p_tmsm_7110/tmsm18av_f3.cpp	53	54	sqlstr = "SELECT COUNT(*) FROM TTMSM18 WHERE DATE_C = @DATE_C "
+p_tmsm_7110/tmsm18av_inq.cpp	80	81	sqlstr = " select * from " + table_name + " where 1 = 1";
+p_tmsm_7110/tmsm191av_f3.cpp	39	40	sqlstr = "SELECT count(*) FROM TTMSM191 WHERE DATE_C = @DATE_C "
+p_tmsm_7110/tmsm191av_inq.cpp	85	86	sqlstr = " select * from " + table_name + " where 1 = 1";
+p_tmsm_7110/tmsm191av_inq.cpp	97	98	sqlstrmaxdate = " select max(date_c) date_c from " + table_name + " where 1=1";
+p_tmsm_7110/tmsm191av_inq.cpp	107	107	sqlstrbefore = " select * from " + table_name + " where date_c= " + date_c_maxdate + " order by SEQ_NO asc";
+p_tmsm_7110/tmsm191av_inq.cpp	111	117	sqlstrbefore = " select * from " + table_name + " where 1 = 1 order by SEQ_NO asc";
+p_tmsm_7110/tmsm191av_inq.cpp	140	142	sqlstrinit = " select * from TTM0002 where 1=1 order by SEQ_NO asc";
+p_tmsm_7110/tmsm19av_f3.cpp	53	56	sqlstr = "SELECT COUNT(*) FROM TTMSM19 WHERE DATE_C = @DATE_C "
+p_tmsm_7110/tmsm19av_inq.cpp	79	80	sqlstr = " select * from " + table_name + " where 1 = 1";
+p_tmsm_7110/tmsm200av_f3.cpp	126	127	sqlstr_inq = " SELECT MAX(SEQ_NO) FROM TTMSM200";
+p_tmsm_7110/tmsm200av_f3.cpp	231	232	sqlstr = "DELETE FROM TTMSM201";
+p_tmsm_7110/tmsm200av_inq.cpp	155	156	sqlstr = " select * from " + table_name + " where 1 = 1";
+p_tmsm_7110/tmsm201av_f3.cpp	115	116	sqlstr_inq = " SELECT MAX(SEQ_NO) FROM TTMSM201";
+p_tmsm_7110/tmsm201av_f3.cpp	235	236	sqlstr = "DELETE FROM TTMSM201";
+p_tmsm_7110/tmsm201av_f7.cpp	115	116	sqlstr_inq = " SELECT MAX(SEQ_NO) FROM TTMSM201";
+p_tmsm_7110/tmsm201av_f7.cpp	220	221	sqlstr = "DELETE FROM TTMSM201";
+p_tmsm_7110/tmsm201av_inq.cpp	155	156	sqlstr = " select * from " + table_name + " where 1 = 1";
+p_tmsm_7110/tmsm202av_f3.cpp	111	112	sqlstr_inq = " SELECT MAX(SEQ_NO) FROM TTMSM202";
+p_tmsm_7110/tmsm202av_f3.cpp	209	210	sqlstr = "DELETE FROM TTMSM202";
+p_tmsm_7110/tmsm202av_f4.cpp	61	62	sqlstr = "SELECT count(*) FROM TTMSM202 WHERE DATE_C = @DATE_C "
+p_tmsm_7110/tmsm202av_inq.cpp	154	155	sqlstr = " select * from " + table_name + " where 1 = 1";
+p_tmsm_7110/tmsm203av_f3.cpp	142	143	sqlstr_inq = " SELECT MAX(SEQ_NO) FROM TTMSM203";
+p_tmsm_7110/tmsm203av_f3.cpp	278	279	sqlstr = "DELETE FROM TTMSM203";
+p_tmsm_7110/tmsm203av_f4.cpp	61	62	sqlstr = "SELECT count(*) FROM TTMSM203 WHERE DATE_C = @DATE_C "
+p_tmsm_7110/tmsm203av_f4.cpp	90	91	sqlstr = "SELECT count(*) FROM TTMSM203 WHERE WORK_AREA = @WORK_AREA  AND LINE_DESC= @LINE_DESC AND SPACE_DESC= @SPACE_DESC AND DEV_NAME= @DEV_NAME AND ITEM_NAM
+p_tmsm_7110/tmsm203av_f4.cpp	117	118	sqlstr_inq = " SELECT MAX(SEQ_NO) FROM TTMSM203";
+p_tmsm_7110/tmsm203av_f5.cpp	60	61	sqlstr = "SELECT count(*) FROM TTMSM203 WHERE DATE_C = @DATE_C "
+p_tmsm_7110/tmsm203av_f5.cpp	76	78	sqlstr_inq = "SELECT MAX(SEQ_NO) MAX_SEQ_NO FROM TTMSM203 WHERE WORK_AREA= @WORK_AREA AND LINE_DESC=@LINE_DESC AND DEV_NAME=@DEV_NAME AND CHECK_FLAG=1";
+p_tmsm_7110/tmsm203av_f5.cpp	99	100	sqlstr = "DELETE FROM TTMSM203 WHERE WORK_AREA=@WORK_AREA AND LINE_DESC=@LINE_DESC AND DEV_NAME=@DEV_NAME AND SEQ_NO>@SEQ_NO AND DATE_C='" + datetime.SubstringN
+p_tmsm_7110/tmsm203av_inq.cpp	156	158	sqlstr = " select SEQ_NO,DATE_C,WORK_AREA,LINE_DESC,SPACE_DESC,DEV_NAME,ITEM_NAME,PERD_DD,TIME_1,TIME_2,TIME_3,SHIFT_CLASS,RESP,CHECK_FLAG,TYPE_CODE1,PERD_DD1,B
+p_tmsm_7110/tmsm204av_f3.cpp	135	136	sqlstr_inq = " SELECT MAX(SEQ_NO) FROM TTMSM204";
+p_tmsm_7110/tmsm204av_f3.cpp	259	260	sqlstr = "DELETE FROM TTMSM204";
+p_tmsm_7110/tmsm204av_f4.cpp	61	62	sqlstr = "SELECT count(*) FROM TTMSM204 WHERE DATE_C = @DATE_C "
+p_tmsm_7110/tmsm204av_f4.cpp	101	102	sqlstr_inq = " SELECT MAX(SEQ_NO) FROM TTMSM204";
+p_tmsm_7110/tmsm204av_f5.cpp	58	59	sqlstr = "SELECT count(*) FROM TTMSM204 WHERE DATE_C = @DATE_C "
+p_tmsm_7110/tmsm204av_f5.cpp	74	76	sqlstr_inq = "SELECT MAX(SEQ_NO) MAX_SEQ_NO FROM TTMSM204 WHERE WORK_AREA= @WORK_AREA AND LINE_DESC=@LINE_DESC AND DEV_NAME=@DEV_NAME AND CHECK_FLAG=1";
+p_tmsm_7110/tmsm204av_f5.cpp	95	96	sqlstr = "DELETE FROM TTMSM204 WHERE WORK_AREA=@WORK_AREA AND LINE_DESC=@LINE_DESC AND DEV_NAME=@DEV_NAME AND SEQ_NO>@SEQ_NO AND DATE_C='" + datetime.SubstringN
+p_tmsm_7110/tmsm204av_inq.cpp	159	161	sqlstr = " select SEQ_NO,DATE_C,WORK_AREA,LINE_DESC,ITEM_NAME,SPACE_DESC,DEV_NAME,PERD_DD,TIME_1,TIME_2,TIME_3,BACK_DESC1,SHIFT_CLASS,RESP,CHECK_FLAG,PERD_DD1,I
+p_tmsm_7110/tmsm205av_f3.cpp	135	136	sqlstr_inq = "SELECT nvl(MAX(SEQ_NO),0) FROM TTMSM205";
+p_tmsm_7110/tmsm205av_f3.cpp	249	250	sqlstr_inq = "SELECT nvl(MAX(SEQ_NO),0) FROM TTMSM205";
+p_tmsm_7110/tmsm205av_f3.cpp	384	385	sqlstr = "DELETE FROM TTMSM205";
+p_tmsm_7110/tmsm205av_inq.cpp	55	59	sqlstr = " select * from TTMSM205 where flag1=0";
+p_tmsm_7110/tmsm205bv_f3.cpp	135	136	sqlstr_inq = "SELECT nvl(MAX(SEQ_NO),0) FROM TTMSM205";
+p_tmsm_7110/tmsm205bv_f3.cpp	249	250	sqlstr_inq = "SELECT nvl(MAX(SEQ_NO),0) FROM TTMSM205";
+p_tmsm_7110/tmsm205bv_f3.cpp	385	386	sqlstr = "DELETE FROM TTMSM205";
+p_tmsm_7110/tmsm205bv_inq.cpp	55	59	sqlstr = " select * from TTMSM205 where flag1=1";
+p_tmsm_7110/tmsm206av_f3.cpp	125	126	sqlstr_inq = " SELECT MAX(SEQ_NO) FROM TTMSM206";
+p_tmsm_7110/tmsm206av_f3.cpp	244	245	sqlstr = "DELETE FROM TTMSM206";
+p_tmsm_7110/tmsm206av_f4.cpp	61	62	sqlstr = "SELECT count(*) FROM TTMSM206 WHERE DATE_C = @DATE_C "
+p_tmsm_7110/tmsm206av_f4.cpp	101	102	sqlstr_inq = " SELECT MAX(SEQ_NO) FROM TTMSM206";
+p_tmsm_7110/tmsm206av_f5.cpp	58	59	sqlstr = "SELECT count(*) FROM TTMSM206 WHERE DATE_C = @DATE_C "
+p_tmsm_7110/tmsm206av_f5.cpp	74	76	sqlstr_inq = "SELECT MAX(SEQ_NO) MAX_SEQ_NO FROM TTMSM206 WHERE WORK_AREA= @WORK_AREA AND DEV_NAME=@DEV_NAME AND CHECK_FLAG=1";
+p_tmsm_7110/tmsm206av_f5.cpp	94	95	sqlstr = "DELETE FROM TTMSM206 WHERE WORK_AREA=@WORK_AREA AND DEV_NAME=@DEV_NAME AND SEQ_NO>@SEQ_NO AND DATE_C='" + datetime.SubstringNE(0, 8) + "'";
+p_tmsm_7110/tmsm206av_inq.cpp	159	161	sqlstr = " select SEQ_NO,DATE_C,WORK_AREA,SPACE_DESC,DEV_NAME,MODEL_SIZE,POWER,PERD_DD,TIME_1,TIME_2,TIME_3,RESP,CHECK_FLAG,PERD_DD1,BACKC1,INSULATION_A,INSULAT
+p_tmsm_7110/tmsmdr_f3.cpp	57	58	sqlstr = " select ACTIVITY_NAME from  TTMSMPZ b  where b.SHOW_SEQ='" + v_name + "' ";
+p_tmsm_7110/tmsmdr_inq.cpp	55	56	sqlstr = " select CHINESE_USER_NAME,ITEM_KIND,a.ACTIVITY_NAME from TTMSMPZ01 a left join TTMSMPZ b on a.ACTIVITY_NAME=b.ACTIVITY_NAME where b.SHOW_SEQ='"+ v_nam
+p_tmsm_7110/tmsmdr_inq.cpp	61	62	sqlstr = " select * from ttmsmdr where ACTIVITY_NAME='"+tmp.Tables[0].Rows[0]["ACTIVITY_NAME"].ToString() + "' ";
+p_tmsm_7110/tmsme34_chg.cpp	65	70	sqlstr = "UPDATE TTMSM34 SET REC_REVISOR= '" + ttmsm34["REC_REVISOR"].ToString() + "',"
+p_tmsm_7110/tmsme34_chg.cpp	74	79	sqlstr = "UPDATE TTMSM34 SET REC_REVISOR= '" + ttmsm34["REC_REVISOR"].ToString() + "',"
+p_tmsm_7110/tmsme34_inq.cpp	93	94	sqlstr = "SELECT COUNT(1) FROM TTMSM34 WHERE 1=1 ";
+p_tmsm_7110/tmsme34_inq.cpp	126	128	sqlstr = "SELECT t.*,(select CODE_DESC_1_CONTENT FROM TSI00FORMCODESETS WHERE FORM_NAME='TMSME34' AND CODE_CLASS='COIL_NAME' AND CODE =t.COIL_NAME ) COIL_NAME1 
+p_tmsm_7110/tmsme34a1_upd.cpp	58	73	sqlstr = "UPDATE TTMSM34 SET REC_REVISOR= '" + ttmsm34["REC_REVISOR"].ToString() + "',"
+p_tmsm_7110/tmsme35_end.cpp	58	62	sqlstr = "UPDATE TTMSM35 SET REC_REVISOR= '" + ttmsm35["REC_REVISOR"].ToString() + "',"
+p_tmsm_7110/tmsme35_inq.cpp	92	93	sqlstr = "SELECT COUNT(1) FROM TTMSM35 WHERE 1=1 ";
+p_tmsm_7110/tmsme35_inq.cpp	113	114	sqlstr = "SELECT * FROM TTMSM35 WHERE 1=1";
+p_tmsm_7110/tmsme35_start.cpp	58	62	sqlstr = "UPDATE TTMSM35 SET REC_REVISOR= '" + ttmsm35["REC_REVISOR"].ToString() + "',"
+p_tmsm_7110/tmsme35a1_upd.cpp	58	66	sqlstr = "UPDATE TTMSM35 SET REC_REVISOR= '" + ttmsm35["REC_REVISOR"].ToString() + "',"
+p_tmsm_7110/tmsme97_inq.cpp	97	98	sqlstr = "SELECT COUNT(1) FROM TTMSM97 WHERE 1 = 1";  //MOLD_TYPE =2表示钢包
+p_tmsm_7110/tmsme97_inq.cpp	119	120	sqlstr = "SELECT TTMSM97.* FROM TTMSM97 WHERE 1 = 1";  //MOLD_TYPE =2表示钢包
+p_tmsm_7110/tmsmpz_inq.cpp	54	55	sqlstr = " select * from ttmsmpz where 1=1 ";
+p_tmsm_7110/tmsmpz_inq1.cpp	54	55	sqlstr = " select * from ttmsmpz01 where 1=1 and ACTIVITY_NAME = '"+bcls_rec->Tables[0].Rows[0]["ACTIVITY_NAME"].ToString() + "' order by CODE_SEQ ";
+p_tmsm_7120/tmsm01_inq.cpp	57	60	sqlstr = "SELECT * FROM TTMSM01 WHERE 1=1 " ;
+p_tmsm_7120/tmsm01_inq1.cpp	57	60	sqlstr = "SELECT * FROM TTMSM01 WHERE 1=1 " ;
+p_tmsm_7120/tmsm01_ins.cpp	93	96	sqlstr = " SELECT COUNT(1) "
+p_tmsm_7120/tmsm01_scp.cpp	72	75	sqlstr = "SELECT * FROM TTMSM01 WHERE 1=1 " ;
+p_tmsm_7120/tmsm01a1f10_pro.cpp	128	133	sql_tmsm01 = " SELECT LADLE_STATUS, "
+p_tmsm_7120/tmsm01a1f10_pro.cpp	165	169	sqlstr = " SELECT NVL(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm01a1f2_inq.cpp	77	79	sqlstr_count = " SELECT COUNT(1) "
+p_tmsm_7120/tmsm01a1f2_inq.cpp	80	82	sqlstr	= " SELECT * "
+p_tmsm_7120/tmsm01a1f8_pro.cpp	108	111	sqlstr = " SELECT LADLE_STATUS, "
+p_tmsm_7120/tmsm01a1f8_pro.cpp	136	140	sqlstr = " SELECT NVL(MAX(BAKE_SEQ_NO),0) "
+p_tmsm_7120/tmsm01a1f9_pro.cpp	120	123	sqlstr = " SELECT LADLE_STATUS, "
+p_tmsm_7120/tmsm01a1f9_pro.cpp	148	152	sqlstr = " SELECT NVL(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm01a3_cbn.cpp	100	107	sqlstr = " SELECT   a.SM_PLAN_NO        , a.PONO             , a.ST_NO        "
+p_tmsm_7120/tmsm01a3_cbn_r.cpp	93	100	sqlstr = " SELECT   a.SM_PLAN_NO        , a.PONO             , a.ST_NO        "
+p_tmsm_7120/tmsm01a3_cfm.cpp	123	130	sqlstr = " SELECT   a.SM_PLAN_NO        , a.PONO             , a.ST_NO        "
+p_tmsm_7120/tmsm01a3_inq.cpp	95	98	sqlstr = " SELECT  a.*       "
+p_tmsm_7120/tmsm01a3_inq.cpp	128	131	sqlstr = " SELECT  a.DEV_CODE                     "
+p_tmsm_7120/tmsm01a3_inq.cpp	167	169	sqlstr = " SELECT  t.*       "
+p_tmsm_7120/tmsm01a3_inq.cpp	287	289	sqlstr = " SELECT  t.*       "
+p_tmsm_7120/tmsm01a3_upd.cpp	149	156	sqlstr = " SELECT   a.SM_PLAN_NO        , a.PONO             , a.ST_NO        "
+p_tmsm_7120/tmsm02_inq.cpp	66	70	sqlstr = " SELECT * "
+p_tmsm_7120/tmsm03_del.cpp	87	92	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm03_del.cpp	113	114	sqlstr = "DELETE TTMSM03";
+p_tmsm_7120/tmsm03_inq.cpp	87	89	sqlstr =" SELECT COUNT(1) "
+p_tmsm_7120/tmsm03_inq.cpp	121	123	sqlstr =" SELECT * "
+p_tmsm_7120/tmsm03_ins.cpp	123	129	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm03_ins.cpp	151	155	sqlstr =	" SELECT nvl(MAX(BAKE_SEQ_NO),0) "
+p_tmsm_7120/tmsm03_ins.cpp	240	246	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm03_ins.cpp	268	272	sqlstr =	" SELECT nvl(MAX(BAKE_SEQ_NO),0) "
+p_tmsm_7120/tmsm03_ins.cpp	323	325	sqlstr = "UPDATE TTMSM01";
+p_tmsm_7120/tmsm03_upd.cpp	129	134	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm03_upd.cpp	181	197	sqlstr = "UPDATE TTMSM03"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm03_upd.cpp	244	250	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm03_upd.cpp	302	318	sqlstr = "UPDATE TTMSM03"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm03_upd.cpp	320	333	sqlstr = "UPDATE TTMSM01";
+p_tmsm_7120/tmsm05_del.cpp	87	92	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm05_del.cpp	113	114	sqlstr = "DELETE TTMSM05";
+p_tmsm_7120/tmsm05_inq.cpp	86	88	sqlstr =	" SELECT COUNT(1) "
+p_tmsm_7120/tmsm05_inq.cpp	120	122	sqlstr =	" SELECT * "
+p_tmsm_7120/tmsm05_ins.cpp	149	155	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm05_ins.cpp	177	181	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm05_ins.cpp	275	281	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm05_ins.cpp	304	307	sqlstr = " SELECT * FROM TTMSM01 "
+p_tmsm_7120/tmsm05_ins.cpp	320	324	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm05_ins.cpp	367	372	sqlstr =	" SELECT COUNT(1) "
+p_tmsm_7120/tmsm05_ins.cpp	459	461	sqlstr = "UPDATE TTMSM01";
+p_tmsm_7120/tmsm05_upd.cpp	138	143	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm05_upd.cpp	180	200	sqlstr = "UPDATE TTMSM05"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm05_upd.cpp	264	271	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm05_upd.cpp	314	334	sqlstr = "UPDATE TTMSM05"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm05_upd.cpp	336	361	sqlstr = "UPDATE TTMSM01";
+p_tmsm_7120/tmsm06_del.cpp	87	92	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm06_del.cpp	113	114	sqlstr = "DELETE TTMSM04";
+p_tmsm_7120/tmsm06_inq.cpp	86	88	sqlstr =	" SELECT COUNT(1) "
+p_tmsm_7120/tmsm06_inq.cpp	120	122	sqlstr =	" SELECT * "
+p_tmsm_7120/tmsm06_ins.cpp	113	116	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm06_ins.cpp	136	138	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm06_ins.cpp	211	213	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm06_ins.cpp	233	235	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm06_ins.cpp	266	268	sqlstr = "UPDATE TTMSM01";
+p_tmsm_7120/tmsm06_upd.cpp	115	117	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm06_upd.cpp	172	209	sqlstr = "UPDATE TTMSM04"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm06_upd.cpp	255	257	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm06_upd.cpp	294	331	sqlstr = "UPDATE TTMSM04"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm06_upd.cpp	333	370	sqlstr = "UPDATE TTMSM01";
+p_tmsm_7120/tmsm09_del.cpp	87	92	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm09_del.cpp	113	114	sqlstr = "DELETE TTMSM09";
+p_tmsm_7120/tmsm09_inq.cpp	86	88	sqlstr =	" SELECT COUNT(1) "
+p_tmsm_7120/tmsm09_inq.cpp	120	122	sqlstr =	" SELECT * "
+p_tmsm_7120/tmsm09_ins.cpp	108	113	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm09_ins.cpp	134	138	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm09_ins.cpp	211	216	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm09_ins.cpp	237	241	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm09_ins.cpp	272	274	sqlstr = "UPDATE TTMSM01";
+p_tmsm_7120/tmsm09_upd.cpp	114	119	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm09_upd.cpp	152	188	sqlstr = "UPDATE TTMSM09"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm09_upd.cpp	229	234	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm09_upd.cpp	272	309	sqlstr = "UPDATE TTMSM09"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm09_upd.cpp	311	348	sqlstr = "UPDATE TTMSM01";
+p_tmsm_7120/tmsm11_inq.cpp	56	59	sqlstr = "SELECT * FROM TTMSM11 WHERE 1=1 " ;
+p_tmsm_7120/tmsm11_inq1.cpp	57	60	sqlstr = "SELECT * FROM TTMSM11 WHERE 1=1 " ;
+p_tmsm_7120/tmsm11_ins.cpp	67	70	sqlstr = " SELECT COUNT(1) "
+p_tmsm_7120/tmsm11_scp.cpp	70	73	sqlstr = "SELECT * FROM TTMSM11 WHERE 1=1 " ;
+p_tmsm_7120/tmsm11a1f2_inq.cpp	77	79	sqlstr_count = " SELECT COUNT(1)     "
+p_tmsm_7120/tmsm11a1f2_inq.cpp	80	82	sqlstr	= " SELECT *            "
+p_tmsm_7120/tmsm11a3_cbn.cpp	100	107	sqlstr = " SELECT   a.SM_PLAN_NO        , a.PONO             , a.ST_NO        "
+p_tmsm_7120/tmsm11a3_cbn_r.cpp	93	100	sqlstr = " SELECT   a.SM_PLAN_NO        , a.PONO             , a.ST_NO        "
+p_tmsm_7120/tmsm11a3_cfm.cpp	123	130	sqlstr = " SELECT   a.SM_PLAN_NO        , a.PONO             , a.ST_NO        "
+p_tmsm_7120/tmsm11a3_inq.cpp	95	98	sqlstr = " SELECT  a.*       "
+p_tmsm_7120/tmsm11a3_inq.cpp	128	131	sqlstr = " SELECT  a.DEV_CODE                     "
+p_tmsm_7120/tmsm11a3_inq.cpp	169	171	sqlstr = " SELECT  t.*       "
+p_tmsm_7120/tmsm11a3_inq.cpp	289	291	sqlstr = " SELECT  t.*       "
+p_tmsm_7120/tmsm11a3f2_inq.cpp	77	79	sqlstr_count = " SELECT COUNT(1)    "
+p_tmsm_7120/tmsm11a3f2_inq.cpp	80	82	sqlstr	= " SELECT *            "
+p_tmsm_7120/tmsm12_inq.cpp	54	55	CString c_sql_condition = " SELECT * FROM TTMSM12  ";
+p_tmsm_7120/tmsm15_del.cpp	87	92	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm15_del.cpp	113	114	sqlstr = "DELETE TTMSM15";
+p_tmsm_7120/tmsm15_inq.cpp	86	88	sqlstr =	" SELECT COUNT(1) "
+p_tmsm_7120/tmsm15_inq.cpp	120	122	sqlstr =	" SELECT * "
+p_tmsm_7120/tmsm15_ins.cpp	114	120	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm15_ins.cpp	142	146	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm15_ins.cpp	216	222	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm15_ins.cpp	244	248	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm15_ins.cpp	270	280	sqlstr = "UPDATE TTMSM11";
+p_tmsm_7120/tmsm15_upd.cpp	120	125	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm15_upd.cpp	158	166	sqlstr = "UPDATE TTMSM15"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm15_upd.cpp	210	216	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm15_upd.cpp	245	252	sqlstr = "UPDATE TTMSM15"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm15_upd.cpp	254	262	sqlstr = "UPDATE TTMSM11";
+p_tmsm_7120/tmsm19_del.cpp	87	92	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm19_del.cpp	113	114	sqlstr = "DELETE TTMSM19";
+p_tmsm_7120/tmsm19_inq.cpp	86	88	sqlstr =	" SELECT COUNT(1) "
+p_tmsm_7120/tmsm19_inq.cpp	120	122	sqlstr =	" SELECT * "
+p_tmsm_7120/tmsm19_ins.cpp	114	119	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm19_ins.cpp	140	144	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm19_ins.cpp	199	204	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm19_ins.cpp	225	229	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm19_ins.cpp	251	271	sqlstr = "UPDATE TTMSM11";
+p_tmsm_7120/tmsm19_upd.cpp	114	119	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm19_upd.cpp	144	163	sqlstr = "UPDATE TTMSM19"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm19_upd.cpp	201	206	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm19_upd.cpp	234	253	sqlstr = "UPDATE TTMSM19"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm19_upd.cpp	255	274	sqlstr = "UPDATE TTMSM11";
+p_tmsm_7120/tmsm21_inq.cpp	55	58	sqlstr = "SELECT * FROM TTMSM21 WHERE 1=1 " ;
+p_tmsm_7120/tmsm21_inq1.cpp	59	62	sqlstr = "SELECT * FROM TTMSM21 WHERE 1=1 " ;
+p_tmsm_7120/tmsm21_ins.cpp	67	70	sqlstr = " SELECT COUNT(1) "
+p_tmsm_7120/tmsm21_scp.cpp	69	72	sqlstr = "SELECT * FROM TTMSM21 WHERE 1=1 " ;
+p_tmsm_7120/tmsm21bf2_inq.cpp	91	91	CString c_sql_condition  = " SELECT * FROM ttmsm21  " ;
+p_tmsm_7120/tmsm21bf2_inq.cpp	92	93	CString c_sql_condition2 = " SELECT COUNT(1) FROM ttmsm21  ";
+p_tmsm_7120/tmsm21bf9_pro.cpp	167	170	sqlstr = " SELECT NVL(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm25_del.cpp	87	92	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm25_del.cpp	113	114	sqlstr = "DELETE TTMSM25";
+p_tmsm_7120/tmsm25_inq.cpp	87	89	sqlstr =	" SELECT COUNT(1) "
+p_tmsm_7120/tmsm25_inq.cpp	121	123	sqlstr =	" SELECT * "
+p_tmsm_7120/tmsm25_ins.cpp	114	120	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm25_ins.cpp	142	146	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm25_ins.cpp	216	222	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm25_ins.cpp	244	248	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm25_ins.cpp	270	281	sqlstr = "UPDATE TTMSM21";
+p_tmsm_7120/tmsm25_upd.cpp	120	125	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm25_upd.cpp	158	167	sqlstr = "UPDATE TTMSM25"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm25_upd.cpp	211	218	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm25_upd.cpp	247	255	sqlstr = "UPDATE TTMSM25"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm25_upd.cpp	257	266	sqlstr = "UPDATE TTMSM21";
+p_tmsm_7120/tmsm29_del.cpp	87	92	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm29_del.cpp	113	114	sqlstr = "DELETE TTMSM29";
+p_tmsm_7120/tmsm29_inq.cpp	86	88	sqlstr =	" SELECT COUNT(1) "
+p_tmsm_7120/tmsm29_inq.cpp	120	122	sqlstr =	" SELECT * "
+p_tmsm_7120/tmsm29_ins.cpp	108	113	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm29_ins.cpp	134	138	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm29_ins.cpp	202	207	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm29_ins.cpp	228	232	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm29_ins.cpp	254	296	sqlstr = "UPDATE TTMSM21";
+p_tmsm_7120/tmsm29_upd.cpp	114	119	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm29_upd.cpp	152	190	sqlstr = "UPDATE TTMSM29"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm29_upd.cpp	228	234	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm29_upd.cpp	262	300	sqlstr = "UPDATE TTMSM29"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm29_upd.cpp	302	341	sqlstr = "UPDATE TTMSM21";
+p_tmsm_7120/tmsm31_inq.cpp	57	60	sqlstr = "SELECT * FROM TTMSM31 WHERE 1=1 " ;
+p_tmsm_7120/tmsm31_inq1.cpp	65	68	sqlstr = "SELECT * FROM TTMSM31 WHERE 1=1 " ;
+p_tmsm_7120/tmsm31_ins.cpp	69	75	sqlstr = " SELECT COUNT(1) "
+p_tmsm_7120/tmsm31_scp.cpp	71	74	sqlstr = "SELECT * FROM TTMSM31 WHERE 1=1 " ;
+p_tmsm_7120/tmsm31bf10_pro.cpp	170	173	sqlstr = " SELECT CURRENT_STATUS "
+p_tmsm_7120/tmsm31bf10_pro.cpp	206	209	sqlstr = " SELECT NVL(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm31bf2_inq.cpp	91	91	CString c_sql_condition  = " SELECT * FROM ttmsm31  " ;
+p_tmsm_7120/tmsm31bf2_inq.cpp	92	93	CString c_sql_condition2 = " SELECT COUNT(1) FROM ttmsm31  ";
+p_tmsm_7120/tmsm31bf9_pro.cpp	164	167	sqlstr = " SELECT NVL(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm35_del.cpp	99	106	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm35_del.cpp	129	130	sqlstr = "DELETE TTMSM35";
+p_tmsm_7120/tmsm35_inq.cpp	93	95	sqlstr =	" SELECT COUNT(1) "
+p_tmsm_7120/tmsm35_inq.cpp	137	139	sqlstr =	" SELECT * "
+p_tmsm_7120/tmsm35_ins.cpp	126	134	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm35_ins.cpp	158	164	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm35_ins.cpp	236	244	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm35_ins.cpp	268	274	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm35_ins.cpp	298	309	sqlstr = "UPDATE TTMSM31";
+p_tmsm_7120/tmsm35_upd.cpp	133	140	sqlstr = " SELECT COUNT(1) "
+p_tmsm_7120/tmsm35_upd.cpp	167	176	sqlstr = "UPDATE TTMSM35"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm35_upd.cpp	232	241	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm35_upd.cpp	272	280	sqlstr = "UPDATE TTMSM35"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm35_upd.cpp	282	291	sqlstr = "UPDATE TTMSM31";
+p_tmsm_7120/tmsm37_inq2.cpp	50	51	sqlstr = " SELECT  t.*       "
+p_tmsm_7120/tmsm39_del.cpp	99	106	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm39_del.cpp	129	130	sqlstr = "DELETE TTMSM39";
+p_tmsm_7120/tmsm39_inq.cpp	92	94	sqlstr =	" SELECT COUNT(1) "
+p_tmsm_7120/tmsm39_inq.cpp	136	138	sqlstr =	" SELECT * "
+p_tmsm_7120/tmsm39_ins.cpp	120	127	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm39_ins.cpp	150	156	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm39_ins.cpp	222	229	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm39_ins.cpp	252	258	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm39_ins.cpp	282	313	sqlstr = "UPDATE TTMSM31";
+p_tmsm_7120/tmsm39_upd.cpp	126	133	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm39_upd.cpp	168	195	sqlstr = "UPDATE TTMSM39"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm39_upd.cpp	233	240	sqlstr = "  SELECT COUNT(1) "
+p_tmsm_7120/tmsm39_upd.cpp	270	297	sqlstr = "UPDATE TTMSM39"; //用于捕获数据库操作异常情况
+p_tmsm_7120/tmsm39_upd.cpp	299	329	sqlstr = "UPDATE TTMSM31";
+p_tmsm_7120/tmsm41a2_inq.cpp	86	88	sqlstr = " SELECT  t.*       "
+p_tmsm_7120/tmsm41a2_inq.cpp	140	142	sqlstr = " SELECT  t.*       "
+p_tmsm_7120/tmsm41a2_inq.cpp	193	194	sqlstr = " SELECT  t.*       "
+p_tmsm_7120/tmsm41bf2_inq.cpp	91	91	CString c_sql_condition  = " SELECT * FROM ttmsm41  " ;
+p_tmsm_7120/tmsm41bf2_inq.cpp	92	93	CString c_sql_condition2 = " SELECT COUNT(1) FROM ttmsm41  ";
+p_tmsm_7120/tmsm41bf9_pro.cpp	105	107	sqlstr = " SELECT NVL(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm51_inq.cpp	73	77	CString sql = "SELECT CODE,CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS='" + code_class + "' AND CODE " + ((type == "1") ? " " : "NOT ") + " IN (SELECT OPE
+p_tmsm_7120/tmsm52_inq.cpp	55	55	CString c_sql_condition = " SELECT * FROM ttmsm52  ";
+p_tmsm_7120/tmsm52_inq.cpp	56	57	CString c_sql_condition2 = " SELECT COUNT(1) FROM ttmsm52  ";
+p_tmsm_7120/tmsm53_inq.cpp	64	64	CString c_sql_condition = " SELECT * FROM ttmsm53  ";
+p_tmsm_7120/tmsm53_inq.cpp	65	66	CString c_sql_condition2 = " SELECT COUNT(1) FROM ttmsm53  ";
+p_tmsm_7120/tmsm53_ins.cpp	80	83	sqlstr = "SELECT CODE_DESC_2_CONTENT"
+p_tmsm_7120/tmsm53_ins.cpp	113	114	sqlstr = "select '" + oper_place.Substring(0, 1) + "'||lpad('" + crane_inst_seq + "', 6, '0') from DUAL";
+p_tmsm_7120/tmsm53_upd.cpp	78	80	sqlstr = "SELECT CRANE_INST_STATUS FROM TTMSM53 WHERE CRANE_INST_NO='" + ttmsm53["CRANE_INST_NO"].ToString().Trim() + "'";
+p_tmsm_7120/tmsm53_upd.cpp	104	107	sqlstr = "SELECT CODE_DESC_2_CONTENT"
+p_tmsm_7120/tmsm54_inq.cpp	85	87	CString c_sql_condition = " SELECT * FROM ttmsm54  ";
+p_tmsm_7120/tmsm55_inq.cpp	81	83	CString c_sql_condition = " SELECT * FROM ttmsm55  ";
+p_tmsm_7120/tmsm56_inq.cpp	81	83	CString c_sql_condition = " SELECT * FROM ttmsm56  ";
+p_tmsm_7120/tmsm97bf2_inq.cpp	117	117	CString c_sql_condition  = " SELECT * FROM ttmsm97  " ;
+p_tmsm_7120/tmsm97bf2_inq.cpp	118	119	CString c_sql_condition2 = " SELECT COUNT(1) FROM ttmsm97  ";
+p_tmsm_7120/tmsmqmts25_inq.cpp	62	64	CString sql = "SELECT "
+p_tmsm_7130/tm0097_copy.cpp	54	55	sqlstr = " select * from ttm0099 where STATION_ID='" + ttm0097["STATION_ID"].ToString() + "' and EVENT_ID='" + ttm0097["EVENT_ID"].ToString() + "' ";
+p_tmsm_7130/tm0097_inq.cpp	60	63	" SELECT * FROM TTM0097 T97 WHERE 1=1 ";
+p_tmsm_7130/tm0099_inq.cpp	45	48	" SELECT * FROM TTM0099 T99 WHERE 1=1 ";
+p_tmsm_7130/tm009a_inq.cpp	40	40	"	WITH TM0 AS (	"
+p_tmsm_7130/tm009a_inq.cpp	41	45	"	select t.table_name, t.COLUMN_NAME, t.DATA_TYPE, c.COMMENTS, t.DATA_LENGTH,t.COLUMN_ID "
+p_tmsm_7130/tm009a_inq.cpp	46	47	"	SELECT B.*FROM TTM0000 A LEFT JOIN TM0 B ON A.TABLE_NAME = B.TABLE_NAME "
+p_tmsm_7130/tmsmbg_init.cpp	43	56	sqlstr = " select LADLE_NO,\
+p_tmsm_7130/tmsmbg_init.cpp	62	75	sqlstr = " select LADLE_NO,\
+p_tmsm_7130/tmsmgt_bake_inq.cpp	50	53	sqlstr = " select * from ttmsm0a where EVENT_ID='TM04' ";
+p_tmsm_7130/tmsmgt_init.cpp	43	56	sqlstr = " select LADLE_NO,\
+p_tmsm_7130/tmsmgt_inq.cpp	53	54	sqlstr = " select * from ttmsm01 where LADLE_NO='" + bcls_rec->Tables[0].Rows[0]["LADLE_NO"].ToString() + "' ";
+p_tmsm_7130/tmsmgt_repair_inq.cpp	50	53	sqlstr = " select * from ttmsm0a where EVENT_ID='TM03' ";
+p_tmsm_7130/tmsmgt_show_inq.cpp	49	51	sqlstr = " select * from ttmsm01 where 1=1 ";
+p_tmsm_7160/qxsm23_dr_inq1.cpp	25	26	CString sqlstr = "SELECT REC_CREATE_TIME,REC_CREATOR,DEVICENAME,FUNCTION,ITEM_COUNTS,INFLUENCE,KEY_POINT,EVA_CRI,ACC_UNIT,UNIT,CYCLE,MON_METHOD,LEVEL_,SUB_,ROOT
+p_tmsm_7160/qxsm23_dr_ins1.cpp	38	39	CString sql_ = "SELECT MAX(VERSION)+1 FROM TTMSMQXDR WHERE TIME = '" + time + "' ";
+p_tmsm_7160/qxsm23_qs_inq.cpp	27	28	CString sqlstr = "SELECT REC_CREATE_TIME,REC_CREATOR,DEVICENAME,FUNCTION,ITEM_COUNTS,INFLUENCE,KEY_POINT,EVA_CRI,ACC_UNIT,UNIT,CYCLE,MON_METHOD,LEVEL_,SUB_,ROOT
+p_tmsm_7160/qxsm23_qs_inq1.cpp	50	50	sqlstr1 = "SELECT REC_CREATE_TIME,REC_CREATOR,DEVICENAME,TIME";
+p_tmsm_7160/qxsm23_qs_inq1.cpp	51	57	sqlstr2 = "SELECT REC_CREATE_TIME,REC_CREATOR,DEVICENAME,TIME";
+p_tmsm_7160/qxsm23_qs_inq1.cpp	155	156	sqlstr1 = "SELECT t.FUNCTION,t.PROPOR, r.PROPOR as PROPOR2,CASE WHEN t.EVA_CRI like '≥%'  THEN TO_NUMBER(substr(t.EVA_CRI,instr(t.EVA_CRI,'≥')+1,instr(t.EVA_CRI
+p_tmsm_7160/tmsm_l2_mess_auto_snd.cpp	29	30	sqlstr = " select * from TTMSM_HEAT WHERE SEND_FLAG='0' and rownum<=100 ";
+p_tmsm_7160/tmsm_l2_mess_auto_snd.cpp	59	60	sqlstr = " select * from tmmsm2b where REC_CREATE_TIME>=TO_CHAR(SYSDATE-10/24/60,'yyyyMMddhh24MISS') ";
+p_tmsm_7160/tmsm_l2_mess_auto_snd.cpp	87	88	sqlstr = " select * from TTMSM_MAT WHERE SEND_FLAG='0' and rownum<=100 ";
+p_tmsm_7160/tmsm_l2_mess_auto_snd.cpp	117	119	sqlstr = " select HEAT_NO, sum(CUT_SCRAP_WT) CUT_SCRAP_WT from tmmsm39 \
+p_tmsm_7160/tmsm_t82326_snd.cpp	32	33	sqlstr = " SELECT * FROM V_GTL_TG23 WHERE  TAP_END_TIME <= '"+ datetime_e +"'\
+p_tmsm_7160/tmsm_t82327_snd.cpp	32	33	sqlstr = " SELECT * FROM ttmsm203 WHERE  (REC_CREATE_TIME <= '" + datetime_e + "'\
+p_tmsm_7160/tmsme59_inq.cpp	92	93	sqlstr = "select DATEDIFF(DAY, CAST('" + ttmsm66["REC_CREATE_TIME"].ToString() + "' AS TIMESTAMP), CAST('" + ttmsm66["CHANGE_TIME"].ToString() + "' AS TIMESTAMP
+p_tmsm_7160/tmsme59_inq.cpp	125	127	sqlstr = "select TIMESTAMPDIFF(8, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) fr
+p_tmsm_7160/tmsme59_inq.cpp	159	161	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) fr
+p_tmsm_7160/tmsme59_inq.cpp	191	194	sqlstr = " SELECT * FROM TTMSM52 ORDER BY CRANENO ";
+p_tmsm_7160/tmsme59_inq.cpp	204	205	sqlstr1 = " SELECT SUSPEND_TIME, D_TIME	FROM TTMSM54 WHERE CRANENO = '" + dt_dev.Rows[i]["CRANENO"].ToString() + "'"
+p_tmsm_7160/tmsme59_inq.cpp	219	220	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["SUSPEND_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["DEV_NAME"].ToSt
+p_tmsm_7160/tmsme59_inq.cpp	248	249	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["D_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["SUSPEND_TIME"].ToStri
+p_tmsm_7160/tmsme59_inq.cpp	277	278	sqlstr1 = " SELECT REPAIR_START_TIME, REPAIR_END_TIME FROM TTMSM57 WHERE CRANENO = '" + dt_dev.Rows[i]["CRANENO"].ToString() + "'"
+p_tmsm_7160/tmsme59_inq.cpp	292	293	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["REPAIR_END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["REPAIR_START
+p_tmsm_7160/tmsme59_inq.cpp	329	331	sqlstr = "SELECT ROUND(" + use_time.ToString() + "/60,2),ROUND(" + prep_time.ToString() + "/60,2),ROUND((" + all_time.ToString() + " - " + use_time.ToString() +
+p_tmsm_7160/tmsme61_inq1.cpp	65	66	sqlstr = " SELECT  t.*       "
+p_tmsm_7160/tmsme61_inq2.cpp	66	67	sqlstr = " SELECT  t.*       "
+p_tmsm_7160/tmsme66_inq.cpp	92	93	sqlstr = "SELECT COUNT(1) FROM TTMSM66 WHERE 1=1 ";
+p_tmsm_7160/tmsme66_inq.cpp	130	131	sqlstr = "SELECT * FROM TTMSM66 WHERE 1=1";
+p_tmsm_7160/tmsme66a1_ins.cpp	101	102	sqlstr = "select CODE_DESC_1_CONTENT FROM TSI00FORMCODESETS WHERE FORM_NAME='TMSME66' AND CODE_CLASS='CHANGE_RES_C' AND CODE = @change_res"	;
+p_tmsm_7160/tmsme66a1_upd.cpp	78	79	sqlstr = "select CODE_DESC_1_CONTENT FROM TSI00FORMCODESETS WHERE FORM_NAME='TMSME66' AND CODE_CLASS='CHANGE_RES_C' AND CODE = @change_res";
+p_tmsm_7160/tmsme66a1_upd.cpp	96	109	sqlstr = "UPDATE TTMSM66 SET REC_REVISOR= '" + ttmsm66["REC_REVISOR"].ToString() + "',"
+p_tmsm_7160/tmsme67_inq.cpp	96	97	sqlstr = "SELECT COUNT(1) FROM TTMSM67 WHERE 1=1 ";
+p_tmsm_7160/tmsme67_inq.cpp	119	120	sqlstr = "SELECT * FROM TTMSM67 WHERE 1=1";
+p_tmsm_7160/tmsme68_inq.cpp	82	83	sqlstr = "SELECT COUNT(1) FROM TTMSM68 WHERE 1=1 ";
+p_tmsm_7160/tmsme68_inq.cpp	101	102	sqlstr = "SELECT * FROM TTMSM68 WHERE 1=1";
+p_tmsm_7160/tmsme68a1_ins.cpp	78	79	sqlstr = "select CODE_DESC_1_CONTENT FROM TSI00FORMCODESETS WHERE FORM_NAME='TMSME68' AND CODE_CLASS='CC_MACH_NO' AND CODE = @mach_no";
+p_tmsm_7160/tmsme68a1_ins.cpp	103	104	sqlstr = "select CODE_DESC_1_CONTENT FROM TSI00FORMCODESETS WHERE FORM_NAME='TMSME68' AND CODE_CLASS='STRAND_NO' AND CODE = @strand_no";
+p_tmsm_7160/tmsme68a1_ins.cpp	128	129	sqlstr = "select CODE_DESC_1_CONTENT FROM TSI00FORMCODESETS WHERE FORM_NAME='TMSME68' AND CODE_CLASS='STATUS' AND CODE = @status_no";
+p_tmsm_7160/tmsme68a1_offline.cpp	84	85	sqlstr = "select DATEDIFF(DAY, DATE(TIMESTAMP ('" + ttmsm68["ON_LINE_TIME"].ToString() + "')), DATE(TIMESTAMP ('" + ttmsm68["OFF_LINE_TIME"].ToString() + "'))) 
+p_tmsm_7160/tmsme68a1_offline.cpp	125	129	sqlstr = "UPDATE TTMSM68 SET REC_REVISOR= '" + ttmsm68["REC_REVISOR"].ToString() + "',"
+p_tmsm_7160/tmsme68a1_upd.cpp	80	81	sqlstr = "select CODE_DESC_1_CONTENT FROM TSI00FORMCODESETS WHERE FORM_NAME='TMSME68' AND CODE_CLASS='CC_MACH_NO' AND CODE = @mach_no";
+p_tmsm_7160/tmsme68a1_upd.cpp	105	106	sqlstr = "select CODE_DESC_1_CONTENT FROM TSI00FORMCODESETS WHERE FORM_NAME='TMSME68' AND CODE_CLASS='STRAND_NO' AND CODE = @strand_no";
+p_tmsm_7160/tmsme68a1_upd.cpp	130	131	sqlstr = "select CODE_DESC_1_CONTENT FROM TSI00FORMCODESETS WHERE FORM_NAME='TMSME68' AND CODE_CLASS='STATUS' AND CODE = @status_no";
+p_tmsm_7160/tmsme68a1_upd.cpp	152	168	sqlstr = "UPDATE TTMSM68 SET REC_REVISOR= '" + ttmsm68["REC_REVISOR"].ToString() + "',"
+p_tmsm_7160/tmsme69_inq.cpp	78	79	sqlstr = "SELECT COUNT(1) FROM TTMSM69 WHERE 1=1 ";
+p_tmsm_7160/tmsme69_inq.cpp	96	97	sqlstr = "SELECT * FROM TTMSM69 WHERE 1=1";
+p_tmsm_7160/tmsme69a1_upd.cpp	68	87	sqlstr = "UPDATE TTMSM69 SET REC_REVISOR= '" + ttmsm69["REC_REVISOR"].ToString() + "',"
+p_tmsm_7160/tmsme91_inq1.cpp	103	104	sqlstr = "SELECT COUNT(1) FROM TTMSM91 WHERE 1=1 ";
+p_tmsm_7160/tmsme91_inq1.cpp	147	148	sqlstr = "SELECT TTMSM91.*,(select ttmsm61.dev_name from ttmsm61 where ttmsm61.dev_type = TTMSM91.dev_type) TYPE_NM FROM TTMSM91 WHERE 1=1";
+p_tmsm_7160/tmsme91_inq2.cpp	68	69	sqlstr = " SELECT  t.*       "
+p_tmsm_7160/tmsme91a1_act.cpp	108	116	sqlstr = "UPDATE TTMSM92 SET REC_REVISOR= '" + ttmsm91["REC_REVISOR"].ToString() + "',"
+p_tmsm_7160/tmsme91a1_bake.cpp	81	93	sqlstr = "UPDATE TTMSM91 SET REC_REVISOR= '" + ttmsm91["REC_REVISOR"].ToString() + "',"
+p_tmsm_7160/tmsme91a1_check.cpp	81	95	sqlstr = "UPDATE TTMSM91 SET REC_REVISOR= '" + ttmsm91["REC_REVISOR"].ToString() + "',"
+p_tmsm_7160/tmsme91a1_del.cpp	71	73	sqlstr = "UPDATE TTMSM91 SET MAIN_DEV_NO= ' ',"
+p_tmsm_7160/tmsme91a1_ins.cpp	84	86	sqlstr = " 	SELECT WORK_AREA FROM TTMSM61 "
+p_tmsm_7160/tmsme91a1_ins.cpp	113	114	sqlstr = " SELECT * FROM TTMSM62 WHERE DEV_TYPE = '" + ttmsm91["DEV_TYPE"].ToString().Trim() + "'"
+p_tmsm_7160/tmsme91a1_rep.cpp	81	93	sqlstr = "UPDATE TTMSM91 SET REC_REVISOR= '" + ttmsm91["REC_REVISOR"].ToString() + "',"
+p_tmsm_7160/tmsme91a1_upd.cpp	117	153	sqlstr = "UPDATE TTMSM91 SET REC_REVISOR= '" + ttmsm91["REC_REVISOR"].ToString() + "',"
+p_tmsm_7160/tmsme91a1_upd.cpp	168	171	sqlstr = "UPDATE TTMSM92 SET REC_REVISOR= '" + ttmsm91["REC_REVISOR"].ToString() + "',"
+p_tmsm_7160/tmsme91a1_use.cpp	81	94	sqlstr = "UPDATE TTMSM91 SET REC_REVISOR= '" + ttmsm91["REC_REVISOR"].ToString() + "',"
+p_tmsm_7160/tmsme95_inq1.cpp	100	101	sqlstr = "SELECT COUNT(1) FROM TTMSM95 WHERE 1=1 ";
+p_tmsm_7160/tmsme95_inq1.cpp	124	125	sqlstr = "SELECT TTMSM95.*,(select ttmsm61.dev_name from ttmsm61 where ttmsm61.dev_type = TTMSM95.dev_type) TYPE_NM FROM TTMSM95 WHERE 1=1";
+p_tmsm_7160/tmsme96_inq.cpp	89	90	sqlstr = "select DATEDIFF(DAY, CAST('" + ttmsm66["REC_CREATE_TIME"].ToString() + "' AS TIMESTAMP), CAST('" + ttmsm66["CHANGE_TIME"].ToString() + "' AS TIMESTAMP
+p_tmsm_7160/tmsme96_inq.cpp	122	124	sqlstr = "select TIMESTAMPDIFF(8, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) fr
+p_tmsm_7160/tmsme96_inq.cpp	156	158	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) fr
+p_tmsm_7160/tmsme96_inq.cpp	195	207	sqlstr = " SELECT *,STATION_ID||'0'||LPAD(STATION_NO,2,'0') DEV_NO FROM TPSSMD1 ORDER BY AREA_ID";
+p_tmsm_7160/tmsme96_inq.cpp	218	219	sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM12 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+p_tmsm_7160/tmsme96_inq.cpp	271	272	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+p_tmsm_7160/tmsme96_inq.cpp	301	302	sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM14 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+p_tmsm_7160/tmsme96_inq.cpp	316	317	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+p_tmsm_7160/tmsme96_inq.cpp	347	348	sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM21 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+p_tmsm_7160/tmsme96_inq.cpp	362	363	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+p_tmsm_7160/tmsme96_inq.cpp	393	394	sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM22 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+p_tmsm_7160/tmsme96_inq.cpp	408	409	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+p_tmsm_7160/tmsme96_inq.cpp	439	440	sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM23 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+p_tmsm_7160/tmsme96_inq.cpp	454	455	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+p_tmsm_7160/tmsme96_inq.cpp	485	486	sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM22 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+p_tmsm_7160/tmsme96_inq.cpp	500	501	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+p_tmsm_7160/tmsme96_inq.cpp	531	532	sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM31 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+p_tmsm_7160/tmsme96_inq.cpp	546	547	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+p_tmsm_7160/tmsme96_inq.cpp	574	575	sqlstr1 = " SELECT S_DATETIME,E_DATETIME FROM TTMSM95 WHERE STATUS = '11'  AND DEV_NO = '" + dt_dev.Rows[i]["DEV_NO"].ToString() + "'"
+p_tmsm_7160/tmsme96_inq.cpp	589	590	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["E_DATETIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["S_DATETIME"].ToSt
+p_tmsm_7160/tmsme96_inq.cpp	623	625	sqlstr = "SELECT ROUND(" + use_time.ToString() + "/60,2),ROUND((" + all_time.ToString()+" - "+ use_time.ToString() + ")/ 60, 2), ROUND("

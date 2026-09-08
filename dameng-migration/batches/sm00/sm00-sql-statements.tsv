@@ -1,0 +1,422 @@
+file	start	end	preview
+libSM00/f_00xxa1_rcv.cpp	113	114	sqlstr = CString(" select count(1) from tsmpe01 where confm_plan_no = @confm_plan_no ");
+libSM00/f_00xxa1_rcv.cpp	127	128	sqlstr = "select factory_div from vsmpea9 where stock_no = @stock_no ";
+libSM00/f_00xxa1_rcv.cpp	157	158	sqlstr = "insert into tsmpe01";
+libSM00/f_00xxa2_rcv.cpp	262	263	sqlstr = "SELECT count(1) FROM tsmpe00 WHERE ready_bill_no = @read_bill_no";
+libSM00/f_00xxa2_rcv.cpp	276	279	sqlstr = " select code_desc_1_content , code_desc_2_content "
+libSM00/f_00xxa2_rcv.cpp	293	294	sqlstr = "select factory_div from vsmpea9 where stock_no = @stock_no ";
+libSM00/f_00xxa2_rcv.cpp	310	311	sqlstr = "select ORDER_TYPE_CODE,EXPORT_FLAG,WT_METHOD_CODE,TRNP_MODE_CODE,CONTRACT_NO,DELIVY_QTY_FLAG,PROD_CNAME,PROD_ENAME,PICK_DELIVERY_FLAG from tom01 where
+libSM00/f_00xxa2_rcv.cpp	439	440	sqlstr = "INSERT INTO TSMPE00 ready_bill_no = '" + tsmpe00["READY_BILL_NO"].ToString() + "' ";
+libSM00/f_00xxa2_rcv.cpp	477	479	sqlstr = " SELECT * FROM " + table_name + " WHERE mat_no = '" + c_mat_no + "' ";
+libSM00/f_00xxa2_rcv.cpp	679	680	sqlstr = "INSERT TSMPE02  MAT_NO = '" + tsmpe02["MAT_NO"].ToString() + "' ";
+libSM00/f_00xxa2_rcv.cpp	730	731	sqlstr = "select count(1) from tsmpe00 where confm_plan_no = @confm_plan_no ";
+libSM00/f_00xxa2_rcv.cpp	745	746	" UPDATE tsmpe01 SET confm_status = '2' WHERE confm_plan_no = @confm_plan_no AND confm_status < '4' "
+libSM00/f_00xxa2_rcv.cpp	749	750	" UPDATE tsmpe00 SET confm_status = '2'  WHERE confm_plan_no = @confm_plan_no AND confm_status < '4' "
+libSM00/f_00xxa2_rcv.cpp	753	754	" UPDATE tsmpe02 SET confm_status = '2'  WHERE confm_plan_no = @confm_plan_no AND confm_status < '4' "
+libSM00/f_00xxsa_rcv.cpp	115	116	" select count(1) from tsmpe02 where mat_no = @mat_no "
+libSM00/f_00xxsa_rcv.cpp	119	120	" select * from tsmpe02 where mat_no = @mat_no "
+libSM00/f_00xxsa_rcv.cpp	123	124	" delete from tsmpe02 where mat_no = @mat_no  "
+libSM00/f_00xxsa_rcv.cpp	127	137	" UPDATE	tsmpe02 "
+libSM00/f_00xxsa_rcv.cpp	232	233	sqlstr = "UPDATE TSMPE02 SET RED_FLAG = '1' ,red_cause_desc = '" + c_red_cause_desc + "' "
+libSM00/f_00xxsb_rcv.cpp	161	162	Record  mat_red= Db::QueryFirst("SELECT MAT_KIND,FACTORY_DIV FROM TWM01 WHERE STOCK_NO ='" + tsmpe10["STOCK_NO"].ToString() + "'");
+libSM00/f_00xxsb_rcv.cpp	193	194	" select count(1) from user_tables where table_name = @table_name "
+libSM00/f_00xxsb_rcv.cpp	197	198	" select 'SM' from "+ table_name +" where mat_no = @mat_no "
+libSM00/f_00xxsb_rcv.cpp	201	202	" select count(1) from tsmpe02 where mat_no = @mat_no "
+libSM00/f_00xxsb_rcv.cpp	205	206	" select * from tsmpe02 where mat_no = @mat_no "
+libSM00/f_00xxsb_rcv.cpp	209	215	"  UPDATE	tsmpe02 "
+libSM00/f_00xxsb_rcv.cpp	218	223	" UPDATE	tsmpe00 a "
+libSM00/f_00xxsb_rcv.cpp	226	231	" UPDATE	tsmpe01 a "
+libSM00/f_00xxsb_rcv.cpp	234	235	" delete from tsmpe10 where bill_of_lading_no = @bill_of_lading_no  "
+libSM00/f_00xxsb_rcv.cpp	238	242	"  update  tsmpe10 a set (plan_num,plan_wt) = (select  NVL(SUM(1), 0), NVL(SUM(mat_wt), 0) from tsmpe02 b where a.bill_of_lading_no = b.bill_of_lading_no ), "
+libSM00/f_00xxsb_rcv.cpp	503	504	" select delivy_plan_status from tsmpe10 where bill_of_lading_no = @bill_of_lading_no "
+libSM00/f_00xxsb_rcv.cpp	536	537	" select count(1) from "+ table_name +" where mat_no = @mat_no "
+libSM00/f_00xxsb_rcv.cpp	541	542	" select count(1) from tsmpe02 where mat_no = @mat_no "
+libSM00/f_00xxsb_rcv.cpp	545	546	" SELECT * FROM tsmpe02 WHERE mat_no = @mat_no "
+libSM00/f_00xxsb_rcv.cpp	549	555	"  UPDATE	tsmpe02 "
+libSM00/f_00xxsb_rcv.cpp	558	563	" UPDATE	tsmpe00 a "
+libSM00/f_00xxsb_rcv.cpp	566	571	" UPDATE	tsmpe01 a "
+libSM00/f_00xxsb_rcv.cpp	574	575	" delete from tsmpe10 where bill_of_lading_no = @bill_of_lading_no  "
+libSM00/f_00xxsb_rcv.cpp	578	584	"  update  tsmpe10 a set rec_revise_time        =  @datetime, "
+libSM00/f_00xxsb_rcv.cpp	587	591	"  update  tsmpe10 a set DELIVY_PLAN_STATUS = '5' "
+libSM00/f_00xxsb_rcv.cpp	594	598	"  delete from  tsmpe10 a   "
+libSM00/f_00xxsb_rcv.cpp	730	735	"  delete from  tsmpe10 a   "
+libSM00/f_00xxsc_rcv.cpp	151	152	sqlstr = " SELECT * FROM TSMPE12 ";
+libSM00/f_00xxsc_rcv.cpp	161	162	sqlstr = " UPDATE TSMPE01 SET CONFM_STATUS = '4' WHERE CONFM_PLAN_NO = '" + tsmpe01["CONFM_PLAN_NO"].ToString() + "' ";
+libSM00/f_00xxsc_rcv.cpp	170	171	sqlstr = " UPDATE TSMPE00 SET CONFM_STATUS = '4' WHERE READY_BILL_NO = '" + tsmpe00["READY_BILL_NO"].ToString() + "' ";
+libSM00/f_00xxsc_rcv.cpp	181	182	sqlstr = " UPDATE TSMPE10 SET DELIVY_PLAN_STATUS = '4' ,DELIVY_NUM = DELIVY_NUM -1 ,DELIVY_WT = DELIVY_WT - @tsmpe02.MAT_WT "
+libSM00/f_00xxsc_rcv.cpp	215	218	sqlstr = " INSERT INTO TSMPE02 ";
+libSM00/f_00xxsc_rcv.cpp	255	258	sqlstr = "DELETE FROM TSMPE12 ";
+libSM00/f_00xxsc_rcv.cpp	263	264	sqlstr = " DELETE FROM  TSMPE11 "
+libSM00/f_00xxsc_rcv.cpp	270	273	sqlstr = " UPDATE tsmpe11 SET STACKING_NUM = STACKING_NUM -1 ,"
+libSM00/f_paxx01_rcv.cpp	144	145	sqlstr = "select TICKET_NO from TSM00B4 WHERE VEHICLE_NO = '" + tsm00b4["VEHICLE_NO"].ToString().Trim() + "' ";
+libSM00/f_paxx01_rcv.cpp	163	164	sqlstr = "select  CODE,CODE_DESC_2_CONTENT,CODE_DESC_3_CONTENT from tep0002 where code_class = 'SMAG01' AND CODE_DESC_1_CONTENT = @LANE_NO ";
+libSM00/f_paxx01_rcv.cpp	188	189	sqlstr = " select mat_kind,factory_div from TWM01 where stock_no = @stock_no ";
+libSM00/f_paxx01_rcv.cpp	206	207	sqlstr = " INSERT tsm00b4 ";
+libSM00/f_paxx01_rcv.cpp	229	230	sqlstr = "INSERT HSM00B4 ";
+libSM00/f_paxx01_rcv.cpp	234	235	sqlstr = "INSERT TSM00B4 ";
+libSM00/f_paxx01_rcv.cpp	244	245	sqlstr = "SELECT VEHICLE_NO FROM TSM00B4 WHERE VEHICLE_NO = @tsm00b4.VEHICLE_NO ";
+libSM00/f_paxx01_rcv.cpp	250	251	sqlstr = " DELETE FROM TSM00B4 WHERE VEHICLE_NO = @tsm00b4.VEHICLE_NO AND TICKET_NO = ' '";	// 2021-11-23 09:01:19
+libSM00/f_paxx02_rcv.cpp	88	90	sqlstr = "select TICKET_NO from TSM00B4 WHERE "
+libSM00/f_paxx02_rcv.cpp	109	110	sqlstr = " select mat_kind,factory_div from TWM01 where stock_no = @stock_no ";
+libSM00/f_paxx02_rcv.cpp	127	128	sqlstr = " INSERT tsm00b4 ";
+libSM00/f_paxx02_rcv.cpp	150	151	sqlstr = "INSERT HSM00B4 ";
+libSM00/f_paxx02_rcv.cpp	155	156	sqlstr = "INSERT TSM00B4 ";
+libSM00/f_paxx02_rcv.cpp	165	167	sqlstr = "select TICKET_NO from TSM00B4 WHERE "
+libSM00/f_sm00_bill_deliver.cpp	110	114	"		select stock_no,bill_of_lading_no,order_no,vehicle_no,delivy_time    "
+libSM00/f_sm00_bill_deliver.cpp	117	123	" UPDATE TSMPE02 SET  stacking_no = @stacking_no "
+libSM00/f_sm00_bill_deliver.cpp	126	127	" SELECT * FROM tsmpe10 WHERE bill_of_lading_no = @bill_of_lading_no "
+libSM00/f_sm00_bill_deliver.cpp	130	131	" SELECT * FROM tsmpe00 WHERE order_no = @order_no  "
+libSM00/f_sm00_bill_deliver.cpp	134	135	" SELECT * FROM tsmpe02 WHERE stacking_no = @stacking_no "
+libSM00/f_sm00_bill_deliver.cpp	138	139	" SELECT sum(1) stacking_num,sum(mat_wt) stacking_wt FROM tsmpe02 WHERE stacking_no = @stacking_no "
+libSM00/f_sm00_bill_deliver.cpp	142	143	" INSERT INTO tsmpe12 SELECT * FROM tsmpe02 WHERE stacking_no = @stacking_no and confm_status = '9' "
+libSM00/f_sm00_bill_deliver.cpp	146	147	" DELETE FROM tsmpe02 WHERE stacking_no = @stacking_no and confm_status = '9' "
+libSM00/f_sm00_bill_deliver.cpp	150	158	"  update  tsmpe10 a set  "
+libSM00/f_sm00_bill_deliver.cpp	161	168	"  update  tsmpe10 a set  "
+libSM00/f_sm00_bill_deliver_01.cpp	68	69	" SELECT MESSAGEID from messageconfig where memo LIKE '%发货实绩%' AND direction = 'S'  "
+libSM00/f_sm00_bill_deliver_01.cpp	73	74	" SELECT * FROM tsmpe11 where stacking_no = @stacking_no "
+libSM00/f_sm00_bill_deliver_01.cpp	77	78	" SELECT * FROM tsmpe02 where stacking_no = @stacking_no "
+libSM00/f_sm00_bill_deliver_01.cpp	117	118	sqlstr = "SELECT CODE_DESC_2_CONTENT FROM TEP0002 "
+libSM00/f_sm00_bill_deliver_02.cpp	75	76	" SELECT * FROM tsmpe11 where stacking_no = @stacking_no "
+libSM00/f_sm00_bill_deliver_02.cpp	79	80	" SELECT mat_no , MAT_KIND FROM tsmpe02 where stacking_no = @stacking_no "
+libSM00/f_sm00_confirm.cpp	102	103	" SELECT t.confm_status from tsmpe01 t where confm_plan_no = @confm_plan_no   "
+libSM00/f_sm00_confirm.cpp	106	107	" SELECT t.* from tsmpe00 t where confm_plan_no = @confm_plan_no and confm_status = '2'  "
+libSM00/f_sm00_confirm.cpp	110	111	" SELECT t.* from tsmpe00 t where ready_bill_no = @ready_bill_no and confm_status = '2'  "
+libSM00/f_sm00_confirm.cpp	114	119	" UPDATE	tsmpe00                                  "
+libSM00/f_sm00_confirm.cpp	123	133	" UPDATE	tsmpe02                        "
+libSM00/f_sm00_confirm.cpp	136	141	" UPDATE	tsmpe01                                  "
+libSM00/f_sm00_confirm.cpp	145	146	" SELECT * FROM TSMPE02  WHERE ready_bill_no = @ready_bill_no  "
+libSM00/f_sm00_count.cpp	58	68	" update tsmpe01 a set confm_status = '9', "
+libSM00/f_sm00_count.cpp	71	79	" update tsmpe01 a set "
+libSM00/f_sm00_count.cpp	82	84	" insert into hsmpe01 select * from tsmpe01 where confm_plan_no = @confm_plan_no and confm_status = '9' "
+libSM00/f_sm00_count.cpp	87	89	" delete from tsmpe01 where confm_plan_no = @confm_plan_no and confm_status = '9' "
+libSM00/f_sm00_count.cpp	92	98	"  update  tsmpe01 a set rec_revise_time = @datetime, "
+libSM00/f_sm00_count.cpp	102	107	"  update  tsmpe00 a set rec_revise_time = @datetime, rec_revisor     = @c_user, "
+libSM00/f_sm00_count.cpp	110	113	"  update  tsmpe00 a set confm_status = decode(plan_num,0,'9',confm_status),total_mat_num = plan_num + delivy_num,total_mat_wt = plan_wt + delivy_wt "
+libSM00/f_sm00_count.cpp	125	127	" insert into hsmpe00 select * from tsmpe00 where confm_plan_no = @confm_plan_no and confm_status = '9' "
+libSM00/f_sm00_count.cpp	130	132	" delete from tsmpe00 where confm_plan_no = @confm_plan_no and confm_status = '9' "
+libSM00/f_sm00_hold_flag_chk.cpp	70	72	sqlstr = " SELECT HOLD_FLAG FROM  " + table_name +	" WHERE mat_no = @mat_no ";
+libSM00/f_sm00_jlxxsj_rcv.cpp	76	77	sqlstr = "SELECT TICKET_NO FROM TSMPE11 WHERE ponder_no = @PONDER_APP_NO ";
+libSM00/f_sm00_jlxxsj_rcv.cpp	100	101	sqlstr = " SELECT sum(STACKING_WT) , sum(STACKING_NUM) FROM tsmpe11 WHERE ponder_no = @PONDER_APP_NO ";
+libSM00/f_sm00_jlxxsj_rcv.cpp	115	116	sqlstr = "SELECT A.* FROM TSMPE12 A,TSMPE11 B WHERE A.TICKET_NO = B.TICKET_NO AND b.ponder_no = @PONDER_APP_NO ";
+libSM00/f_sm00_jlxxsj_rcv.cpp	135	139	sqlstr = " UPDATE	tsmpe12 "
+libSM00/f_sm00_jlxxsj_rcv.cpp	152	154	sqlstr = " UPDATE	tsmpe11 "
+libSM00/f_sm00_jlxxsj_rcv.cpp	196	197	sqlstr = "select TICKET_NO from tsmpe11  WHERE ponder_no=@PONDER_APP_NO group by TICKET_NO ";
+libSM00/f_sm00_jlxxsj_rcv.cpp	259	260	sqlstr = " UPDATE TSMPE11 SET DELIVY_REMARK = SUBSTR(@msg,1,200) "
+libSM00/f_sm00_load_wt_check.cpp	71	74	sqlstr = " SELECT BILL_OF_LADING_NO,ORDER_NO,sum(MAT_WT),MAX(MAT_KIND),MAX(DELIVY_QTY_FLAG) FROM TSMPE02 WHERE 1=1 ";
+libSM00/f_sm00_load_wt_check.cpp	102	103	sqlstr = "SELECT TRNP_MODE_CODE,PLAN_WT,PLAN_WT_D FROM TSMPE10 "
+libSM00/f_sm00_load_wt_check.cpp	127	128	sqlstr = "SELECT VEHICLE_TYPE FROM TSM00B4 WHERE VEHICLE_NO ='" + c_vehicle_no + "' ";
+libSM00/f_sm00_madan_red.cpp	119	120	sqlstr = " SELECT * FROM TSMPE12 ";
+libSM00/f_sm00_madan_red.cpp	129	130	sqlstr = " UPDATE TSMPE01 SET CONFM_STATUS = '4' WHERE CONFM_PLAN_NO = '"+tsmpe01["CONFM_PLAN_NO"].ToString()+"'";
+libSM00/f_sm00_madan_red.cpp	138	139	sqlstr = " UPDATE TSMPE00 SET CONFM_STATUS = '4' WHERE READY_BILL_NO ='" +tsmpe00["READY_BILL_NO"].ToString()+"'";
+libSM00/f_sm00_madan_red.cpp	161	164	sqlstr = " INSERT INTO TSMPE02 ";
+libSM00/f_sm00_madan_red.cpp	190	193	sqlstr = "DELETE FROM TSMPE12 ";
+libSM00/f_sm00_mat_check.cpp	43	44	sqlstr	= " SELECT	CODE_DESC_2_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'M002' AND CODE = @MAT_KIND ";
+libSM00/f_sm00_mat_check.cpp	61	62	sqlstr = " SELECT HOLD_FLAG FROM " + table_name.Trim() + " where MAT_NO =  @mat_no " ;
+libSM00/f_sm00_md_create.cpp	159	160	sqlstr = "select status,STOCK_NO from tsmpe10a where work_id = @work_id ";
+libSM00/f_sm00_md_create.cpp	180	181	sqlstr = "select * from tsmpe02 t where t.work_id = @work_id ";
+libSM00/f_sm00_md_create.cpp	242	243	CString stacking_no = Db::QueryCString("select stacking_no from tsmpe12 where mat_no ='" + tsmpe02["MAT_NO"].ToString() + "'");
+libSM00/f_sm00_md_create.cpp	245	248	CDecimal cnt_0 = Db::QueryCDecimal("select count(1) from tsmpe11 where stacking_no ='" + stacking_no + "' and stacking_prints ='0'");
+libSM00/f_sm00_md_create.cpp	299	300	sqlstr = "select BILL_OF_LADING_NO,VEHICLE_NO,CONFM_STATUS,DELIVY_QTY_FLAG from tsmpe02 where mat_no = '" + tsmpe02["MAT_NO"].ToString().Trim() + "' ";
+libSM00/f_sm00_md_create.cpp	315	316	sqlstr = "select * from tsmpe10 where BILL_OF_LADING_NO = @BILL_OF_LADING_NO ";
+libSM00/f_sm00_md_create.cpp	458	459	sqlstr = "select vehicle_id,VEHICLE_TYPE,STATUS,MARK from tsm00b4 where vehicle_no = @vehicle_no  ";
+libSM00/f_sm00_md_create.cpp	486	489	sqlstr = "UPDATE TSMPE02 SET TICKET_NO = @TICKET_NO,VEHICLE_NO = @VEHICLE_NO ,DELIVY_SHIFT=@DELIVY_SHIFT,DELIVY_GROUP=@DELIVY_GROUP,DELIVY_MAKER=@DELIVY_MAKER"
+libSM00/f_sm00_md_create.cpp	530	531	sqlstr = " select BILL_OF_LADING_NO,ORDER_NO,sum(mat_wt),count(1),sum(MAT_GROSS_WT),sum(MAT_TUBE) from tsmpe02 "
+libSM00/f_sm00_md_create.cpp	556	557	sqlstr = "SELECT PLAN_WT_D FROM TSMPE10 WHERE BILL_OF_LADING_NO = '" + tsmpe11["BILL_OF_LADING_NO"].ToString() + "' "
+libSM00/f_sm00_md_create.cpp	586	587	sqlstr = " select * from tom01 where order_no = @order_no ";
+libSM00/f_sm00_md_create.cpp	625	626	sqlstr = "select * from tsmpe02 where BILL_OF_LADING_NO = @BILL_OF_LADING_NO AND ORDER_NO = @ORDER_NO AND TICKET_NO = @TICKET_NO ";
+libSM00/f_sm00_md_create.cpp	699	700	sqlstr = "insert into tsmpe12 where STACKING_NO = '" + tsmpe12["STACKING_NO"].ToString() + "' and mat_no = '" + tsmpe12["MAT_NO"].ToString() + "' ";
+libSM00/f_sm00_md_create.cpp	773	774	sqlstr = "insert into tsmpe11 where STACKING_NO = '" + tsmpe12["STACKING_NO"].ToString() + "' ";
+libSM00/f_sm00_md_create.cpp	804	805	sqlstr = "SELECT SUM(STACKING_WT) FROM TSMPE11 WHERE TICKET_NO = '" + tsmpe11["TICKET_NO"].ToString() + "' ";
+libSM00/f_sm00_md_create.cpp	862	863	sqlstr = "update tsm00b4 set status = @STATUS,TICKET_NO = @TICKET_NO,TERMINAL_NAME = @TERMINAL_NAME "
+libSM00/f_sm00_md_create.cpp	884	885	sqlstr = "update tsm00b4 set status = @STATUS,TICKET_NO = @TICKET_NO,TERMINAL_NAME = @TERMINAL_NAME "
+libSM00/f_sm00_md_create.cpp	932	933	sqlstr = "select ORDER_NO,sum(stacking_wt),sum(stacking_num) from tsmpe11 where TICKET_NO = '" + TICKET_NO + "' GROUP BY ORDER_NO";
+libSM00/f_sm00_md_create.cpp	984	985	sqlstr = "select * from tsmpe15 where BILL_OF_LADING_NO = '" + tsmpe10["BILL_OF_LADING_NO"].ToString() + "' ";
+libSM00/f_sm00_md_create.cpp	1020	1021	sqlstr = " SELECT  STOCK_TYPE_CODE FROM TSI0021 WHERE STOCK_NO = '" + stock_no + "' ";
+libSM00/f_sm00_md_del.cpp	111	112	sqlstr = "SELECT * "
+libSM00/f_sm00_md_del.cpp	158	159	sqlstr = "SELECT * "
+libSM00/f_sm00_md_del.cpp	169	170	sqlstr = "SELECT * "
+libSM00/f_sm00_md_del.cpp	199	200	sqlstr = "SELECT DISTINCT BILL_OF_LADING_NO FROM TSMPE11 WHERE STACKING_STATUS = '1' AND ticket_no = '" + ticket_no + "' ";
+libSM00/f_sm00_md_del.cpp	210	211	sqlstr = "Update tsmpe10 where BILL_OF_LADING_NO = '" + tsmpe10["BILL_OF_LADING_NO"].ToString() + "' ";
+libSM00/f_sm00_md_del.cpp	217	218	sqlstr = " DELETE FROM TSMPE11 WHERE STACKING_STATUS = '1' AND ticket_no = '"+ ticket_no + "' ";
+libSM00/f_sm00_md_del.cpp	227	228	sqlstr = " DELETE FROM TSMPE12 WHERE ticket_no = '" + ticket_no + "' ";
+libSM00/f_sm00_md_del.cpp	233	234	sqlstr = "select * from tsmpe02 WHERE ticket_no = '" + ticket_no + "' ";
+libSM00/f_sm00_md_del.cpp	260	262	sqlstr = " UPDATE TSMPE02 SET STACKING_NO = ' ' , VEHICLE_NO = ' ' "
+libSM00/f_sm00_md_no.cpp	65	66	sqlstr = "SELECT lpad(to_char(MD_NO.nextval),7,'0') STACKING_NO FROM DUAL";
+libSM00/f_sm00_md_ok.cpp	179	181	sqlstr = "SELECT *	FROM	tsmpe11 WHERE	TICKET_NO	=	@ticket_no";	// 2020-2-27
+libSM00/f_sm00_md_ok.cpp	210	211	sqlstr = "SELECT	*   FROM	tsmpe10   WHERE	bill_of_lading_no	=	@BILL_OF_LADING_NO ";
+libSM00/f_sm00_md_ok.cpp	275	276	sqlstr = "SELECT *   FROM	tsmpe10  WHERE	bill_of_lading_no	=	@BILL_OF_LADING_NO  AND	order_no=	@ORDER_NO ";
+libSM00/f_sm00_md_ok.cpp	310	312	sqlstr = "update tsmpe10 set DELIVY_WT = DELIVY_WT + @DELIVY_WT , DELIVY_NUM = DELIVY_NUM + @DELIVY_NUM "
+libSM00/f_sm00_md_ok.cpp	334	335	sqlstr = "SELECT *	FROM	tsmpe12 WHERE	stacking_no	=	@STACKING_NO ";
+libSM00/f_sm00_md_ok.cpp	433	435	sqlstr = "UPDATE	tsmpe00		SET		confm_status = '8' "
+libSM00/f_sm00_md_ok.cpp	442	444	sqlstr = "UPDATE	tsmpe01		SET		confm_status = '8' "
+libSM00/f_sm00_md_ok.cpp	451	457	sqlstr = " UPDATE	tsmpe02 SET		confm_status	=	'9' "
+libSM00/f_sm00_md_ok.cpp	477	477	Log::Trace("", __FUNCTION__, "update tsmpe02表完成");
+libSM00/f_sm00_md_ok.cpp	479	482	sqlstr = "SELECT	* "
+libSM00/f_sm00_md_ok.cpp	502	504	sqlstr = "DELETE tsmpe02 "
+libSM00/f_sm00_md_ok.cpp	553	554	sqlstr = "select in_flag from " + table_name + " where mat_no = '" + tsmpe12["MAT_NO"].ToString() + "' ";
+libSM00/f_sm00_md_ok.cpp	889	890	sqlstr = "select DISTINCT BILL_OF_LADING_NO from tsmpe11 where ticket_no = '" + ticket_no + "' ";
+libSM00/f_sm00_md_ok.cpp	899	900	sqlstr = "select DISTINCT ORDER_NO,CONTRACT_NO,DELIVY_QTY_FLAG from tsmpe10 where BILL_OF_LADING_NO = '" + bill_of_lading_no + "' ";
+libSM00/f_sm00_md_ok.cpp	935	935	sqlstr = " INSERT INTO HSM00B4 "
+libSM00/f_sm00_md_ok.cpp	936	938	" SELECT * FROM TSM00B4 "
+libSM00/f_sm00_md_ok.cpp	942	944	sqlstr = " DELETE FROM TSM00B4 "
+libSM00/f_sm00_mm99.cpp	135	139	"   SELECT	mat_no ,  bill_of_lading_no , order_no , confm_plan_no , red_cause_desc,mat_kind,FACTORY_DIV,STOCK_NO,VEHICLE_NO "
+libSM00/f_sm00_mm99.cpp	140	146	"   SELECT	mat_no ,  bill_of_lading_no , order_no , confm_plan_no , ' '  red_cause_desc,mat_kind,FACTORY_DIV,STOCK_NO,VEHICLE_NO "
+libSM00/f_sm00_mm99.cpp	223	225	sqlstr = "select WHOLE_BACKLOG_CODE ,WHOLE_BACKLOG_SEQ,NEXT_WHOLE_BACKLOG_CODE,NEXT_WHOLE_BACKLOG_SEQ "
+libSM00/f_sm00_mm99.cpp	420	424	"   SELECT	mat_no ,  bill_of_lading_no , order_no , confm_plan_no , red_cause_desc,mat_kind,FACTORY_DIV,STOCK_NO,VEHICLE_NO "
+libSM00/f_sm00_mm99.cpp	425	431	"   SELECT	mat_no ,  bill_of_lading_no , order_no , confm_plan_no , ' '  red_cause_desc,mat_kind,FACTORY_DIV,STOCK_NO,VEHICLE_NO "
+libSM00/f_sm00_mm99.cpp	505	507	sqlstr = "select WHOLE_BACKLOG_CODE ,WHOLE_BACKLOG_SEQ,NEXT_WHOLE_BACKLOG_CODE,NEXT_WHOLE_BACKLOG_SEQ "
+libSM00/f_sm00_plan_mat.cpp	66	67	sqlstr = " SELECT DISTINCT MAT_KIND,DELIVY_QTY_FLAG,STOCK_NO FROM TSMPE10 WHERE BILL_OF_LADING_NO = '" + c_bill_of_lading_no + "'";
+libSM00/f_sm00_plan_mat.cpp	88	93	sqlstr = " SELECT A.*,B.* FROM TSMPE10 C,TSMPE02 A," + table_name + " B "
+libSM00/f_sm00_plan_mat.cpp	102	118	sqlstr1 = "SELECT C.BILL_OF_LADING_NO AS BILL_OF_LADING_NO_1 ,C.ORDER_NO AS ORDER_NO_1 ,A.* FROM TSMPE10 C,TSMPE02 A," + table_name + " B "
+libSM00/f_sm00_plan_mat.cpp	132	137	sqlstr = " SELECT CASE WHEN TRIM(A.BILL_OF_LADING_NO) IS NULL OR TRIM(A.BILL_OF_LADING_NO) = '' THEN A.BILL_OF_LADING_NO_1 ELSE A.BILL_OF_LADING_NO END AS BILL_
+libSM00/f_sm00_plan_mat.cpp	163	179	sqlstr1 = "SELECT C.BILL_OF_LADING_NO AS BILL_OF_LADING_NO_1 ,C.ORDER_NO AS ORDER_NO_1 ,A.* FROM TSMPE10 C,TSMPE02 A," + table_name + " B "
+libSM00/f_sm00_plan_mat.cpp	192	197	sqlstr = " SELECT CASE WHEN TRIM(A.BILL_OF_LADING_NO) IS NULL OR TRIM(A.BILL_OF_LADING_NO) = '' THEN A.BILL_OF_LADING_NO_1 ELSE A.BILL_OF_LADING_NO END AS BILL_
+libSM00/f_sm00_plan_mat.cpp	208	218	sqlstr1 = "SELECT C.BILL_OF_LADING_NO AS BILL_OF_LADING_NO_1 ,C.ORDER_NO AS ORDER_NO_1,A.* FROM TSMPE10 C,TSMPE02 A," + table_name + " B "
+libSM00/f_sm00_plan_mat.cpp	236	237	sqlstr = " SELECT A.BILL_OF_LADING_NO_1 AS BILL_OF_LADING_NO,CASE WHEN A.ORDER_NO_1 IS NULL THEN B.ORDER_NO ELSE A.ORDER_NO_1 END AS ORDER_NO "
+libSM00/f_sm00_plan_mat_add.cpp	58	59	sqlstr = "select VEHICLE_NO from tsmpe10 where BILL_OF_LADING_NO = '" + tsmpe02["BILL_OF_LADING_NO"].ToString() + "' ";
+libSM00/f_sm00_plan_mat_add.cpp	79	82	tsmpe02["TICKET_NO"] = Db::QueryCString(" select ticket_no from tsmpe02 where mat_no ='" + tsmpe02["MAT_NO"].ToString() + "' ");
+libSM00/f_sm00_plan_mat_add.cpp	87	88	sqlstr = "UPDATE TSMPE02 WHERE MAT_NO = '" + tsmpe02["MAT_NO"].ToString() + "' ";
+libSM00/f_sm00_plan_mat_aim.cpp	67	68	sqlstr = " SELECT DISTINCT MAT_KIND,VEHICLE_NO FROM TSMPE10 WHERE BILL_OF_LADING_NO = '" + c_bill_of_lading_no + "'";
+libSM00/f_sm00_plan_mat_aim.cpp	96	97	sqlstr = "select DISTINCT VEHICLE_NO from tsmpe02 where BILL_OF_LADING_NO = @BILL_OF_LADING_NO and VEHICLE_NO != ' ' ";
+libSM00/f_sm00_plan_mat_aim.cpp	112	117	sqlstr = "SELECT T.* ,A.STOCK_PLACE_NO,A.LAYERNO,A.HEAT_NO FROM TSMPE02 T ," + table_name + " A "
+libSM00/f_sm00_plan_mat_del.cpp	58	59	sqlstr = "select * from tsmpe02 where MAT_NO ='" + tsmpe02["MAT_NO"].ToString() + "' ";
+libSM00/f_sm00_plan_mat_del.cpp	99	100	sqlstr = "UPDATE TSMPE02 SET VEHICLE_NO = ' ',ORDER_NO = '" + v_order_no + "' , BILL_OF_LADING_NO = '" + v_bill_of_lading_no + "' "
+libSM00/f_sm00_plan_place.cpp	58	59	sqlstr = " SELECT DISTINCT MAT_KIND,DELIVY_QTY_FLAG,STOCK_NO FROM TSMPE10 WHERE BILL_OF_LADING_NO = '" + c_bill_of_lading_no + "'";
+libSM00/f_sm00_plan_place.cpp	80	85	sqlstr = " SELECT DISTINCT B.STOCK_PLACE_NO FROM TSMPE10 C,TSMPE02 A," + table_name + " B "
+libSM00/f_sm00_plan_place.cpp	93	109	sqlstr = "SELECT DISTINCT B.STOCK_PLACE_NO FROM TSMPE10 C,TSMPE02 A," + table_name + " B "
+libSM00/f_sm00_plan_place.cpp	115	131	sqlstr = "SELECT DISTINCT B.STOCK_PLACE_NO FROM TSMPE10 C,TSMPE02 A," + table_name + " B "
+libSM00/f_sm00_plan_place.cpp	137	147	sqlstr = "SELECT DISTINCT B.STOCK_PLACE_NO FROM TSMPE10 C,TSMPE02 A," + table_name + " B "
+libSM00/f_sm00_ready_incept.cpp	115	116	sqlstr = "SELECT MAX(CONFM_PLAN_NO) , MAX(READY_BILL_NO) FROM TSMPE02 "
+libSM00/f_sm00_ready_incept.cpp	237	238	sqlstr = "SELECT MAX(CONFM_PLAN_NO) , MAX(READY_BILL_NO) FROM TSMPE02 "
+libSM00/f_sm00_record.cpp	104	106	sqlstr = " SELECT * FROM tsmpe12 "
+libSM00/f_sm00_record.cpp	108	109	sqlstr1 = " SELECT * FROM tsmpe02 "
+libSM00/f_sm00_record.cpp	144	146	sqlstr = " SELECT code_desc_1_content FROM TEP0002"
+libSM00/f_sm00_record.cpp	158	160	sqlstr = " SELECT * FROM tsmpe00"
+libSM00/f_sm00_record.cpp	181	182	sqlstr = "SELECT CODE_DESC_2_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'M002' AND CODE = @MAT_KIND ";
+libSM00/f_sm00_record.cpp	205	206	sqlstr = " SELECT stock_place_no FROM " + table_name + " where MAT_NO = @tsmpe02.mat_no ";
+libSM00/f_sm00_record.cpp	273	274	sqlstr = " INSERT INTO tsmpea1 " ;
+libSM00/f_sm00_stock_in.cpp	114	115	sqlstr = "select TC_MARK from TSI0021 where stock_no = '" + stock_no_in.Trim() + "' ";
+libSM00/f_sm00_stock_in.cpp	130	131	sqlstr = "select * from tsmpe02 WHERE MAT_NO = '" + mat_no.Trim() + "' ";
+libSM00/f_sm00_stock_in.cpp	142	143	sqlstr = " SELECT * FROM TSMPE12 WHERE MAT_NO = '" + mat_no.Trim() + "' "
+libSM00/f_sm00_stock_in.cpp	190	191	sqlstr = "select TC_MARK from TSI0021 where stock_no = '" + stock_no_in.Trim() + "' ";
+libSM00/f_sm00_stock_in.cpp	206	207	sqlstr = " SELECT * FROM TSMPE02 WHERE MAT_NO = '" + mat_no.Trim() + "' ";
+libSM00/f_sm00_stock_in.cpp	241	244	sqlstr = "update tsmpe02 set STOCK_NO ";
+libSM00/f_sm00_stock_in.cpp	252	253	sqlstr = " SELECT * FROM TSMPE12 WHERE MAT_NO = '" + mat_no.Trim() + "' ";
+libSM00/f_sm00_stock_in.cpp	271	272	sqlstr = "insert tsmpe02 ";
+libSM00/f_sm00_stock_in.cpp	290	291	sqlstr = "select 'TMM' || @mat_kind || '01',factory_div from tsi0021 where stock_no = @stock_no";
+libSM00/f_sm00_stock_in.cpp	308	309	sqlstr = "select * from " + table_name + " where mat_no = '" + mat_no.Trim() + "' ";
+libSM00/f_sm00_stock_in.cpp	366	369	sqlstr = " select code_desc_1_content , code_desc_2_content "
+libSM00/f_sm00_stock_in.cpp	423	424	sqlstr = "INSERT TSMPE02  MAT_NO = '" + tsmpe02["MAT_NO"].ToString() + "' ";
+libSM00/f_sm00_xxjlwt_snd.cpp	106	108	sqlstr = " SELECT * FROM tsmpe11 WHERE TICKET_NO IN ('" + TICKET_NO + "') ";
+libSM00/f_sm00_xxjlwt_snd.cpp	125	126	sqlstr = "SELECT sum(STACKING_WT),SUM(STACKING_GROSS_WT) FROM tsmpe11 WHERE TICKET_NO IN ('" + TICKET_NO + "') ";
+libSM00/f_sm00_xxjlwt_snd.cpp	140	141	sqlstr = " SELECT CONSIGNE_CODE FROM tsmpe10 WHERE BILL_OF_LADING_NO IN ('" + tsmpe11["BILL_OF_LADING_NO"].ToString() + "') ";
+libSM00/f_sm00_xxjlwt_snd.cpp	301	302	sqlstr = " UPDATE tsmpe11 SET PONDER_NO = @PONDER_NO WHERE TICKET_NO IN ('" + TICKET_NO + "') ";
+libSM00/f_sm00_xxjlwt_snd.cpp	310	311	sqlstr = " UPDATE tsmpe11 SET PONDER_NO = ' ' WHERE TICKET_NO IN ('" + TICKET_NO + "') ";
+libSM00/f_smxx01_rcv.cpp	313	314	sqlstr = "select FACTORY_DIV from tsi0021 where STOCK_ADDR = '" + tsmpe10["STOCK_NO"].ToString() + "' ";
+libSM00/f_smxx01_rcv.cpp	364	365	sqlstr = CString(" select * from tsmpe02 where mat_no = @mat_no ");
+libSM00/f_smxx01_rcv.cpp	407	408	sqlstr = "select * from tom01 where order_no = '" + c_order_no1 + "' ";
+libSM00/f_smxx01_rcv.cpp	455	464	sqlstr = "  UPDATE	tsmpe02 "
+libSM00/f_smxx01_rcv.cpp	478	483	sqlstr = " UPDATE	tsmpe00 a "
+libSM00/f_smxx01_rcv.cpp	493	498	sqlstr = " UPDATE	tsmpe01 a "
+libSM00/f_smxx01_rcv.cpp	581	584	sqlstr = "INSERT TSMPE10   1";
+libSM00/f_smxx01_rcv.cpp	700	701	sqlstr = "select * from tom01 where order_no = '" + c_order_no1 + "' ";
+libSM00/f_smxx01_rcv.cpp	731	732	sqlstr = "INSERT TSMPE10    2";
+libSM00/f_smxx01_rcv.cpp	775	776	sqlstr = "INSERT TSMPE10    3";
+libSM00/f_smxx01_rcv.cpp	1143	1144	sqlstr = "INSERT TSMPE10    4";
+libSM00/f_smxx01_rcv.cpp	1593	1596	" select delivy_plan_status from tsmpe10 where bill_of_lading_no = @bill_of_lading_no "
+libSM00/f_smxx01_rcv.cpp	1667	1668	sqlstr = "SELECT * FROM tsmpe02 WHERE mat_no = @mat_no";
+libSM00/f_smxx01_rcv.cpp	1720	1727	sqlstr = "  UPDATE	tsmpe02 "
+libSM00/f_smxx01_rcv.cpp	1736	1740	sqlstr = " UPDATE	tsmpe00 a "
+libSM00/f_smxx01_rcv.cpp	1749	1753	sqlstr = " UPDATE	tsmpe01 a "
+libSM00/f_smxx01_rcv.cpp	1762	1768	sqlstr = "  update  tsmpe10 a set rec_revise_time        =  @datetime "
+libSM00/f_smxx01_rcv.cpp	1785	1788	sqlstr = "  delete from  tsmpe10 a   "
+libSM00/f_smxx01_rcv.cpp	1816	1819	sqlstr = "update tsmpe10 set DELIVY_PLAN_STATUS = '5' "
+libSM00/f_smxx01_rcv.cpp	1843	1846	sqlstr = "delete from tsmpe10  "
+libSM00/f_smxx01_rcv.cpp	1874	1877	sqlstr = "delete from tsmpe10  "
+libSM00/f_smxx01_rcv.cpp	1899	1900	sqlstr = "update tsmpe10 set CONTRACT_NO =@CONTRACT_NO ,PLAN_WT = @PLAN_WT "
+libSM00/f_smxx01_rcv.cpp	1928	1929	sqlstr = "select mat_no from tsmpe02 where bill_of_lading_no = '" + c_bill_of_lading_no + "' ";
+libSM00/f_smxx01_rcv.cpp	1960	1961	sqlstr = "update tsmpe02 set bill_of_lading_no = ' ' ,confm_status = '4',vehicle_no = ' ' where bill_of_lading_no = '" + tsmpe10["BILL_OF_LADING_NO"].ToString()
+libSM00/f_smxx01_rcv.cpp	1967	1968	sqlstr = "update tsmpe10 set DELIVY_PLAN_STATUS = '" + c_operate_flag + "' "
+libSM00/f_smxx02_rcv.cpp	91	92	sqlstr = "insert into tsmpe15 ";
+libSM00/f_smxx02_rcv.cpp	97	98	sqlstr = "delete  tsmpe15 ";
+libSM00/f_smxx02_rcv.cpp	106	107	sqlstr = "SELECT TICKET_NO,STACKING_STATUS FROM TSMPE11 WHERE BILL_OF_LADING_NO = '" + c_bill_of_lading_no + "' ";
+libSM00/f_xx00s4_snd.cpp	82	84	sqlstr = "SELECT	* \
+libSM00/f_xx00s4_snd.cpp	144	146	sqlstr = "SELECT	* \
+libSM00/f_xxpa03_snd.cpp	83	84	sqlstr = "select * from tsm00b4 where vehicle_no = @vehicle_no ";
+libSM00/f_xxpa03_snd.cpp	146	147	sqlstr = " SELECT SUM(MAT_WT) FROM TSMPE02 WHERE TICKET_NO = '" + ticket_no.Trim() + "' ";
+libSM00/f_xxpa04_snd.cpp	108	112	sqlstr = " SELECT * "
+libSM00/f_xxpa04_snd.cpp	132	133	sqlstr = "SELECT STOCK_NO_TO,CONSIGNE_NAME FROM TSMPE10 WHERE BILL_OF_LADING_NO = '" + tsmpe12["BILL_OF_LADING_NO"].ToString() + "' ";
+libSM00/f_xxpa04_snd.cpp	258	259	sqlstr = " SELECT SUM(MAT_WT),COUNT(1),sum(MAT_GROSS_WT) FROM tsmpe12 WHERE TICKET_NO =   @ticket_no ";
+libSM00/f_xxpa04_snd.cpp	308	309	sqlstr = "select MANUFACTOR_NO FROM TWMQC1A WHERE TRAN_PLAN_NO = '" + tsm00b4["PLAN_NO"].ToString() + "' ";
+libSM00/f_xxpa04_snd.cpp	330	331	sqlstr = "SELECT code_desc_3_content FROM TEP0002 WHERE code_class = 'SMAG00' AND  CODE = '" + DST_ADDR.Trim() + "' ";
+libSM00/f_xxpa04_snd.cpp	350	351	sqlstr = "select * from tsmpe15 where BILL_OF_LADING_NO = '" + tsmpe12["BILL_OF_LADING_NO"].ToString() + "' ";
+libSM00/f_xxpa04_snd.cpp	406	408	sqlstr = " SELECT B.* FROM tsmpe12 B  "
+libSM00/f_xxsm01_snd.cpp	83	84	sqlstr = "SELECT	* 	FROM	tsmpe11 "
+libSM00/f_xxsm01_snd.cpp	130	131	sqlstr = "select WT_METHOD_CODE from tom01 where order_no = '" + tsmpe11["ORDER_NO"].ToString() + "' ";
+libSM00/f_xxsm01_snd.cpp	147	148	sqlstr = "select * from tsmpe10 where BILL_OF_LADING_NO = @BILL_OF_LADING_NO and ORDER_NO in ( @ORDER_NO,' ') ";
+libSM00/f_xxsm01_snd.cpp	193	194	sqlstr = "SELECT	* 	FROM	tsmpe12	"
+libSM00/f_xxsm02_snd.cpp	63	64	sqlstr = "select * from tsmpe11 where TICKET_NO = '" + ticket_no + "' ";
+libSM00/f_xxsm02_snd.cpp	70	71	sqlstr = "select * from tsmpe10 where BILL_OF_LADING_NO = '" + tsmpe11["BILL_OF_LADING_NO"].ToString() + "' ";
+libSM00/f_xxsm04_snd.cpp	60	61	sqlstr = "select * from tsmpe10 where BILL_OF_LADING_NO = '" + bill_of_lading_no + "' AND '" + order_no + "' IN (ORDER_NO ,CONTRACT_NO) ";
+libSM00/f_xxsm05_snd.cpp	68	69	sqlstr = "select code_desc_4_content from tep0002 where code_class='M00F' and code = @c_factory_div ";
+libSM00/f_xxsm05_snd.cpp	116	117	sqlstr = "SELECT * FROM TMM" + c_mat_kind + "01 WHERE MAT_NO=@MAT_NO ";
+libSM00/f_xxsm05_snd.cpp	168	169	sqlstr = "SELECT * FROM TMM" + c_mat_kind + "01 WHERE MAT_NO=@MAT_NO ";
+p_sm00_25900/sm0000_stock.cpp	78	79	sqlstr = "select CODE_DESC_1_CONTENT  from tep0002 where code_class = 'SM99' "
+p_sm00_25900/sm0000_stock.cpp	109	112	" select distinct stock_no,stock_desc from twm01 where user_id = decode( @user_id,'admin',user_id,@user_id ) "
+p_sm00_25900/sm0000_stock.cpp	117	121	sqlstr = "select distinct stock_no,stock_desc from twm01 a where 1=1 ";
+p_sm00_25900/sm0001_billno.cpp	74	75	" select * from tsmpe00 where stock_no = @stock_no and plan_num > 0 and confm_status < '9' "
+p_sm00_25900/sm0001_billno.cpp	78	79	" select * from tsmpe00 where stock_no between @stock_no and @stock_no_end "
+p_sm00_25900/sm0001_del.cpp	98	99	" SELECT t.* from tsmpe02 t where confm_plan_no = @confm_plan_no  "
+p_sm00_25900/sm0001_del.cpp	102	103	" SELECT t.* from tsmpe02 t where ready_bill_no = @ready_bill_no  "
+p_sm00_25900/sm0001_del.cpp	106	107	" SELECT t.* from tsmpe02 t where mat_no = @mat_no  "
+p_sm00_25900/sm0001_del.cpp	110	111	" delete from tsmpe02 where confm_plan_no = @confm_plan_no "
+p_sm00_25900/sm0001_del.cpp	114	115	" delete from tsmpe02 where ready_bill_no = @ready_bill_no "
+p_sm00_25900/sm0001_del.cpp	118	119	" delete from tsmpe02 where mat_no = @mat_no "
+p_sm00_25900/sm0001_del.cpp	262	263	sqlstr = "SELECT CODE_DESC_2_CONTENT FROM TEP0002 "
+p_sm00_25900/sm0001_del.cpp	363	368	sqlstr = " UPDATE	tsmpe01 a "
+p_sm00_25900/sm0001_do_b.cpp	101	102	" SELECT confm_status from tsmpe00 t where ready_bill_no = @ready_bill_no   "
+p_sm00_25900/sm0001_do_b.cpp	105	106	" SELECT t.* from tsmpe01 t where confm_plan_no = @confm_plan_no  "
+p_sm00_25900/sm0001_do_b.cpp	109	110	" SELECT t.* from tsmpe00 t where confm_plan_no = @confm_plan_no and confm_status in ('2', '3')  "
+p_sm00_25900/sm0001_do_b.cpp	113	114	" SELECT t.* from tsmpe00 t where ready_bill_no = @ready_bill_no   "
+p_sm00_25900/sm0001_do_b.cpp	117	122	" UPDATE	tsmpe00                                  "
+p_sm00_25900/sm0001_do_b.cpp	125	135	" UPDATE	tsmpe02                        "
+p_sm00_25900/sm0001_do_b.cpp	138	143	" UPDATE	tsmpe01                                  "
+p_sm00_25900/sm0001_do_b.cpp	146	147	" SELECT * FROM TSMPE02  WHERE ready_bill_no = @ready_bill_no  "
+p_sm00_25900/sm0001_do_p.cpp	92	93	" SELECT t.confm_status,t.mat_kind from tsmpe01 t where confm_plan_no = @confm_plan_no   "
+p_sm00_25900/sm0001_do_p.cpp	96	97	" SELECT t.* from tsmpe00 t where confm_plan_no = @confm_plan_no and confm_status in ('2', '3')  "
+p_sm00_25900/sm0001_do_p.cpp	100	101	" SELECT t.* from tsmpe00 t where ready_bill_no = @ready_bill_no and confm_status in ('2', '3') "
+p_sm00_25900/sm0001_do_p.cpp	104	109	" UPDATE	tsmpe00                                  "
+p_sm00_25900/sm0001_do_p.cpp	113	123	" UPDATE	tsmpe02                        "
+p_sm00_25900/sm0001_do_p.cpp	126	131	" UPDATE	tsmpe01                                  "
+p_sm00_25900/sm0001_do_p.cpp	135	136	" SELECT * FROM TSMPE02  WHERE ready_bill_no = @ready_bill_no  "
+p_sm00_25900/sm0001_inq_b.cpp	102	107	" SELECT t.*,"
+p_sm00_25900/sm0001_inq_b.cpp	109	110	"select code_desc_1_content from tep0002 where code_class = 'SM28' and code = @code"
+p_sm00_25900/sm0001_inq_m.cpp	73	74	"SELECT mat_kind FROM tsmpe00 WHERE ready_bill_no = @ready_bill_no"
+p_sm00_25900/sm0001_inq_m.cpp	77	81	" SELECT a.*,b.* FROM tsmpe02  a, " + table_name + " b "
+p_sm00_25900/sm0001_inq_m.cpp	84	88	" SELECT a.*,b.* FROM tsmpe02  a,tmmsm01 b "
+p_sm00_25900/sm0001_inq_m.cpp	92	93	sqlstr = "SELECT mat_kind FROM tsmpe00 WHERE ready_bill_no = @ready_bill_no";
+p_sm00_25900/sm0001_inq_m.cpp	105	107	sqlstr = " SELECT a.*,b.* FROM tsmpe02  a, " + table_name + " b "
+p_sm00_25900/sm0001_inq_p.cpp	124	129	" SELECT DISTINCT t1.*,decode(t1.confm_status,1,'计划编制',2,'计划确认',3,'计划释放',4,'计划执行',5,'计划完成','') confm_status2 "
+p_sm00_25900/sm0001_inq_p.cpp	144	145	"select code_desc_1_content from tep0002 where code_class = 'SM28' and code = @code"
+p_sm00_25900/sm0001_planno.cpp	75	77	" SELECT * FROM tsmpe01 WHERE STOCK_NO = @stock_no AND PLAN_NUM > 0 AND CONFM_STATUS < '9' "
+p_sm00_25900/sm0001_planno.cpp	80	82	" SELECT * FROM tsmpe01 WHERE STOCK_NO BETWEEN @stock_no AND @stock_no_end "
+p_sm00_25900/sm0001_red_req.cpp	98	99	" SELECT t.* from tsmpe02 t where mat_no = @mat_no   "
+p_sm00_25900/sm0001_red_req.cpp	102	112	"	UPDATE	tsmpe02                                     "
+p_sm00_25900/sm0001_red_req.cpp	115	119	" SELECT	code_desc_1_content  "
+p_sm00_25900/sm0001_rel_b.cpp	66	67	" SELECT confm_status,confm_plan_no from tsmpe00 where ready_bill_no = @ready_bill_no "
+p_sm00_25900/sm0001_rel_b.cpp	71	77	" UPDATE	tsmpe00 "
+p_sm00_25900/sm0001_rel_b.cpp	80	86	" UPDATE	tsmpe02 "
+p_sm00_25900/sm0001_rel_b.cpp	89	96	" UPDATE	tsmpe01 a "
+p_sm00_25900/sm0001_rel_p.cpp	69	70	" SELECT confm_status from tsmpe01 where confm_plan_no = @confm_plan_no "
+p_sm00_25900/sm0001_rel_p.cpp	73	79	" UPDATE	tsmpe00 "
+p_sm00_25900/sm0001_rel_p.cpp	82	88	" UPDATE	tsmpe02 "
+p_sm00_25900/sm0001_rel_p.cpp	91	98	" UPDATE	tsmpe01 a "
+p_sm00_25900/sm0003_inq.cpp	141	148	sqlstr	=	" SELECT	*  "
+p_sm00_25900/sm0003_inq.cpp	189	191	sqlstr = " SELECT STOCK_PLACE_NO FROM " + table_name + " WHERE MAT_NO = @tsmpe02.MAT_NO ";
+p_sm00_25900/sm0003ab_in.cpp	266	267	sqlstr = " SELECT MAT_KIND,FACTORY_DIV FROM TWM01 "
+p_sm00_25900/sm0003ab_in.cpp	287	288	sqlstr = "SELECT * FROM HMM" + c_mat_kind + "01 WHERE MAT_NO=@MAT_NO AND MAT_STATUS = '36' ";
+p_sm00_25900/sm0003ab_in.cpp	454	455	sqlstr = " UPDATE tsmpe10 SET RED_QTY = RED_QTY + 1,RED_WT = RED_WT + @MAT_WT "
+p_sm00_25900/sm0003ab_in.cpp	555	558	sqlstr = " INSERT INTO tsmpe02 ";
+p_sm00_25900/sm0003ab_inq1.cpp	43	44	sqlstr = " select (select b.bill_of_lading_no from tsmpe11 b where b.stacking_no=a.stacking_no fetch first 1 rows only) bill_of_lading_no_y,a.* from tsmpe22 a "
+p_sm00_25900/sm0003ab_inq2.cpp	38	39	sqlstr = "select a.*,b.stock_desc from tsmpe23 a left outer join twm01 b on a.stock_no=b.stock_no "
+p_sm00_25910/cm_0000sd_rcv.cpp	89	92	sqlstr = " UPDATE TSMPE02 SET ORDER_NO = @tsmpe02.ORDER_NO WHERE MAT_NO ='"+ tsmpe02["MAT_NO"].ToString()+"' ";
+p_sm00_25910/sm0002_billno.cpp	75	76	" select distinct ready_bill_no from tsmpe02 where stock_no = @stock_no and confm_status > '4' "
+p_sm00_25910/sm0002_inq_b.cpp	108	109	sqlstr = " select * from tsmsm01 "
+p_sm00_25910/sm0002_planno.cpp	76	78	" select bill_of_lading_no from tsmpe10 where stock_no = @stock_no and delivy_plan_status < '5' order by rec_create_time desc "
+p_sm00_25910/sm0002_planno.cpp	81	83	" select bill_of_lading_no from tsmpe10 where stock_no between @stock_no and @stock_no_end order by rec_create_time desc "
+p_sm00_25910/sm0004_inq_a.cpp	114	118	sqlstr1 = CString(" SELECT * FROM TSMSM05 a  WHERE  1 = 1 "	);
+p_sm00_25910/sm0004_inq_d.cpp	75	76	" select * from tsmpe11 where stacking_no = @stacking_no "
+p_sm00_25910/sm0004_inq_m.cpp	75	76	" select * from tsmsm03 where stacking_no = @stacking_no "
+p_sm00_25910/sm0004_invo.cpp	65	67	sqlstr = " SELECT * FROM tsmpe11 "
+p_sm00_25910/sm0004_invo.cpp	97	99	sqlstr = " SELECT * FROM tsmpe12 "
+p_sm00_25910/sm0004_print_update.cpp	63	65	sqlstr=CString("UPDATE TSMPE11 "
+p_sm00_25910/sm0004_rpt_inq.cpp	87	90	sqlstr = " SELECT tsmpe11.* ,tsmpe11.STACKING_NO as STACKING_NO_1"
+p_sm00_25910/sm0004_rpt_inq.cpp	118	119	sqlstr = "SELECT nvl(ORDER_CUST_CNAME , ' ') FROM tsmpe10 WHERE ORDER_NO = @tsmpe11.ORDER_NO";
+p_sm00_25910/sm0004_rpt_inq.cpp	137	139	sqlstr = "SELECT CNAME FROM tesuserinfo WHERE  ENAME  = @tsmpe11.REC_CREATOR";
+p_sm00_25910/sm0004_rpt_inq2.cpp	79	81	sqlstr = "SELECT ROW_NUMBER() OVER() as ROW_NO,tsmpe12.* "
+p_sm00_25910/sm0006_inq.cpp	113	118	sqlstr	=	" SELECT	MAX(A.VEHICLE_NO) ,SUBSTR(A.STACKING_NO,1,9),MAX(A.BILL_OF_LADING_NO),SUM(A.STACKING_WT)   "
+p_sm00_25910/sm0006_inq.cpp	173	174	sqlstr = " SELECT SUM(PLAN_WT) FROM " + tab_name + " WHERE BILL_OF_LADING_NO = @tsmpe11.BILL_OF_LADING_NO ";
+p_sm00_25910/sm0006_inq.cpp	184	185	sqlstr = " SELECT SUM( STACKING_WT + STACKING_DISCREP_WT) FROM TSMPE11 WHERE BILL_OF_LADING_NO = @tsmpe11.BILL_OF_LADING_NO ";
+p_sm00_25910/sm0006_inq1.cpp	102	104	sqlstr	=	" SELECT	* "
+p_sm00_25910/sm0006_put.cpp	98	100	sqlstr = " SELECT sum(mat_wt) , count(1) FROM tsmpe12 "
+p_sm00_25910/sm0006_put.cpp	122	124	sqlstr = " SELECT * FROM tsmpe12 "
+p_sm00_25910/sm0006_put.cpp	154	157	sqlstr = " UPDATE	tsmpe12 "
+p_sm00_25910/sm0006_put.cpp	179	182	sqlstr = " DELETE	FROM	TSMPEA1 "
+p_sm00_25910/sm0006_put.cpp	218	220	sqlstr = " UPDATE	tsmpe11 "
+p_sm00_25910/sm0006_put.cpp	256	257	sqlstr = " SELECT SUM(PLAN_WT) FROM " + tab_name + " WHERE BILL_OF_LADING_NO = @tsmpe12.BILL_OF_LADING_NO ";
+p_sm00_25910/sm0006_put.cpp	267	268	sqlstr = " SELECT SUM( STACKING_WT + STACKING_DISCREP_WT) FROM TSMPE11 WHERE BILL_OF_LADING_NO = @tsmpe12.BILL_OF_LADING_NO ";
+p_sm00_25910/sm0008_inq_master.cpp	56	60	sqlstr = "SELECT  T.* FROM 	tsmpe10 T WHERE  T.DELIVY_PLAN_STATUS < '5' ";
+p_sm00_25910/sm0008_inq_master.cpp	130	131	sqlstr = "select * from tsmpe15 where BILL_OF_LADING_NO = '" + v_bill_of_lading_no + "' ";
+p_sm00_25910/sm0008_inq_vehicle.cpp	53	66	sqlstr = "SELECT  T.* FROM 	tsm00b4 T WHERE  T.STATUS = '2' ";
+p_sm00_25910/sm0008_pro_check.cpp	64	65	sqlstr = "select distinct BILL_OF_LADING_NO from tsmpe02 where VEHICLE_NO = '" + tsmpe02_in.VEHICLE_NO.Trim() + "' ";
+p_sm00_25910/sm0008_pro_check.cpp	72	73	sqlstr = " select * FROM tsmpe10 WHERE BILL_OF_LADING_NO = '" + tsmpe02.BILL_OF_LADING_NO + "' ";
+p_sm00_25910/sm0015_del.cpp	144	145	sqlstr = " SELECT * FROM TSMPE11 WHERE TICKET_NO = '" + ticket_no + "' ";
+p_sm00_25910/sm0015_del.cpp	153	154	sqlstr = "select * from tsmpe10 where BILL_OF_LADING_NO = '" + tsmpe11["BILL_OF_LADING_NO"].ToString() + "' ";
+p_sm00_25910/sm0015_del.cpp	210	211	sqlstr = " SELECT DISTINCT BILL_OF_LADING_NO FROM TSMPE11 WHERE TICKET_NO = '" + ticket_no + "' ";
+p_sm00_25910/sm0015_del.cpp	219	220	sqlstr = "select DISTINCT ORDER_NO,CONTRACT_NO,DELIVY_QTY_FLAG,REMARK1 from tsmpe10 where BILL_OF_LADING_NO = '" + bill_of_lading_no + "' ";
+p_sm00_25910/sm0015_del.cpp	272	273	sqlstr = "SELECT * "
+p_sm00_25910/sm0015_del.cpp	317	318	sqlstr = " SELECT * FROM TSMPE11 WHERE TICKET_NO = '" + ticket_no + "' ";
+p_sm00_25910/sm0015_del.cpp	332	333	sqlstr = "select * from tsmpe10 where BILL_OF_LADING_NO = '" + tsmpe11["BILL_OF_LADING_NO"].ToString() + "' ";
+p_sm00_25910/sm0015_del.cpp	352	352	sqlstr = " INSERT INTO TSM00B4 "
+p_sm00_25910/sm0015_del.cpp	353	355	" SELECT * FROM HSM00B4 "
+p_sm00_25910/sm0015_del.cpp	359	361	sqlstr = " DELETE FROM HSM00B4 "
+p_sm00_25910/sm0015_del.cpp	365	368	sqlstr = " UPDATE TSM00B4 "
+p_sm00_25910/sm0015_del.cpp	374	375	sqlstr = "UPDATE TSMPE10 SET DELIVY_PLAN_STATUS = '3' , DELIVY_WT = 0,DELIVY_NUM = 0 "
+p_sm00_25910/sm0015_del.cpp	382	383	sqlstr = "select * from tsmpe12 WHERE ticket_no = '" + ticket_no + "' ";
+p_sm00_25910/sm0015_del.cpp	427	428	sqlstr = "INSERT tsmpe02 INTO mat_no='" + tsmpe02["MAT_NO"].ToString() + "' ";
+p_sm00_25910/sm0015_del.cpp	431	432	sqlstr = "DELETE tsmpe12 where mat_no='" + tsmpe12["MAT_NO"].ToString() + "' AND STACKING_NO = '" + tsmpe12["STACKING_NO"].ToString() + "' ";
+p_sm00_25910/sm0015_del.cpp	437	438	sqlstr = "delete from STACKING_NO = '" + tsmpe11["STACKING_NO"].ToString() + "' ";
+p_sm00_25910/sm0015_inq_detail.cpp	64	65	sqlstr = "SELECT T.* FROM tsmpe12 T, tsmpe11 A  WHERE T.ticket_no IN ( ";
+p_sm00_25910/sm0015_inq_master.cpp	60	60	sqlstr_tno = " SELECT TICKET_NO FROM TSMPE12 WHERE 1=1 ";
+p_sm00_25910/sm0015_inq_master.cpp	61	63	sqlstr = "SELECT  T.* FROM 	vsmpe11 T WHERE  1=1 AND TICKET_NO IN ( SELECT  TICKET_NO FROM 	Tsmpe11 T WHERE  1=1 " ;
+p_sm00_25910/sm0015_inq_master.cpp	182	183	sqlstr = "select status from tsm00b4 where vehicle_no='" + vehicle_no + "'";
+p_sm00_25910/sm0015_inq_master.cpp	211	212	sqlstr = "select LANE_NO from tsm00b4 where TICKET_NO = '" + TICKET_NO + "' ";
+p_sm00_25910/sm0015_inq_master.cpp	222	223	sqlstr = "select LANE_NO from hsm00b4 where TICKET_NO = '" + tsmpe11["TICKET_NO"].ToString() + "' ";
+p_sm00_25910/sm0015_md_ok.cpp	82	84	sqlstr = " select STACKING_STATUS,TRNP_MODE_CODE,STOCK_NO,VEHICLE_NO,MAT_KIND,WT_MODE,PONDER_NO "
+p_sm00_25910/sm0015_md_ok.cpp	132	133	sqlstr = " SELECT  STOCK_TYPE_CODE FROM TSI0021 WHERE STOCK_NO = '" + STOCK_NO + "' ";
+p_sm00_25910/sm0015_md_ok.cpp	195	196	sqlstr = "SELECT SYS_CODE FROM TWM01 WHERE STOCK_NO = '" + STOCK_NO + "' ";
+p_sm00_25910/sm0015_up_vehicle.cpp	112	113	sqlstr = "SELECT MAT_NO FROM TSMPE12 WHERE TICKET_NO ='" + ticket_no + "' ";
+p_sm00_25910/sm0099_inq.cpp	99	111	sqlstr = " SELECT * FROM tsmpea1 A "
+p_sm00_25910/sm00a8_inq.cpp	86	88	sqlstr = " SELECT t1.*  "
+p_sm00_25910/sm00a9_inq.cpp	78	80	sqlstr = CString("SELECT DISTINCT a.* "
+p_sm00_25910/sm00a9_ins.cpp	62	63	sqlstr = "insert into tsmpea9";
+p_sm00_25910/sm00a9_user_id.cpp	68	68	" SELECT ENAME , CNAME  FROM TESUSERINFO  union select name ,groupdescription  from tesgroupinfo ORDER BY ENAME ASC" );
+p_sm00_25910/sm00a9_user_id.cpp	70	71	" SELECT ENAME , CNAME  FROM TESUSERINFO  ORDER BY ENAME ASC");
+p_sm00_25920/cm_0000sd_rcv.cpp	89	92	sqlstr = " UPDATE TSMPE02 SET ORDER_NO = @tsmpe02.ORDER_NO WHERE MAT_NO ='"+ tsmpe02["MAT_NO"].ToString()+"' ";
+p_sm00_25920/sm0099_inq.cpp	99	111	sqlstr = " SELECT * FROM tsmpea1 A "
+p_sm00_25920/sm00a8_inq.cpp	86	88	sqlstr = " SELECT t1.*  "
+p_sm00_25920/sm00a9_inq.cpp	78	80	sqlstr = CString("SELECT DISTINCT a.* "
+p_sm00_25920/sm00a9_ins.cpp	62	63	sqlstr = "insert into tsmpea9";
+p_sm00_25920/sm00a9_user_id.cpp	68	68	" SELECT ENAME , CNAME  FROM TESUSERINFO  union select name ,groupdescription  from tesgroupinfo ORDER BY ENAME ASC" );
+p_sm00_25920/sm00a9_user_id.cpp	70	71	" SELECT ENAME , CNAME  FROM TESUSERINFO  ORDER BY ENAME ASC");
+p_sm00_25930/sm0008_inq_master.cpp	56	60	sqlstr = "SELECT  T.* FROM 	tsmpe10 T WHERE  T.DELIVY_PLAN_STATUS < '5' ";
+p_sm00_25930/sm0008_inq_master.cpp	130	131	sqlstr = "select * from tsmpe15 where BILL_OF_LADING_NO = '" + v_bill_of_lading_no + "' ";
+p_sm00_25930/sm0008_inq_vehicle.cpp	53	66	sqlstr = "SELECT  T.* FROM 	tsm00b4 T WHERE  T.STATUS = '2' ";
+p_sm00_25930/sm0008_pro_check.cpp	64	65	sqlstr = "select distinct BILL_OF_LADING_NO from tsmpe02 where VEHICLE_NO = '" + tsmpe02_in.VEHICLE_NO.Trim() + "' ";
+p_sm00_25930/sm0008_pro_check.cpp	72	73	sqlstr = " select * FROM tsmpe10 WHERE BILL_OF_LADING_NO = '" + tsmpe02.BILL_OF_LADING_NO + "' ";
+p_sm00_25930/sm0015_del.cpp	144	145	sqlstr = " SELECT * FROM TSMPE11 WHERE TICKET_NO = '" + ticket_no + "' ";
+p_sm00_25930/sm0015_del.cpp	153	154	sqlstr = "select * from tsmpe10 where BILL_OF_LADING_NO = '" + tsmpe11["BILL_OF_LADING_NO"].ToString() + "' ";
+p_sm00_25930/sm0015_del.cpp	210	211	sqlstr = " SELECT DISTINCT BILL_OF_LADING_NO FROM TSMPE11 WHERE TICKET_NO = '" + ticket_no + "' ";
+p_sm00_25930/sm0015_del.cpp	219	220	sqlstr = "select DISTINCT ORDER_NO,CONTRACT_NO,DELIVY_QTY_FLAG,REMARK1 from tsmpe10 where BILL_OF_LADING_NO = '" + bill_of_lading_no + "' ";
+p_sm00_25930/sm0015_del.cpp	272	273	sqlstr = "SELECT * "
+p_sm00_25930/sm0015_del.cpp	317	318	sqlstr = " SELECT * FROM TSMPE11 WHERE TICKET_NO = '" + ticket_no + "' ";
+p_sm00_25930/sm0015_del.cpp	332	333	sqlstr = "select * from tsmpe10 where BILL_OF_LADING_NO = '" + tsmpe11["BILL_OF_LADING_NO"].ToString() + "' ";
+p_sm00_25930/sm0015_del.cpp	352	352	sqlstr = " INSERT INTO TSM00B4 "
+p_sm00_25930/sm0015_del.cpp	353	355	" SELECT * FROM HSM00B4 "
+p_sm00_25930/sm0015_del.cpp	359	361	sqlstr = " DELETE FROM HSM00B4 "
+p_sm00_25930/sm0015_del.cpp	365	368	sqlstr = " UPDATE TSM00B4 "
+p_sm00_25930/sm0015_del.cpp	374	375	sqlstr = "UPDATE TSMPE10 SET DELIVY_PLAN_STATUS = '3' , DELIVY_WT = 0,DELIVY_NUM = 0 "
+p_sm00_25930/sm0015_del.cpp	382	383	sqlstr = "select * from tsmpe12 WHERE ticket_no = '" + ticket_no + "' ";
+p_sm00_25930/sm0015_del.cpp	427	428	sqlstr = "INSERT tsmpe02 INTO mat_no='" + tsmpe02["MAT_NO"].ToString() + "' ";
+p_sm00_25930/sm0015_del.cpp	431	432	sqlstr = "DELETE tsmpe12 where mat_no='" + tsmpe12["MAT_NO"].ToString() + "' AND STACKING_NO = '" + tsmpe12["STACKING_NO"].ToString() + "' ";
+p_sm00_25930/sm0015_del.cpp	437	438	sqlstr = "delete from STACKING_NO = '" + tsmpe11["STACKING_NO"].ToString() + "' ";
+p_sm00_25930/sm0015_inq_detail.cpp	64	65	sqlstr = "SELECT T.* FROM tsmpe12 T, tsmpe11 A  WHERE T.ticket_no IN ( ";
+p_sm00_25930/sm0015_inq_master.cpp	60	60	sqlstr_tno = " SELECT TICKET_NO FROM TSMPE12 WHERE 1=1 ";
+p_sm00_25930/sm0015_inq_master.cpp	61	63	sqlstr = "SELECT  T.* FROM 	vsmpe11 T WHERE  1=1 AND TICKET_NO IN ( SELECT  TICKET_NO FROM 	Tsmpe11 T WHERE  1=1 " ;
+p_sm00_25930/sm0015_inq_master.cpp	182	183	sqlstr = "select status from tsm00b4 where vehicle_no='" + vehicle_no + "'";
+p_sm00_25930/sm0015_inq_master.cpp	211	212	sqlstr = "select LANE_NO from tsm00b4 where TICKET_NO = '" + TICKET_NO + "' ";
+p_sm00_25930/sm0015_inq_master.cpp	222	223	sqlstr = "select LANE_NO from hsm00b4 where TICKET_NO = '" + tsmpe11["TICKET_NO"].ToString() + "' ";
+p_sm00_25930/sm0015_md_ok.cpp	82	84	sqlstr = " select STACKING_STATUS,TRNP_MODE_CODE,STOCK_NO,VEHICLE_NO,MAT_KIND,WT_MODE,PONDER_NO "
+p_sm00_25930/sm0015_md_ok.cpp	132	133	sqlstr = " SELECT  STOCK_TYPE_CODE FROM TSI0021 WHERE STOCK_NO = '" + STOCK_NO + "' ";
+p_sm00_25930/sm0015_md_ok.cpp	195	196	sqlstr = "SELECT SYS_CODE FROM TWM01 WHERE STOCK_NO = '" + STOCK_NO + "' ";
+p_sm00_25930/sm0015_up_vehicle.cpp	112	113	sqlstr = "SELECT MAT_NO FROM TSMPE12 WHERE TICKET_NO ='" + ticket_no + "' ";

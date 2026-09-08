@@ -1,0 +1,61 @@
+{
+  "web-clients": [
+    {
+      "path": "Client/xr-mmsm-ag/package.json",
+      "line": 1,
+      "label": "前端技术与依赖"
+    }
+  ],
+  "platform-contract": [
+    {
+      "path": "Client/xr-mmsm-ag/vite.config.ts",
+      "line": 72,
+      "label": "远程模块引用"
+    }
+  ],
+  "business-services": [
+    {
+      "path": "Server/PSSM/p_pssm_13050/pssm10f2_inq.cpp",
+      "line": 35,
+      "label": "已核实的服务入口"
+    }
+  ],
+  "business-data": [
+    {
+      "path": "Server/PSSM/p_pssm_13050/pssm10f2_inq.cpp",
+      "line": 55,
+      "label": "模型与数据库访问"
+    }
+  ],
+  "desktop-clients": [
+    {
+      "path": "Client/MM/MM00/MM00S2N.csproj",
+      "line": 15,
+      "label": ".NET Framework 工程"
+    }
+  ],
+  "plant-systems": [
+    {
+      "path": "Server/TMSM/libTMSM/f_hmjl05_snd.cpp",
+      "line": 6,
+      "label": "精炼 L2 配包计划"
+    },
+    {
+      "path": "Server/SM00/libSM00/f_00xxsb_rcv.cpp",
+      "line": 6,
+      "label": "L4 电文接收"
+    }
+  ],
+  "shared-config": [
+    {
+      "path": "Server/GCPM/p_gcpm_9320/gcpm_initForm.cpp",
+      "line": 2,
+      "label": "画面布局配置"
+    },
+    {
+      "path": "Server/GC00/gc00_ExcQrySql.cpp",
+      "line": 3,
+      "label": "通用查询入口"
+    }
+  ]
+}

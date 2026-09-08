@@ -1,0 +1,161 @@
+file	start	end	preview
+libMMTP/f_mmtp_data_query.cpp	144	145	sqlstr = "SELECT ";
+libMMTP/f_mmtp_data_query.cpp	146	146	sqlstrSubTotal = "SELECT ";
+libMMTP/f_mmtp_data_query.cpp	147	148	sqlstrTotal = "SELECT ";
+libMMTP/f_mmtp_data_query.cpp	322	324	if (sqlstrTotal != "SELECT ")
+libMMTP/f_mmtp_dyna_table.cpp	562	562	CString strSelect = "SELECT ";
+libMMTP/f_mmtp_dyna_table.cpp	566	568	if (strSelect == "SELECT ")
+libMMTP/f_mmtp_dyna_table.cpp	578	580	if (strSelect == "SELECT ")
+libMMTP/f_mmtp_dyna_table.cpp	592	594	if (strSelect == "SELECT ")
+libMMTP/f_mmtp_dyna_table.cpp	604	606	if (strSelect == "SELECT ")
+libMMTP/f_mmtp_dyna_table.cpp	1515	1518	CString inqStr = "SELECT COUNT(1) " + this->BuildFromString();
+libMMTP/f_mmtp_dyna_table.cpp	1741	1743	PrintLog("Insert, RowsCount", this->dtTable.Rows.get_Count());
+libMMTP/f_mmtp_dyna_table.cpp	1775	1776	insStr = "INSERT INTO " + this->sTableName + this->BuildInsertString(i);
+libMMTP/f_mmtp_dyna_table.cpp	1851	1852	strSql = "UPDATE " + this->sTableName + " SET " + strUpd + " WHERE " + condition;
+libMMTP/f_mmtp_dyna_table.cpp	1882	1884	PrintLog("Update");
+libMMTP/f_mmtp_dyna_table.cpp	1928	1929	strSql = "DELETE FROM " + this->sTableName + " WHERE " + condition;
+libMMTP/f_mmtp_mat_track.cpp	128	129	strSql = "SELECT * FROM tmm0097 WHERE event_id = @eventId AND event_line_type = @eventLineType AND mat_kind = @matKind";
+libMMTP/f_mmtp_mat_track.cpp	177	178	strSql = "SELECT * FROM tmm0099 WHERE event_id = @eventId AND event_line_type = @eventLineType AND mat_kind = @matKind";
+libMMTP/f_mmtp_mat_track.cpp	445	446	strSql = "SELECT * FROM HMM" + matKind + "01 WHERE mat_no = '" + matNo + "' ORDER BY mat_id DESC";
+libMMTP/f_mmtp_mat_track.cpp	555	558	strSql = "INSERT INTO TMM" + matKind + "96 SELECT * FROM HMM" + matKind + "96 WHERE mat_id = '" + matDataHistory.GetColValString("MAT_ID") + "'";
+libMMTP/f_mmtp_mat_track.cpp	566	569	strSql = "DELETE FROM HMM" + matKind + "96 WHERE mat_id = '" + matDataHistory.GetColValString("MAT_ID") + "'";
+libMMTP/f_mmtp_mat_track.cpp	580	583	strSql = "INSERT INTO TMMSM03 SELECT * FROM HMMSM03 WHERE mat_id = '" + matDataHistory.GetColValString("MAT_ID") + "'";
+libMMTP/f_mmtp_mat_track.cpp	591	594	strSql = "DELETE FROM HMMSM03 WHERE mat_id = '" + matDataHistory.GetColValString("MAT_ID") + "'";
+libMMTP/f_mmtp_mat_track.cpp	602	605	strSql = "INSERT INTO TMMSM04 SELECT * FROM HMMSM04 WHERE mat_id = '" + matDataHistory.GetColValString("MAT_ID") + "'";
+libMMTP/f_mmtp_mat_track.cpp	613	616	strSql = "DELETE FROM HMMSM04 WHERE mat_id = '" + matDataHistory.GetColValString("MAT_ID") + "'";
+libMMTP/f_mmtp_mat_track.cpp	627	630	strSql = "INSERT INTO TMMHP02 SELECT * FROM HMMHP02 WHERE mat_id = '" + matDataHistory.GetColValString("MAT_ID") + "'";
+libMMTP/f_mmtp_mat_track.cpp	638	641	strSql = "DELETE FROM HMMHP02 WHERE mat_id = '" + matDataHistory.GetColValString("MAT_ID") + "'";
+libMMTP/f_mmtp_mat_track.cpp	649	652	strSql = "INSERT INTO TMMHP03 SELECT * FROM HMMHP03 WHERE mat_id = '" + matDataHistory.GetColValString("MAT_ID") + "'";
+libMMTP/f_mmtp_mat_track.cpp	660	663	strSql = "DELETE FROM HMMHP03 WHERE mat_id = '" + matDataHistory.GetColValString("MAT_ID") + "'";
+libMMTP/f_mmtp_mat_track.cpp	977	978	strSql = "SELECT max_length FROM sys.columns WHERE object_id = object_id('" + tableName +
+libMMTP/f_mmtp_mat_track.cpp	989	990	strSql = "SELECT length FROM sysibm.syscolumns WHERE tbname ='" + tableName +
+libMMTP/f_mmtp_mat_track.cpp	994	995	strSql = "SELECT data_length FROM user_tab_columns WHERE table_name = '" + tableName +
+libMMTP/f_mmtp_mat_track.cpp	1824	1827	strSql = "INSERT INTO HMM" + matKind + "96 SELECT * FROM TMM" + matKind + "96 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	1835	1838	strSql = "DELETE FROM TMM" + matKind + "96 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	1849	1852	strSql = "INSERT INTO HMMSM03 SELECT * FROM TMMSM03 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	1860	1863	strSql = "DELETE FROM TMMSM03 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	1871	1874	strSql = "INSERT INTO HMMSM04 SELECT * FROM TMMSM04 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	1882	1885	strSql = "DELETE FROM TMMSM04 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	1897	1900	strSql = "INSERT INTO HMMHP02 SELECT * FROM TMMHP02 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	1908	1911	strSql = "DELETE FROM TMMHP02 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	1919	1922	strSql = "INSERT INTO HMMHP03 SELECT * FROM TMMHP03 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	1930	1933	strSql = "DELETE FROM TMMHP03 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	1967	1970	strSql = "INSERT INTO HMM" + matKind + "96 SELECT * FROM TMM" + matKind + "96 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	1978	1981	strSql = "DELETE FROM TMM" + matKind + "96 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	1992	1995	strSql = "DELETE FROM TMMSM03 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	2003	2006	strSql = "DELETE FROM TMMSM04 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	2017	2020	strSql = "DELETE FROM TMMHP02 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	2028	2031	strSql = "DELETE FROM TMMHP03 WHERE mat_no = '" + matNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	2060	2061	strSql = "SELECT b.tc_no,b.outer_system FROM ted10 a,text1 b WHERE a.call_method = '" + (CString)s.svc_name +
+libMMTP/f_mmtp_mat_track.cpp	2081	2082	strSql = "SELECT outer_system FROM text1 WHERE tc_no = '" + tcNo + "'";
+libMMTP/f_mmtp_mat_track.cpp	2231	2232	strSql = "SELECT outer_system FROM text1 WHERE tc_no = '" + tcNo + "'";
+p_mmtp_18030/mmtp_configSave.cpp	57	58	sqlstr = "DELETE FROM tmmtp01 WHERE cfgitm_name = @cfgName AND cfggrp_name = @cfgGrpName";
+p_mmtp_18030/mmtp_configSave.cpp	62	63	sqlstr = "DELETE FROM tmmtp02 WHERE cfgitm_name = @cfgName AND cfggrp_name = @cfgGrpName";
+p_mmtp_18030/mmtp_configSave.cpp	67	68	sqlstr = "DELETE FROM tmmtp03 WHERE cfgitm_name = @cfgName AND cfggrp_name = @cfgGrpName";
+p_mmtp_18030/mmtp_configSave.cpp	72	73	sqlstr = "DELETE FROM tmmtp05 WHERE cfgitm_name = @cfgName AND cfggrp_name = @cfgGrpName";
+p_mmtp_18030/mmtp_configSave.cpp	79	83	sqlstr = "INSERT INTO tmmtp01 SELECT @recCreator,@recCreateTime,' ',' ',' ',' ',' ',' ',@cfgName,@cfgGrpName,table_name,user_id,"
+p_mmtp_18030/mmtp_configSave.cpp	87	87	PrintLog("INSERT TMMTP01成功");
+p_mmtp_18030/mmtp_configSave.cpp	89	95	sqlstr = "INSERT INTO tmmtp02 SELECT @recCreator,@recCreateTime,' ',' ',' ',' ',' ',' ',@cfgName,@cfgGrpName,table_name,user_id,"
+p_mmtp_18030/mmtp_configSave.cpp	100	100	PrintLog("INSERT TMMTP02成功");
+p_mmtp_18030/mmtp_configSave.cpp	102	105	sqlstr = "INSERT INTO tmmtp03 SELECT @recCreator,@recCreateTime,' ',' ',' ',' ',' ',' ',@cfgName,cfgitm_desc,@cfgGrpName,page_name,area_desc,"
+p_mmtp_18030/mmtp_configSave.cpp	109	109	PrintLog("INSERT TMMTP03成功");
+p_mmtp_18030/mmtp_configSave.cpp	111	113	sqlstr = "INSERT INTO tmmtp05 SELECT @recCreator,@recCreateTime,' ',' ',' ',' ',' ',' ',@cfgName,cfggrp_name,operation_type,"
+p_mmtp_18030/mmtp_configSave.cpp	117	121	PrintLog("INSERT TMMTP05成功");
+p_mmtp_18030/mmtp_configSave.cpp	128	129	sqlstr = "DELETE FROM tmmtp01 WHERE cfgitm_name = @cfgName";
+p_mmtp_18030/mmtp_configSave.cpp	133	134	sqlstr = "DELETE FROM tmmtp02 WHERE cfgitm_name = @cfgName";
+p_mmtp_18030/mmtp_configSave.cpp	138	139	sqlstr = "DELETE FROM tmmtp03 WHERE cfgitm_name = @cfgName";
+p_mmtp_18030/mmtp_configSave.cpp	143	144	sqlstr = "DELETE FROM tmmtp05 WHERE cfgitm_name = @cfgName";
+p_mmtp_18030/mmtp_configSave.cpp	156	160	sqlstr = "INSERT INTO tmmtp01 SELECT @recCreator,@recCreateTime,' ',' ',' ',' ',' ',' ',@cfgName,cfggrp_name,table_name,"
+p_mmtp_18030/mmtp_configSave.cpp	183	185	PrintLog("INSERT TMMTP01成功");
+p_mmtp_18030/mmtp_configSave.cpp	191	197	sqlstr = "INSERT INTO tmmtp02 SELECT @recCreator,@recCreateTime,' ',' ',' ',' ',' ',' ',@cfgName,cfggrp_name,table_name,user_id,"
+p_mmtp_18030/mmtp_configSave.cpp	221	223	PrintLog("INSERT TMMTP02成功");
+p_mmtp_18030/mmtp_configSave.cpp	229	232	sqlstr = "INSERT INTO tmmtp03 SELECT @recCreator,@recCreateTime,' ',' ',' ',' ',' ',' ',@cfgName,cfgitm_desc,cfggrp_name,page_name,area_desc,"
+p_mmtp_18030/mmtp_configSave.cpp	255	257	PrintLog("INSERT TMMTP03成功");
+p_mmtp_18030/mmtp_configSave.cpp	263	265	sqlstr = "INSERT INTO tmmtp05 SELECT @recCreator,@recCreateTime,' ',' ',' ',' ',' ',' ',@cfgName,cfggrp_name,operation_type,"
+p_mmtp_18030/mmtp_configSave.cpp	288	292	PrintLog("INSERT TMMTP05成功");
+p_mmtp_18030/mmtp_configSave.cpp	317	318	sqlstr = "DELETE FROM tmmtp01 WHERE cfgitm_name = @cfgName AND cfggrp_name = @cfgGrpName";
+p_mmtp_18030/mmtp_configSave.cpp	322	323	sqlstr = "DELETE FROM tmmtp02 WHERE cfgitm_name = @cfgName AND cfggrp_name = @cfgGrpName";
+p_mmtp_18030/mmtp_configSave.cpp	327	328	sqlstr = "DELETE FROM tmmtp03 WHERE cfgitm_name = @cfgName AND cfggrp_name = @cfgGrpName";
+p_mmtp_18030/mmtp_configSave.cpp	332	333	sqlstr = "DELETE FROM tmmtp05 WHERE cfgitm_name = @cfgName AND cfggrp_name = @cfgGrpName";
+p_mmtp_18030/mmtp_loadQuery.cpp	49	50	sqlstr = "SELECT DISTINCT cfgitm_name FROM tmmtp03";
+p_mmtp_18030/mmtp_loadQuery.cpp	115	116	sqlstr = "SELECT * FROM tmm00si16 WHERE form_no = '" + configName + "' ORDER BY unit_code";
+p_mmtp_18030/mmtp_loadQuery.cpp	158	159	sqlstr = "SELECT code,code_desc_1_content FROM tep0002 WHERE code_class = 'MC01' ORDER BY code";
+p_mmtp_18030/mmtp_loadQuery.cpp	166	167	sqlstr = "SELECT code,code_desc_1_content FROM tep0002 WHERE code_class = '" +
+p_mmtp_18030/mmtp_loadQuery.cpp	198	201	sqlstr = "SELECT * FROM tmmtp01 WHERE cfgitm_name = '" + configName + "'";
+p_mmtp_18030/mmtp_loadQuery.cpp	223	226	sqlstr = "SELECT * FROM tmmtp02 WHERE cfgitm_name = '" + configName + "'";
+p_mmtp_18030/mmtp_loadQuery.cpp	248	251	sqlstr = "SELECT * FROM tmmtp03 WHERE cfgitm_name = '" + configName + "'";
+p_mmtp_18030/mmtp_loadQuery.cpp	295	298	sqlstr = "SELECT MAX(row_count) FROM (SELECT a.func_id,a.class_code,CEILING(b.item_count/a.column_count) row_count"
+p_mmtp_18030/mmtp_loadQuery.cpp	302	305	sqlstr = "SELECT MAX(row_count) FROM (SELECT a.func_id,a.class_code,CEIL(b.item_count/a.column_count) row_count"
+p_mmtp_18030/mmtp_loadQuery.cpp	322	323	sqlstr = "SELECT * FROM tmmtp04 WHERE cfgitm_name = '" + configName + "' ORDER BY seq_no";
+p_mmtp_18030/mmtp_loadQuery.cpp	329	332	sqlstr = "SELECT * FROM tmmtp05 WHERE cfgitm_name = '" + configName + "'";
+p_mmtp_18030/mmtp_loadQuery.cpp	427	428	sqlstr = "SELECT DISTINCT item_cvalue FROM " + GetColValueC(bcls_ret->Tables["TMMTP03"], 0, "TABLE_NAME") +
+p_mmtp_18030/mmtp_loadQuery.cpp	432	435	sqlstr = "SELECT DISTINCT " + colName + " FROM " + tableName + " ORDER BY " + colName;
+p_mmtp_18030/mmtp_loadQuery.cpp	476	477	sqlstr = "SELECT DISTINCT cfgitm_name FROM tmmtp03";
+p_mmtp_18030/mmtp_loadQuery.cpp	493	494	sqlstr = "SELECT * FROM tmmtp04 WHERE cfgitm_name = '" + configName + "' ORDER BY seq_no";
+p_mmtp_18030/mmtp_loadQuery.cpp	514	515	sqlstr = "SELECT * FROM tmmtp06 WHERE table_ename = '" + tableName.Trim() + "' ORDER BY seq_no";
+p_mmtp_18030/mmtp_loadQuery.cpp	559	560	sqlstr = "SELECT remarks FROM SYSIBM.SYSTABLES WHERE name = '" + tableName +
+p_mmtp_18030/mmtp_loadQuery.cpp	564	565	sqlstr = "SELECT comments FROM user_tab_comments WHERE table_name = '" + tableName + "'";
+p_mmtp_18030/mmtp_loadQuery.cpp	754	760	sqlstr = "SELECT code_class,code,code_desc_1_content,code_desc_2_content,code_desc_3_content,code_desc_4_content FROM tep0002";
+p_mmtp_18030/mmtp_loadQuery.cpp	835	836	sqlstr = "SELECT unit_code,unit_cname FROM tmm00si16 WHERE unit_code IN (SELECT DISTINCT plan_backlog_code FROM tpscra7) ORDER BY unit_code";
+p_mmtp_18030/mmtp_matTableColSave.cpp	101	102	sqlstr = "SELECT DISTINCT cfgitm_name FROM tmmtp04 WHERE table_ename = '" + tableEname + "'";
+p_mmtp_18030/mmtp_subFormCreate.cpp	40	44	sqlstr = "INSERT INTO TESFORMPARA (REC_CREATOR,REC_CREATE_TIME,FORM_NAME,FORM_BASE_NAME,PK1,PK1_NAME";
+p_mmtp_18030/mmtp_subFormCreate.cpp	110	112	sqlInit = "SELECT '" + (CString)s.userid + "','" + dataTime + "',' ',' ',' ',' ',' ',' ','" + cfgName + "'";
+p_mmtp_18030/mmtp_subFormCreate.cpp	115	115	sqlstr1 = "INSERT INTO tmmtp01 " + sqlInit;
+p_mmtp_18030/mmtp_subFormCreate.cpp	116	119	sqlstr2 = "INSERT INTO tmmtp01 " + sqlInit;
+p_mmtp_18030/mmtp_subFormCreate.cpp	148	148	sqlstr1 = "INSERT INTO tmmtp02 " + sqlInit;
+p_mmtp_18030/mmtp_subFormCreate.cpp	149	152	sqlstr2 = "INSERT INTO tmmtp02 " + sqlInit;
+p_mmtp_18030/mmtp_subFormCreate.cpp	181	181	sqlstr1 = "INSERT INTO tmmtp03 " + sqlInit;
+p_mmtp_18030/mmtp_subFormCreate.cpp	182	185	sqlstr2 = "INSERT INTO tmmtp03 " + sqlInit;
+p_mmtp_18110/gctp_configAddNew.cpp	39	40	sqlstr = "DELETE FROM tgctp02 WHERE cfgitm_name = '" + cfgitmName + "'";
+p_mmtp_18110/gctp_configAddNew.cpp	98	99	sqlstr = "DELETE FROM tgctp01 WHERE cfgitm_name = '" + cfgitmName + "' AND cfgitm_grp_name = '" + blkName + "'";
+p_mmtp_18110/gctp_configDataClear.cpp	30	31	sqlstr = "DELETE FROM tgctp04 WHERE form_no = '" + formNo + "'";
+p_mmtp_18110/gctp_configDataClear.cpp	36	37	sqlstr = "DELETE FROM tgctp05 WHERE form_no = '" + formNo + "'";
+p_mmtp_18110/gctp_configDataClear.cpp	42	43	sqlstr = "DELETE FROM tgctp06 WHERE form_no = '" + formNo + "'";
+p_mmtp_18110/gctp_configDataClear.cpp	48	49	sqlstr = "DELETE FROM tgctp07 WHERE form_no = '" + formNo + "'";
+p_mmtp_18110/gctp_configDataClear.cpp	56	57	sqlstr = "DELETE FROM tgctp01 WHERE cfgitm_name = '" + cfgitmName + "'";
+p_mmtp_18110/gctp_configDataClear.cpp	62	63	sqlstr = "DELETE FROM tgctp02 WHERE cfgitm_name = '" + cfgitmName + "'";
+p_mmtp_18110/gctp_configDataClear.cpp	68	69	sqlstr = "DELETE FROM tgctp03 WHERE cfgitm_name = '" + cfgitmName + "'";
+p_mmtp_18110/gctp_configDelete.cpp	21	22	sqlstr = "DELETE FROM tgctp01 WHERE cfgitm_name = '" + bcls_rec->Tables[0].Rows[i]["CFGITM_NAME"].ToString() + "'";
+p_mmtp_18110/gctp_configDelete.cpp	26	27	sqlstr = "DELETE FROM tgctp02 WHERE cfgitm_name = '" + bcls_rec->Tables[0].Rows[i]["CFGITM_NAME"].ToString() + "'";
+p_mmtp_18110/gctp_configImport.cpp	43	43	CString sqlstr1 = "DELETE FROM tgctp01 WHERE cfgitm_name IN (";
+p_mmtp_18110/gctp_configImport.cpp	44	50	CString sqlstr2 = "DELETE FROM tgctp02 WHERE cfgitm_name IN (";
+p_mmtp_18110/gctp_configImport.cpp	84	85	sqlstr = "DELETE FROM tgctp04 WHERE form_no = '" + formNo + "'";
+p_mmtp_18110/gctp_configImport.cpp	90	91	sqlstr = "DELETE FROM tgctp05 WHERE form_no = '" + formNo + "'";
+p_mmtp_18110/gctp_configImport.cpp	96	97	sqlstr = "DELETE FROM tgctp06 WHERE form_no = '" + formNo + "'";
+p_mmtp_18110/gctp_configImport.cpp	102	103	sqlstr = "DELETE FROM tgctp07 WHERE form_no = '" + formNo + "'";
+p_mmtp_18110/gctp_configImport.cpp	108	109	sqlstr = "SELECT count(1) FROM tesformresinfo WHERE name = '" + formNo + "'";
+p_mmtp_18110/gctp_configImport.cpp	146	147	sqlstr = "SELECT aclid,optype,description FROM tesbuttonresinfo WHERE fname = '" + formNo + "' AND name = '" + buttonName + "'";
+p_mmtp_18110/gctp_configImport.cpp	164	165	sqlstr = "UPDATE tesbuttonresinfo SET optype = @buttonType WHERE aclid = @dAclid";
+p_mmtp_18110/gctp_configImport.cpp	172	173	sqlstr = "UPDATE tesbuttonresinfo SET optype = @buttonType,description = @buttonDesc WHERE aclid = @dAclid";
+p_mmtp_18110/gctp_configImport.cpp	177	178	sqlstr = "UPDATE tesbuttonresinfo_res SET description = @buttonDesc WHERE aclid = @dAclid AND culture = 'zh_Hans'";
+p_mmtp_18110/gctp_configImport.cpp	189	190	sqlstr = "INSERT INTO tesbuttonresinfo VALUES('" + buttonName + "','" + formNo + "'," + dAclid.ToString() + ",'" +
+p_mmtp_18110/gctp_configImport.cpp	196	197	sqlstr = "INSERT INTO tesbuttonresinfo_res VALUES('zh_Hans'," + dAclid.ToString() + ", '" + buttonDesc + "')";
+p_mmtp_18110/gctp_configImport.cpp	227	228	sqlstr = "DELETE FROM tgctp01 WHERE cfgitm_name = '" + bcls_rec->Tables["CFGITM_NAME"].Rows[i]["CFGITM_NAME"].ToString() + "'";
+p_mmtp_18110/gctp_configImport.cpp	233	234	sqlstr = "DELETE FROM tgctp02 WHERE cfgitm_name = '" + bcls_rec->Tables["CFGITM_NAME"].Rows[i]["CFGITM_NAME"].ToString() + "'";
+p_mmtp_18110/gctp_configItemSave.cpp	22	23	sqlstr = "DELETE FROM tgctp00 WHERE cfgitm_grp_name = '" + cfgitmGrpName + "'";
+p_mmtp_18110/gctp_configLoad.cpp	32	33	sqlstr = "SELECT * FROM tgctp04 WHERE form_no = '" + formNo + "' ORDER BY page_id,tree_level,location";
+p_mmtp_18110/gctp_copyFromConfig.cpp	83	84	sqlstr = "SELECT cfgitm_name FROM tgctp04 WHERE form_no = '" + formNo + "'";
+p_mmtp_18110/gctp_copyFromConfig.cpp	95	96	sqlstr = "DELETE FROM tgctp04 WHERE form_no = '" + formNo + "'";
+p_mmtp_18110/gctp_copyFromConfig.cpp	100	101	sqlstr = "DELETE FROM tgctp05 WHERE form_no = '" + formNo + "'";
+p_mmtp_18110/gctp_copyFromConfig.cpp	105	106	sqlstr = "DELETE FROM tgctp06 WHERE form_no = '" + formNo + "'";
+p_mmtp_18110/gctp_copyFromConfig.cpp	110	111	sqlstr = "DELETE FROM tgctp07 WHERE form_no = '" + formNo + "'";
+p_mmtp_18110/gctp_copyFromConfig.cpp	118	119	sqlstr = "SELECT * FROM tgctp04 WHERE form_no = '" + formNoSrc + "'";
+p_mmtp_18110/gctp_copyFromConfig.cpp	137	137	sqlstr = "SELECT whole_backlog_code,prod_table_name FROM tmm00si16 WHERE prod_table_name = '" + strForm + "' ORDER BY unit_code";
+p_mmtp_18110/gctp_copyFromConfig.cpp	141	144	sqlstr = "SELECT whole_backlog_code,prod_table_name FROM tmm00si16 WHERE form_code =  '" + formNo + "'";
+p_mmtp_18110/gctp_formDelete.cpp	23	24	sqlstr = "DELETE FROM tgctp04 WHERE form_no = @FORM_NO";
+p_mmtp_18110/gctp_formDelete.cpp	29	30	sqlstr = "DELETE FROM tgctp05 WHERE form_no = @FORM_NO";
+p_mmtp_18110/gctp_formDelete.cpp	34	35	sqlstr = "DELETE FROM tgctp06 WHERE form_no = @FORM_NO";
+p_mmtp_18110/gctp_formDelete.cpp	39	40	sqlstr = "DELETE FROM tgctp07 WHERE form_no = @FORM_NO";
+p_mmtp_18110/gctp_formDelete.cpp	44	45	sqlstr = "DELETE FROM tesbuttonresinfo_res@nnaum_dblink WHERE aclid IN"
+p_mmtp_18110/gctp_formDelete.cpp	50	51	sqlstr = "DELETE FROM tesbuttonresinfo@nnaum_dblink WHERE fname = @FORM_NO";
+p_mmtp_18110/gctp_formDelete.cpp	55	56	sqlstr = "DELETE FROM tesformresinfo_res@nnaum_dblink WHERE aclid IN"
+p_mmtp_18110/gctp_formDelete.cpp	61	62	sqlstr = "DELETE FROM tesformresinfo@nnaum_dblink WHERE name = @FORM_NO";
+p_mmtp_18110/gctp_formDelete.cpp	66	67	sqlstr = "DELETE FROM tesformpara@nnaum_dblink WHERE form_name = @FORM_NO";
+p_mmtp_18110/gctp_getCallFormNo.cpp	32	33	sqlstr = "SELECT item_cvalue AS call_form_no FROM TGCTP05 WHERE form_no = '" + formNo +
+p_mmtp_18110/gctp_getFormConfig.cpp	42	43	sqlstr = "SELECT * FROM tgctp04 WHERE form_no = '" + formNo + "' AND cfgitm_name > ' ' ORDER BY page_id,tree_level,location";
+p_mmtp_18110/gctp_setDsConfig.cpp	98	99	sqlstr = "SELECT timestamp,seq_no_01 FROM tgctp02 WHERE cfgitm_name = '" + dsName + "' AND cfgitm_grp_name = 'CONDITION_ITEM' ORDER BY seq_no_01";
+p_mmtp_18110/gctp_setDsConfig.cpp	183	184	sqlstr = "DELETE FROM tgctp02 WHERE cfgitm_name = '" + dsName + "' AND cfgitm_grp_name = 'CONDITION_ITEM' AND timestamp = '" +
+p_mmtp_18110/gctp_setDsConfig.cpp	195	196	sqlstr = "SELECT timestamp,seq_no_02 FROM tgctp02 WHERE cfgitm_name = '" + dsName + "' AND cfgitm_grp_name = 'GRID_ITEM' ORDER BY seq_no_02";
+p_mmtp_18110/gctp_setDsConfig.cpp	246	247	sqlstr = "DELETE FROM tgctp02 WHERE cfgitm_name = '" + dsName + "' AND cfgitm_grp_name = 'GRID_ITEM' AND timestamp = '" +
+p_mmtp_18110/gctp_setDsConfig.cpp	258	259	sqlstr = "SELECT timestamp,seq_no_03 FROM tgctp02 WHERE cfgitm_name = '" + dsName + "' AND cfgitm_grp_name = 'CONTROL_ITEM' ORDER BY seq_no_03";
+p_mmtp_18110/gctp_setDsConfig.cpp	337	338	sqlstr = "DELETE FROM tgctp02 WHERE cfgitm_name = '" + dsName + "' AND cfgitm_grp_name = 'CONTROL_ITEM' AND timestamp = '" +

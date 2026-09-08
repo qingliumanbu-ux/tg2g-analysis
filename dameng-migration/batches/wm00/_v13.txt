@@ -1,0 +1,14 @@
+182							goto l_return;
+183						}
+184						// DM8 适配 CHANGE-EXEC-004:按 code_class=YMWD 查 tep0002;EXEC SQL 改为 CDbCommand(方案B)。
+185						// 原方案A(EXEC SQL,完整保留):
+186						// EXEC SQL select * into :tep0002 from tep0002 where code_class = 'YMWD' and code = : tmmsm01.strand_no;
+187						// 方案B(CDbCommand):
+188							sqlstr = " SELECT * FROM tep0002 WHERE code_class = 'YMWD' AND code = ?";
+189							cmd_inq.SetCommandText(sqlstr);
+190							cmd_inq.Parameters.Set("code", tmmsm01.strand_no);
+191							cmd_inq.ExecuteQuery(tep0002);
+192						EDLog(1, 1, " **************%s  ----tmmsm01.mat_no *****************", tmmsm01.mat_no);
+193						EDLog(1, 1, " **************%s  ----tmmsm01.mat_position ***********", tmmsm01.mat_position);
+194	
+195						if (0 != strcmp(tep0002.code_desc_1_content, "OFF") && 0 == strcmp(tmmsm01.mat_position, "1") && 0 == strcmp(tmmsm01.slab_out_place, " "))//参与宽度控制标定

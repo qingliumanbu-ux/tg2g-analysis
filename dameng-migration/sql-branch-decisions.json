@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "scope": "按用户最新约定，仅裁定应用/后台源码中的 SQL 到 DM8 的转换；不承担数据迁移、DDL、部署和整体联调。",
+  "supersedes": "branch-reviews.json 中把序列状态、完整 DDL、构建包和全项目测试环境作为推进前置的表述不再适用；其中源码事实和行号继续作为证据。",
+  "verification": "2026-09-04 亲读源码并核对 eco.dameng.com 官方文档；未连接数据库。文档支持和表达式推导不是 DM8 实测通过声明。",
+  "global_dependencies": [],
+  "sources": [
+    {"id": "DM-FUNCTION", "url": "https://eco.dameng.com/document/dm/zh-cn/pm/function", "section": "8.3 第10/35/37项；8.4 第5项；8.5 第1项", "supports": "DATEDIFF 的日期边界计数、三参数 TIMESTAMPDIFF、TO_DATE/TO_TIMESTAMP、NVL 和 CAST 均有定义。"},
+    {"id": "DM-DATE", "url": "https://eco.dameng.com/document/dm/zh-cn/sql-dev/practice-date.html", "section": "2.1、2.3", "supports": "日期可直接加减整数天；日期相减后可按天、小时、秒换算。"},
+    {"id": "DM-DB2-FAQ", "url": "https://eco.dameng.com/document/dm/zh-cn/faq/faq-other-dm8-migrate.html", "section": "DB2 迁移到 DM 如何适配函数 timestampdiff", "supports": "两参数 DB2 时间差表达式需转换为 DM 三参数形式；原函数可能采用近似的月/年换算，不能一概认为跨月结果完全等价。"},
+    {"id": "DM-SEQUENCE", "url": "https://eco.dameng.com/document/dm/zh-cn/pm/definition-statement.html", "section": "序列定义语句的使用说明和例子", "supports": "支持序列 NEXTVAL 及 SELECT ... FROM DUAL。这里只用于 SQL 能力判断，不把序列维护纳入任务。"},
+    {"id": "DM-QUERY", "url": "https://eco.dameng.com/document/dm/zh-cn/pm/check-phrases.html", "section": "4.1.3、4.4.2", "supports": "支持聚集 MAX 与递归 WITH CTE；不能把出现 WITH/UNION ALL 本身判为不兼容。"},
+    {"id": "DM-ORACLE", "url": "https://eco.dameng.com/document/dm/zh-cn/start/oracle_dm", "section": "兼容参数说明", "supports": "空串与 NULL 的关系受 Oracle 兼容配置影响；仅相关谓词需局部确认。"}
+  ],
+  "decisions": [
+    {
+      "id": "BR-001",
+      "decision": "仅单项依赖分支映射确认",
+      "path": "Server/GCPM/libGCPM/f_GetNextSeq_pm.cpp",
+      "line": 182,
+      "sql_action": "Oracle 分支的 FOR UPDATE 先保留；default 的无锁 SQL 不能仅因名称不含 DM 就直接改写。",
+      "reason": "需知道适配版 BM2 实际走哪个 DatabaseKind 分支才能决定最小改动。这是应用 SQL 选择的问题，不需要任何数据搬迁方案。",
+      "local_dependency": "该连接的 DatabaseKind 映射；仅阻塞这一处分支裁定。"
+    },
+    {
+      "id": "BR-002",
+      "decision": "可保留",
+      "path": "Server/MM00/libMM00/f_mm0011.cpp",
+      "line": 74,
+      "sql_action": "保留 Oracle/default 的 LPAD(TO_CHAR(SeqName.NEXTVAL), SeqLen, '0') FROM DUAL。",
+      "reason": "相关 SQL 构造有 DM 原生支持，不因数据库更名就替换。序列当前值、建序列和号段搬迁全部排除本轮责任。",
+      "source_ids": ["DM-SEQUENCE", "DM-FUNCTION"],
+      "local_dependency": null
+    },
+    {
+      "id": "BR-003",
+      "decision": "仅单项目录返回契约确认",
+      "path": "Server/GCPM/p_gcpm_29640/gcpmz6_inqmx.cpp",
+      "line": 148,
+      "sql_action": "暂保留 ALL_TAB_COLUMNS/ALL_COL_COMMENTS 查询；不批量改写为 SYSOBJECTS/SYSCOLUMNS，也不擅自新增 OWNER 过滤改变现有结果范围。TMSM/tm009a_inq 的 USER_* 查询同理。",
+      "reason": "现有证据不足以认定这些视图不可用或输出不同；官方字典附录主要解释底层目录，不能用没有列出兼容视图来证明不存在。",
+      "local_dependency": "该元数据服务实际返回的列名称/类型；如出现差异只处理此服务，不阻塞其他 SQL。"
+    },
+    {
+      "id": "BR-004",
+      "decision": "仅单项类型名称确认",
+      "path": "Server/MM00/p_mm00_18010/mm0097code_inq.cpp",
+      "line": 80,
+      "sql_action": "CASE DATA_TYPE WHEN 'VARCHAR2' THEN 'C' ELSE 'N' END 暂保留；不能凭推测把所有字符/时间类型重新分类。",
+      "reason": "SQL 本身是通用 CASE；疑点在该处的业务类型映射。只需确定该服务要处理的类型名称，无需索取全库 DDL。",
+      "local_dependency": "该查询返回的字符列类型名称及 ITEM_TYPE 的局部契约。"
+    },
+    {
+      "id": "BR-005",
+      "decision": "仅单项长度单位确认",
+      "path": "Server/MMTP/libMMTP/f_mmtp_mat_track.cpp",
+      "line": 987,
+      "sql_action": "暂保留目录查询。字符串拼接裁剪是应用业务处理，不把它自动升级为 SQL 转换重构。",
+      "reason": "DATA_LENGTH 与 CString.GetLength 的单位不一致尚未证实；改变单位可能改变履历保留策略。",
+      "local_dependency": "此处长度输出单位；只在该 SQL 确实输出不合契约时处理。"
+    },
+    {
+      "id": "BR-006",
+      "decision": "日历日差可以转换；小时/分钟差单独裁定",
+      "path": "Server/TMSM/p_tmsm_7160/tmsme59_inq.cpp",
+      "line": 86,
+      "sql_action": "建议实施 CHANGE-01，用 DM 的 DATEDIFF(DAY,start,end) 和 DUAL 表达原日历日差。第113/141/195/218行等两参数 TIMESTAMPDIFF 不应盲目成批替换。",
+      "reason": "第86行明确先 DATE 截去时间，再对天序号做减法，能推导为日历日期差。小时/分钟段若跨月、跨年，原近似差值和 DM 原生差值可能不同，需独立保持业务口径。",
+      "source_ids": ["DM-FUNCTION", "DM-DB2-FAQ"],
+      "local_dependency": "日历日差转换没有真实表结构前置；其他时长表达式只局部确认是否要保留原近似算法。"
+    },
+    {
+      "id": "BR-007",
+      "decision": "需要转换为 DM 时间差形式，但当前不建议直接实施",
+      "path": "Server/WM00/libWM00/f_wm00_pile_comf.cpp",
+      "line": 76,
+      "sql_action": "原两参数 TIMESTAMPDIFF 需改为文档规定的三参数形式；候选为 TIMESTAMPDIFF(MINUTE, CAST(FIELDNO_UPTIME AS TIMESTAMP), LOCALTIMESTAMP) <= 24 * 60，但当前不作为可直接实施补丁。",
+      "reason": "不能顺便把24小时阈值改成日志中的18小时；还需固定原分钟舍入和跨月窗口含义。仅此候选需确认，不是全项目阻塞项。",
+      "source_ids": ["DM-FUNCTION", "DM-DB2-FAQ"],
+      "local_dependency": "FIELDNO_UPTIME 的局部日期解析形式、时区和窗口边界含义。"
+    },
+    {
+      "id": "BR-008",
+      "decision": "仅单项依赖空串模式确认",
+      "path": "Server/PSSM/libPSSM/f_pssm27_upd_plno_n.cpp",
+      "line": 113,
+      "sql_action": "TRIM(SM_PLAN_NO) IS NULL 不因迁移自动替换；若目标区分空串且需包含纯空格，可局部评估 IS NULL OR TRIM(SM_PLAN_NO) = ''，当前不实施。",
+      "reason": "扩大 DELETE 条件会改变命中集合；先判断目标空串规则即可，不要求进行数据清洗或全库样本迁移。",
+      "source_ids": ["DM-ORACLE"],
+      "local_dependency": "此谓词在目标空串模式下的预期命中集合。"
+    },
+    {
+      "id": "BR-009",
+      "decision": "支持的函数保留；空串拼接仅局部确认",
+      "path": "Server/MMSM/p_mmsm_17580/mmsmtk_inq.cpp",
+      "line": 52,
+      "sql_action": "保留 NVL、TO_DATE、ROUND 和已明确格式的日期差换算；不机械换成其他函数。BACKLOG_EA 的 NVL(...,'')/|| 只作为局部空值语义项。",
+      "reason": "DM 文档提供这些函数及日期差能力。能执行的已有形式没有必要仅为统一外观而替换。",
+      "source_ids": ["DM-FUNCTION", "DM-DATE", "DM-ORACLE"],
+      "local_dependency": "仅 BACKLOG_EA 的空串拼接模式；不阻塞其他 SQL 转换。"
+    },
+    {
+      "id": "BR-010",
+      "decision": "排除本轮 SQL 转换范围",
+      "path": "Server/MMSM/p_mmsm_17660/mmsmjccjl_add2.cpp",
+      "line": 58,
+      "sql_action": "GetCode()==1 是 C++ 错误分类，不是 SQL 语句；先不修改，也不把平台异常码合同列为本轮全局前置。",
+      "reason": "用户限定 SQL 转换；发现事项保留为范围外提示即可。",
+      "local_dependency": null
+    },
+    {
+      "id": "BR-011",
+      "decision": "日期生成片段可转换；其他混合表达式分开处理",
+      "path": "Server/WMSM/p_wmsm_8170/wmfm01_inq.cpp",
+      "line": 280,
+      "sql_action": "建议实施 CHANGE-02：仅把该递归 CTE 的 SYSIBM.SYSDUMMY1 改成 DUAL，并用整数天加减替换 3 DAY/1 DAY。保留递归条件、UNION ALL、返回列及外层关联。",
+      "reason": "日期起点及步长均由 TO_DATE(@DATE_TIME,'YYYYMMDD') 显式确定，不依赖业务表字段类型。二元 MAX、DAYS 和 DECODE 组合仍需作为另一个表达式裁定；不能顺便把 MAX 改成 GREATEST 而忽略 NULL 规则。",
+      "source_ids": ["DM-DATE", "DM-QUERY", "DM-SEQUENCE"],
+      "local_dependency": "CHANGE-02 无真实DDL前置；二元 MAX 的 NULL 语义单独确认。"
+    },
+    {
+      "id": "BR-012",
+      "decision": "可保留",
+      "path": "Server/MM00/libMM00/f_mm0016.cpp",
+      "line": 62,
+      "sql_action": "保留简单 SELECT/等值条件/参数绑定及现有分支结构。",
+      "reason": "用户已确认 BM2 绑定适配；没有发现仅为 DM8 转换而需要修改的 SQL。",
+      "local_dependency": null
+    }
+  ],
+  "recommended_changes": [
+    {
+      "id": "CHANGE-01",
+      "from_review": "BR-006",
+      "path": "Server/TMSM/p_tmsm_7160/tmsme59_inq.cpp",
+      "line": 86,
+      "purpose": "用 DM 原生表达式计算两个输入的日历日差，避免依赖 DAYS/SYSIBM 兼容对象。",
+      "before_sql_template": "select DAYS(DATE(TIMESTAMP ('<CHANGE_TIME>'))) - DAYS(DATE(TIMESTAMP ('<REC_CREATE_TIME>'))) from SYSIBM.SYSDUMMY1",
+      "after_sql_template": "select DATEDIFF(DAY, CAST('<REC_CREATE_TIME>' AS TIMESTAMP), CAST('<CHANGE_TIME>' AS TIMESTAMP)) from DUAL",
+      "after_cpp_line": "sqlstr = \"select DATEDIFF(DAY, CAST('\" + ttmsm66[\"REC_CREATE_TIME\"].ToString() + \"' AS TIMESTAMP), CAST('\" + ttmsm66[\"CHANGE_TIME\"].ToString() + \"' AS TIMESTAMP)) from DUAL\";",
+      "semantic_argument": "原式取 end/start 的日期部分对应天序号再相减；DAY 的边界数恰好是 end 日期减 start 日期。必须按 start,end 传参。它不是把实际秒差除86400后取整，跨午夜两秒仍应得到1。",
+      "source_ids": ["DM-FUNCTION", "DM-SEQUENCE"],
+      "local_prerequisites": [],
+      "validation_scope": "只需核对该字符串构造及表无关的常量 SQL；不要求完整业务库或构建包。",
+      "constant_cases": [
+        {"start": "2026-09-04 01:00:00", "end": "2026-09-04 23:00:00", "expected": 0},
+        {"start": "2026-09-04 23:59:59", "end": "2026-09-05 00:00:01", "expected": 1},
+        {"start": "2024-02-28 12:00:00", "end": "2024-03-01 00:00:00", "expected": 2},
+        {"start": "2026-01-01 00:00:00", "end": "2025-12-31 23:59:59", "expected": -1}
+      ],
+      "not_claimed": "未宣称原式在所有 DM8 兼容配置下都报错；建议采用官方原生表达式。未执行数据库验证。"
+    },
+    {
+      "id": "CHANGE-02",
+      "from_review": "BR-011",
+      "path": "Server/WMSM/p_wmsm_8170/wmfm01_inq.cpp",
+      "line": 280,
+      "purpose": "把最近三天的递归日期生成片段写为文档支持的 DM 原生日期运算。",
+      "before_sql_template": "WITH A(LEVEL, TIME) AS (SELECT 1, TO_DATE(@DATE_TIME,'YYYYMMDD') - 3 DAY FROM SYSIBM.SYSDUMMY1 WHERE 1=1 UNION ALL SELECT LEVEL + 1, TIME + 1 DAY FROM SYSIBM.SYSDUMMY1, A WHERE A.TIME < TO_DATE(@DATE_TIME,'YYYYMMDD') - 1 DAY)",
+      "after_sql_template": "WITH A(LEVEL, TIME) AS (SELECT 1, TO_DATE(@DATE_TIME,'YYYYMMDD') - 3 FROM DUAL WHERE 1=1 UNION ALL SELECT LEVEL + 1, TIME + 1 FROM DUAL, A WHERE A.TIME < TO_DATE(@DATE_TIME,'YYYYMMDD') - 1)",
+      "minimal_replacements": [
+        {"line": 281, "before": "TO_DATE(@DATE_TIME,'YYYYMMDD') - 3 DAY", "after": "TO_DATE(@DATE_TIME,'YYYYMMDD') - 3"},
+        {"line": 282, "before": "FROM SYSIBM.SYSDUMMY1", "after": "FROM DUAL"},
+        {"line": 285, "before": "TIME + 1 DAY", "after": "TIME + 1"},
+        {"line": 286, "before": "FROM SYSIBM.SYSDUMMY1, A", "after": "FROM DUAL, A"},
+        {"line": 287, "before": "TO_DATE(@DATE_TIME,'YYYYMMDD') - 1 DAY", "after": "TO_DATE(@DATE_TIME,'YYYYMMDD') - 1"}
+      ],
+      "semantic_argument": "起点、递增步长、终点和单行辅助表保持相同含义，继续产生 D-3、D-2、D-1 三天，不改为其他日期范围，不改外层 LEFT JOIN。保留 WITH 和列别名列表，不额外添加 RECURSIVE。",
+      "source_ids": ["DM-DATE", "DM-QUERY", "DM-SEQUENCE"],
+      "local_prerequisites": [],
+      "validation_scope": "该 CTE 可脱离业务表使用固定 DATE_TIME 独立验证；不需要 TFOSMT03A DDL。",
+      "constant_cases": [
+        {"date_time": "20260904", "expected_dates": ["20260901", "20260902", "20260903"]},
+        {"date_time": "20240302", "expected_dates": ["20240228", "20240229", "20240301"]},
+        {"date_time": "20260102", "expected_dates": ["20251230", "20251231", "20260101"]}
+      ],
+      "not_claimed": "本建议未判定原 DAY 写法在所有兼容配置中都不支持；改为明确支持的原生日期运算，不改动未裁定的报表分支，也未执行数据库验证。"
+    }
+  ]
+}

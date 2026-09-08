@@ -1,0 +1,16 @@
+49			for (int i = 0; i < bcls_rec->Tables[0].Rows.get_Count(); i++)
+50			{
+51				Log::Info("", __FUNCTION__, "tmmsm2a  =[{0}]", bcls_rec->Tables[0].Rows.get_Count());
+52				heat_no = bcls_rec->Tables[0].Rows[i]["HEAT_NO"].ToString().Trim();
+53				cmd_2a.SetCommandText(
+54					" select  DEV_CODE,HEAT_NO,SM_PLAN_NOL2,MAT_CODE,MAT_NAME,ST_NO,sum(OUT_STOCK_WT) DEVO_WT from TMMSM56 "
+55					"  WHERE HEAT_NO = '" + heat_no + "'  and DEVO_WT!=0 group by DEV_CODE, HEAT_NO, SM_PLAN_NOL2, MAT_CODE, MAT_NAME, ST_NO ");
+56				cmd_2a.ExecuteReader();
+57				while (cmd_2a.Read())
+58				{
+59					cmd_2a.Fetch(tmmsm2a);
+60					bcls_rec->Tables["T823"].Rows.Clear();
+61					tmmsmgy05["SEND_T823"] = "1";
+62					tmmsmgy05["SEND_T823_TIME"] = datetime;
+63					tmmsmgy05["SM_PLAN_NOL2"] = tmmsm2a["SM_PLAN_NOL2"].ToString();
+64					tmmsmgy05.Update("SEND_T823,SEND_T823_TIME", "SM_PLAN_NOL2");

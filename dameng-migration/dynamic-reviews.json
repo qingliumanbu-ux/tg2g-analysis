@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "scope": "首批客户端、动态 SQL、配置 SQL 的人工静态审查；不是全量兼容性结论，也不是缺陷总数。",
+  "assumptions": [
+    "用户已确认 BM2 的 CDbConnection、CDbCommand、CModel 已适配达梦，包括参数绑定、分页、类型转换和事务。",
+    "项目方案第 4.5 节明确 Oracle 到 DM8；现网 Oracle 版本、目标 DM8 构建版本及兼容配置尚待现场资料。",
+    "本次不连接数据库、不执行业务、不改业务源码。静态审查只确认代码事实；发布状态、可达路径和 Oracle/DM8 行为一致性分别记录。",
+    "P1/P2/P3 表示迁移排查与验证顺序，不代表已确认的不兼容严重程度。",
+    "文本以 UTF-8 BOM/UTF-8 优先，失败后 GB18030 解码；证据行号为源文件一基行号。FBSM23 主试点由独立试点分析覆盖。"
+  ],
+  "reviews": [
+    {
+      "id": "DY-001",
+      "title": "MMSM517 物料录入中的前端 SQL 与字段返回契约",
+      "priority": "P2",
+      "status": "static_reviewed_runtime_pending",
+      "module": "Client/xr-mmlc / MMSM517S2N",
+      "evidence": [
+        {"path": "Client/xr-mmlc/src/views/MMSM517S2N/MMSM517S2N.ts", "line": 263, "role": "BTN_LR 业务事件进入录入校验"},
+        {"path": "Client/xr-mmlc/src/views/MMSM517S2N/MMSM517S2N.ts", "line": 281, "role": "有效 querySql 调用，查询 TMMSM50"},
+        {"path": "Client/xr-mmlc/src/views/MMSM517S2N/MMSM517S2N.ts", "line": 286, "role": "返回字段 QUALITY_FLAS/BACK_C3 参与后续校验"},
+        {"path": "Client/xr-mmlc/@mf-types/ERX/ERX.d.ts", "line": 3315, "role": "声明说明 svcName 为空使用系统默认服务，未给出默认服务具体名称"}
+      ],
+      "finding": "查询真实位于事件处理代码中，通过空服务名 querySql 发出；不能仅按后台 cpp 的 SQL 清单覆盖。现有类型声明不足以证明默认路由就是 gc00_ExcQrySql。这里是普通 SELECT，尚无证据证明语法不兼容。",
+      "recommendation": "登记 SQL 生产端、实际默认服务路由、TMMSM50 表及返回字段映射；先运行同一组物料数据进行差异验证，只有观察到差异才修改查询或映射。",
+      "validation": "用已知物料比较 Oracle/DM8 下 QUALITY_FLAS/BACK_C3 返回值、字段大小写、无记录及空字段行为，并核对需要炉批号的录入分支一致；记录默认服务名称。",
+      "dependencies": ["ERX 默认 querySql 服务路由及发布版本", "TMMSM50 脱敏样本与表结构", "Oracle/DM8 隔离验证环境"]
+    },
+    {
+      "id": "DY-002",
+      "title": "PSSM18O2 设备下拉框弹出时的列表 SQL",
+      "priority": "P2",
+      "status": "static_reviewed_runtime_pending",
+      "module": "Client/PS/PSSMB 与 Client/PS/PSSMBS2N",
+      "evidence": [
+        {"path": "Client/PS/PSSMB/FormPSSM18O2.cs", "line": 175, "role": "从 TPSSMD1 生成设备代码与描述查询"},
+        {"path": "Client/PS/PSSMB/FormPSSM18O2.cs", "line": 183, "role": "有效 Common.Utility.ExecQuery 调用"},
+        {"path": "Client/PS/PSSMB/FormPSSM18O2.cs", "line": 239, "role": "QueryPopUp 事件调用 Get_dev_code"},
+        {"path": "Client/PS/PSSMB/FormPSSM18O2.Designer.cs", "line": 333, "role": "设计器已绑定 QueryPopUp 事件"},
+        {"path": "Client/PS/PSSMBS2N/FormPSSM18O2.cs", "line": 239, "role": "另一客户端目录也包含有效事件调用"},
+        {"path": "Client/PS/PSSMBS2N/FormPSSM18O2.Designer.cs", "line": 333, "role": "另一客户端设计器也绑定 QueryPopUp 事件"}
+      ],
+      "finding": "两份窗口均在已绑定的设备下拉框 QueryPopUp 事件中查询设备列表，按 STATION_NO 排序，并可能追加 FACTORY_DIV 条件；不应因 C# 属于旧技术栈就排除。SQL 为普通查询，尚未确认不兼容。",
+      "recommendation": "按实际发布程序集定位使用中的版本；保留现有调用路径，核验 TPSSMD1 字段、查询排序和 CODE/CODE_DESC_1_CONTENT 返回列。",
+      "validation": "比较空和非空 FACTORY_DIV、零行和多行结果、中文描述及排序；检查下拉框显示和选择值相同。",
+      "dependencies": ["DY-012 发布身份核对", "Common.Utility.ExecQuery 实际服务路由", "TPSSMD1 表结构与脱敏设备样本"]
+    },
+    {
+      "id": "DY-003",
+      "title": "PSSM18O SetDev 查询需先确认可达性",
+      "priority": "P3",
+      "status": "reachability_pending",
+      "module": "Client/PS/PSSMB 与 Client/PS/PSSMBS2N",
+      "evidence": [
+        {"path": "Client/PS/PSSMB/FormPSSM18O.cs", "line": 36, "role": "唯一检出的 SetDev 调用已注释"},
+        {"path": "Client/PS/PSSMB/FormPSSM18O.cs", "line": 236, "role": "未注释方法体中保留字符串拼接 SQL"},
+        {"path": "Client/PS/PSSMBS2N/FormPSSM18O.cs", "line": 39, "role": "另一版本的 SetDev 调用同样已注释"},
+        {"path": "Client/PS/PSSMBS2N/FormPSSM18O.cs", "line": 289, "role": "另一版本的方法体为 UNION/SUBSTR/字符串拼接查询"}
+      ],
+      "finding": "两份 ExecQuery 方法体虽然未注释，但当前文件中唯一检出的 SetDev 调用均已注释，不能据词法命中算成已确认运行 SQL。两版本 SQL 还存在实质差异。",
+      "recommendation": "先结合最终程序集、调用图或现网操作记录确认是否可能调用；确认不参与运行后作为历史候选登记，不自动删除。若确认可达，再纳入对应版本的 SQL 回归。",
+      "validation": "保存可达或排除证据；如可达，比较 DEV_CODE/CHARGE_NO 连接表达式的列标签、UNION 去重、SUBSTR 和排序结果，以及客户端 ValueMember 对应字段。",
+      "dependencies": ["DY-012 发布身份核对", "调用图或业务操作记录", "仅确认可达后需要 TPSSM11/TPSSM12/TPSSMD1 样本"]
+    },
+    {
+      "id": "DY-004",
+      "title": "GC00 QUERY_SQL 批量动态查询执行端",
+      "priority": "P1",
+      "status": "static_reviewed_runtime_pending",
+      "module": "Server/GC00",
+      "evidence": [
+        {"path": "Server/GC00/gc00_ExcQrySql.cpp", "line": 17, "role": "BM2 服务入口"},
+        {"path": "Server/GC00/gc00_ExcQrySql.cpp", "line": 31, "role": "从每行 QUERY_SQL 读取完整查询"},
+        {"path": "Server/GC00/gc00_ExcQrySql.cpp", "line": 33, "role": "将调用方文本交给 CDbCommand"},
+        {"path": "Server/GC00/gc00_ExcQrySql.cpp", "line": 38, "role": "每条 SQL 执行到对应返回数据表"}
+      ],
+      "finding": "服务本身没有完整业务 SQL，其 SQL 集合由调用方输入决定；只验证此 cpp 编译或驱动连接，不能证明传入 SQL 的兼容性。未核实所有 querySql/ExecQuery 均路由到这里。",
+      "recommendation": "建立调用来源到服务再到 SQL 模板的映射；对实际已发布调用来源收集脱敏模板，按模板去重验证。迁移范围内先保留既有服务契约。",
+      "validation": "逐模板比对结果列、行数、类型与错误返回；至少覆盖单条和多条 QUERY_SQL 对应的返回表顺序，记录真实路由，不用假定路由替代证据。",
+      "dependencies": ["动态查询服务注册与客户端路由清单", "调用方 SQL 模板", "相同 Oracle/DM8 数据样本"]
+    },
+    {
+      "id": "DY-005",
+      "title": "WM00 SQL_STR 执行端及重复服务定义",
+      "priority": "P1",
+      "status": "static_reviewed_runtime_pending",
+      "module": "Server/WM00/p_wm00_8100 与 p_wm00_8200",
+      "evidence": [
+        {"path": "Server/WM00/p_wm00_8100/wm_dyn_sql.cpp", "line": 23, "role": "从 SQL_STR 取完整 SQL"},
+        {"path": "Server/WM00/p_wm00_8100/wm_dyn_sql.cpp", "line": 28, "role": "设置并执行动态 SQL"},
+        {"path": "Server/WM00/p_wm00_8100/wm_dyn_sql.cpp", "line": 34, "role": "按第 1、第 2 列映射 CODE 和 CODE_DESC_1_CONTENT"},
+        {"path": "Server/WM00/p_wm00_8200/wm_dyn_sql.cpp", "line": 5, "role": "第二目录具有同名服务定义"},
+        {"path": "Server/WM00/p_wm00_8200/wm_dyn_sql.cpp", "line": 23, "role": "第二份也读取 SQL_STR"}
+      ],
+      "finding": "两处同名执行端均接收外部 SQL，按列序转换为两列字符串。源码重复不等于可删除其中一份，也不能代表输入 SQL 已适配。",
+      "recommendation": "核对两服务目录的构建和部署归属，将调用方 SQL 与两列输出契约纳入验证；需要改动时按实际生效版本同步。",
+      "validation": "验证零行、多行、NULL、中文描述和两列顺序；对每个真实 SQL_STR 模板比较 Oracle/DM8 结果。",
+      "dependencies": ["WM00 服务构建发布清单", "SQL_STR 调用来源/配置导出", "测试数据库和脱敏数据"]
+    },
+    {
+      "id": "DY-006",
+      "title": "MMTP 配置驱动查询及合计 SQL",
+      "priority": "P1",
+      "status": "static_reviewed_runtime_pending",
+      "module": "Server/MMTP/libMMTP",
+      "evidence": [
+        {"path": "Server/MMTP/libMMTP/f_mmtp_data_query.cpp", "line": 69, "role": "TMMTP01 可取请求配置或数据库配置"},
+        {"path": "Server/MMTP/libMMTP/f_mmtp_data_query.cpp", "line": 81, "role": "TMMTP02 配置来源"},
+        {"path": "Server/MMTP/libMMTP/f_mmtp_data_query.cpp", "line": 93, "role": "TMMTP03 表、模板与联合查询来源"},
+        {"path": "Server/MMTP/libMMTP/f_mmtp_data_query.cpp", "line": 309, "role": "使用 QUERY_SQL 与 CND_RELATION 生成子查询"},
+        {"path": "Server/MMTP/libMMTP/f_mmtp_data_query.cpp", "line": 366, "role": "合计 SQL 的 Oracle/DB2 分支"},
+        {"path": "Server/MMTP/libMMTP/f_mmtp_data_query.cpp", "line": 396, "role": "执行明细、总计和小计生成结果"},
+        {"path": "Server/MMTP/libMMTP/f_mmtp_data_query.cpp", "line": 559, "role": "另一路径读取 QRY_TAB_WHERE 条件片段"}
+      ],
+      "finding": "最终 SQL 由请求或库内 TMMTP01/02/03 配置组合而成，包含 QUERY_SQL、CND_RELATION、QRY_TAB_WHERE、表关联和 UNION；合计部分单独判断 DatabaseKind。BM2 适配不能替代业务分支及配置表达式的验证。分支未显式命名达梦不等于已经证明失败。",
+      "recommendation": "按 CFGITM_NAME/CFGGRP_NAME 导出关联配置及生效页面，生成最终 SQL 模板清单；取得 BM2 在 DM8 下的 DatabaseKind 值，判断实际合计生成路径。",
+      "validation": "至少覆盖明细、分组、小计、总计、UNION 和有配置条件的查询；比较聚合精度、空值、字段标签与顺序，并确认达梦路径生成的总计 SQL 有效。",
+      "dependencies": ["TMMTP01/02/03 配置及依赖表结构", "DM8 下实际 DatabaseKind 枚举值", "配置对应的页面和报表样本"]
+    },
+    {
+      "id": "DY-007",
+      "title": "MMTP 配置复制中的 SQL 内容与目标列顺序",
+      "priority": "P1",
+      "status": "static_reviewed_runtime_pending",
+      "module": "Server/MMTP/p_mmtp_18030",
+      "evidence": [
+        {"path": "Server/MMTP/p_mmtp_18030/mmtp_configSave.cpp", "line": 79, "role": "INSERT SELECT 复制 TMMTP01 含 SQL_CONTEXT"},
+        {"path": "Server/MMTP/p_mmtp_18030/mmtp_configSave.cpp", "line": 89, "role": "复制 TMMTP02 含 SQL_CONTEXT/QUERY_SQL/CND_RELATION"},
+        {"path": "Server/MMTP/p_mmtp_18030/mmtp_configSave.cpp", "line": 102, "role": "复制 TMMTP03 表和模板配置"},
+        {"path": "Server/MMTP/p_mmtp_18030/mmtp_configSave.cpp", "line": 111, "role": "复制 TMMTP05 的服务和函数映射"}
+      ],
+      "finding": "配置复制可把原 SQL 文本继续带入目标配置；多个 INSERT INTO 表名 SELECT 语句未列目标列名，依赖迁移后的列顺序及类型。配置表迁入成功不等于其中 SQL 语义迁移完成。",
+      "recommendation": "对照 Oracle/DM8 DDL 检查目标列序和类型；迁移配置时对 SQL 字段做逐条兼容审核，保持配置主键及引用关系。只有确有列序或类型差异时再作最小调整。",
+      "validation": "在隔离环境复制一个关联配置组，核对 TMMTP01/02/03/05 行数、字段对应、SQL 文本完整性和调用服务映射；验证复制后页面查询结果相同。",
+      "dependencies": ["DY-006 配置清单", "Oracle/DM8 配置表 DDL", "含长 SQL 和中文的脱敏配置样本"]
+    },
+    {
+      "id": "DY-008",
+      "title": "MMTP 跨库配置复制的 DB_LINK 路径",
+      "priority": "P1",
+      "status": "static_reviewed_runtime_pending",
+      "module": "Server/MMTP/p_mmtp_18030",
+      "evidence": [
+        {"path": "Server/MMTP/p_mmtp_18030/mmtp_configSave.cpp", "line": 35, "role": "读取 DB_LINK_NAME，非空时显式提交事务"},
+        {"path": "Server/MMTP/p_mmtp_18030/mmtp_configSave.cpp", "line": 150, "role": "构造 tmmtp01@DB_LINK_NAME"},
+        {"path": "Server/MMTP/p_mmtp_18030/mmtp_configSave.cpp", "line": 160, "role": "将远端表加入 INSERT SELECT 并执行"},
+        {"path": "Server/MMTP/p_mmtp_18030/mmtp_configSave.cpp", "line": 290, "role": "跨库复制后显式 Commit/Begin"}
+      ],
+      "finding": "此处 @ 的一部分是远端对象限定符，不是 BM2 绑定参数。若该功能仍使用跨库复制，需要确定迁移后远端库和链路对象；事务边界由业务代码显式控制。当前未证明现网是否启用该路径。",
+      "recommendation": "盘点实际启用的配置复制路径、远端库类型和数据库链路对象名称，记录是否保留跨库方式；不导出或记录链路密码。根据实际目标拓扑验证语法和事务行为。",
+      "validation": "在测试环境分别验证本地复制、有效远端复制、复制中途失败的结果一致性和事务边界；若业务确认不使用远端路径，保存范围排除证据。",
+      "dependencies": ["DY-007 配置复制契约", "脱敏 DB_LINK 对象与跨库拓扑清单", "业务对跨库配置复制使用状态的确认"]
+    },
+    {
+      "id": "DY-009",
+      "title": "GCPM 低代码数据集 QueryUtility 的库外源码边界",
+      "priority": "P1",
+      "status": "static_reviewed_runtime_pending",
+      "module": "Server/GCPM/p_gcpm_9320",
+      "evidence": [
+        {"path": "Server/GCPM/p_gcpm_9320/gcpm_dataSet_inq.cpp", "line": 23, "role": "注释明确为数据源定义 SQL 的执行入口"},
+        {"path": "Server/GCPM/p_gcpm_9320/gcpm_dataSet_inq.cpp", "line": 25, "role": "调用 BE2::CFormDevConfig::QueryUtility"},
+        {"path": "Server/GCPM/p_gcpm_9320/gcpm_initForm.cpp", "line": 26, "role": "页面配置由 GetFormDevConfig 获取"}
+      ],
+      "finding": "该服务委托公共 CFormDevConfig 执行数据源 SQL，实际定义和实现未包含在此入口源码中。用户确认的 BM2 基础适配为既定条件，但无法从此入口推导所有低代码配置表达式已兼容。",
+      "recommendation": "从配置平台导出已发布数据集/页面定义及其 SQL、参数、服务映射和版本；只在查询结果差异证实需要时修改配置或业务表达式。",
+      "validation": "逐个已发布数据集核对参数组合、结果列类型、字段大小写、排序/分页、聚合和与关联页面的绑定；保存同一数据样本的 Oracle/DM8 对照。",
+      "dependencies": ["低代码数据集与页面配置导出", "CFormDevConfig 配套发布版本", "已发布页面/报表清单"]
+    },
+    {
+      "id": "DY-010",
+      "title": "GCPM TGCPMSI01 与 TED54 中的配置 SQL",
+      "priority": "P1",
+      "status": "static_reviewed_runtime_pending",
+      "module": "Server/GCPM/p_gcpm_29620",
+      "evidence": [
+        {"path": "Server/GCPM/p_gcpm_29620/gcpmsi_inq.cpp", "line": 101, "role": "查询生效 TGCPMSI01.SQL_CONTEXT 配置"},
+        {"path": "Server/GCPM/p_gcpm_29620/gcpmsi_inq.cpp", "line": 118, "role": "取出 SQL 内容后转大写"},
+        {"path": "Server/GCPM/p_gcpm_29620/gcpmsi_inq.cpp", "line": 158, "role": "从 TED54 读取条件参数名称和类型"},
+        {"path": "Server/GCPM/p_gcpm_29620/gcpmsi_inq.cpp", "line": 198, "role": "将参数值替换进 SQL 文本"},
+        {"path": "Server/GCPM/p_gcpm_29620/gcpmsi_inq.cpp", "line": 216, "role": "执行生成 SQL"},
+        {"path": "Server/GCPM/p_gcpm_29620/gcpmsi_inq2.cpp", "line": 231, "role": "另一入口执行配置 SQL 的分页版本"}
+      ],
+      "finding": "除 TMMTP 配置外，已有明确的 TGCPMSI01.SQL_CONTEXT 与 TED54 配置源。最终语句还经过大写转换、按参数类型拼接，必须验证生成后的 SQL，而非只检查配置表中的原文本。该事实不自动构成本次重写动态查询机制的要求。",
+      "recommendation": "按 TABLE_NAME/FUNC_ID 导出生效配置并关联 TED54 条件；同步记录已停用配置的状态，避免把停用记录算为现网改造项。校验实际页面/报表使用范围。",
+      "validation": "比较字符串和数值参数、NULL/空字符串、大小写敏感文本、排序及分页结果；覆盖 gcpmsi_inq 和 gcpmsi_inq2，核对展示行和总量契约。",
+      "dependencies": ["TGCPMSI01 与 TED54 配置导出", "对应页面/报表功能映射", "相同数据与参数的对照样本"]
+    },
+    {
+      "id": "DY-011",
+      "title": "MM0097 注释 SQL 与实际元数据服务应分开登记",
+      "priority": "P1",
+      "status": "static_reviewed_runtime_pending",
+      "module": "Client/MM/MM00 与 Server/MM00/p_mm00_18010",
+      "evidence": [
+        {"path": "Client/MM/MM00/FormMM0097A1S2N.cs", "line": 192, "role": "实际调用 mm0097code_inq 服务"},
+        {"path": "Client/MM/MM00/FormMM0097A1S2N.cs", "line": 200, "role": "旧 Oracle 元数据 SQL 已被行注释"},
+        {"path": "Client/MM/MM00/FormMM0097A1S2N.cs", "line": 219, "role": "旧 ExecQuery 调用也已注释"},
+        {"path": "Server/MM00/p_mm00_18010/mm0097code_inq.cpp", "line": 71, "role": "各数据库 case 和 default 汇入同一元数据 SQL"},
+        {"path": "Server/MM00/p_mm00_18010/mm0097code_inq.cpp", "line": 78, "role": "实际使用 USER_TAB_COLUMNS/USER_COL_COMMENTS，只将 VARCHAR2 映射为字符类型"},
+        {"path": "Server/MM00/p_mm00_18010/mm0097code_inq.cpp", "line": 92, "role": "有效 ExecuteQuery"}
+      ],
+      "finding": "客户端旧 Oracle/DB2 SQL 属于注释历史，应排除出直接执行数；但实际服务仍使用 Oracle 风格元数据视图、DATA_LENGTH 和只识别 VARCHAR2 的类型判断。应验证 DM8 元数据返回内容与业务分类，不可因基础类型转换已适配而跳过。",
+      "recommendation": "以服务端 live 查询作为迁移项，保留客户端注释排除证据；取得真实 TMMxx96 表类型和长度，对照 DM8 下视图、注释、列序及类型分类。",
+      "validation": "覆盖字符、中文、多字节长度、数值字段及字段名过滤；核对 ITEM_ENAME/ITEM_CNAME/ITEM_TYPE/ITEM_LEN 和列序一致。若 DM8 字符字段元数据类型名不同，按实测最小修正分类。",
+      "dependencies": ["实际 TMMxx96 表 DDL 与列注释", "DM8 元数据返回样本", "MM0097 页面可执行环境"]
+    },
+    {
+      "id": "DY-012",
+      "title": "两个 C# 项目同名程序集的发布身份核对",
+      "priority": "P1",
+      "status": "deployment_identity_pending",
+      "module": "Client/PS/PSSMB 与 Client/PS/PSSMBS2N",
+      "evidence": [
+        {"path": "Client/PS/PSSMB/PSSMB.csproj", "line": 17, "role": "输出程序集名 PSSMD_S2N"},
+        {"path": "Client/PS/PSSMBS2N/PSSMS2NB.csproj", "line": 17, "role": "另一项目也输出 PSSMD_S2N"},
+        {"path": "Client/PS/PSSMB/PSSMB.csproj", "line": 297, "role": "显式编译 FormPSSM18O 与随后 FormPSSM18O2"},
+        {"path": "Client/PS/PSSMBS2N/PSSMS2NB.csproj", "line": 347, "role": "另一项目也编译对应窗口"}
+      ],
+      "finding": "两个目录包含不同业务 SQL，又输出同名程序集且都显式编译目标窗口。静态文件名或目录后缀无法判断哪份已停用，也不能把它们简单视为两个同时发布的独立程序集。",
+      "recommendation": "取得部署程序集哈希/版本、构建源目录、对应提交及页面菜单映射，确定当前生效源码基线；历史或备用版本单独标记，不自动删除或改写。",
+      "validation": "建立生产部署制品到仓库源码的可核验映射；确认 DY-002/DY-003 的运行版本和排除依据。",
+      "dependencies": ["部署 PSSMD_S2N 制品的非敏感哈希及版本", "构建记录或对应提交", "生效菜单/窗口映射"]
+    },
+    {
+      "id": "DY-013",
+      "title": "GCPM 请求表名和排序片段驱动的通用查询",
+      "priority": "P2",
+      "status": "static_reviewed_runtime_pending",
+      "module": "Server/GCPM/p_gcpm_9320",
+      "evidence": [
+        {"path": "Server/GCPM/p_gcpm_9320/gcpmsiUi_inq.cpp", "line": 72, "role": "读取 TABLE_NAME 与 ORDER_BY"},
+        {"path": "Server/GCPM/p_gcpm_9320/gcpmsiUi_inq.cpp", "line": 96, "role": "根据传入参数生成条件后执行"},
+        {"path": "Server/GCPM/p_gcpm_9320/gcpmsiUi_inq2.cpp", "line": 110, "role": "分页入口生成明细和 COUNT SQL"},
+        {"path": "Server/GCPM/p_gcpm_9320/gcpmsiUi_inq2.cpp", "line": 125, "role": "使用 BM2 ExecuteQuery 分页"},
+        {"path": "Server/GCPM/p_gcpm_9320/gcpmsiUi_inq2.cpp", "line": 138, "role": "执行总行数统计"}
+      ],
+      "finding": "查询结构由请求中的表名、排序和条件拼成。该项与 DY-009 的配置数据源执行、DY-010 的 TGCPMSI01 SQL 是不同来源；即使共用 BM2，仍需验证实际请求覆盖的业务对象。现有代码使用 BM2 分页，无证据要求重写分页实现。",
+      "recommendation": "按调用页面归集请求对象名、排序和参数组合，沿用已适配 BM2 的分页能力，优先比对生成查询及业务结果。",
+      "validation": "覆盖第一页/后续页、空结果、稳定排序、同一筛选下明细与 COUNT 一致、中文和时间条件；核对返回表名称及字段映射。",
+      "dependencies": ["调用页面和请求模板", "实际表/视图 DDL", "Oracle/DM8 对照数据"]
+    }
+  ]
+}

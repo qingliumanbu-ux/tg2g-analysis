@@ -1,0 +1,11 @@
+{
+  "workspace_files": 6338,
+  "workspace_text_files": 6002,
+  "archive_members": 401,
+  "archive_text_members": 175,
+  "location_rows": 265958,
+  "line_bounds_valid": true,
+  "changed_files_since_scan": [],
+  "broken_local_links": [],
+  "validation_scope": "inventory integrity and source snapshot consistency, not SQL compatibility or business runtime"
+}

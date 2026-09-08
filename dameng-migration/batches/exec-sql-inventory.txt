@@ -1,0 +1,42 @@
+EXEC SQL 语句类型分布: {'UPDATE': 17, 'SELECT_INTO': 14, 'OPEN_CURSOR': 2, 'CLOSE_CURSOR': 2, 'INSERT': 1}
+
+
+== WM00/libWM00/f_wm00_stock_place_no.cpp
+  L132 [UPDATE] UPDATE TMMSM01 SET DEFECT_WT = :x1j197b.head_width, SPARE_ITEM_N3 = : x1j197b.tail_width WHERE mat_no = : tmmsm01.mat_no AND mat_position = '1' ;
+  L169 [SELECT_INTO] select * into :tep0002 from tep0002 where code_class = 'YMWD' and code = : tmmsm01.strand_no;
+  L188 [SELECT_INTO] select cast(COALESCE(CODE_DESC_3_CONTENT, '1000') as double) / 1000, cast(COALESCE(CODE_DESC_4_CONTENT, '1000') as double) / 1000 into :d_spd_threshold_max, : d_spd_threshold_min from tep0002 where co
+  L201 [SELECT_INTO] SELECT cast_spd_max, cast_spd_min, slab_tapper_width_start INTO : f_cast_spd_max, : f_cast_spd_min, : f_slab_tapper_width_start FROM tmmsm33 WHERE slab_no = : tmmsm01.mat_no;
+  L513 [UPDATE] UPDATE tmmsm01 set rel_remark = :tmmsm01.rel_remark where mat_no = : tmmsm01.mat_no and mat_position in('1', '2');
+  L617 [UPDATE] UPDATE tmmsm01 set rel_remark = :tmmsm01.rel_remark, mat_act_width = : tmmsm01.mat_act_width, slab_head_width = : tmmsm01.slab_head_width, slab_tail_width = : tmmsm01.slab_tail_width, slab_head_tail_w
+  L644 [UPDATE] UPDATE tep0002 SET CODE_DESC_2_CONTENT = :tep0002.code_desc_2_content, CODE_DESC_3_CONTENT = : tep0002.code_desc_3_content, CODE_DESC_4_CONTENT = : tep0002.code_desc_4_content, CODE_DESC_5_CONTENT = :
+  L652 [UPDATE] UPDATE tep0002_res SET CODE_DESC_2_CONTENT = :tep0002.code_desc_2_content, CODE_DESC_3_CONTENT = : tep0002.code_desc_3_content, CODE_DESC_4_CONTENT = : tep0002.code_desc_4_content, CODE_DESC_5_CONTENT
+  L665 [UPDATE] UPDATE tymsm44 SET qual_id = :tep0002.code_desc_4_content WHERE mat_no = : tmmsm01.mat_no and rest_roller_no not in('R1', 'R2');
+  L694 [UPDATE] UPDATE TMMSM01 SET DEFECT_POSITION_L_3 = :x1j197b.judge_code, DEFECT_POSITION_L_4 = : x1j197b.archive_code/*, DEFECT_WT = :x1j197b.head_width, SPARE_ITEM_N3 =:x1j197b.tail_width*/ WHERE mat_no = : tmm
+  L715 [SELECT_INTO] select * into :tmmsm01 from tmmsm01 where mat_no = : tmmsm01.mat_no and mat_position  in('1', '2');
+  L732 [SELECT_INTO] select * into :tep0002 from tep0002 where code_class = 'YMHP' and code = '09';
+  L748 [OPEN_CURSOR] OPEN tqmts9p_q;
+  L751 [SELECT_INTO] FETCH tqmts9p_q INTO : tqmts9p;
+  L765 [CLOSE_CURSOR] CLOSE tqmts9p_q;
+  L769 [OPEN_CURSOR] OPEN tqmts9p_q;
+  L772 [SELECT_INTO] FETCH tqmts9p_q INTO : tqmts9p;
+  L786 [CLOSE_CURSOR] CLOSE tqmts9p_q;
+  L842 [SELECT_INTO] select rest_roller_no into : v_rest_roller_no from tymsm44 where mat_no = : tymsm44.mat_no;
+  L852 [SELECT_INTO] select * into :tep0002 from tep0002 where code_class = 'YMHP' and code = : tymsm44.rest_roller_no;
+  L902 [SELECT_INTO] select count(1) into :v_num from tymsm44 where mat_no = : tmmsm01.mat_no;
+  L906 [UPDATE] update tymsm44 set rest_roller_no = :tymsm44.rest_roller_no where mat_no = : tmmsm01.mat_no;
+  L913 [INSERT] insert into tymsm44 (REST_ROLLER_NO, MAT_NO) values(:tymsm44.rest_roller_no, : tmmsm01.mat_no);
+  L926 [SELECT_INTO] select substr(rest_roller_no, 1, 1) into :v_location from tymsm44 where mat_no = : tmmsm01.mat_no ;
+  L988 [UPDATE] UPDATE tmmsm01 set rel_remark = '板坯理论重量与实际重量大于3%！请认真核对(1j197b)' WHERE mat_no = :tmmsm01.mat_no and mat_position = '1' ;
+  L997 [UPDATE] UPDATE TYMSM44 SET AUTO_WT_FLAG = '0' WHERE MAT_NO = :tmmsm01.mat_no;
+  L1011 [UPDATE] UPDATE TYMSM44 SET AUTO_WT_FLAG = '1' WHERE MAT_NO = :tmmsm01.mat_no;
+  L1037 [SELECT_INTO] SELECT  nvl(SLAB_WTADJ_FACTOR, 1), nvl(SLAB_TAPPER_WIDTH_LMT, 0) INTO  :slab_wtadj, : v_slab_tapper_width_lmt FROM  TQMTS9M WHERE  STRAND_NO = 'J' FETCH  FIRST 1 ROWS ONLY ;
+  L1064 [UPDATE] UPDATE TMMSM33 SET SLAB_WT = :slab_wt WHERE SLAB_NO = : tmmsm01.mat_no AND  NOT EXISTS(SELECT MAT_NO FROM TMMSM34 WHERE MAT_NO = :tmmsm01.mat_no) ;
+  L1071 [UPDATE] UPDATE tmmsm01 set /*SCRAP_REMARK = to_char(:x1j197b.mat_act_wt),*/ MAT_ACT_WT = :slab_wt, WT_MODE = : wt_flag, SLAB_OUT_PLACE = : v_send_point, SLAT_UNLADE_CAUSE = '90', OUT_STOCK_TIME = : v_create_t
+  L1082 [UPDATE] UPDATE TQMTS9M set SLAB_TAPPER_WIDTH_LMT = :v_slab_tapper_width_lmt, SLAB_WTADJ_FACTOR = : slab_wtadj where STRAND_NO = 'J' ;
+  L1154 [UPDATE] UPDATE tymsm44 SET REST_ROLLER_NO = 'R1' WHERE MAT_NO = :tmmsm01.mat_no;
+  L1159 [UPDATE] UPDATE tmmsm01 set SCRAP_REMARK = to_char(:x1j197b.mat_act_wt) where mat_no = :tmmsm01.mat_no and mat_position = '1' ;
+
+== WMSM/p_wmsm_8120/wmsmsm12zklg_upd.cpp
+  L65 [SELECT_INTO] SELECT AIM_STORE INTO : v_aim_store FROM TYMSM52 WHERE	TRANSFER_PLAN_NO = TRIM(:tymsm53.transfer_plan_no) AND TRANSFER_BILL_NO = TRIM(:tymsm53.transfer_bill_no) ;
+  L75 [SELECT_INTO] SELECT TRIM(WAGONNO_TS) INTO :v_wagonno_ts_old FROM TYMSM53 WHERE	MAT_NO = : tymsm53.mat_no AND TRANSFER_PLAN_NO = TRIM(:tymsm53.transfer_plan_no) AND TRANSFER_BILL_NO = TRIM(:tymsm53.transfer_bill_no
+  L88 [UPDATE] update tymsm53 set DELEGATE_SEQ = :tymsm53.delegate_seq, wagonno_ts = : tymsm53.wagonno_ts where mat_no = : tymsm53.mat_no AND TRANSFER_PLAN_NO = TRIM(:tymsm53.transfer_plan_no) AND TRANSFER_BILL_NO =

@@ -1,0 +1,31 @@
+130				if (0 == strcmp(x1j197b.loc_code, "39"))//20180509增加在线宽度数据上传
+131				{
+132					// DM8 适配 CHANGE-EXEC-003:更新缺陷重量/尾宽;EXEC SQL 改为 CDbCommand(方案B)。
+133					// 原方案A(EXEC SQL + sqlca,完整保留):
+134					// EXEC SQL
+135					// UPDATE TMMSM01
+136					// SET DEFECT_WT = :x1j197b.head_width,
+137					// SPARE_ITEM_N3 = : x1j197b.tail_width
+138					// WHERE mat_no = : tmmsm01.mat_no AND mat_position = '1'
+139					// ;
+140					// if (sqlca.sqlcode == M_NO_DATA_FOUND)
+141					// {
+142					// EDLog(1, 1, "处理失败，板坯号码不存在！");
+143					// doFlag = 0;
+144					// s.sqlcode = 0;
+145					// goto l_return;
+146					// }
+147					// else
+148					// 方案B(CDbCommand):
+149						sqlstr = " UPDATE TMMSM01 SET DEFECT_WT = ?, SPARE_ITEM_N3 = ? WHERE mat_no = ? AND mat_position = '1'";
+150						cmd_upd.SetCommandText(sqlstr);
+151						cmd_upd.Parameters.Set("head_width", x1j197b.head_width);
+152						cmd_upd.Parameters.Set("tail_width", x1j197b.tail_width);
+153						cmd_upd.Parameters.Set("mat_no", tmmsm01.mat_no);
+154						cmd_upd.Execute();
+155						if (cmd_upd.GetLastError() != 0)  // 等价于 sqlca.sqlcode != 0
+156						{
+157							EDLog(1, 1, "处理失败，板坯号码不存在！");
+158							doFlag = 0;
+159							s.sqlcode = 0;
+160							goto l_return;

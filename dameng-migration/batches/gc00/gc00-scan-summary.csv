@@ -1,0 +1,4 @@
+﻿file,encoding,newline,sql_statements,dialect_hits
+gc00_ExcQrySql.cpp,gb18030,LF,0,0
+gc00_GetTs.cpp,gb18030,LF,2,0
+gc00_GetTsCol.cpp,gb18030,LF,2,0

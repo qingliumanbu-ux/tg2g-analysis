@@ -1,0 +1,103 @@
+{
+  "scope": "仅处理应用及后台 SQL 对 DM8 的适配。原 dynamic-reviews.json 的库对象/数据迁移、部署、全系统联调建议不属于本轮执行范围。",
+  "basis": "已按原审查记录重新读取当前源码证据，并查询 DM 官方语法文档。SQL可保留表示当前未发现需要方言改写的源码依据，不表示已在 DM8 实测通过。动态输入的兼容性不由通用执行端保证。",
+  "source_inventory": "analysis/dameng-migration/dynamic-reviews.json",
+  "summary": {"SQL可保留": 9, "转换所需输入局部缺失": 4, "明确可改": 0},
+  "decisions": [
+    {
+      "id": "DY-001",
+      "decision": "SQL可保留",
+      "reason": "MMSM517 的 TMMSM50 查询只含普通 SELECT、字段选择和等值条件；querySql 调用本身不是 Oracle 方言。不因服务路由尚未核对而重写 SQL。",
+      "needed_input": []
+    },
+    {
+      "id": "DY-002",
+      "decision": "SQL可保留",
+      "reason": "PSSM18O2 的 TPSSMD1 查询使用 SELECT、AS、WHERE、ORDER BY，两个客户端版本均无已知方言改写点。ExecQuery 和已适配 BM2 的调用保持原样。",
+      "needed_input": []
+    },
+    {
+      "id": "DY-003",
+      "decision": "SQL可保留",
+      "reason": "两份 SetDev 的 SELECT/子查询/UNION/SUBSTR/|| 均为 DM 支持的语法，不机械替换；现有唯一调用已注释，不恢复调用、不修正原有列标签或业务逻辑。运行可达性不是本项静态方言适配的阻塞。",
+      "needed_input": []
+    },
+    {
+      "id": "DY-004",
+      "decision": "SQL可保留",
+      "reason": "gc00_ExcQrySql 只把传入 QUERY_SQL 交给 BM2，没有需要替换的自有方言 SQL；执行端保持原样。已取得的调用方 SQL 分别审核，尚未提供的动态文本不能算作本执行端已验证或需改写。",
+      "needed_input": []
+    },
+    {
+      "id": "DY-005",
+      "decision": "SQL可保留",
+      "reason": "两份 wm_dyn_sql 只执行传入 SQL_STR 并映射返回列，没有自有 Oracle 方言。保留执行端、返回契约及重复源文件；具体文本的适配归对应 SQL 生产端。",
+      "needed_input": []
+    },
+    {
+      "id": "DY-006",
+      "decision": "转换所需输入局部缺失",
+      "reason": "MMTP 读取配置并生成 SQL；读取配置的通用查询可保留，QUERY_SQL/CND_RELATION/QRY_TAB_WHERE 的实际内容尚不可见。合计 FROM 分支还取决于 BM2 在 DM8 下返回的 DatabaseKind，不能因没有显式达梦分支就直接判错或改默认逻辑。",
+      "needed_input": [
+        "所需适配配置的 QUERY_SQL、CND_RELATION、QRY_TAB_WHERE 片段及必要的表关联/分组标志，或该配置生成的最终 SQL；不需要整库数据",
+        "BM2 达梦适配包的 DatabaseKind 枚举定义及 DM8 连接实际取值"
+      ]
+    },
+    {
+      "id": "DY-007",
+      "decision": "SQL可保留",
+      "reason": "mmtp_configSave 的本地 DELETE 和 INSERT SELECT 是 DM 支持的语法；省略目标列列表也为合法形式，BM2 绑定已适配。不得把潜在列序变化当作已确认方言问题，也不把配置复制逻辑改造成数据迁移任务；被复制的 SQL 内容由 DY-006 单独处理。",
+      "needed_input": []
+    },
+    {
+      "id": "DY-008",
+      "decision": "SQL可保留",
+      "reason": "DM 官方明确支持 对象名@外部链接名，因此现有 tableName 加 @DB_LINK_NAME 的引用语法可保留。链路建立和数据复制环境不属于本次 SQL 适配；不修改业务 Commit/Begin。没有目标对象名变化通知时，不虚构名称替换。",
+      "needed_input": []
+    },
+    {
+      "id": "DY-009",
+      "decision": "转换所需输入局部缺失",
+      "reason": "gcpm_dataSet_inq 只是 CFormDevConfig::QueryUtility 的包装，入口源码无需因低代码模式而改写。待转换对象是未提供的数据集 SQL 定义，缺失仅影响这些定义的审核。",
+      "needed_input": [
+        "本次需适配的数据集 SQL 原文及参数名称/类型；若 SQL 由配置组合，提供其必要片段或最终生成 SQL"
+      ]
+    },
+    {
+      "id": "DY-010",
+      "decision": "转换所需输入局部缺失",
+      "reason": "读取 TGCPMSI01/TED54 的 SELECT 可保留，BM2 分页不重写。实际待判定内容是 SQL_CONTEXT 经参数代入后的语句；源码未包含配置值。现有大写转换和字符串替换属于既有行为，本轮不借机调整。",
+      "needed_input": [
+        "相关 TGCPMSI01.SQL_CONTEXT 文本和关联 TED54 参数名称/类型，或实际生成 SQL；只需转换所需字段"
+      ]
+    },
+    {
+      "id": "DY-011",
+      "decision": "转换所需输入局部缺失",
+      "reason": "客户端注释 SQL 不改。DM 提供 Oracle 兼容元数据视图，不能把 USER_TAB_COLUMNS 等名称直接判为不兼容；实际服务的 CASE 只识别 VARCHAR2，需要知道目标相关字段的 DATA_TYPE/DATA_LENGTH 返回值后再判断是否作局部 SQL 分类修正。当前无实测证据支持立即改动。",
+      "needed_input": [
+        "目标 DM8 相关 TMMxx96 字段的 COLUMN_NAME、DATA_TYPE、DATA_LENGTH 返回样例及预期字符/数值分类；不需要业务数据或库对象迁移"
+      ]
+    },
+    {
+      "id": "DY-012",
+      "decision": "SQL可保留",
+      "reason": "本项是两个 csproj 的同名程序集信息，本身没有 SQL 方言改造点，退出本轮修改清单；相关源码 SQL 已在 DY-002/DY-003 分别判断，不等待部署制品鉴定才开展 SQL 适配。",
+      "needed_input": []
+    },
+    {
+      "id": "DY-013",
+      "decision": "SQL可保留",
+      "reason": "gcpmsiUi_inq/in2 生成普通 SELECT、COUNT 和排序条件，并调用已适配的 BM2 参数与分页接口，当前没有可确认的方言替换。传入配置若另含方言表达式，针对具体文本单列处理，不整体重构通用查询。",
+      "needed_input": []
+    }
+  ],
+  "official_sources": [
+    {"title": "DM 单表查询：列拼接", "url": "https://eco.dameng.com/document/dm/zh-cn/sql-dev/practice-single-table.html", "supports": "DM 支持 || 列拼接"},
+    {"title": "DM 如何使用字符串", "url": "https://eco.dameng.com/document/dm/zh-cn/sql-dev/practice-strings.html", "supports": "DM8 使用 SUBSTR、|| 与 DUAL 的示例"},
+    {"title": "DM 数据的插入、删除和修改，第 5.1 节", "url": "https://eco.dameng.com/document/dm/zh-cn/pm/insertion-deletion-modification.html", "supports": "INSERT 查询插入；目标列列表可省略但要求按目标列顺序对应"},
+    {"title": "DM 外部链接，第 16.3 节", "url": "https://eco.dameng.com/document/dm/zh-cn/pm/external-link.html", "supports": "外部对象使用 对象名@外部链接名 引用"},
+    {"title": "DM 数据库检查", "url": "https://eco.dameng.com/document/dm/zh-cn/faq/faq-db-check", "supports": "DM 可查询 USER_TAB_COLUMNS/DBA_TAB_COLUMNS，并提供 Oracle 兼容视图；未由此证明本项目字段具体类型名相同"}
+  ],
+  "validation": "已复核 DY-001 至 DY-013 源码证据、JSON 结构和三类决策计数；未连接或执行 DM8，未修改业务源码。"
+}

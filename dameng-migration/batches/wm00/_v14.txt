@@ -1,0 +1,32 @@
+1176						// DM8 适配 CHANGE-EXEC-030:更新 tymsm44 REST_ROLLER_NO;EXEC SQL 改为 CDbCommand(方案B)。
+1177						// 原方案A(EXEC SQL,完整保留):
+1178						// EXEC SQL UPDATE tymsm44 SET REST_ROLLER_NO = 'R1' WHERE MAT_NO = :tmmsm01.mat_no;
+1179						// 方案B(CDbCommand):
+1180							sqlstr = " UPDATE tymsm44 SET REST_ROLLER_NO = ? WHERE MAT_NO = ?";
+1181							cmd_exec.SetCommandText(sqlstr);
+1182							cmd_exec.Parameters.Set("p1", "R1");
+1183							cmd_exec.Parameters.Set("p2", tmmsm01.mat_no);
+1184							cmd_exec.Execute();
+1185					}
+1186					else if (strcmp(tymsm44.rest_roller_no, "A3") == 0 && x1j197b.mat_act_wt>8000 && 0 == strcmp(tep0002.code_desc_4_content, "ON"))
+1187					{
+1188						EDLog(1, 1, "重量来自计量系统");
+1189						// DM8 适配 CHANGE-EXEC-031:更新 ScrapRemark;EXEC SQL 改为 CDbCommand(方案B)。
+1190						// 原方案A(EXEC SQL,完整保留):
+---
+1189						// DM8 适配 CHANGE-EXEC-031:更新 ScrapRemark;EXEC SQL 改为 CDbCommand(方案B)。
+1190						// 原方案A(EXEC SQL,完整保留):
+1191						// EXEC SQL
+1192						// UPDATE tmmsm01
+1193						// set SCRAP_REMARK = to_char(:x1j197b.mat_act_wt)
+1194						// where mat_no = :tmmsm01.mat_no and mat_position = '1'
+1195						// ;
+1196						// 方案B(CDbCommand):
+1197							sqlstr = " update tmmsm01 set SCRAP_REMARK = to_char(?) where mat_no = ? and mat_position = '1'";
+1198							cmd_exec.SetCommandText(sqlstr);
+1199							cmd_exec.Parameters.Set("p1", x1j197b.mat_act_wt);
+1200							cmd_exec.Parameters.Set("p2", tmmsm01.mat_no);
+1201							cmd_exec.Execute();
+1202					}
+1203	
+---

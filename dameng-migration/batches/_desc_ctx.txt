@@ -1,0 +1,46 @@
+
+===== Server/GCTP/libGCTP/f_gctp_getTableItem.cpp =====
+95				//添加表名中文描述
+96				switch (conn->DatabaseKind)
+97				{
+98				case DB_KIND_MSSQL:	        // MS SQL Server数据库
+99					break;
+100				case DB_KIND_DB2:	        // DB2 数据库（未开Oracle兼容）
+101				case DB_KIND_DB2_ORACLE:	// DB2 数据库（开Oracle兼容）
+102	// DM8 适配 CHANGE-361:查询。SYSIBM 辅助表改为 DUAL。
+103	// 改写原因：SYSIBM 辅助表改为 DUAL；DB2 特殊寄存器 current date/time/timestamp/schema 改为 DM 的 CURRENT_DATE/CURRENT_TIME/CURRENT_TIMESTAMP/CURRENT_SCHEMA(官方函数手册支持)；依据 DM 官方文档,DM8 尚未实测。
+104	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+105	// 原 SQL（完整保留）：
+106					// querySql = "SELECT remarks FROM SYSIBM.SYSTABLES WHERE name = '" + table_name +
+107						// "' AND creator = (SELECT current schema FROM sysibm.sysdummy1)";
+108	// DM8 SQL：
+109					querySql = "SELECT remarks FROM SYSIBM.SYSTABLES WHERE name = '" + table_name +
+110						"' AND creator = (SELECT CURRENT_SCHEMA FROM DUAL)";
+111					break;
+112				case DB_KIND_ORACLE:	    // Oracle 数据库
+113				default:
+114					querySql = "SELECT comments FROM user_tab_comments WHERE table_name = '" + table_name + "'";
+115					break;
+
+===== Server/MMTP/libMMTP/f_mmtp_mat_track.cpp =====
+975										{
+976										case DB_KIND_MSSQL:	        // MS SQL Server数据库
+977											strSql = "SELECT max_length FROM sys.columns WHERE object_id = object_id('" + tableName +
+978												"') AND name = '" + itemEName + "'";
+979											break;
+980										case DB_KIND_DB2:	        // DB2 数据库（未开Oracle兼容）
+981										case DB_KIND_DB2_ORACLE:	// DB2 数据库（开Oracle兼容）
+982	// DM8 适配 CHANGE-360:查询。SYSIBM 辅助表改为 DUAL。
+983	// 改写原因：SYSIBM 辅助表改为 DUAL；DB2 特殊寄存器 current date/time/timestamp/schema 改为 DM 的 CURRENT_DATE/CURRENT_TIME/CURRENT_TIMESTAMP/CURRENT_SCHEMA(官方函数手册支持)；依据 DM 官方文档,DM8 尚未实测。
+984	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+985	// 原 SQL（完整保留）：
+986											// strSql = "SELECT length FROM sysibm.syscolumns WHERE tbname ='" + tableName +
+987												// "' AND name = '" + itemEName + "' AND tbcreator = (SELECT current schema FROM sysibm.sysdummy1)";
+988	// DM8 SQL：
+989											strSql = "SELECT length FROM sysibm.syscolumns WHERE tbname ='" + tableName +
+990												"' AND name = '" + itemEName + "' AND tbcreator = (SELECT CURRENT_SCHEMA FROM DUAL)";
+991											break;
+992										case DB_KIND_ORACLE:	    // Oracle 数据库
+993										default:
+994											strSql = "SELECT data_length FROM user_tab_columns WHERE table_name = '" + tableName +
+995												"' AND column_name = '" + itemEName + "'";

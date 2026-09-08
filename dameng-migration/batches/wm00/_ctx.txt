@@ -1,0 +1,30 @@
+== L148-L162
+148						//增加对板坯宽度的处理（2019-6-13）
+149						//取宽度控制开关							
+150						EXEC SQL select * into :tmmsm01 from tmmsm01 where mat_no = : tmmsm01.mat_no and mat_position in('1', '2');
+151						if (sqlca.sqlcode == M_NO_DATA_FOUND)
+152						{
+153							EDLog(1, 1, "板坯不在炼钢范围内，不处置！");
+154							doFlag = 0;
+155							s.sqlcode = 0;
+156							goto l_return;
+157						}
+158						EXEC SQL select * into :tep0002 from tep0002 where code_class = 'YMWD' and code = : tmmsm01.strand_no;
+159						EDLog(1, 1, " **************%s  ----tmmsm01.mat_no *****************", tmmsm01.mat_no);
+160						EDLog(1, 1, " **************%s  ----tmmsm01.mat_position ***********", tmmsm01.mat_position);
+161	
+162						if (0 != strcmp(tep0002.code_desc_1_content, "OFF") && 0 == strcmp(tmmsm01.mat_position, "1") && 0 == strcmp(tmmsm01.slab_out_place, " "))//参与宽度控制标定
+== L808-L820
+808					}
+809				}
+810	
+811				EXEC SQL select * into :tmmsm01 from tmmsm01 where mat_no = : tmmsm01.mat_no and mat_position = '1';
+812				EDLog(1, 1, " **************%s  ----tmmsm01.mat_no *****************", tmmsm01.mat_no);
+813				EDLog(1, 1, " **************%s  ----tmmsm01.mat_position *****************", tmmsm01.mat_position);
+814	
+815	
+816				temp_slab_wt = x1j197b.mat_act_wt;//为保证传入到板坯物流控制函数的正确性先将值取出
+817				sprintf(tymsm44.rest_roller_no, "%s", x1j197b.loc_code);
+818				if (strcmp(tmmsm01.mat_position, "1") == 0)
+819				{
+820					strcpy(tymsm44.mat_no, tmmsm01.mat_no);

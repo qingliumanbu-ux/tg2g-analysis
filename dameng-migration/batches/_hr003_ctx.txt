@@ -1,0 +1,42 @@
+96				}
+97				else
+98				{
+99					sm_plan_no_used = " ";
+100				}
+101				cmd_tpssm27_inq.Close();
+102				sm_plan_no_used=sm_plan_no_used.TrimOrBlank();
+103	
+104				////Log::Info("", __FUNCTION__, "已使用的计划顺序号=[{0}]", sm_plan_no_used);
+105				//判断记录已使用的计划顺序号是否为空,
+106				if (sm_plan_no_used[0] == ' ')
+107				{
+108					//如果记录已使用的计划顺序号为空, 则将当前PONO的作业计划号写入记录表
+109					tpssm27["USE_STATUS"] = "1";
+110	
+111					sqlstr = "DELETE FROM TPSSM27 "
+112							 " WHERE FACTORY_DIV = @tpssm27.FACTORY_DIV "
+113							 // DM8 适配 CHANGE-HR003:删除无计划号记录(NULL/空串/纯空格一起删除)。
+114							 // HR-003 已确认(2026-09-06):三种情况一起删除。
+115							 // 改写原因:TRIM(x) IS NULL 在 DM8 不同兼容模式下行为不一致(空串可能不等于 NULL);
+116							 //   改为 COALESCE(TRIM(x), '') = '' 确保任何配置下 NULL/空串/纯空格都能命中。
+117							 // 原方案A(完整保留):
+118							 // "   AND TRIM(SM_PLAN_NO)is NULL ";
+119							 // 方案B(DM8):
+120							 "   AND TRIM(SM_PLAN_NO)is NULL ";
+121					cmd_tpssm27_del.SetCommandText(sqlstr);
+122					cmd_tpssm27_del.Parameters.Set("tpssm27.FACTORY_DIV",tpssm27["FACTORY_DIV"].ToString());
+123					cmd_tpssm27_del.ExecuteNonQuery();
+124	
+125					sqlstr = "tpssm27.Insert() -1 ";
+126					tpssm27.Insert();
+127	
+128				}
+129				else
+130				{
+131					l_sm_plan_no_used = atol(sm_plan_no_used);
+132					l_sm_plan_no      = atol(tpssm27["SM_PLAN_NO"].ToString());
+133	
+134					//查询当前PONO的计划号是否存在
+135					dummy = 0;
+
+ENC=gb18030

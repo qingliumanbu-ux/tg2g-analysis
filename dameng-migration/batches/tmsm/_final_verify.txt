@@ -1,0 +1,21 @@
+L91 [头] // DM8 SQL：
+L92 [活动] 			sqlstr = "select DATEDIFF(DAY, TO_TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "','YYYYMMDDHH24MISS'), TO_TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "','YYYYMMDDHH24MISS')) from D
+
+L134 [头] // DM8 SQL:
+L135 [活动] 					sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP('" + + ttmsm66["REC_CREATE_TIME"].ToString( + "' from SYSIBM.SYSDUMMY1 + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP('" + // sqlstr = "select TIMESTAMPDIFF(8
+
+L136 [头] // DM8 SQL:
+L137 [活动] 					sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP('" + + ttmsm66["REC_CREATE_TIME"].ToString( + "' from SYSIBM.SYSDUMMY1 + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP('" + sqlstr = "select TIMESTAMPDIFF(8, C
+
+L234 [头] // DM8 SQL:
+L235 [活动] 								sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP('" + + dt_temp.Rows[j]["DEV_NAME"].ToString(.Trim( + "' from SYSIBM.SYSDUMMY1 + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP('" + // sqlstr = "select TIMES
+
+L236 [头] // DM8 SQL:
+L237 [活动] 								sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP('" + + dt_temp.Rows[j]["DEV_NAME"].ToString(.Trim( + "' from SYSIBM.SYSDUMMY1 + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP('" + sqlstr = "select TIMESTAM
+
+L306 [头] // DM8 SQL:
+L307 [活动] 								sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP('" + + dt_temp.Rows[j]["REPAIR_START_TIME"].ToString(.Trim( + "' from SYSIBM.SYSDUMMY1 + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP('" + sqlstr = "select
+
+L343 [头] // DM8 SQL：
+L344 [活动] 			sqlstr = "SELECT ROUND(" + use_time.ToString() + "/60,2),ROUND(" + prep_time.ToString() + "/60,2),ROUND((" + all_time.ToString() + " - " + use_time.ToString() + " - " + prep_time.ToString() + ")/ 6
+

@@ -1,0 +1,4 @@
+file	line	text
+libWM10/f_wmhrhr_crane_make.cpp	205	sqlstr = "values seqTest.NEXTVAL";
+libWM10/f_wmhrhr_crane_make.cpp	216	sqlstr = "  SELECT a.rowno rownum,a.stock_no,                    "
+libWM10/f_wmhrhr_crane_make.cpp	655	sqlstr = "values seqTest.NEXTVAL";

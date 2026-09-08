@@ -1,0 +1,563 @@
+file	start	end	preview
+libCAAI/f_caai_allft.cpp	44	46	sqlstr = " select S_DATETIME,E_DATETIME from tcaac15"
+libCAAI/f_caai_allft.cpp	59	63	sqlstr = " delete from tcaai05"
+libCAAI/f_caai_allft.cpp	72	72	sqlstr = " insert into tcaai05(rec_creator, rec_create_time,dept_code,account_period, cost_center, sub_backlog_code, equ_no, sg_sign, mat_thick, mat_width, prod
+libCAAI/f_caai_allft.cpp	73	79	" select @rec_creator, @rec_create_time,dept_code,@account_period,cost_center, sub_backlog_code, equ_no, sg_sign, mat_thick, mat_width, product_code,PRODUCT_COD
+libCAAI/f_caai_allft.cpp	90	94	sqlstr = " delete from tcaai06"
+libCAAI/f_caai_allft.cpp	103	104	sqlstr = " insert into tcaai06 (rec_creator,rec_create_time,account_period,dept_code,cost_center,sub_backlog_code,PRODUCT_CODE,PRODUCT_CODE_CNAME,MAT_CODE,PROD_
+libCAAI/f_caai_allft.cpp	105	115	" select @rec_creator, @rec_create_time,@account_period,dept_code,cost_center, sub_backlog_code,PRODUCT_CODE,PRODUCT_CODE_CNAME,MAT_CODE,STATS_PERIOD"
+libCAAI/f_caai_allft.cpp	128	133	sqlstr = " update tcaai06 set wt = 0"
+libCAAI/f_caai_allft.cpp	140	141	sqlstr = " select sub_backlog_code,mat_code,0-sum(NET_WT) all_use"
+libCAAI/f_caai_allft.cpp	142	152	" select DST_MAT_CODE as mat_code,SRC_STOCK_CODE ,NET_WT,NVL(BACK_C2,' ') sub_Backlog_code"
+libCAAI/f_caai_allft.cpp	170	177	sqlstr = "select sum(pass_wt) total_wt from tcaai06"
+libCAAI/f_caai_allft.cpp	194	201	sqlstr = " update tcaai06 t set wt = round(pass_wt*@all_use/@total_wt,3)"
+libCAAI/f_caai_allft.cpp	216	220	sqlstr = "select MEASURE_MODE"
+libCAAI/f_caai_allft.cpp	232	238	sqlstr = "select sum(DIVVY_BASIC_N) total_wt from tcaai01"
+libCAAI/f_caai_allft.cpp	261	261	sqlstr = " insert into tcaai06 (REC_CREATE_TIME,dept_code,account_period,sub_backlog_code,PROD_DATE,cost_center,product_CODE,equ_no, sg_sign, mat_thick, mat_wid
+libCAAI/f_caai_allft.cpp	262	270	" select @datenow,dept_code,@account_period,sub_backlog_code,stats_period,cost_center,product_CODE,equ_no, sg_sign, mat_thick, mat_width,@mat_code,vfree1,vfree2
+libCAAI/f_caai_allft.cpp	286	292	sqlstr = "select sum(wt)  from tcaai06"
+libCAAI/f_caai_allft.cpp	309	318	sqlstr = "update tcaai06 set wt = wt + @dif_wt"
+libCAAI/f_caai_allft.cpp	333	341	sqlstr = "select mat_code,sum(COMSUME_WT) all_use,equ_no"
+libCAAI/f_caai_allft.cpp	348	354	sqlstr = "select sum(pass_wt) total_wt from tcaai06"
+libCAAI/f_caai_allft.cpp	371	377	sqlstr = " update tcaai06 t set wt = round(pass_wt*@all_use/@total_wt,3)"
+libCAAI/f_caai_allft.cpp	392	395	sqlstr = "select MEASURE_MODE"
+libCAAI/f_caai_allft.cpp	407	414	sqlstr = "select sum(DIVVY_BASIC_N) total_wt from tcaai01"
+libCAAI/f_caai_allft.cpp	436	436	sqlstr = " insert into tcaai06 (REC_CREATE_TIME,dept_code,account_period,sub_backlog_code,PROD_DATE,cost_center,product_CODE,equ_no, sg_sign, mat_thick, mat_wid
+libCAAI/f_caai_allft.cpp	437	445	" select @datenow,dept_code,@account_period,sub_backlog_code,stats_period,cost_center,product_CODE,equ_no, sg_sign, mat_thick, mat_width,@mat_code,vfree1,vfree2
+libCAAI/f_caai_allft.cpp	461	467	sqlstr = "select sum(wt)  from tcaai06"
+libCAAI/f_caai_allft.cpp	484	493	sqlstr = "update tcaai06 set wt = wt + @dif_wt"
+libCAAI/f_caai_allft.cpp	507	515	sqlstr = "select mat_code,sum(COMSUME_WT) all_use"
+libCAAI/f_caai_allft.cpp	528	532	sqlstr = "select MEASURE_MODE"
+libCAAI/f_caai_allft.cpp	545	552	sqlstr = "select sum(DIVVY_BASIC_N) total_wt from tcaai01"
+libCAAI/f_caai_allft.cpp	573	573	sqlstr = " insert into tcaai06 (REC_CREATE_TIME,dept_code,account_period,sub_backlog_code,prod_Date,cost_center,product_CODE,equ_no, sg_sign, mat_thick, mat_wid
+libCAAI/f_caai_allft.cpp	574	583	" select @datenow,dept_code,@account_period,sub_backlog_code,stats_period,cost_center,product_CODE,equ_no, sg_sign, mat_thick, mat_width,@mat_code,vfree1,vfree2
+libCAAI/f_caai_allft.cpp	597	603	sqlstr = "select sum(wt)  from tcaai06"
+libCAAI/f_caai_allft.cpp	619	628	sqlstr = "update tcaai06 set wt = wt + @dif_wt"
+libCAAI/f_caai_allft.cpp	648	654	sqlstr = "select cost_center,mat_code,sum(amt) all_use"
+libCAAI/f_caai_allft.cpp	661	668	sqlstr = "select sum(pass_amt) total_wt from tcaai06 t1"
+libCAAI/f_caai_allft.cpp	685	691	sqlstr = " update tcaai06 t1 set COST_HJ = round(pass_amt*@all_use/@total_wt,3)"
+libCAAI/f_caai_allft.cpp	712	719	sqlstr = "select sum(DIVVY_BASIC_N) total_wt from tcaai01 t1"
+libCAAI/f_caai_allft.cpp	743	743	sqlstr = " insert into tcaai06 (REC_CREATE_TIME,dept_code,account_period,sub_backlog_code,prod_date,cost_center,product_CODE,equ_no, sg_sign, mat_thick, mat_wid
+libCAAI/f_caai_allft.cpp	744	752	" select @datenow,dept_code,@account_period,sub_backlog_code,stats_period,cost_center,product_CODE,equ_no, sg_sign, mat_thick, mat_width,@mat_code,vfree1,vfree2
+libCAAI/f_caai_allft.cpp	768	774	sqlstr = "select sum(COST_HJ)  from tcaai06 t1"
+libCAAI/f_caai_allft.cpp	791	800	sqlstr = "update tcaai06 t1 set COST_HJ = COST_HJ + @dif_wt"
+libCAAI/f_caai_allft.cpp	812	819	sqlstr = " update tcaai06 set cost_cj=cost_hj,cost_gj=cost_hj,cost_yj=cost_hj"
+libCAAI/f_caai_allft.cpp	831	836	sqlstr = "update tcaai06 t1 set mat_name = (select mat_name from tcaac11 t2 where t1.mat_code = t2.mat_code)"
+libCAAI/f_caai_allft.cpp	844	849	sqlstr = " delete from tcaac20"
+libCAAI/f_caai_allft.cpp	856	856	sqlstr = " insert into tcaac20 (rec_creator, rec_create_time,account_period, dept_code, plan_no, equ_no, sub_backlog_code, mat_code, wt)"
+libCAAI/f_caai_allft.cpp	857	858	" select @rec_creator, @rec_create_time,@account_period, @dept_code, plan_no, equ_no, sub_backlog_code, mat_code, sum(wt)"
+libCAAI/f_caai_allft.cpp	859	865	" select vfree1 as plan_no, equ_no, sub_backlog_code, mat_code, wt"
+libCAAI/f_caai_allft.cpp	866	872	" select vfree1 as plan_no, equ_no, sub_backlog_code, mat_code, 0- wt  as wt"
+libCAAI/f_caai_allft.cpp	873	882	" select plan_no, equ_no, sub_backlog_code, mat_code, 0-wt as wt"
+libCAAI/f_caai_check1.cpp	49	60	sqlstr = "update tcaaia1 "
+libCAAI/f_caai_check1.cpp	89	100	sqlstr = "update tcaaia1 "
+libCAAI/f_caai_check1.cpp	128	139	sqlstr = "update tcaaia1 "
+libCAAI/f_caai_check1.cpp	167	178	sqlstr = "update tcaaia1"
+libCAAI/f_caai_check1.cpp	206	219	sqlstr = "update tcaaia1"
+libCAAI/f_caai_check1.cpp	228	229	sqlstr = "insert into tcaac03"
+libCAAI/f_caai_check1.cpp	230	239	" select distinct 'S',sub_backlog_code,mat_code,mat_name from  tcaaia1 "
+libCAAI/f_caai_check1.cpp	247	260	sqlstr = "update tcaaia1"
+libCAAI/f_caai_check1.cpp	281	287	sqlstr = "update tcaaia1"
+libCAAI/f_caai_check1.cpp	313	325	sqlstr = " update tcaaia1 t1"
+libCAAI/f_caai_check1.cpp	349	359	sqlstr = " update tcaaia1 t1"
+libCAAI/f_caai_check2.cpp	45	56	sqlstr = "update tcaaia1"
+libCAAI/f_caai_check2.cpp	67	77	sqlstr = "update tcaaia1"
+libCAAI/f_caai_cost.cpp	35	35	sqlstr =// "select distinct mat_code,company_code,sub_Backlog_code"
+libCAAI/f_caai_cost.cpp	36	42	" select distinct case when length(mat_code)>19 then 'PL_'||sub_Backlog_code else mat_code end mat_code,company_code"
+libCAAI/f_caai_cost.cpp	53	63	sqlstr = " update tcaai02"
+libCAAI/f_caai_cost.cpp	76	84	sqlstr = " update tcaai02"
+libCAAI/f_caai_ft.cpp	41	46	sqlstr = " delete from tcaai02"
+libCAAI/f_caai_ft.cpp	55	61	sqlstr = " update tcaais2 t1"
+libCAAI/f_caai_ft.cpp	70	75	sqlstr = "select *"
+libCAAI/f_caai_ft.cpp	115	117	sqlstr = " select NVL(SUM(divvy_basic_n),0) from tcaai01 "
+libCAAI/f_caai_ft.cpp	165	165	sqlstr = " insert into tcaai02 (REC_CREATE_TIME,dept_code,prod_date,sub_backlog_code,cost_center,stats_period,product_code,equ_no, sg_sign,prod_shift_group,prod
+libCAAI/f_caai_ft.cpp	166	169	" select @datenow,dept_code,prod_date,sub_backlog_code,cost_center,stats_period,product_CODE,equ_no, sg_sign,prod_shift_group,prod_shift_no, mat_thick, mat_widt
+libCAAI/f_caai_ft.cpp	176	176	sqlstr = " insert into tcaai02 (REC_CREATE_TIME,dept_code,prod_date,sub_backlog_code,cost_center,stats_period,product_code,equ_no, sg_sign,prod_shift_group,prod
+libCAAI/f_caai_ft.cpp	177	180	" select @datenow,dept_code,prod_date,sub_backlog_code,cost_center,stats_period,product_CODE,equ_no, sg_sign,prod_shift_group,prod_shift_no, mat_thick, mat_widt
+libCAAI/f_caai_ft.cpp	231	235	sqlstr = " select prod_code,sg_sign,mat_thick "
+libCAAI/f_caai_ft.cpp	272	272	sqlstr = " select sum(wt) from ( "
+libCAAI/f_caai_ft.cpp	273	278	" SELECT  t1.DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, t1.sub_backlog_code, equ_no, t1.sg_sign, t1.mat_thick, t1.mat_wid
+libCAAI/f_caai_ft.cpp	344	344	sqlstr = " insert into tcaai02 (REC_CREATE_TIME,dept_code,prod_date,sub_backlog_code,cost_center,stats_period,product_code,equ_no, sg_sign,prod_shift_group,prod
+libCAAI/f_caai_ft.cpp	345	346	" select @datenow,dept_code,prod_date,sub_backlog_code,sub_backlog_code,stats_period,product_code,equ_no, sg_sign,prod_shift_group,prod_shift_no, mat_thick, mat
+libCAAI/f_caai_ft.cpp	347	352	" SELECT t1.product_code,t1.DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, t1.sub_backlog_code, equ_no, t1.sg_sign, t1.mat_th
+libCAAI/f_caai_ft.cpp	372	372	sqlstr = " insert into tcaai02 (REC_CREATE_TIME,dept_code,prod_date,sub_backlog_code,cost_center,stats_period,product_code,equ_no, sg_sign,prod_shift_group,prod
+libCAAI/f_caai_ft.cpp	373	374	" select @datenow,dept_code,prod_date,sub_backlog_code,sub_backlog_code,stats_period,product_code,equ_no, sg_sign,prod_shift_group,prod_shift_no, mat_thick, mat
+libCAAI/f_caai_ft.cpp	375	380	" SELECT t1.product_code,t1.DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, t1.sub_backlog_code, equ_no, t1.sg_sign, t1.mat_th
+libCAAI/f_caai_ft.cpp	445	448	sqlstr = "select sum(WT),SUM(AMT)"
+libCAAI/f_caai_ft.cpp	482	486	sqlstr = "update tcaai02 "
+libCAAI/f_caai_ft.cpp	507	511	sqlstr = "update tcaai02 "
+libCAAI/f_caai_ft.cpp	549	553	sqlstr = "update tcaai02 "
+libCAAI/f_caai_ft.cpp	574	578	sqlstr = "update tcaai02 "
+libCAAI/f_caai_gb.cpp	32	36	sqlstr = " delete from tcaais1"
+libCAAI/f_caai_gb.cpp	43	44	sqlstr = "insert into tcaais1(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER,RELATION_NO,PRO_FLAG,MAT_CODE,PRODUCT_FLAG,WCE,QTY,WT"
+libCAAI/f_caai_gb.cpp	45	58	" SELECT @datenow, DEPT_CODE, STATS_PERIOD, COST_CENTER,RELATION_NO,PRO_FLAG,MAT_CODE,PRODUCT_FLAG,WCE,SUM(QTY),SUM(WT)"
+libCAAI/f_caai_gb.cpp	69	74	sqlstr = " delete from tcaai01"
+libCAAI/f_caai_gb.cpp	81	81	sqlstr = "insert into tcaai01(REC_CREATE_TIME,dept_code, stats_period, cost_center, prod_date, prod_shift_group, prod_shift_no, sub_backlog_code, equ_no, sg_sig
+libCAAI/f_caai_gb.cpp	82	90	" SELECT @datenow,  DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, sub_backlog_code, equ_no, sg_sign, mat_thick, mat_width,MA
+libCAAI/f_caai_gb.cpp	100	105	sqlstr = " update tcaaia14 t1 set wt = (select sum(WT) from tcaais1 t2 where t1.plan_no = t2.vfree1 and t1.equ_no = t2.equ_no AND t2.PRO_FLAG ='O' and t2.dept_c
+libCAAI/f_caai_gb.cpp	113	113	sqlstr = "insert into tcaai01(REC_CREATE_TIME,dept_code, stats_period, cost_center, prod_date, prod_shift_group, prod_shift_no, sub_backlog_code, equ_no, sg_sig
+libCAAI/f_caai_gb.cpp	114	138	" SELECT @datenow,  DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, t1.sub_backlog_code, t1.equ_no, sg_sign, mat_thick, mat_wi
+libCAAI/f_caai_gb.cpp	150	150	sqlstr = "insert into tcaais1(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER,RELATION_NO,PRO_FLAG,MAT_CODE,WT, sub_backlog_code, equ_no)"
+libCAAI/f_caai_gb.cpp	151	164	" SELECT @datenow, DEPT_CODE, STATS_PERIOD, sub_backlog_code,RELATION_NO,'I' PRO_FLAG,MAT_CODE,SUM(WT), sub_backlog_code, equ_no "
+libCAAI/f_caai_gb.cpp	175	175	sqlstr = "insert into tcaais1(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER,RELATION_NO,PRO_FLAG,MAT_CODE,WT, sub_backlog_code, equ_no)"
+libCAAI/f_caai_gb.cpp	176	188	" SELECT @datenow, DEPT_CODE, STATS_PERIOD, sub_backlog_code,RELATION_NO,'I' PRO_FLAG,MAT_CODE,SUM(WT), sub_backlog_code, equ_no "
+libCAAI/f_caai_gb.cpp	201	201	sqlstr = "insert into tcaais1(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER,RELATION_NO,PRO_FLAG,MAT_CODE,WT, sub_backlog_code, equ_no)"
+libCAAI/f_caai_gb.cpp	202	214	" SELECT @datenow, DEPT_CODE, STATS_PERIOD, sub_backlog_code,RELATION_NO,'I' PRO_FLAG,MAT_CODE,0-SUM(WT), sub_backlog_code, equ_no "
+libCAAI/f_caai_gb.cpp	225	230	sqlstr = " delete from tcaais2"
+libCAAI/f_caai_gb.cpp	238	238	sqlstr = " insert into tcaais2 ( rec_creator, rec_create_time, rule_type, data_from, mat_code, mat_name, stats_period, dept_code,sub_backlog_code,  cost_center,
+libCAAI/f_caai_gb.cpp	239	251	" select @rec_creator, @rec_create_time,decode(use_unit,0,'3','2') ,'DE',mat_code,' ',@stats_period,@dept_code,cost_center,cost_center,use_unit, unit_cost,@stat
+libCAAI/f_caai_gb.cpp	261	261	sqlstr = " insert into tcaais2 ( rec_creator, rec_create_time, rule_type, data_from, mat_code, mat_name, stats_period, dept_code,sub_backlog_code,  cost_center,
+libCAAI/f_caai_gb.cpp	262	278	" select @rec_creator, @rec_create_time,decode(use_unit,0,'3','2') ,'DE',mat_code,' ',@stats_period,@dept_code,cost_center,cost_center,use_unit*out_wt, unit_cos
+libCAAI/f_caai_getcb.cpp	49	52	sqlstr = " insert into tcaac05b(ACCOUNT_PERIOD,REC_CREATE_TIME,REC_CREATOR,PRICE_TERMS"
+libCAAI/f_caai_getcb.cpp	53	57	" select distinct @account_period,@rec_create_time,@rec_creator,@price_terms"
+libCAAI/f_caai_getcb.cpp	58	62	"select @account_period,@rec_create_time,@rec_creator,@price_terms"
+libCAAI/f_caai_getcb.cpp	64	75	" select t04.MSC,t04.MSC_LINE_NO,t04.IDX_NO as idx_no_a2"  //冶金规范、产线号
+libCAAI/f_caai_getcb.cpp	76	90	" SELECT MSC, MSC_LINE_NO, IDX_NO as idx_no_pl FROM TQMTm04 WHERE BASIC_TABLE_CODE = 'AY' and whole_Backlog_code != 'B0'"
+libCAAI/f_caai_getcb.cpp	101	104	sqlstr = " insert into tcaac05b(ACCOUNT_PERIOD,REC_CREATE_TIME,REC_CREATOR,PRICE_TERMS"
+libCAAI/f_caai_getcb.cpp	105	109	" select distinct @account_period,@rec_create_time,@rec_creator,@price_terms"
+libCAAI/f_caai_getcb.cpp	110	114	"select @account_period,@rec_create_time,@rec_creator,@price_terms"
+libCAAI/f_caai_getcb.cpp	116	127	" select t04.MSC,t04.MSC_LINE_NO,t04.IDX_NO as idx_no_a2"  //冶金规范、产线号
+libCAAI/f_caai_getcb.cpp	128	142	" SELECT MSC, MSC_LINE_NO, IDX_NO as idx_no_pl FROM TQMTm04 WHERE BASIC_TABLE_CODE = 'AY' and whole_Backlog_code = 'B0'"
+libCAAI/f_caai_getcb.cpp	153	156	sqlstr = " insert into tcaac05b(ACCOUNT_PERIOD,REC_CREATE_TIME,REC_CREATOR,PRICE_TERMS"
+libCAAI/f_caai_getcb.cpp	157	161	"select distinct @account_period,@rec_create_time,@rec_creator,@price_terms"
+libCAAI/f_caai_getcb.cpp	163	181	" select t04.MSC,t04.MSC_LINE_NO,t04.IDX_NO as idx_no_a2"  //冶金规范、产线号
+libCAAI/f_caai_getcb.cpp	191	204	sqlstr = " update  tcaac05b t1 set REFINE_ROUTE_CODE = (SELECT distinct REFINE_ROUTE_CODE  FROM"
+libCAAI/f_caai_getcb.cpp	212	217	sqlstr = " update tcaac05b t1 set sg_seq = (SELECT SG_SEQ  FROM TQMTPA4 t2  WHERE t1.SG_SIGN=t2.SG_SIGN)"
+libCAAI/f_caai_getcb.cpp	226	231	sqlstr = " update tcaac05b t1 set std_code = (SELECT std_code  FROM TQMTPA5 t2  WHERE t1.SG_STD=t2.SG_STD)"
+libCAAI/f_caai_getcb.cpp	241	248	sqlstr = " update tcaac05b t1 set MAT_CODE = MAT_CODE||std_code||sg_seq"
+libCAAI/f_caai_getcb.cpp	258	264	sqlstr = " select distinct t1.mat_code,t2.mat_name"
+libCAAI/f_caai_getcb.cpp	288	302	sqlstr = " update tcaac05b t0 set ALLOY_COST "
+libCAAI/f_caai_getcb.cpp	309	323	sqlstr = " update tcaac05b t0 set GTL_COST "
+libCAAI/f_caai_getcb.cpp	333	338	sqlstr = " select BACK_N1 AS AMT from tcaaib1"
+libCAAI/f_caai_getcb.cpp	345	349	sqlstr = " update tcaac05b set RH_COST = decode(REFINE_ROUTE_CODE,'RLR',2,1) * @fy_use"
+libCAAI/f_caai_getcb.cpp	360	364	sqlstr = " select distinct WHOLE_BACKLOG from tcaac05b"
+libCAAI/f_caai_getcb.cpp	398	403	sqlstr = " select BACK_N1 AS AMT from tcaaib1"
+libCAAI/f_caai_getcb.cpp	426	432	sqlstr = " select BACK_N1 AS AMT from tcaaib1"
+libCAAI/f_caai_getcb.cpp	447	453	sqlstr = " select BACK_N1 AS AMT from tcaaib1"
+libCAAI/f_caai_getcb.cpp	472	478	sqlstr = "update tcaac05b set PRICE_UNIT = round((A1_COST+ALLOY_COST+GTL_COST+RH_COST)/decode(CCL,0,100,CCL)*100,2)"
+libCAAI/f_caai_getprice.cpp	46	50	sqlstr = "SELECT PRICE_UNIT FROM TCAAC12  WHERE rownum=1 "
+libCAAI/f_caai_hs.cpp	55	58	sqlstr = "select heat_no,pono,whole_backlog_code,equ_no,plan_end_time"
+libCAAI/f_caai_hs.cpp	76	78	sqlstr = " select sum(in_mat_wt) from HPSBWA2"
+libCAAI/f_caai_hs.cpp	110	112	sqlstr = " select sum(mat_act_wt) from " + table +
+libCAAI/f_caai_hs.cpp	134	141	sqlstr = " select sum(decode(elm_name,'Ni',elm_act,0)) Ni"
+libCAAI/f_caai_jg.cpp	54	56	sqlstr = " select sum(mat_wt) from HPSBWB2"
+libCAAI/f_caai_jg.cpp	67	69	sqlstr = " select mat_no,substr(mat_no,1,10) as plan_no,mat_wt as wt from HPSBWB2"
+libCAAI/f_caai_jg.cpp	83	86	sqlstr = " delete from tcaais7"
+libCAAI/f_caai_jg.cpp	96	96	sqlstr = " insert into tcaais8(mat_no,mat_thick,mat_width,mat_len,equ_no,plan_no,heat_no,sg_sign,wt)"
+libCAAI/f_caai_jg.cpp	97	100	" select  out_mat_no,mat_thick,mat_width,mat_len,equ_name,plan_no,heat_no,sg_sign,MAT_ACT_WT "
+libCAAI/f_caai_jg.cpp	106	112	sqlstr = " select ORDER_NO,UNIT_CODE,MAT_THICK,EQU_NAME as EQU_NO, "
+libCAAI/f_caai_jg.cpp	141	145	sqlstr = "SELECT code_desc_2_content, code_desc_4_content"
+libCAAI/f_caai_jg.cpp	157	164	sqlstr = " select PRICE_UNIT,TAX_RATE_NAME,TAX_RATE"
+libCAAI/f_caai_jg.cpp	192	199	sqlstr = " select sum(PRICE_UNIT)"
+libCAAI/f_caai_jg.cpp	230	237	sqlstr = " select sum(mat_act_wt)"
+libCAAI/f_caai_jg.cpp	259	264	sqlstr = "update tcaais7 t1"
+libCAAI/f_caai_jg2.cpp	55	59	sqlstr = "select count(1) from tcaais8"
+libCAAI/f_caai_jg2.cpp	67	71	sqlstr = " update tcaais8 set wt=@wt,affirm_flag = '1',affirm_time = @datenow"
+libCAAI/f_caai_jg2.cpp	79	84	sqlstr = "select * from tcaais7"
+libCAAI/f_caai_jg2.cpp	111	115	sqlstr = " update tcaais7 set (wt,act_wt,qty) = (select sum(wt),sum(wt),count(1) from tcaais8 where plan_no in (select plan_no from tcaais8 where mat_no=@mat_no
+libCAAI/f_caai_jg3.cpp	59	63	sqlstr = " update tcaais8 set wt=@wt,REC_REVISE_TIME =@datenow"
+libCAAI/f_caai_jg3.cpp	76	76	sqlstr = " insert into tcaais8(REC_CREATE_TIME,mat_no,mat_thick,mat_width,mat_len,equ_no,plan_no,heat_no,sg_sign,wt)"
+libCAAI/f_caai_jg3.cpp	77	80	" select @datenow,@new_mat_no,mat_thick,mat_width,mat_len,equ_no,plan_no,heat_no,sg_sign,@wt"
+libCAAI/f_caai_jg3.cpp	91	93	sqlstr = " DELETE from tcaais8"
+libCAAI/f_caai_jg4.cpp	59	63	sqlstr = "select count(1) from tcaais8"
+libCAAI/f_caai_jg4.cpp	72	76	sqlstr = " update tcaais8 set wt=@wt,decide_code=@decide_code,affirm_flag = '1',affirm_time = @datenow"
+libCAAI/f_caai_jg4.cpp	86	91	sqlstr = "select count(1) from tcaais7"
+libCAAI/f_caai_jg4.cpp	97	97	sqlstr = "insert into tcaais7(account_period, prod_date, shift_group, shift_no, plan_no,  equ_no, out_unit_code, accu_grade, recv_dept, out_task_no, proc_mode, 
+libCAAI/f_caai_jg4.cpp	98	105	" select account_period, prod_date, shift_group, shift_no, plan_no,  equ_no, out_unit_code, accu_grade, recv_dept, out_task_no, proc_mode, fare_increase, cheap_
+libCAAI/f_caai_jg4.cpp	117	122	sqlstr = "select * from tcaais7"
+libCAAI/f_caai_jg4.cpp	150	155	sqlstr = " update tcaais7 set (wt,act_wt,qty) = (select sum(wt),sum(wt),count(1) from tcaais8 where plan_no in (select plan_no from tcaais8 where mat_no=@mat_no
+libCAAI/f_caai_matprice.cpp	53	60	sqlstr =  "select count(1) FROM TCAAC05B"
+libCAAI/f_caai_matprice.cpp	69	72	sqlstr = " select account_period from tcaac15"
+libCAAI/f_caai_matprice.cpp	101	101	sqlstr = "SELECT ALLOY_COST+GTL_COST+A1_COST+RH_COST+QJ_COST";
+libCAAI/f_caai_matprice.cpp	105	116	sqlstr = "SELECT round((ALLOY_COST+GTL_COST+A1_COST+RH_COST)/ccl*100,2) + QJ_COST";
+libCAAI/f_caai_ny.cpp	39	44	sqlstr = " delete from tcaai02"
+libCAAI/f_caai_ny.cpp	51	54	sqlstr = " SELECT S_DATETIME,E_DATETIME FROM tcaac06 WHERE STATS_PERIOD = @stats_period AND	VALID_FLAG	=	'1'";
+libCAAI/f_caai_ny.cpp	64	71	sqlstr = "select *"
+libCAAI/f_caai_ny.cpp	81	85	sqlstr = " select MEASURE_MODE "
+libCAAI/f_caai_ny.cpp	100	105	sqlstr = " delete from tcaai01"
+libCAAI/f_caai_ny.cpp	130	130	sqlstr = " insert into tcaai01(REC_CREATE_TIME,dept_code, stats_period, cost_center, prod_date, prod_shift_group, prod_shift_no, sub_backlog_code, equ_no, sg_si
+libCAAI/f_caai_ny.cpp	131	141	" SELECT @datenow,  t1.DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, t1.sub_backlog_code, equ_no, t1.sg_sign, t1.mat_thick, 
+libCAAI/f_caai_ny.cpp	154	157	sqlstr = " select sum(DIVVY_BASIC_N)"
+libCAAI/f_caai_ny.cpp	196	196	sqlstr =" insert into tcaai02 (REC_CREATE_TIME,dept_code,prod_date,sub_backlog_code,cost_center,stats_period,product_code,equ_no, sg_sign,prod_shift_group,prod_
+libCAAI/f_caai_ny.cpp	197	200	" select @datenow,dept_code,prod_date,sub_backlog_code,cost_center,stats_period,product_CODE,equ_no, sg_sign,prod_shift_group,prod_shift_no, mat_thick, mat_widt
+libCAAI/f_caai_ny.cpp	226	229	sqlstr = "select sum(WT),SUM(AMT)"
+libCAAI/f_caai_ny.cpp	260	263	sqlstr = "update tcaai02 "
+libCAAI/f_caai_pcost.cpp	51	55	sqlstr = " delete from tcaai03"
+libCAAI/f_caai_pcost.cpp	62	66	sqlstr = " delete from tcaai04"
+libCAAI/f_caai_pcost.cpp	73	74	sqlstr = "insert into tcaai03(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER,PRODUCT_CODE,QTY,WT"
+libCAAI/f_caai_pcost.cpp	75	84	" SELECT @datenow,  DEPT_CODE, STATS_PERIOD, COST_CENTER,MAT_CODE,SUM(QTY),SUM(WT)"
+libCAAI/f_caai_pcost.cpp	95	96	sqlstr = "insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER,PRODUCT_CODE,MAT_CODE,WT,COST_GJ,COST_YJ,COST_CJ"
+libCAAI/f_caai_pcost.cpp	97	105	" SELECT @datenow,DEPT_CODE, STATS_PERIOD, COST_CENTER,PRODUCT_CODE,MAT_CODE,SUM(WT),SUM(AMT),SUM(AMT),SUM(AMT)"
+libCAAI/f_caai_pcost.cpp	116	119	sqlstr = " select sub_Backlog_code"
+libCAAI/f_caai_pcost.cpp	126	132	sqlstr = "select SUM(WT)"
+libCAAI/f_caai_pcost.cpp	146	147	sqlstr = "insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER,MAT_CODE,WT"
+libCAAI/f_caai_pcost.cpp	148	157	" SELECT @datenow,DEPT_CODE, STATS_PERIOD, COST_CENTER,MAT_CODE,SUM(WT)"
+libCAAI/f_caai_pcost.cpp	166	167	sqlstr = "insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER,MAT_CODE,WT,COST_GJ,COST_YJ,COST_CJ"
+libCAAI/f_caai_pcost.cpp	168	177	" SELECT @datenow,DEPT_CODE, STATS_PERIOD, COST_CENTER,MAT_CODE,SUM(WT),SUM(AMT),SUM(AMT),SUM(AMT)"
+libCAAI/f_caai_pcost.cpp	187	194	sqlstr = " select distinct prod_shift_group "
+libCAAI/f_caai_pcost.cpp	201	208	sqlstr = "select SUM(WT)"
+libCAAI/f_caai_pcost.cpp	223	224	sqlstr = "insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER,MAT_CODE,wt"
+libCAAI/f_caai_pcost.cpp	225	235	" SELECT @datenow,DEPT_CODE, STATS_PERIOD, COST_CENTER,MAT_CODE,SUM(WT)"
+libCAAI/f_caai_pcost.cpp	245	246	sqlstr = "insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER,MAT_CODE,WT,COST_GJ,COST_YJ,COST_CJ"
+libCAAI/f_caai_pcost.cpp	247	257	" SELECT @datenow,DEPT_CODE, STATS_PERIOD, COST_CENTER,MAT_CODE,SUM(WT),SUM(AMT),SUM(AMT),SUM(AMT)"
+libCAAI/f_caai_pcost.cpp	271	277	sqlstr = " select distinct shift_no "
+libCAAI/f_caai_pcost.cpp	284	291	sqlstr = "select SUM(WT)"
+libCAAI/f_caai_pcost.cpp	306	307	sqlstr = "insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER,MAT_CODE,WT"
+libCAAI/f_caai_pcost.cpp	308	318	" SELECT @datenow,DEPT_CODE, PROD_DATE, sub_backlog_code,MAT_CODE,SUM(COMSUME_WT)"
+libCAAI/f_caai_pcost.cpp	330	338	sqlstr = " update tcaai04 t1 set product_code = (select CODE_DESC_1_CONTENT from TEP0002 t2 where t1.sub_Backlog_code = t2.code and t2.CODE_CLASS = 'CA29' )"
+libCAAI/f_caai_pcost.cpp	375	379	sqlstr = "select sub_Backlog_code"
+libCAAI/f_caai_pcost.cpp	386	391	sqlstr = " select distinct mat_code from tcaai04 "
+libCAAI/f_caai_pcost.cpp	410	417	sqlstr = " update tcaai04 set price_unit_gj=@price_gj,cost_gj=round(wt*@price_gj,6)"
+libCAAI/f_caai_pcost.cpp	434	441	sqlstr = " select DEPT_CODE, STATS_PERIOD, COST_CENTER,PRODUCT_CODE,QTY,WT"
+libCAAI/f_caai_pcost.cpp	450	469	sqlstr = " update tcaai04 t1 set output = @WT"
+libCAAI/f_caai_pcost.cpp	494	510	sqlstr = " update tcaai03 t1 set (cost_gj,cost_yj,cost_cj) = (select sum(cost_gj),sum(cost_yj),sum(cost_cj) from tcaai04 where 1=1 "
+libCAAI/f_caai_pcost.cpp	672	677	sqlstr = " update tcaai03 set PRICE_UNIT = round(cost_GJ/WT,6),PRICE_UNIT_GJ = round(cost_GJ/WT,6),PRICE_UNIT_YJ = round(cost_YJ/WT,6),PRICE_UNIT_CJ = round(cos
+libCAAI/f_caai_pcost.cpp	686	691	sqlstr = "update tcaai04 t1 set mat_name = (select mat_name from tcaac11 t2 where decode (INSTR(t1.mat_code,'_', 1, 1),0,t1.mat_code,substr(t1.mat_code,1,INSTR(
+libCAAI/f_caai_rate.cpp	47	52	sqlstr = " delete from tcaai01"
+libCAAI/f_caai_rate.cpp	74	74	sqlstr = "insert into tcaai01(REC_CREATE_TIME,dept_code, stats_period, cost_center, prod_date, prod_shift_group, prod_shift_no, sub_backlog_code, unit_code, sg_
+libCAAI/f_caai_rate.cpp	75	83	" SELECT @datenow,  DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_date, prod_shift_group, prod_shift_no, sub_backlog_code, equ_no, sg_sign, mat_thick, mat_width,MA
+libCAAI/f_caai_rate.cpp	108	113	sqlstr = " delete from tcaai01"
+libCAAI/f_caai_rate.cpp	137	137	sqlstr = "insert into tcaai01(REC_CREATE_TIME,dept_code, stats_period, cost_center, prod_date, prod_shift_group, prod_shift_no, sub_backlog_code, unit_code, sg_
+libCAAI/f_caai_rate.cpp	138	148	" SELECT @datenow,  DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_time, prod_shift_group, prod_shift_no, sub_backlog_code, equ_no, sg_sign, mat_thick, mat_width,MA
+libCAAI/f_caai_rate.cpp	172	178	sqlstr = " delete from tcaai01"
+libCAAI/f_caai_rate.cpp	202	202	sqlstr = "insert into tcaai01(REC_CREATE_TIME,dept_code, stats_period, cost_center, prod_date, prod_shift_group, prod_shift_no, sub_backlog_code, unit_code, sg_
+libCAAI/f_caai_rate.cpp	203	213	" SELECT @datenow,  DEPT_CODE, STATS_PERIOD, COST_CENTER, prod_time, prod_shift_group, prod_shift_no, sub_backlog_code, equ_no, sg_sign, mat_thick, mat_width,MA
+libCAAI/f_caai_sj.cpp	37	42	sqlstr = " delete from tcaai02"
+libCAAI/f_caai_sj.cpp	88	89	sqlstr = " insert into tcaai02 (REC_CREATE_TIME,dept_code,cost_center,stats_period,RELATION_NO,product_code,MAT_CODE,RULE_TYPE,WT"
+libCAAI/f_caai_sj.cpp	90	120	" select @datenow,dept_code,t1.cost_center,stats_period,t1.RELATION_NO,product_code,mat_code,'1',decode(all_wt,0,0,ROUND(WT*use_wt/all_wt,4))"
+libCAAI/f_caai_sj.cpp	129	130	sqlstr = "select mat_code,cost_center,relation_no,sum(all_wt-use_wt)"
+libCAAI/f_caai_sj.cpp	131	138	"select mat_code, cost_center, relation_no, sum(wt) all_wt,0 use_wt"
+libCAAI/f_caai_sj.cpp	139	148	" select mat_code, cost_center, relation_no,0 all_wt, sum(wt) use_wt"
+libCAAI/f_caai_sj.cpp	158	168	sqlstr = " update tcaai02 set wt = wt+@dif_wt"
+libCAAI/f_caai_sj.cpp	174	184	sqlstr = " update tcaai02 set wt = wt+@dif_wt"
+libCAAI/f_caai_start.cpp	47	51	sqlstr = " select count(1)"
+libCAAI/f_caai_start.cpp	57	59	sqlstr = " insert into tcaac06(stats_period,S_DATETIME,E_DATETIME,VALID_FLAG,DEPT_CODE)"
+libCAAI/f_caai_unit.cpp	38	43	sqlstr = " delete from tcaai04"
+libCAAI/f_caai_unit.cpp	53	62	sqlstr = "select cost_center sub_backlog_code,mat_code,unit_cost,unit_cost2"
+libCAAI/f_caai_unit.cpp	69	70	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	71	78	" SELECT @datenow, dept_code, stats_period, cost_center, product_code, @mat_code, 0, wt*@unit_cost,wt*@unit_cost2, wt*@unit_cost,wt*@unit_cost2"
+libCAAI/f_caai_unit.cpp	93	99	sqlstr = " select distinct product_code,sg_sign,mat_thick"
+libCAAI/f_caai_unit.cpp	108	114	sqlstr = " select mat_code,cost_center, SUM(decode(type_code,'GJ',unit_cost,0)) unit_cost, SUM(decode(type_code,'CJ',unit_cost,0)) unit_cost2"
+libCAAI/f_caai_unit.cpp	122	123	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	124	134	" SELECT @datenow, dept_code, stats_period, cost_center, product_code, @mat_code, 0, round(wt*@unit_cost,6),round(wt*@unit_cost2,6), round(wt*@unit_cost,6),roun
+libCAAI/f_caai_unit.cpp	151	152	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	153	165	" SELECT @datenow, t1.dept_code, t1.stats_period, t1.cost_center, t1.product_code, mat_code, 0, round(wt*unit_cost,6), round(wt*unit_cost2,6),  round(wt*unit_co
+libCAAI/f_caai_unit.cpp	180	186	sqlstr = " select mat_code,cost_center, SUM(decode(type_code,'GJ',unit_cost,0)) unit_cost, SUM(decode(type_code,'CJ',unit_cost,0)) unit_cost2"
+libCAAI/f_caai_unit.cpp	194	195	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	196	206	" SELECT @datenow, dept_code, stats_period, cost_center, product_code, @mat_code, 0, round(wt*@unit_cost,6),round(wt*@unit_cost2,6), round(wt*@unit_cost,6),roun
+libCAAI/f_caai_unit.cpp	223	224	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	225	237	" SELECT @datenow, t1.dept_code, t1.stats_period, t1.cost_center, t1.product_code, mat_code, 0, round(wt*unit_cost,6),round(wt*unit_cost2,6), round(wt*unit_cost
+libCAAI/f_caai_unit.cpp	251	257	sqlstr = " select mat_code,cost_center, SUM(decode(type_code,'GJ',unit_cost,0)) unit_cost, SUM(decode(type_code,'CJ',unit_cost,0)) unit_cost2"
+libCAAI/f_caai_unit.cpp	265	266	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	267	277	" SELECT @datenow, dept_code, stats_period, cost_center, product_code, @mat_code, 0, round(wt*@unit_cost,6),round(wt*@unit_cost2,6), round(wt*@unit_cost,6),roun
+libCAAI/f_caai_unit.cpp	293	294	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	295	307	" SELECT @datenow, t1.dept_code, t1.stats_period, t1.cost_center, t1.product_code, mat_code, 0, round(wt*unit_cost,6),round(wt*unit_cost2,6), round(wt*unit_cost
+libCAAI/f_caai_unit.cpp	323	324	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	325	337	" SELECT @datenow, t1.dept_code, t1.stats_period, t1.cost_center, t1.product_code, mat_code, 0, round(wt*unit_cost,6),round(wt*unit_cost,6),round(wt*unit_cost,6
+libCAAI/f_caai_unit.cpp	348	349	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	350	362	" SELECT @datenow, t1.dept_code, t1.stats_period, t1.cost_center, t1.product_code, mat_code, 0, round(wt*unit_cost,6),round(wt*unit_cost,6), round(wt*unit_cost,
+libCAAI/f_caai_unit.cpp	374	375	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	376	388	" SELECT @datenow, t1.dept_code, t1.stats_period, t1.cost_center, t1.product_code, mat_code, 0, round(wt*unit_cost,6),round(wt*unit_cost,6),round(wt*unit_cost,6
+libCAAI/f_caai_unit.cpp	399	400	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	401	413	" SELECT @datenow, t1.dept_code, t1.stats_period, t1.cost_center, t1.product_code, mat_code, 0, round(wt*unit_cost,6),round(wt*unit_cost,6),round(wt*unit_cost,6
+libCAAI/f_caai_unit.cpp	426	427	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	428	440	" SELECT @datenow, t1.dept_code, t1.stats_period, t1.cost_center, t1.product_code, t2.mat_code, 0, round(wt*unit_cost,6),round(wt*unit_cost,6), round(wt*unit_co
+libCAAI/f_caai_unit.cpp	451	452	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	453	465	" SELECT @datenow, t1.dept_code, t1.stats_period, t1.cost_center, t1.product_code, mat_code, 0, round(wt*unit_cost,6),round(wt*unit_cost,6),round(wt*unit_cost,6
+libCAAI/f_caai_unit.cpp	478	479	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	480	492	" SELECT @datenow, t1.dept_code, t1.stats_period, t1.cost_center, t1.product_code, mat_code, 0, round(wt*unit_cost,6),round(wt*unit_cost,6), round(wt*unit_cost,
+libCAAI/f_caai_unit.cpp	503	504	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2,std_amt_1,std_amt
+libCAAI/f_caai_unit.cpp	505	517	" SELECT @datenow, t1.dept_code, t1.stats_period, t1.cost_center, t1.product_code, mat_code, 0, round(wt*unit_cost,6),round(wt*unit_cost,6),round(wt*unit_cost,6
+libCAAI/f_caai_unit.cpp	538	544	sqlstr = " select DEPT_CODE, STATS_PERIOD, COST_CENTER,PRODUCT_CODE,QTY,WT"
+libCAAI/f_caai_unit.cpp	558	563	sqlstr = " select distinct mat_code from tcaac10"
+libCAAI/f_caai_unit.cpp	574	575	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2"
+libCAAI/f_caai_unit.cpp	576	578	" SELECT @datenow, @dept_code, @stats_period, @cost_center, @product_code, MAT_CODE, 0, sum(unit_cost1)*@wt,sum(unit_cost2)*@wt "
+libCAAI/f_caai_unit.cpp	579	588	" select mat_code,decode(type_code,'GJ',unit_cost,0) unit_cost1,decode(type_code,'CJ',unit_cost,0) unit_cost2 "
+libCAAI/f_caai_unit.cpp	592	593	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2"
+libCAAI/f_caai_unit.cpp	594	596	" SELECT @datenow, @dept_code, @stats_period, @cost_center, @product_code, MAT_CODE, 0, sum(unit_cost1)*@wt,sum(unit_cost2)*@wt "
+libCAAI/f_caai_unit.cpp	597	606	" select mat_code,decode(type_code,'GJ',unit_cost,0) unit_cost1,decode(type_code,'CJ',unit_cost,0) unit_cost2 "
+libCAAI/f_caai_unit.cpp	610	611	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2"
+libCAAI/f_caai_unit.cpp	612	614	" SELECT @datenow, @dept_code, @stats_period, @cost_center, @product_code, MAT_CODE, 0, sum(unit_cost1)*@wt,sum(unit_cost2)*@wt "
+libCAAI/f_caai_unit.cpp	615	624	" select mat_code,decode(type_code,'GJ',unit_cost,0) unit_cost1,decode(type_code,'CJ',unit_cost,0) unit_cost2 "
+libCAAI/f_caai_unit.cpp	628	629	sqlstr = " insert into tcaai04(REC_CREATE_TIME, DEPT_CODE, STATS_PERIOD, COST_CENTER, PRODUCT_CODE, MAT_CODE, MAT_USE_1, MAT_COST_1,MAT_COST_2"
+libCAAI/f_caai_unit.cpp	630	632	" SELECT @datenow, @dept_code, @stats_period, @cost_center, @product_code, MAT_CODE, 0, sum(unit_cost1)*@wt,sum(unit_cost2)*@wt "
+libCAAI/f_caai_unit.cpp	633	642	" select mat_code,decode(type_code,'GJ',unit_cost,0) unit_cost1,decode(type_code,'CJ',unit_cost,0) unit_cost2 "
+libCAAI/f_caai_unit.cpp	676	692	sqlstr = " update tcaai03 t1 set (mat_cost_1,mat_cost_2) = (select sum(mat_cost_1),sum(mat_cost_2) from tcaai04 where 1=1 "
+libCAAI/f_caai_unit.cpp	721	726	sqlstr = " update tcaai03 set UNIT_PRICE = round(mat_cost_1/WT,6)"
+libCAAI/f_caai_unit.cpp	735	740	sqlstr = "update tcaai04 t1 set mat_name = (select mat_name from tcaac11 t2 where t1.mat_code = t2.mat_code)"
+libCAAI/f_caai_updprice.cpp	41	46	sqlstr = " select distinct mat_code from tcaai06 "
+libCAAI/f_caai_updprice.cpp	53	58	sqlstr = "SELECT PRICE_TERMS,PRICE_UNIT FROM TCAAC12 "
+libCAAI/f_caai_updprice.cpp	83	90	sqlstr = " update tcaai06 set cost_gj=round(wt*@price_gj,6),cost_yj=round(wt*@price_yj,6),cost_cj=round(wt*@price_cj,6) "
+libCAAI/f_caai_updprice.cpp	105	112	sqlstr = " update tcaai05 t1 set (cost_hj,cost_gj,cost_yj,cost_cj) "
+libCAAI/f_caai_updprice.cpp	120	124	sqlstr = " update tcaai05 set PRICE_UNIT = round(cost_hj/WT,6),PRICE_UNIT_GJ = round(cost_gj/WT,6),PRICE_UNIT_cj = round(cost_cj/WT,6),PRICE_UNIT_yj = round(cos
+libCAAI/f_caai_xnmes.cpp	44	48	sqlstr = "delete from tcaaia1"
+libCAAI/f_caai_xnmes.cpp	56	59	sqlstr = "insert into tcaaia1(prod_time,  prod_shift_group,prod_shift_no, product_flag, dept_code, equ_no,sub_backlog_code"
+libCAAI/f_caai_xnmes.cpp	60	65	" select @stats_period||'000000', prod_shift_group, prod_shift_no, product_flag, factory_div,equ_no,case when factory_div='S' then substr(unit_code,1,1)  else w
+libCAAI/f_caai_xnmes.cpp	66	84	"  select  acjc_relation_id as relation_no, transaction_code,product_code,DECODE(factory_div,'X',whole_backlog_code||'01',equ_no) EQU_NO,whole_backlog_code,mat_
+libCAAI/f_caai_xnmes.cpp	96	99	sqlstr = "insert into tcaaia1(prod_time,  prod_shift_group,prod_shift_no, product_flag, dept_code, equ_no,sub_backlog_code"
+libCAAI/f_caai_xnmes.cpp	100	110	" select prod_time,  prod_shift_group,prod_shift_no, product_flag, dept_code, t2.dev_code,substr(t2.dev_code,1,1)"
+libCAAI/f_caai_xnmes.cpp	120	124	sqlstr = " update tcaaia1 t1 set mat_name=(select mat_name from tcaac11 t2 where t1.mat_code=t2.mat_code) "
+libCAAI/f_caai_xnmes.cpp	131	135	sqlstr = "delete from tcaai08"
+libCAAI/f_caai_xnmes.cpp	197	198	sqlstr = " insert into tcaai08(TYPE_CODE,DEPT_CODE,STATS_PERIOD"
+libCAAI/f_caai_xnmes.cpp	199	209	" select transaction_code,@dept_code,@stats_period"
+libCAAI/f_caai_xnmes.cpp	218	221	sqlstr = " delete from tcaaia14 "
+libCAAI/f_caai_xnmes.cpp	231	231	sqlstr = " insert into tcaaia14(REC_CREATE_TIME,pono,RELATION_NO,heat_no,plan_no,dept_code,stats_period,equ_no,SUB_BACKLOG_CODE,ONOFF_TIME,start_time,end_time)"
+libCAAI/f_caai_xnmes.cpp	232	237	" select  @datenow,t2.pono,t1.heat_no,t1.heat_no,t1.sm_plan_no,@dept_code,@stats_period,t1.dev_code,SUBSTR(t1.dev_code,1,1),round(sum(TO_NUMBER((to_date(decode(
+libCAAI/f_caai_xnmes.cpp	248	248	sqlstr = " insert into tcaaia14(REC_CREATE_TIME,RELATION_NO,heat_no,plan_no,dept_code,stats_period,equ_no,SUB_BACKLOG_CODE,ONOFF_TIME,start_time,end_time,order_
+libCAAI/f_caai_xnmes.cpp	249	255	" select  @datenow,roll_plan_no,heat_no,roll_plan_no,@dept_code,@stats_period,WHOLE_bACKLOG_CODE||'01',WHOLE_bACKLOG_CODE,round(sum((TO_NUMBER(to_date(plan_end_
+libCAAI/f_caai_xnmes.cpp	264	264	sqlstr = " insert into tcaaia14(REC_CREATE_TIME,RELATION_NO,heat_no,plan_no,dept_code,stats_period,equ_no,SUB_bACKLOG_CODE,ONOFF_TIME,start_time,end_time,ENTRUS
+libCAAI/f_caai_xnmes.cpp	265	271	" select  @datenow,plan_no,heat_no,plan_no,@dept_code,@stats_period,equ_no,PLAN_BACKLOG_CODE,round(sum((TO_NUMBER(to_date(plan_end_time,'yyyymmddhh24miss')-to_d
+libCAAI/f_caai_xnmes.cpp	280	285	sqlstr = " update tcaaia14 t1 set ONOFF_TIME = (select round((TO_NUMBER(to_date(max(roll_end_time),'yyyymmddhh24miss')-to_date(min(roll_start_time),'yyyymmddhh2
+libCAAI/f_caai_xnmes.cpp	292	297	sqlstr = " update tcaaia14 t1 set ONOFF_TIME = (select round((TO_NUMBER(to_date(max(roll_end_time),'yyyymmddhh24miss')-to_date(min(roll_start_time),'yyyymmddhh2
+libCAAI/f_caai_xnmes.cpp	304	309	sqlstr = " update tcaaia14 t1 set ONOFF_TIME = (select round((TO_NUMBER(to_date(max(roll_end_time),'yyyymmddhh24miss')-to_date(min(roll_start_time),'yyyymmddhh2
+libCAAI/f_caai_xnmes.cpp	316	321	sqlstr = " update tcaaia14 t1 set ONOFF_TIME = (select round((TO_NUMBER(to_date(max(roll_end_time),'yyyymmddhh24miss')-to_date(min(roll_start_time),'yyyymmddhh2
+libCAAI/f_caai_xnmes.cpp	330	330	sqlstr = " insert into tcaaia14(REC_CREATE_TIME,RELATION_NO,heat_no,plan_no,dept_code,stats_period,equ_no,SUB_bACKLOG_CODE,ONOFF_TIME,start_time,end_time,ENTRUS
+libCAAI/f_caai_xnmes.cpp	331	337	" select  @datenow,plan_no,heat_no,plan_no,@dept_code,@stats_period,equ_no,PLAN_BACKLOG_CODE,round(sum((TO_NUMBER(to_date(plan_end_time,'yyyymmddhh24miss')-to_d
+libCAAI/f_caai_xnmes.cpp	347	351	sqlstr = " update tcaai08 t1 set (equ_no,prod_date)= (select equ_no,stats_period from tcaaia14 t2 where t1.plan_no=t2.plan_no and t2.sub_Backlog_code=decode(@de
+libCAAI/f_cm_mesac1_snd.cpp	62	70	sqlstr = " SELECT account_period,PLAN_NO,SUB_BACKLOG_CODE,MAT_CODE,sum(WT) MAT_USE_1,EQU_NO "
+libCAAI/f_cm_mesac1_snd.cpp	102	103	sqlstr = " select E_DATETIME from tcaac15 where account_period=@account_period ";
+libCAAI/f_cm_mesac1_snd.cpp	212	218	sqlstr = "update tcaac20 set SEND_FLAG = '1',SEND_TIME = @datenow,TC_NO='MESAC1'"
+libCAAI/f_cm_mesac2_snd.cpp	90	92	sqlstr = " SELECT CODE_DESC_4_CONTENT FROM TEP0002 "
+libCAAI/f_cm_mesac3_snd.cpp	67	74	sqlstr = " SELECT DISTINCT PLAN_NO,EQU_NO,SUB_BACKLOG_CODE "
+libCAAI/f_cm_mesac3_snd.cpp	99	101	sqlstr = "SELECT pono FROM TPSSM41"
+libCAAI/f_cm_mesac3_snd.cpp	119	122	sqlstr = "SELECT charge_no,dev_code FROM TPSSM42"
+libCAAI/f_cm_mesac3_snd.cpp	205	206	sqlstr = " selecT E_DATETIME FROM  tcaac15 where account_period=@account_period ";
+libCAAI/f_cm_mesac3_snd.cpp	240	250	sqlstr = " SELECT PLAN_NO,EQU_NO,DEPT_CODE,MAT_CODE,SUM(WT) "
+libCAAI/f_cm_mesac3_snd.cpp	593	599	sqlstr = "update tcaac20 set SEND_FLAG = '1',SEND_TIME = @datenow,TC_NO='MESAC3'"
+p_caac_3820/caac01_inq.cpp	48	50	sqlstr = " SELECT * "
+p_caac_3820/caac03_1_inq.cpp	66	67	sqlstr = "select @sub_backlog_code as SUB_BACKLOG_CODE,@cname as ITEM_CNAME , MAT_CODE,MAT_NAME,@dept_code as BACK_CODE_1 from tcaac11  where MAT_CODE not in(se
+p_caac_3820/caac03_inq.cpp	41	44	sqlstr = " SELECT * "
+p_caac_3820/caac03_inq_a.cpp	59	63	sqlstr = "	SELECT	MAT_CODE,MAT_NAME,'" + tcaac03["SUB_BACKLOG_CODE"].ToString() + "' as  SUB_BACKLOG_CODE,'" + tcaac03["BACK_CODE_1"].ToString() + "' as BACK_CO
+p_caac_3820/caac03_ins.cpp	58	61	sqlstr = " SELECT COST_CENTER"
+p_caac_3820/caac03_ins.cpp	72	73	sqlstr = "SELECT mat_name FROM TCAAC11 where mat_code=@mat_code" ;
+p_caac_3820/caac04_getcode.cpp	31	35	sqlstr = " select num_code mat_code,mat_cname||decode(scale,'无','',' ','',scale)||decode(tech_critr,'无','',' ','',tech_critr)||decode(sg_sign,'无','',' ','',sg_s
+p_caac_3820/caac04_getcode.cpp	36	40	" select distinct mat_code,mat_name ,'吨' mat_unit,'1' valid_flag "
+p_caac_3820/caac04_inq.cpp	38	43	sqlstr = "	SELECT	*"
+p_caac_3820/caac05_1_inq.cpp	61	69	sqlstr = "	SELECT	NVL(max(VERSION_NO),0)+1"
+p_caac_3820/caac05_1_inq.cpp	95	99	sqlstr = "	SELECT	TCAAC03.MAT_CODE,TCAAC03.MAT_NAME,@dept_code,@sub_backlog_code,@sg_sign,@mat_thick,@mat_width,@mat_len,@version_no,tcaac11.mat_UNIT"
+p_caac_3820/caac05_inq.cpp	71	77	sqlstr = "	SELECT	* "
+p_caac_3820/caac05_inq.cpp	107	113	sqlstr1 = "	SELECT	COUNT(1) "
+p_caac_3820/caac05_sg_inq.cpp	84	85	sqlstr = "	SELECT distinct sg_sign"
+p_caac_3820/caac06_inq.cpp	43	44	sqlstr = "	SELECT	*"
+p_caac_3820/caac07_inq.cpp	56	60	sqlstr = "	SELECT	* "
+p_caac_3820/caac07_inq_a.cpp	44	50	sqlstr = "	SELECT	MAT_CODE,MAT_NAME,SUB_BACKLOG_CODE,BACK_CODE_1 DEPT_CODE "
+p_caac_3820/caac07_ins.cpp	63	65	sqlstr = "SELECT COST_CENTER FROM TCAAC08"
+p_caac_3820/caac09_inq.cpp	39	42	sqlstr = " SELECT * "
+p_caac_3820/caac09_inq_a.cpp	46	47	sqlstr = "	SELECT	MAT_THICK,MAT_WIDTH,SG_SIGN,@tcaac09.SUB_BACKLOG_CODE as  SUB_BACKLOG_CODE "
+p_caac_3820/caac10_inq.cpp	38	43	sqlstr = "	SELECT	*"
+p_caac_3820/caac12_getcw.cpp	38	39	sqlstr = " delete from tcaac12 where price_terms='PJ' and mat_code in(select distinct prod_code from tsiac06 "
+p_caac_3820/caac12_getcw.cpp	44	45	sqlstr = " delete from tcaac12 where price_terms='PJ' and mat_code in(select distinct mat_code from tacacmx4 where length(mat_code)>10) and dept_code='" + dept_
+p_caac_3820/caac12_getcw.cpp	51	54	sqlstr = " select distinct account_period from tsifi08 "
+p_caac_3820/caac12_getcw.cpp	65	66	sqlstr = " select to_char(add_months(to_date('" + prod_time + "','yyyyMM'),-1),'yyyyMM')  from  dual ";
+p_caac_3820/caac12_getcw.cpp	75	75	sqlstr = " insert into tcaac12(mat_code,mat_name,dept_code,price_unit,price_terms,valid_flag) "
+p_caac_3820/caac12_getcw.cpp	76	79	" select distinct t3.mat_code,t3.mat_name,'" + dept_code + "',round(decode(period_end_qty,0,0,period_end_amt/period_end_qty),4) price,'PJ','1' from tacacmx4 t1,
+p_caac_3820/caac12_getcw.cpp	85	85	sqlstr = " insert into tcaac12(mat_code,mat_name,dept_code,price_unit,price_terms,valid_flag) "
+p_caac_3820/caac12_getcw.cpp	86	89	" select distinct t1.mat_code,t1.mat_name,'" + dept_code + "',round(decode(period_end_qty,0,0,period_end_amt/period_end_qty),4) price,'PJ','1' from tacacmx4 t1,
+p_caac_3820/caac12_inq.cpp	61	66	sqlstr = "	SELECT	*"
+p_caac_3820/caac12_inq.cpp	109	113	sqlstr1 = "	SELECT	COUNT(1)\
+p_caac_3820/caac12_inq_a.cpp	43	47	sqlstr = "	SELECT	MAT_CODE,MAT_NAME,'JH' AS PRICE_TERMS,MAT_UNIT as UNIT "
+p_caac_3820/caac12_ins.cpp	97	98	sqlstr = " select mat_name from tcaac11 "
+p_caac_3820/caac12_upd.cpp	79	80	sqlstr = " select mat_name from tcaac11 "
+p_caac_3820/caac13_inq.cpp	34	38	sqlstr = "	SELECT	count(1) "
+p_caac_3820/caac13_inq.cpp	44	44	sqlstr = " insert into tcaac13 (dept_code, stats_period, job_code, job_code_cname, call_func, call_func_desc, status_code, call_form, succs_flag)"
+p_caac_3820/caac13_inq.cpp	45	48	" select distinct @dept_code, @stats_period, job_code, job_code_cname, call_func, call_func_desc, status_code, call_form, ' '"
+p_caac_3820/caac13_inq.cpp	66	69	sqlstr = "	SELECT	* "
+p_caac_3820/caac14_inq.cpp	39	40	sqlstr = "SELECT * FROM TCAAC14"
+p_caac_3820/caac15_inq.cpp	69	71	sqlstr = "SELECT * FROM tcaac15 WHERE 1=1  " ;
+p_caac_3820/caac16_inq.cpp	59	62	sqlstr = "SELECT * FROM tcaac16 WHERE 1=1  ";
+p_caac_3820/caac16_ins.cpp	81	84	sqlstr = "select CODE_DESC_1_CONTENT from tep0002 T1 "
+p_caac_3820/caac20_inq.cpp	51	58	sqlstr = "	SELECT	sub_backlog_code,@begin_date as begin_date,@end_date as end_date,@price_terms as price_terms"
+p_caac_3820/caac20r_inq.cpp	52	60	sqlstr = "	SELECT distinct	@sub_backlog_code as sub_backlog_code,@begin_date as begin_date,@end_date as end_date,@price_terms as price_terms,equ_no"
+p_caac_3820/caac_inq.cpp	45	50	sqlstr = " SELECT code,code_desc_1_content from tep0002 t1"
+p_caac_3820/caac_inq.cpp	57	62	sqlstr = " SELECT code,code_desc_1_content from tep0002 t1"
+p_caac_3820/caacjl_inq.cpp	48	51	sqlstr = "SELECT * FROM TCAAIB1 WHERE 1=1  ";
+p_caac_3820/caaib1_inq.cpp	65	67	sqlstr = "SELECT * FROM TCAAIB1"
+p_caac_3820/caaib1_inq.cpp	99	101	sqlstr = "SELECT count(1) FROM TCAAIB1"
+p_caac_3820/caaib1_ins.cpp	58	58	sqlstr = "select  @project_id||CASE WHEN key_seq IS NULL OR key_seq = '' THEN '000001' ELSE trim(to_char(to_number(nvl(key_seq,0))+1, '000000')) END from ("
+p_caac_3820/caaib1_ins.cpp	59	64	" select max(substr(key_seq,length(@project_id)+1,6)) key_seq"
+p_caai_3840/caai01_inq.cpp	75	77	sqlstr = "SELECT * FROM TCAAIA1"
+p_caai_3840/caai01_inq.cpp	170	172	sqlstr = "SELECT count(1) FROM TCAAIA1"
+p_caai_3840/caai10_inq_m.cpp	47	49	sqlstr = "SELECT MAT_CODE,MAT_NAME,MAT_UNIT FROM TCAAC11"
+p_caai_3840/caai10_inq_m.cpp	51	53	sqlstr_1 = " select FIELD_NAME from tcaac14"
+p_caai_3840/caai10_inq_m.cpp	67	69	sqlstr = "SELECT MAT_CODE,MAT_NAME,MAT_UNIT as UNIT FROM TCAAC11"
+p_caai_3840/caai10_inq_m.cpp	70	72	sqlstr_1 = " select FIELD_NAME from tcaac14"
+p_caai_3840/caai10_inq_m.cpp	85	89	sqlstr = "SELECT MAT_CODE,MAT_NAME,MAT_UNIT FROM TCAAC11"
+p_caai_3840/caai10_inq_m.cpp	93	96	sqlstr = "SELECT MAT_CODE,MAT_NAME,MAT_UNIT FROM TCAAC11"
+p_caai_3840/caai12_1_inq.cpp	60	64	sqlstr = " SELECT prod_date,mat_code,mat_name,shift_group,COMSUME_WT,UNIT,REMARK,REGIST_MAN,REC_CREATOR,sub_backlog_code,sg_sign,mat_thick FROM TCAAIA10"
+p_caai_3840/caai12_1_inq.cpp	94	96	sqlstr = " SELECT @prod_date,mat_code,mat_name,@shift_group,0,MAT_UNIT,' ',' ',' ',@sub_backlog_code,' ',0  FROM TCAAC11 "
+p_caai_3840/caai12_1_inq.cpp	97	99	sqlstr_1 = " select FIELD_NAME from tcaac14"
+p_caai_3840/caai12_inq.cpp	44	46	sqlstr = " SELECT * FROM TCAAIA12"
+p_caai_3840/caai12_inq.cpp	61	61	sqlstr = " SELECT * FROM ("
+p_caai_3840/caai12_inq.cpp	62	67	" SELECT * FROM TCAAIA12"
+p_caai_3840/caai12_inq.cpp	68	74	" SELECT * FROM TCAAIA12"
+p_caai_3840/caai12s_inq.cpp	45	48	sqlstr = " SELECT t1.*,t2.heat_no FROM TCAAIA12 t1"
+p_caai_3840/caai12s_inq.cpp	63	63	sqlstr = " SELECT t1.*,t2.heat_no FROM ("
+p_caai_3840/caai12s_inq.cpp	64	69	" SELECT * FROM TCAAIA12"
+p_caai_3840/caai12s_inq.cpp	70	77	" SELECT * FROM TCAAIA12"
+p_caai_3840/caai14_inq.cpp	75	77	sqlstr = "SELECT * FROM tcaaia14"
+p_caai_3840/caai14_inq.cpp	146	148	sqlstr = "SELECT count(1) FROM tcaaia14"
+p_caai_3840/caaicx11_inq.cpp	49	51	sqlstr = "SELECT * FROM tcaai07"
+p_caai_3840/caaicx32_inq.cpp	52	61	sqlstr = "	SELECT	SUB_BACKLOG_CODE,PROD_SHIFT_GROUP,EQU_NO,SG_SIGN,MAT_THICK,sum(QTY) qty"
+p_caai_3840/caaicx32_inq2.cpp	45	58	sqlstr = " select 	t4.mat_code,t4.mat_name,WT,AMT,STD_WT,PRICE_UNIT_GJ,USE_UNIT COST_STD_UNIT,(USE_UNIT-STD_WT) DIF "
+p_caai_3840/caaicx33_inq.cpp	51	51	sqlstr = " select t.*,t2.mat_name from ("
+p_caai_3840/caaicx33_inq.cpp	52	55	" select dept_code,product_code mat_code,prod_shift_group,prod_shift_no,sub_Backlog_code,equ_no,sg_sign,mat_thick,vfree1,vfree2,vfree3,vfree4,vfree5,SUM(WT) wt,
+p_caai_3840/caaicx33_inq.cpp	61	64	" select dept_code, mat_code, prod_shift_group, prod_shift_no, sub_Backlog_code, equ_no, sg_sign, mat_thick, vfree1, vfree2, vfree3, vfree4, vfree5, 0 wt, sum(W
+p_caai_3840/caaicx35_inq.cpp	43	46	sqlstr = " select mat_code,mat_name,mat_unit,UNIT_PRICE,bz_wt,UNIT_WT,UNIT_COST,best_wt,best_cost"
+p_caai_3840/caaicx35_inq.cpp	47	79	" select t1.mat_code,t1.mat_name,t1.mat_unit,decode(best_proc_wt,0,0,round(best_wt/best_proc_wt,6)) best_wt,decode(best_proc_wt,0,0,round(best_cost/best_proc_wt
+p_caai_3840/caaicx36_inq.cpp	53	58	sqlstr = "	SELECT	SUB_BACKLOG_CODE,EQU_NO,sum(QTY) qty,sum(WT) WT,sum(COST_GJ) COST_GJ,sum(COST_YJ) COST_YJ,sum(COST_CJ) COST_CJ,decode(sum(WT),0,0,round(sum(CO
+p_caai_3840/caaicx36_inq2.cpp	45	56	sqlstr = " SELECT	mat_code,mat_name,sum(WT) WT,sum(COST_GJ) AMT,sum(COST_GJ) COST_GJ,sum(COST_YJ) COST_YJ ,sum(COST_CJ) COST_CJ"
+p_caai_3840/caaicx37_inq.cpp	49	54	sqlstr = "	SELECT	SUB_BACKLOG_CODE,SG_SIGN,MAT_THICK,sum(QTY) qty,sum(WT) WT,sum(COST_GJ) COST_GJ,sum(COST_YJ) COST_YJ,sum(COST_CJ) COST_CJ,decode(sum(WT),0,0,r
+p_caai_3840/caaicx37_inq2.cpp	45	57	sqlstr = " SELECT	mat_code,mat_name,sum(WT) WT,sum(COST_GJ) AMT,sum(COST_GJ) COST_GJ,sum(COST_YJ) COST_YJ,sum(COST_CJ) COST_CJ"
+p_caai_3840/caaicx38_inq.cpp	49	56	sqlstr = "	SELECT	PRODUCT_CODE,PRODUCT_CODE_CNAME,SUB_BACKLOG_CODE,SG_SIGN,MAT_THICK,sum(QTY) qty,sum(WT) WT"
+p_caai_3840/caaicx38_inq2.cpp	45	59	sqlstr = " SELECT	mat_code,mat_name,sum(WT) WT,sum(COST_GJ) AMT,sum(COST_GJ) COST_GJ,sum(COST_YJ) COST_YJ,sum(COST_CJ) COST_CJ"
+p_caai_3840/caaicx39_inq.cpp	63	65	sqlstr = "SELECT * FROM TCAAI08"
+p_caai_3840/caaicx39_inq.cpp	118	120	sqlstr = "SELECT count(1) FROM tcaai08"
+p_caai_3840/caaicx41_inq.cpp	66	71	sqlstr = " select  mat_code"
+p_caai_3840/caaicx41_inq.cpp	88	91	sqlstr = " select mat_type FROM TCAAC11"
+p_caai_3840/caaicx41_inq.cpp	131	158	sqlstr = " SELECT T1.VFREE1,T1.SUB_BACKLOG_CODE,T1.PRODUCT_CODE,T1.SG_SIGN,T1.MAT_THICK,T1.EQU_NO,DECODE(WT, 0, 0, ROUND(T1.COST_YJ/T1.WT, 6)) AS PRICE_UNIT_GJ,
+p_caai_3840/caaicx41_inq.cpp	162	189	sqlstr = " SELECT T1.VFREE1,T1.SUB_BACKLOG_CODE,T1.PRODUCT_CODE,T1.SG_SIGN,T1.MAT_THICK,T1.EQU_NO,DECODE(WT, 0, 0, ROUND(T1.COST_YJ/T1.WT, 6)) AS PRICE_UNIT_GJ,
+p_caai_3840/caaicx41_inq.cpp	198	224	sqlstr = " SELECT T1.VFREE1,T1.PRODUCT_CODE,T1.SG_SIGN,T1.MAT_THICK,DECODE(WT, 0, 0, ROUND(T1.COST_YJ/T1.WT, 6)) AS PRICE_UNIT_GJ,T1.WT,T1.COST_YJ,T1.STATS_PERI
+p_caai_3840/caaicx41_inq.cpp	228	254	sqlstr = " SELECT T1.VFREE1,T1.PRODUCT_CODE,T1.SG_SIGN,T1.MAT_THICK,DECODE(WT, 0, 0, ROUND(T1.COST_YJ/T1.WT, 6)) AS PRICE_UNIT_GJ,T1.WT,T1.COST_YJ,T1.STATS_PERI
+p_caai_3840/caaicx42_inq.cpp	56	61	sqlstr = " select  distinct mat_code"
+p_caai_3840/caaicx42_inq.cpp	85	88	sqlstr = " select mat_type FROM TCAAC11"
+p_caai_3840/caaicx42_inq.cpp	145	157	sqlstr = "select t1.stats_period, t1.relation_no AS VFREE1, t1.sub_backlog_code, t1.equ_no"
+p_caai_3840/caaicx42_inq.cpp	158	165	" select plan_no, prod_Date, sub_backlog_code,SG_SIGN,MAT_THICK,prod_shift_no,prod_shift_group, sum(wt) outwt"
+p_caai_3840/caaicx42_inq.cpp	169	175	" select PLAN_NO, prod_Date, sub_backlog_code,SG_SIGN,MAT_THICK,prod_shift_no,prod_shift_group, wt from tcaai08" //加修正的
+p_caai_3840/caaicx42_inq.cpp	183	190	" select plan_no, prod_Date, sub_backlog_code, sum(wt) all_outwt"
+p_caai_3840/caaicx42_inq.cpp	194	200	" select PLAN_NO, prod_Date, sub_backlog_code, wt from tcaai08" //加修正的
+p_caai_3840/caaicx42_inq.cpp	208	235	" select vfree1, stats_period, sub_backlog_code, (case when length(mat_code) >= 20 then 'GP_CODE' else MAT_CODE end) MAT_CODE,SUM(wt) as use_wt,SUM(cost_gj) as 
+p_caai_3840/caaicx43_inq.cpp	69	74	sqlstr = " select  mat_code"
+p_caai_3840/caaicx43_inq.cpp	91	94	sqlstr = " select mat_type FROM TCAAC11"
+p_caai_3840/caaicx43_inq.cpp	133	171	sqlstr = " select t1.vfree1,t1.SUB_BACKLOG_CODE,t1.EQU_NO,t1.PRODUCT_CODE,t1.MAT_THICK,t1.SG_SIGN,t1.STATS_PERIOD as prod_date,t1.PROD_SHIFT_GROUP,t1.PROD_SHIFT
+p_caai_3840/caaicx43_inq.cpp	175	212	sqlstr = " select t1.vfree1,t1.PRODUCT_CODE,t1.MAT_THICK,t1.SG_SIGN,t1.STATS_PERIOD as prod_date,t1.PROD_SHIFT_GROUP,t1.PROD_SHIFT_NO"
+p_caai_3840/caaijh_inq.cpp	40	41	sqlstr = " select * from tcaaia11  "
+p_caai_3840/caaijl_inq.cpp	68	81	sqlstr = "SELECT WEIGH_APP_NO, "  //磅单号,
+p_caai_3840/caaijl_inq.cpp	150	152	sqlstr = "SELECT count(1) FROM tymrec1fg t "
+p_caai_3840/caaimm_inq.cpp	76	79	sqlstr = "SELECT * FROM tmm00ac"
+p_caai_3840/caaimm_inq.cpp	158	161	sqlstr = "SELECT count(1) FROM tmm00ac"
+p_caai_3840/caais2_get.cpp	48	51	sqlstr = " select distinct EQU_NO,SUB_BACKLOG_CODE,FACTORY_DIV from tcaais0 "
+p_caai_3840/caais2_get.cpp	72	75	sqlstr = " delete from tcaais2 "
+p_caai_3840/caais2_get.cpp	83	83	sqlstr = " insert into tcaais2(dept_code,stats_period,mat_code,mat_name,divvy_type,prod_shift_group,sub_backlog_code,equ_no,amt) "
+p_caai_3840/caais2_get.cpp	84	89	" select t0.factory_div,prod_date,num_code,t7.mat_name,t7.measure_mode,prod_shift_group,t0.sub_backlog_code,equ_no,sum(amt) amt from tcaais0 t0 "
+p_caai_3840/caais2_inq.cpp	48	50	sqlstr = "SELECT * FROM tcaais2"
+p_caai_3840/caais2_ins.cpp	58	59	sqlstr = " select distinct code_line from tcaac14 where sub_backlog_code=@sub_backlog_code ";
+p_caai_3840/caais2_ins.cpp	68	72	sqlstr = " select MEASURE_MODE "
+p_caai_3840/caais2_ins.cpp	99	99	sqlstr = "select  @data_from||CASE WHEN key_seq IS NULL OR key_seq = '' THEN '00001' ELSE trim(to_char(to_number(nvl(key_seq,0))+1, '00000')) END from ("
+p_caai_3840/caais2_ins.cpp	100	107	" select max(substr(key_seq,length(@data_from)+1,6)) key_seq"
+p_caai_3840/caais2_upd.cpp	43	44	sqlstr = " select distinct code_line from tcaac14 where sub_backlog_code=@sub_backlog_code ";
+p_caai_3840/caais2_upd.cpp	53	57	sqlstr = " select MEASURE_MODE "
+p_caai_3840/caais3_inq.cpp	49	51	sqlstr = "SELECT * FROM tcaai01"
+p_caai_3850/caac05c_inq.cpp	59	61	sqlstr = "SELECT DISTINCT MAT_CODE AS PRODUCT_CODE FROM TCAAC05B WHERE 1=1 "
+p_caai_3850/caac05c_inq.cpp	79	80	sqlstr = " SELECT  * FROM TCAAC05C "
+p_caai_3850/caac05c_inq.cpp	122	124	sqlstr = "SELECT count(1) FROM TCAAC05C"
+p_caai_3850/caai08_inq.cpp	51	52	sqlstr = " SELECT  * FROM TCAAIA8 "
+p_caai_3850/caai11_inq.cpp	50	51	sqlstr = " SELECT  * FROM TCAAIA11 "
+p_caai_3850/caai11a_inq.cpp	71	74	sqlstr = " SELECT  ACCOUNT_PERIOD,DEPT_CODE,MAT_CODE,MAT_NAME,SUM(WT) as WT,SUM(PASS_WT) as PASS_WT "
+p_caai_3850/caai13s_inq.cpp	69	73	sqlstr = "SELECT * FROM tcaaia13 WHERE 1=1  ";
+p_caai_3850/caai20_inq.cpp	49	51	sqlstr = " SELECT  * FROM TCAAC20 "
+p_caai_3850/caaicx31_inq.cpp	54	58	sqlstr = " select * "
+p_caai_3850/caaicx31_inq.cpp	94	94	sqlstr = " select sum(use_unit*price_unit) from ("
+p_caai_3850/caaicx31_inq.cpp	95	105	" select t1.mat_code,t1.use_unit,t2.price_unit from tcaac05 t1"
+p_caai_3850/caaicx31_inq2.cpp	59	70	sqlstr = " select t1.mat_code,t3.mat_name,round(nvl(t2.price_unit,0),4) as PRICE_UNIT,sub_backlog_code,nvl(t1.use_unit*@out_wt,0) AS WT,round(nvl(t1.use_unit*@o
+p_caai_3850/caaicx34_inq.cpp	47	49	sqlstr = " delete from tcaac05b"
+p_caai_3850/caaicx34_inq.cpp	55	55	sqlstr = " insert into tcaac05b(order_no,sg_sign,sg_std,whole_backlog,account_period)"
+p_caai_3850/caaicx34_inq.cpp	56	60	" select t1.order_no, sg_sign, sg_std, t1.whole_backlog,@account_period from  tpmof01 t1"
+p_caai_3850/caaicx34_inq.cpp	76	79	sqlstr = " select * "
+p_caai_3850/caaicx34_inq2.cpp	58	68	sqlstr = " select t1.mat_code,t3.mat_name,round(nvl(t2.price_unit,0),4) as PRICE_UNIT,USE_UNIT AS WT,round(nvl(t2.price_unit,0)*USE_UNIT,2) AS  AMT,sub_backlog_
+p_caai_3850/caaicx34_inq2.cpp	69	72	" select 'JG001' AS MAT_CODE,'加工费' as mat_name,0 as price_unit,0 AS WT,BACK_N1 AS AMT,BACK_C2 AS sub_backlog_code from tcaaib1"
+p_caai_3850/caaicx40_getcb.cpp	51	54	sqlstr = " select CURRENT_STATUS from tcaac15"
+p_caai_3850/caaicx40_getcb_batch.cpp	50	53	sqlstr = " select account_period from tcaac15"
+p_caai_3850/caaicx40_inq.cpp	69	76	sqlstr = " select t.*"
+p_caai_3850/caaicx40_inq.cpp	123	125	sqlstr = "SELECT count(1) FROM tcaac05b"
+p_caai_3850/caais7_inq.cpp	44	45	sqlstr = " select * from tcaais7  "
+p_caai_3850/caais7_snd.cpp	63	75	sqlstr = " select t.* from tcaais7 t"
+p_caai_3850/caais7_snd.cpp	100	111	sqlstr = " update tcaais7 set SEND_FLAG = '1'"
+p_caai_3850/caais7_snd2.cpp	45	56	sqlstr = " select t.*,'X' as RETPO from tcaais7 t"
+p_caai_3850/caais7_snd2.cpp	81	92	sqlstr = " update tcaais7 set SEND_FLAG = '0'"
+p_caai_3850/caais7_upd.cpp	54	60	sqlstr = " select PRICE_UNIT,TAX_RATE_NAME,TAX_RATE"
+p_caai_3850/caais7_upd.cpp	64	71	sqlstr = " select PRICE_UNIT,TAX_RATE_NAME,TAX_RATE"
+p_caai_3850/caais7_upd.cpp	104	111	sqlstr = " select sum(PRICE_UNIT)"
+p_caai_3850/caais7_upd2.cpp	56	61	sqlstr = " select count(1) from tcaais8"
+p_caai_3850/caaitx1_inq.cpp	38	40	sqlstr = " select stats_period as X1,sum(wt) Y1 from tcaai03 "
+p_caai_3850/caaitx1_inq.cpp	62	64	sqlstr = " select stats_period as X1,sum(wt) Y1 from tcaai03 "
+p_caai_3850/caaitx1_inq.cpp	87	89	sqlstr = " select stats_period as X1,sum(wt) Y1 from tcaai03 "
+p_caai_3860/caai01_col.cpp	57	60	sqlstr = " select CURRENT_STATUS from tcaac15"
+p_caai_3860/caai_ins_start.cpp	72	77	sqlstr = "delete from tcaaia1"
+p_caai_3860/caai_ins_start.cpp	83	87	sqlstr = " delete from tcaaia12 "
+p_caai_3860/caai_ins_start.cpp	93	98	sqlstr = " delete from tcaais2 "
+p_caai_3860/caai_ins_start.cpp	104	105	sqlstr = "insert into tcaaia1(prod_time,  prod_shift_group,prod_shift_no, dept_code, equ_no,sub_backlog_code "
+p_caai_3860/caai_ins_start.cpp	106	109	" select prod_time, prod_shift_group, prod_shift_no,'IR', prod_unit_code, sub_backlog_code "
+p_caai_3860/caai_ins_start.cpp	110	124	"  select  EVENT_DATETIME prod_time, prod_shift_group, prod_shift_no, decode(substr(prod_unit_code,0,2),'IL',' ',prod_unit_code) prod_unit_code, substr(prod_uni
+p_caai_3860/caai_ins_start.cpp	133	136	sqlstr = " select distinct MEASURE_MODE,mat_code from tcaac07  "
+p_caai_3860/caai_ins_start.cpp	144	144	sqlstr1 = " insert into TCAAIA12(rec_create_time,rec_creator,dept_code,prod_date,shift_no,shift_group,equ_no,mat_code,mat_name,sub_backlog_code,comsume_wt) "
+p_caai_3860/caai_ins_start.cpp	145	154	" select @rec_create_time,@rec_creator,@dept_code,EVENT_DATETIME,prod_shift_no,prod_shift_group,prod_unit_code,product_code,mat_name,substr(prod_unit_code,0,2),
+p_caai_3860/caai_ins_start.cpp	167	167	sqlstr1 = " insert into tcaais2(rec_create_time,rec_creator,dept_code,stats_period,prod_date,prod_shift_no,prod_shift_group,DIVVY_TYPE,equ_no,mat_code,mat_name,
+p_caai_3860/caai_ins_start.cpp	168	178	" select @rec_create_time,@rec_creator,@dept_code,EVENT_DATETIME,EVENT_DATETIME,prod_shift_no,prod_shift_group,@DIVVY_TYPE,decode(prod_unit_code,'IL0',' ',prod_
+p_caai_3860/caai_ins_start.cpp	194	198	sqlstr = " update tcaaia1 t1 set mat_name=(select mat_name from tcaac11 t2 where t1.mat_code=t2.mat_code) "
+p_caai_3860/caai_ins_start.cpp	213	214	sqlstr = " SELECT stats_period	FROM tcaac06 where substr(E_DATETIME,0,8)>='" + begin_time + "' and substr(E_DATETIME,0,8)<='" + end_time + "' ";
+p_caai_3860/caai_ins_start.cpp	234	235	sqlstr = " SELECT S_DATETIME,E_DATETIME	FROM tcaac06 WHERE STATS_PERIOD = '" + stats_period + "'	";
+p_caai_3860/caai_ins_start.cpp	244	245	sqlstr = " select * from tcaac13 where dept_code='" + tcaaia1["DEPT_CODE"].ToString().Trim() + "' and stats_period='" + stats_period + "' order by job_code ";
+p_caai_3860/caai_ins_start.cpp	325	330	sqlstr = " select distinct sub_backlog_code,divvy_type"
+p_caai_3860/caai_start.cpp	71	75	sqlstr = " SELECT S_DATETIME,E_DATETIME\
+p_caai_3860/caai_start.cpp	178	183	sqlstr = " select distinct sub_backlog_code,divvy_type"
+p_caai_3870/cm_nyme01_rcv.cpp	43	46	sqlstr = " select  CODE_DESC_1_CONTENT from tep0002"
+p_caai_3870/cm_nyme01_rcv.cpp	65	68	sqlstr = " select CODE_LINE,SUB_BACKLOG_CODE"
+p_caai_3870/cm_nyme02_rcv.cpp	36	39	sqlstr = " select  CODE_DESC_1_CONTENT from tep0002"
+p_caai_3870/cm_nyme02_rcv.cpp	63	65	sqlstr = " select code_line,sub_backlog_code from tcaac14 where instr( CODE, @equ_no ) >0"
+p_caai_3870/cm_nyme02_rcv.cpp	80	86	sqlstr = " delete from tcaac12"
+p_caai_3870/cm_nyme02_rcv.cpp	93	95	sqlstr = " insert into  tcaac12 ( rec_create_time, dept_code,price_terms, mat_code, mat_name, price_unit,valid_time_start)"
+p_caai_3870/cm_samec4_rcv.cpp	42	45	sqlstr = " select sg_sign"
+p_caai_3870/cm_samec4_rcv.cpp	55	58	sqlstr = " select SG_STD"
+p_caai_3880/caai_prt201.cpp	62	69	sqlstr = " select t.mat_code, t11.mat_name,max(t.SCHE_NO) as SCHE_NO,0 wt,0 amt,0 m_wt,0 m_amt,0 use_unit,0 m_use_unit,0 price from tcaac03 t "
+p_caai_3880/caai_prt201.cpp	92	100	sqlstr = " select  t04.mat_code, sum(case when stats_period >= @begin_date and stats_period <= @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt201.cpp	101	115	" 	select mat_code, decode(sum(case when stats_period >= @begin_date and stats_period <= @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period
+p_caai_3880/caai_prt201.cpp	167	175	sqlstr = " select  t04.mat_code, sum(case when prod_date >= @begin_date and prod_date <= @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt201.cpp	176	190	" 	select mat_code, decode(sum(case when prod_date >= @begin_date and prod_date <= @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date >= @begi
+p_caai_3880/caai_prt202.cpp	56	64	sqlstr = " select SUM( case when stats_period>=@begin_date  and stats_period<=@end_date  and sub_backlog_code = 'C' THEN wt ELSE 0 END) out_wt "
+p_caai_3880/caai_prt202.cpp	85	92	sqlstr = " select SUM( case when prod_date>=@begin_date  and prod_date<=@end_date  and sub_backlog_code = 'C' THEN wt ELSE 0 END) out_wt "
+p_caai_3880/caai_prt20201.cpp	57	65	sqlstr = " select SUM( case when stats_period>=@begin_date  and stats_period<=@end_date  and sub_backlog_code = 'C' THEN wt ELSE 0 END) out_wt "
+p_caai_3880/caai_prt20201.cpp	86	93	sqlstr = " select SUM( case when prod_date>=@begin_date  and prod_date<=@end_date  and sub_backlog_code = 'C' THEN wt ELSE 0 END) out_wt "
+p_caai_3880/caai_prt204.cpp	63	70	sqlstr = " select t.mat_code, t11.mat_name,max(t.SCHE_NO) as SCHE_NO,0 wt,0 amt,0 m_wt,0 m_amt,0 use_unit,0 m_use_unit,0 price from tcaac03 t "
+p_caai_3880/caai_prt204.cpp	93	101	sqlstr = " select  t04.mat_code, sum(case when stats_period >= @begin_date and stats_period <= @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt204.cpp	102	116	" 	select mat_code, decode(sum(case when stats_period >= @begin_date and stats_period <= @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period
+p_caai_3880/caai_prt204.cpp	168	176	sqlstr = " select  t04.mat_code, sum(case when prod_date >= @begin_date and prod_date <= @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt204.cpp	177	191	" 	select mat_code, decode(sum(case when prod_date >= @begin_date and prod_date <= @end_date  then  wt else 0 end), 0, 0, sum(case when prod_date >= @begin_date
+p_caai_3880/caai_prt20401.cpp	63	71	sqlstr = " select t.mat_code, t11.mat_name,max(t.SCHE_NO) as SCHE_NO,0 wt,0 amt,0 m_wt,0 m_amt,0 use_unit,0 m_use_unit,0 price from tcaac03 t "
+p_caai_3880/caai_prt20401.cpp	94	102	sqlstr = " select  t04.mat_code, sum(case when stats_period >= @begin_date and stats_period <= @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt20401.cpp	103	120	" 	select mat_code, decode(sum(case when stats_period >= @begin_date and stats_period <= @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period
+p_caai_3880/caai_prt20401.cpp	172	180	sqlstr = " select  t04.mat_code, sum(case when prod_date >= @begin_date and prod_date <= @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt20401.cpp	181	198	" 	select mat_code, decode(sum(case when prod_date >= @begin_date and prod_date <= @end_date  then  wt else 0 end), 0, 0, sum(case when prod_date >= @begin_date
+p_caai_3880/caai_prt302.cpp	65	71	sqlstr = " select SUM( case when stats_period = @end_date THEN wt ELSE 0 END) out_wt "
+p_caai_3880/caai_prt302.cpp	101	105	sqlstr = " select SUM(case when prod_date = @end_date THEN wt ELSE 0 END) out_wt "
+p_caai_3880/caai_prt302.cpp	106	108	" select VFREE1, prod_date, wt "
+p_caai_3880/caai_prt302.cpp	120	123	" 	SELECT PLAN_NO, prod_date, wt "
+p_caai_3880/caai_prt303.cpp	62	70	sqlstr = " select sum(case when stats_period = @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt303.cpp	71	76	" 	select decode(sum(case when stats_period = @end_date  then  wt else 0 end), 0, 0, NVL(ROUND(sum(case when stats_period = @end_date  then  wt*use_unit else 0 
+p_caai_3880/caai_prt303.cpp	119	127	sqlstr = " select sum(case when prod_date = @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt303.cpp	128	133	" 	select decode(sum(case when prod_date = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date = @end_date  then  wt*use_unit else 0 end) / sum
+p_caai_3880/caai_prt304.cpp	61	64	sqlstr = " select t.mat_code, t11.mat_name,max(t.SCHE_NO) as SCHE_NO,0 wt,0 amt,0 m_wt,0 m_amt,0 use_unit,0 m_use_unit,0 price from tcaac03 t "
+p_caai_3880/caai_prt304.cpp	98	106	sqlstr = " select  t04.mat_code, sum(case when stats_period = @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt304.cpp	107	112	" 	select mat_code, decode(sum(case when stats_period = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period = @end_date  then  wt*use_unit e
+p_caai_3880/caai_prt304.cpp	187	195	sqlstr = " select  t04.mat_code, sum(case when prod_date = @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt304.cpp	196	201	" 	select mat_code, decode(sum(case when prod_date = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date = @end_date  then  wt*use_unit else 0 
+p_caai_3880/caai_prt305.cpp	63	71	sqlstr = " select  t04.mat_code, sum(case when stats_period = @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt305.cpp	72	76	" 	select mat_code, decode(sum(case when stats_period = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period = @end_date  then  wt*use_unit e
+p_caai_3880/caai_prt305.cpp	120	128	sqlstr = " select  t04.mat_code, sum(case when prod_date = @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt305.cpp	129	133	" 	select mat_code, decode(sum(case when prod_date = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date = @end_date  then  wt*use_unit else 0 
+p_caai_3880/caai_prt402.cpp	66	72	sqlstr = " select SUM( case when stats_period = @end_date THEN wt ELSE 0 END) out_wt "
+p_caai_3880/caai_prt402.cpp	108	112	sqlstr = " select SUM(case when prod_date = @end_date THEN wt ELSE 0 END) out_wt "
+p_caai_3880/caai_prt402.cpp	113	115	" select VFREE1, prod_date, wt "
+p_caai_3880/caai_prt402.cpp	131	134	" 	SELECT PLAN_NO, prod_date, wt "
+p_caai_3880/caai_prt403.cpp	63	71	sqlstr = " select sum(case when stats_period = @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt403.cpp	72	77	" 	select decode(sum(case when stats_period = @end_date  then  wt else 0 end), 0, 0, NVL(ROUND(sum(case when stats_period = @end_date  then  wt*use_unit else 0 
+p_caai_3880/caai_prt403.cpp	130	138	sqlstr = " select sum(case when prod_date = @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt403.cpp	139	144	" 	select decode(sum(case when prod_date = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date = @end_date  then  wt*use_unit else 0 end) / sum
+p_caai_3880/caai_prt404.cpp	62	65	sqlstr = " select t.mat_code, t11.mat_name,max(t.SCHE_NO) as SCHE_NO,0 wt,0 amt,0 m_wt,0 m_amt,0 use_unit,0 m_use_unit,0 price from tcaac03 t "
+p_caai_3880/caai_prt404.cpp	105	113	sqlstr = " select  t04.mat_code, sum(case when stats_period = @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt404.cpp	114	119	" 	select mat_code, decode(sum(case when stats_period = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period = @end_date  then  wt*use_unit e
+p_caai_3880/caai_prt404.cpp	203	211	sqlstr = " select  t04.mat_code, sum(case when prod_date = @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt404.cpp	212	217	" 	select mat_code, decode(sum(case when prod_date = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date = @end_date  then  wt*use_unit else 0 
+p_caai_3880/caai_prt405.cpp	64	72	sqlstr = " select  t04.mat_code, sum(case when stats_period = @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt405.cpp	73	77	" 	select mat_code, decode(sum(case when stats_period = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period = @end_date  then  wt*use_unit e
+p_caai_3880/caai_prt405.cpp	131	139	sqlstr = " select  t04.mat_code, sum(case when prod_date = @end_date  then wt else 0 end) wt "
+p_caai_3880/caai_prt405.cpp	140	144	" 	select mat_code, decode(sum(case when prod_date = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date = @end_date  then  wt*use_unit else 0 

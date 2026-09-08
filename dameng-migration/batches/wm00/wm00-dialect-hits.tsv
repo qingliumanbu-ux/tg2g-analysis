@@ -1,0 +1,41 @@
+file	line	text
+libWM00/f_auto_sail.cpp	228	" nvl(B.MAT_NO,'') AS MAT_NO,nvl(B.CMD_MAT_NO,'') AS CMD_MAT_NO ,nvl(B.MAT_ACT_OUTER_DIA,0) AS MAT_ACT_OUTER_DIA ,nvl(B.MAT_ACT_WIDTH,0) AS MAT_ACT_WIDTH ,nvl(B.MAT_ACT_WT,0) AS MAT_ACT_WT "
+libWM00/f_auto_sail.cpp	230	" LEFT JOIN(SELECT B.MAT_NO, C.STOCK_PLACE_NO, B.ORDER_NO, nvl(E.MAT_NO, '') AS CMD_MAT_NO, B.MAT_ACT_WIDTH, B.MAT_ACT_WT, B.MAT_ACT_OUTER_DIA"
+libWM00/f_auto_sail.cpp	530	CString sql = "SELECT A.COLUMN,nvl(B.ORDER_NUM,0) AS ORDER_NUM,nvl(C.D_ORDER_NUM,0) AS D_ORDER_NUM,nvl(D.SG_SIGN_NUM,0) AS SG_SIGN_NUM,nvl(E.D_SG_SIGN_NUM,0) AS D_SG_SIGN_NUM"
+libWM00/f_auto_sail.cpp	531	" , nvl(F.ORDER_CUST_CODE_NUM, 0) AS ORDER_CUST_CODE_NUM, nvl(G.D_ORDER_CUST_CODE_NUM, 0) AS D_ORDER_CUST_CODE_NUM,nvl(H.EMPTY_STOCK,0) AS EMPTY_STOCK FROM("
+libWM00/f_create_crane_no.cpp	148	sqlstr = "SELECT timestampdiff(8, CHAR(TIMESTAMP(to_date('" + dateNow14 + "', 'yyyy-mm-dd hh24:mi:ss')) - TIMESTAMP(to_date('" + tmmsm01["SLAB_CUT_TIME"].ToString() + "', 'yyyy-mm-dd hh24:mi:ss')))) AS diffTimes16"
+libWM00/f_create_crane_no.cpp	203	sqlstr = "SELECT    NVL(MIN(MAT_ACT_WIDTH), 0) AS MAT_ACT_WIDTH_MIN,"
+libWM00/f_create_crane_no.cpp	204	" NVL(MAX(MAT_ACT_WIDTH), 0) AS MAT_ACT_WIDTH_MAX,NVL(MIN(MAT_ACT_LEN), 0) AS MAT_ACT_LEN_MIN,"
+libWM00/f_create_crane_no.cpp	205	" NVL(MAX(MAT_ACT_LEN), 0) AS MAT_ACT_LEN_MAX FROM   TMMSM01 "
+libWM00/f_wm00_cal_layerno.cpp	43	" SELECT nvl(MAX(layerno),0) + 1"
+libWM00/f_wm00_cal_layerno.cpp	57	" SELECT nvl(MAX(layerno),0) + 1"
+libWM00/f_wm00_cal_layerno.cpp	64	" SELECT nvl(MAX(layerno),0) + 1"
+libWM00/f_wm00_pile_comf.cpp	85	" AND timestampdiff(4, char(CURRENT_TIMESTAMP - timestamp(FIELDNO_UPTIME))) <= 24 * 60 "/*原程序current timestamp - TO_DATE(FIELDNO_UPTIME,'YYYY-MM-DD HH24:MI:SS') <= 24*60*60*/
+libWM00/f_wm00_pile_comf.cpp	275	" AND timestampdiff(4, char(CURRENT_TIMESTAMP - timestamp(FIELDNO_UPTIME))) <= 24 * 60"
+libWM00/f_wm00_pile_jud.cpp	113	sqlstr = "SELECT timestampdiff(8, CHAR(TIMESTAMP(to_date('" + dateNow14 + "', 'yyyy-mm-dd hh24:mi:ss')) - TIMESTAMP(to_date('" + tmmsm01.SLAB_CUT_TIME + "', 'yyyy-mm-dd hh24:mi:ss')))) AS diffTimes16"
+libWM00/f_wm00_pile_jud.cpp	166	sqlstr = "SELECT    NVL(MIN(MAT_ACT_WIDTH), 0) AS MAT_ACT_WIDTH_MIN,"
+libWM00/f_wm00_pile_jud.cpp	167	" NVL(MAX(MAT_ACT_WIDTH), 0) AS MAT_ACT_WIDTH_MAX,"
+libWM00/f_wm00_pile_jud.cpp	168	" NVL(MIN(MAT_ACT_LEN), 0) AS MAT_ACT_LEN_MIN,"
+libWM00/f_wm00_pile_jud.cpp	169	" NVL(MAX(MAT_ACT_LEN), 0) AS MAT_ACT_LEN_MAX,"
+libWM00/f_wm00_pile_jud.cpp	170	" NVL(MIN(SLAB_CUT_TIME), '19000701000000') AS SLAB_CUT_TIME"
+libWM00/f_wm00_pile_jud.cpp	193	sqlstr = "SELECT timestampdiff(8, CHAR(TIMESTAMP(to_date('" + dateNow14 + "', 'yyyy-mm-dd hh24:mi:ss')) - TIMESTAMP(to_date('" + v_cut_time_min + "', 'yyyy-mm-dd hh24:mi:ss')))) AS diffTimes16"
+libWM00/f_wm00_pile_jud.cpp	273	sqlstr = "SELECT	NVL(MIN(MAT_ACT_THICK), 0) AS MAT_ACT_WIDTH_MIN,"
+libWM00/f_wm00_pile_jud.cpp	274	" NVL(MAX(MAT_ACT_THICK), 0) AS MAT_ACT_WIDTH_MAX,"
+libWM00/f_wm00_pile_jud.cpp	275	" NVL(MIN(MAT_ACT_WT), 0) AS MAT_ACT_LEN_MIN,"
+libWM00/f_wm00_pile_jud.cpp	276	" NVL(MAX(MAT_ACT_WT), 0) AS MAT_ACT_LEN_MAX"
+libWM00/f_wm00_stock_chk.cpp	99	" SELECT NVL(MAX(LAYERNO), 0) FROM TWMA2"
+libWM00/f_wm00_stock_place_no.cpp	1019	SELECT  nvl(SLAB_WTADJ_FACTOR, 1), nvl(SLAB_TAPPER_WIDTH_LMT, 0)
+libWM00/f_wm00_stock_place_no.cpp	1023	FETCH  FIRST 1 ROWS ONLY
+p_wm00_8100/wm0001_inq.cpp	79	sqlstr = "select a.stock_no,a.stock_desc,a.stock_wgt_max,a.mat_line_type,nvl(b.sum_wt,0) as current_wt from twm01 a"
+p_wm00_8100/wm000c_ins.cpp	93	" SELECT NVL(MAX(SEQ_NO), 0)"
+p_wm00_8100/wm00_max.cpp	69	" select nvl(max(a.layerno),0) as layerno from twma2 a WHERE EXISTS (SELECT NULL FROM TMMSM01 b WHERE b.MAT_NO = a.MAT_NO ) AND  a.stock_place_no = @stock_place_no ";
+p_wm00_8100/wm00_max.cpp	85	" SELECT nvl(max(TO_NUMBER(a.rowno)),0) as rowno FROM twma2 a"
+p_wm00_8100/wm30a1_inq.cpp	112	v_date = v_date_time_from.AddDays(i_count.ToDouble()).ToString("yyyyMMdd");
+p_wm00_8100/wm41_add.cpp	94	" SELECT  NVL(SUM(MAT_THEORY_WT),0) LOAD_THEORY_WT,NVL(SUM(MAT_ACT_WT),0) LOAD_ACT_WT,NVL(COUNT(*),0) LOAD_NUM "
+p_wm00_8100/wm41_add.cpp	124	" SELECT  NVL(SUM(MAT_THEORY_WT),0) LOAD_THEORY_WT,NVL(SUM(MAT_ACT_WT),0) LOAD_ACT_WT,NVL(COUNT(*),0) LOAD_NUM"
+p_wm00_8100/wm_stockplace.cpp	106	sqlstr = "  SELECT a.rowno rownum,a.stock_no,  "
+p_wm00_8100/wm_stockplace_search.cpp	225	sqlstr = "  SELECT a.rowno rownum,a.stock_no,                    "
+p_wm00_8200/wm0001_inq.cpp	79	sqlstr = "select a.stock_no,a.stock_desc,a.stock_wgt_max,a.mat_line_type,nvl(b.sum_wt,0) as current_wt from twm01 a"
+p_wm00_8200/wm000c_ins.cpp	93	" SELECT NVL(MAX(SEQ_NO), 0)"
+p_wm00_8200/wm30a1_inq.cpp	112	v_date = v_date_time_from.AddDays(i_count.ToDouble()).ToString("yyyyMMdd");
+p_wm00_8200/wm_stockplace.cpp	92	sqlstr = "  SELECT a.rowno rownum,a.stock_no,                    "

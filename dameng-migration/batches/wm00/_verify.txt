@@ -1,0 +1,40 @@
+!! 未注释 L132	EXEC SQL
+L150	// DM8 适配 CHANGE-EXEC-001:按板坯号查 tmmsm01;EXEC SQL 改为 CDbCommand(方案B试点)。
+L151	// 改写原因:EXEC SQL 需 DB2 预编译器;方案B 改为 CDbCommand 消除预编译器依赖。
+L157	// 方案B(CDbCommand):
+!! 未注释 L169	EXEC SQL select * into :tep0002 from tep0002 where code_class = 'YMWD' and code = : tmmsm01.strand_no;
+!! 未注释 L188	EXEC SQL
+!! 未注释 L201	EXEC SQL
+!! 未注释 L513	EXEC SQL
+!! 未注释 L617	EXEC SQL
+!! 未注释 L644	EXEC SQL
+!! 未注释 L652	EXEC SQL
+!! 未注释 L665	EXEC SQL
+!! 未注释 L694	EXEC SQL
+!! 未注释 L715	EXEC SQL select * into :tmmsm01 from tmmsm01 where mat_no = : tmmsm01.mat_no and mat_position  in('1', '2');
+!! 未注释 L732	EXEC SQL select * into :tep0002 from tep0002 where code_class = 'YMHP' and code = '09';
+!! 未注释 L748	EXEC SQL OPEN tqmts9p_q;
+!! 未注释 L751	EXEC SQL FETCH tqmts9p_q INTO : tqmts9p;
+!! 未注释 L765	EXEC SQL CLOSE tqmts9p_q;
+!! 未注释 L769	EXEC SQL OPEN tqmts9p_q;
+!! 未注释 L772	EXEC SQL FETCH tqmts9p_q INTO : tqmts9p;
+!! 未注释 L786	EXEC SQL CLOSE tqmts9p_q;
+L822	// DM8 适配 CHANGE-EXEC-002:按板坯号查 tmmsm01(仅 mat_position='1');EXEC SQL 改为 CDbCommand(方案B试点)。
+L823	// 改写原因:同 CHANGE-EXEC-001。
+L826	// 方案B(CDbCommand):
+!! 未注释 L842	EXEC SQL select rest_roller_no into : v_rest_roller_no from tymsm44 where mat_no = : tymsm44.mat_no;
+!! 未注释 L852	EXEC SQL select * into :tep0002 from tep0002 where code_class = 'YMHP' and code = : tymsm44.rest_roller_no;
+!! 未注释 L902	EXEC SQL select count(1) into :v_num from tymsm44 where mat_no = : tmmsm01.mat_no;
+!! 未注释 L906	EXEC SQL
+!! 未注释 L913	EXEC SQL
+!! 未注释 L926	EXEC SQL
+!! 未注释 L988	EXEC SQL
+!! 未注释 L997	EXEC SQL
+!! 未注释 L1011	EXEC SQL
+!! 未注释 L1037	EXEC SQL
+!! 未注释 L1064	EXEC SQL
+!! 未注释 L1071	EXEC SQL
+!! 未注释 L1082	EXEC SQL
+!! 未注释 L1152	/*EXEC SQL delete from tymsm44 where mat_no =:tmmsm01.mat_no;*/
+!! 未注释 L1154	EXEC SQL UPDATE tymsm44 SET REST_ROLLER_NO = 'R1' WHERE MAT_NO = :tmmsm01.mat_no;
+!! 未注释 L1159	EXEC SQL

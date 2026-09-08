@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-06",
+  "scope": "preserve_original_sql_and_explain_existing_dm8_conversion",
+  "change_type": "comments_only",
+  "executable_content_changed": false,
+  "database_executed": false,
+  "build_executed": false,
+  "deployment_executed": false,
+  "original_sql_policy": "keep_one_complete_initial_original_assignment",
+  "newline_clarification": "Both baseline files actually use LF. Earlier CRLF-count-preserved checks only proved zero remained zero; they did not establish CRLF format. This comment-only stage adds lines while preserving the actual LF format.",
+  "total_added_comment_lines": 26,
+  "changes": [
+    {
+      "id": "CHANGE-01",
+      "path": "Server/TMSM/p_tmsm_7160/tmsme59_inq.cpp",
+      "encoding": "gb18030",
+      "newline": "LF",
+      "before_comment_sha256": "a6e88573e772f2bad9f61eb1e71aa6759338ed9df1710b21f4663babb5e0a09c",
+      "after_comment_sha256": "3d931ca0d50a9374873a70b95e0ebb8c40151e29c83eb700a54532e9b502e6bb",
+      "added_comment_lines": 6,
+      "line_count_before": 359,
+      "line_count_after": 365,
+      "crlf_count_before": 0,
+      "crlf_count_after": 0,
+      "added_comment_line_start": 86,
+      "added_comment_line_end": 91,
+      "original_sql_comment_line_start": 90,
+      "original_sql_comment_line_end": 90,
+      "active_sql_line_start": 92,
+      "active_sql_line_end": 92,
+      "validation": {
+        "removing_added_comments_restores_prior_bytes": true,
+        "original_commented_assignment_matches_git_head": true,
+        "all_added_lines_are_cpp_line_comments": true,
+        "gb18030_roundtrip": true,
+        "actual_lf_newline_style_preserved": true,
+        "git_diff_check_exit_code": 0
+      },
+      "source_file_git_head_sha256": "bab170eae406b8796bcd2d641b8826c42e6aaa48c9efcf67aa809fc7c0e144b2"
+    },
+    {
+      "id": "CHANGE-02",
+      "path": "Server/WMSM/p_wmsm_8170/wmfm01_inq.cpp",
+      "encoding": "gb18030",
+      "newline": "LF",
+      "before_comment_sha256": "2e8084386f59bdaaa8c7da5cc115542c66bbc3d9c06c8b6e993c5d4e90665ee8",
+      "after_comment_sha256": "00cd85c8c3ad29a1818e9280c7e84cc58b7eb9b5e0e732fb82b2167ddeff52f2",
+      "added_comment_lines": 20,
+      "line_count_before": 3293,
+      "line_count_after": 3313,
+      "crlf_count_before": 0,
+      "crlf_count_after": 0,
+      "added_comment_line_start": 279,
+      "added_comment_line_end": 298,
+      "original_sql_comment_line_start": 283,
+      "original_sql_comment_line_end": 297,
+      "active_sql_line_start": 299,
+      "active_sql_line_end": 313,
+      "validation": {
+        "removing_added_comments_restores_prior_bytes": true,
+        "original_commented_assignment_matches_git_head": true,
+        "all_added_lines_are_cpp_line_comments": true,
+        "gb18030_roundtrip": true,
+        "actual_lf_newline_style_preserved": true,
+        "git_diff_check_exit_code": 0
+      },
+      "source_file_git_head_sha256": "28102104447a0b2d86c29a0f9be0e9ef43f018c76bf321ce0f2b5b100990aa47"
+    }
+  ]
+}

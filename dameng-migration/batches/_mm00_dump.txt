@@ -1,0 +1,112 @@
+ENC=gb18030
+140				//在库时间计算
+141	// DM8 适配 CHANGE-356:查询。见改写原因。
+142	// 改写原因：DB2 特殊寄存器 current date/time/timestamp/schema 改为 DM 的 CURRENT_DATE/CURRENT_TIME/CURRENT_TIMESTAMP/CURRENT_SCHEMA(官方函数手册支持)；依据 DM 官方文档,DM8 尚未实测。
+143	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+144	// 原 SQL（完整保留）：
+145				// strSql2 += ",CASE WHEN LENGTH(TRIM(t1.SLAB_CUT_TIME)) = 14 "
+146					// "THEN TO_CHAR(TIMESTAMPDIFF(16,TO_CHAR(CURRENT TIMESTAMP-TO_DATE(t1.SLAB_CUT_TIME,'YYYYMMDDHH24MISS') ))) "
+147					// "ELSE '' "
+148					// "END AS IN_STOCK_DURA"	//产出时间天（系统当前时间 - 板坯切断时间）
+149					// ",CASE WHEN LENGTH(TRIM(t1.SLAB_CUT_TIME)) = 14 "
+150					// "THEN TO_CHAR(TIMESTAMPDIFF(8,TO_CHAR(CURRENT TIMESTAMP-TO_DATE(t1.SLAB_CUT_TIME,'YYYYMMDDHH24MISS') ))) "
+151					// "ELSE ''  "
+152					// "END AS IN_STOCK_HOUR"	//产出时间时（系统当前时间 - 板坯切断时间）
+153					// ",CASE WHEN LENGTH(TRIM(t1.IN_STOCK_TIME)) = 14 "
+154					// "THEN TO_CHAR(TIMESTAMPDIFF(16,TO_CHAR(CURRENT TIMESTAMP-TO_DATE(t1.IN_STOCK_TIME,'YYYYMMDDHH24MISS') ))) "
+155					// "ELSE '' "
+156					// "END AS IN_STOCK_TIME_DURA" //在库时间天（系统当前时间 - 入库时间）
+157					// ",CASE WHEN LENGTH(TRIM(t1.IN_STOCK_TIME)) = 14 "
+158					// "THEN TO_CHAR(TIMESTAMPDIFF(8,TO_CHAR(CURRENT TIMESTAMP-TO_DATE(t1.IN_STOCK_TIME,'YYYYMMDDHH24MISS') ))) "
+159					// "ELSE '' "
+160					// "END AS IN_STOCK_TIME_HOUR"; //在库时间时（系统当前时间 - 入库时间）
+161	//
+162	// DM8 SQL：
+163				strSql2 += ",CASE WHEN LENGTH(TRIM(t1.SLAB_CUT_TIME)) = 14 "
+164					"THEN TO_CHAR(TIMESTAMPDIFF(16,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.SLAB_CUT_TIME,'YYYYMMDDHH24MISS') ))) "
+165					"ELSE '' "
+166					"END AS IN_STOCK_DURA"	//产出时间天（系统当前时间 - 板坯切断时间）
+167					",CASE WHEN LENGTH(TRIM(t1.SLAB_CUT_TIME)) = 14 "
+168					"THEN TO_CHAR(TIMESTAMPDIFF(8,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.SLAB_CUT_TIME,'YYYYMMDDHH24MISS') ))) "
+169					"ELSE ''  "
+170					"END AS IN_STOCK_HOUR"	//产出时间时（系统当前时间 - 板坯切断时间）
+171					",CASE WHEN LENGTH(TRIM(t1.IN_STOCK_TIME)) = 14 "
+172					"THEN TO_CHAR(TIMESTAMPDIFF(16,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.IN_STOCK_TIME,'YYYYMMDDHH24MISS') ))) "
+173					"ELSE '' "
+174					"END AS IN_STOCK_TIME_DURA" //在库时间天（系统当前时间 - 入库时间）
+175					",CASE WHEN LENGTH(TRIM(t1.IN_STOCK_TIME)) = 14 "
+176					"THEN TO_CHAR(TIMESTAMPDIFF(8,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.IN_STOCK_TIME,'YYYYMMDDHH24MISS') ))) "
+177					"ELSE '' "
+178					"END AS IN_STOCK_TIME_HOUR"; //在库时间时（系统当前时间 - 入库时间）
+179	
+180				strSql2 += " FROM TMMSMMA01 t1 LEFT OUTER JOIN TOMPOMA01 t2 "
+181					" ON t1.ORDER_NO = t2.ORDER_NO  where 1 = 1 ";
+182	
+183				store_area = "t1.STOCK_NO";
+184				strSql1 = "SELECT COUNT(1) ";
+185				strSql1 += " FROM TMMSMMA01 t1 LEFT OUTER JOIN TOMPOMA01 t2 "
+186					" ON t1.ORDER_NO = t2.ORDER_NO  where 1 = 1 ";
+187			}
+188			//2018-6-20热卷在制(6-16行)
+189			//查询热卷档，暂时不区分在制和成品（20170419修改，6-16行是热卷）
+190			else if (v_row >= 6 && v_row <= rowcount - 2)
+191			{
+192				strSql2 = " SELECT  t1.MAT_NO "
+193					",t1.MAT_STATUS "
+194					",t1.STOCK_PLACE_NO "
+195					",t1.LG_ST "
+196					",t1.MAT_ACT_THICK "
+197					",t1.MAT_ACT_WIDTH "
+198					",t1.MAT_ACT_LEN "
+199					",t1.MAT_WT "
+200					",t1.ST_NO "
+201					",t1.STOCK_NO "
+202					",t1.STORE_AREA "
+203					",t1.ORDER_NO AS ORDER_NO "
+204					",t1.PLAN_NO "
+205					",t1.PRE_UNIT_CODE "
+206					",t1.NEXT_UNIT_CODE "
+207					",t1.MAT_DESTION "
+208					",t1.CONFM_PLAN_NO "
+209					",t1.COMPLEX_DECIDE_CODE " //20150917新增综合判定代码‘9’
+210					",t2.ORDER_DELIVERY_DATE "
+211					",t2.DELIVY_WEEK_FLAG ";
+212				//轧制时间计算（系统当前时间 - 钢卷卷曲时间）
+213	// DM8 适配 CHANGE-357:查询。见改写原因。
+214	// 改写原因：DB2 特殊寄存器 current date/time/timestamp/schema 改为 DM 的 CURRENT_DATE/CURRENT_TIME/CURRENT_TIMESTAMP/CURRENT_SCHEMA(官方函数手册支持)；依据 DM 官方文档,DM8 尚未实测。
+215	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+216	// 原 SQL（完整保留）：
+217				// strSql2 += ",CASE WHEN LENGTH(TRIM(t1.COILED_TIME)) = 14 "
+218					// "THEN TO_CHAR(TIMESTAMPDIFF(16,TO_CHAR(CURRENT TIMESTAMP-TO_DATE(t1.COILED_TIME,'YYYYMMDDHH24MISS') ))) "
+219					// "ELSE '' "
+220					// "END AS ROLL_TIME_DURA" //轧制时间天
+221					// ",CASE WHEN LENGTH(TRIM(t1.COILED_TIME)) = 14 "
+222					// "THEN TO_CHAR(TIMESTAMPDIFF(8,TO_CHAR(CURRENT TIMESTAMP-TO_DATE(t1.COILED_TIME,'YYYYMMDDHH24MISS') ))) "
+223					// "ELSE '' "
+224					// "END AS ROLL_TIME_HOUR";	//轧制时间时
+225	//
+226	// DM8 SQL：
+227				strSql2 += ",CASE WHEN LENGTH(TRIM(t1.COILED_TIME)) = 14 "
+228					"THEN TO_CHAR(TIMESTAMPDIFF(16,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.COILED_TIME,'YYYYMMDDHH24MISS') ))) "
+229					"ELSE '' "
+230					"END AS ROLL_TIME_DURA" //轧制时间天
+231					",CASE WHEN LENGTH(TRIM(t1.COILED_TIME)) = 14 "
+232					"THEN TO_CHAR(TIMESTAMPDIFF(8,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.COILED_TIME,'YYYYMMDDHH24MISS') ))) "
+233					"ELSE '' "
+234					"END AS ROLL_TIME_HOUR";	//轧制时间时
+235	
+236				strSql2 += " FROM TMMHRMA01 t1 LEFT OUTER JOIN TOMPOMA01 t2 "
+237					" ON t1.ORDER_NO = t2.ORDER_NO  where 1 = 1 ";
+238	
+239				store_area = "t1.STORE_AREA";
+240				strSql1 = "SELECT COUNT(1) ";
+241				strSql1 += " FROM TMMHRMA01 t1 LEFT OUTER JOIN TOMPOMA01 t2 "
+242					" ON t1.ORDER_NO = t2.ORDER_NO  where 1 = 1 ";
+243			}
+244	
+245			//2018-6-20库区没有X88，中间坯单列对应的条件现还没定
+246			if (v_row >= 6 && v_row < rowcount - 6) //在制
+247			{
+248				sqlwhere += " AND t1.PRODUCT_FLAG = '0' AND t1.STORE_AREA  != 'X88'";
+249			}
+250			else if (v_row >= rowcount - 6 && v_row < rowcount - 1) //成品

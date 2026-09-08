@@ -1,0 +1,3 @@
+### CHANGE-384  原行 70-73
+  L70 前: sqlstr = "select a.stock_no,a.stock_desc,a.stock_wgt_max,a.mat_line_type,value(b.sum_wt,0) as current_wt from twm01 a"
+  L70 后: sqlstr = "select a.stock_no,a.stock_desc,a.stock_wgt_max,a.mat_line_type,nvl(b.sum_wt,0) as current_wt from twm01 a"

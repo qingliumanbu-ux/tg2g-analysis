@@ -1,0 +1,10 @@
+file	line	text
+libGCPM/f_GetNextSeq_pm.cpp	179	c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_name for update  ";
+libGCPM/f_GetNextSeq_pm.cpp	188	c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_name for update  "; //oracle 的行锁
+libGCPM/f_GetNextSeq_pm.cpp	191	c_sql_condition = " SELECT  t.* FROM tgcpm21 t  where t.seq_name = @seq_name FOR UPDATE with rs  "; //db2 的行锁
+p_gcpm_1300/gcpmz2_inqs.cpp	166	" and   t.svc_name = a.svc_name(+)    " //--以TEA03中的数据为准。 "
+p_gcpm_29640/gcpma2_ins.cpp	129	c_sql_condition = " select NVL(max(t.SEQ_NO),0) + 1 from tgcpma2 t "
+p_gcpm_29640/gcpmz6_inq.cpp	176	"FROM  Sysibm.systables t "
+p_gcpm_29640/gcpmz6_inqmx.cpp	127	"FROM  Sysibm.syscolumns t "
+p_gcpm_29640/gcpmz6_inqmx.cpp	139	"from sysobjects SO, syscolumns SC, systypes ST "
+p_gcpm_29660/gcpma2_ins.cpp	129	c_sql_condition = " select NVL(max(t.SEQ_NO),0) + 1 from tgcpma2 t "

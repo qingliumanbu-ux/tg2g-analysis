@@ -1,0 +1,63 @@
+file	line	text
+libMM00/f_mm0011.cpp	67	sprintf(sql, "SELECT LPAD(TO_CHAR(%s.NEXTVAL), %d, '0') FROM  sysibm.sysdummy1", (const char*)SeqName.Trim(), SeqLen.ToInt32());
+libMM00/f_mm0011.cpp	74	sprintf(sql, "SELECT LPAD(TO_CHAR(%s.NEXTVAL), %d, '0') FROM DUAL", (const char*)SeqName.Trim(), SeqLen.ToInt32());
+p_mm00_18010/mm0010a1f6_pro.cpp	65	sqlstr = " SELECT LPAD(TO_CHAR(NVL(MAX(SUBSTR(DEMAND_PLAN_NO,9,2)),0)+1),2,'0')  "
+p_mm00_18010/mm00su47a1_m.cpp	164	"THEN TO_CHAR(TIMESTAMPDIFF(16,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.SLAB_CUT_TIME,'YYYYMMDDHH24MISS') ))) "
+p_mm00_18010/mm00su47a1_m.cpp	168	"THEN TO_CHAR(TIMESTAMPDIFF(8,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.SLAB_CUT_TIME,'YYYYMMDDHH24MISS') ))) "
+p_mm00_18010/mm00su47a1_m.cpp	172	"THEN TO_CHAR(TIMESTAMPDIFF(16,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.IN_STOCK_TIME,'YYYYMMDDHH24MISS') ))) "
+p_mm00_18010/mm00su47a1_m.cpp	176	"THEN TO_CHAR(TIMESTAMPDIFF(8,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.IN_STOCK_TIME,'YYYYMMDDHH24MISS') ))) "
+p_mm00_18010/mm00su47a1_m.cpp	228	"THEN TO_CHAR(TIMESTAMPDIFF(16,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.COILED_TIME,'YYYYMMDDHH24MISS') ))) "
+p_mm00_18010/mm00su47a1_m.cpp	232	"THEN TO_CHAR(TIMESTAMPDIFF(8,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.COILED_TIME,'YYYYMMDDHH24MISS') ))) "
+p_mm00_18010/mm00su47a1_m.cpp	484	strSql2 += " FETCH FIRST  1000 ROWS ONLY ";
+p_mm00_18010/mm00sud1f1_inq.cpp	217	cmd.Parameters.Set("sta_chg_time_from", BM2::CDateTime::Now().AddDays(-v_hold_time_from.ToDouble()).ToString("yyyyMMddHHmmss"));
+p_mm00_18010/mm00sud1f1_inq.cpp	218	cmdinq.Parameters.Set("sta_chg_time_from", BM2::CDateTime::Now().AddDays(-v_hold_time_from.ToDouble()).ToString("yyyyMMddHHmmss"));
+p_mm00_18010/mm00sud1f1_inq.cpp	225	cmd.Parameters.Set("sta_chg_time_to", BM2::CDateTime::Now().AddDays(-v_hold_time_to.ToDouble()).ToString("yyyyMMddHHmmss"));
+p_mm00_18010/mm00sud1f1_inq.cpp	226	cmdinq.Parameters.Set("sta_chg_time_to", BM2::CDateTime::Now().AddDays(-v_hold_time_to.ToDouble()).ToString("yyyyMMddHHmmss"));
+p_mm00_18010/mm00sud1f2_inq.cpp	86	CString cmd_query_sm = " SELECT SUM(NVL(MAT_ACT_WT,0)) FROM TMMSM01 WHERE FACTORY_STORE LIKE @factory_div||'%' "
+p_mm00_18010/mm00sud1f2_inq.cpp	91	CString cmd_query_sm_xj = " SELECT SUM(NVL(MAT_ACT_WT,0)) FROM TMMSM01 WHERE FACTORY_STORE LIKE @factory_div||'%' "
+p_mm00_18010/mm00sud1f2_inq.cpp	104	CString cmd_query_hr = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 WHERE FACTORY_STORE LIKE @factory_div||'%' "
+p_mm00_18010/mm00sud1f2_inq.cpp	108	CString cmd_query_hr_xj = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 WHERE FACTORY_STORE LIKE @factory_div||'%' "
+p_mm00_18010/mm00sud1f2_inq.cpp	121	CString cmd_query_cr = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMCR01 WHERE MAT_STATUS = @mat_status ";
+p_mm00_18010/mm00sud1f2_inq.cpp	123	CString cmd_query_cr_xj = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMCR01 WHERE MAT_STATUS = @mat_status ";
+p_mm00_18010/mm00sud1f2_inq.cpp	174	cmd_count.Parameters.Set("sta_chg_time_from", BM2::CDateTime::Now().AddDays(-v_hold_time_from.ToDouble()).ToString("yyyyMMddHHmmss"));
+p_mm00_18010/mm00sud1f2_inq.cpp	175	cmd.Parameters.Set("sta_chg_time_from", BM2::CDateTime::Now().AddDays(-v_hold_time_from.ToDouble()).ToString("yyyyMMddHHmmss"));
+p_mm00_18010/mm00sud1f2_inq.cpp	191	cmd_count.Parameters.Set("sta_chg_time_to", BM2::CDateTime::Now().AddDays(-v_hold_time_to.ToDouble()).ToString("yyyyMMddHHmmss"));
+p_mm00_18010/mm00sud1f2_inq.cpp	192	cmd.Parameters.Set("sta_chg_time_to", BM2::CDateTime::Now().AddDays(-v_hold_time_to.ToDouble()).ToString("yyyyMMddHHmmss"));
+p_mm00_18010/mm00sud2f2_inq.cpp	82	CString cmd_query_sm = " SELECT SUM(NVL(MAT_ACT_WT,0)) FROM TMMSM01 WHERE MAT_STATUS <> '36' AND MAT_STATUS <> ' ' ";//小计合计
+p_mm00_18010/mm00sud2f2_inq.cpp	91	CString cmd_query_hr = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 WHERE MAT_STATUS <> '36' AND MAT_STATUS <> ' ' ";//小计合计
+p_mm00_18010/mm00sud2f2_inq.cpp	102	CString cmd_query_cr = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMCR01 WHERE MAT_STATUS <> '36' AND MAT_STATUS <> ' ' ";//小计合计
+p_mm00_18010/mm00sud4f1_inq.cpp	143	CString date_1 = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f1_inq.cpp	144	CString date_2 = CDateTime::Now().AddDays(-2).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f1_inq.cpp	145	CString date_3 = CDateTime::Now().AddDays(-3).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f1_inq.cpp	146	CString date_4 = CDateTime::Now().AddDays(-4).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f1_inq.cpp	147	CString date_5 = CDateTime::Now().AddDays(-5).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f1_inq.cpp	148	CString date_6 = CDateTime::Now().AddDays(-6).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f1_inq.cpp	149	CString date_7 = CDateTime::Now().AddDays(-7).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f1_inq.cpp	150	CString date_14 = CDateTime::Now().AddDays(-14).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f1_inq.cpp	151	CString date_30 = CDateTime::Now().AddDays(-30).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f1_inq.cpp	152	CString date_90 = CDateTime::Now().AddDays(-90).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f1_inq.cpp	153	CString date_180 = CDateTime::Now().AddDays(-180).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f2_inq.cpp	89	CString cmd_query_sm_slab = " SELECT SUM(NVL(MAT_ACT_WT,0)) as MAT_ACT_WT FROM TMMSM01 WHERE MAT_LINE_TYPE = 'SM'  AND MAT_STATUS <> '36' ";//板坯库
+p_mm00_18010/mm00sud4f2_inq.cpp	90	CString cmd_query_sm_total = " SELECT SUM(NVL(MAT_ACT_WT,0)) as MAT_ACT_WT FROM TMMSM01 WHERE MAT_LINE_TYPE = 'SM'  AND MAT_STATUS <> '36' ";//板坯总计
+p_mm00_18010/mm00sud4f2_inq.cpp	92	CString cmd_query_hr_coil = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 WHERE MAT_LINE_TYPE = 'HR' "
+p_mm00_18010/mm00sud4f2_inq.cpp	95	CString cmd_query_hr_product = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 WHERE MAT_LINE_TYPE = 'HR' "
+p_mm00_18010/mm00sud4f2_inq.cpp	100	CString cmd_query_hr_total = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 WHERE MAT_LINE_TYPE = 'HR' "
+p_mm00_18010/mm00sud4f2_inq.cpp	104	CString cmd_query_cr_raw = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 "
+p_mm00_18010/mm00sud4f2_inq.cpp	107	CString cmd_query_cr_mid = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMCR01 "
+p_mm00_18010/mm00sud4f2_inq.cpp	111	CString cmd_query_cr_product = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMCR01 "
+p_mm00_18010/mm00sud4f2_inq.cpp	117	CString cmd_query_cr_total = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMCR01 "
+p_mm00_18010/mm00sud4f2_inq.cpp	156	CString date_1 = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f2_inq.cpp	157	CString date_2 = CDateTime::Now().AddDays(-2).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f2_inq.cpp	158	CString date_3 = CDateTime::Now().AddDays(-3).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f2_inq.cpp	159	CString date_4 = CDateTime::Now().AddDays(-4).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f2_inq.cpp	160	CString date_5 = CDateTime::Now().AddDays(-5).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f2_inq.cpp	161	CString date_6 = CDateTime::Now().AddDays(-6).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f2_inq.cpp	162	CString date_7 = CDateTime::Now().AddDays(-7).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f2_inq.cpp	163	CString date_14 = CDateTime::Now().AddDays(-14).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f2_inq.cpp	164	CString date_30 = CDateTime::Now().AddDays(-30).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f2_inq.cpp	165	CString date_90 = CDateTime::Now().AddDays(-90).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud4f2_inq.cpp	166	CString date_180 = CDateTime::Now().AddDays(-180).ToString("yyyyMMddHHmmss");
+p_mm00_18010/mm00sud5f2_inq.cpp	233	sqlstr = "SELECT NVL(LACK_WT, 0) "
+p_mm00_18010/mm00sud5f2_inq.cpp	244	sqlstr = "SELECT NVL(LACK_WT, 0) "
+p_mm00_18020/mm0097c1f3_ins.cpp	226	c_sql_condition = " SELECT NVL(MAX(t.RULE_SEQ_NO),0) + 1 "
+p_mm00_18040/mm0097c1f3_ins.cpp	226	c_sql_condition = " SELECT NVL(MAX(t.RULE_SEQ_NO),0) + 1 "

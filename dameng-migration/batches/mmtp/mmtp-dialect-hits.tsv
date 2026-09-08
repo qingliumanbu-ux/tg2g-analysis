@@ -1,0 +1,107 @@
+file	line	text
+libMMTP/f_mmtp_dyna_table.cpp	793	BM2_FUNCTION_EXPORT CString CDynaTable::BuildWhereString(int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	809	colValue = this->dtTable.Rows[rowNum][colName].ToString();
+libMMTP/f_mmtp_dyna_table.cpp	853	colValue = this->dtTable.Rows[rowNum][colName].ToString();
+libMMTP/f_mmtp_dyna_table.cpp	1294	BM2_FUNCTION_EXPORT CString CDynaTable::BuildInsertString(int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	1330	if (this->dtTable.Rows[rowNum][colName].ToString().GetLength() > dataLength)
+libMMTP/f_mmtp_dyna_table.cpp	1339	if (this->dtTable.Rows[rowNum][colName].ToString().Trim() == "")
+libMMTP/f_mmtp_dyna_table.cpp	1345	strIns += "'" + this->dtTable.Rows[rowNum][colName].ToString() + "')";
+libMMTP/f_mmtp_dyna_table.cpp	1350	if (this->dtTable.Rows[rowNum][colName].ToString().Trim() == "")
+libMMTP/f_mmtp_dyna_table.cpp	1358	strIns += "'" + this->dtTable.Rows[rowNum][colName].ToString() + "',";
+libMMTP/f_mmtp_dyna_table.cpp	1369	if (this->dtTable.Rows[rowNum][colName].ToString().Trim() != "")
+libMMTP/f_mmtp_dyna_table.cpp	1373	colValue = this->dtTable.Rows[rowNum][colName].ToDecimal().ToInt32();
+libMMTP/f_mmtp_dyna_table.cpp	1377	colValue = this->dtTable.Rows[rowNum][colName].ToDecimal().Round(dataScale);
+libMMTP/f_mmtp_dyna_table.cpp	1411	BM2_FUNCTION_EXPORT CString CDynaTable::BuildUpdateString(int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	1421	colValue = this->dtTable.Rows[rowNum][colName].ToString();
+libMMTP/f_mmtp_dyna_table.cpp	1459	BM2_FUNCTION_EXPORT void CDynaTable::InitDataRow(int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	1461	if (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	1471	this->dtTable.Rows[rowNum][colName] = " ";
+libMMTP/f_mmtp_dyna_table.cpp	1475	this->dtTable.Rows[rowNum][colName] = (CDecimal)0;
+libMMTP/f_mmtp_dyna_table.cpp	1486	BM2_FUNCTION_EXPORT void CDynaTable::RemoveDataRow(int rowNum, int rowCount)
+libMMTP/f_mmtp_dyna_table.cpp	1488	this->dtTable.Rows.Remove(rowNum, rowCount);
+libMMTP/f_mmtp_dyna_table.cpp	1547	BM2_FUNCTION_EXPORT int CDynaTable::QueryCount(int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	1549	CString condition = this->BuildWhereString(rowNum);
+libMMTP/f_mmtp_dyna_table.cpp	1564	BM2_FUNCTION_EXPORT int CDynaTable::Query(const CString& condition, int rowNum, int recordFrom, int pageSize)
+libMMTP/f_mmtp_dyna_table.cpp	1579	strCondition = this->BuildWhereString(rowNum);
+libMMTP/f_mmtp_dyna_table.cpp	1822	BM2_FUNCTION_EXPORT int CDynaTable::Update(const CString& condition, int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	1846	this->SetColVal("REC_REVISOR", (CString)s.userid, rowNum);
+libMMTP/f_mmtp_dyna_table.cpp	1847	this->SetColVal("REC_REVISE_TIME", CDateTime::Now().ToString("yyyyMMddHHmmss"), rowNum);
+libMMTP/f_mmtp_dyna_table.cpp	1849	strUpd = this->BuildUpdateString(rowNum);
+libMMTP/f_mmtp_dyna_table.cpp	1957	BM2_FUNCTION_EXPORT int CDynaTable::Delete(int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	1959	CString condition = this->BuildWhereString(rowNum);
+libMMTP/f_mmtp_dyna_table.cpp	2034	BM2_FUNCTION_EXPORT void CDynaTable::MergeFrom(CDataRow& row, int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2036	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2071	this->dtTable.Rows[rowNum][colName] = " ";
+libMMTP/f_mmtp_dyna_table.cpp	2075	this->dtTable.Rows[rowNum][colName] = (CString)row[colName];
+libMMTP/f_mmtp_dyna_table.cpp	2082	this->dtTable.Rows[rowNum][colName] = (CDecimal)0;
+libMMTP/f_mmtp_dyna_table.cpp	2086	this->dtTable.Rows[rowNum][colName] = (CDecimal)row[colName];
+libMMTP/f_mmtp_dyna_table.cpp	2103	BM2_FUNCTION_EXPORT void CDynaTable::MergeTo(CDataTable& table, int rowNum, bool addCol, bool overrideFlag)
+libMMTP/f_mmtp_dyna_table.cpp	2105	if (this->dtTable.Rows.get_Count() > rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2108	MergDataRow(this->dtTable.Rows[rowNum], row, addCol, overrideFlag);
+libMMTP/f_mmtp_dyna_table.cpp	2128	int iRowNum = 0;
+libMMTP/f_mmtp_dyna_table.cpp	2168	dtConvert.Rows[iRowNum++].Merge(this->dtTable.Rows[i]);
+libMMTP/f_mmtp_dyna_table.cpp	2254	BM2_FUNCTION_EXPORT void CDynaTable::SetColVal(const CString& colName, CString colVal, int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2258	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2263	this->dtTable.Rows[rowNum][colName] = colVal;
+libMMTP/f_mmtp_dyna_table.cpp	2275	BM2_FUNCTION_EXPORT void CDynaTable::SetColVal(const CString& colName, CDecimal colVal, int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2279	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2284	this->dtTable.Rows[rowNum][colName] = colVal;
+libMMTP/f_mmtp_dyna_table.cpp	2332	BM2_FUNCTION_EXPORT void CDynaTable::CopyColVal(const CString& colName, int rowNum, int rowNumSrc)
+libMMTP/f_mmtp_dyna_table.cpp	2339	if (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2346	if (this->dtTable.Rows[rowNumSrc][colName] == CDBNull::Value || (CString)this->dtTable.Rows[rowNumSrc][colName] == "")
+libMMTP/f_mmtp_dyna_table.cpp	2348	this->dtTable.Rows[rowNum][colName] = " ";
+libMMTP/f_mmtp_dyna_table.cpp	2352	this->dtTable.Rows[rowNum][colName] = (CString)this->dtTable.Rows[rowNumSrc][colName];
+libMMTP/f_mmtp_dyna_table.cpp	2357	if (this->dtTable.Rows[rowNum][colName] == CDBNull::Value)
+libMMTP/f_mmtp_dyna_table.cpp	2359	this->dtTable.Rows[rowNum][colName] = (CDecimal)0;
+libMMTP/f_mmtp_dyna_table.cpp	2363	this->dtTable.Rows[rowNum][colName] = (CDecimal)this->dtTable.Rows[rowNumSrc][colName];
+libMMTP/f_mmtp_dyna_table.cpp	2376	BM2_FUNCTION_EXPORT void CDynaTable::CopyColVal(const CString& colName, const CString& colNameSrc, int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2383	if (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2390	if (this->dtTable.Rows[rowNum][colNameSrc] == CDBNull::Value || (CString)this->dtTable.Rows[rowNum][colNameSrc] == "")
+libMMTP/f_mmtp_dyna_table.cpp	2392	this->dtTable.Rows[rowNum][colName] = " ";
+libMMTP/f_mmtp_dyna_table.cpp	2396	this->dtTable.Rows[rowNum][colName] = (CString)this->dtTable.Rows[rowNum][colNameSrc];
+libMMTP/f_mmtp_dyna_table.cpp	2401	if (this->dtTable.Rows[rowNum][colNameSrc] == CDBNull::Value)
+libMMTP/f_mmtp_dyna_table.cpp	2403	this->dtTable.Rows[rowNum][colName] = (CDecimal)0;
+libMMTP/f_mmtp_dyna_table.cpp	2407	this->dtTable.Rows[rowNum][colName] = (CDecimal)this->dtTable.Rows[rowNum][colNameSrc];
+libMMTP/f_mmtp_dyna_table.cpp	2422	BM2_FUNCTION_EXPORT void CDynaTable::CopyColVal(const CString& colName, CDataRow& row, CString colNameSrc, int rowNum, bool addCol)
+libMMTP/f_mmtp_dyna_table.cpp	2442	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2451	this->dtTable.Rows[rowNum][colName] = " ";
+libMMTP/f_mmtp_dyna_table.cpp	2455	this->dtTable.Rows[rowNum][colName] = (CString)row[colNameSrc];
+libMMTP/f_mmtp_dyna_table.cpp	2462	this->dtTable.Rows[rowNum][colName] = (CDecimal)0;
+libMMTP/f_mmtp_dyna_table.cpp	2466	this->dtTable.Rows[rowNum][colName] = (CDecimal)row[colNameSrc];
+libMMTP/f_mmtp_dyna_table.cpp	2480	BM2_FUNCTION_EXPORT void CDynaTable::CopyColVal(const CString& colName, CDataRow& row, int rowNum, bool addCol)
+libMMTP/f_mmtp_dyna_table.cpp	2500	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2509	this->dtTable.Rows[rowNum][colName] = " ";
+libMMTP/f_mmtp_dyna_table.cpp	2513	this->dtTable.Rows[rowNum][colName] = (CString)row[colName];
+libMMTP/f_mmtp_dyna_table.cpp	2520	this->dtTable.Rows[rowNum][colName] = (CDecimal)0;
+libMMTP/f_mmtp_dyna_table.cpp	2524	this->dtTable.Rows[rowNum][colName] = (CDecimal)row[colName];
+libMMTP/f_mmtp_dyna_table.cpp	2559	BM2_FUNCTION_EXPORT void CDynaTable::AddColVal(const CString& colName, CString colVal, int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2563	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2568	this->dtTable.Rows[rowNum][colName] = colVal;
+libMMTP/f_mmtp_dyna_table.cpp	2579	BM2_FUNCTION_EXPORT void CDynaTable::AddColVal(const CString& colName, CDecimal colVal, int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2586	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2591	this->dtTable.Rows[rowNum][colName] = colVal;
+libMMTP/f_mmtp_dyna_table.cpp	2602	BM2_FUNCTION_EXPORT void CDynaTable::SetFilterColVal(const CString& colName, CString colVal, int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2606	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2611	this->dtTable.Rows[rowNum][colName] = colVal;
+libMMTP/f_mmtp_dyna_table.cpp	2624	BM2_FUNCTION_EXPORT void CDynaTable::SetFilterColVal(const CString& colName, CDecimal colVal, int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2628	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2633	this->dtTable.Rows[rowNum][colName] = colVal;
+libMMTP/f_mmtp_dyna_table.cpp	2646	BM2_FUNCTION_EXPORT void CDynaTable::SetHoldColVal(const CString& colName, CString colVal, int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2650	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2655	this->dtTable.Rows[rowNum][colName] = colVal;
+libMMTP/f_mmtp_dyna_table.cpp	2668	BM2_FUNCTION_EXPORT void CDynaTable::SetHoldColVal(const CString& colName, CDecimal colVal, int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2672	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2677	this->dtTable.Rows[rowNum][colName] = colVal;
+libMMTP/f_mmtp_dyna_table.cpp	2691	BM2_FUNCTION_EXPORT CString CDynaTable::GetColValString(const CString& colName, int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2693	if (this->dtTable.Columns.Contains(colName) && this->dtTable.Rows.get_Count() - 1 >= rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2695	return this->dtTable.Rows[rowNum][colName];
+libMMTP/f_mmtp_dyna_table.cpp	2712	BM2_FUNCTION_EXPORT CDecimal CDynaTable::GetColValDecimal(const CString& colName, int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2714	if (this->dtTable.Columns.Contains(colName) && this->dtTable.Rows.get_Count() - 1 >= rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2716	return this->dtTable.Rows[rowNum][colName];
+libMMTP/f_mmtp_dyna_table.cpp	2744	BM2_FUNCTION_EXPORT CDataRow& CDynaTable::GetDataRow(int rowNum)
+libMMTP/f_mmtp_dyna_table.cpp	2746	CDataRow& retRow = this->dtTable.Rows[rowNum];
+libMMTP/f_mmtp_mat_track.cpp	989	strSql = "SELECT length FROM sysibm.syscolumns WHERE tbname ='" + tableName +
+p_mmtp_18030/mmtp_loadQuery.cpp	12	int rowNum = 0;
+p_mmtp_18030/mmtp_loadQuery.cpp	559	sqlstr = "SELECT remarks FROM SYSIBM.SYSTABLES WHERE name = '" + tableName +
+p_mmtp_18030/mmtp_loadQuery.cpp	818	rowNum = 0;
+p_mmtp_18030/mmtp_loadQuery.cpp	822	MergDataRow(dtCode.Rows[i], bcls_ret->Tables[blkNum].Rows[rowNum++], true, true);

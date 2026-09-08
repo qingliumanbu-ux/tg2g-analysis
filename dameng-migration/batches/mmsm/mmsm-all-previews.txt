@@ -1,0 +1,183 @@
+######## libMMSM/f_mmsm7101_proc.cpp
+### CHANGE-151  原行 78-78
+  L78 前: sqlstr = "SELECT MAX(SUBSTR(SLAG_PROC_NO, 5, 5)) + 1 FROM TMMSM71 WHERE  SUBSTR(SLAG_PROC_NO, 1, 2) = (SELECT substr(to_char(current date,'yyyy'),3,2) FROM sysibm.sysdummy1)";
+  L78 后: sqlstr = "SELECT MAX(SUBSTR(SLAG_PROC_NO, 5, 5)) + 1 FROM TMMSM71 WHERE  SUBSTR(SLAG_PROC_NO, 1, 2) = (SELECT substr(to_char(current date,'yyyy'),3,2) FROM DUAL)";
+
+######## libMMSM/f_mmsm80a.cpp
+### CHANGE-151  原行 439-441
+  L440 前: " FROM SYSIBM.SYSDUMMY1  ";	//取20位系统时刻
+  L440 后: " FROM DUAL  ";	//取20位系统时刻
+
+######## libMMSM/f_mmsm_acyfl_seq.cpp
+### CHANGE-151  原行 35-38
+  L36 前: "  FROM   sysibm.sysdummy1 ";	//6位前补零
+  L36 后: "  FROM   DUAL ";	//6位前补零
+
+######## libMMSM/f_mmsm_get_density.cpp
+### CHANGE-151  原行 52-52
+  L52 前: sqlstr = " select CODE_DESC_1_CONTENT,decode(trim(CODE_DESC_2_CONTENT),'',7.85,trim(CODE_DESC_2_CONTENT)) CODE_DESC_2_CONTENT from TWMSMZD02 where CODE_CLASS='MMSMDENS' ORDER BY CODE  ";
+  L52 后: sqlstr = " select CODE_DESC_1_CONTENT,CASE WHEN trim(CODE_DESC_2_CONTENT) IS NULL OR trim(CODE_DESC_2_CONTENT) = '' THEN 7.85 ELSE trim(CODE_DESC_2_CONTENT) END CODE_DESC_2_CONTENT from TWMSMZD02 where CODE_CLASS='MMSMDENS' ORDER BY CODE  ";
+
+######## libMMSM/f_mmsm_get_seq_no.cpp
+### CHANGE-151  原行 60-62
+  L61 前: "  FROM SYSIBM.SYSDUMMY1 ";	//6位前补零
+  L61 后: "  FROM DUAL ";	//6位前补零
+### CHANGE-152  原行 140-142
+  L141 前: "  FROM SYSIBM.SYSDUMMY1 ";	//6位前补零
+  L141 后: "  FROM DUAL ";	//6位前补零
+
+######## libMMSM/f_mmsm_gyupd.cpp
+### CHANGE-151  原行 132-142
+  L135 前: " select sm_plan_nol2,heat_no,l2_proc_no,PROC_NO,dev_code,decode(HEAT_COUNT,0,1,HEAT_COUNT) HEAT_COUNT,TO_NUMBER(TRIM(decode(trim(BACK_C1),null,0,BACK_C1)))  as BACK_C1,HANDLE_DIV,START_TIME,RATIO_B,RATIO_KR"
+  L135 后: " select sm_plan_nol2,heat_no,l2_proc_no,PROC_NO,dev_code,decode(HEAT_COUNT,0,1,HEAT_COUNT) HEAT_COUNT,TO_NUMBER(TRIM(CASE WHEN trim(BACK_C1) IS NULL THEN 0 ELSE BACK_C1 END))  as BACK_C1,HANDLE_DIV,START_TIME,RATIO_B,RATIO_KR"
+### CHANGE-152  原行 151-162
+  L154 前: " select sm_plan_nol2,heat_no,l2_proc_no,PROC_NO,dev_code,decode(HEAT_COUNT,0,1,HEAT_COUNT) HEAT_COUNT,TO_NUMBER(TRIM(decode(trim(BACK_C1),null,0,BACK_C1)))  as BACK_C1,HANDLE_DIV,START_TIME,RATIO_B,RATIO_KR"
+  L154 后: " select sm_plan_nol2,heat_no,l2_proc_no,PROC_NO,dev_code,decode(HEAT_COUNT,0,1,HEAT_COUNT) HEAT_COUNT,TO_NUMBER(TRIM(CASE WHEN trim(BACK_C1) IS NULL THEN 0 ELSE BACK_C1 END))  as BACK_C1,HANDLE_DIV,START_TIME,RATIO_B,RATIO_KR"
+### CHANGE-153  原行 194-205
+  L197 前: " select t1.sm_plan_nol2,t1.heat_no,t1.l2_proc_no,t1.proc_no,t1.dev_code,decode(t1.HEAT_COUNT,0,1,t1.HEAT_COUNT) HEAT_COUNT,TO_NUMBER(TRIM(decode(trim(BACK_C1),null,0,BACK_C1)))  as BACK_C1,t2.mat_code,t2.ID_2A,t2.PROC_COUNT,t2.WEIGH_NO,t2.LOT_NO,t2.QUALITY_BATCH_NO,t2.DEVO_TIME,
+  L197 后: " select t1.sm_plan_nol2,t1.heat_no,t1.l2_proc_no,t1.proc_no,t1.dev_code,decode(t1.HEAT_COUNT,0,1,t1.HEAT_COUNT) HEAT_COUNT,TO_NUMBER(TRIM(CASE WHEN trim(BACK_C1) IS NULL THEN 0 ELSE BACK_C1 END))  as BACK_C1,t2.mat_code,t2.ID_2A,t2.PROC_COUNT,t2.WEIGH_NO,t2.LOT_NO,t2.QUALITY_BAT
+### CHANGE-154  原行 214-225
+  L217 前: " select t1.sm_plan_nol2,t1.heat_no,t1.l2_proc_no,t1.proc_no,t1.dev_code,decode(t1.HEAT_COUNT,0,1,t1.HEAT_COUNT) HEAT_COUNT,TO_NUMBER(TRIM(decode(trim(BACK_C1),null,0,BACK_C1)))  as BACK_C1,t2.mat_code,t2.ID_2A,t2.PROC_COUNT,t2.WEIGH_NO,t2.QUALITY_BATCH_NO,t2.LOT_NO,t2.DEVO_TIME,
+  L217 后: " select t1.sm_plan_nol2,t1.heat_no,t1.l2_proc_no,t1.proc_no,t1.dev_code,decode(t1.HEAT_COUNT,0,1,t1.HEAT_COUNT) HEAT_COUNT,TO_NUMBER(TRIM(CASE WHEN trim(BACK_C1) IS NULL THEN 0 ELSE BACK_C1 END))  as BACK_C1,t2.mat_code,t2.ID_2A,t2.PROC_COUNT,t2.WEIGH_NO,t2.QUALITY_BATCH_NO,t2.L
+
+######## libMMSM/f_mmsm_matno_catch_sm.cpp
+### CHANGE-151  原行 591-591
+  L591 前: sqlstr = "SELECT  chr(to_number(ABS(ASCII(@seq) - 55))+55+1)   FROM SYSIBM.SYSDUMMY1 ";
+  L591 后: sqlstr = "SELECT  chr(to_number(ABS(ASCII(@seq) - 55))+55+1)   FROM DUAL ";
+
+######## p_mmsm_17520/mmsmis02_inq.cpp
+### CHANGE-151  原行 324-324
+  L324 前: sqlstr_outTIME = "select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+  L324 后: sqlstr_outTIME = "select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+
+######## p_mmsm_17520/mmsmis02_inqa.cpp
+### CHANGE-151  原行 235-235
+  L235 前: sqlstr_outTIME = "select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+  L235 后: sqlstr_outTIME = "select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+
+######## p_mmsm_17520/mmsmis02a1_inq.cpp
+### CHANGE-151  原行 1101-1101
+  L1101 前: sqlstr_COLDTIME="select timestampdiff(8,char(current timestamp - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+  L1101 后: sqlstr_COLDTIME="select timestampdiff(8,char(current timestamp - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+### CHANGE-152  原行 1117-1117
+  L1117 前: sqlstr_COLDTIME="select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+  L1117 后: sqlstr_COLDTIME="select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+
+######## p_mmsm_17520/mmsmis02a1_inqa.cpp
+### CHANGE-151  原行 1066-1066
+  L1066 前: sqlstr_COLDTIME="select timestampdiff(8,char(current timestamp - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+  L1066 后: sqlstr_COLDTIME="select timestampdiff(8,char(current timestamp - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+### CHANGE-152  原行 1082-1082
+  L1082 前: sqlstr_COLDTIME="select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+  L1082 后: sqlstr_COLDTIME="select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+
+######## p_mmsm_17550/mmsmcf_inq.cpp
+### CHANGE-151  原行 89-98
+  L98 前: " (SELECT nvl(ELM_ACT,0) FROM TQMTS25 WHERE heat_no = '"+ heat_no +"'  and elm_code = '058' and st_sample_no = '"+ st_sample_no +"' ) NI from SYSIBM.SYSDUMMY1 ";
+  L98 后: " (SELECT nvl(ELM_ACT,0) FROM TQMTS25 WHERE heat_no = '"+ heat_no +"'  and elm_code = '058' and st_sample_no = '"+ st_sample_no +"' ) NI from DUAL ";
+
+######## p_mmsm_17570/mmsmacshf2_inq.cpp
+### CHANGE-151  原行 236-241
+  L237 前: "	'8' WHEN T.PONO_SLAB <> ' ' THEN '9' ELSE '3' END AS SLAB_TYPE_OLD,DECODE(substr(TQ01.ORDER_NO,0,1),'A',TQ01.TRNP_MODE_CODE,' ')  TRNP_MODE_CODE_1,TQ01.ORDER_THICK,TQ01.PROD_CLASS_DESC, decode(t2.MAT_NO, null, '0', '1') need_mend,nvl(t2.MEND_CAUSE, ' ')           MEND_CAUSE, T.
+  L237 后: "	'8' WHEN T.PONO_SLAB <> ' ' THEN '9' ELSE '3' END AS SLAB_TYPE_OLD,DECODE(substr(TQ01.ORDER_NO,0,1),'A',TQ01.TRNP_MODE_CODE,' ')  TRNP_MODE_CODE_1,TQ01.ORDER_THICK,TQ01.PROD_CLASS_DESC, CASE WHEN t2.MAT_NO IS NULL THEN '0' ELSE '1' END need_mend,nvl(t2.MEND_CAUSE, ' ')         
+  L240 前: "	'8' WHEN T.PONO_SLAB <> ' ' THEN '9' ELSE '3' END AS SLAB_TYPE_OLD, DECODE(substr(TQ01.ORDER_NO,0,1),'A',TQ01.TRNP_MODE_CODE,' ') TRNP_MODE_CODE_1,TQ01.ORDER_THICK,TQ01.PROD_CLASS_DESC, decode(t2.MAT_NO, null, '0', '1') need_mend,nvl(t2.MEND_CAUSE, ' ')           MEND_CAUSE, T.
+  L240 后: "	'8' WHEN T.PONO_SLAB <> ' ' THEN '9' ELSE '3' END AS SLAB_TYPE_OLD, DECODE(substr(TQ01.ORDER_NO,0,1),'A',TQ01.TRNP_MODE_CODE,' ') TRNP_MODE_CODE_1,TQ01.ORDER_THICK,TQ01.PROD_CLASS_DESC, CASE WHEN t2.MAT_NO IS NULL THEN '0' ELSE '1' END need_mend,nvl(t2.MEND_CAUSE, ' ')         
+
+######## p_mmsm_17580/mmsmxmjl_inq.cpp
+### CHANGE-151  原行 81-89
+  L82 前: " ROUND((((DECODE(MEND_AFTER_WEIGHT, null, 0, MEND_AFTER_WEIGHT) * DECODE(MEND_RATE, NULL, 0, MEND_RATE) / 100 * 1000) *  (18.3 / DECODE(MEND_AFTER_WEIGHT, 0, NULL, MEND_AFTER_WEIGHT)) / 238 *"
+  L82 后: " ROUND((((CASE WHEN MEND_AFTER_WEIGHT IS NULL THEN 0 ELSE MEND_AFTER_WEIGHT END * CASE WHEN MEND_RATE IS NULL THEN 0 ELSE MEND_RATE END / 100 * 1000) *  (18.3 / DECODE(MEND_AFTER_WEIGHT, 0, NULL, MEND_AFTER_WEIGHT)) / 238 *"
+  L83 前: " (10.25 / DECODE(decode(trim(MEND_METAL_RATE1), null, 0, MEND_METAL_RATE1), 0, null, MEND_METAL_RATE1))) * DECODE(MEND_AFTER_WEIGHT, null, 0, MEND_AFTER_WEIGHT)), 3) AS MEND_WEIGHT1"
+  L83 后: " (10.25 / DECODE(decode(trim(MEND_METAL_RATE1), null, 0, MEND_METAL_RATE1), 0, null, MEND_METAL_RATE1))) * CASE WHEN MEND_AFTER_WEIGHT IS NULL THEN 0 ELSE MEND_AFTER_WEIGHT END), 3) AS MEND_WEIGHT1"
+
+######## p_mmsm_17610/mmsm01a1f2_inq.cpp
+### CHANGE-151  原行 105-111
+  L106 前: " SELECT A.*,DECODE(substr(TQ01.ORDER_NO,0,1),'A',TQ01.TRNP_MODE_CODE,' ') TRNP_MODE_CODE_1,decode(t2.MAT_NO,null,'0','1') need_mend,nvl(t2.MEND_CAUSE,' ')MEND_CAUSE,TQ01.ORDER_THICK,TQ01.PROD_CLASS_DESC,CASE WHEN A.RCV_MAT_FLAG = 'N' THEN ' ' WHEN A.measure_wt = A.receive_weight
+  L106 后: " SELECT A.*,DECODE(substr(TQ01.ORDER_NO,0,1),'A',TQ01.TRNP_MODE_CODE,' ') TRNP_MODE_CODE_1,CASE WHEN t2.MAT_NO IS NULL THEN '0' ELSE '1' END need_mend,nvl(t2.MEND_CAUSE,' ')MEND_CAUSE,TQ01.ORDER_THICK,TQ01.PROD_CLASS_DESC,CASE WHEN A.RCV_MAT_FLAG = 'N' THEN ' ' WHEN A.measure_wt
+
+######## p_mmsm_17650/mmsmdrsj_add.cpp
+### CHANGE-151  原行 66-66
+  L66 前: sqlstr = "SELECT DECODE(max(now_row),null,0,max(now_row)) FROM TQMTS0RDR where heat_no='" + v_heat_no + "'and order_no='" + v_order_no + "'";
+  L66 后: sqlstr = "SELECT CASE WHEN max(now_row) IS NULL THEN 0 ELSE max(now_row) END FROM TQMTS0RDR where heat_no='" + v_heat_no + "'and order_no='" + v_order_no + "'";
+
+######## p_mmsm_17660/mmsmcyzjl_inq.cpp
+### CHANGE-151  原行 93-104
+  L94 前: " decode(b.SHIFT_GROUP, null, c.shift_group, b.SHIFT_GROUP)          LOAD_UP_SHIFT_GROUP,decode(b.OUT_STOCK_TIME, null, c.OUT_STOCK_TIME, b.OUT_STOCK_TIME) LOAD_UP_TIME, "
+  L94 后: " CASE WHEN b.SHIFT_GROUP IS NULL THEN c.shift_group ELSE b.SHIFT_GROUP END          LOAD_UP_SHIFT_GROUP,CASE WHEN b.OUT_STOCK_TIME IS NULL THEN c.OUT_STOCK_TIME ELSE b.OUT_STOCK_TIME END LOAD_UP_TIME, "
+  L98 前: " a.LGORT,  decode(b.UNLOAD_CODE, null, c.UNLOAD_CODE, b.UNLOAD_CODE)          UNLOAD_CODE, "
+  L98 后: " a.LGORT,  CASE WHEN b.UNLOAD_CODE IS NULL THEN c.UNLOAD_CODE ELSE b.UNLOAD_CODE END          UNLOAD_CODE, "
+  L99 前: " decode(b.TRUCK_NO, null, c.TRUCK_NO, b.TRUCK_NO)                   TRUCK_NO, D.CODE_DESC_1_CONTENT, b.OPERATOR, GUIDE_DEST, STOCK_L2, C.REMARK, a.UNIT_CODE,a.c_div"
+  L99 后: " CASE WHEN b.TRUCK_NO IS NULL THEN c.TRUCK_NO ELSE b.TRUCK_NO END                   TRUCK_NO, D.CODE_DESC_1_CONTENT, b.OPERATOR, GUIDE_DEST, STOCK_L2, C.REMARK, a.UNIT_CODE,a.c_div"
+
+######## p_mmsm_17660/mmsmdbdc_inq.cpp
+### CHANGE-151  原行 120-194
+  L133 前: "	  DECODE(TW62.LOAD_CODE_FACTORY, NULL, TWM41.C_SENDDEPT, TW62.LOAD_CODE_FACTORY)  RETURNPLANT,DECODE(TW62.SHIFT_GROUP, NULL, TWM41.C_GROUP, TW62.SHIFT_GROUP)     SHIFTRETURN,																																																																																																								
+  L133 后: "	  CASE WHEN TW62.LOAD_CODE_FACTORY IS NULL THEN TWM41.C_SENDDEPT ELSE TW62.LOAD_CODE_FACTORY END  RETURNPLANT,CASE WHEN TW62.SHIFT_GROUP IS NULL THEN TWM41.C_GROUP ELSE TW62.SHIFT_GROUP END     SHIFTRETURN,																																																																								
+  L134 前: "	 DECODE(TW62.UNLOAD_END_TIME, NULL, TWM41.T_INSTOCKTIME, TW62.UNLOAD_END_TIME)                   RETURNDATE, DECODE(TW62.BACK1,NULL,TWM41.C_QULITYTYPE,TW62.BACK1) RETURNREASON,																																																																																																						
+  L134 后: "	 CASE WHEN TW62.UNLOAD_END_TIME IS NULL THEN TWM41.T_INSTOCKTIME ELSE TW62.UNLOAD_END_TIME END                   RETURNDATE, CASE WHEN TW62.BACK1 IS NULL THEN TWM41.C_QULITYTYPE ELSE TW62.BACK1 END RETURNREASON,																																																																			
+  L137 前: "	t.JUDGE_RESULT_1, t.REMARK, DECODE(decode(TWM12.UNLOAD_CODE_AREA, null, twm61.UNLOAD_CODE_AREA, TWM12.UNLOAD_CODE_AREA), NULL,TWM32M.UNLOAD_CODE_AREA,decode(TWM12.UNLOAD_CODE_AREA, null, twm61.UNLOAD_CODE_AREA, TWM12.UNLOAD_CODE_AREA)) UNLOAD_CODE_AREA,DECODE(decode(TWM12.TRUCK
+  L137 后: "	t.JUDGE_RESULT_1, t.REMARK, CASE WHEN decode(TWM12.UNLOAD_CODE_AREA, null, twm61.UNLOAD_CODE_AREA, TWM12.UNLOAD_CODE_AREA) IS NULL THEN TWM32M.UNLOAD_CODE_AREA ELSE decode(TWM12.UNLOAD_CODE_AREA, null, twm61.UNLOAD_CODE_AREA, TWM12.UNLOAD_CODE_AREA) END UNLOAD_CODE_AREA,DECODE(
+  L138 前: "		decode(TWM12.TRUCK_NO, null, twm61.TRUCK_NO, TWM12.TRUCK_NO))                         TRUCK_NO, t.STOCK_L2, t.ORDER_NO, t.mat_no, (SELECT DELIVY_DATE from tqmom01 where ORDER_NO = T.ORDER_NO) DELIVY_DATE, (SELECT ORDER_THICK from tqmom01 where  ORDER_NO = T.ORDER_NO) ORDER_THI
+  L138 后: "		CASE WHEN TWM12.TRUCK_NO IS NULL THEN twm61.TRUCK_NO ELSE TWM12.TRUCK_NO END)                         TRUCK_NO, t.STOCK_L2, t.ORDER_NO, t.mat_no, (SELECT DELIVY_DATE from tqmom01 where ORDER_NO = T.ORDER_NO) DELIVY_DATE, (SELECT ORDER_THICK from tqmom01 where  ORDER_NO = T.ORD
+  L143 前: "	 DECODE(decode(TWM12.SHIFT_GROUP, null, twm61.SHIFT_GROUP, TWM12.SHIFT_GROUP), NULL, TWM32M.SHIFT_GROUP,decode(TWM12.SHIFT_GROUP, null, twm61.SHIFT_GROUP, TWM12.SHIFT_GROUP))                ZC_PROD_GROUP,DECODE(decode(TWM12.OUT_STOCK_TIME, null, twm61.LOAD_END_TIME, TWM12.OUT_S
+  L143 后: "	 CASE WHEN decode(TWM12.SHIFT_GROUP, null, twm61.SHIFT_GROUP, TWM12.SHIFT_GROUP) IS NULL THEN TWM32M.SHIFT_GROUP ELSE decode(TWM12.SHIFT_GROUP, null, twm61.SHIFT_GROUP, TWM12.SHIFT_GROUP) END                ZC_PROD_GROUP,CASE WHEN decode(TWM12.OUT_STOCK_TIME, null, twm61.LOAD_E
+  L144 前: "	T.C_DELIVERY_STOCK, DECODE(T.LOGISTICS_STATUS, '2', 'W', '3', 'Y', 'N')  LOGISTICS_STATUS, DECODE(T.LGORT, '6242', '成品库', '6246', '修磨库') VALUE_TYPE, T.PRODUCT_FLAG,decode(t2.MAT_NO,null,'0','1') need_mend,nvl(t2.OFFLINE_FLAG, ' ') OFFLINE_FLAG,nvl(t2.MEND_CAUSE, ' ') MEND_CAUSE
+  L144 后: "	T.C_DELIVERY_STOCK, DECODE(T.LOGISTICS_STATUS, '2', 'W', '3', 'Y', 'N')  LOGISTICS_STATUS, DECODE(T.LGORT, '6242', '成品库', '6246', '修磨库') VALUE_TYPE, T.PRODUCT_FLAG,CASE WHEN t2.MAT_NO IS NULL THEN '0' ELSE '1' END need_mend,nvl(t2.OFFLINE_FLAG, ' ') OFFLINE_FLAG,nvl(t2.MEND_CAU
+
+######## p_mmsm_17660/mmsmhsljl_inq.cpp
+### CHANGE-151  原行 74-83
+  L75 前: " ROUND((((DECODE(e.MEND_AFTER_WEIGHT, null, 0, e.MEND_AFTER_WEIGHT) * DECODE(MEND_RATE, NULL, 0, MEND_RATE) / 100 * 1000) *  (18.3 / DECODE(e.MEND_AFTER_WEIGHT, 0, NULL, e.MEND_AFTER_WEIGHT)) / 238 *"
+  L75 后: " ROUND((((CASE WHEN e.MEND_AFTER_WEIGHT IS NULL THEN 0 ELSE e.MEND_AFTER_WEIGHT END * CASE WHEN MEND_RATE IS NULL THEN 0 ELSE MEND_RATE END / 100 * 1000) *  (18.3 / DECODE(e.MEND_AFTER_WEIGHT, 0, NULL, e.MEND_AFTER_WEIGHT)) / 238 *"
+  L76 前: " (10.25 / DECODE(decode(trim(MEND_METAL_RATE1), null, 0, MEND_METAL_RATE1), 0, null, MEND_METAL_RATE1))) * DECODE(e.MEND_AFTER_WEIGHT, null, 0, e.MEND_AFTER_WEIGHT)), 3) AS MEND_WEIGHT1"
+  L76 后: " (10.25 / DECODE(decode(trim(MEND_METAL_RATE1), null, 0, MEND_METAL_RATE1), 0, null, MEND_METAL_RATE1))) * CASE WHEN e.MEND_AFTER_WEIGHT IS NULL THEN 0 ELSE e.MEND_AFTER_WEIGHT END), 3) AS MEND_WEIGHT1"
+
+######## p_mmsm_17660/mmsmlcbgx_inq.cpp
+### CHANGE-151  原行 126-126
+  L126 前: sqlstr += " AND to_char(to_date(decode(trim(AOD_BOF_E_DTIME),null,'1999-01-01 00:01:01',AOD_BOF_E_DTIME),'yyyy-mm-dd hh24:mi:ss'),'yyyyMMddhhmiss')>= @v_from";
+  L126 后: sqlstr += " AND to_char(to_date(CASE WHEN trim(AOD_BOF_E_DTIME) IS NULL THEN '1999-01-01 00:01:01' ELSE AOD_BOF_E_DTIME END,'yyyy-mm-dd hh24:mi:ss'),'yyyyMMddhhmiss')>= @v_from";
+### CHANGE-152  原行 130-130
+  L130 前: sqlstr += " AND to_char(to_date(decode(trim(AOD_BOF_E_DTIME),null,'1999-01-01 00:01:01',AOD_BOF_E_DTIME),'yyyy-mm-dd hh24:mi:ss'),'yyyyMMddhhmiss')<= @v_to";
+  L130 后: sqlstr += " AND to_char(to_date(CASE WHEN trim(AOD_BOF_E_DTIME) IS NULL THEN '1999-01-01 00:01:01' ELSE AOD_BOF_E_DTIME END,'yyyy-mm-dd hh24:mi:ss'),'yyyyMMddhhmiss')<= @v_to";
+
+######## p_mmsm_17660/mmsmlcbqx_inq.cpp
+### CHANGE-151  原行 127-127
+  L127 前: sqlstr_where += " AND to_char(to_date(decode(trim(AOD_BOF_E_DTIME),null,'1999-01-01 00:01:01',AOD_BOF_E_DTIME),'yyyy-mm-dd hh24:mi:ss'),'yyyyMMddhhmiss')>= @v_from";
+  L127 后: sqlstr_where += " AND to_char(to_date(CASE WHEN trim(AOD_BOF_E_DTIME) IS NULL THEN '1999-01-01 00:01:01' ELSE AOD_BOF_E_DTIME END,'yyyy-mm-dd hh24:mi:ss'),'yyyyMMddhhmiss')>= @v_from";
+### CHANGE-152  原行 131-131
+  L131 前: sqlstr_where += " AND to_char(to_date(decode(trim(AOD_BOF_E_DTIME),null,'1999-01-01 00:01:01',AOD_BOF_E_DTIME),'yyyy-mm-dd hh24:mi:ss'),'yyyyMMddhhmiss')<= @v_to";
+  L131 后: sqlstr_where += " AND to_char(to_date(CASE WHEN trim(AOD_BOF_E_DTIME) IS NULL THEN '1999-01-01 00:01:01' ELSE AOD_BOF_E_DTIME END,'yyyy-mm-dd hh24:mi:ss'),'yyyyMMddhhmiss')<= @v_to";
+
+######## p_mmsm_17660/mmsmqxdc_inq.cpp
+### CHANGE-151  原行 114-153
+  L124 前: "        DECODE(TW62.LOAD_CODE_FACTORY, NULL, TWM41.C_SENDDEPT, TW62.LOAD_CODE_FACTORY)  RETURNPLANT,DECODE(TW62.SHIFT_GROUP, NULL, TWM41.C_GROUP, TW62.SHIFT_GROUP)     SHIFTRETURN,																																																																																																			
+  L124 后: "        CASE WHEN TW62.LOAD_CODE_FACTORY IS NULL THEN TWM41.C_SENDDEPT ELSE TW62.LOAD_CODE_FACTORY END  RETURNPLANT,CASE WHEN TW62.SHIFT_GROUP IS NULL THEN TWM41.C_GROUP ELSE TW62.SHIFT_GROUP END     SHIFTRETURN,																																																																			
+  L125 前: " DECODE(TW62.UNLOAD_END_TIME, NULL, TWM41.T_INSTOCKTIME, TW62.UNLOAD_END_TIME)                   RETURNDATE, DECODE(TW62.BACK1,NULL,TWM41.C_QULITYTYPE,TW62.BACK1) RETURNREASON,																																																																																																							
+  L125 后: " CASE WHEN TW62.UNLOAD_END_TIME IS NULL THEN TWM41.T_INSTOCKTIME ELSE TW62.UNLOAD_END_TIME END                   RETURNDATE, CASE WHEN TW62.BACK1 IS NULL THEN TWM41.C_QULITYTYPE ELSE TW62.BACK1 END RETURNREASON,																																																																				
+  L128 前: " t.JUDGE_RESULT_1, t.REMARK,decode(TWM12.UNLOAD_CODE_AREA, null, twm61.UNLOAD_CODE_AREA, TWM12.UNLOAD_CODE_AREA) UNLOAD_CODE_AREA, decode(TWM12.TRUCK_NO, null, twm61.TRUCK_NO, TWM12.TRUCK_NO) TRUCK_NO, t.STOCK_L2, t.ORDER_NO, t.mat_no, (SELECT DELIVY_DATE from tqmom01 where ORDE
+  L128 后: " t.JUDGE_RESULT_1, t.REMARK,CASE WHEN TWM12.UNLOAD_CODE_AREA IS NULL THEN twm61.UNLOAD_CODE_AREA ELSE TWM12.UNLOAD_CODE_AREA END UNLOAD_CODE_AREA, CASE WHEN TWM12.TRUCK_NO IS NULL THEN twm61.TRUCK_NO ELSE TWM12.TRUCK_NO END TRUCK_NO, t.STOCK_L2, t.ORDER_NO, t.mat_no, (SELECT DEL
+  L133 前: " decode(TWM12.SHIFT_GROUP, null, twm61.SHIFT_GROUP, TWM12.SHIFT_GROUP) ZC_PROD_GROUP,  decode(TWM12.OUT_STOCK_TIME, null, twm61.LOAD_END_TIME, TWM12.OUT_STOCK_TIME)  ZC_TIME,																																																																																																						   
+  L133 后: " CASE WHEN TWM12.SHIFT_GROUP IS NULL THEN twm61.SHIFT_GROUP ELSE TWM12.SHIFT_GROUP END ZC_PROD_GROUP,  CASE WHEN TWM12.OUT_STOCK_TIME IS NULL THEN twm61.LOAD_END_TIME ELSE TWM12.OUT_STOCK_TIME END  ZC_TIME,																																																																									
+  L135 前: " case when STOCK_L2 in('CS-HSM', 'SS-HSM', 'HF') THEN '2250' when DST_STOCK_CODE = 'WXK104' THEN '钢坯库' when DST_STOCK_CODE in('WXK101', 'WXK102', 'WXK103') THEN '储运站' when DST_STOCK_CODE in('635003') THEN '1549' when DST_STOCK_CODE in('639002') THEN '4300'  when DST_STOCK_CODE i
+  L135 后: " case when STOCK_L2 in('CS-HSM', 'SS-HSM', 'HF') THEN '2250' when DST_STOCK_CODE = 'WXK104' THEN '钢坯库' when DST_STOCK_CODE in('WXK101', 'WXK102', 'WXK103') THEN '储运站' when DST_STOCK_CODE in('635003') THEN '1549' when DST_STOCK_CODE in('639002') THEN '4300'  when DST_STOCK_CODE i
+
+######## p_mmsm_17660/mmsmshdc_inq.cpp
+### CHANGE-151  原行 200-280
+  L234 前: DECODE(TW62.LOAD_CODE_FACTORY, NULL, TWM41.C_SENDDEPT, TW62.LOAD_CODE_FACTORY) RETURNPLANT,\
+  L234 后: CASE WHEN TW62.LOAD_CODE_FACTORY IS NULL THEN TWM41.C_SENDDEPT ELSE TW62.LOAD_CODE_FACTORY END RETURNPLANT,\
+  L235 前: DECODE(TW62.SHIFT_GROUP, NULL, TWM41.C_GROUP, TW62.SHIFT_GROUP) SHIFTRETURN,\
+  L235 后: CASE WHEN TW62.SHIFT_GROUP IS NULL THEN TWM41.C_GROUP ELSE TW62.SHIFT_GROUP END SHIFTRETURN,\
+  L236 前: DECODE(TW62.UNLOAD_END_TIME, NULL, TWM41.T_INSTOCKTIME, TW62.UNLOAD_END_TIME) RETURNDATE,\
+  L236 后: CASE WHEN TW62.UNLOAD_END_TIME IS NULL THEN TWM41.T_INSTOCKTIME ELSE TW62.UNLOAD_END_TIME END RETURNDATE,\
+  L237 前: DECODE(TW62.BACK1, NULL, TWM41.C_QULITYTYPE, TW62.BACK1) RETURNREASON,\
+  L237 后: CASE WHEN TW62.BACK1 IS NULL THEN TWM41.C_QULITYTYPE ELSE TW62.BACK1 END RETURNREASON,\
+  L241 前: decode(TWM12.UNLOAD_CODE_AREA, null, twm61.UNLOAD_CODE_AREA, TWM12.UNLOAD_CODE_AREA) UNLOAD_CODE_AREA,\
+  L241 后: CASE WHEN TWM12.UNLOAD_CODE_AREA IS NULL THEN twm61.UNLOAD_CODE_AREA ELSE TWM12.UNLOAD_CODE_AREA END UNLOAD_CODE_AREA,\
+  L242 前: decode(TWM12.TRUCK_NO, null, twm61.TRUCK_NO, TWM12.TRUCK_NO) TRUCK_NO,\
+  L242 后: CASE WHEN TWM12.TRUCK_NO IS NULL THEN twm61.TRUCK_NO ELSE TWM12.TRUCK_NO END TRUCK_NO,\
+  L252 前: decode(TWM12.SHIFT_GROUP, null, twm61.SHIFT_GROUP, TWM12.SHIFT_GROUP) ZC_PROD_GROUP,\
+  L252 后: CASE WHEN TWM12.SHIFT_GROUP IS NULL THEN twm61.SHIFT_GROUP ELSE TWM12.SHIFT_GROUP END ZC_PROD_GROUP,\
+  L253 前: decode(TWM12.OUT_STOCK_TIME, null, twm61.LOAD_END_TIME, TWM12.OUT_STOCK_TIME) ZC_TIME,\
+  L253 后: CASE WHEN TWM12.OUT_STOCK_TIME IS NULL THEN twm61.LOAD_END_TIME ELSE TWM12.OUT_STOCK_TIME END ZC_TIME,\
+  L256 前: decode(t2.MAT_NO, null, '0', '1') need_mend, nvl(t2.OFFLINE_FLAG, ' ') OFFLINE_FLAG,nvl(t2.MEND_CAUSE, ' ') MEND_CAUSE,nvl(t2.OFFLINE_REASON, ' ') OFFLINE_REASON,\
+  L256 后: CASE WHEN t2.MAT_NO IS NULL THEN '0' ELSE '1' END need_mend, nvl(t2.OFFLINE_FLAG, ' ') OFFLINE_FLAG,nvl(t2.MEND_CAUSE, ' ') MEND_CAUSE,nvl(t2.OFFLINE_REASON, ' ') OFFLINE_REASON,\
+

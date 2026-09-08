@@ -1,0 +1,10 @@
+﻿file,encoding,newline,sql_statements,dialect_hits
+p_ps00_14990/ps00ex_inq.cpp,gb18030,LF,2,0
+p_ps00_14990/ps00ex_tc_inq.cpp,gb18030,LF,2,0
+p_ps00_14990/ps00p1_del.cpp,gb18030,LF,1,0
+p_ps00_14990/ps00p1_inq.cpp,gb18030,LF,1,0
+p_ps00_14990/ps00p1_ins.cpp,gb18030,LF,3,1
+p_ps00_14990/ps00p1_upd.cpp,gb18030,LF,3,0
+p_ps00_14990/si0016_f5.cpp,gb18030,LF,0,3
+p_ps00_14990/si0016_inq.cpp,gb18030,LF,2,0
+p_ps00_14990/si0016_upd.cpp,gb18030,LF,1,8

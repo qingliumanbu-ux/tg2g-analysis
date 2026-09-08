@@ -1,0 +1,105 @@
+file	line	text
+libGCTP/f_gctp_dyna_table.cpp	815	BM2_FUNCTION_EXPORT CString CDynaTable2::BuildWhereString(int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	830	colValue = this->dtTable.Rows[rowNum][colName].ToString();
+libGCTP/f_gctp_dyna_table.cpp	872	colValue = this->dtTable.Rows[rowNum][colName].ToString();
+libGCTP/f_gctp_dyna_table.cpp	1345	BM2_FUNCTION_EXPORT CString CDynaTable2::BuildInsertString(int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	1381	if (this->dtTable.Rows[rowNum][colName].ToString().GetLength() > dataLength)
+libGCTP/f_gctp_dyna_table.cpp	1390	if (this->dtTable.Rows[rowNum][colName].ToString().Trim() == "")
+libGCTP/f_gctp_dyna_table.cpp	1396	strIns += "'" + this->dtTable.Rows[rowNum][colName].ToString().Replace("'", "''") + "')";
+libGCTP/f_gctp_dyna_table.cpp	1401	if (this->dtTable.Rows[rowNum][colName].ToString().Trim() == "")
+libGCTP/f_gctp_dyna_table.cpp	1409	strIns += "'" + this->dtTable.Rows[rowNum][colName].ToString().Replace("'", "''") + "',";
+libGCTP/f_gctp_dyna_table.cpp	1420	if (this->dtTable.Rows[rowNum][colName].ToString().Trim() != "")
+libGCTP/f_gctp_dyna_table.cpp	1424	colValue = this->dtTable.Rows[rowNum][colName].ToDecimal().ToInt32();
+libGCTP/f_gctp_dyna_table.cpp	1428	colValue = this->dtTable.Rows[rowNum][colName].ToDecimal().Round(dataScale);
+libGCTP/f_gctp_dyna_table.cpp	1462	BM2_FUNCTION_EXPORT CString CDynaTable2::BuildUpdateString(int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	1472	colValue = this->dtTable.Rows[rowNum][colName].ToString();
+libGCTP/f_gctp_dyna_table.cpp	1526	BM2_FUNCTION_EXPORT void CDynaTable2::InitDataRow(int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	1528	if (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	1538	this->dtTable.Rows[rowNum][colName] = " ";
+libGCTP/f_gctp_dyna_table.cpp	1542	this->dtTable.Rows[rowNum][colName] = (CDecimal)0;
+libGCTP/f_gctp_dyna_table.cpp	1553	BM2_FUNCTION_EXPORT void CDynaTable2::RemoveDataRow(int rowNum, int rowCount)
+libGCTP/f_gctp_dyna_table.cpp	1555	this->dtTable.Rows.Remove(rowNum, rowCount);
+libGCTP/f_gctp_dyna_table.cpp	1614	BM2_FUNCTION_EXPORT int CDynaTable2::QueryCount(int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	1616	CString condition = this->BuildWhereString(rowNum);
+libGCTP/f_gctp_dyna_table.cpp	1631	BM2_FUNCTION_EXPORT int CDynaTable2::Query(const CString& condition, int rowNum, int recordFrom, int pageSize)
+libGCTP/f_gctp_dyna_table.cpp	1646	strCondition = this->BuildWhereString(rowNum);
+libGCTP/f_gctp_dyna_table.cpp	1892	BM2_FUNCTION_EXPORT int CDynaTable2::Update(const CString& condition, int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	1916	this->SetColVal("REC_REVISOR", (CString)s.userid, rowNum);
+libGCTP/f_gctp_dyna_table.cpp	1917	this->SetColVal("REC_REVISE_TIME", CDateTime::Now().ToString("yyyyMMddHHmmss"), rowNum);
+libGCTP/f_gctp_dyna_table.cpp	1919	strUpd = this->BuildUpdateString(rowNum);
+libGCTP/f_gctp_dyna_table.cpp	2023	BM2_FUNCTION_EXPORT int CDynaTable2::Delete(int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2025	CString condition = this->BuildWhereString(rowNum);
+libGCTP/f_gctp_dyna_table.cpp	2100	BM2_FUNCTION_EXPORT void CDynaTable2::MergeFrom(CDataRow& row, int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2102	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2137	this->dtTable.Rows[rowNum][colName] = " ";
+libGCTP/f_gctp_dyna_table.cpp	2141	this->dtTable.Rows[rowNum][colName] = (CString)row[colName];
+libGCTP/f_gctp_dyna_table.cpp	2148	this->dtTable.Rows[rowNum][colName] = (CDecimal)0;
+libGCTP/f_gctp_dyna_table.cpp	2152	this->dtTable.Rows[rowNum][colName] = (CDecimal)row[colName];
+libGCTP/f_gctp_dyna_table.cpp	2169	BM2_FUNCTION_EXPORT void CDynaTable2::MergeTo(CDataTable& table, int rowNum, bool addCol, bool overrideFlag)
+libGCTP/f_gctp_dyna_table.cpp	2171	if (this->dtTable.Rows.get_Count() > rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2174	MergDataRow(this->dtTable.Rows[rowNum], row, addCol, overrideFlag);
+libGCTP/f_gctp_dyna_table.cpp	2194	int iRowNum = 0;
+libGCTP/f_gctp_dyna_table.cpp	2234	dtConvert.Rows[iRowNum++].Merge(this->dtTable.Rows[i]);
+libGCTP/f_gctp_dyna_table.cpp	2320	BM2_FUNCTION_EXPORT void CDynaTable2::SetColVal(const CString& colName, CString colVal, int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2324	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2329	this->dtTable.Rows[rowNum][colName] = colVal;
+libGCTP/f_gctp_dyna_table.cpp	2341	BM2_FUNCTION_EXPORT void CDynaTable2::SetColVal(const CString& colName, CDecimal colVal, int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2345	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2350	this->dtTable.Rows[rowNum][colName] = colVal;
+libGCTP/f_gctp_dyna_table.cpp	2398	BM2_FUNCTION_EXPORT void CDynaTable2::CopyColVal(const CString& colName, int rowNum, int rowNumSrc)
+libGCTP/f_gctp_dyna_table.cpp	2405	if (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2412	if (this->dtTable.Rows[rowNumSrc][colName] == CDBNull::Value || (CString)this->dtTable.Rows[rowNumSrc][colName] == "")
+libGCTP/f_gctp_dyna_table.cpp	2414	this->dtTable.Rows[rowNum][colName] = " ";
+libGCTP/f_gctp_dyna_table.cpp	2418	this->dtTable.Rows[rowNum][colName] = (CString)this->dtTable.Rows[rowNumSrc][colName];
+libGCTP/f_gctp_dyna_table.cpp	2423	if (this->dtTable.Rows[rowNum][colName] == CDBNull::Value)
+libGCTP/f_gctp_dyna_table.cpp	2425	this->dtTable.Rows[rowNum][colName] = (CDecimal)0;
+libGCTP/f_gctp_dyna_table.cpp	2429	this->dtTable.Rows[rowNum][colName] = (CDecimal)this->dtTable.Rows[rowNumSrc][colName];
+libGCTP/f_gctp_dyna_table.cpp	2442	BM2_FUNCTION_EXPORT void CDynaTable2::CopyColVal(const CString& colName, const CString& colNameSrc, int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2449	if (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2456	if (this->dtTable.Rows[rowNum][colNameSrc] == CDBNull::Value || (CString)this->dtTable.Rows[rowNum][colNameSrc] == "")
+libGCTP/f_gctp_dyna_table.cpp	2458	this->dtTable.Rows[rowNum][colName] = " ";
+libGCTP/f_gctp_dyna_table.cpp	2462	this->dtTable.Rows[rowNum][colName] = (CString)this->dtTable.Rows[rowNum][colNameSrc];
+libGCTP/f_gctp_dyna_table.cpp	2467	if (this->dtTable.Rows[rowNum][colNameSrc] == CDBNull::Value)
+libGCTP/f_gctp_dyna_table.cpp	2469	this->dtTable.Rows[rowNum][colName] = (CDecimal)0;
+libGCTP/f_gctp_dyna_table.cpp	2473	this->dtTable.Rows[rowNum][colName] = (CDecimal)this->dtTable.Rows[rowNum][colNameSrc];
+libGCTP/f_gctp_dyna_table.cpp	2488	BM2_FUNCTION_EXPORT void CDynaTable2::CopyColVal(const CString& colName, CDataRow& row, CString colNameSrc, int rowNum, bool addCol)
+libGCTP/f_gctp_dyna_table.cpp	2508	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2517	this->dtTable.Rows[rowNum][colName] = " ";
+libGCTP/f_gctp_dyna_table.cpp	2521	this->dtTable.Rows[rowNum][colName] = (CString)row[colNameSrc];
+libGCTP/f_gctp_dyna_table.cpp	2528	this->dtTable.Rows[rowNum][colName] = (CDecimal)0;
+libGCTP/f_gctp_dyna_table.cpp	2532	this->dtTable.Rows[rowNum][colName] = (CDecimal)row[colNameSrc];
+libGCTP/f_gctp_dyna_table.cpp	2546	BM2_FUNCTION_EXPORT void CDynaTable2::CopyColVal(const CString& colName, CDataRow& row, int rowNum, bool addCol)
+libGCTP/f_gctp_dyna_table.cpp	2566	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2575	this->dtTable.Rows[rowNum][colName] = " ";
+libGCTP/f_gctp_dyna_table.cpp	2579	this->dtTable.Rows[rowNum][colName] = (CString)row[colName];
+libGCTP/f_gctp_dyna_table.cpp	2586	this->dtTable.Rows[rowNum][colName] = (CDecimal)0;
+libGCTP/f_gctp_dyna_table.cpp	2590	this->dtTable.Rows[rowNum][colName] = (CDecimal)row[colName];
+libGCTP/f_gctp_dyna_table.cpp	2625	BM2_FUNCTION_EXPORT void CDynaTable2::AddColVal(const CString& colName, CString colVal, int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2629	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2634	this->dtTable.Rows[rowNum][colName] = colVal;
+libGCTP/f_gctp_dyna_table.cpp	2645	BM2_FUNCTION_EXPORT void CDynaTable2::AddColVal(const CString& colName, CDecimal colVal, int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2652	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2657	this->dtTable.Rows[rowNum][colName] = colVal;
+libGCTP/f_gctp_dyna_table.cpp	2668	BM2_FUNCTION_EXPORT void CDynaTable2::SetFilterColVal(const CString& colName, CString colVal, int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2672	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2677	this->dtTable.Rows[rowNum][colName] = colVal;
+libGCTP/f_gctp_dyna_table.cpp	2690	BM2_FUNCTION_EXPORT void CDynaTable2::SetFilterColVal(const CString& colName, CDecimal colVal, int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2694	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2699	this->dtTable.Rows[rowNum][colName] = colVal;
+libGCTP/f_gctp_dyna_table.cpp	2712	BM2_FUNCTION_EXPORT void CDynaTable2::SetHoldColVal(const CString& colName, CString colVal, int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2716	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2721	this->dtTable.Rows[rowNum][colName] = colVal;
+libGCTP/f_gctp_dyna_table.cpp	2734	BM2_FUNCTION_EXPORT void CDynaTable2::SetHoldColVal(const CString& colName, CDecimal colVal, int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2738	while (this->dtTable.Rows.get_Count() - 1 < rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2743	this->dtTable.Rows[rowNum][colName] = colVal;
+libGCTP/f_gctp_dyna_table.cpp	2757	BM2_FUNCTION_EXPORT CString CDynaTable2::GetColValString(const CString& colName, int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2759	if (this->dtTable.Columns.Contains(colName) && this->dtTable.Rows.get_Count() - 1 >= rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2761	return this->dtTable.Rows[rowNum][colName];
+libGCTP/f_gctp_dyna_table.cpp	2778	BM2_FUNCTION_EXPORT CDecimal CDynaTable2::GetColValDecimal(const CString& colName, int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2780	if (this->dtTable.Columns.Contains(colName) && this->dtTable.Rows.get_Count() - 1 >= rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2782	return this->dtTable.Rows[rowNum][colName];
+libGCTP/f_gctp_dyna_table.cpp	2810	BM2_FUNCTION_EXPORT CDataRow& CDynaTable2::GetDataRow(int rowNum)
+libGCTP/f_gctp_dyna_table.cpp	2812	CDataRow& retRow = this->dtTable.Rows[rowNum];
+libGCTP/f_gctp_getTableItem.cpp	109	querySql = "SELECT remarks FROM SYSIBM.SYSTABLES WHERE name = '" + table_name +
+libGCTP/f_gctp_getTableItem.cpp	140	sqlstr = "SELECT UPPER(t1.tc_item_name) AS column_name,tc_item_desc AS column_cname,DECODE(tc_item_type,'C','C','N')"
+libGCTP/f_gctp_getTableItem.cpp	141	" AS data_type,DECODE(tc_item_dec,0,to_char(tc_item_len),to_char(tc_item_len) || to_char(tc_item_dec)) AS data_length "

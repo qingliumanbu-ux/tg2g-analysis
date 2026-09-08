@@ -1,0 +1,25 @@
+
+===== Server/TMSM/libTMSM/f_tmsm01_60106.cpp =====
+L24 [datetime]: CString datetime = CDateTime::Now().ToString("yyyyMMddHHmmss");
+L34 [usage_st]: CString usage_st = " ";
+L54 [datetime]: datetime = CDateTime::Now().ToString("yyyyMMddHHmmss");
+L85 [usage_st]: usage_st = cmd_inq.GetString(2);
+L94 [usage_st]: usage_st = " ";
+
+===== Server/WM00/libWM00/f_create_crane_no.cpp =====
+L26 [dateNow14]: CString  dateNow14 = CDateTime::Now().ToString("yyyyMMddHHmmss");  //14位日期变量
+
+===== Server/WM00/libWM00/f_wm00_pile_jud.cpp =====
+L24 [dateNow14]: CString  dateNow14 = CDateTime::Now().ToString("yyyyMMddHHmmss");  //14位日期变量
+
+===== Server/MMSM/p_mmsm_17520/mmsmis02a1_inq.cpp =====
+L99 [v_in_stock_hot_time]: CString v_in_stock_hot_time = "";
+L100 [v_slab_cut_time]: CString v_slab_cut_time = "";
+L939 [v_in_stock_hot_time]: v_in_stock_hot_time = bcls_ret->Tables["MMSMIS02A1_INQ"].Rows[row]["IN_STOCK_HOT_TIME"];
+L940 [v_slab_cut_time]: v_slab_cut_time = bcls_ret->Tables["MMSMIS02A1_INQ"].Rows[row]["SLAB_CUT_TIME"];
+
+===== Server/MMSM/p_mmsm_17520/mmsmis02_inq.cpp =====
+L306 [v_in_stock_hot_time]: CString v_in_stock_hot_time = "";
+L307 [v_slab_cut_time]: CString v_slab_cut_time = "";
+L319 [v_in_stock_hot_time]: v_in_stock_hot_time = bcls_ret->Tables["MMSMIS02_INQ"].Rows[row]["IN_STOCK_HOT_TIME"];
+L320 [v_slab_cut_time]: v_slab_cut_time = bcls_ret->Tables["MMSMIS02_INQ"].Rows[row]["SLAB_CUT_TIME"];

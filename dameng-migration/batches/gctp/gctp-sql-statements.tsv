@@ -1,0 +1,89 @@
+file	start	end	preview
+libGCTP/f_gctp_buttonConfig.cpp	31	32	sqlstr = "SELECT * FROM tgctp07 WHERE form_no = '" + formNo + "' ORDER BY seq_no";
+libGCTP/f_gctp_buttonConfig.cpp	38	39	sqlstr = "SELECT * FROM tgctp05 WHERE form_no = '" + formNo + "' ORDER BY seq_no,now_row";
+libGCTP/f_gctp_buttonConfig.cpp	48	49	sqlstr = "SELECT * FROM tgctp00 WHERE cfgitm_grp_name = 'OPERATE_DO' ORDER BY seq_no";
+libGCTP/f_gctp_buttonConfig.cpp	113	114	sqlstr = "SELECT * FROM tgctp06 WHERE form_no = '" + formNo + "' ORDER BY handle_div,id,page_id,proc_seq_no";
+libGCTP/f_gctp_configDataSave.cpp	85	86	PrintLog("Insert");
+libGCTP/f_gctp_configDataSave.cpp	106	109	PrintLog("Update");
+libGCTP/f_gctp_configDataSave.cpp	125	126	sqlstr = "DELETE FROM tgctp02 WHERE cfgitm_name = '" + cfgitmName +
+libGCTP/f_gctp_configLoad.cpp	27	28	sqlstr = "SELECT DISTINCT cfgitm_name,cfggrp_name FROM tgctp01";
+libGCTP/f_gctp_dyna_table.cpp	562	562	CString strSelect = "SELECT ";
+libGCTP/f_gctp_dyna_table.cpp	566	568	if (strSelect == "SELECT ")
+libGCTP/f_gctp_dyna_table.cpp	578	580	if (strSelect == "SELECT ")
+libGCTP/f_gctp_dyna_table.cpp	592	594	if (strSelect == "SELECT ")
+libGCTP/f_gctp_dyna_table.cpp	604	606	if (strSelect == "SELECT ")
+libGCTP/f_gctp_dyna_table.cpp	1582	1585	CString inqStr = "SELECT COUNT(1) " + this->BuildFromString();
+libGCTP/f_gctp_dyna_table.cpp	1808	1810	PrintLog("Insert, RowsCount", this->dtTable.Rows.get_Count());
+libGCTP/f_gctp_dyna_table.cpp	1845	1846	insStr = "INSERT INTO " + this->sTableName + this->BuildInsertString(i);
+libGCTP/f_gctp_dyna_table.cpp	1921	1922	strSql = "UPDATE " + this->sTableName + " SET " + strUpd + " WHERE " + condition;
+libGCTP/f_gctp_dyna_table.cpp	1994	1995	strSql = "DELETE FROM " + this->sTableName + " WHERE " + condition;
+libGCTP/f_gctp_formBtnInsert.cpp	28	29	sqlstr = "SELECT appname FROM tesformresinfo WHERE name = '" + formNo + "'";
+libGCTP/f_gctp_formBtnInsert.cpp	44	45	sqlstr = "INSERT INTO tesbuttonresinfo VALUES('F2','" + tgctp04.GetColValString("FORM_NO") + "'," +
+libGCTP/f_gctp_formBtnInsert.cpp	52	53	sqlstr = "INSERT INTO tesbuttonresinfo_res VALUES('zh_Hans'," + dAclid.ToString() + ", '查询')";
+libGCTP/f_gctp_formBtnInsert.cpp	140	141	sqlstr = "INSERT INTO tesbuttonresinfo VALUES('F3','" + tgctp04.GetColValString("FORM_NO") + "'," +
+libGCTP/f_gctp_formBtnInsert.cpp	148	149	sqlstr = "INSERT INTO tesbuttonresinfo_res VALUES('zh_Hans'," + dAclid.ToString() + ", '新增')";
+libGCTP/f_gctp_formBtnInsert.cpp	234	235	sqlstr = "INSERT INTO tesbuttonresinfo VALUES('F4','" + tgctp04.GetColValString("FORM_NO") + "'," +
+libGCTP/f_gctp_formBtnInsert.cpp	242	243	sqlstr = "INSERT INTO tesbuttonresinfo_res VALUES('zh_Hans'," + dAclid.ToString() + ", '修改')";
+libGCTP/f_gctp_formBtnInsert.cpp	328	329	sqlstr = "INSERT INTO tesbuttonresinfo VALUES('F5','" + tgctp04.GetColValString("FORM_NO") + "'," +
+libGCTP/f_gctp_formBtnInsert.cpp	336	337	sqlstr = "INSERT INTO tesbuttonresinfo_res VALUES('zh_Hans'," + dAclid.ToString() + ", '删除')";
+libGCTP/f_gctp_formBtnInsert.cpp	415	416	sqlstr = "INSERT INTO tesbuttonresinfo VALUES('F3','" + tgctp04.GetColValString("FORM_NO") + "'," +
+libGCTP/f_gctp_formBtnInsert.cpp	423	424	sqlstr = "INSERT INTO tesbuttonresinfo_res VALUES('zh_Hans'," + dAclid.ToString() + ", '保存')";
+libGCTP/f_gctp_formBtnInsert.cpp	440	441	sqlstr = "INSERT INTO tesbuttonresinfo VALUES('F11','" + tgctp04.GetColValString("FORM_NO") + "'," +
+libGCTP/f_gctp_formBtnInsert.cpp	448	449	sqlstr = "INSERT INTO tesbuttonresinfo_res VALUES('zh_Hans'," + dAclid.ToString() + ", '重载')";
+libGCTP/f_gctp_formBtnInsert.cpp	459	460	sqlstr = "INSERT INTO tesbuttonresinfo VALUES('F12','" + tgctp04.GetColValString("FORM_NO") + "'," +
+libGCTP/f_gctp_formBtnInsert.cpp	467	468	sqlstr = "INSERT INTO tesbuttonresinfo_res VALUES('zh_Hans'," + dAclid.ToString() + ", '配置')";
+libGCTP/f_gctp_formBtnInsert.cpp	475	477	sqlstr = "DELETE FROM tesbuttonresinfo_res WHERE aclid IN (SELECT aclid FROM tesbuttonresinfo WHERE fname = '" +
+libGCTP/f_gctp_formBtnInsert.cpp	483	484	sqlstr = "DELETE FROM tesbuttonresinfo WHERE fname = '" + tgctp04.GetColValString("FORM_NO") + "' AND"
+libGCTP/f_gctp_formInfoInsert.cpp	28	29	sqlstr = "SELECT aclid FROM tesformresinfo WHERE name = '" + formNo + "'";
+libGCTP/f_gctp_formInfoInsert.cpp	37	38	sqlstr = "DELETE FROM tesbuttonresinfo_res WHERE aclid IN"
+libGCTP/f_gctp_formInfoInsert.cpp	44	45	sqlstr = "DELETE FROM tesbuttonresinfo WHERE fname = @FORM_NO";
+libGCTP/f_gctp_formInfoInsert.cpp	49	50	sqlstr = "DELETE FROM tesformresinfo_res WHERE aclid IN"
+libGCTP/f_gctp_formInfoInsert.cpp	55	56	sqlstr = "DELETE FROM tesformresinfo WHERE name = @FORM_NO";
+libGCTP/f_gctp_formInfoInsert.cpp	67	68	sqlstr = "INSERT INTO tesformresinfo VALUES('" + formNo + "','" + formName + "','GCTP.DLL'," + dAclid.ToString() +
+libGCTP/f_gctp_formInfoInsert.cpp	75	76	sqlstr = "INSERT INTO tesformresinfo_res VALUES('zh_Hans'," + dAclid.ToString() + ", '" + formName + "')";
+libGCTP/f_gctp_formInfoInsert.cpp	82	83	sqlstr = "DELETE FROM tesformpara WHERE form_name = '" + formNo + "'";
+libGCTP/f_gctp_formInfoInsert.cpp	88	89	sqlstr = "INSERT INTO tesformpara (REC_CREATOR,REC_CREATE_TIME,FORM_NAME,FORM_BASE_NAME) VALUES ('" +
+libGCTP/f_gctp_getCfgDataVt.cpp	40	41	sqlstr = "SELECT * FROM tgctp01 WHERE cfgitm_name = '" + cfgitmName + "' AND cfgitm_grp_name = '" + cfgitmGrpName + "' ORDER BY now_row";
+libGCTP/f_gctp_getCfgDataVt.cpp	147	150	sqlstr = "SELECT MAX(row_count) FROM (SELECT a.func_id,a.class_code,CEILING(b.item_count/a.column_count) row_count"
+libGCTP/f_gctp_getCfgDataVt.cpp	154	157	sqlstr = "SELECT MAX(row_count) FROM (SELECT a.func_id,a.class_code,CEIL(b.item_count/a.column_count) row_count"
+libGCTP/f_gctp_getConfigData.cpp	64	65	sqlstr = "SELECT item_cvalue FROM tgctp01 WHERE cfgitm_name = '" + cfgitmName +
+libGCTP/f_gctp_getConfigData.cpp	85	86	sqlstr = "SELECT item_cvalue FROM tgctp01 WHERE cfgitm_name = '" + cfgitmName +
+libGCTP/f_gctp_getConfigData.cpp	119	120	sqlstr = "SELECT * FROM tgctp03 " + cfgWhere + " ORDER BY seq_no";
+libGCTP/f_gctp_getConfigData.cpp	310	311	sqlstr = "SELECT ename AS CODE,cname AS CODE_DESC_1_CONTENT FROM tesuserinfo WHERE ename <> 'admin' AND isenable = 1";
+libGCTP/f_gctp_getConfigData.cpp	322	326	CString codeSql = "SELECT unit_code AS code,unit_cname AS code_desc_1_content,whole_backlog_code,mat_line_type,'0' AS default_flag FROM tmm00si16 WHERE 1 = 1";
+libGCTP/f_gctp_getConfigData.cpp	343	344	CString codeSql = "SELECT whole_backlog_code AS code,whole_backlog_name AS code_desc_1_content FROM tsi0001"
+libGCTP/f_gctp_getConfigData.cpp	367	370	CString codeSql = "SELECT DISTINCT " + colName;
+libGCTP/f_gctp_getConfigData.cpp	409	410	sqlstr = "SELECT b.name FROM ES.TESGROUPMEMBER a,ES.TESGROUPINFO b, ES.TESUSERINFO c"
+libGCTP/f_gctp_getConfigData.cpp	430	431	CString codeSql = "SELECT unit_code AS code,unit_cname AS code_desc_1_content,equ_no AS 设备号, whole_backlog_code,"
+libGCTP/f_gctp_getConfigData.cpp	511	512	sqlstr = "SELECT * FROM tmm0010 WHERE device_id = '" + (CString)s.fore_machine +
+libGCTP/f_gctp_getConfigData.cpp	552	553	codeSql = "SELECT unit_code AS code,unit_cname AS code_desc_1_content,whole_backlog_code,mat_line_type,'0' AS default_flag FROM tmm00si16"
+libGCTP/f_gctp_getConfigData.cpp	557	559	codeSql = "SELECT unit_code AS code,unit_cname AS code_desc_1_content,whole_backlog_code,mat_line_type,'0' AS default_flag FROM tmm00si16"
+libGCTP/f_gctp_getConfigData.cpp	679	680	CString sqlstr1 = "SELECT code_class,code,code_desc_1_content,code_desc_2_content,code_desc_3_content,code_desc_4_content"
+libGCTP/f_gctp_getConfigData.cpp	681	682	CString sqlstr2 = "SELECT code_class,code_name,code_desc_1_name,code_desc_2_name,code_desc_3_name,code_desc_4_name,code_desc_5_name"
+libGCTP/f_gctp_getConfigData.cpp	743	744	sqlstr = "SELECT * FROM tgctp02 " + cfgWhere + " AND cfgitm_grp_name = 'CONDITION_ITEM' ORDER BY seq_no_01";
+libGCTP/f_gctp_getConfigData.cpp	763	764	sqlstr = "SELECT * FROM tgctp02 " + cfgWhere + " AND cfgitm_grp_name = 'GRID_ITEM' ORDER BY seq_no_02";
+libGCTP/f_gctp_getConfigData.cpp	773	774	sqlstr = "SELECT * FROM tgctp02 " + cfgWhere + " AND cfgitm_grp_name = 'CONTROL_ITEM' ORDER BY seq_no_03";
+libGCTP/f_gctp_getConfigData.cpp	793	794	sqlstr = "SELECT * FROM tgctp01 " + cfgWhere + " AND cfgitm_grp_name = '" + cfgitm_grp_name + "' ORDER BY now_row";
+libGCTP/f_gctp_getConfigData.cpp	899	902	sqlstr = "SELECT MAX(row_count) FROM (SELECT a.func_id,a.class_code,CEILING(b.item_count/a.column_count) row_count"
+libGCTP/f_gctp_getConfigData.cpp	906	909	sqlstr = "SELECT MAX(row_count) FROM (SELECT a.func_id,a.class_code,CEIL(b.item_count/a.column_count) row_count"
+libGCTP/f_gctp_getConfigItem.cpp	33	36	sqlstr = "SELECT * FROM tgctp00 WHERE cfgitm_grp_name = '" + cfgitmGrpName + "'";
+libGCTP/f_gctp_getConfigItem.cpp	114	119	sqlstr = "SELECT code_class,code,code_desc_1_content FROM tep0002 WHERE code_class IN (";
+libGCTP/f_gctp_getDsConfig.cpp	43	44	sqlstr = "SELECT * FROM tgctp03 WHERE dataset_name = '" + dsName + "' ORDER BY seq_no";
+libGCTP/f_gctp_getTableItem.cpp	109	110	querySql = "SELECT remarks FROM SYSIBM.SYSTABLES WHERE name = '" + table_name +
+libGCTP/f_gctp_getTableItem.cpp	114	115	querySql = "SELECT comments FROM user_tab_comments WHERE table_name = '" + table_name + "'";
+libGCTP/f_gctp_getTableItem.cpp	128	129	sqlstr = "SELECT * FROM tgctp10 WHERE table_ename = '" + table_name + "'";
+libGCTP/f_gctp_getTableItem.cpp	131	132	querySql = "SELECT tc_name FROM text1_res WHERE tc_no = '" + table_name + "' AND culture = 'zh_Hans'";
+libGCTP/f_gctp_getTableItem.cpp	140	143	sqlstr = "SELECT UPPER(t1.tc_item_name) AS column_name,tc_item_desc AS column_cname,DECODE(tc_item_type,'C','C','N')"
+libGCTP/f_gctp_getTableItem.cpp	190	191	sqlstr = "SELECT * FROM tgctp00 WHERE cfgitm_grp_name = '" + cfgitmGrpName + "' ORDER BY seq_no";
+libGCTP/f_gctp_httpTcSend.cpp	29	30	sqlstr = "SELECT code_desc_2_content,code_desc_3_content FROM tep0002 WHERE code_class = 'M00N' AND code = '" + tcNo + "'";
+libGCTP/f_gctp_setCfgDataVt.cpp	33	34	sqlstr = "DELETE FROM tgctp01 WHERE cfgitm_name = '" + cfgitmName + "' AND cfgitm_grp_name = '" + cfgitmGrpName + "'";
+libGCTP/f_gctp_setFormCfg.cpp	61	62	sqlstr = "SELECT form_name,cfgitm_name FROM tgctp04 WHERE function_id = '" + tgctp04.GetColValString("FUNCTION_ID") + "'";
+libGCTP/f_gctp_setFormCfg.cpp	77	78	sqlstr = "UPDATE tgctp05 SET dataset_name = @CFGITM_NAME_NEW WHERE form_no = @FORM_NO AND dataset_name = @CFGITM_NAME_OLD";
+libGCTP/f_gctp_setFormCfg.cpp	85	86	sqlstr = "UPDATE tgctp06 SET cfgitm_name = @CFGITM_NAME_NEW WHERE form_no = @FORM_NO AND cfgitm_name = @CFGITM_NAME_OLD";
+libGCTP/f_gctp_setFormCfg.cpp	116	117	sqlstr = "DELETE FROM tgctp04 WHERE form_no = '" + tgctp04.GetColValString("FORM_NO") + "'" + sqlWhere + ")";
+libGCTP/f_gctp_setFormCfg.cpp	137	138	sqlstr = "DELETE FROM tgctp07 WHERE form_no = '" + formNo + "'";
+libGCTP/f_gctp_setFormCfg.cpp	251	252	sqlstr = "UPDATE tgctp05 SET operate_type = '" + operateType + "' WHERE id = " + buttonId.ToString();
+libGCTP/f_gctp_setFormCfg.cpp	285	286	sqlstr = "DELETE FROM tgctp05 WHERE form_no = '" + formNo + "' AND id = " + buttonId.ToString();
+libGCTP/f_gctp_setFormCfg.cpp	293	294	sqlstr = "DELETE FROM tgctp05 WHERE form_no = '" + formNo + "' AND name = '" + buttonName + "'";
+libGCTP/f_gctp_setFormCfg.cpp	439	440	sqlstr = "DELETE FROM tgctp06 WHERE form_no = '" + formNo + "' AND now_row NOT IN"
+libGCTP/f_gctp_setFormCfg.cpp	490	493	sqlstr = "DELETE FROM tgctp06 WHERE form_no = '" + formNo + "' AND now_row = '" + nowRow + "'";

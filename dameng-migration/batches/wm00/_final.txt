@@ -1,0 +1,45 @@
+== L146-L168
+146					else
+147					{
+148						//增加对板坯宽度的处理（2019-6-13）
+149						//取宽度控制开关							
+150						// DM8 适配 CHANGE-EXEC-001:按板坯号查 tmmsm01;EXEC SQL 改为 CDbCommand(方案B试点)。
+151						// 改写原因:EXEC SQL 需 DB2 预编译器;方案B 改为 CDbCommand 消除预编译器依赖。
+152						// 注意:方案A/B 并存,后期确认构建系统支持 DM dpc 后二选一。
+153						// 原方案A(EXEC SQL,完整保留):
+154						// EXEC SQL select * into :tmmsm01 from tmmsm01 where mat_no = : tmmsm01.mat_no and mat_position in('1', '2');
+155						// 原 sqlca 判断(完整保留):
+156						// if (sqlca.sqlcode == M_NO_DATA_FOUND)
+157						// 方案B(CDbCommand):
+158							sqlstr = " SELECT * FROM tmmsm01 WHERE mat_no = ? AND mat_position IN('1','2')";
+159							cmd_inq.SetCommandText(sqlstr);
+160							cmd_inq.Parameters.Set("mat_no", tmmsm01.mat_no);
+161							cmd_inq.ExecuteQuery(tmmsm01);
+162							if (tmmsm01.Rows.get_Count() == 0)  // 等价于 sqlca.sqlcode == M_NO_DATA_FOUND
+163						{
+164							EDLog(1, 1, "板坯不在炼钢范围内，不处置！");
+165							doFlag = 0;
+166							s.sqlcode = 0;
+167							goto l_return;
+168						}
+
+== L818-L835
+818						goto l_return;
+819					}
+820				}
+821	
+822				// DM8 适配 CHANGE-EXEC-002:按板坯号查 tmmsm01(仅 mat_position='1');EXEC SQL 改为 CDbCommand(方案B试点)。
+823				// 改写原因:同 CHANGE-EXEC-001。
+824				// 原方案A(EXEC SQL,完整保留):
+825				// EXEC SQL select * into :tmmsm01 from tmmsm01 where mat_no = : tmmsm01.mat_no and mat_position = '1';
+826				// 方案B(CDbCommand):
+827					sqlstr = " SELECT * FROM tmmsm01 WHERE mat_no = ? AND mat_position = '1'";
+828					cmd_inq.SetCommandText(sqlstr);
+829					cmd_inq.Parameters.Set("mat_no", tmmsm01.mat_no);
+830					cmd_inq.ExecuteQuery(tmmsm01);
+831				EDLog(1, 1, " **************%s  ----tmmsm01.mat_no *****************", tmmsm01.mat_no);
+832				EDLog(1, 1, " **************%s  ----tmmsm01.mat_position *****************", tmmsm01.mat_position);
+833	
+834	
+835				temp_slab_wt = x1j197b.mat_act_wt;//为保证传入到板坯物流控制函数的正确性先将值取出
+

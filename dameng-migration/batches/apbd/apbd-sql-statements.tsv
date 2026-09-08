@@ -1,0 +1,8 @@
+file	start	end	preview
+p_apbd_11020/apbd001s2n_inq.cpp	43	44	sqlstr = " SELECT * FROM TAPBD001S2N　WHERE 1 = 1 ";
+p_apbd_13300/addplan_col.cpp	27	28	CString sqlstr = "SELECT b.ROUTELIST,b.DEV_TECH_CODE,a.dev_code  FROM tpssmd7 b LEFT JOIN tpssmd1 a ON a.DEV_TECH_CODE = b.dev_tech_code WHERE b.DEV_TECH_CODE <
+p_apbd_13300/addplan_col.cpp	33	34	sqlstr = "SELECT ROUTELIST,CHARGE_NO,DEV_TECH_CODE FROM tpssmd7 ORDER BY ROUTELIST,CHARGE_NO,DEV_TECH_CODE";
+p_apbd_13300/addplan_col.cpp	40	52	" SELECT"
+p_apbd_13300/apbd001s2n_inq1.cpp	52	53	sqlstr = "SELECT DISTINCT tsn.*,tsn2.STD_WAIT_TIME,tsn2.WAIT_TIME_MAX FROM TAPBD001S2N tsn LEFT JOIN TAPBD002S2N tsn2 ON tsn.ST_NO  = tsn2.ST_NO  WHERE 1 = 1 ";
+p_apbd_13300/apbd006s2n_inq.cpp	46	47	sqlstr = "SELECT * FROM TAPBD006S2N WHERE 1 = 1 ";
+p_apbd_13300/apbd008s2n_inq.cpp	46	47	sqlstr = "SELECT * FROM TAPBD008S2N WHERE 1 = 1 ";

@@ -1,0 +1,281 @@
+file	start	end	preview
+libMM00/f_mm000501_proc.cpp	325	328	sqlstr = "SELECT MAT_NO,  "
+libMM00/f_mm000501_proc.cpp	426	429	sqlstr = "SELECT MAT_NO,  "
+libMM00/f_mm000501_proc.cpp	519	521	sqlstr_count = "SELECT COUNT(1)  "
+libMM00/f_mm000501_proc.cpp	540	542	sqlstr = "SELECT FAMILY_CODE "
+libMM00/f_mm000501_proc.cpp	573	577	sqlstr = "SELECT FAMILY_CODE "
+libMM00/f_mm000501_proc.cpp	619	621	sqlstr = "SELECT WHOLE_BACKLOG_NAME "
+libMM00/f_mm000501_proc.cpp	642	644	sqlstr = "SELECT UNIT_CNAME "
+libMM00/f_mm000501_proc.cpp	687	690	sqlstr = "SELECT RESUME_SEQ_NO "
+libMM00/f_mm0011.cpp	67	68	sprintf(sql, "SELECT LPAD(TO_CHAR(%s.NEXTVAL), %d, '0') FROM  sysibm.sysdummy1", (const char*)SeqName.Trim(), SeqLen.ToInt32());
+libMM00/f_mm0011.cpp	74	75	sprintf(sql, "SELECT LPAD(TO_CHAR(%s.NEXTVAL), %d, '0') FROM DUAL", (const char*)SeqName.Trim(), SeqLen.ToInt32());
+libMM00/f_mm0016.cpp	62	65	sqlstr = " SELECT CODE_DESC_3_CONTENT "
+libMM00/f_mm0016.cpp	90	93	sqlstr = " SELECT CODE_DESC_3_CONTENT "
+libMM00/f_mm0099_04.cpp	319	320	sqlstr = "SELECT pack_type_code FROM TOM01 WHERE order_no = '" + matData->GetColValString("ORDER_NO") + "'";
+libMM00/f_mm0099_ac_bw1.cpp	333	334	sqlstr = "select 'TMMSM01',t.* from tmmsm01 t where mat_no = @cs_slab_no union all select 'HMMSM01',b.* from hmmsm01 b where mat_no = @cs_slab_no ";
+libMM00/f_mm0099_ac_bw1.cpp	368	370	sqlstr = " UPDATE " + table_name_in + " "
+libMM00/f_mm0099_ac_bw1.cpp	388	389	sqlstr = "select 'TMMSM01',t.* from tmmsm01 t where mat_no = @cs_slab_no union all select 'HMMSM01',b.* from hmmsm01 b where mat_no = @cs_slab_no";
+libMM00/f_mm0099_ac_bw1.cpp	428	430	sqlstr = " UPDATE " + table_name_in + " "
+libMM00/f_mm0099_ac_bw1.cpp	475	476	sqlstr = "select 'TMMSM01',t.* from tmmsm01 t where plan_no = @cs_slab_no  union all select 'HMMSM01',b.* from hmmsm01 b where plan_no = @cs_slab_no ";
+libMM00/f_mm0099_ac_bw1.cpp	509	511	sqlstr = " UPDATE " + table_name_in + " "
+libMM00/f_mm0099_ac_bw1.cpp	528	529	sqlstr = "select 'TMMSM01',t.* from tmmsm01 t where mat_no = @cs_slab_no  union all select 'HMMSM01',b.* from hmmsm01 b where mat_no = @cs_slab_no ";
+libMM00/f_mm0099_ac_bw1.cpp	556	558	sqlstr = " UPDATE " + table_name_in + " "
+libMM00/f_mm0099_ac_bw1.cpp	665	669	sqlstr = "SELECT CODE FROM TEP0002 WHERE CODE_CLASS='MM01' AND CODE_DESC_2_CONTENT=@UNIT_CODE ";
+libMM00/f_mm0099_ac_bw1.cpp	735	739	sqlstr = "select OUT_MAT_THICK from tmm0023 where OUT_MAT_MIN_THICK<=@MAT_THICK and OUT_MAT_MAX_THICK>=@MAT_THICK and MAT_SHAPE_FLAG=@MAT_SHAPE_FLAG";
+libMM00/f_mm0099_ac_bw1.cpp	761	765	sqlstr = "select OUT_MAT_THICK,OUT_MAT_WIDTH from tmm0023 where OUT_MAT_MIN_THICK<=@MAT_THICK and OUT_MAT_MAX_THICK>=@MAT_THICK and OUT_MAT_MIN_WIDTH<=@MAT_WIDT
+libMM00/f_mm0099_ac_bw1.cpp	781	785	sqlstr = "select OUT_MAT_MIN_THICK,OUT_MAT_MAX_THICK,OUT_MAT_MIN_WIDTH,OUT_MAT_MAX_WIDTH from tmm0023 where  OUT_MAT_MIN_THICK<=@MAT_THICK and OUT_MAT_MAX_THICK
+libMM00/f_mm0099_ac_bw1.cpp	1290	1294	sqlstr = "SELECT CODE FROM TEP0002 WHERE CODE_CLASS='MM01' AND CODE_DESC_2_CONTENT=@UNIT_CODE ";
+libMM00/f_mm0099_ac_bw1.cpp	1359	1363	sqlstr = "select OUT_MAT_THICK from tmm0023 where OUT_MAT_MIN_THICK<=@MAT_THICK and OUT_MAT_MAX_THICK>=@MAT_THICK and MAT_SHAPE_FLAG=@MAT_SHAPE_FLAG";
+libMM00/f_mm0099_ac_bw1.cpp	1385	1389	sqlstr = "select OUT_MAT_THICK,OUT_MAT_WIDTH from tmm0023 where OUT_MAT_MIN_THICK<=@MAT_THICK and OUT_MAT_MAX_THICK>=@MAT_THICK and OUT_MAT_MIN_WIDTH<=@MAT_WIDT
+libMM00/f_mm0099_ac_bw1.cpp	1405	1409	sqlstr = "select OUT_MAT_MIN_THICK,OUT_MAT_MAX_THICK,OUT_MAT_MIN_WIDTH,OUT_MAT_MAX_WIDTH from tmm0023 where OUT_MAT_MIN_THICK<=@MAT_THICK and OUT_MAT_MAX_THICK>
+libMM00/f_mm0099_ac_bw1.cpp	1848	1852	sqlstr = "SELECT CODE FROM TEP0002 WHERE CODE_CLASS='MM01' AND CODE_DESC_2_CONTENT=@UNIT_CODE ";
+libMM00/f_mm0099_ac_bw1.cpp	1921	1925	sqlstr = "select OUT_MAT_THICK from tmm0023 where  OUT_MAT_MIN_THICK<=@MAT_THICK and OUT_MAT_MAX_THICK>=@MAT_THICK and MAT_SHAPE_FLAG=@MAT_SHAPE_FLAG";
+libMM00/f_mm0099_ac_bw1.cpp	1947	1951	sqlstr = "select OUT_MAT_THICK,OUT_MAT_WIDTH from tmm0023 where  OUT_MAT_MIN_THICK<=@MAT_THICK and OUT_MAT_MAX_THICK>=@MAT_THICK and OUT_MAT_MIN_WIDTH<=@MAT_WID
+libMM00/f_mm0099_ac_bw1.cpp	1967	1971	sqlstr = "select OUT_MAT_MIN_THICK,OUT_MAT_MAX_THICK,OUT_MAT_MIN_WIDTH,OUT_MAT_MAX_WIDTH from tmm0023 where  OUT_MAT_MIN_THICK<=@MAT_THICK and OUT_MAT_MAX_THICK
+libMM00/f_mm0099_ac_bw1.cpp	2411	2415	sqlstr = " UPDATE " + table_mm + " "
+libMM00/f_mm0099_ac_bw2.cpp	61	66	CDbCommand getResumeSeqNo("SELECT TO_CHAR(SYSTIMESTAMP, 'YYYYMMDDHH24MISSFF6') FROM DUAL", conn); //获取抛帐履历序号
+libMM00/f_mm0099_ac_bw2.cpp	149	151	sqlstr = " select factory_div from tmmbw01 "
+libMM00/f_mm0099_ac_bw2.cpp	152	154	" select factory_div from hmmbw01 "
+libMM00/f_mm0099_ac_bw2.cpp	155	157	" select factory_div from tmmsm01 "
+libMM00/f_mm0099_ac_bw2.cpp	158	159	" select factory_div from hmmsm01 "
+libMM00/f_mm0099_ac_bw2.cpp	547	549	sqlstr = " select factory_div from tmmbw01 "
+libMM00/f_mm0099_ac_bw2.cpp	550	551	" select factory_div from hmmbw01 "
+libMM00/f_mm009b.cpp	64	70	sqlstr = " SELECT * "
+libMM00/f_mm009c.cpp	168	176	sqlstr = " SELECT t.* "
+libMM00/f_mm009w_01.cpp	231	233	sqlstr = "SELECT * "
+libMM00/f_mm009w_01.cpp	288	290	sqlstr = "SELECT * "
+libMM00/f_mm009w_01.cpp	352	354	sqlstr = "SELECT * "
+libMM00/f_mm009w_01.cpp	408	410	sqlstr = "SELECT * "
+p_mm00_18010/mm0000b1f2_inq.cpp	135	137	sqlstr = " SELECT * "
+p_mm00_18010/mm0000b1f2_inq.cpp	164	167	sqlstr = " SELECT * "
+p_mm00_18010/mm0000b1f2_pes_inq.cpp	85	87	sqlstr = " SELECT * "
+p_mm00_18010/mm0001d1f10_pro.cpp	123	126	sqlstr = "SELECT MAT_STATUS,CONFM_FLAG,TRANSFER_FLAG,APP_DECIDE_FLAG,"
+p_mm00_18010/mm0001d1f10_pro.cpp	225	226	sqlstr = "SELECT MAT_STATUS "
+p_mm00_18010/mm0001d1f11_pro.cpp	116	119	sqlstr = "SELECT MAT_STATUS,HOLD_FLAG,ORDER_NO, "
+p_mm00_18010/mm0001d1f11_pro.cpp	198	199	sqlstr = "SELECT MAT_STATUS "
+p_mm00_18010/mm0001d1f2_inq.cpp	138	139	sqlstr_count = " SELECT COUNT(1) FROM " + cs_table_ename + " WHERE "
+p_mm00_18010/mm0001d1f2_inq.cpp	140	141	sqlstr = " SELECT * FROM " + cs_table_ename + " WHERE "
+p_mm00_18010/mm0001d1f8_pro.cpp	110	112	sqlstr = "SELECT MAT_STATUS,ORDER_NO,WHOLE_BACKLOG,NEXT_WHOLE_BACKLOG_CODE, "
+p_mm00_18010/mm0001d1f9_pro.cpp	114	117	sqlstr = "SELECT MAT_STATUS,CONFM_FLAG,TRANSFER_FLAG,APP_DECIDE_FLAG, "
+p_mm00_18010/mm0005a1a1_inq.cpp	104	107	sqlstr = "SELECT * "
+p_mm00_18010/mm0005a1a1_inq.cpp	290	296	sqlstr = "SELECT IN_MAT_ID, "
+p_mm00_18010/mm0005a1b1_inq.cpp	90	93	sqlstr = "SELECT MAT_ID FROM TMM" + tmm0005["MAT_KIND"].ToString() + "01 WHERE MAT_NO = '" + tmm0005["MAT_NO"].ToString() + "'";
+p_mm00_18010/mm0005a1b1_inq.cpp	110	113	sqlstr = "SELECT MAT_ID FROM HMM" + tmm0005["MAT_KIND"].ToString() + "01 WHERE MAT_NO = '" + tmm0005["MAT_NO"].ToString() + "'";
+p_mm00_18010/mm0005a1b1_inq.cpp	143	144	sqlstr_count = "SELECT COUNT(1) FROM " + tmm0005["ARCHIVE_FLAG"].ToString() + "MM" + tmm0005["MAT_KIND"].ToString() + "96"
+p_mm00_18010/mm0005a1b1_inq.cpp	146	147	sqlstr = "SELECT * FROM " + tmm0005["ARCHIVE_FLAG"].ToString() + "MM" + tmm0005["MAT_KIND"].ToString() + "96"
+p_mm00_18010/mm0005a1f2_inq.cpp	79	81	sqlstr = "SELECT MAT_TRACK_NO "
+p_mm00_18010/mm0005a1f2_inq.cpp	102	104	sqlstr_count = "SELECT COUNT(1) "
+p_mm00_18010/mm0005a1f2_inq.cpp	105	108	sqlstr = "SELECT * "
+p_mm00_18010/mm0010a1f2_inq.cpp	105	107	sqlstr_count =	"SELECT COUNT(1) "
+p_mm00_18010/mm0010a1f2_inq.cpp	108	110	sqlstr =	"SELECT * "
+p_mm00_18010/mm0010a1f3_ins.cpp	225	229	sqlstr = "SELECT PONO, "
+p_mm00_18010/mm0010a1f3_ins.cpp	295	298	sqlstr = "SELECT PONO "
+p_mm00_18010/mm0010a1f3_ins.cpp	432	435	sqlstr = "SELECT CODE,CODE_DESC_1_CONTENT,CODE_DESC_2_CONTENT,CODE_DESC_3_CONTENT "
+p_mm00_18010/mm0010a1f6_pro.cpp	65	67	sqlstr = " SELECT LPAD(TO_CHAR(NVL(MAX(SUBSTR(DEMAND_PLAN_NO,9,2)),0)+1),2,'0')  "
+p_mm00_18010/mm0010b1a1_inq.cpp	71	74	sqlstr = " SELECT * "
+p_mm00_18010/mm0010b1f2_inq.cpp	79	81	sqlstr_count = " SELECT COUNT(1) "
+p_mm00_18010/mm0010b1f2_inq.cpp	82	84	sqlstr = " SELECT * "
+p_mm00_18010/mm0010b1f4_del.cpp	93	96	sqlstr = "SELECT * "
+p_mm00_18010/mm0010b1f5_del.cpp	98	101	sqlstr = "SELECT * "
+p_mm00_18010/mm0010b1f6_pro.cpp	143	146	sqlstr = " SELECT * "
+p_mm00_18010/mm0097a1a1_inq.cpp	79	85	sqlstr	= " SELECT * "
+p_mm00_18010/mm0097a1a1_inq.cpp	107	112	sqlstr	= " SELECT * "
+p_mm00_18010/mm0097a1a1_inq.cpp	132	137	sqlstr	= " SELECT * "
+p_mm00_18010/mm0097a1a1_inq.cpp	157	162	sqlstr = " SELECT * "
+p_mm00_18010/mm0097a1f2_inq.cpp	78	80	sqlstr = "SELECT * "
+p_mm00_18010/mm0097a1f6_pro.cpp	205	206	sqlstr = "SELECT MAX(EVENT_ITEM_SEQ_NO) "
+p_mm00_18010/mm0097a1f6_pro.cpp	654	655	sqlstr = "SELECT MAX(EVENT_ITEM_SEQ_NO) "
+p_mm00_18010/mm0097a1f7_pro.cpp	205	210	sqlstr	= " SELECT * "
+p_mm00_18010/mm0097a1f7_pro.cpp	268	273	sqlstr	= " SELECT * "
+p_mm00_18010/mm0097a1f7_pro.cpp	307	312	sqlstr = " SELECT * "
+p_mm00_18010/mm0097a1f9_pro.cpp	96	97	Log::Trace("", __FUNCTION__, "Insert hmm0097[\"EVENT_ID\"] = [{0}]", (const char*)hmm0097["EVENT_ID"].ToString());
+p_mm00_18010/mm0097a1f9_pro.cpp	100	101	Log::Trace("", __FUNCTION__, "Delete tmm0097[\"EVENT_ID\"] = [{0}]", (const char*)tmm0097["EVENT_ID"].ToString());
+p_mm00_18010/mm0097a1f9_pro.cpp	111	116	sqlstr = " SELECT * "
+p_mm00_18010/mm0097a1f9_pro.cpp	137	138	Log::Trace("", __FUNCTION__, "Insert hmm0099[\"ITEM_ENAME\"] = [{0}]", (const char*)hmm0099["ITEM_ENAME"].ToString());
+p_mm00_18010/mm0097a1f9_pro.cpp	141	142	Log::Trace("", __FUNCTION__, "Delete tmm0099[\"ITEM_ENAME\"] = [{0}]", (const char*)tmm0099["ITEM_ENAME"].ToString());
+p_mm00_18010/mm0097a1f9_pro.cpp	154	159	sqlstr = " SELECT * "
+p_mm00_18010/mm0097a1f9_pro.cpp	180	181	Log::Trace("", __FUNCTION__, "Insert hmm009a[\"TC_NO\"] = [{0}]", (const char*)hmm009a["TC_NO"].ToString());
+p_mm00_18010/mm0097a1f9_pro.cpp	184	185	Log::Trace("", __FUNCTION__, "Delete tmm009a[\"TC_NO\"] = [{0}]", (const char*)tmm009a["TC_NO"].ToString());
+p_mm00_18010/mm0097a1f9_pro.cpp	197	202	sqlstr = " SELECT * "
+p_mm00_18010/mm0097a1f9_pro.cpp	223	224	Log::Trace("", __FUNCTION__, "Insert hmm009b[\"THROW_KIND\"] = [{0}]", hmm009b["THROW_KIND"].ToString());
+p_mm00_18010/mm0097a1f9_pro.cpp	227	228	Log::Trace("", __FUNCTION__, "Delete tmm009b[\"THROW_KIND\"] = [{0}]", tmm009b["THROW_KIND"].ToString());
+p_mm00_18010/mm0097code_inq.cpp	78	86	sqlstr = " SELECT  A.COLUMN_NAME AS ITEM_ENAME, "
+p_mm00_18010/mm0097d1a1_inq.cpp	80	86	sqlstr = " SELECT * "
+p_mm00_18010/mm0097d1a1_inq.cpp	108	113	sqlstr = " SELECT * "
+p_mm00_18010/mm0097d1a1_inq.cpp	133	138	sqlstr = " SELECT * "
+p_mm00_18010/mm0097d1a1_inq.cpp	158	163	sqlstr = " SELECT * "
+p_mm00_18010/mm0097d1f2_inq.cpp	75	77	sqlstr = "SELECT * "
+p_mm00_18010/mm0097d1f3_pro.cpp	96	97	Log::Trace("", __FUNCTION__, "Insert tmm0097[\"EVENT_ID\"] = [{0}]", (const char*)tmm0097["EVENT_ID"].ToString());
+p_mm00_18010/mm0097d1f3_pro.cpp	100	101	Log::Trace("", __FUNCTION__, "Delete hmm0097[\"EVENT_ID\"] = [{0}]", (const char*)hmm0097["EVENT_ID"].ToString());
+p_mm00_18010/mm0097d1f3_pro.cpp	111	116	sqlstr = " SELECT * "
+p_mm00_18010/mm0097d1f3_pro.cpp	137	138	Log::Trace("", __FUNCTION__, "Insert tmm0099[\"ITEM_ENAME\"] = [{0}]", (const char*)tmm0099["ITEM_ENAME"].ToString());
+p_mm00_18010/mm0097d1f3_pro.cpp	141	142	Log::Trace("", __FUNCTION__, "Delete hmm0099[\"ITEM_ENAME\"] = [{0}]", (const char*)hmm0099["ITEM_ENAME"].ToString());
+p_mm00_18010/mm0097d1f3_pro.cpp	154	159	sqlstr = " SELECT * "
+p_mm00_18010/mm0097d1f3_pro.cpp	180	181	Log::Trace("", __FUNCTION__, "Insert tmm009a[\"TC_NO\"] = [{0}]", (const char*)tmm009a["TC_NO"].ToString());
+p_mm00_18010/mm0097d1f3_pro.cpp	184	185	Log::Trace("", __FUNCTION__, "Delete hmm009a[\"TC_NO\"] = [{0}]", (const char*)hmm009a["TC_NO"].ToString());
+p_mm00_18010/mm0097d1f3_pro.cpp	197	202	sqlstr = " SELECT * "
+p_mm00_18010/mm0097d1f3_pro.cpp	223	224	Log::Trace("", __FUNCTION__, "Insert tmm009b[\"THROW_KIND\"] = [{0}]", (const char*)tmm009b["THROW_KIND"].ToString());
+p_mm00_18010/mm0097d1f3_pro.cpp	227	228	Log::Trace("", __FUNCTION__, "Delete hmm009b[\"THROW_KIND\"] = [{0}]", (const char*)hmm009b["THROW_KIND"].ToString());
+p_mm00_18010/mm00crqc_inq.cpp	27	27	CString sqlCount = "SELECT COUNT(*) FROM TMM00CRQC";
+p_mm00_18010/mm00crqc_inq.cpp	29	32	CString sqlSelect = "SELECT * FROM TMM00CRQC";
+p_mm00_18010/mm00crqc_inq.cpp	57	58	Log::Error("MM00", "mm00crqc_inq","查询失败","TMM00CRQC","SELECT", ex.GetCode());
+p_mm00_18010/mm00datalz1_inq.cpp	33	45	sqlstr = " SELECT t1.item_name, "
+p_mm00_18010/mm00datalz1_inq.cpp	47	50	" SELECT SG_SIGN ITEM_NAME, 0 NUM_1, 0 WT_1, 0 NUM_2, 0 WT_2, 0 NUM_3, 0 WT_3, 0 NUM_4, 0 WT_4, 0 NUM_5, 0"
+p_mm00_18010/mm00datalz1_inq.cpp	52	55	" SELECT SG_SIGN ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, COUNT(1)"
+p_mm00_18010/mm00datalz1_inq.cpp	57	60	" SELECT SG_SIGN ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0"
+p_mm00_18010/mm00datalz1_inq.cpp	62	65	" SELECT SG_SIGN ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0"
+p_mm00_18010/mm00datalz1_inq.cpp	67	71	" SELECT SG_SIGN ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0 "
+p_mm00_18010/mm00datalz1_inq.cpp	75	87	sqlstr = " SELECT t1.item_name, "
+p_mm00_18010/mm00datalz1_inq.cpp	89	92	" SELECT STOCK_NO ITEM_NAME, 0 NUM_1, 0 WT_1, 0 NUM_2, 0 WT_2, 0 NUM_3, 0 WT_3, 0 NUM_4, 0 WT_4, 0 NUM_5, 0"
+p_mm00_18010/mm00datalz1_inq.cpp	94	97	" SELECT STOCK_NO ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, COUNT(1)"
+p_mm00_18010/mm00datalz1_inq.cpp	99	102	" SELECT STOCK_NO ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0"
+p_mm00_18010/mm00datalz1_inq.cpp	104	107	" SELECT STOCK_NO ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0"
+p_mm00_18010/mm00datalz1_inq.cpp	109	113	" SELECT STOCK_NO ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0 "
+p_mm00_18010/mm00datalz1_inq.cpp	117	129	sqlstr = " SELECT t1.item_name, "
+p_mm00_18010/mm00datalz1_inq.cpp	131	134	" SELECT NEXT_WHOLE_BACKLOG_CODE ITEM_NAME, 0 NUM_1, 0 WT_1, 0 NUM_2, 0 WT_2, 0 NUM_3, 0 WT_3, 0 NUM_4, 0 WT_4, 0 NUM_5, 0"
+p_mm00_18010/mm00datalz1_inq.cpp	136	139	" SELECT NEXT_WHOLE_BACKLOG_CODE ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, COUNT(1)"
+p_mm00_18010/mm00datalz1_inq.cpp	141	144	" SELECT NEXT_WHOLE_BACKLOG_CODE ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0"
+p_mm00_18010/mm00datalz1_inq.cpp	146	149	" SELECT NEXT_WHOLE_BACKLOG_CODE ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0"
+p_mm00_18010/mm00datalz1_inq.cpp	151	155	" SELECT NEXT_WHOLE_BACKLOG_CODE ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0 "
+p_mm00_18010/mm00datarz1_inq.cpp	33	45	sqlstr = " SELECT t1.item_name, "
+p_mm00_18010/mm00datarz1_inq.cpp	47	50	" SELECT SG_SIGN ITEM_NAME, 0 NUM_1, 0 WT_1, 0 NUM_2, 0 WT_2, 0 NUM_3, 0 WT_3, 0 NUM_4, 0 WT_4, 0 NUM_5, 0"
+p_mm00_18010/mm00datarz1_inq.cpp	52	55	" SELECT SG_SIGN ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, COUNT(1)"
+p_mm00_18010/mm00datarz1_inq.cpp	57	60	" SELECT SG_SIGN ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0"
+p_mm00_18010/mm00datarz1_inq.cpp	62	65	" SELECT SG_SIGN ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0"
+p_mm00_18010/mm00datarz1_inq.cpp	67	71	" SELECT SG_SIGN ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0 "
+p_mm00_18010/mm00datarz1_inq.cpp	75	87	sqlstr = " SELECT t1.item_name, "
+p_mm00_18010/mm00datarz1_inq.cpp	89	92	" SELECT STOCK_NO ITEM_NAME, 0 NUM_1, 0 WT_1, 0 NUM_2, 0 WT_2, 0 NUM_3, 0 WT_3, 0 NUM_4, 0 WT_4, 0 NUM_5, 0"
+p_mm00_18010/mm00datarz1_inq.cpp	94	97	" SELECT STOCK_NO ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, COUNT(1)"
+p_mm00_18010/mm00datarz1_inq.cpp	99	102	" SELECT STOCK_NO ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0"
+p_mm00_18010/mm00datarz1_inq.cpp	104	107	" SELECT STOCK_NO ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0"
+p_mm00_18010/mm00datarz1_inq.cpp	109	113	" SELECT STOCK_NO ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0 "
+p_mm00_18010/mm00datarz1_inq.cpp	117	129	sqlstr = " SELECT t1.item_name, "
+p_mm00_18010/mm00datarz1_inq.cpp	131	134	" SELECT NEXT_WHOLE_BACKLOG_CODE ITEM_NAME, 0 NUM_1, 0 WT_1, 0 NUM_2, 0 WT_2, 0 NUM_3, 0 WT_3, 0 NUM_4, 0 WT_4, 0 NUM_5, 0"
+p_mm00_18010/mm00datarz1_inq.cpp	136	139	" SELECT NEXT_WHOLE_BACKLOG_CODE ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, COUNT(1)"
+p_mm00_18010/mm00datarz1_inq.cpp	141	144	" SELECT NEXT_WHOLE_BACKLOG_CODE ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0"
+p_mm00_18010/mm00datarz1_inq.cpp	146	149	" SELECT NEXT_WHOLE_BACKLOG_CODE ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0"
+p_mm00_18010/mm00datarz1_inq.cpp	151	155	" SELECT NEXT_WHOLE_BACKLOG_CODE ITEM_NAME,0 NUM_1,0 WT_1,0 NUM_2,0 WT_2,0 NUM_3,0 WT_3,0 NUM_4,0 WT_4,0 NUM_5,0 WT_5,0 NUM_6,0 WT_6, 0 "
+p_mm00_18010/mm00hrqc_inq.cpp	27	27	CString sqlCount = "SELECT COUNT(*) FROM TMM00HRQC";
+p_mm00_18010/mm00hrqc_inq.cpp	29	32	CString sqlSelect = "SELECT * FROM TMM00HRQC";
+p_mm00_18010/mm00hrqc_inq.cpp	57	58	Log::Error("MM00", "mm00hrqc_inq","查询失败","TMM00HRQC","SELECT", ex.GetCode());
+p_mm00_18010/mm00si02f2_inq.cpp	72	74	sqlstr = " SELECT * "
+p_mm00_18010/mm00si16f1_pro.cpp	72	75	sqlstr = " SELECT * "
+p_mm00_18010/mm00si16f1_pro.cpp	132	135	sqlstr = " SELECT WHOLE_BACKLOG_CODE, "
+p_mm00_18010/mm00si16f2_inq.cpp	69	71	sqlstr = " SELECT * "
+p_mm00_18010/mm00su47a1_m.cpp	112	114	strSql1 = "SELECT COUNT(1) ";
+p_mm00_18010/mm00su47a1_m.cpp	120	139	strSql2 = " SELECT  t1.MAT_NO "
+p_mm00_18010/mm00su47a1_m.cpp	184	186	strSql1 = "SELECT COUNT(1) ";
+p_mm00_18010/mm00su47a1_m.cpp	192	211	strSql2 = " SELECT  t1.MAT_NO "
+p_mm00_18010/mm00su47a1_m.cpp	240	242	strSql1 = "SELECT COUNT(1) ";
+p_mm00_18010/mm00su47a1_q.cpp	172	182	strSql1 = " SELECT	NEXT_UNIT_CODE "
+p_mm00_18010/mm00su47a1_q.cpp	304	319	strSql1 = " SELECT	NEXT_UNIT_CODE "
+p_mm00_18010/mm00sud1f1_inq.cpp	66	66	strSql1 = " SELECT COUNT(1) FROM TMMSM01 WHERE 1=1 ";
+p_mm00_18010/mm00sud1f1_inq.cpp	67	71	strSql2 = " SELECT * FROM TMMSM01 WHERE 1=1 ";
+p_mm00_18010/mm00sud1f1_inq.cpp	99	99	strSql1 = " SELECT COUNT(1) FROM TMMHR01 WHERE 1=1 ";
+p_mm00_18010/mm00sud1f1_inq.cpp	100	104	strSql2 = " SELECT * FROM TMMHR01 WHERE 1=1 ";
+p_mm00_18010/mm00sud1f1_inq.cpp	140	140	strSql1 = " SELECT COUNT(1) FROM TMMCR01 WHERE 1=1 ";
+p_mm00_18010/mm00sud1f1_inq.cpp	141	145	strSql2 = " SELECT * FROM TMMCR01 WHERE 1=1 ";
+p_mm00_18010/mm00sud1f2_inq.cpp	82	84	CString cmd_query_sm_count = " SELECT DISTINCT DEST_FIN FROM TMMSM01 WHERE FACTORY_STORE LIKE @factory_div||'%' "
+p_mm00_18010/mm00sud1f2_inq.cpp	86	89	CString cmd_query_sm = " SELECT SUM(NVL(MAT_ACT_WT,0)) FROM TMMSM01 WHERE FACTORY_STORE LIKE @factory_div||'%' "
+p_mm00_18010/mm00sud1f2_inq.cpp	91	93	CString cmd_query_sm_xj = " SELECT SUM(NVL(MAT_ACT_WT,0)) FROM TMMSM01 WHERE FACTORY_STORE LIKE @factory_div||'%' "
+p_mm00_18010/mm00sud1f2_inq.cpp	96	96	CString cmd_query_hr_count = " SELECT DISTINCT DEST FROM ( "
+p_mm00_18010/mm00sud1f2_inq.cpp	97	99	" SELECT DISTINCT NEXT_UNIT_CODE DEST,ORDER_NO,HOLD_TIME FROM TMMHR01 WHERE FACTORY_STORE LIKE @factory_div||'%' "
+p_mm00_18010/mm00sud1f2_inq.cpp	100	103	" SELECT DISTINCT REPAIR_BACKLOG_CODE DEST,ORDER_NO,HOLD_TIME FROM TMMHR01 WHERE FACTORY_STORE LIKE @factory_div||'%' "
+p_mm00_18010/mm00sud1f2_inq.cpp	104	106	CString cmd_query_hr = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 WHERE FACTORY_STORE LIKE @factory_div||'%' "
+p_mm00_18010/mm00sud1f2_inq.cpp	108	109	CString cmd_query_hr_xj = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 WHERE FACTORY_STORE LIKE @factory_div||'%' "
+p_mm00_18010/mm00sud1f2_inq.cpp	113	113	CString cmd_query_cr_count = " SELECT DISTINCT DEST FROM ( "
+p_mm00_18010/mm00sud1f2_inq.cpp	114	116	" SELECT DISTINCT NEXT_UNIT_CODE DEST,ORDER_NO,HOLD_TIME,FACTORY_STORE FROM TMMCR01 WHERE "
+p_mm00_18010/mm00sud1f2_inq.cpp	117	119	" SELECT DISTINCT REPAIR_BACKLOG_CODE DEST,ORDER_NO,HOLD_TIME,FACTORY_STORE FROM TMMCR01 WHERE "
+p_mm00_18010/mm00sud1f2_inq.cpp	121	121	CString cmd_query_cr = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMCR01 WHERE MAT_STATUS = @mat_status ";
+p_mm00_18010/mm00sud1f2_inq.cpp	123	125	CString cmd_query_cr_xj = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMCR01 WHERE MAT_STATUS = @mat_status ";
+p_mm00_18010/mm00sud2f1_inq.cpp	63	63	strSql1 = " SELECT COUNT(1) FROM TMMSM01 WHERE  MAT_STATUS = @dest ";
+p_mm00_18010/mm00sud2f1_inq.cpp	64	68	strSql2 = " SELECT * FROM TMMSM01 WHERE MAT_STATUS = @dest ";
+p_mm00_18010/mm00sud2f1_inq.cpp	82	82	strSql1 = " SELECT COUNT(1) FROM TMMHR01 WHERE 1=1 ";
+p_mm00_18010/mm00sud2f1_inq.cpp	83	87	strSql2 = " SELECT * FROM TMMHR01 WHERE 1=1 ";
+p_mm00_18010/mm00sud2f1_inq.cpp	106	106	strSql1 = " SELECT COUNT(1) FROM TMMHR01 WHERE 1=1 ";
+p_mm00_18010/mm00sud2f1_inq.cpp	107	111	strSql2 = " SELECT * FROM TMMHR01 WHERE 1=1 ";
+p_mm00_18010/mm00sud2f1_inq.cpp	128	128	strSql1 = " SELECT COUNT(1) FROM TMMHR01 WHERE 1=1 ";
+p_mm00_18010/mm00sud2f1_inq.cpp	129	133	strSql2 = " SELECT * FROM TMMHR01 WHERE 1=1 ";
+p_mm00_18010/mm00sud2f1_inq.cpp	157	157	strSql1 = " SELECT COUNT(1) FROM TMMCR01 WHERE 1=1 ";
+p_mm00_18010/mm00sud2f1_inq.cpp	158	162	strSql2 = " SELECT * FROM TMMCR01 WHERE 1=1 ";
+p_mm00_18010/mm00sud2f2_inq.cpp	81	81	CString cmd_query_sm_count = " SELECT DISTINCT MAT_STATUS FROM TMMSM01 WHERE MAT_STATUS <> '36' AND MAT_STATUS <> ' ' ";
+p_mm00_18010/mm00sud2f2_inq.cpp	82	87	CString cmd_query_sm = " SELECT SUM(NVL(MAT_ACT_WT,0)) FROM TMMSM01 WHERE MAT_STATUS <> '36' AND MAT_STATUS <> ' ' ";//小计合计
+p_mm00_18010/mm00sud2f2_inq.cpp	90	90	CString cmd_query_hr_count = " SELECT DISTINCT MAT_STATUS FROM TMMHR01 WHERE MAT_STATUS <> '36' AND MAT_STATUS <> ' ' ";
+p_mm00_18010/mm00sud2f2_inq.cpp	91	93	CString cmd_query_hr = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 WHERE MAT_STATUS <> '36' AND MAT_STATUS <> ' ' ";//小计合计
+p_mm00_18010/mm00sud2f2_inq.cpp	101	101	CString cmd_query_cr_count = " SELECT DISTINCT MAT_STATUS FROM TMMCR01 WHERE MAT_STATUS <> '36' AND MAT_STATUS <> ' ' ";
+p_mm00_18010/mm00sud2f2_inq.cpp	102	106	CString cmd_query_cr = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMCR01 WHERE MAT_STATUS <> '36' AND MAT_STATUS <> ' ' ";//小计合计
+p_mm00_18010/mm00sud4f1_inq.cpp	65	65	strSql1 = " SELECT COUNT(1) FROM TMMSM01 WHERE SLAB_CUT_TIME > @time1 AND SLAB_CUT_TIME <= @time2 ";
+p_mm00_18010/mm00sud4f1_inq.cpp	66	70	strSql2 = " SELECT * FROM TMMSM01 WHERE SLAB_CUT_TIME > @time1 AND SLAB_CUT_TIME <= @time2 ";
+p_mm00_18010/mm00sud4f1_inq.cpp	77	78	strSql1 = " SELECT COUNT(1) FROM TMMHR01 WHERE DUMMY_COIL_FLAG = '0' "
+p_mm00_18010/mm00sud4f1_inq.cpp	79	80	strSql2 = " SELECT * FROM TMMHR01 WHERE DUMMY_COIL_FLAG = '0' "
+p_mm00_18010/mm00sud4f1_inq.cpp	98	99	strSql1 = " SELECT COUNT(1) FROM TMMHR01 WHERE DUMMY_COIL_FLAG = '0' AND MAT_LINE_TYPE = 'CR' "
+p_mm00_18010/mm00sud4f1_inq.cpp	100	101	strSql2 = " SELECT * FROM TMMHR01 WHERE DUMMY_COIL_FLAG = '0' AND MAT_LINE_TYPE = 'CR' "
+p_mm00_18010/mm00sud4f1_inq.cpp	106	109	strSql1 = " SELECT COUNT(1) FROM TMMCR01 WHERE DUMMY_COIL_FLAG = '0' "
+p_mm00_18010/mm00sud4f1_inq.cpp	110	113	strSql2 = " SELECT * FROM TMMCR01 WHERE DUMMY_COIL_FLAG = '0' "
+p_mm00_18010/mm00sud4f1_inq.cpp	117	121	strSql1 = " SELECT COUNT(1) FROM TMMCR01 WHERE DUMMY_COIL_FLAG = '0' "
+p_mm00_18010/mm00sud4f1_inq.cpp	122	126	strSql2 = " SELECT * FROM TMMCR01 WHERE DUMMY_COIL_FLAG = '0' "
+p_mm00_18010/mm00sud4f2_inq.cpp	89	89	CString cmd_query_sm_slab = " SELECT SUM(NVL(MAT_ACT_WT,0)) as MAT_ACT_WT FROM TMMSM01 WHERE MAT_LINE_TYPE = 'SM'  AND MAT_STATUS <> '36' ";//板坯库
+p_mm00_18010/mm00sud4f2_inq.cpp	90	90	CString cmd_query_sm_total = " SELECT SUM(NVL(MAT_ACT_WT,0)) as MAT_ACT_WT FROM TMMSM01 WHERE MAT_LINE_TYPE = 'SM'  AND MAT_STATUS <> '36' ";//板坯总计
+p_mm00_18010/mm00sud4f2_inq.cpp	92	93	CString cmd_query_hr_coil = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 WHERE MAT_LINE_TYPE = 'HR' "
+p_mm00_18010/mm00sud4f2_inq.cpp	95	97	CString cmd_query_hr_product = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 WHERE MAT_LINE_TYPE = 'HR' "
+p_mm00_18010/mm00sud4f2_inq.cpp	100	101	CString cmd_query_hr_total = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 WHERE MAT_LINE_TYPE = 'HR' "
+p_mm00_18010/mm00sud4f2_inq.cpp	104	105	CString cmd_query_cr_raw = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMHR01 "
+p_mm00_18010/mm00sud4f2_inq.cpp	107	109	CString cmd_query_cr_mid = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMCR01 "
+p_mm00_18010/mm00sud4f2_inq.cpp	111	114	CString cmd_query_cr_product = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMCR01 "
+p_mm00_18010/mm00sud4f2_inq.cpp	117	127	CString cmd_query_cr_total = " SELECT SUM(NVL(MAT_WT,0)) FROM TMMCR01 "
+p_mm00_18010/mm00sud5f2_inq.cpp	51	83	sqlstr = "SELECT MAT_NO, "						//材料号
+p_mm00_18010/mm00sud5f2_inq.cpp	96	128	sqlstr = "SELECT A.MAT_NO, "						//材料号
+p_mm00_18010/mm00sud5f2_inq.cpp	149	181	sqlstr = "SELECT MAT_NO, "						//材料号
+p_mm00_18010/mm00sud5f2_inq.cpp	216	220	sqlstr = "SELECT DELIVY_WEEK_FLAG, "			//按周交货标记
+p_mm00_18010/mm00sud5f2_inq.cpp	233	237	sqlstr = "SELECT NVL(LACK_WT, 0) "
+p_mm00_18010/mm00sud5f2_inq.cpp	244	247	sqlstr = "SELECT NVL(LACK_WT, 0) "
+p_mm00_18010/mm00sud5f2_inq.cpp	254	257	sqlstr = "SELECT PROD_END_TIME, "
+p_mm00_18010/mm00sue5f2_inq.cpp	57	62	sqlstr = "SELECT A.ORDER_TYPE_CODE,B.ORDER_NO, B.WHOLE_BACKLOG ,WHOLE_BACKLOG_CODE , (B.STOCK_WT - B.LACK_WT) AS OVER_WT "
+p_mm00_18010/mm00sue5f2_inq.cpp	74	85	strSql1 = "SELECT C.*,D.OVER_WT,D.ORDER_TYPE_CODE "
+p_mm00_18010/mm00sue5f2_inq.cpp	96	107	strSql1 = "SELECT  C.*,D.OVER_WT,D.ORDER_TYPE_CODE "
+p_mm00_18010/mm00suy1a3_m.cpp	248	254	strSql2 = " SELECT  t1.* "
+p_mm00_18010/mm00suy1a3_q.cpp	91	96	sqlcode = "SELECT DISTINCT next_unit_code FROM TMMHR01 "
+p_mm00_18010/mm00suy1a3_q.cpp	97	101	"SELECT DISTINCT hsf_unit_repair as next_unit_code FROM TMMHR01 "
+p_mm00_18010/mm00suy1a3_q.cpp	192	211	strSql1 = "SELECT t1.MAT_STATUS,"
+p_mm00_18020/mm0089a1a1_inq.cpp	61	63	sqlstr_count = " SELECT COUNT(1) "
+p_mm00_18020/mm0089a1a1_inq.cpp	64	66	sqlstr = " SELECT * "
+p_mm00_18020/mm0089a1f2_inq.cpp	87	89	sqlstr_count = " SELECT COUNT(1) "
+p_mm00_18020/mm0089a1f2_inq.cpp	90	92	sqlstr = " SELECT * "
+p_mm00_18020/mm0097c1a2_inq.cpp	62	66	c_sql_condition = "SELECT t.*  "
+p_mm00_18020/mm0097c1f2_inq.cpp	56	69	c_sql_condition = " SELECT  t.EVENT_ID,t.RULE_CODE,t.RULE_DESC "
+p_mm00_18020/mm0097c1f3_ins.cpp	133	137	c_sql_condition = " SELECT t.* "
+p_mm00_18020/mm0097c1f3_ins.cpp	226	229	c_sql_condition = " SELECT NVL(MAX(t.RULE_SEQ_NO),0) + 1 "
+p_mm00_18020/mm0097c1f3_ins.cpp	249	250	sqlstr = "insert into tmm009c ";
+p_mm00_18020/mm0097c1f4_upd.cpp	104	115	c_sql_condition = " update tmm009c t "
+p_mm00_18020/mm0097c1f6_upd.cpp	89	90	c_sql_condition = "select t.CODE_DESC_1_CONTENT from tep0002 t where t.code_class = 'PMA5' and t.code = @code ";
+p_mm00_18020/mm0097c1f6_upd.cpp	104	105	sqlstr = "update tmm009c ";
+p_mm00_18020/mm0097c1f7_del.cpp	95	96	sqlstr = " delete from TMM009C ";
+p_mm00_18020/mm0097c1f7_del.cpp	101	104	sqlstr1 = "SELECT * \
+p_mm00_18020/mm0097c1f7_del.cpp	122	126	sqlstr="UPDATE TMM009C \
+p_mm00_18020/mm0097c1f8_seq.cpp	86	87	sqlstr = "update tmm009c ";
+p_mm00_18020/mm0097c1f8_seq.cpp	92	93	sqlstr="UPDATE TMM009C SET RULE_SEQ_NO = TO_NUMBER(KEYVALUE_1) WHERE RULE_CODE = @tmm009c.RULE_CODE";
+p_mm00_18020/mm0097c1f9_cpy.cpp	122	125	c_sql_condition = " SELECT t.*  "
+p_mm00_18020/mm0097c1f9_cpy.cpp	137	138	sqlstr = "insert into tmm009c,规则代码[" + tmm009c["RULE_CODE"].ToString() + "]";
+p_mm00_18040/cm_sm0008_rcv.cpp	83	84	cmd.SetCommandText("SELECT TC_MARK FROM TSI0021 WHERE STOCK_NO = @stockCode");
+p_mm00_18040/cm_sm0008_rcv.cpp	92	93	cmd.SetCommandText("SELECT TC_MARK FROM TSI0021 WHERE STOCK_NO = @instockCode");
+p_mm00_18040/cm_sm0008_rcv.cpp	164	165	sqlstr = "SELECT ORDER_NO,MAT_WT FROM TMM" + matKind + "01 WHERE MAT_NO = @matNo";
+p_mm00_18040/cm_sm0009_rcv.cpp	207	208	cmd.SetCommandText("SELECT TC_MARK FROM TSI0021 WHERE STOCK_NO = @stockCode");
+p_mm00_18040/cm_sm0009_rcv.cpp	216	217	cmd.SetCommandText("SELECT TC_MARK FROM TSI0021 WHERE STOCK_NO = @instockCode");
+p_mm00_18040/cm_sm0009_rcv.cpp	374	378	sqlstr = "SELECT SAMPLE_LOT_NO,COMPANY_CODE,COMPANY_NAME,MAT_LINE_TYPE,MAT_NO,PACK_NO,HEAT_NO,ST_NO,MAT_SHAPE_FLAG, "
+p_mm00_18040/cm_sm0009_rcv.cpp	575	576	sqlstr = "select CERTI_TYPE_CODE from tqmtp01 where psc= (select psc from tom01 where order_no = @orderNo)";
+p_mm00_18040/cm_sm0010_rcv.cpp	60	61	cmd.SetCommandText("SELECT TC_MARK FROM TSI0021 WHERE STOCK_NO = @instockCode");
+p_mm00_18040/mm0097c1a2_inq.cpp	62	66	c_sql_condition = "SELECT t.*  "
+p_mm00_18040/mm0097c1f2_inq.cpp	56	69	c_sql_condition = " SELECT  t.EVENT_ID,t.RULE_CODE,t.RULE_DESC "
+p_mm00_18040/mm0097c1f3_ins.cpp	133	137	c_sql_condition = " SELECT t.* "
+p_mm00_18040/mm0097c1f3_ins.cpp	226	229	c_sql_condition = " SELECT NVL(MAX(t.RULE_SEQ_NO),0) + 1 "
+p_mm00_18040/mm0097c1f3_ins.cpp	249	250	sqlstr = "insert into tmm009c ";
+p_mm00_18040/mm0097c1f4_upd.cpp	104	115	c_sql_condition = " update tmm009c t "
+p_mm00_18040/mm0097c1f6_upd.cpp	89	90	c_sql_condition = "select t.CODE_DESC_1_CONTENT from tep0002 t where t.code_class = 'PMA5' and t.code = @code ";
+p_mm00_18040/mm0097c1f6_upd.cpp	104	105	sqlstr = "update tmm009c ";
+p_mm00_18040/mm0097c1f7_del.cpp	95	96	sqlstr = " delete from TMM009C ";
+p_mm00_18040/mm0097c1f7_del.cpp	101	104	sqlstr1 = "SELECT * \
+p_mm00_18040/mm0097c1f7_del.cpp	122	126	sqlstr="UPDATE TMM009C \
+p_mm00_18040/mm0097c1f8_seq.cpp	86	87	sqlstr = "update tmm009c ";
+p_mm00_18040/mm0097c1f8_seq.cpp	92	93	sqlstr="UPDATE TMM009C SET RULE_SEQ_NO = TO_NUMBER(KEYVALUE_1) WHERE RULE_CODE = @tmm009c.RULE_CODE";
+p_mm00_18040/mm0097c1f9_cpy.cpp	122	125	c_sql_condition = " SELECT t.*  "
+p_mm00_18040/mm0097c1f9_cpy.cpp	137	138	sqlstr = "insert into tmm009c,规则代码[" + tmm009c["RULE_CODE"].ToString() + "]";

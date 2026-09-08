@@ -1,0 +1,3 @@
+### CHANGE-111  原行 78-78
+  L78 前: sqlstr = "select DAYS(DATE(TIMESTAMP ('" + ttmsm68["OFF_LINE_TIME"].ToString() + "'))) - DAYS(DATE(TIMESTAMP ('" + ttmsm68["ON_LINE_TIME"].ToString() + "'))) from SYSIBM.SYSDUMMY1";
+  L78 后: sqlstr = "select DATEDIFF(DAY, DATE(TIMESTAMP ('" + ttmsm68["ON_LINE_TIME"].ToString() + "')), DATE(TIMESTAMP ('" + ttmsm68["OFF_LINE_TIME"].ToString() + "'))) from DUAL";

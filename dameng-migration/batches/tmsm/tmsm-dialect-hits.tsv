@@ -1,0 +1,91 @@
+file	line	text
+libTMSM/f_tm0097_proc.cpp	99	sqlstr = "SELECT  LISTAGG(COLUMN_NAME,',') FROM "
+libTMSM/f_tm0097_proc.cpp	105	sqlstr = " SELECT LISTAGG(COLUMN_NAME, ',') "
+libTMSM/f_tm0097_proc.cpp	109	sqlstr = " SELECT LISTAGG(COLUMN_NAME, ',') "
+libTMSM/f_tmsm01_60106.cpp	168	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + datetime + "')  - TIMESTAMP('" + usage_st + "'))) from DUAL";
+libTMSM/f_tmsm_getnextseq.cpp	96	sqlstr = CString("create sequence " + seq_name.Trim() +
+libTMSM/f_tmsm_getnextseq.cpp	99	" start with 1 "
+libTMSM/f_tmsm_getnextseq.cpp	118	sqlstr = CString("select " + seq_name.Trim() + ".nextval from dual ");
+libTMSM/f_tmsm_mm.cpp	708	sqlstr1 =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+libTMSM/f_tmsm_mm.cpp	1079	sqlstr1 =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+libTMSM/f_tmsm_mm.cpp	1197	sqlstr1 =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+libTMSM/f_tmsm_mm.cpp	1398	sqlstr1 =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+libTMSM/f_tmsm_plan.cpp	89	CString delTime = CDateTime::Now().AddDays(-90).ToString("yyyyMMddHHmmss");
+libTMSM/f_tmsm_plan.cpp	570	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+libTMSM/f_tmsm_trace.cpp	141	stop_use_time = ts1.Days() * 24 * 60 + ts1.Hours() * 60 + ts1.Minutes();
+p_tmsm_7110/tmsm11a1f11_pro.cpp	114	ttmsm11["ELAPSED_TIME"] = ts.Days() * 24 * 60 + ts.Hours() * 60 + ts.Minutes();
+p_tmsm_7110/tmsm11av_inq.cpp	85	case when TM11.LADLE_HEATING_DURATION = 0 and tm11.DRYING_ST != ' ' then CEIL((sysdate - TO_DATE(tm11.DRYING_ST, 'yyyy-mm-dd hh24-mi-ss')) * 24 ) else TM11.LADLE_HEATING_DURATION end LADLE_HEATING_DURATION,\
+p_tmsm_7110/tmsm11av_inq.cpp	86	(select * from (select LADLE_LIFE from ttmsm12 where LADLE_NO = SUBSTR(TM11.LADLE_NO, 3, 2) and REC_CREATE_TIME > TM11.UPLOAD_TIME and C_DIV = 'A' order by TTMSM12.REC_CREATE_TIME desc) where ROWNUM = 1)  LADLE_LIFE \
+p_tmsm_7110/tmsm171av_f3.cpp	65	CDecimal totalDays = timespan.TotalDays();
+p_tmsm_7110/tmsm203av_f3.cpp	115	time_2 = time_1.AddDays(perd_dd); //下次计划时间=上次维护时间+周期天数
+p_tmsm_7110/tmsm203av_f3.cpp	231	time_2 = time_1.AddDays(perd_dd); //下次计划时间=上次维护时间+周期天数
+p_tmsm_7110/tmsm203av_f4.cpp	109	time_2 = time_1.AddDays(perd_dd); //下次计划时间=上次维护时间+周期天数
+p_tmsm_7110/tmsm203av_inq.cpp	158	sqlstr += " (select t.SEQ_NO,t.DATE_C,t.WORK_AREA,t.LINE_DESC,t.SPACE_DESC,t.DEV_NAME,t.ITEM_NAME,t.PERD_DD,t.TIME_1,t.TIME_2,t.TIME_3,t.SHIFT_CLASS,t.RESP,t.CHECK_FLAG,TYPE_CODE1,PERD_DD1,BACKC1,C_UPLOADSIGN,(case  when ((TRUNC(SYSDATE) - 
+p_tmsm_7110/tmsm204av_f3.cpp	111	time_2 = time_1.AddDays(perd_dd); //下次计划时间=上次维护时间+周期天数
+p_tmsm_7110/tmsm204av_f3.cpp	215	time_2 = time_1.AddDays(perd_dd); //下次计划时间=上次测试时间+周期天数
+p_tmsm_7110/tmsm204av_f4.cpp	93	time_2 = time_1.AddDays(perd_dd); //下次计划时间=上次维护时间+周期天数
+p_tmsm_7110/tmsm204av_inq.cpp	161	sqlstr += " (select t.SEQ_NO,t.DATE_C,t.WORK_AREA,t.LINE_DESC,t.ITEM_NAME,t.SPACE_DESC,t.DEV_NAME,t.PERD_DD,t.TIME_1,t.TIME_2,t.TIME_3,t.BACK_DESC1,t.SHIFT_CLASS,t.RESP,t.CHECK_FLAG,t.PERD_DD1,(case  when ((sysdate - to_date(trim(t.TIME_2),
+p_tmsm_7110/tmsm205av_f3.cpp	135	sqlstr_inq = "SELECT nvl(MAX(SEQ_NO),0) FROM TTMSM205";
+p_tmsm_7110/tmsm205av_f3.cpp	249	sqlstr_inq = "SELECT nvl(MAX(SEQ_NO),0) FROM TTMSM205";
+p_tmsm_7110/tmsm205bv_f3.cpp	135	sqlstr_inq = "SELECT nvl(MAX(SEQ_NO),0) FROM TTMSM205";
+p_tmsm_7110/tmsm205bv_f3.cpp	249	sqlstr_inq = "SELECT nvl(MAX(SEQ_NO),0) FROM TTMSM205";
+p_tmsm_7110/tmsm206av_f3.cpp	101	time_2 = time_1.AddDays(perd_dd); //下次计划时间=上次维护时间+周期天数
+p_tmsm_7110/tmsm206av_f3.cpp	198	time_2 = time_1.AddDays(perd_dd); //下次计划时间=上次测试时间+周期天数
+p_tmsm_7110/tmsm206av_f4.cpp	93	time_2 = time_1.AddDays(perd_dd); //下次计划时间=上次维护时间+周期天数
+p_tmsm_7110/tmsm206av_inq.cpp	161	sqlstr += " (select t.SEQ_NO,t.DATE_C,t.WORK_AREA,t.SPACE_DESC,t.DEV_NAME,t.MODEL_SIZE,t.POWER,t.PERD_DD,t.TIME_1,t.TIME_2,t.TIME_3,t.RESP,t.CHECK_FLAG,PERD_DD1,BACKC1,INSULATION_A,INSULATION_B,INSULATION_C,CURRENCY_A,CURRENCY_B,CURRENCY_C,
+p_tmsm_7120/tmsm01a1a1_inq.cpp	101	stop_use_time = ts1.Days() * 24 * 60 + ts1.Hours() * 60 + ts1.Minutes();
+p_tmsm_7120/tmsm01a1f10_pro.cpp	165	sqlstr = " SELECT NVL(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm01a1f10_pro.cpp	225	ttmsm01["STOP_USE_TIME"] =ts1.Days() * 24 * 60 + ts1.Hours() * 60 + ts1.Minutes();
+p_tmsm_7120/tmsm01a1f10_pro.cpp	226	ttmsm01["USAGE"] = ts2.Days() * 24 * 60 + ts2.Hours() * 60 + ts2.Minutes();
+p_tmsm_7120/tmsm01a1f8_pro.cpp	136	sqlstr = " SELECT NVL(MAX(BAKE_SEQ_NO),0) "
+p_tmsm_7120/tmsm01a1f8_pro.cpp	186	ttmsm01["ELAPSED_TIME"]	=ts.Days() * 24 * 60 + ts.Hours() * 60 + ts.Minutes();
+p_tmsm_7120/tmsm01a1f9_pro.cpp	148	sqlstr = " SELECT NVL(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm01a3_cbn.cpp	170	stop_use_time = ts1.Days() * 24 * 60 + ts1.Hours() * 60 + ts1.Minutes();
+p_tmsm_7120/tmsm01a3_cfm.cpp	193	stop_use_time = ts1.Days() * 24 * 60 + ts1.Hours() * 60 + ts1.Minutes();
+p_tmsm_7120/tmsm01a3_upd.cpp	222	stop_use_time = ts1.Days() * 24 * 60 + ts1.Hours() * 60 + ts1.Minutes();
+p_tmsm_7120/tmsm03_ins.cpp	151	sqlstr =	" SELECT nvl(MAX(BAKE_SEQ_NO),0) "
+p_tmsm_7120/tmsm03_ins.cpp	268	sqlstr =	" SELECT nvl(MAX(BAKE_SEQ_NO),0) "
+p_tmsm_7120/tmsm05_ins.cpp	177	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm05_ins.cpp	320	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm06_ins.cpp	136	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm06_ins.cpp	233	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm09_ins.cpp	134	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm09_ins.cpp	237	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm11a1f8_pro.cpp	178	ttmsm11["ELAPSED_TIME"]	=ts.Days() * 24 * 60 + ts.Hours() * 60 + ts.Minutes();
+p_tmsm_7120/tmsm11a3f8_pro.cpp	178	ttmsm11["ELAPSED_TIME"]	=ts.Days() * 24 * 60 + ts.Hours() * 60 + ts.Minutes();
+p_tmsm_7120/tmsm15_ins.cpp	142	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm15_ins.cpp	244	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm19_ins.cpp	140	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm19_ins.cpp	225	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm21bf9_pro.cpp	167	sqlstr = " SELECT NVL(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm25_ins.cpp	142	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm25_ins.cpp	244	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm29_ins.cpp	134	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm29_ins.cpp	228	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm31bf10_pro.cpp	206	sqlstr = " SELECT NVL(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm31bf9_pro.cpp	164	sqlstr = " SELECT NVL(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm35_ins.cpp	158	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm35_ins.cpp	268	sqlstr =	" SELECT nvl(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7120/tmsm39_ins.cpp	150	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm39_ins.cpp	252	sqlstr =	" SELECT nvl(MAX(USE_SEQ_NO),0) "
+p_tmsm_7120/tmsm41bf9_pro.cpp	105	sqlstr = " SELECT NVL(MAX(REPAIR_SEQ_NO),0) "
+p_tmsm_7160/tmsm_l2_mess_auto_snd.cpp	29	sqlstr = " select * from TTMSM_HEAT WHERE SEND_FLAG='0' and rownum<=100 ";
+p_tmsm_7160/tmsm_l2_mess_auto_snd.cpp	59	sqlstr = " select * from tmmsm2b where REC_CREATE_TIME>=TO_CHAR(SYSDATE-10/24/60,'yyyyMMddhh24MISS') ";
+p_tmsm_7160/tmsm_l2_mess_auto_snd.cpp	87	sqlstr = " select * from TTMSM_MAT WHERE SEND_FLAG='0' and rownum<=100 ";
+p_tmsm_7160/tmsm_l2_mess_auto_snd.cpp	118	where HEAT_NO in(Select HEAT_NO from tmmsm31 where START_TIME > to_char(sysdate - 6 / 24, 'yyyyMMddHHMISS')) \
+p_tmsm_7160/tmsm_t82326_snd.cpp	20	CString datetime_b = CDateTime::Now().AddDays(-2).ToString("yyyyMMdd000000");
+p_tmsm_7160/tmsme59_inq.cpp	125	sqlstr = "select TIMESTAMPDIFF(8, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) from DUAL";
+p_tmsm_7160/tmsme59_inq.cpp	159	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) from DUAL";
+p_tmsm_7160/tmsme59_inq.cpp	219	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["SUSPEND_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["DEV_NAME"].ToString().Trim() + "'))) from DUAL";
+p_tmsm_7160/tmsme59_inq.cpp	248	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["D_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["SUSPEND_TIME"].ToString().Trim() + "'))) from DUAL";
+p_tmsm_7160/tmsme59_inq.cpp	292	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["REPAIR_END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["REPAIR_START_TIME"].ToString().Trim() + "'))) from DUAL";
+p_tmsm_7160/tmsme96_inq.cpp	122	sqlstr = "select TIMESTAMPDIFF(8, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) from DUAL";
+p_tmsm_7160/tmsme96_inq.cpp	156	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) from DUAL";
+p_tmsm_7160/tmsme96_inq.cpp	271	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from DUAL";
+p_tmsm_7160/tmsme96_inq.cpp	316	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from DUAL";
+p_tmsm_7160/tmsme96_inq.cpp	362	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from DUAL";
+p_tmsm_7160/tmsme96_inq.cpp	408	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from DUAL";
+p_tmsm_7160/tmsme96_inq.cpp	454	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from DUAL";
+p_tmsm_7160/tmsme96_inq.cpp	500	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from DUAL";
+p_tmsm_7160/tmsme96_inq.cpp	546	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from DUAL";
+p_tmsm_7160/tmsme96_inq.cpp	589	sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["E_DATETIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["S_DATETIME"].ToString().Trim() + "'))) from DUAL";

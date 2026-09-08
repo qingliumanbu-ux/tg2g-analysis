@@ -1,0 +1,37 @@
+CAAI/libCAAI/f_caai_sj.cpp:50	// DM8 适配 CHANGE-261:SQL。空串搜索 DECODE(x,'',a,b) 改为标准 CASE WHEN x IS NULL OR x='' THEN a ELSE b,与 CHANGE-107 同理,不依赖空串/NULL 匹配的未记载语义。
+FOSMT/p_fosmt_28180/fosm02_inq.cpp:696	// DM8 适配 CHANGE-282:SQL。SYSIBM 辅助表改为 DUAL。
+FOSMT/p_fosmt_28180/fosm02_inq.cpp:1412	// DM8 适配 CHANGE-294:SQL。DB2 日期天数后缀改为整数天运算。
+FOSMT/p_fosmt_28180/fosm02_inq.cpp:1546	// DM8 适配 CHANGE-295:SQL。SYSIBM 辅助表改为 DUAL。
+FOSMT/p_fosmt_28180/fosm02_inq.cpp:1658	// DM8 适配 CHANGE-296:SQL。SYSIBM 辅助表改为 DUAL。
+FOSMT/p_fosmt_28180/fosm02_inq.cpp:2475	// DM8 适配 CHANGE-304:SQL。DB2 日期天数后缀改为整数天运算。
+FOSMT/p_fosmt_28180/fosmt00_inq.cpp:696	// DM8 适配 CHANGE-311:SQL。SYSIBM 辅助表改为 DUAL。
+FOSMT/p_fosmt_28180/fosmt00_inq.cpp:1412	// DM8 适配 CHANGE-323:SQL。DB2 日期天数后缀改为整数天运算。
+FOSMT/p_fosmt_28180/fosmt00_inq.cpp:1547	// DM8 适配 CHANGE-324:SQL。SYSIBM 辅助表改为 DUAL。
+FOSMT/p_fosmt_28180/fosmt00_inq.cpp:1659	// DM8 适配 CHANGE-325:SQL。SYSIBM 辅助表改为 DUAL。
+FOSMT/p_fosmt_28180/fosmt00_inq.cpp:2476	// DM8 适配 CHANGE-333:SQL。DB2 日期天数后缀改为整数天运算。
+MMSM/p_mmsm_17660/mmsmdbdc_inq.cpp:120	// DM8 适配 CHANGE-335:SQL。空值搜索 DECODE 改为标准 CASE,不依赖 NULL 相等匹配的未记载语义。
+MMSM/p_mmsm_17660/mmsmdbdc_inq.cpp:200	// DM8 适配 CHANGE-186:SQL。空值搜索 DECODE 改为标准 CASE,不依赖 NULL 相等匹配的未记载语义。
+MMSM/p_mmsm_17660/mmsmqxdc_inq.cpp:114	// DM8 适配 CHANGE-181:SQL。空值搜索 DECODE 改为标准 CASE,不依赖 NULL 相等匹配的未记载语义。
+MMSM/p_mmsm_17660/mmsmshdc_inq.cpp:200	// DM8 适配 CHANGE-182:SQL。空值搜索 DECODE 改为标准 CASE,不依赖 NULL 相等匹配的未记载语义。
+PSSM/p_pssm_13050/pssm10cllcf2_inq.cpp:157	// DM8 适配 CHANGE-125:SQL。空值搜索 DECODE 改为标准 CASE,不依赖 NULL 相等匹配的未记载语义。
+PSSM/p_pssm_13050/pssm10cllcf2_inq.cpp:191	// DM8 适配 CHANGE-126:SQL。空值搜索 DECODE 改为标准 CASE,不依赖 NULL 相等匹配的未记载语义。
+PSSM/p_pssm_13060/mmlgap05_inq.cpp:70	// DM8 适配 CHANGE-132:SQL。DB2 日期天数后缀改为整数天运算。
+PSSM/p_pssm_13060/mmlgap05_inq.cpp:136	// DM8 适配 CHANGE-133:SQL。DB2 日期天数后缀改为整数天运算。
+PSSM/p_pssm_13060/mmlgap05_inq.cpp:202	// DM8 适配 CHANGE-134:SQL。DB2 日期天数后缀改为整数天运算。
+PSSM/p_pssm_13060/mmlgap07_inq.cpp:70	// DM8 适配 CHANGE-380:SQL。SYSIBM 辅助表改为 DUAL。
+PSSM/p_pssm_13060/mmlgap07_inq.cpp:131	// DM8 适配 CHANGE-138:SQL。HOUR/MINUTE/SECOND 标注时长改为 DM 官方文档示例的小数天运算(时=n.0/24,分=n.0/1440,秒=n.0/86400),时间跨度保持。
+PSSM/p_pssm_13060/mmlgap08_inq.cpp:70	// DM8 适配 CHANGE-139:SQL。HOUR/MINUTE/SECOND 标注时长改为 DM 官方文档示例的小数天运算(时=n.0/24,分=n.0/1440,秒=n.0/86400),时间跨度保持。
+PSSM/p_pssm_13060/mmlgap09_inq.cpp:70	// DM8 适配 CHANGE-381:SQL。SYSIBM 辅助表改为 DUAL。
+PSSM/p_pssm_13060/mmlgap09_inq.cpp:355	// DM8 适配 CHANGE-141:SQL。HOUR/MINUTE/SECOND 标注时长改为 DM 官方文档示例的小数天运算(时=n.0/24,分=n.0/1440,秒=n.0/86400),时间跨度保持。
+PSSM/p_pssm_13060/mmsmap05_inq.cpp:74	// DM8 适配 CHANGE-142:SQL。DB2 日期天数后缀改为整数天运算。
+PSSM/p_pssm_13060/mmsmap05_inq.cpp:138	// DM8 适配 CHANGE-143:SQL。DB2 日期天数后缀改为整数天运算。
+PSSM/p_pssm_13060/mmsmap05_inq.cpp:202	// DM8 适配 CHANGE-144:SQL。DB2 日期天数后缀改为整数天运算。
+PSSM/p_pssm_13060/mmsmap05_inq.cpp:266	// DM8 适配 CHANGE-145:SQL。DB2 日期天数后缀改为整数天运算。
+PSSM/p_pssm_13060/mmsmap07_inq.cpp:70	// DM8 适配 CHANGE-148:SQL。HOUR/MINUTE/SECOND 标注时长改为 DM 官方文档示例的小数天运算(时=n.0/24,分=n.0/1440,秒=n.0/86400),时间跨度保持。
+PSSM/p_pssm_13060/mmsmap08_inq.cpp:70	// DM8 适配 CHANGE-149:SQL。HOUR/MINUTE/SECOND 标注时长改为 DM 官方文档示例的小数天运算(时=n.0/24,分=n.0/1440,秒=n.0/86400),时间跨度保持。
+PSSM/p_pssm_13060/mmsmap09_inq.cpp:70	// DM8 适配 CHANGE-150:SQL。SYSIBM 辅助表改为 DUAL。
+PSSM/p_pssm_13060/pssmap03_bof_inq.cpp:71	// DM8 适配 CHANGE-382:SQL。HOUR/MINUTE/SECOND 标注时长改为 DM 官方文档示例的小数天运算(时=n.0/24,分=n.0/1440,秒=n.0/86400),时间跨度保持。
+QMTS/p_qmts_4800/qmts0rdr_inq.cpp:89	// DM8 适配 CHANGE-232:SQL。空串搜索 DECODE(x,'',a,b) 改为标准 CASE WHEN x IS NULL OR x='' THEN a ELSE b,与 CHANGE-107 同理,不依赖空串/NULL 匹配的未记载语义。
+WM00/libWM00/f_auto_sail.cpp:467	// DM8 适配 CHANGE-385:SQL。DB2 同义词 VALUE 改为 DM 文档支持的 NVL(两参数:返回第一个非空值)。
+WMSM/p_wmsm_8110/wmsm01gg_inq1.cpp:76	// DM8 适配 CHANGE-95:SQL。SUBSTR2 改为 DM 文档支持的 SUBSTR(按字符截取。
+WMSM/p_wmsm_8110/wmsm01gg_inq1.cpp:167	// DM8 适配 CHANGE-96:SQL。SUBSTR2 改为 DM 文档支持的 SUBSTR(按字符截取。

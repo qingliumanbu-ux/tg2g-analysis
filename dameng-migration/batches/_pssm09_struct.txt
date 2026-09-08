@@ -1,0 +1,111 @@
+
+===== Server/PSSM/p_pssm_13060/mmlgap09_inq.cpp total=959 =====
+36	END?	CString datetime1("");
+37	END?	CString datetime2("");
+38	END?	CString v_date("");
+40	END?	CString sqlstr("");
+70	C	// DM8 适配 CHANGE-381:查询。TMMSM31。SYSIBM 辅助表改为 DUAL。
+71	C	// 改写原因：SYSIBM 辅助表改为 DUAL；依据 DM 官方文档,DM8 尚未实测。
+73	C	// 原 SQL（完整保留）：
+354	C	// DM8 SQL：
+355	C	// DM8 适配 CHANGE-141:查询。TMMSM31。HOUR/MINUTE/SECOND 标注时长改为 DM 官方文档示例的小数天运算(时=n.0/24,分=n.0/1440,秒=n.0/86400),时间跨度保持。
+356	C	// 改写原因：HOUR/MINUTE/SECOND 标注时长改为 DM 官方文档示例的小数天运算(时=n.0/24,分=n.0/1440,秒=n.0/86400),时间跨度保持；依据 DM 官方文档,DM8 尚未实测。
+358	C	// 原 SQL（完整保留）：
+639	C	// DM8 SQL：
+640	A	sqlstr = "select *  from  ( select mm.zjh xh,mm.zjh||'#连铸' zjh,mm.drls,mm.ljls,mm.drjzgsl,
+701	T	"to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(tim
+702	T	"- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(
+704	T	"to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(tim
+713	T	"to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(tim
+714	T	"- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(
+716	T	"to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(tim
+725	T	"to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(tim
+726	T	"- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(
+728	T	"to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(tim
+738	T	"cast(100 * (1 - sum(tjsjjg)*1.0 / timestampdiff(16, to_date(substr(@datetime2, 1, 8), 'yyyymmdd') -
+740	T	"to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(tim
+741	T	"- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(
+743	T	"to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(tim
+753	T	"'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.
+754	T	"+ 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.
+756	T	"'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open
+765	T	"to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(tim
+766	T	"- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(
+768	T	"to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(tim
+840	T	"to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(tim
+841	T	"'yyyymmddhh24miss') + 3.0/24) - (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)
+844	T	"cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - to_date(to_char(to_da
+854	T	"sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (t
+855	T	"+ 3.0/24) - (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(di
+857	T	"+ 3.0/24)) as  bigint)), 4) sjc2, to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyy
+868	T	"'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_
+869	T	"sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdi
+871	T	"to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(tim
+881	T	"cast(100 * (1 - sum(tjsjjg)*1.0 / timestampdiff(16, to_date(substr(@datetime2, 1, 8), 'yyyymmdd') -
+883	T	"select substr(sjc.cast_no, 2, 1) zjh, to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24,
+884	T	"xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/2
+886	T	"+ 3.0/24)) as  bigint)), 4) sjc2, to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyy
+896	T	"digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - (to_date(sjc.C
+897	T	"right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 
+899	T	"right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - to_date(
+908	T	"'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_
+909	T	"'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(t
+911	T	"+ 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24
+929	END?	cmd_inq.Parameters.Set("datetime1", datetime1);
+930	END?	cmd_inq.Parameters.Set("datetime2", datetime2);
+931	END?	cmd_inq.Parameters.Set("v_date", v_date);
+941	END?	CString str = sqlstr + "\r\n" + ex.GetMsg();
+
+===== Server/PSSM/p_pssm_13060/mmsmap09_inq.cpp total=1118 =====
+36	END?	CString datetime1("");
+37	END?	CString datetime2("");
+38	END?	CString v_date("");
+40	END?	CString sqlstr("");
+70	C	// DM8 适配 CHANGE-150:查询。SYSIBM 辅助表改为 DUAL。
+71	C	// 改写原因：SYSIBM 辅助表改为 DUAL；HOUR/MINUTE/SECOND 标注时长改为 DM 官方文档示例的小数天运算(时=n.0/24,分=n.0/1440,秒=n.0/86400),时间跨度保持；依据 DM 官方文档,D
+73	C	// 原 SQL（完整保留）：
+576	C	// DM8 SQL：
+577	A	sqlstr = "  select *  from  (   "
+704	T	"							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to
+705	T	"							  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24mi
+707	T	"							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_
+723	T	"							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to
+724	T	"							  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24mi
+726	T	"							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_
+742	T	"							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to
+743	T	"							  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24mi
+745	T	"							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_
+766	T	"							  select zjh, 0 drtjsj, 0 drzjzyl, cast(sum(tjsjjg)/60 as decimal(20,0)) ljtjsj, cast(100 * 
+770	T	"							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to
+771	T	"							  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24mi
+773	T	"							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_
+789	T	"							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to
+790	T	"							  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24mi
+792	T	"							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_
+808	T	"							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to
+809	T	"							  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24mi
+811	T	"							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_
+949	T	"															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+950	T	"															  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymm
+952	T	"															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+968	T	"															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+969	T	"															  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymm
+971	T	"															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+987	T	"															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+988	T	"															  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymm
+990	T	"															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+1011	T	"															 select zjh, 0 drtjsj, 0 drzjzyl, cast(sum(tjsjjg)/60 as decimal(20,0)) ljtjsj, cast
+1015	T	"															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+1016	T	"															  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymm
+1018	T	"															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+1034	T	"															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+1035	T	"															  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymm
+1037	T	"															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+1053	T	"															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+1054	T	"															  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymm
+1056	T	"															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+1078	END?	"  ) where xh < 5 order by xh  ";
+1088	END?	cmd_inq.Parameters.Set("datetime1", datetime1);
+1089	END?	cmd_inq.Parameters.Set("datetime2", datetime2);
+1090	END?	cmd_inq.Parameters.Set("v_date", v_date);
+1100	END?	CString str = sqlstr + "\r\n" + ex.GetMsg();

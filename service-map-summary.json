@@ -1,0 +1,116 @@
+{
+  "method": "Regex extraction of literal callService names, matched case-insensitively to BM2F_ENTERACE or BM2F_ENTERACE_TELE entry macros in Server. Comments and duplicate entries may be included. Unmatched does not mean unavailable; dynamic calls, other registration patterns and Client-contained server code are not covered.",
+  "frontends": [
+    {
+      "frontend": "xr-fbsm",
+      "literal_service_names": 60,
+      "names_with_server_entry": 60,
+      "server_modules": {
+        "FBSM": 61
+      },
+      "unmatched_samples": []
+    },
+    {
+      "frontend": "xr-mmlc",
+      "literal_service_names": 215,
+      "names_with_server_entry": 212,
+      "server_modules": {
+        "MMSM": 215,
+        "PSSM": 3
+      },
+      "unmatched_samples": [
+        "mmsm832_ins",
+        "qxsmbt0a_aud",
+        "qxsmbt0a_res"
+      ]
+    },
+    {
+      "frontend": "xr-mmsm-ag",
+      "literal_service_names": 143,
+      "names_with_server_entry": 140,
+      "server_modules": {
+        "MMSM": 154,
+        "PSSM": 1
+      },
+      "unmatched_samples": [
+        "mmsm11bv_inq",
+        "qxsmbt0a_aud",
+        "qxsmbt0a_res"
+      ]
+    },
+    {
+      "frontend": "xr-pssm",
+      "literal_service_names": 48,
+      "names_with_server_entry": 46,
+      "server_modules": {
+        "PSSM": 47
+      },
+      "unmatched_samples": [
+        "qxsmbt0a_aud",
+        "qxsmbt0a_res"
+      ]
+    },
+    {
+      "frontend": "xr-qmbs-ag",
+      "literal_service_names": 46,
+      "names_with_server_entry": 45,
+      "server_modules": {
+        "QMTS": 45
+      },
+      "unmatched_samples": [
+        "tgt8z"
+      ]
+    },
+    {
+      "frontend": "xr-tksm",
+      "literal_service_names": 32,
+      "names_with_server_entry": 30,
+      "server_modules": {
+        "MMSM": 1,
+        "TK00": 29
+      },
+      "unmatched_samples": [
+        "tgt8z",
+        "tksm10_stno_save"
+      ]
+    },
+    {
+      "frontend": "xr-tmsmx",
+      "literal_service_names": 45,
+      "names_with_server_entry": 41,
+      "server_modules": {
+        "TMSM": 41
+      },
+      "unmatched_samples": [
+        "qxcr23tz_inq2",
+        "tmsmgt_del",
+        "tmsmgt_left",
+        "tmsmgt_reset"
+      ]
+    },
+    {
+      "frontend": "xr-wmgh",
+      "literal_service_names": 16,
+      "names_with_server_entry": 16,
+      "server_modules": {
+        "MMSM": 1,
+        "WMSM": 15
+      },
+      "unmatched_samples": []
+    },
+    {
+      "frontend": "xr-wmsmx",
+      "literal_service_names": 95,
+      "names_with_server_entry": 94,
+      "server_modules": {
+        "MMSM": 3,
+        "QMTS": 3,
+        "WM00": 28,
+        "WMSM": 74
+      },
+      "unmatched_samples": [
+        "wmsm01s2n_inq"
+      ]
+    }
+  ]
+}

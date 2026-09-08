@@ -1,0 +1,6 @@
+### CHANGE-151  原行 126-126
+  L126 前: sqlstr += " AND to_char(to_date(decode(trim(AOD_BOF_E_DTIME),null,'1999-01-01 00:01:01',AOD_BOF_E_DTIME),'yyyy-mm-dd hh24:mi:ss'),'yyyyMMddhhmiss')>= @v_from";
+  L126 后: sqlstr += " AND to_char(to_date(CASE WHEN trim(AOD_BOF_E_DTIME) IS NULL THEN '1999-01-01 00:01:01' ELSE AOD_BOF_E_DTIME END,'yyyy-mm-dd hh24:mi:ss'),'yyyyMMddhhmiss')>= @v_from";
+### CHANGE-152  原行 130-130
+  L130 前: sqlstr += " AND to_char(to_date(decode(trim(AOD_BOF_E_DTIME),null,'1999-01-01 00:01:01',AOD_BOF_E_DTIME),'yyyy-mm-dd hh24:mi:ss'),'yyyyMMddhhmiss')<= @v_to";
+  L130 后: sqlstr += " AND to_char(to_date(CASE WHEN trim(AOD_BOF_E_DTIME) IS NULL THEN '1999-01-01 00:01:01' ELSE AOD_BOF_E_DTIME END,'yyyy-mm-dd hh24:mi:ss'),'yyyyMMddhhmiss')<= @v_to";

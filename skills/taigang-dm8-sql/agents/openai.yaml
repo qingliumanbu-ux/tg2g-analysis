@@ -1,0 +1,4 @@
+interface:
+  display_name: "太钢后台 SQL 达梦适配"
+  short_description: "逐条排查后台 SQL，保留原句注释，转换达梦语法并提交语义疑问供人工复核"
+  default_prompt: "使用 $taigang-dm8-sql 处理指定模块的后台 SQL：保留原 SQL 注释，转换明确差异，列出需要人工复核的语句。"

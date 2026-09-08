@@ -1,0 +1,679 @@
+file	line	text
+libPSSM/f_cm_2000k1_snd.cpp	132	" fetch first 1 rows only																										   ";
+libPSSM/f_plan_delete_snd.cpp	110	sqlstr = " SELECT SM_PLAN_NO FROM " + tablename3 + " MINUS SELECT SM_PLAN_NO FROM " + tablename1;
+libPSSM/f_plan_delete_snd.cpp	456	sqlstr = "  SELECT PSSM_PLAN_SND_ID.nextval FROM dual  ";
+libPSSM/f_plan_delete_snd2.cpp	418	sqlstr = "  SELECT PSSM_PLAN_SND_ID.nextval FROM dual  ";
+libPSSM/f_plan_insert_snd.cpp	111	sqlstr = " SELECT SM_PLAN_NO FROM " + tablename1 + " MINUS SELECT SM_PLAN_NO FROM " + tablename3;
+libPSSM/f_plan_insert_snd.cpp	456	sqlstr = "  SELECT PSSM_PLAN_SND_ID.nextval FROM dual  ";
+libPSSM/f_plan_slab_snd.cpp	66	for (int rownum = 0; rownum < rowcount; rownum++)
+libPSSM/f_plan_slab_snd.cpp	70	tpssm03["PONO"] = bcls_rec->Tables[0].Rows[rownum]["PONO"].ToString();
+libPSSM/f_plan_slab_snd.cpp	71	tpssm11["SM_PLAN_NO"] = bcls_rec->Tables[0].Rows[rownum]["SM_PLAN_NO"].ToString();
+libPSSM/f_plan_slab_snd.cpp	72	tpssm13["SM_PLAN_NO"] = bcls_rec->Tables[0].Rows[rownum]["SM_PLAN_NO"].ToString();
+libPSSM/f_plan_slab_snd.cpp	73	action = bcls_rec->Tables[0].Rows[rownum]["ACTION"].ToString();
+libPSSM/f_plan_update_snd.cpp	137	sqlstr = " SELECT " + compare_fields11 + " FROM " + tablename1 + " WHERE SM_PLAN_NO IN(" + sm_plan_no + ") MINUS SELECT " + compare_fields11 + " FROM " + tablename3 + " WHERE SM_PLAN_NO IN(" + sm_plan_no + ")";
+libPSSM/f_plan_update_snd.cpp	148	sqlstr = " SELECT " + compare_fields12 + " FROM " + tablename2 + " WHERE SM_PLAN_NO IN(" + sm_plan_no + ") MINUS SELECT " + compare_fields12 + " FROM " + tablename4 + " WHERE SM_PLAN_NO IN(" + sm_plan_no + ")";
+libPSSM/f_plan_update_snd2.cpp	451	sqlstr = "  SELECT PSSM_PLAN_SND_ID.nextval FROM dual  ";
+libPSSM/f_pssm01_chk_capa.cpp	142	sqlstr = "SELECT NVL(min(PLAN_CHARGE), 0) PLAN_CHARGE "
+libPSSM/f_pssm01_chk_capa.cpp	232	sqlstr = "SELECT NVL(min(PLAN_CHARGE), 0) PLAN_CHARGE "
+libPSSM/f_pssm11_mix_upd.cpp	62	" select CC_MACH_NO,CC_SEQ,PONO_STATUS,A.ST_NO, A.PONO,A.RESTRAND_FLG,A.TD_CHG_FLG, '0' ORDER_CC_SEQ_FLAG, nvl(E.ST_NO_TO,A.ST_NO) CAN_MIX_GROUP,nvl(F.IDX_NO,A.ST_NO) WORRY_MIX_GROUP "
+libPSSM/f_pssm11t_planno.cpp	126	" SELECT NVL(MIN(SM_PLAN_NO),' ') FROM TPSSM27 "
+libPSSM/f_pssm12_zpl_copy.cpp	71	"   SELECT   a.*FROM TPSSM42 A  WHERE   a.AREA_ID IN(2, 3) AND  A.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS')) ");
+libPSSM/f_pssm21_capa_cal.cpp	102	sqlstr = "SELECT nvl(sum((se-sb)*24*60), 0) stop_time \
+libPSSM/f_pssm21_capa_cal.cpp	104	SELECT decode(sign(b - db), -1, db, b) sb, \
+libPSSM/f_pssm21_capa_cal.cpp	105	decode(sign(e - de), -1, e, de) se \
+libPSSM/f_pssm21_cast_cre_n.cpp	162	"   AND (b.START_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR b.START_TIME_REAL = ' ') "
+libPSSM/f_pssm21_chk_capa.cpp	144	sqlstr = "SELECT NVL(min(PLAN_CHARGE), 0) PLAN_CHARGE "
+libPSSM/f_pssm21_chk_capa.cpp	227	sqlstr = "SELECT NVL(min(PLAN_CHARGE), 0) PLAN_CHARGE "
+libPSSM/f_pssm81_plan_auto.cpp	32	int v_rownum_pm99 = 0;
+libPSSM/f_pssm81_plan_auto.cpp	33	int v_rownum_mm99 = 0;
+libPSSM/f_pssm81_plan_auto.cpp	124	sqlstr = " SELECT NVL(MAX(PLAN_EXEC_SEQ_NO),0)  FROM TPSSM81 "
+libPSSM/f_pssm81_plan_auto.cpp	270	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["EVENT_ID"] = "PS01";
+libPSSM/f_pssm81_plan_auto.cpp	271	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["EVENT_LINE_TYPE"] = "00";
+libPSSM/f_pssm81_plan_auto.cpp	272	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["SYSTEM_ID"] = "PSSM";
+libPSSM/f_pssm81_plan_auto.cpp	273	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["FUNC_ID"] = s.svc_name;
+libPSSM/f_pssm81_plan_auto.cpp	274	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["MAT_NO"] = tpssm81["MAT_NO"]; //材料号
+libPSSM/f_pssm81_plan_auto.cpp	275	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["PLAN_NO"] = tpssm81["PLAN_NO"];
+libPSSM/f_pssm81_plan_auto.cpp	277	v_rownum_mm99++;
+libPSSM/f_pssm81_plan_auto.cpp	284	if (v_rownum_mm99 > 0)
+libPSSM/f_pssm81_trace.cpp	29	int v_rownum_pm99 = 0;
+libPSSM/f_pssm81_trace.cpp	30	int v_rownum_mm99 = 0;
+libPSSM/f_pssm_call_tps_n.cpp	2305	sqlstr = "SELECT * FROM TPSSM18 WHERE DEV_STATUS='1' AND END_TIME > TO_CHAR(SYSDATE, 'YYYYMMDDHH24MISS')  ";
+libPSSM/f_pssm_call_tps_n.cpp	2411	sqlstr = "SELECT * FROM TPSSM18 WHERE DEV_STATUS='1' AND END_TIME > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') ";
+libPSSM/f_pssm_call_tps_n.cpp	2685	sqlstr = "SELECT * FROM TPSSM10 WHERE FACTORY_DIV=@v_factory_div AND PONO IN ( SELECT a.PONO FROM TPSSM11 a,TPSSM12 b WHERE a.STEEL_RETURN_CODE = ' ' AND a.PONO_STATUS < 83  AND a.STEEL_RETURN_CODE = ' ' AND a.SM_PLAN_NO = b.SM_PLAN_NO AND 
+libPSSM/f_pssm_call_tps_n.cpp	2729	sqlstr = "SELECT a.* FROM TPSSM11 a,TPSSM12 b WHERE a.FACTORY_DIV=@v_factory_div AND a.PONO_STATUS < 83 AND a.STEEL_RETURN_CODE = ' ' AND a.SM_PLAN_NO = b.SM_PLAN_NO AND b.AREA_ID = 3 AND (b.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH2
+libPSSM/f_pssm_call_tps_n.cpp	3294	sqlstr = "SELECT * FROM TPSSM17 WHERE FACTORY_DIV=@v_factory_div AND PONO IN ( SELECT a.PONO FROM TPSSM15 a,TPSSM16 b WHERE a.STEEL_RETURN_CODE = ' ' AND a.PONO_STATUS < 83  AND a.STEEL_RETURN_CODE = ' ' AND a.SM_PLAN_NO = b.SM_PLAN_NO AND 
+libPSSM/f_pssm_call_tps_n.cpp	3338	sqlstr = "SELECT a.* FROM TPSSM15 a,TPSSM16 b WHERE a.FACTORY_DIV=@v_factory_div AND a.PONO_STATUS < 83 AND a.STEEL_RETURN_CODE = ' ' AND a.SM_PLAN_NO = b.SM_PLAN_NO AND b.AREA_ID = 3 AND (b.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH2
+libPSSM/f_pssm_compute_time.cpp	93	v_prev_plan_date = v_plan_date_prev.AddDays(-1).ToString("yyyyMMdd");	//取生产日期前一天日期
+libPSSM/f_pssm_deal_pre_plan2.cpp	82	" START_TIME_REAL = TO_CHAR(SYSDATE - 1 / 24 / 60, 'YYYYMMDDHH24MISS'), "
+libPSSM/f_pssm_deal_pre_plan2.cpp	83	" END_TIME_REAL = TO_CHAR(SYSDATE - 1 / 24 / 60, 'YYYYMMDDHH24MISS') "
+libPSSM/f_pssm_get_no.cpp	84	sqlstr = "  SELECT LPAD(PSSM_CAST_NO_INS.nextval, 6, '0') FROM dual  ";
+libPSSM/f_pssm_heat_confirm.cpp	200	sqlstr = CString(" SELECT a.PONO AS PONO2, a.STEEL_RETURN_CODE AS CODE, a.* FROM TPSSM11 a left join TPSSM12 b on a.sm_plan_no = b.sm_plan_no WHERE a.PONO_STATUS = 83 AND b.area_id = 5 AND (( b.end_time_real <= @c_datetime AND a.CUT_FIN_FLA
+libPSSM/f_pssm_mix_type.cpp	86	" select CC_MACH_NO,CC_SEQ,PONO_STATUS,A.ST_NO, A.PONO,A.RESTRAND_FLG,A.TD_CHG_FLG, '0' ORDER_CC_SEQ_FLAG, nvl(E.ST_NO_TO,A.ST_NO) CAN_MIX_GROUP,nvl(F.IDX_NO,A.ST_NO) WORRY_MIX_GROUP "
+libPSSM/f_pssm_mix_type.cpp	95	" select CC_MACH_NO,CC_SEQ,PONO_STATUS,A.ST_NO, A.PONO,A.RESTRAND_FLG,A.TD_CHG_FLG, '0' ORDER_CC_SEQ_FLAG, nvl(E.ST_NO_TO,A.ST_NO) CAN_MIX_GROUP,nvl(F.IDX_NO,A.ST_NO) WORRY_MIX_GROUP "
+libPSSM/f_pssm_mix_type.cpp	136	" select CC_MACH_NO,CC_SEQ,PONO_STATUS,A.ST_NO, A.PONO,A.RESTRAND_FLG,A.TD_CHG_FLG, '0' ORDER_CC_SEQ_FLAG, nvl(E.ST_NO_TO,A.ST_NO) CAN_MIX_GROUP,nvl(F.IDX_NO,A.ST_NO) WORRY_MIX_GROUP "
+libPSSM/f_pssm_mix_type.cpp	145	" select CC_MACH_NO,CC_SEQ,PONO_STATUS,A.ST_NO, A.PONO,A.RESTRAND_FLG,A.TD_CHG_FLG, '0' ORDER_CC_SEQ_FLAG, nvl(E.ST_NO_TO,A.ST_NO) CAN_MIX_GROUP,nvl(F.IDX_NO,A.ST_NO) WORRY_MIX_GROUP "
+libPSSM/f_pssm_mix_wid.cpp	74	" LEFT JOIN(select nvl(MAX(SLAB_WIDTH),0) SLAB_WIDTH_MAX1, nvl(MIN(SLAB_WIDTH),0) SLAB_WIDTH_MIN1, PONO,Max(FIRST_SLAB_WIDTH) FIRST_SLAB_WIDTH_ODD,Max(LAST_SLAB_WIDTH) LAST_SLAB_WIDTH_ODD "
+libPSSM/f_pssm_mix_wid.cpp	76	" LEFT JOIN(select nvl(MAX(SLAB_WIDTH), 0) SLAB_WIDTH_MAX2, nvl(MIN(SLAB_WIDTH), 0) SLAB_WIDTH_MIN2, PONO, Max(FIRST_SLAB_WIDTH) FIRST_SLAB_WIDTH_EVEN, Max(LAST_SLAB_WIDTH) LAST_SLAB_WIDTH_EVEN "
+libPSSM/f_pssm_push.cpp	104	sqlstr = " select a.sm_plan_no, a.start_time_real, a.start_time, a.end_time, a.proc_time, b.steel_start_time, b.steel_end_time, b.pono, b.cast_no, b.cast_div_no from tpssm12 a, tpssm11 b where a.dev_code = 'B5' and b.pono_status >= 20 and a
+libPSSM/f_pssm_push.cpp	113	sqlstr = " select a.sm_plan_no, a.start_time, a.end_time, a.proc_time, b.steel_start_time, b.steel_end_time, b.pono, b.cast_no, b.cast_div_no from tpssm12 a, tpssm11 b where a.dev_code = 'B5' and b.pono_status < 20 and a.sm_plan_no = b.sm_p
+libPSSM/f_pssm_push.cpp	122	sqlstr = " select a.sm_plan_no,a.start_time,a.end_time,a.proc_time,b.steel_start_time,b.steel_end_time,b.pono,b.cast_no,b.cast_div_no from tpssm12 a,tpssm11 b where a.dev_code = 'B5' and b.pono_status < 20 and a.sm_plan_no = b.sm_plan_no an
+libPSSM/f_pssm_push.cpp	280	sqlstr = " select a.sm_plan_no, a.start_time_real, a.start_time, a.end_time, a.proc_time, b.steel_start_time, b.steel_end_time, b.pono, b.cast_no, b.cast_div_no from tpssm12 a, tpssm11 b where a.dev_code = 'B6' and b.pono_status >= 20 and a
+libPSSM/f_pssm_push.cpp	289	sqlstr = " select a.sm_plan_no, a.start_time, a.end_time, a.proc_time, b.steel_start_time, b.steel_end_time, b.pono, b.cast_no, b.cast_div_no from tpssm12 a, tpssm11 b where a.dev_code = 'B6' and b.pono_status < 20 and a.sm_plan_no = b.sm_p
+libPSSM/f_pssm_push.cpp	298	sqlstr = " select a.sm_plan_no,a.start_time,a.end_time,a.proc_time,b.steel_start_time,b.steel_end_time,b.pono,b.cast_no,b.cast_div_no from tpssm12 a,tpssm11 b where a.dev_code = 'B6' and b.pono_status < 20 and a.sm_plan_no = b.sm_plan_no an
+libPSSM/f_pssm_reranking.cpp	104	sqlstr = " select a.sm_plan_no, a.start_time_real, a.start_time, a.end_time, a.proc_time, b.steel_start_time, b.steel_end_time, b.pono, b.cast_no, b.cast_div_no from tpssm12 a, tpssm11 b where a.dev_code = 'B5' and b.pono_status >= 20 and a
+libPSSM/f_pssm_reranking.cpp	113	sqlstr = " select a.sm_plan_no, a.start_time, a.end_time, a.proc_time, b.steel_start_time, b.steel_end_time, b.pono, b.cast_no, b.cast_div_no from tpssm12 a, tpssm11 b where a.dev_code = 'B5' and b.pono_status < 20 and a.sm_plan_no = b.sm_p
+libPSSM/f_pssm_reranking.cpp	122	sqlstr = " select a.sm_plan_no,a.start_time,a.end_time,a.proc_time,b.steel_start_time,b.steel_end_time,b.pono,b.cast_no,b.cast_div_no from tpssm12 a,tpssm11 b where a.dev_code = 'B5' and b.pono_status < 20 and a.sm_plan_no = b.sm_plan_no an
+libPSSM/f_pssm_reranking.cpp	280	sqlstr = " select a.sm_plan_no, a.start_time_real, a.start_time, a.end_time, a.proc_time, b.steel_start_time, b.steel_end_time, b.pono, b.cast_no, b.cast_div_no from tpssm12 a, tpssm11 b where a.dev_code = 'B6' and b.pono_status >= 20 and a
+libPSSM/f_pssm_reranking.cpp	289	sqlstr = " select a.sm_plan_no, a.start_time, a.end_time, a.proc_time, b.steel_start_time, b.steel_end_time, b.pono, b.cast_no, b.cast_div_no from tpssm12 a, tpssm11 b where a.dev_code = 'B6' and b.pono_status < 20 and a.sm_plan_no = b.sm_p
+libPSSM/f_pssm_reranking.cpp	298	sqlstr = " select a.sm_plan_no,a.start_time,a.end_time,a.proc_time,b.steel_start_time,b.steel_end_time,b.pono,b.cast_no,b.cast_div_no from tpssm12 a,tpssm11 b where a.dev_code = 'B6' and b.pono_status < 20 and a.sm_plan_no = b.sm_plan_no an
+libPSSM/f_pssm_run_proc_n.cpp	246	" AND(b.START_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR b.START_TIME_REAL = ' ')			"
+libPSSM/f_pssm_run_proc_n.cpp	277	" AND(b.START_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR b.START_TIME_REAL = ' ')			"
+libPSSM/f_pssm_run_proc_n.cpp	441	FETCH FIRST 1 ROWS ONLY ";
+libPSSM/f_pssm_run_proc_n.cpp	455	WHERE ROWNUM = 1 ";
+libPSSM/f_pssm_run_proc_n.cpp	482	FETCH FIRST 1 ROWS ONLY ";
+libPSSM/f_pssm_run_proc_n.cpp	496	WHERE ROWNUM = 1 ";
+libPSSM/f_pssm_run_proc_n.cpp	527	FETCH FIRST 1 ROWS ONLY ";
+libPSSM/f_pssm_run_proc_n.cpp	540	WHERE ROWNUM = 1 ";
+libPSSM/f_pssm_run_proc_n.cpp	1024	FETCH FIRST 1 ROWS ONLY ";
+libPSSM/f_pssm_run_proc_n.cpp	1039	WHERE ROWNUM = 1 ";
+libPSSM/f_pssm_run_proc_n.cpp	1079	FETCH FIRST 1 ROWS ONLY ";
+libPSSM/f_pssm_run_proc_n.cpp	1096	WHERE ROWNUM = 1 ";
+libPSSM/f_pssm_run_proc_n.cpp	1797	FETCH FIRST 1 ROWS ONLY  ";
+libPSSM/f_pssm_run_proc_n.cpp	1813	WHERE ROWNUM = 1 ";
+libPSSM/f_pssm_run_proc_n.cpp	1886	FETCH FIRST 1 ROWS ONLY ";
+libPSSM/f_pssm_run_proc_n.cpp	1903	WHERE ROWNUM = 1 ";
+p_pssm_13010/cm_002021_rcv.cpp	57	int rownum = 0;
+p_pssm_13010/cm_002021_rcv.cpp	405	bcls_rec->Tables["PSHP"].Rows[rownum]["PREC_SLAB_NO"] = cmd_tpssm03_sql.GetString(1);//虚拟材料号。
+p_pssm_13010/cm_002021_rcv.cpp	406	bcls_rec->Tables["PSHP"].Rows[rownum]["EVENT_ID"] = "PM"; //PSHP，要求PM写死，即可。
+p_pssm_13010/cm_002021_rcv.cpp	407	bcls_rec->Tables["PSHP"].Rows[rownum]["FUNC_ID"] = "cm_h3h421_rcv"; //当前函数。
+p_pssm_13010/cm_002021_rcv.cpp	408	rownum++;
+p_pssm_13010/cm_002021_rcv.cpp	712	bcls_rec->Tables["PSHP"].Rows[rownum]["PREC_SLAB_NO"] = cmd_tpssm03_sql.GetString(1);//虚拟材料号。
+p_pssm_13010/cm_002021_rcv.cpp	713	bcls_rec->Tables["PSHP"].Rows[rownum]["EVENT_ID"] = "PM"; //PSHP，要求PM写死，即可。
+p_pssm_13010/cm_002021_rcv.cpp	714	bcls_rec->Tables["PSHP"].Rows[rownum]["FUNC_ID"] = "cm_h3h421_rcv"; //当前函数。
+p_pssm_13010/cm_002021_rcv.cpp	715	rownum++;
+p_pssm_13010/cm_002124_rcv.cpp	44	int rownum = 0;
+p_pssm_13010/cm_002124_rcv.cpp	45	int rownum2 = 0;
+p_pssm_13010/cm_002124_rcv.cpp	124	rownum = bcls_rec->Tables["tpssm03"].Rows.get_Count();
+p_pssm_13010/cm_002124_rcv.cpp	125	rownum2 = bcls_rec->Tables["tpssm03_S"].Rows.get_Count();
+p_pssm_13010/cm_002124_rcv.cpp	126	if (rownum > 0)
+p_pssm_13010/cm_002124_rcv.cpp	131	else if (rownum2 > 0 && rownum == 0)
+p_pssm_13010/cm_002124_rcv.cpp	141	rownum = bcls_rec->Tables["tpssm03"].Rows.get_Count();
+p_pssm_13010/cm_002124_rcv.cpp	142	rownum2 = bcls_rec->Tables["tpssm03_S"].Rows.get_Count();
+p_pssm_13010/cm_002124_rcv.cpp	144	if (rownum > 0)
+p_pssm_13010/cm_002124_rcv.cpp	146	for (int i = 0; i < rownum; i++)
+p_pssm_13010/cm_002124_rcv.cpp	504	if (i == 0 && rownum2 != 0)
+p_pssm_13010/cm_002124_rcv.cpp	506	for (int j = 0; j < rownum2; j++)
+p_pssm_13010/cm_002124_rcv.cpp	670	else if (rownum2 > 0 && rownum == 0)
+p_pssm_13010/cm_002124_rcv.cpp	673	for (int i = 0; i < rownum2; i++)
+p_pssm_13010/cm_002134_rcv.cpp	38	sqlstr = "  SELECT DA_SCHEDULE_UPDATE_SEQ.nextval FROM dual  ";
+p_pssm_13010/cm_002134_rcv.cpp	48	" VALUES(@resume_seq_no, @message_no, @status, @xml_info, @priority, SYSDATE, SYSDATE, @remark, @mq_msg_id, @dest, @ppread) ";
+p_pssm_13010/cm_0rt8p1_rcv.cpp	45	int rownum = 0;
+p_pssm_13010/cm_0rt8p1_rcv.cpp	46	int rownum2 = 0;
+p_pssm_13010/cm_0rt8p1_rcv.cpp	134	rownum = bcls_rec->Tables["tpssm03"].Rows.get_Count();
+p_pssm_13010/cm_0rt8p1_rcv.cpp	135	rownum2 = bcls_rec->Tables["tpssm03_S"].Rows.get_Count();
+p_pssm_13010/cm_0rt8p1_rcv.cpp	136	if (rownum > 0)
+p_pssm_13010/cm_0rt8p1_rcv.cpp	141	else if (rownum2 > 0 && rownum == 0)
+p_pssm_13010/cm_0rt8p1_rcv.cpp	151	rownum = bcls_rec->Tables["tpssm03"].Rows.get_Count();
+p_pssm_13010/cm_0rt8p1_rcv.cpp	152	rownum2 = bcls_rec->Tables["tpssm03_S"].Rows.get_Count();
+p_pssm_13010/cm_0rt8p1_rcv.cpp	154	if (rownum > 0)
+p_pssm_13010/cm_0rt8p1_rcv.cpp	156	for (int i = 0; i < rownum; i++)
+p_pssm_13010/cm_0rt8p1_rcv.cpp	515	if (i == 0 && rownum2 != 0)
+p_pssm_13010/cm_0rt8p1_rcv.cpp	517	for (int j = 0; j < rownum2; j++)
+p_pssm_13010/cm_0rt8p1_rcv.cpp	681	else if (rownum2 > 0 && rownum == 0)
+p_pssm_13010/cm_0rt8p1_rcv.cpp	684	for (int i = 0; i < rownum2; i++)
+p_pssm_13010/pssm01f3_inc.cpp	230	sqlstr = "SELECT MIN(CAST_LOT_SUM), NVL(MIN(CAST_LOT_DIV_NO), 0) "
+p_pssm_13010/pssm02l_lot_inq.cpp	221	sqlstr = "select nvl(sum(1),0),nvl(sum(decode(slab_prod_flag, '1', 0, 1)),0) "
+p_pssm_13010/pssm02l_lot_inq.cpp	228	sqlstr = "select nvl(sum(1),0),nvl(sum(decode(slab_prod_flag, '1', 0, 1)),0) "
+p_pssm_13010/pssm02l_pono_inq.cpp	160	sqlstr = "select nvl(count(distinct lslab_no),0) "
+p_pssm_13010/pssm02l_pono_inq.cpp	169	sqlstr = "select nvl(count(lslab_no),0) "
+p_pssm_13010/pssm02lf6_end.cpp	62	int rownum_l = 0;
+p_pssm_13010/pssm22f2_inq.cpp	156	sqlstr = "SELECT  NVL(MIN(PLAN_CHARGE),0) PLAN_CHARGE  \
+p_pssm_13010/pssm22f2_inq.cpp	242	sqlstr = "SELECT NVL(MIN(PLAN_CHARGE),0) PLAN_CHARGE \
+p_pssm_13010/pssm22f9_ins.cpp	101	sqlstr = " SELECT NVL(MAX(seq_no), 0) seq_no FROM tpssm22 WHERE FACTORY_DIV = @FACTORY_DIV ";
+p_pssm_13010/pssm23_inq.cpp	117	sqlstr = "SELECT NVL(UNRULL_FLAG_MC, ' ') "
+p_pssm_13010/pssm25add_ins.cpp	52	int v_rownum_pm99 = 0;
+p_pssm_13010/pssm25add_ins.cpp	53	int v_rownum_mm99 = 0;
+p_pssm_13010/pssm25add_ins.cpp	121	int v_rownum_pm99 = 0;
+p_pssm_13010/pssm25add_ins.cpp	160	sqlstr = " SELECT NVL(MAX(MAT_SEQ_NO),0)  FROM TPSSM05 "
+p_pssm_13010/pssm25add_ins.cpp	314	inMMSM.Tables["MM0099"].Rows[v_rownum_mm99]["EVENT_ID"] = "PS01";
+p_pssm_13010/pssm25add_ins.cpp	315	inMMSM.Tables["MM0099"].Rows[v_rownum_mm99]["EVENT_LINE_TYPE"] = "00";
+p_pssm_13010/pssm25add_ins.cpp	316	inMMSM.Tables["MM0099"].Rows[v_rownum_mm99]["SYSTEM_ID"] = "PSSM";
+p_pssm_13010/pssm25add_ins.cpp	317	inMMSM.Tables["MM0099"].Rows[v_rownum_mm99]["FUNC_ID"] = s.svc_name;
+p_pssm_13010/pssm25add_ins.cpp	318	inMMSM.Tables["MM0099"].Rows[v_rownum_mm99]["MAT_NO"] = tpssm05["IN_MAT_NO"]; //材料号
+p_pssm_13010/pssm25add_ins.cpp	319	inMMSM.Tables["MM0099"].Rows[v_rownum_mm99]["PLAN_NO"] = tpssm05["PLAN_NO"];
+p_pssm_13010/pssm25add_ins.cpp	321	v_rownum_mm99++;
+p_pssm_13010/pssm25add_ins.cpp	347	v_rownum_pm99++;
+p_pssm_13010/pssm25add_ins.cpp	354	if (v_rownum_mm99 > 0)
+p_pssm_13010/pssm25add_ins.cpp	367	if (v_rownum_pm99 > 0)
+p_pssm_13010/pssm25f4_move.cpp	72	sqlstr = " SELECT NVL(MAX(MAT_SEQ_NO),0)  FROM TPSSM05 "
+p_pssm_13010/pssm25f5_del.cpp	47	int v_rownum_pm99 = 0;
+p_pssm_13010/pssm25f5_del.cpp	48	int v_rownum_mm99 = 0;
+p_pssm_13010/pssm25f5_del.cpp	102	int v_rownum_pm99 = 0;
+p_pssm_13010/pssm25f5_del.cpp	141	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["EVENT_ID"] = "PS02";
+p_pssm_13010/pssm25f5_del.cpp	142	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["EVENT_LINE_TYPE"] = "00";
+p_pssm_13010/pssm25f5_del.cpp	143	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["SYSTEM_ID"] = "PSSM";
+p_pssm_13010/pssm25f5_del.cpp	144	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["FUNC_ID"] = s.svc_name;
+p_pssm_13010/pssm25f5_del.cpp	145	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["MAT_NO"] = tpssm05["IN_MAT_NO"]; //材料号
+p_pssm_13010/pssm25f5_del.cpp	146	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["PLAN_NO"] = tpssm05["PLAN_NO"];
+p_pssm_13010/pssm25f5_del.cpp	148	v_rownum_mm99++;
+p_pssm_13010/pssm25f5_del.cpp	170	v_rownum_pm99++;
+p_pssm_13010/pssm25f5_del.cpp	196	sqlstr = " SELECT NVL(MAX(MAT_SEQ_NO),0)  FROM TPSSM05 "
+p_pssm_13010/pssm25f5_del.cpp	253	if (v_rownum_mm99 > 0)
+p_pssm_13010/pssm25f5_del.cpp	266	if (v_rownum_pm99 > 0)
+p_pssm_13010/pssm25f6_send.cpp	41	int v_rownum_pm99 = 0;
+p_pssm_13010/pssm25f6_send.cpp	42	int v_rownum_mm99 = 0;
+p_pssm_13010/pssm25f6_send.cpp	115	sqlstr = " SELECT NVL(MAX(MAT_SEQ_NO),0)  FROM TPSSM05 "
+p_pssm_13010/pssm25f6_send.cpp	175	sqlstr = " SELECT NVL(MAX(MAT_SEQ_NO),0)  FROM TPSSM05 "
+p_pssm_13020/pssm01af3_inc.cpp	226	sqlstr = "SELECT MIN(CAST_LOT_SUM), NVL(MIN(CAST_LOT_DIV_NO), 0) "
+p_pssm_13030/pssm04_chs.cpp	208	sqlstr = "SELECT MIN(CAST_LOT_SUM), NVL(MIN(CAST_LOT_DIV_NO), 0) "
+p_pssm_13030/pssm05_snd.cpp	267	sqlstr = " SELECT NVL(MAX(CC_SEQ), 0) FROM TPSSM10 "
+p_pssm_13030/pssm09_inq.cpp	117	if (m_timespan.Days()>100)
+p_pssm_13030/pssm21_inq.cpp	88	dateCount = m_timespan.Days();
+p_pssm_13030/pssm21_inq.cpp	138	sql = " SELECT SUM(DECODE(INSTR(A.REFINE_DIV,'L'),0,0,1)) AS LF_NUM,  "
+p_pssm_13030/pssm21_inq.cpp	139	" SUM(DECODE(INSTR(A.REFINE_DIV,'R'),0,0,1)) AS RH_NUM,  "
+p_pssm_13030/pssm21_inq.cpp	140	" SUM(DECODE(INSTR(A.REFINE_DIV,'V'),0,0,1)) AS VD_NUM,  "
+p_pssm_13030/pssm21_inq.cpp	141	" SUM(DECODE(HOT_SEND_FLAG,'0',1,0)) AS XIAX_NUM,  "
+p_pssm_13030/pssm21_inq.cpp	142	" SUM(DECODE(LENGTH(A.FLAME_CLEAN_DIV),0,0,1)) AS JQ_NUM,  "
+p_pssm_13030/pssm21_inq.cpp	176	sql = " SELECT SUM(DECODE(INSTR(A.REFINE_DIV,'L'),0,0,1)) AS LF_NUM,  "
+p_pssm_13030/pssm21_inq.cpp	177	" SUM(DECODE(INSTR(A.REFINE_DIV,'R'),0,0,1)) AS RH_NUM,  "
+p_pssm_13030/pssm21_inq.cpp	178	" SUM(DECODE(INSTR(A.REFINE_DIV,'V'),0,0,1)) AS VD_NUM,  "
+p_pssm_13030/pssm21_inq.cpp	179	" SUM(DECODE(HOT_SEND_FLAG,'0',1,0)) AS XIAX_NUM,  "
+p_pssm_13030/pssm21_inq.cpp	180	" SUM(DECODE(LENGTH(A.FLAME_CLEAN_DIV),0,0,1)) AS JQ_NUM,  "
+p_pssm_13030/pssm21_inq.cpp	206	while (date_end_date.Subtract(date_date).Days() >= 0)
+p_pssm_13030/pssm21_inq.cpp	266	date_date = date_date.AddDays(1);
+p_pssm_13030/pssm27_ins.cpp	39	CString sel_max = " SELECT NVL(MAX(SEQ_NO),0) + 1 FROM TPSSM17 "
+p_pssm_13030/pssm27_upd.cpp	40	CString sel_max = "SELECT NVL(MAX(SEQ_NO),0) + 1 FROM TPSSM17";
+p_pssm_13050/pssm02_lot_inq.cpp	205	" FETCH FIRST 1 ROWS ONLY ";
+p_pssm_13050/pssm10ccf3_move.cpp	129	" select CC_MACH_NO,CC_SEQ,PONO_STATUS,A.ST_NO, A.PONO,A.RESTRAND_FLG,A.TD_CHG_FLG, '0' ORDER_CC_SEQ_FLAG, B.*,C.*,D.*, nvl(E.ST_NO_TO,A.ST_NO) CAN_MIX_GROUP,nvl(F.IDX_NO,A.ST_NO) WORRY_MIX_GROUP "
+p_pssm_13050/pssm10ccf3_move.cpp	130	" from TPSSM10 A LEFT JOIN(select nvl(MAX(SLAB_WIDTH),0) SLAB_WIDTH_MAX1, nvl(MIN(SLAB_WIDTH),0) SLAB_WIDTH_MIN1, PONO "
+p_pssm_13050/pssm10ccf3_move.cpp	132	" LEFT JOIN(select nvl(MAX(SLAB_WIDTH),0) SLAB_WIDTH_MAX2, nvl(MIN(SLAB_WIDTH),0) SLAB_WIDTH_MIN2, PONO "
+p_pssm_13050/pssm10f3_ins.cpp	237	sqlstr1 = "  SELECT LPAD(PSSM_CAST_NO_INS.nextval, 6, '0') FROM dual  ";
+p_pssm_13050/pssm10f3_ins.cpp	340	sqlstr = CString("  SELECT NVL(MAX(CC_SEQ), 0) + 1 FROM TPSSM10 \
+p_pssm_13050/pssm10f3_ins.cpp	381	sqlstr1 = "  SELECT LPAD(PSSM_SLAB_NO_INS.nextval, 10, '0') FROM dual  ";
+p_pssm_13050/pssm10f3_ins_tg.cpp	300	sqlstr1 = "  SELECT LPAD(PSSM_CAST_NO_INS.nextval, 6, '0') FROM dual  ";
+p_pssm_13050/pssm10f3_ins_tg.cpp	427	sqlstr = CString("  SELECT NVL(MAX(CC_SEQ), 0) + 1 FROM TPSSM10 WHERE FACTORY_DIV = @tpssm10.FACTORY_DIV AND CC_MACH_NO	= @tpssm10.CC_MACH_NO AND CC_SEQ <> 999 ");
+p_pssm_13050/pssm10f3_ins_tg.cpp	475	sqlstr1 = "  SELECT LPAD(PSSM_SLAB_NO_INS.nextval, 10, '0') FROM dual  ";
+p_pssm_13050/pssm131f2_inq.cpp	196	"   WHERE 1  = 1  AND A.ST_NO = STDD.ST_NO(+) AND A.ST_NO = STDC.ST_NO(+) AND A.ST_NO = STDA.ST_NO(+) ";
+p_pssm_13050/pssm13f2_inq.cpp	295	sqlstr_temp	+= "AND DECODE(B.END_TIME_REAL,' ', B.END_TIME, B.END_TIME_REAL) >= @prod_date_from||'000000' ";
+p_pssm_13050/pssm13f2_inq.cpp	304	sqlstr_temp	+= " AND DECODE(B.END_TIME_REAL,' ', B.END_TIME, B.END_TIME_REAL) <= @prod_date_to||'240000' ";
+p_pssm_13050/pssm14f2_inq.cpp	116	" (LISTAGG(DISTINCT A.ST_NO,'*') WITHIN GROUP (ORDER BY A.ST_NO)) ST_NO,"
+p_pssm_13050/pssm14f2_inq.cpp	117	" (LISTAGG(DISTINCT B.SG_SIGN,'*') WITHIN GROUP (ORDER BY B.SG_SIGN)) SG_SIGN,"
+p_pssm_13050/pssm14f3_proc.cpp	190	" (LISTAGG(B.CAST_LOT_DIV_NO,',') WITHIN GROUP (ORDER BY B.CAST_LOT_DIV_NO)) CAST_LOT_DIV_NO"
+p_pssm_13050/pssm35_ins.cpp	38	int blkseq = 0, rownum = 0, i = 0; //读取传入参数用
+p_pssm_13050/pssm35_ins.cpp	84	rownum = bcls_rec->Tables[blkseq].Rows.get_Count();
+p_pssm_13050/pssm35_ins.cpp	86	for (i = 0; i < rownum; i++)
+p_pssm_13050/pssm37_inq.cpp	82	" DECODE(T1.START_TIME_REAL, ' ', T1.START_TIME, T1.START_TIME_REAL) AS  SMELT_START_TIME, DECODE(T1.END_TIME_REAL, ' ', T1.END_TIME, T1.END_TIME_REAL) AS SMELT_END_TIME, T1.DEV_CODE AS SR8_NO,   "
+p_pssm_13050/pssm37_inq.cpp	84	" DECODE(T2.START_TIME_REAL, ' ', T2.START_TIME, T2.START_TIME_REAL) AS  SR2_TIME, DECODE(T2.END_TIME_REAL, ' ', T2.END_TIME, T2.END_TIME_REAL) AS SR2_END_TIME, T2.DEV_CODE AS SR2_NO,   "
+p_pssm_13050/pssm37_inq.cpp	86	" DECODE(T3.START_TIME_REAL, ' ', T3.START_TIME, T3.START_TIME_REAL) AS  SR1_TIME, DECODE(T3.END_TIME_REAL, ' ', T3.END_TIME, T3.END_TIME_REAL) AS SR1_END_TIME, T3.DEV_CODE AS SR1_NO,   "
+p_pssm_13050/pssm37_inq.cpp	88	" DECODE(T4.START_TIME_REAL, ' ', T4.START_TIME, T4.START_TIME_REAL) AS  CC_BEGIN_TIME, DECODE(T4.END_TIME_REAL, ' ', T4.END_TIME, T4.END_TIME_REAL) AS CC_END_TIME, T4.DEV_CODE AS CC_MACH_NO,   "
+p_pssm_13050/pssm37_inq.cpp	90	" DECODE(T5.START_TIME_REAL, ' ', T5.START_TIME, T5.START_TIME_REAL) AS  SR3_TIME, DECODE(T5.END_TIME_REAL, ' ', T5.END_TIME, T5.END_TIME_REAL) AS SR3_END_TIME, T5.DEV_CODE AS SR3_NO,   "
+p_pssm_13050/pssm37_inq.cpp	92	" DECODE(T6.START_TIME_REAL, ' ', T6.START_TIME, T6.START_TIME_REAL) AS  SR4_TIME, DECODE(T6.END_TIME_REAL, ' ', T6.END_TIME, T6.END_TIME_REAL) AS SR4_END_TIME, T6.DEV_CODE AS SR4_NO,   "
+p_pssm_13050/pssm37_inq.cpp	94	" DECODE(T7.START_TIME_REAL, ' ', T7.START_TIME, T7.START_TIME_REAL) AS  SY1_TIME, DECODE(T7.END_TIME_REAL, ' ', T7.END_TIME, T7.END_TIME_REAL) AS SY1_END_TIME, T7.DEV_CODE AS SY1_NO,   "
+p_pssm_13050/pssm37_inq.cpp	96	" DECODE(T8.START_TIME_REAL, ' ', T8.START_TIME, T8.START_TIME_REAL) AS  SY2_TIME, DECODE(T8.END_TIME_REAL, ' ', T8.END_TIME, T8.END_TIME_REAL) AS SY2_END_TIME, T8.DEV_CODE AS SY2_NO,   "
+p_pssm_13050/pssm51f2_inq_proc.cpp	412	sqlstr = " SELECT DECODE(ARRIVE_REAL_TIME,' ',LADLE_ARRIVE_TIME,ARRIVE_REAL_TIME), \
+p_pssm_13050/pssm51f2_inq_proc.cpp	413	DECODE(LEAVE_REAL_TIME,' ',LADLE_LEAVE_TIME,LEAVE_REAL_TIME), \
+p_pssm_13050/pssm51f2_inq_proc.cpp	414	DECODE(START_TIME_REAL,' ',START_TIME,START_TIME_REAL), \
+p_pssm_13050/pssm51f2_inq_proc.cpp	415	DECODE(END_TIME_REAL,' ',END_TIME,END_TIME_REAL)  \
+p_pssm_13050/pssm51f2_inq_proc.cpp	507	sqlstr = " SELECT DECODE(ARRIVE_REAL_TIME,' ',LADLE_ARRIVE_TIME,ARRIVE_REAL_TIME), \
+p_pssm_13050/pssm51f2_inq_proc.cpp	508	DECODE(LEAVE_REAL_TIME,' ',LADLE_LEAVE_TIME,LEAVE_REAL_TIME), \
+p_pssm_13050/pssm51f2_inq_proc.cpp	509	DECODE(START_TIME_REAL,' ',START_TIME,START_TIME_REAL), \
+p_pssm_13050/pssm51f2_inq_proc.cpp	510	DECODE(END_TIME_REAL,' ',END_TIME,END_TIME_REAL) \
+p_pssm_13050/pssm55f3_send.cpp	41	int v_rownum_pm99 = 0;
+p_pssm_13050/pssm55f3_send.cpp	42	int v_rownum_mm99 = 0;
+p_pssm_13050/pssm55f5_del.cpp	47	int v_rownum_pm99 = 0;
+p_pssm_13050/pssm55f5_del.cpp	48	int v_rownum_mm99 = 0;
+p_pssm_13050/pssm55f5_del.cpp	102	int v_rownum_pm99 = 0;
+p_pssm_13050/pssm55f5_del.cpp	141	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["EVENT_ID"] = "PS02";
+p_pssm_13050/pssm55f5_del.cpp	142	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["EVENT_LINE_TYPE"] = "00";
+p_pssm_13050/pssm55f5_del.cpp	143	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["SYSTEM_ID"] = "PSSM";
+p_pssm_13050/pssm55f5_del.cpp	144	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["FUNC_ID"] = s.svc_name;
+p_pssm_13050/pssm55f5_del.cpp	145	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["MAT_NO"] = tpssm05["IN_MAT_NO"]; //材料号
+p_pssm_13050/pssm55f5_del.cpp	146	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["PLAN_NO"] = tpssm05["PLAN_NO"];
+p_pssm_13050/pssm55f5_del.cpp	148	v_rownum_mm99++;
+p_pssm_13050/pssm55f5_del.cpp	170	v_rownum_pm99++;
+p_pssm_13050/pssm55f5_del.cpp	220	Log::Trace("", __FUNCTION__, "v_rownum_mm99[{0}]", v_rownum_mm99);
+p_pssm_13050/pssm55f5_del.cpp	221	if (v_rownum_mm99 > 0)
+p_pssm_13050/pssm55f5_del.cpp	234	if (v_rownum_pm99 > 0)
+p_pssm_13050/pssm81add_ins.cpp	43	int v_rownum_pm99 = 0;
+p_pssm_13050/pssm81add_ins.cpp	44	int v_rownum_mm99 = 0;
+p_pssm_13050/pssm81add_ins.cpp	155	sqlstr = " SELECT NVL(MAX(MAT_SEQ_NO),0)  FROM TPSSM81 "
+p_pssm_13050/pssm81add_ins.cpp	306	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["EVENT_ID"] = "PS01";
+p_pssm_13050/pssm81add_ins.cpp	307	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["EVENT_LINE_TYPE"] = "00";
+p_pssm_13050/pssm81add_ins.cpp	308	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["SYSTEM_ID"] = "PSSM";
+p_pssm_13050/pssm81add_ins.cpp	309	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["FUNC_ID"] = s.svc_name;
+p_pssm_13050/pssm81add_ins.cpp	310	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["MAT_NO"] = tpssm81["MAT_NO"]; //材料号
+p_pssm_13050/pssm81add_ins.cpp	311	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["PLAN_NO"] = tpssm81["PLAN_NO"];
+p_pssm_13050/pssm81add_ins.cpp	313	v_rownum_mm99++;
+p_pssm_13050/pssm81add_ins.cpp	320	if (v_rownum_mm99 > 0)
+p_pssm_13050/pssm81f5_del.cpp	43	int v_rownum_pm99 = 0;
+p_pssm_13050/pssm81f5_del.cpp	44	int v_rownum_mm99 = 0;
+p_pssm_13050/pssm81f5_del.cpp	153	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["EVENT_ID"] = "PS02";
+p_pssm_13050/pssm81f5_del.cpp	154	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["EVENT_LINE_TYPE"] = "00";
+p_pssm_13050/pssm81f5_del.cpp	155	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["SYSTEM_ID"] = "PSSM";
+p_pssm_13050/pssm81f5_del.cpp	156	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["FUNC_ID"] = s.svc_name;
+p_pssm_13050/pssm81f5_del.cpp	157	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["MAT_NO"] = tpssm81["MAT_NO"]; //材料号
+p_pssm_13050/pssm81f5_del.cpp	158	inBlock.Tables["MM0099"].Rows[v_rownum_mm99]["PLAN_NO"] = tpssm81["PLAN_NO"];
+p_pssm_13050/pssm81f5_del.cpp	160	v_rownum_mm99++;
+p_pssm_13050/pssm81f5_del.cpp	186	sqlstr = " SELECT NVL(MAX(MAT_SEQ_NO),0)  FROM TPSSM81 "
+p_pssm_13050/pssm81f5_del.cpp	244	if (v_rownum_mm99 > 0)
+p_pssm_13050/pssm81f6_send.cpp	41	int v_rownum_pm99 = 0;
+p_pssm_13050/pssm81f6_send.cpp	42	int v_rownum_mm99 = 0;
+p_pssm_13050/pssm81f6_send.cpp	115	sqlstr = " SELECT NVL(MAX(MAT_SEQ_NO),0)  FROM TPSSM81 "
+p_pssm_13050/pssm81f6_send.cpp	175	sqlstr = " SELECT NVL(MAX(MAT_SEQ_NO),0)  FROM TPSSM81 "
+p_pssm_13050/pssm91f2_inq.cpp	280	sqlstr = "select TO_NUMBER(DECODE(LADLE_PRE_LIQUID_WT,' ','0',LADLE_PRE_LIQUID_WT)) from tmmsm27 where heat_no = @heat_no ";
+p_pssm_13060/mmlgap03_inq.cpp	75	v_datetime_now = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_pssm_13060/mmlgap03_inq.cpp	104	"               DECODE(NEXT_WHOLE_BACKLOG_CODE, "
+p_pssm_13060/mmlgap03_inq.cpp	173	"               DECODE(NEXT_WHOLE_BACKLOG_CODE, "
+p_pssm_13060/mmlgap04_inq.cpp	99	v_date_time_31 = CDateTime::Parse(CDateTime::Now().AddDays(-1).ToString("yyyyMM") + "01000000").AddMinutes(-1).ToString("yyyyMMdd");
+p_pssm_13060/mmlgap04_inq.cpp	186	"       SUM(DECODE(STOCK_OPER_ORDER, '2E', T.MAT_ACT_WT, 0)) AS DAY_SUM20 "
+p_pssm_13060/mmlgap04_inq.cpp	266	"       SUM(DECODE(STOCK_OPER_ORDER, '2E', T.MAT_ACT_WT, 0)) AS DAY_SUM20 "
+p_pssm_13060/mmlgap05_inq.cpp	105	sqlstr = " SELECT T1.STATION_NO,nvl(WT_YEAR,0) as WT_YEAR,nvl(WT_MONTH,0) as WT_MONTH,nvl(WT_WEEK,0) as WT_WEEK,nvl(WT_DAY,0)  "
+p_pssm_13060/mmlgap05_inq.cpp	171	sqlstr1 = "SELECT T1.STATION_NO,nvl(WT_YEAR,0) as WT_YEAR,nvl(WT_MONTH,0) as WT_MONTH,nvl(WT_WEEK,0) as WT_WEEK,nvl(WT_DAY,0)  "
+p_pssm_13060/mmlgap05_inq.cpp	241	sqlstr2 = "SELECT T1.STATION_NO,nvl(WT_YEAR,0) as WT_YEAR,nvl(WT_MONTH,0) as WT_MONTH,nvl(WT_WEEK,0) as WT_WEEK,nvl(WT_DAY,0)   "
+p_pssm_13060/mmlgap07_inq.cpp	194	"bb.drgpzl, bb.ljgpzl, decode(bb.drgpzl, 0, 0, cast(cast(aa.drtsl as decimal(25, 5)) * 1000.000 / cast(bb.drgpzl as decimal(25, 5)) as decimal(25, 2))) drtgbl, "
+p_pssm_13060/mmlgap07_inq.cpp	195	"decode(bb.drgpzl, 0, 0, cast(cast(aa.drgtl as decimal(25, 5)) * 1000.000 / cast(bb.drgpzl as decimal(25, 5)) as decimal(25, 2))) drgtlbl, "
+p_pssm_13060/mmlgap07_inq.cpp	196	"decode(bb.ljgpzl, 0, 0, cast(cast(aa.ljtsl as decimal(25, 5)) * 1000.000 / cast(bb.ljgpzl as decimal(25, 5)) as decimal(25, 2))) ljtgbl, "
+p_pssm_13060/mmlgap07_inq.cpp	197	"decode(bb.ljgpzl, 0, 0, cast(cast(aa.ljgtl as decimal(25, 5)) * 1000.000 / cast(bb.ljgpzl as decimal(25, 5)) as decimal(25, 2))) ljgtlbl "
+p_pssm_13060/mmlgap07_inq.cpp	199	"sum(drcgl) drcgl, sum(ljcgl) ljcgl, sum(drtwl) drtwl, sum(ljtwl) ljtwl, sum(drzg) drzg, sum(ljzg) ljzg, cast(decode(sum(ls), 0, 0, cast(sum(drzzq) as "
+p_pssm_13060/mmlgap07_inq.cpp	200	"decimal(20, 3)) / sum(ls) / 60)  as decimal(20, 2)) drzq, cast(decode(sum(ljls), 0, 0, cast(sum(ljzzq) as decimal(20, 3)) / sum(ljls) / 60) as decimal(20, 2)) ljzq,"
+p_pssm_13060/mmlgap07_inq.cpp	201	"sum(drzzq) * 100 / 24 / 60 / 60 drzyl, sum(ljzzq) * 100 / 24 / 60 / 60 / timestampdiff(16, to_date(@datetime2, 'yyyymmddhh24miss') - to_date(@datetime1, 'yyyymmddhh24miss')) ljzyl, "
+p_pssm_13060/mmlgap07_inq.cpp	204	"sum(a.SMELT_CYCLE) drzzq, 0 ljzzq, sum(b.drtwl) drtwl, 0 ljtwl, sum(a.MOLTIRON_WT) drtsl, nvl(sum(MOLTIRON_WT), 0) + nvl(sum(SCRAP_WEIGHT), 0) + nvl(sum(SCRAP_WT), 0) "
+p_pssm_13060/mmlgap07_inq.cpp	205	"+ nvl(sum(b.drtwl), 0) - nvl(sum(drzg), 0)  drgtl, 0 ljtsl, 0 ljgtl, sum(drzg) drzg, 0 ljzg	 FROM TMMSM21  a  left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) "
+p_pssm_13060/mmlgap07_inq.cpp	206	"drtwl from tmmsm2a where mat_code = 'FWLJ' group by heat_no) b on a.heat_no = b.HEAT_NO left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) "
+p_pssm_13060/mmlgap07_inq.cpp	211	"nvl(sum(MOLTIRON_WT), 0) + nvl(sum(SCRAP_WEIGHT), 0) + nvl(sum(SCRAP_WT), 0) + nvl(sum(b.ljtwl), 0) - nvl(sum(ljzg), 0) ljgtl, 0 drzg, sum(ljzg) ljzg FROM TMMSM21  a "
+p_pssm_13060/mmlgap07_inq.cpp	212	"left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) ljtwl from tmmsm2a where mat_code = 'FWLJ' group by heat_no) b   on  a.heat_no = b.HEAT_NO "
+p_pssm_13060/mmlgap07_inq.cpp	213	"left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) ljzg  from tmmsm2a where station_id = 'B' and mat_code in('FJGLT', 'FJGZG', 'FN009') group by heat_no) c "
+p_pssm_13060/mmlgap07_inq.cpp	220	"0 DRGPZL, 0 LJGPZL from tep0002  where CODE_CLASS = 'TMNO') group by lzh) bb	where aa.lzh = bb.lzh union all 	select aa.lzh xh, decode(aa.lzh, '4', '一系列合计', '二系列合计') lzh, "
+p_pssm_13060/mmlgap07_inq.cpp	222	"aa.ljzyl, aa.drtsl, aa.drgtl, aa.ljtsl, aa.ljgtl, bb.drgpzl, bb.ljgpzl, decode(bb.drgpzl, 0, 0, cast(cast(aa.drtsl as decimal(25, 5)) * 1000.000 / cast(bb.drgpzl as decimal(25, 5)) "
+p_pssm_13060/mmlgap07_inq.cpp	223	"as decimal(25, 2))) drtgbl, decode(bb.drgpzl, 0, 0, cast(cast(aa.drgtl as decimal(25, 5)) * 1000.000 / cast(bb.drgpzl as decimal(25, 5)) as decimal(25, 2))) drgtlbl,"
+p_pssm_13060/mmlgap07_inq.cpp	224	"decode(bb.ljgpzl, 0, 0, cast(cast(aa.ljtsl as decimal(25, 5)) * 1000.000 / cast(bb.ljgpzl as decimal(25, 5)) as decimal(25, 2))) ljtgbl, decode(bb.ljgpzl, 0, 0, cast(cast(aa.ljgtl as "
+p_pssm_13060/mmlgap07_inq.cpp	227	"cast(decode(sum(ls), 0, 0, cast(sum(drzzq) as decimal(20, 3)) / sum(ls) / 60)  as decimal(20, 2)) drzq, cast(decode(sum(ljls), 0, 0, cast(sum(ljzzq) as decimal(20, 3)) / sum(ljls) / 60) "
+p_pssm_13060/mmlgap07_inq.cpp	228	"as decimal(20, 2)) ljzq, sum(drzzq) * 100 / 24 / 60 / 60 / 3 drzyl, sum(ljzzq) * 100 / 24 / 60 / 60 / 3 / timestampdiff(16, to_date(@datetime2, 'yyyymmddhh24miss') - to_date(@datetime1, "
+p_pssm_13060/mmlgap07_inq.cpp	229	"'yyyymmddhh24miss'))  ljzyl, sum(drtsl) drtsl, sum(drgtl) drgtl, sum(ljtsl) ljtsl, sum(ljgtl) ljgtl	from(SELECT decode(SUBSTR(a.HEAT_NO, 3, 1), '1', '4', '2', '4', '3', '4', '8')  LZH, "
+p_pssm_13060/mmlgap07_inq.cpp	231	"sum(a.SMELT_CYCLE) drzzq, 0 ljzzq, sum(b.drtwl) drtwl, 0 ljtwl, sum(a.MOLTIRON_WT) drtsl, sum(MOLTIRON_WT) + sum(SCRAP_WEIGHT) + sum(SCRAP_WT) + nvl(sum(b.drtwl), 0) - sum(drzg)  drgtl, "
+p_pssm_13060/mmlgap07_inq.cpp	232	"0 ljtsl, 0 ljgtl, sum(drzg) drzg, 0 ljzg FROM TMMSM21  a  left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) drtwl from tmmsm2a where mat_code = 'FWLJ' group by "
+p_pssm_13060/mmlgap07_inq.cpp	233	"heat_no) b   on  a.heat_no = b.HEAT_NO  left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) drzg  from tmmsm2a where station_id = 'B' 	and mat_code in "
+p_pssm_13060/mmlgap07_inq.cpp	235	"+ 3.0/24), 'YYYYMMDD') = @v_date GROUP BY decode(SUBSTR(a.HEAT_NO, 3, 1), '1', '4', '2', '4', '3', '4', '8') UNION all  SELECT decode(SUBSTR(a.HEAT_NO, 3, 1), '1', '4', '2', '4', '3', '4', '8') "
+p_pssm_13060/mmlgap07_inq.cpp	237	"0 drzzq, sum(a.SMELT_CYCLE) ljzzq, 0 drtwl, sum(ljtwl) ljtwl, 0 drtsl, 0 drgtl, sum(a.MOLTIRON_WT)  ljtsl, sum(MOLTIRON_WT) + sum(SCRAP_WEIGHT) + sum(SCRAP_WT) + nvl(sum(b.ljtwl), 0) - sum(ljzg) ljgtl, "
+p_pssm_13060/mmlgap07_inq.cpp	238	"0 drzg, sum(ljzg) ljzg	FROM TMMSM21  a  left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) ljtwl from tmmsm2a where mat_code = 'FWLJ' group by heat_no) b   on  a.heat_no = b.HEAT_NO "
+p_pssm_13060/mmlgap07_inq.cpp	239	"left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) ljzg  from tmmsm2a where station_id = 'B' and mat_code in('FJGLT', 'FJGZG', 'FN009') group by heat_no) c   on  a.heat_no = c.HEAT_NO "
+p_pssm_13060/mmlgap07_inq.cpp	240	"WHERE a.BLOW_START_TIME1 <> ' ' and a.BLOW_START_TIME1 >= @datetime1 and  a.BLOW_START_TIME1 < @datetime2  GROUP BY decode(SUBSTR(a.HEAT_NO, 3, 1), '1', '4', '2', '4', '3', '4', '8') "
+p_pssm_13060/mmlgap07_inq.cpp	242	"0, 0, 0, 0, 0, 0, 0 from DUAL) GROUP BY lzh  ORDER BY lzh) aa, (select decode(LZH, '1', '4', '2', '4', '3', '4', '8') lzh, sum(drgpzl) drgpzl, sum(ljgpzl) ljgpzl "
+p_pssm_13060/mmlgap07_inq.cpp	246	"group by substr(heat_no, 3, 1) union all  select substr(code, 2, 1) LZH, 0 DRGPZL, 0 LJGPZL from tep0002  where CODE_CLASS = 'TMNO') group by decode(LZH, '1', '4', '2', '4', '3', '4', '8')) bb "
+p_pssm_13060/mmlgap08_inq.cpp	132	"decode(sum(drzls), 0, 0, cast(round(cast(sum(drlf) * 100 as decimal(31, 3)) / sum(drzls), 2) as decimal(31, 2))) as drlfbl, "
+p_pssm_13060/mmlgap08_inq.cpp	133	"decode(sum(drzls), 0, 0, cast(round(cast(sum(drvd) * 100 as decimal(31, 3)) / sum(drzls), 2) as decimal(31, 2))) as drvdbl, "
+p_pssm_13060/mmlgap08_inq.cpp	134	"decode(sum(drzls), 0, 0, cast(round(cast(sum(drlv) * 100 as decimal(31, 3)) / sum(drzls), 2) as decimal(31, 2))) as drlvbl, "
+p_pssm_13060/mmlgap08_inq.cpp	135	"decode(sum(drzls), 0, 0, cast(round(cast(sum(drvl) * 100 as decimal(31, 3)) / sum(drzls), 2) as decimal(31, 2))) as drvlbl, "
+p_pssm_13060/mmlgap08_inq.cpp	136	"decode(sum(ljzls), 0, 0, cast(round(cast(sum(ljlf) * 100 as decimal(31, 3)) / sum(ljzls), 2) as decimal(31, 2))) as ljlfbl, "
+p_pssm_13060/mmlgap08_inq.cpp	137	"decode(sum(ljzls), 0, 0, cast(round(cast(sum(ljvd) * 100 as decimal(31, 3)) / sum(ljzls), 2) as decimal(31, 2))) as ljvdbl, "
+p_pssm_13060/mmlgap08_inq.cpp	138	"decode(sum(ljzls), 0, 0, cast(round(cast(sum(ljLV) * 100 as decimal(31, 3)) / sum(ljzls), 2) as decimal(31, 2))) as ljLVbl, "
+p_pssm_13060/mmlgap08_inq.cpp	139	"decode(sum(ljzls), 0, 0, cast(round(cast(sum(ljVL) * 100 as decimal(31, 3)) / sum(ljzls), 2) as decimal(31, 2))) as ljVLbl from("
+p_pssm_13060/mmlgap08_inq.cpp	161	"(select cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drlf, 0 as ljlf, 0 as drvd, 0 as ljvd, 0 as drlv, 0 as ljlv, 0 as drvl, 0 as ljvl "
+p_pssm_13060/mmlgap08_inq.cpp	163	"union all select cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drlf, 0 as ljlf, 0 as drvd, 0 as ljvd, 0 as drlv, 0 as ljlv, 0 as drvl, 0 as ljvl from tpssm11b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap08_inq.cpp	164	"union all select 0 as drlf, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljlf, 0 as drvd, 0 as ljvd, 0 as drlv, 0 as ljlv, 0 as drvl, 0 as ljvl from tpssm41b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap08_inq.cpp	165	"union all select 0 as drlf, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljlf, 0 as drvd, 0 as ljvd, 0 as drlv, 0 as ljlv, 0 as drvl, 0 as ljvl from tpssm11b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap08_inq.cpp	166	"union all select 0 as drlf, 0 as ljlf, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drvd, 0 as ljvd, 0 as drlv, 0 as ljlv, 0 as drvl, 0 as ljvl from tpssm41b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap08_inq.cpp	167	"union all select 0 as drlf, 0 as ljlf, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drvd, 0 as ljvd, 0 as drlv, 0 as ljlv, 0 as drvl, 0 as ljvl from tpssm11b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap08_inq.cpp	168	"union all select 0 as drlf, 0 as ljlf, 0 as drvd, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljvd, 0 as drlv, 0 as ljlv, 0 as drvl, 0 as ljvl from tpssm41b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap08_inq.cpp	169	"union all select 0 as drlf, 0 as ljlf, 0 as drvd, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljvd, 0 as drlv, 0 as ljlv, 0 as drvl, 0 as ljvl from tpssm11b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap08_inq.cpp	170	"union all select 0 as drlf, 0 as ljlf, 0 as drvd, 0 as ljvd, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drlv, 0 as ljlv, 0 as drvl, 0 as ljvl from tpssm41b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap08_inq.cpp	171	"union all select 0 as drlf, 0 as ljlf, 0 as drvd, 0 as ljvd, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drlv, 0 as ljlv, 0 as drvl, 0 as ljvl from tpssm11b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap08_inq.cpp	172	"union all select 0 as drlf, 0 as ljlf, 0 as drvd, 0 as ljvd, 0 as drlv, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljlv, 0 as drvl, 0 as ljvl from tpssm41b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap08_inq.cpp	173	"union all select 0 as drlf, 0 as ljlf, 0 as drvd, 0 as ljvd, 0 as drlv, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljlv, 0 as drvl, 0 as ljvl from tpssm11b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap08_inq.cpp	174	"union all select 0 as drlf, 0 as ljlf, 0 as drvd, 0 as ljvd, 0 as drlv, 0 as ljlv, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drvl, 0 as ljvl from tpssm41b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap08_inq.cpp	175	"union all select 0 as drlf, 0 as ljlf, 0 as drvd, 0 as ljvd, 0 as drlv, 0 as ljlv, cast(nvl(SUM(b.sla b_wt), 0) as decimal(20, 3)) as drvl, 0 as ljvl from tpssm11b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_
+p_pssm_13060/mmlgap08_inq.cpp	176	"union all select 0 as drlf, 0 as ljlf, 0 as drvd, 0 as ljvd, 0 as drlv, 0 as ljlv, 0 as drvl, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljvl from tpssm41b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap08_inq.cpp	177	"union all select 0 as drlf, 0 as ljlf, 0 as drvd, 0 as ljvd, 0 as drlv, 0 as ljlv, 0 as drvl, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljvl from tpssm11b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_n
+p_pssm_13060/mmlgap09_inq.cpp	642	"nvl(nn.drtjsj, 0) drtjsj, case when nvl(mm.drls, 0) >= 1 then nvl(nn.drzjzyl, 100) else 0 end drzjzyl, nvl(nn.ljtjsj, 0) ljtjsj, case when "
+p_pssm_13060/mmlgap09_inq.cpp	643	"nvl(mm.ljls, 0) >= 1 then nvl(nn.ljzjzyl, 100) else 0 end ljzjzyl from(select zjh, sum(drls) drls, sum(ljls) ljls, sum(drjzgsl) drjzgsl, "
+p_pssm_13060/mmlgap09_inq.cpp	645	"sum(drdlcs) drdlcs, sum(ljdlcs) ljdlcs, sum(drylcs) drylcs, sum(ljylcs) ljylcs, sum(drzbgs) drzbgs, sum(ljzbgs) ljzbgs, decode(sum(drzbgs), "
+p_pssm_13060/mmlgap09_inq.cpp	646	"0, 0, cast(sum(drzbls) *1.0 / sum(drzbgs) as decimal(10, 1))) drdzbsm, decode(sum(ljzbgs), 0, 0, cast(sum(ljzbls) *1.0 / sum(ljzbgs) as "
+p_pssm_13060/mmlgap09_inq.cpp	650	"sum(decode(substr(a.cast_no, 2, 1), '5', 6 - CUTOFF_TIMES, '6', 6 - CUTOFF_TIMES, '7', 6 - CUTOFF_TIMES, 0)) drdlcs, 0 ljdlcs, "
+p_pssm_13060/mmlgap09_inq.cpp	655	"as decimal(31, 2)) drzq, 0 ljls, 0 as ljjzgsl, 0 as ljgpqgl, 0 as ljjzzzq, 0 as ljzq, 0 drdlcs, sum(decode(substr(a.cast_no, 2, 1), "
+p_pssm_13060/mmlgap09_inq.cpp	684	"substr(t.cast_no, 2, 1)	union all	select  decode(substr(mat_no, 9, 1), '1', 1, '2', 1, '3', 2, '4', 2, '5', 3, 'A', 5, 'B', 5, 'C', 5, 'D', 5, 'E', "
+p_pssm_13060/mmlgap09_inq.cpp	688	"= 'wmsmsm13_downline' and TO_CHAR((to_date(REC_CREATE_TIME, 'YYYYMMDDHH24MISS') + 3.0/24), 'YYYYMMDD') = @v_date	 group by decode(substr(mat_no, 9, 1), "
+p_pssm_13060/mmlgap09_inq.cpp	690	"'O', 7, 'P', 7, 'Q', 7, 'R', 7)	union all	 select  decode(substr(mat_no, 9, 1), '1', 1, '2', 1, '3', 2, '4', 2, '5', 3, 'A', 5, 'B', 5, 'C', 5, 'D',"
+p_pssm_13060/mmlgap09_inq.cpp	694	"and REC_CREATE_TIME >= @datetime1	and REC_CREATE_TIME <  @datetime2	group by decode(substr(mat_no, 9, 1), '1', 1, '2', 1, '3', 2, '4', 2, '5', 3, "
+p_pssm_13060/mmlgap09_inq.cpp	698	"left join(select zjh, nvl(sum(drtjsj), 0) drtjsj, round(cast((1 - nvl(sum(drtjsj), 0)*1.0 / 1440.00) * 100 as decimal(6, 2)), 2) drzjzyl, "
+p_pssm_13060/mmlgap09_inq.cpp	699	"nvl(sum(ljtjsj), 0) ljtjsj, sum(ljzjzyl) ljzjzyl from(select zjh, nvl(sum(tjsjjg), 0) drtjsj, round(cast((1 - nvl(sum(tjsjjg), 0)*1.0 / 1440.00) * 100 as "
+p_pssm_13060/mmlgap09_inq.cpp	701	"to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) "
+p_pssm_13060/mmlgap09_inq.cpp	702	"- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, "
+p_pssm_13060/mmlgap09_inq.cpp	704	"to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) "
+p_pssm_13060/mmlgap09_inq.cpp	713	"to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) "
+p_pssm_13060/mmlgap09_inq.cpp	714	"- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, "
+p_pssm_13060/mmlgap09_inq.cpp	716	"to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) "
+p_pssm_13060/mmlgap09_inq.cpp	725	"to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) "
+p_pssm_13060/mmlgap09_inq.cpp	726	"- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, "
+p_pssm_13060/mmlgap09_inq.cpp	728	"to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') "
+p_pssm_13060/mmlgap09_inq.cpp	738	"cast(100 * (1 - sum(tjsjjg)*1.0 / timestampdiff(16, to_date(substr(@datetime2, 1, 8), 'yyyymmdd') - to_date(substr(@datetime1, 1, 8), 'yyyymmdd')) / 1440) "
+p_pssm_13060/mmlgap09_inq.cpp	740	"to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) "
+p_pssm_13060/mmlgap09_inq.cpp	741	"- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, "
+p_pssm_13060/mmlgap09_inq.cpp	743	"to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) "
+p_pssm_13060/mmlgap09_inq.cpp	753	"'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') "
+p_pssm_13060/mmlgap09_inq.cpp	754	"+ 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24), 'yyyymmdd') "
+p_pssm_13060/mmlgap09_inq.cpp	756	"'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - to_date(to_char( "
+p_pssm_13060/mmlgap09_inq.cpp	765	"to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) "
+p_pssm_13060/mmlgap09_inq.cpp	766	"- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, "
+p_pssm_13060/mmlgap09_inq.cpp	768	"to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) "
+p_pssm_13060/mmlgap09_inq.cpp	777	"rq desc) group by zjh)  group by zjh)  nn	on  mm.zjh = nn.zjh	   union all select mm.zjh xh, decode(mm.zjh, '4.1', '一系列合计', '8', '二系列合计') zjh, "
+p_pssm_13060/mmlgap09_inq.cpp	779	"mm.ljzbgs, mm.drdzbsm, mm.ljdzbsm, mm.drxxpz, mm.ljxxpz, nvl(nn.drtjsj, 0) drtjsj, case when nvl(mm.drls, 0) >= 1 then nvl(nn.drzjzyl, 100) else nvl(nn.drzjzyl, 0) "
+p_pssm_13060/mmlgap09_inq.cpp	780	"end drzjzyl, nvl(nn.ljtjsj, 0) ljtjsj, case when nvl(mm.ljls, 0) >= 1 then nvl(nn.ljzjzyl, 100) else nvl(nn.ljzjzyl, 0) end ljzjzyl from(select zjh, sum(drls) drls, "
+p_pssm_13060/mmlgap09_inq.cpp	782	"sum(ljzq) ljzq, sum(drdlcs) drdlcs, sum(ljdlcs) ljdlcs, sum(drylcs) drylcs, sum(ljylcs) ljylcs, sum(drzbgs) drzbgs, sum(ljzbgs) ljzbgs, decode(sum(drzbgs), 0, 0, "
+p_pssm_13060/mmlgap09_inq.cpp	783	"cast(sum(drzbls) / sum(drzbgs) as decimal(10, 1))) drdzbsm, decode(sum(ljzbgs), 0, 0, cast(sum(ljzbls) / sum(ljzbgs) as decimal(10, 1))) ljdzbsm, sum(drxxpz) drxxpz, "
+p_pssm_13060/mmlgap09_inq.cpp	784	"sum(ljxxpz) ljxxpz from(select decode(substr(a.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8') zjh, 0 as drls, 0 as drjzgsl, 0 as drgpqgl, "
+p_pssm_13060/mmlgap09_inq.cpp	786	"sum(a.POUR_PERIOD) as decimal(31, 3)) / count(a.heat_no), 2) as decimal(31, 2)) ljzq, sum(decode(substr(a.cast_no, 2, 1), '5', 6 - CUTOFF_TIMES, '6', "
+p_pssm_13060/mmlgap09_inq.cpp	789	"and a.OPEN_TIME <  @datetime2 group by decode(substr(a.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8')union all select "
+p_pssm_13060/mmlgap09_inq.cpp	790	"decode(substr(a.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8') zjh, count(a.heat_no) drls, sum(a.CAST_STEEL_WT) drjzgsl, "
+p_pssm_13060/mmlgap09_inq.cpp	792	"0 ljls, 0 as ljjzgsl, 0 as ljgpqgl, 0 as ljjzzzq, 0 as ljzq, 0 drdlcs, sum(decode(substr(a.cast_no, 2, 1), '5', 6 - CUTOFF_TIMES, '6', 6 - CUTOFF_TIMES, "
+p_pssm_13060/mmlgap09_inq.cpp	795	"'YYYYMMDDHH24MISS') + 3.0/24), 'YYYYMMDD') = @v_date group by decode(substr(a.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8') "
+p_pssm_13060/mmlgap09_inq.cpp	796	"union all select decode(substr(t.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8') zjh, 0 drls, 0 drjzgsl, 0 drgpqgl, 0 drjzzzq, "
+p_pssm_13060/mmlgap09_inq.cpp	809	"decode(substr(t.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8') union all  select decode(substr(t.CAST_NO, 2, 1), "
+p_pssm_13060/mmlgap09_inq.cpp	823	"decode(substr(t.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8')  union all select  decode(substr(mat_no, 9, 1), "
+p_pssm_13060/mmlgap09_inq.cpp	827	"TO_CHAR((to_date(REC_CREATE_TIME, 'YYYYMMDDHH24MISS') + 3.0/24), 'YYYYMMDD') = @v_date group by decode(substr(mat_no, 9, 1), '1', '4.1', "
+p_pssm_13060/mmlgap09_inq.cpp	828	"'2', '4.1', '3', '4.1', '4', '4.1', '5', '4.1', '8') union all select  decode(substr(mat_no, 9, 1), '1', '4.1', '2', '4.1', '3', '4.1', "
+p_pssm_13060/mmlgap09_inq.cpp	832	"and REC_CREATE_TIME <  @datetime2 group by decode(substr(mat_no, 9, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '5', '4.1', '8') "
+p_pssm_13060/mmlgap09_inq.cpp	839	"from(select decode(zjh, '1', '4.1', '2', '4.1', '3', '4.1', '8') zjh, rq, sjc1 tjsj from(select substr(sjc.cast_no, 2, 1) zjh, "
+p_pssm_13060/mmlgap09_inq.cpp	840	"to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, "
+p_pssm_13060/mmlgap09_inq.cpp	841	"'yyyymmddhh24miss') + 3.0/24) - (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff( "
+p_pssm_13060/mmlgap09_inq.cpp	844	"cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - to_date(to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, "
+p_pssm_13060/mmlgap09_inq.cpp	853	"union all select decode(zjh, '1', '4.1', '2', '4.1', '3', '4.1', '8') zjh, rq, sjc2 from(select substr(sjc.cast_no, 2, 1) zjh, to_char(to_date( "
+p_pssm_13060/mmlgap09_inq.cpp	854	"sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') "
+p_pssm_13060/mmlgap09_inq.cpp	855	"+ 3.0/24) - (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char( "
+p_pssm_13060/mmlgap09_inq.cpp	857	"+ 3.0/24)) as  bigint)), 4) sjc2, to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, "
+p_pssm_13060/mmlgap09_inq.cpp	867	"decode(zjh, '1', '4.1', '2', '4.1', '3', '4.1', '8') zjh, rq2, sjc3 from(select substr(sjc.cast_no, 2, 1) zjh, to_char(to_date(sjc.close_time, "
+p_pssm_13060/mmlgap09_inq.cpp	868	"'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - (to_date( "
+p_pssm_13060/mmlgap09_inq.cpp	869	"sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, "
+p_pssm_13060/mmlgap09_inq.cpp	871	"to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') "
+p_pssm_13060/mmlgap09_inq.cpp	881	"cast(100 * (1 - sum(tjsjjg)*1.0 / timestampdiff(16, to_date(substr(@datetime2, 1, 8), 'yyyymmdd') - to_date(substr(@datetime1, 1, 8), 'yyyymmdd')) / 1440 / 3) "
+p_pssm_13060/mmlgap09_inq.cpp	882	"as decimal(20, 2))  ljzjzyl from(select  zjh, sum(tjsj) tjsjjg  from(select decode(zjh, '1', '4.1', '2', '4.1', '3', '4.1', '8') zjh, rq, sjc1 tjsj from( "
+p_pssm_13060/mmlgap09_inq.cpp	883	"select substr(sjc.cast_no, 2, 1) zjh, to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date( "
+p_pssm_13060/mmlgap09_inq.cpp	884	"xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, "
+p_pssm_13060/mmlgap09_inq.cpp	886	"+ 3.0/24)) as  bigint)), 4) sjc2, to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date( "
+p_pssm_13060/mmlgap09_inq.cpp	894	"= sjc.cast_no + 1 and sjc.CLOSE_TIME<>' ' and xjc.open_time<>' ' order by xjc.CAST_NO desc) where sjc = 0  union all select decode(zjh, '1', '4.1', '2', '4.1', "
+p_pssm_13060/mmlgap09_inq.cpp	896	"digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, "
+p_pssm_13060/mmlgap09_inq.cpp	897	"right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24), 'yyyymmdd') || '240000', 'yyyymmddhh24miss')) - (to_date( "
+p_pssm_13060/mmlgap09_inq.cpp	899	"right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - to_date(to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, "
+p_pssm_13060/mmlgap09_inq.cpp	907	"where sjc = 1	union all select decode(zjh, '1', '4.1', '2', '4.1', '3', '4.1', '8') zjh, rq2, sjc3 from(select substr(sjc.cast_no, 2, 1) zjh, to_char(to_date(sjc.close_time, "
+p_pssm_13060/mmlgap09_inq.cpp	908	"'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - (to_date(sjc.CLOSE_TIME, "
+p_pssm_13060/mmlgap09_inq.cpp	909	"'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24), "
+p_pssm_13060/mmlgap09_inq.cpp	911	"+ 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - to_date(to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') "
+p_pssm_13060/mmsmap03_inq.cpp	76	v_datetime_now = CDateTime::Now().AddDays(-1).ToString("yyyyMMdd");
+p_pssm_13060/mmsmap03_inq.cpp	105	"               DECODE(NEXT_WHOLE_BACKLOG_CODE, "
+p_pssm_13060/mmsmap03_inq.cpp	174	"               DECODE(NEXT_WHOLE_BACKLOG_CODE, "
+p_pssm_13060/mmsmap04_inq.cpp	99	v_date_time_31 = CDateTime::Parse(CDateTime::Now().AddDays(-1).ToString("yyyyMM") + "01000000").AddMinutes(-1).ToString("yyyyMMdd");
+p_pssm_13060/mmsmap04_inq.cpp	187	"       SUM(DECODE(STOCK_OPER_ORDER, '2E', T.MAT_ACT_WT, 0)) AS DAY_SUM20 "
+p_pssm_13060/mmsmap04_inq.cpp	267	"       SUM(DECODE(STOCK_OPER_ORDER, '2E', T.MAT_ACT_WT, 0)) AS DAY_SUM20 "
+p_pssm_13060/mmsmap07_inq.cpp	133	"bb.drgpzl, bb.ljgpzl, decode(bb.drgpzl, 0, 0, cast(cast(aa.drtsl as decimal(25, 5)) * 1000.000 / cast(bb.drgpzl as decimal(25, 5)) as "
+p_pssm_13060/mmsmap07_inq.cpp	134	"decimal(25, 2))) drtgbl, decode(bb.drgpzl, 0, 0, cast(cast(aa.drgtl as decimal(25, 5)) * 1000.000 / cast(bb.drgpzl as decimal(25, 5)) "
+p_pssm_13060/mmsmap07_inq.cpp	135	"as decimal(25, 2))) drgtlbl, decode(bb.ljgpzl, 0, 0, cast(cast(aa.ljtsl as decimal(25, 5)) * 1000.000 / cast(bb.ljgpzl as decimal(25, 5)) "
+p_pssm_13060/mmsmap07_inq.cpp	136	"as decimal(25, 2))) ljtgbl, decode(bb.ljgpzl, 0, 0, cast(cast(aa.ljgtl as decimal(25, 5)) * 1000.000 / cast(bb.ljgpzl as decimal(25, 5)) "
+p_pssm_13060/mmsmap07_inq.cpp	139	"cast(decode(sum(ls), 0, 0, cast(sum(drzzq) as decimal(20, 3)) / sum(ls) / 60)  as decimal(20, 2)) drzq, cast(decode(sum(ljls), 0, 0, "
+p_pssm_13060/mmsmap07_inq.cpp	141	"sum(ljzzq) * 100 / 24 / 60 / 60 / timestampdiff(16, to_date(@datetime2, 'yyyymmddhh24miss') - to_date(@datetime1, 'yyyymmddhh24miss')) ljzyl, "
+p_pssm_13060/mmsmap07_inq.cpp	144	"sum(a.SMELT_CYCLE) drzzq, 0 ljzzq, sum(b.drtwl) drtwl, 0 ljtwl, sum(a.MOLTIRON_WT) drtsl, nvl(sum(MOLTIRON_WT), 0) + nvl(sum(SCRAP_WEIGHT), 0) + nvl(sum(SCRAP_WT), 0) "
+p_pssm_13060/mmsmap07_inq.cpp	145	"+ nvl(sum(b.drtwl), 0) - nvl(sum(drzg), 0)  drgtl, 0 ljtsl, 0 ljgtl, sum(drzg) drzg, 0 ljzg	 FROM TMMSM21  a  left join(select heat_no, "
+p_pssm_13060/mmsmap07_inq.cpp	146	"decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) drtwl from tmmsm2a where mat_code = 'FWLJ' group by heat_no) b   on  a.heat_no = b.HEAT_NO "
+p_pssm_13060/mmsmap07_inq.cpp	147	"left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) drzg  from tmmsm2a where station_id = 'B'  and mat_code in "
+p_pssm_13060/mmsmap07_inq.cpp	152	"0 drtsl, 0 drgtl, sum(a.MOLTIRON_WT)  ljtsl, nvl(sum(MOLTIRON_WT), 0) + nvl(sum(SCRAP_WEIGHT), 0) + nvl(sum(SCRAP_WT), 0) + nvl(sum(b.ljtwl), 0) - nvl(sum(ljzg), 0) ljgtl, "
+p_pssm_13060/mmsmap07_inq.cpp	153	"0 drzg, sum(ljzg) ljzg FROM TMMSM21 a left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) ljtwl from tmmsm2a where mat_code = 'FWLJ' "
+p_pssm_13060/mmsmap07_inq.cpp	154	"group by heat_no) b on a.heat_no = b.HEAT_NO left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) ljzg  from tmmsm2a where station_id = 'B' "
+p_pssm_13060/mmsmap07_inq.cpp	161	"where aa.lzh = bb.lzh	 union all 	select aa.lzh xh, decode(aa.lzh, '4', '一系列合计') lzh, aa.drls, aa.drts, aa.drfg, aa.drtbfg, aa.ljls, aa.ljts, aa.ljfg, "
+p_pssm_13060/mmsmap07_inq.cpp	163	"bb.drgpzl, bb.ljgpzl, decode(bb.drgpzl, 0, 0, cast(cast(aa.drtsl as decimal(25, 5)) * 1000.000 / cast(bb.drgpzl as decimal(25, 5)) as decimal(25, 2))) drtgbl, "
+p_pssm_13060/mmsmap07_inq.cpp	164	"decode(bb.drgpzl, 0, 0, cast(cast(aa.drgtl as decimal(25, 5)) * 1000.000 / cast(bb.drgpzl as decimal(25, 5)) as decimal(25, 2))) drgtlbl, "
+p_pssm_13060/mmsmap07_inq.cpp	165	"decode(bb.ljgpzl, 0, 0, cast(cast(aa.ljtsl as decimal(25, 5)) * 1000.000 / cast(bb.ljgpzl as decimal(25, 5)) as decimal(25, 2))) ljtgbl, decode(bb.ljgpzl, 0, 0, cast(cast(aa.ljgtl as "
+p_pssm_13060/mmsmap07_inq.cpp	168	"cast(decode(sum(ls), 0, 0, cast(sum(drzzq) as decimal(20, 3)) / sum(ls) / 60)  as decimal(20, 2)) drzq, cast(decode(sum(ljls), 0, 0, cast(sum(ljzzq) as decimal(20, 3)) / sum(ljls) / 60) "
+p_pssm_13060/mmsmap07_inq.cpp	169	"as decimal(20, 2)) ljzq, sum(drzzq) * 100 / 24 / 60 / 60 / 3 drzyl, sum(ljzzq) * 100 / 24 / 60 / 60 / 3 / timestampdiff(16, to_date(@datetime2, 'yyyymmddhh24miss') - to_date(@datetime1, "
+p_pssm_13060/mmsmap07_inq.cpp	170	"'yyyymmddhh24miss'))  ljzyl, sum(drtsl) drtsl, sum(drgtl) drgtl, sum(ljtsl) ljtsl, sum(ljgtl) ljgtl	from(SELECT decode(SUBSTR(a.HEAT_NO, 3, 1), '1', '4', '2', '4', '3', '4', '8')  LZH, "
+p_pssm_13060/mmsmap07_inq.cpp	172	"sum(a.SMELT_CYCLE) drzzq, 0 ljzzq, sum(b.drtwl) drtwl, 0 ljtwl, sum(a.MOLTIRON_WT) drtsl, sum(MOLTIRON_WT) + sum(SCRAP_WEIGHT) + sum(SCRAP_WT) + nvl(sum(b.drtwl), 0) - sum(drzg)  drgtl, "
+p_pssm_13060/mmsmap07_inq.cpp	173	"0 ljtsl, 0 ljgtl, sum(drzg) drzg, 0 ljzg FROM TMMSM21  a  left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) drtwl from tmmsm2a where mat_code = 'FWLJ' group by "
+p_pssm_13060/mmsmap07_inq.cpp	174	"heat_no) b   on  a.heat_no = b.HEAT_NO  left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) drzg  from tmmsm2a where station_id = 'B' 	and mat_code in "
+p_pssm_13060/mmsmap07_inq.cpp	176	"+ 3.0/24), 'YYYYMMDD') = @v_date GROUP BY decode(SUBSTR(a.HEAT_NO, 3, 1), '1', '4', '2', '4', '3', '4', '8') UNION all   SELECT decode(SUBSTR(a.HEAT_NO, 3, 1), '1', '4', '2', '4', '3', '4', '8') "
+p_pssm_13060/mmsmap07_inq.cpp	178	"0 drzzq, sum(a.SMELT_CYCLE) ljzzq, 0 drtwl, sum(ljtwl) ljtwl, 0 drtsl, 0 drgtl, sum(a.MOLTIRON_WT)  ljtsl, sum(MOLTIRON_WT) + sum(SCRAP_WEIGHT) + sum(SCRAP_WT) + nvl(sum(b.ljtwl), 0) - sum(ljzg) ljgtl, "
+p_pssm_13060/mmsmap07_inq.cpp	179	"0 drzg, sum(ljzg) ljzg	FROM TMMSM21  a  left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) ljtwl from tmmsm2a where mat_code = 'FWLJ' group by heat_no) b   on  a.heat_no = b.HEAT_NO "
+p_pssm_13060/mmsmap07_inq.cpp	180	"left join(select heat_no, decimal(nvl(sum(devo_wt / 1000), 0), 20, 3) ljzg  from tmmsm2a where station_id = 'B' and mat_code in('FJGLT', 'FJGZG', 'FN009') group by heat_no) c   on  a.heat_no = c.HEAT_NO "
+p_pssm_13060/mmsmap07_inq.cpp	181	"WHERE a.BLOW_START_TIME1 <> ' '  and  a.BLOW_START_TIME1 >= @datetime1   and  a.BLOW_START_TIME1 < @datetime2  GROUP BY decode(SUBSTR(a.HEAT_NO, 3, 1), '1', '4', '2', '4', '3', '4', '8') "
+p_pssm_13060/mmsmap07_inq.cpp	182	")GROUP BY lzh  ORDER BY lzh) aa, (select decode(LZH, '1', '4', '2', '4', '3', '4', '8') lzh, sum(drgpzl) drgpzl, sum(ljgpzl) ljgpzl from(select substr(heat_no, 3, 1) lzh, "
+p_pssm_13060/mmsmap07_inq.cpp	186	"group by substr(heat_no, 3, 1)) group by decode(LZH, '1', '4', '2', '4', '3', '4', '8')) bb where aa.lzh = bb.lzh	)  order by xh  ";
+p_pssm_13060/mmsmap08_inq.cpp	294	"decode(sum(drzls), 0, 0, cast(round(cast(sum(drlf) * 100 as decimal(31, 3)) / sum(drzls), 2) as decimal(31, 2))) as drlfbl, "
+p_pssm_13060/mmsmap08_inq.cpp	295	"decode(sum(drzls), 0, 0, cast(round(cast(sum(drrh) * 100 as decimal(31, 3)) / sum(drzls), 2) as decimal(31, 2))) as drrhbl, "
+p_pssm_13060/mmsmap08_inq.cpp	296	"decode(sum(drzls), 0, 0, cast(round(cast(sum(drlr) * 100 as decimal(31, 3)) / sum(drzls), 2) as decimal(31, 2))) as drlrbl, "
+p_pssm_13060/mmsmap08_inq.cpp	297	"decode(sum(drzls), 0, 0, cast(round(cast(sum(drrl) * 100 as decimal(31, 3)) / sum(drzls), 2) as decimal(31, 2))) as drrlbl, "
+p_pssm_13060/mmsmap08_inq.cpp	298	"decode(sum(ljzls), 0, 0, cast(round(cast(sum(ljlf) * 100 as decimal(31, 3)) / sum(ljzls), 2) as decimal(31, 2))) as ljlfbl, "
+p_pssm_13060/mmsmap08_inq.cpp	299	"decode(sum(ljzls), 0, 0, cast(round(cast(sum(ljrh) * 100 as decimal(31, 3)) / sum(ljzls), 2) as decimal(31, 2))) as ljrhbl, "
+p_pssm_13060/mmsmap08_inq.cpp	300	"decode(sum(ljzls), 0, 0, cast(round(cast(sum(ljlr) * 100 as decimal(31, 3)) / sum(ljzls), 2) as decimal(31, 2))) as ljlrbl, "
+p_pssm_13060/mmsmap08_inq.cpp	301	"decode(sum(ljzls), 0, 0, cast(round(cast(sum(ljrl) * 100 as decimal(31, 3)) / sum(ljzls), 2) as decimal(31, 2))) as ljrlbl "
+p_pssm_13060/mmsmap08_inq.cpp	357	"sum(ljzls) as ljzls, decode(sum(drzls), 0, 0, cast(round(cast(sum(drlf) * 100 as decimal(31, 3)) / sum(drzls), 2) as "
+p_pssm_13060/mmsmap08_inq.cpp	358	"decimal(31, 2))) as drlfbl, decode(sum(drzls), 0, 0, cast(round(cast(sum(drrh) * 100 as decimal(31, 3)) / sum(drzls), 2) "
+p_pssm_13060/mmsmap08_inq.cpp	359	"as decimal(31, 2))) as drrhbl, decode(sum(drzls), 0, 0, cast(round(cast(sum(drlr) * 100 as decimal(31, 3)) / sum(drzls), 2) "
+p_pssm_13060/mmsmap08_inq.cpp	360	"as decimal(31, 2))) as drlrbl, decode(sum(drzls), 0, 0, cast(round(cast(sum(drrl) * 100 as decimal(31, 3)) / sum(drzls), 2) "
+p_pssm_13060/mmsmap08_inq.cpp	361	"as decimal(31, 2))) as drrlbl, decode(sum(ljzls), 0, 0, cast(round(cast(sum(ljlf) * 100 as decimal(31, 3)) / sum(ljzls), 2) "
+p_pssm_13060/mmsmap08_inq.cpp	362	"as decimal(31, 2))) as ljlfbl, decode(sum(ljzls), 0, 0, cast(round(cast(sum(ljrh) * 100 as decimal(31, 3)) / sum(ljzls), 2) "
+p_pssm_13060/mmsmap08_inq.cpp	363	"as decimal(31, 2))) as ljrhbl, decode(sum(ljzls), 0, 0, cast(round(cast(sum(ljlr) * 100 as decimal(31, 3)) / sum(ljzls), 2) "
+p_pssm_13060/mmsmap08_inq.cpp	364	"as decimal(31, 2))) as ljlrbl, decode(sum(ljzls), 0, 0, cast(round(cast(sum(ljrl) * 100 as decimal(31, 3)) / sum(ljzls), 2) "
+p_pssm_13060/mmsmap08_inq.cpp	415	"sum(drlr) as drlr, sum(ljlr) as ljlr, sum(drrl) as drrl, sum(ljrl) as ljrl from(select cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drlf, "
+p_pssm_13060/mmsmap08_inq.cpp	418	"'YYYYMMDD') = @v_date union all select cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drlf, 0 as ljlf, 0 as drrh, 0 as ljrh, 0 as drlr, 0 as ljlr, "
+p_pssm_13060/mmsmap08_inq.cpp	421	"select 0 as drlf, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljlf, 0 as drrh, 0 as ljrh, 0 as drlr, 0 as ljlr, 0 as drrl, 0 as ljrl from "
+p_pssm_13060/mmsmap08_inq.cpp	423	"and c.BLOW_START_TIME1 >= @datetime1 and c.BLOW_START_TIME1 < @datetime2 union all select 0 as drlf, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) "
+p_pssm_13060/mmsmap08_inq.cpp	426	"union all select 0 as drlf, 0 as ljlf, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drrh, 0 as ljrh, 0 as drlr, 0 as ljlr, 0 as drrl, "
+p_pssm_13060/mmsmap08_inq.cpp	429	"cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drrh, 0 as ljrh, 0 as drlr, 0 as ljlr, 0 as drrl, 0 as ljrl from tpssm11b a, tmmsm33 b, tmmsm21 c "
+p_pssm_13060/mmsmap08_inq.cpp	431	"'YYYYMMDDHH24MISS') + 3.0/24), 'YYYYMMDD') = @v_date union all select 0 as drlf, 0 as ljlf, 0 as drrh, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) "
+p_pssm_13060/mmsmap08_inq.cpp	434	"select 0 as drlf, 0 as ljlf, 0 as drrh, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljrh, 0 as drlr, 0 as ljlr, 0 as drrl, 0 as ljrl from "
+p_pssm_13060/mmsmap08_inq.cpp	437	"cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drlr, 0 as ljlr, 0 as drrl, 0 as ljrl from tpssm41b a, tmmsm33 b, tmmsm21 c "
+p_pssm_13060/mmsmap08_inq.cpp	439	"'YYYYMMDDHH24MISS') + 3.0/24), 'YYYYMMDD') = @v_date union all select 0 as drlf, 0 as ljlf, 0 as drrh, 0 as ljrh, cast(nvl(SUM(b.slab_wt), 0) "
+p_pssm_13060/mmsmap08_inq.cpp	442	"union all select 0 as drlf, 0 as ljlf, 0 as drrh, 0 as ljrh, 0 as drlr, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljlr, 0 as drrl, 0 as ljrl "
+p_pssm_13060/mmsmap08_inq.cpp	445	"cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljlr, 0 as drrl, 0 as ljrl from tpssm11b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO "
+p_pssm_13060/mmsmap08_inq.cpp	447	"< @datetime2 union all select 0 as drlf, 0 as ljlf, 0 as drrh, 0 as ljrh, 0 as drlr, 0 as ljlr, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) "
+p_pssm_13060/mmsmap08_inq.cpp	450	"select 0 as drlf, 0 as ljlf, 0 as drrh, 0 as ljrh, 0 as drlr, 0 as ljlr, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drrl, 0 as ljrl "
+p_pssm_13060/mmsmap08_inq.cpp	453	"0 as ljrh, 0 as drlr, 0 as ljlr, 0 as drrl, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljrl from tpssm41b a, tmmsm33 b, tmmsm21 c "
+p_pssm_13060/mmsmap08_inq.cpp	456	"cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljrl from tpssm11b a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_no "
+p_pssm_13060/mmsmap08_inq.cpp	459	"as drrl, sum(ljrl) as ljrl from(select cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drlf, 0 as ljlf, 0 as drrh, 0 as ljrh, 0 as drlr, "
+p_pssm_13060/mmsmap08_inq.cpp	462	"cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drlf, 0 as ljlf, 0 as drrh, 0 as ljrh, 0 as drlr, 0 as ljlr, 0 as drrl, 0 as ljrl from "
+p_pssm_13060/mmsmap08_inq.cpp	464	"and TO_CHAR((to_date(c.BLOW_START_TIME1, 'YYYYMMDDHH24MISS') + 3.0/24), 'YYYYMMDD') = @v_date union all select 0 as drlf, cast(nvl(SUM(b.slab_wt), 0) "
+p_pssm_13060/mmsmap08_inq.cpp	467	"union all select 0 as drlf, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljlf, 0 as drrh, 0 as ljrh, 0 as drlr, 0 as ljlr, 0 as drrl, 0 as ljrl "
+p_pssm_13060/mmsmap08_inq.cpp	469	"and c.BLOW_START_TIME1 >= @datetime1 and c.BLOW_START_TIME1 < @datetime2 union all select 0 as drlf, 0 as ljlf, cast(nvl(SUM(b.slab_wt), 0) as "
+p_pssm_13060/mmsmap08_inq.cpp	472	"+ 3.0/24), 'YYYYMMDD') = @v_date union all select 0 as drlf, 0 as ljlf, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drrh, 0 as ljrh, "
+p_pssm_13060/mmsmap08_inq.cpp	475	"union all select 0 as drlf, 0 as ljlf, 0 as drrh, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljrh, 0 as drlr, 0 as ljlr, 0 as drrl, "
+p_pssm_13060/mmsmap08_inq.cpp	478	"0 as drrh, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljrh, 0 as drlr, 0 as ljlr, 0 as drrl, 0 as ljrl from tpssm11 a, tmmsm33 b, tmmsm21 c "
+p_pssm_13060/mmsmap08_inq.cpp	480	"and c.BLOW_START_TIME1 < @datetime2 union all select 0 as drlf, 0 as ljlf, 0 as drrh, 0 as ljrh, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) "
+p_pssm_13060/mmsmap08_inq.cpp	483	"select 0 as drlf, 0 as ljlf, 0 as drrh, 0 as ljrh, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drlr, 0 as ljlr, 0 as drrl, 0 as ljrl from "
+p_pssm_13060/mmsmap08_inq.cpp	486	"0 as ljrh, 0 as drlr, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljlr, 0 as drrl, 0 as ljrl from tpssm41 a, tmmsm33 b, tmmsm21 c where "
+p_pssm_13060/mmsmap08_inq.cpp	488	"and c.BLOW_START_TIME1 < @datetime2 union all select 0 as drlf, 0 as ljlf, 0 as drrh, 0 as ljrh, 0 as drlr, cast(nvl(SUM(b.slab_wt), 0) "
+p_pssm_13060/mmsmap08_inq.cpp	491	"union all  select 0 as drlf, 0 as ljlf, 0 as drrh, 0 as ljrh, 0 as drlr, 0 as ljlr, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drrl, "
+p_pssm_13060/mmsmap08_inq.cpp	494	"select 0 as drlf, 0 as ljlf, 0 as drrh, 0 as ljrh, 0 as drlr, 0 as ljlr, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as drrl, 0 as ljrl "
+p_pssm_13060/mmsmap08_inq.cpp	497	"0 as ljrh, 0 as drlr, 0 as ljlr, 0 as drrl, cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljrl from tpssm41 a, tmmsm33 b, tmmsm21 c "
+p_pssm_13060/mmsmap08_inq.cpp	500	"cast(nvl(SUM(b.slab_wt), 0) as decimal(20, 3)) as ljrl from tpssm11 a, tmmsm33 b, tmmsm21 c where a.HEAT_NO = b.HEAT_NO and a.heat_no = c.heat_no "
+p_pssm_13060/mmsmap09_inq.cpp	580	"  nvl(nn.drtjsj, 0) drtjsj, case when nvl(mm.drls,0)>=1 then nvl(nn.drzjzyl, 100) else 0 end drzjzyl, "
+p_pssm_13060/mmsmap09_inq.cpp	581	"  nvl(nn.ljtjsj, 0) ljtjsj, case when nvl(mm.ljls,0)>=1 then nvl(nn.ljzjzyl, 100) else 0 end ljzjzyl	 "
+p_pssm_13060/mmsmap09_inq.cpp	586	"  decode(sum(drzbgs), 0, 0, cast(sum(drzbls) *1.0/ sum(drzbgs) as decimal(10, 1))) drdzbsm,	 "
+p_pssm_13060/mmsmap09_inq.cpp	587	"  decode(sum(ljzbgs), 0, 0, cast(sum(ljzbls) *1.0 / sum(ljzbgs) as decimal(10, 1))) ljdzbsm,	 "
+p_pssm_13060/mmsmap09_inq.cpp	593	"  sum(decode(substr(a.cast_no, 2, 1), '5', 6 - CUTOFF_TIMES, '6', 6 - CUTOFF_TIMES, '7', 6 - CUTOFF_TIMES, 0)) drdlcs, 0 ljdlcs,	 "
+p_pssm_13060/mmsmap09_inq.cpp	604	"  0 drdlcs, sum(decode(substr(a.cast_no, 2, 1), '5', 6 - CUTOFF_TIMES, '6', 6 - CUTOFF_TIMES, '7', 6 - CUTOFF_TIMES, 0)) ljdlcs, 0 drylcs, 0 ljylcs,	 "
+p_pssm_13060/mmsmap09_inq.cpp	667	"  select  decode(substr(mat_no, 9, 1), '1', 1, '2', 1, '3', 2, '4', 2, '5', 3,	 "
+p_pssm_13060/mmsmap09_inq.cpp	676	"  group by decode(substr(mat_no, 9, 1), '1', 1, '2', 1, '3', 2, '4', 2, '5', 3,	 "
+p_pssm_13060/mmsmap09_inq.cpp	681	"  select  decode(substr(mat_no, 9, 1), '1', 1, '2', 1, '3', 2, '4', 2, '5', 3,	 "
+p_pssm_13060/mmsmap09_inq.cpp	691	"  group by decode(substr(mat_no, 9, 1), '1', 1, '2', 1, '3', 2, '4', 2, '5', 3,	 "
+p_pssm_13060/mmsmap09_inq.cpp	699	"		( select zjh, nvl(sum(drtjsj),0) drtjsj, round(cast((1 - nvl(sum(drtjsj),0)*1.0 / 1440.00) * 100 as decimal(6, 2)), 2) drzjzyl, nvl(sum(ljtjsj),0) ljtjsj, sum(ljzjzyl) ljzjzyl from (	       																"
+p_pssm_13060/mmsmap09_inq.cpp	700	"							  select zjh, nvl(sum(tjsjjg),0) drtjsj, round(cast((1 - nvl(sum(tjsjjg),0)*1.0 / 1440.00) * 100 as decimal(6, 2)), 2) drzjzyl, 0 ljtjsj, 0 ljzjzyl from (												"
+p_pssm_13060/mmsmap09_inq.cpp	704	"							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),4) sjc1,												"
+p_pssm_13060/mmsmap09_inq.cpp	705	"							  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),4) sjc2,						
+p_pssm_13060/mmsmap09_inq.cpp	707	"							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24,'yyyymmdd')||'000000','yyyymmddhh24miss')) as  bigint)),4) sjc3,												
+p_pssm_13060/mmsmap09_inq.cpp	723	"							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),4) sjc1,												"
+p_pssm_13060/mmsmap09_inq.cpp	724	"							  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),4) sjc2,						
+p_pssm_13060/mmsmap09_inq.cpp	726	"							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24,'yyyymmdd')||'000000','yyyymmddhh24miss')) as  bigint)),4) sjc3,												
+p_pssm_13060/mmsmap09_inq.cpp	742	"							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),4) sjc1,												"
+p_pssm_13060/mmsmap09_inq.cpp	743	"							  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),4) sjc2,						
+p_pssm_13060/mmsmap09_inq.cpp	745	"							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24,'yyyymmdd')||'000000','yyyymmddhh24miss')) as  bigint)),4) sjc3,												
+p_pssm_13060/mmsmap09_inq.cpp	766	"							  select zjh, 0 drtjsj, 0 drzjzyl, cast(sum(tjsjjg)/60 as decimal(20,0)) ljtjsj, cast(100 * (1 - sum(tjsjjg) / 60 *1.0 / timestampdiff(16, to_date(substr(@datetime2, 1, 8), 'yyyymmdd') - to_date(substr(@datetime1, 1, 8), 'yyyymmdd')
+p_pssm_13060/mmsmap09_inq.cpp	770	"							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),8) sjc1,												"
+p_pssm_13060/mmsmap09_inq.cpp	771	"							  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),8) sjc2,						
+p_pssm_13060/mmsmap09_inq.cpp	773	"							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24,'yyyymmdd')||'000000','yyyymmddhh24miss')) as  bigint)),8) sjc3,												
+p_pssm_13060/mmsmap09_inq.cpp	789	"							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),8) sjc1,												"
+p_pssm_13060/mmsmap09_inq.cpp	790	"							  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),8) sjc2,						
+p_pssm_13060/mmsmap09_inq.cpp	792	"							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24,'yyyymmdd')||'000000','yyyymmddhh24miss')) as  bigint)),8) sjc3,												
+p_pssm_13060/mmsmap09_inq.cpp	808	"							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),8) sjc1,												"
+p_pssm_13060/mmsmap09_inq.cpp	809	"							  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),8) sjc2,						
+p_pssm_13060/mmsmap09_inq.cpp	811	"							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24,'yyyymmdd')||'000000','yyyymmddhh24miss')) as  bigint)),8) sjc3,												
+p_pssm_13060/mmsmap09_inq.cpp	834	"  select mm.zjh xh, decode(mm.zjh, '4.1', '一系列', '8', '二系列') zjh, mm.drls, mm.ljls, mm.drjzgsl, mm.ljjzgsl, mm.drgpqgl, mm.ljgpqgl, mm.drjzzzq, mm.ljjzzzq,     "
+p_pssm_13060/mmsmap09_inq.cpp	836	"  nvl(nn.drtjsj, 0) drtjsj, case when nvl(mm.drls,0)>=1 then nvl(nn.drzjzyl, 100) else nvl(nn.drzjzyl, 0) end drzjzyl,   "
+p_pssm_13060/mmsmap09_inq.cpp	837	"  nvl(nn.ljtjsj, 0) ljtjsj, case when nvl(mm.ljls,0)>=1 then nvl(nn.ljzjzyl, 100) else nvl(nn.ljzjzyl, 0) end ljzjzyl     "
+p_pssm_13060/mmsmap09_inq.cpp	842	"  decode(sum(drzbgs), 0, 0, cast(sum(drzbls) / sum(drzbgs) as decimal(10, 1))) drdzbsm,     "
+p_pssm_13060/mmsmap09_inq.cpp	843	"  decode(sum(ljzbgs), 0, 0, cast(sum(ljzbls) / sum(ljzbgs) as decimal(10, 1))) ljdzbsm,     "
+p_pssm_13060/mmsmap09_inq.cpp	846	"  select decode(substr(a.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8') zjh, 0 as drls, 0 as drjzgsl, 0 as drgpqgl, 0 as drjzzzq, 0 as drzq,     "
+p_pssm_13060/mmsmap09_inq.cpp	849	"  sum(decode(substr(a.cast_no, 2, 1), '5', 6 - CUTOFF_TIMES, '6', 6 - CUTOFF_TIMES, '7', 6 - CUTOFF_TIMES, 0)) drdlcs, 0 ljdlcs,     "
+p_pssm_13060/mmsmap09_inq.cpp	855	"  group by decode(substr(a.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8')     "
+p_pssm_13060/mmsmap09_inq.cpp	857	"  	select decode(substr(a.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8') zjh, count(a.heat_no) drls, sum(a.CAST_STEEL_WT) drjzgsl, sum(b.slab_wt) drgpqgl,     "
+p_pssm_13060/mmsmap09_inq.cpp	860	"  0 drdlcs, sum(decode(substr(a.cast_no, 2, 1), '5', 6 - CUTOFF_TIMES, '6', 6 - CUTOFF_TIMES, '7', 6 - CUTOFF_TIMES, 0)) ljdlcs, 0 drylcs, 0 ljylcs,     "
+p_pssm_13060/mmsmap09_inq.cpp	865	"  group by decode(substr(a.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8')     "
+p_pssm_13060/mmsmap09_inq.cpp	867	"	  select decode(substr(t.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8') zjh,	 														"
+p_pssm_13060/mmsmap09_inq.cpp	893	"					 group by decode(substr(t.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8') 											"
+p_pssm_13060/mmsmap09_inq.cpp	895	"	 select decode(substr(t.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8')  zjh,	 															"
+p_pssm_13060/mmsmap09_inq.cpp	920	"					 group by decode(substr(t.CAST_NO, 2, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '8')  												"
+p_pssm_13060/mmsmap09_inq.cpp	922	"  select  decode(substr(mat_no, 9, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '5', '4.1', '8') zjh,     "
+p_pssm_13060/mmsmap09_inq.cpp	928	"  group by decode(substr(mat_no, 9, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '5', '4.1', '8')     "
+p_pssm_13060/mmsmap09_inq.cpp	930	"  select  decode(substr(mat_no, 9, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '5', '4.1', '8') zjh,     "
+p_pssm_13060/mmsmap09_inq.cpp	937	"  group by decode(substr(mat_no, 9, 1), '1', '4.1', '2', '4.1', '3', '4.1', '4', '4.1', '5', '4.1', '8')     "
+p_pssm_13060/mmsmap09_inq.cpp	947	"															 select decode(zjh, '1', '4.1', '2', '4.1', '3', '4.1', '8') zjh,rq,sjc1 tjsj from (																											"
+p_pssm_13060/mmsmap09_inq.cpp	949	"															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),4) sjc1,																											"
+p_pssm_13060/mmsmap09_inq.cpp	950	"															  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),4) sjc
+p_pssm_13060/mmsmap09_inq.cpp	952	"															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24,'yyyymmdd')||'000000','yyyymmddhh24miss')) as  bigint)),4) sjc3,				
+p_pssm_13060/mmsmap09_inq.cpp	966	"															  select decode(zjh, '1', '4.1', '2', '4.1', '3', '4.1', '8') zjh,rq,sjc2 from (																											"
+p_pssm_13060/mmsmap09_inq.cpp	968	"															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),4) sjc1,																											"
+p_pssm_13060/mmsmap09_inq.cpp	969	"															  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),4) sjc
+p_pssm_13060/mmsmap09_inq.cpp	971	"															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24,'yyyymmdd')||'000000','yyyymmddhh24miss')) as  bigint)),4) sjc3,				
+p_pssm_13060/mmsmap09_inq.cpp	985	"															  select decode(zjh, '1', '4.1', '2', '4.1', '3', '4.1', '8') zjh,rq2,sjc3 from (																											"
+p_pssm_13060/mmsmap09_inq.cpp	987	"															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),4) sjc1,																											"
+p_pssm_13060/mmsmap09_inq.cpp	988	"															  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),4) sjc
+p_pssm_13060/mmsmap09_inq.cpp	990	"															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24,'yyyymmdd')||'000000','yyyymmddhh24miss')) as  bigint)),4) sjc3,				
+p_pssm_13060/mmsmap09_inq.cpp	1011	"															 select zjh, 0 drtjsj, 0 drzjzyl, cast(sum(tjsjjg)/60 as decimal(20,0)) ljtjsj, cast(100 * (1 - sum(tjsjjg)/60*1.0 / timestampdiff(16, to_date(substr(@datetime2, 1, 8), 'yyyymmdd') - to_date(substr(@datetime1, 1, 8), 'yyyymm
+p_pssm_13060/mmsmap09_inq.cpp	1013	"															 select decode(zjh, '1', '4.1', '2', '4.1', '3', '4.1', '8') zjh,rq,sjc1 tjsj from (																											"
+p_pssm_13060/mmsmap09_inq.cpp	1015	"															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),8) sjc1,																											"
+p_pssm_13060/mmsmap09_inq.cpp	1016	"															  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),8) sjc
+p_pssm_13060/mmsmap09_inq.cpp	1018	"															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24,'yyyymmdd')||'000000','yyyymmddhh24miss')) as  bigint)),8) sjc3,				
+p_pssm_13060/mmsmap09_inq.cpp	1032	"															  select decode(zjh, '1', '4.1', '2', '4.1', '3', '4.1', '8') zjh,rq,sjc2 from (																											"
+p_pssm_13060/mmsmap09_inq.cpp	1034	"															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),8) sjc1,																											"
+p_pssm_13060/mmsmap09_inq.cpp	1035	"															  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),8) sjc
+p_pssm_13060/mmsmap09_inq.cpp	1037	"															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24,'yyyymmdd')||'000000','yyyymmddhh24miss')) as  bigint)),8) sjc3,				
+p_pssm_13060/mmsmap09_inq.cpp	1051	"															  select decode(zjh, '1', '4.1', '2', '4.1', '3', '4.1', '8') zjh,rq2,sjc3 from (																											"
+p_pssm_13060/mmsmap09_inq.cpp	1053	"															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),8) sjc1,																											"
+p_pssm_13060/mmsmap09_inq.cpp	1054	"															  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigint)),8) sjc
+p_pssm_13060/mmsmap09_inq.cpp	1056	"															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24,'yyyymmdd')||'000000','yyyymmddhh24miss')) as  bigint)),8) sjc3,				
+p_pssm_13060/pssmap02_inq.cpp	143	sqlstr = "SELECT A.ST_NO,A.ELM_CODE,NVL(B.MAIN_AIM,0),NVL(A.ELM_VALUE,0),NVL(C.CODE_DESC_1_CONTENT,'未判') "
+p_pssm_13070/cm_e2t8r2_rcv.cpp	222	sqlstr = "  SELECT DA_SCHEDULE_UPDATE_SEQ.nextval FROM dual  ";
+p_pssm_13070/cm_e2t8r2_rcv.cpp	236	" VALUES(@resume_seq_no, @v_dev_code, @event_id, @v_proc_time, @status_name, @heat_no, @treatmentcount, @plan_no, @splitno, @st_no, @ladle_no, @ladleopen, @lfend, @next_dev_no, SYSDATE, @PPREADTIME, @PPREAD, @DMREADTIME, @DMREAD) ";
+p_pssm_13070/cm_e2t8r2_rcv.cpp	268	sqlstr = " SELECT * FROM TPSSM11 WHERE SM_PLAN_NOL2 = @SM_PLAN_NOL2 FOR UPDATE ";
+p_pssm_13070/cm_e2t8r2_rcv.cpp	274	sqlstr = " SELECT * FROM TPSSM12 WHERE SM_PLAN_NOL2 = @SM_PLAN_NOL2 FOR UPDATE ";
+p_pssm_13070/cm_e2t8r2_rcv.cpp	2665	" AND(b.START_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR b.START_TIME_REAL = ' ')			"
+p_pssm_13070/cm_e2t8r2_rcv.cpp	2865	" AND(b.START_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR b.START_TIME_REAL = ' ')			"
+p_pssm_13070/pssm18_auto_inq.cpp	162	"  AND ((c.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR c.END_TIME_REAL = ' ' ) OR a.RUN_STATUS < '53')    "
+p_pssm_13070/pssm18_auto_inq.cpp	169	"  AND ((F.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') ) OR D.RUN_STATUS < '53') )    "
+p_pssm_13070/pssm18_inqa.cpp	638	" SELECT A.*, NVL(B.CODE_DESC_1_CONTENT, ' ') FROM TPSSM10 A "
+p_pssm_13070/pssm18_ot_run.cpp	73	datetime1 = CDateTime::Now().AddDays(-3).ToString("yyyyMMddHHmmss");
+p_pssm_13070/pssm18_send.cpp	80	sqlstr = "SELECT DISTINCT A.SM_PLAN_NO FROM TPSSM12 A, TPSSM11 B WHERE A.FACTORY_DIV=@v_factory_div AND A.CHARGE_NO = 1 AND DECODE( A.START_TIME_REAL,' ',A.START_TIME,A.START_TIME_REAL ) < @datetime_send AND A.SM_PLAN_NO = B.SM_PLAN_NO AND 
+p_pssm_13070/pssm18_send.cpp	100	sqlstr = "SELECT DISTINCT A.SM_PLAN_NO FROM TPSSM14 A, TPSSM13 B WHERE A.FACTORY_DIV=@v_factory_div AND A.CHARGE_NO = 1 AND DECODE( A.START_TIME_REAL,' ',A.START_TIME,A.START_TIME_REAL ) < @datetime_send AND A.SM_PLAN_NO = B.SM_PLAN_NO AND 
+p_pssm_13070/pssm18a_inq.cpp	689	" SELECT A.*, NVL(B.CODE_DESC_1_CONTENT, ' ') FROM TPSSM10 A "
+p_pssm_13070/pssm18r_rt_upd.cpp	596	sqlstr = "  SELECT DA_HEAT_BACK_SEQ.nextval FROM dual  ";
+p_pssm_13070/pssm18r_rt_upd.cpp	613	sqlstr = " INSERT INTO DA_HEAT_BACK (ID,HEAT_NUMBER,HEAT_BACK_RATIO,HEAT_BACK,CONSUME_ID,TIME_STAMP,IS_CANCEL,IS_UP,IS_UP_TIME,SCRAP_WEIGHT,STEEL_BACK) VALUES(@resume_seq_no, @heat_no, @heat_back_ratio, @heat_back, @consume_id, SYSDATE, @is
+p_pssm_13070/pssm18z_inq.cpp	376	"  AND ((c.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR c.END_TIME_REAL = ' ' ) OR a.RUN_STATUS < '53'))    "
+p_pssm_13070/pssm18z_inq.cpp	541	" ORDER BY AREA_ID, decode(DEV_TECH_CODE,'Z',1,'B',2,'E',3,'A',4,'S',5,'V',6,'F',7,'R',8,'C',9), decode(DEV_CODE,'B0','B3',DEV_CODE) "
+p_pssm_13070/pssm18z_inq.cpp	583	" SELECT A.*, NVL(B.CODE_DESC_1_CONTENT, ' ') FROM TPSSM10 A "
+p_pssm_13070/pssm18z_inq.cpp	808	"    AND END_TIME > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') "
+p_pssm_13070/pssm18z_inq.cpp	1500	" AND ((b.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR b.END_TIME_REAL = ' ' ) OR a.RUN_STATUS < '53') "
+p_pssm_13070/pssm18z_inq.cpp	1505	" AND d.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') "
+p_pssm_13070/pssm18z_inq.cpp	1652	sqlstr = " SELECT * FROM TPSSM12Z WHERE DECODE(END_TIME_REAL,' ',END_TIME,END_TIME_REAL) > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS') OR ( END_TIME_REAL = ' ' AND START_TIME_REAL > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS')) OR START_TIME_REA
+p_pssm_13070/pssm25_inq.cpp	405	sqlstr = " SELECT DECODE(ARRIVE_REAL_TIME,' ',LADLE_ARRIVE_TIME,ARRIVE_REAL_TIME), \
+p_pssm_13070/pssm25_inq.cpp	406	DECODE(LEAVE_REAL_TIME,' ',LADLE_LEAVE_TIME,LEAVE_REAL_TIME), \
+p_pssm_13070/pssm25_inq.cpp	407	DECODE(START_TIME_REAL,' ',START_TIME,START_TIME_REAL), \
+p_pssm_13070/pssm25_inq.cpp	408	DECODE(END_TIME_REAL,' ',END_TIME,END_TIME_REAL)  \
+p_pssm_13070/pssm25_inq.cpp	487	sqlstr = " SELECT DECODE(ARRIVE_REAL_TIME,' ',LADLE_ARRIVE_TIME,ARRIVE_REAL_TIME), \
+p_pssm_13070/pssm25_inq.cpp	488	DECODE(LEAVE_REAL_TIME,' ',LADLE_LEAVE_TIME,LEAVE_REAL_TIME), \
+p_pssm_13070/pssm25_inq.cpp	489	DECODE(START_TIME_REAL,' ',START_TIME,START_TIME_REAL), \
+p_pssm_13070/pssm25_inq.cpp	490	DECODE(END_TIME_REAL,' ',END_TIME,END_TIME_REAL) \
+p_pssm_13070/pssm28_yy_inq.cpp	50	v_start_time = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss").Substring(0, 8) + "225959";
+p_pssm_13070/pssm41_inq.cpp	414	" SELECT A.*, NVL(B.CODE_DESC_1_CONTENT, ' ') FROM TPSSM10 A "
+p_pssm_13090/pssm11_devno.cpp	37	int blkseq = 0, rownum = 0, i = 0; //读取传入参数用
+p_pssm_13090/pssm11_plan.cpp	281	" SELECT nvl(b.STD_PROC_TIME,30) STD_PROC_TIME,a.* FROM TPSSMD1 a,(select max(std_proc_time) std_proc_time, dev_code from TPSSMD3 group by dev_code) b "
+p_pssm_13090/pssm11_plan.cpp	283	"    AND a.DEV_CODE = b.DEV_CODE(+) "
+p_pssm_13090/pssm11_plan.cpp	315	int startWorkPlanRowNum = 0;
+p_pssm_13090/pssm11_plan.cpp	319	sqlstr = CString(" SELECT row_number() over(ORDER BY CC_SEQ) rowNum, a.*, b.PONO b_PONO ,b.PONO_STATUS b_PONO_STATUS, b.* "
+p_pssm_13090/pssm11_plan.cpp	323	"  and a.pono = b.pono(+) "
+p_pssm_13090/pssm11_plan.cpp	327	sqlstrCount = " select max(rowNum) from(" + sqlstr + ") where b_PONO is not null and b_PONO_STATUS >= 20 ";
+p_pssm_13090/pssm11_plan.cpp	335	startWorkPlanRowNum = cmd_inq.GetInt32(1); //开始生产的计划被排到了第几行
+p_pssm_13090/pssm11_plan.cpp	341	if (startWorkPlanRowNum > cc_plan_count && startWorkPlanRowNum > 0)
+p_pssm_13090/pssm11_plan.cpp	344	cmd_inq.ExecuteQuery(bcls_ret->Tables[0], startWorkPlanRowNum-1, 1);//分页获取
+p_pssm_13090/pssm11_plan.cpp	346	sprintf(s.msg, "[%s]连铸机下PONO[%s]排在第[%d]行已经开始生产，不可排出计划!", (const char *)cc_math_no, (const char *)bcls_ret->Tables[0].Rows[0]["PONO"].ToString(), startWorkPlanRowNum);
+p_pssm_13090/pssm11_plan.cpp	347	sprintf(s.sysmsg, "CC_MACH_NO[%s] set PLAN_COUNT[%d]<[%d] too small in pssm11_plan().", (const char *)cc_math_no, cc_plan_count, startWorkPlanRowNum);
+p_pssm_13090/pssm11add_inq.cpp	89	"    AND CC_MACH_NO = DECODE(@cc_mach_no, '0', CC_MACH_NO, @cc_mach_no) "
+p_pssm_13090/pssm11add_inq2.cpp	76	"    AND CC_MACH_NO = DECODE(@cc_mach_no, '0', CC_MACH_NO, @cc_mach_no) "
+p_pssm_13090/pssm11signal_inq.cpp	113	ORDER BY CHARGE_NO DESC FETCH FIRST 1 ROWS ONLY \
+p_pssm_13090/pssm11signal_inq.cpp	119	ORDER BY CHARGE_NO DESC FETCH FIRST 1 ROWS ONLY \
+p_pssm_13090/pssm11signal_inq.cpp	233	ORDER BY CHARGE_NO FETCH FIRST 1 ROWS ONLY \
+p_pssm_13090/pssm11signal_inq.cpp	240	ORDER BY CHARGE_NO FETCH FIRST 1 ROWS ONLY \
+p_pssm_13090/pssm11stchg_stno_inq.cpp	114	" where A.ST_NO = B.ST_NO(+) "
+p_pssm_13090/pssm12a_cctime.cpp	221	tpssm11.CC_REQ_TIME = tmp_time.AddDays(1).ToString("yyyyMMddHHmmss");
+p_pssm_13090/pssm12v_inq.cpp	67	"   T.START_TIME_REAL START_TIME_REAL, T.END_TIME_REAL END_TIME_REAL, DECODE(T.START_TIME_REAL, ' ', '未生产', '已生产') STATUS, T.AREA_ID AREA_ID  FROM TPSSM12 T LEFT JOIN  "
+p_pssm_13110/pssm82_snd.cpp	87	str = " SELECT LPAD(PSSM82_ID.nextval, 6, '0') FROM dual   ";
+p_pssm_13130/pssm17_inq.cpp	480	" ORDER BY AREA_ID, decode(DEV_TECH_CODE,'Z',1,'B',2,'E',3,'A',4,'S',5,'V',6,'F',7,'R',8,'C',9), decode(DEV_CODE,'B0','B3',DEV_CODE) "
+p_pssm_13130/pssm17_inq.cpp	518	" SELECT A.*, NVL(B.CODE_DESC_1_CONTENT, ' ') FROM TPSSM17 A "
+p_pssm_13160/pssm18_auto_inq.cpp	173	" and a.factory_div = b.factory_div and a.pono = b.pono AND a.SM_PLAN_NO = c.SM_PLAN_NO AND a.PONO_STATUS >= 20 AND a.PONO_STATUS < 83 AND c.AREA_ID = 3 AND ((c.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR c.END_TIME_REAL = '
+p_pssm_13170/pssm18_inq.cpp	373	"  AND ((c.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR c.END_TIME_REAL = ' ' ) OR a.RUN_STATUS < '53')    "
+p_pssm_13170/pssm18_inq.cpp	380	"  AND ((F.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') ) OR D.RUN_STATUS < '53') )    "
+p_pssm_13170/pssm18_inq.cpp	560	" ORDER BY AREA_ID, decode(DEV_TECH_CODE,'Z',1,'B',2,'E',3,'A',4,'S',5,'V',6,'F',7,'R',8,'C',9), decode(DEV_CODE,'B0','B3',DEV_CODE) "
+p_pssm_13170/pssm18_inq.cpp	602	" SELECT A.*, NVL(B.CODE_DESC_1_CONTENT, ' ') FROM TPSSM10 A "
+p_pssm_13170/pssm18_inq.cpp	826	"    AND END_TIME > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') "
+p_pssm_13170/pssm18_inq.cpp	1553	" AND ((b.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR b.END_TIME_REAL = ' ' ) OR a.RUN_STATUS < '53') "
+p_pssm_13170/pssm18_inq.cpp	1558	" AND d.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') "
+p_pssm_13170/pssm18_inq_pono.cpp	164	"  AND ((c.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR c.END_TIME_REAL = ' ' ) OR a.RUN_STATUS < '53')    "
+p_pssm_13170/pssm18_inq_pono.cpp	171	"  AND ((F.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR F.END_TIME_REAL = ' ' ) OR D.RUN_STATUS < '53') )    "
+p_pssm_13170/pssm19_inq.cpp	123	history_time_s = (CDateTime::Parse(history_time).AddDays(-1)).ToString("yyyyMMddHHmmss");
+p_pssm_13170/pssm19_inq.cpp	124	history_time_e = (CDateTime::Parse(history_time).AddDays(1)).ToString("yyyyMMddHHmmss");
+p_pssm_13170/pssm19_inq.cpp	391	"  AND ((c.END_TIME_REAL > TO_CHAR(SYSDATE - 2, 'YYYYMMDDHH24MISS') OR c.END_TIME_REAL = ' ' ) OR a.RUN_STATUS < '53')    "
+p_pssm_13170/pssm19_inq.cpp	398	"  AND ((F.END_TIME_REAL > TO_CHAR(SYSDATE - 2, 'YYYYMMDDHH24MISS') ) OR D.RUN_STATUS < '53') )    "
+p_pssm_13170/pssm19_inq.cpp	568	" ORDER BY AREA_ID, decode(DEV_TECH_CODE,'Z',1,'B',2,'E',3,'A',4,'S',5,'V',6,'F',7,'R',8,'C',9), decode(DEV_CODE,'B0','B3',DEV_CODE) "
+p_pssm_13170/pssm19_inq.cpp	610	" SELECT A.*, NVL(B.CODE_DESC_1_CONTENT, ' ') FROM TPSSM10 A "
+p_pssm_13170/pssm19_inq.cpp	808	"    AND END_TIME > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') "
+p_pssm_13170/pssm19_inq.cpp	1523	" AND ((b.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR b.END_TIME_REAL = ' ' ) OR a.RUN_STATUS < '53') "
+p_pssm_13170/pssm19_inq.cpp	1528	" AND d.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') "
+p_pssm_13170/pssm19_inq.cpp	1699	" AND((D.END_TIME_REAL > TO_CHAR(SYSDATE - 2, 'YYYYMMDDHH24MISS'))		  "
+p_pssm_13170/pssm19_inq.cpp	1709	" AND((F.END_TIME_REAL > TO_CHAR(SYSDATE - 2, 'YYYYMMDDHH24MISS'))		  "
+p_pssm_13180/pssm33_jst_inq.cpp	67	sqlstr = "   SELECT T1.STATION_ID||T1.STATION_NO AS DEV_CODE, T1.SM_PLAN_NOL2 AS PLAN_NO, NVL(T3.START_TIME,' ') START_TIME,   "
+p_pssm_13180/pssm33_jst_inq.cpp	68	"    NVL(T3.END_TIME,' ') END_TIME,DECODE(T1.START_TIME_REAL,' ',NVL(T3.START_TIME_REAL,' '),T1.START_TIME_REAL) START_TIME_REAL, DECODE(T1.END_TIME_REAL, ' ',NVL(T3.END_TIME_REAL,' '),T1.END_TIME_REAL) END_TIME_REAL,  "
+p_pssm_13180/pssm33_jst_inq.cpp	74	" CASE WHEN T3.END_TIME_REAL<> ' ' OR  T1.END_TIME_REAL<>' '  THEN (	case when TO_TIMESTAMP(DECODE(T1.END_TIME_REAL,' ',NVL(T3.END_TIME_REAL,' '),T1.END_TIME_REAL),'YYYY-MM-DD HH24:MI:SS') <SYSDATE-1/3 THEN 1  ELSE 0 END ) ELSE 0 END AS TC_
+p_pssm_13190/pssm12z_inq.cpp	75	sqlstr = " SELECT * FROM TPSSM12Z WHERE DECODE(END_TIME_REAL,' ',END_TIME,END_TIME_REAL) >= @start_time AND DECODE(END_TIME_REAL,' ',END_TIME,END_TIME_REAL) <= @end_time  order by dev_code asc, PROC_NO desc "
+p_pssm_13190/pssm12z_inq.cpp	88	sqlstr = "SELECT * FROM TPSSM12Z WHERE DECODE(END_TIME_REAL,' ',END_TIME,END_TIME_REAL) > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS') OR ( END_TIME_REAL = ' ' AND START_TIME_REAL > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS')) OR START_TIME_REAL
+p_pssm_13190/pssm12z_save.cpp	411	sqlstr = " SELECT * FROM TPSSM12Z WHERE END_TIME_REAL > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS') OR ( END_TIME_REAL = ' ' AND START_TIME_REAL > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS')) OR START_TIME_REAL = ' ' order by dev_code asc, PROC
+p_pssm_13190/pssm12z_setaod.cpp	170	sqlstr = " SELECT * FROM TPSSM12Z WHERE END_TIME_REAL > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS') OR ( END_TIME_REAL = ' ' AND START_TIME_REAL > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS')) OR START_TIME_REAL = ' ' order by dev_code asc, PROC
+p_pssm_13190/pssm12z_setaod_plan.cpp	178	sqlstr = " SELECT * FROM TPSSM12Z WHERE END_TIME_REAL > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS') OR ( END_TIME_REAL = ' ' AND START_TIME_REAL > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS')) OR START_TIME_REAL = ' ' order by dev_code asc, PROC
+p_pssm_13190/pssm12z_setgroup.cpp	93	sqlstr = " SELECT * FROM TPSSM12Z WHERE END_TIME_REAL > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS') OR ( END_TIME_REAL = ' ' AND START_TIME_REAL > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS')) OR START_TIME_REAL = ' ' order by dev_code asc, PROC
+p_pssm_13190/pssm12z_settime.cpp	99	sqlstr = " SELECT * FROM TPSSM12Z WHERE END_TIME_REAL > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS') OR ( END_TIME_REAL = ' ' AND START_TIME_REAL > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS')) OR START_TIME_REAL = ' ' order by dev_code asc, PROC
+p_pssm_13190/pssm18z_inq.cpp	376	"  AND ((c.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR c.END_TIME_REAL = ' ' ) OR a.RUN_STATUS < '53'))    "
+p_pssm_13190/pssm18z_inq.cpp	541	" ORDER BY AREA_ID, decode(DEV_TECH_CODE,'Z',1,'B',2,'E',3,'A',4,'S',5,'V',6,'F',7,'R',8,'C',9), decode(DEV_CODE,'B0','B3',DEV_CODE) "
+p_pssm_13190/pssm18z_inq.cpp	583	" SELECT A.*, NVL(B.CODE_DESC_1_CONTENT, ' ') FROM TPSSM10 A "
+p_pssm_13190/pssm18z_inq.cpp	808	"    AND END_TIME > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') "
+p_pssm_13190/pssm18z_inq.cpp	1500	" AND ((b.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') OR b.END_TIME_REAL = ' ' ) OR a.RUN_STATUS < '53') "
+p_pssm_13190/pssm18z_inq.cpp	1505	" AND d.END_TIME_REAL > TO_CHAR(SYSDATE - 1, 'YYYYMMDDHH24MISS') "
+p_pssm_13190/pssm18z_inq.cpp	1652	sqlstr = " SELECT * FROM TPSSM12Z WHERE DECODE(END_TIME_REAL,' ',END_TIME,END_TIME_REAL) > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS') OR ( END_TIME_REAL = ' ' AND START_TIME_REAL > TO_CHAR(SYSDATE - 1 , 'YYYYMMDDHH24MISS')) OR START_TIME_REA
+p_pssm_13250/pssmt_bof_zd.cpp	56	date_time = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");//默认前一天
+p_pssm_13250/pssmt_cc_zd.cpp	56	date_time = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");//默认前一天
+p_pssm_13250/pssmt_lf_zd.cpp	56	date_time = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");//默认前一天
+p_pssm_13250/pssmt_rh_zd.cpp	56	date_time = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");//默认前一天
+p_pssm_13250/pssmt_run_zd.cpp	56	date_time = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");//默认前一天
+p_pssm_13250/pssmt_zd_ins.cpp	79	pre_time = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");
+p_pssm_13250/pssmt_zs_inq.cpp	56	date_time = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");//默认前一天
+p_pssm_13250/pssmt_zs_ins.cpp	79	pre_time = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");
+p_pssm_13270/pssmt_ard_inq.cpp	69	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_arg_inq.cpp	70	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_ars_inq.cpp	70	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_ccd_inq.cpp	69	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_ccg_inq.cpp	70	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_lf_fh.cpp	101	date_time = CDateTime::Now().AddDays(-1).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_lfd_inq.cpp	69	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_lfg_inq.cpp	70	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_lfs_inq.cpp	70	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_pd_inq.cpp	69	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_pg_inq.cpp	70	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_pr_inq.cpp	70	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_qcd_inq.cpp	69	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_qcg_inq.cpp	70	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_rhd_inq.cpp	69	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_rhg_inq.cpp	70	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_13270/pssmt_rhs_inq.cpp	70	date_time = CDateTime::Now().AddDays(0).ToString("yyyyMMddHHmmss");//默认当天
+p_pssm_5000/pssm10aaf3_ins.cpp	297	sqlstr = CString("  SELECT NVL(MAX(CC_SEQ), 0) + 1 FROM TPSSM10 \

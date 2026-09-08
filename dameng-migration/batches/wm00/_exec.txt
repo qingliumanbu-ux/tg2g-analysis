@@ -1,0 +1,72 @@
+150						// DM8 适配 CHANGE-EXEC-002:按板坯号查 tmmsm01;EXEC SQL 改为 CDbCommand(方案B试点)。
+151						// 改写原因:同 CHANGE-EXEC-001;SELECT INTO :host_var 改为 ExecuteQuery。
+152						// 原方案A(EXEC SQL,完整保留):
+153						// EXEC SQL select * into :tmmsm01 from tmmsm01 where mat_no = : tmmsm01.mat_no and mat_position in('1', '2');
+154						// 方案B(CDbCommand):
+155							sqlstr = " SELECT * FROM tmmsm01 WHERE mat_no = ? AND mat_position IN('1','2')";
+156							cmd_inq.SetCommandText(sqlstr);
+157							cmd_inq.Parameters.Set("mat_no", tmmsm01.mat_no);
+158							cmd_inq.ExecuteQuery(tmmsm01);
+159							if (tmmsm01.Rows.get_Count() == 0)  // 等价于 sqlca.sqlcode == M_NO_DATA_FOUND
+160						if (sqlca.sqlcode == M_NO_DATA_FOUND)
+161						if (sqlca.sqlcode == M_NO_DATA_FOUND)
+162						{
+163							EDLog(1, 1, "板坯不在炼钢范围内，不处置！");
+164							doFlag = 0;
+165							s.sqlcode = 0;
+166							goto l_return;
+167						}
+168						EXEC SQL select * into :tep0002 from tep0002 where code_class = 'YMWD' and code = : tmmsm01.strand_no;
+169						EDLog(1, 1, " **************%s  ----tmmsm01.mat_no *****************", tmmsm01.mat_no);
+170						EDLog(1, 1, " **************%s  ----tmmsm01.mat_position ***********", tmmsm01.mat_position);
+171	
+172						if (0 != strcmp(tep0002.code_desc_1_content, "OFF") && 0 == strcmp(tmmsm01.mat_position, "1") && 0 == strcmp(tmmsm01.slab_out_place, " "))//参与宽度控制标定
+  ====
+151						// 改写原因:同 CHANGE-EXEC-001;SELECT INTO :host_var 改为 ExecuteQuery。
+152						// 原方案A(EXEC SQL,完整保留):
+153						// EXEC SQL select * into :tmmsm01 from tmmsm01 where mat_no = : tmmsm01.mat_no and mat_position in('1', '2');
+154						// 方案B(CDbCommand):
+155							sqlstr = " SELECT * FROM tmmsm01 WHERE mat_no = ? AND mat_position IN('1','2')";
+156							cmd_inq.SetCommandText(sqlstr);
+157							cmd_inq.Parameters.Set("mat_no", tmmsm01.mat_no);
+158							cmd_inq.ExecuteQuery(tmmsm01);
+159							if (tmmsm01.Rows.get_Count() == 0)  // 等价于 sqlca.sqlcode == M_NO_DATA_FOUND
+160						if (sqlca.sqlcode == M_NO_DATA_FOUND)
+161						if (sqlca.sqlcode == M_NO_DATA_FOUND)
+162						{
+163							EDLog(1, 1, "板坯不在炼钢范围内，不处置！");
+164							doFlag = 0;
+165							s.sqlcode = 0;
+166							goto l_return;
+167						}
+168						EXEC SQL select * into :tep0002 from tep0002 where code_class = 'YMWD' and code = : tmmsm01.strand_no;
+169						EDLog(1, 1, " **************%s  ----tmmsm01.mat_no *****************", tmmsm01.mat_no);
+170						EDLog(1, 1, " **************%s  ----tmmsm01.mat_position ***********", tmmsm01.mat_position);
+171	
+172						if (0 != strcmp(tep0002.code_desc_1_content, "OFF") && 0 == strcmp(tmmsm01.mat_position, "1") && 0 == strcmp(tmmsm01.slab_out_place, " "))//参与宽度控制标定
+173						{
+  ====
+1145						// DM8 适配 CHANGE-EXEC-001:更新缺陷重量;EXEC SQL 改为 CDbCommand 调用(方案B试点)。
+1146						// 改写原因:EXEC SQL 嵌入式需 DB2 预编译器;方案B 改为 CDbCommand 参数绑定,消除预编译器依赖。
+1147						// 注意:方案A(保留 EXEC SQL)与方案B(CDbCommand)并存,后期确认构建系统支持后二选一。
+1148						// 原方案A(EXEC SQL,完整保留):
+1149						// EXEC SQL UPDATE tymsm44 SET REST_ROLLER_NO = 'R1' WHERE MAT_NO = :tmmsm01.mat_no;
+1150						// 方案B(CDbCommand):
+1151							sqlstr = " UPDATE TMMSM01 SET DEFECT_WT = ?, SPARE_ITEM_N3 = ? WHERE mat_no = ? AND mat_position = '1'";
+1152							cmd_x1j197b.SetCommandText(sqlstr);
+1153							cmd_x1j197b.Parameters.Set("p1", x1j197b.head_width);
+1154							cmd_x1j197b.Parameters.Set("p2", x1j197b.tail_width);
+1155							cmd_x1j197b.Parameters.Set("p3", tmmsm01.mat_no);
+1156							cmd_x1j197b.Execute();
+1157					}
+1158					else if (strcmp(tymsm44.rest_roller_no, "A3") == 0 && x1j197b.mat_act_wt>8000 && 0 == strcmp(tep0002.code_desc_4_content, "ON"))
+1159					{
+1160						EDLog(1, 1, "重量来自计量系统");
+1161						EXEC SQL
+1162							UPDATE tmmsm01
+1163							set SCRAP_REMARK = to_char(:x1j197b.mat_act_wt)
+1164						where mat_no = :tmmsm01.mat_no and mat_position = '1'
+1165							;
+1166					}
+1167	
+  ====

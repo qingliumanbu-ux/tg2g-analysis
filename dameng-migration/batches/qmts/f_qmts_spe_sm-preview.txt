@@ -1,0 +1,108 @@
+### CHANGE-187  原行 351-351
+  L351 前: sqlstr = " SELECT substr(@formula_value,1,@i-1) || ')' || substr(@formula_value,@i+1) FROM  SYSIBM.DUAL ";
+  L351 后: sqlstr = " SELECT substr(@formula_value,1,@i-1) || ')' || substr(@formula_value,@i+1) FROM  DUAL ";
+### CHANGE-188  原行 359-359
+  L359 前: sqlstr = " SELECT substr(@formula_value,1,@i-1) || ')' || substr(@formula_value,@i+1)  FROM  SYSIBM.DUAL ";
+  L359 后: sqlstr = " SELECT substr(@formula_value,1,@i-1) || ')' || substr(@formula_value,@i+1)  FROM  DUAL ";
+### CHANGE-189  原行 381-381
+  L381 前: sqlstr = " SELECT substr(@formula_value,1,@i-1) || 'abs(' || substr(@formula_value,@i+1) FROM SYSIBM.DUAL  ";
+  L381 后: sqlstr = " SELECT substr(@formula_value,1,@i-1) || 'abs(' || substr(@formula_value,@i+1) FROM DUAL  ";
+### CHANGE-190  原行 389-389
+  L389 前: sqlstr = " SELECT substr(@formula_value,1,@i-1) || 'abs(' || substr(@formula_value,@i+1) FROM SYSIBM.DUAL ";
+  L389 后: sqlstr = " SELECT substr(@formula_value,1,@i-1) || 'abs(' || substr(@formula_value,@i+1) FROM DUAL ";
+### CHANGE-191  原行 436-436
+  L436 前: sqlstr = " SELECT replace(@formula_value,@elm_name,'') FROM SYSIBM.DUAL  ";
+  L436 后: sqlstr = " SELECT replace(@formula_value,@elm_name,'') FROM DUAL  ";
+### CHANGE-192  原行 444-444
+  L444 前: sqlstr = " SELECT replace(@formula_value,@elm_name,'') FROM SYSIBM.DUAL ";
+  L444 后: sqlstr = " SELECT replace(@formula_value,@elm_name,'') FROM DUAL ";
+### CHANGE-193  原行 498-498
+  L498 前: sqlstr = "SELECT replace(@formula_value,@elm_name,@elm_value)  FROM SYSIBM.DUAL  ";
+  L498 后: sqlstr = "SELECT replace(@formula_value,@elm_name,@elm_value)  FROM DUAL  ";
+### CHANGE-194  原行 506-506
+  L506 前: sqlstr = " SELECT replace(@formula_value,@elm_name,@elm_value)  FROM SYSIBM.DUAL ";
+  L506 后: sqlstr = " SELECT replace(@formula_value,@elm_name,@elm_value)  FROM DUAL ";
+### CHANGE-195  原行 532-532
+  L532 前: sqlstr = " SELECT replace(@formula_value,@elm_name,@elm_value) FROM SYSIBM.DUAL  ";
+  L532 后: sqlstr = " SELECT replace(@formula_value,@elm_name,@elm_value) FROM DUAL  ";
+### CHANGE-196  原行 540-540
+  L540 前: sqlstr = " SELECT replace(@formula_value,@elm_name,@elm_value) FROM SYSIBM.DUAL ";
+  L540 后: sqlstr = " SELECT replace(@formula_value,@elm_name,@elm_value) FROM DUAL ";
+### CHANGE-197  原行 576-576
+  L576 前: sqlstr = " SELECT ROUND(" + formula_value + +",5) FROM SYSIBM.DUAL  ";
+  L576 后: sqlstr = " SELECT ROUND(" + formula_value + +",5) FROM DUAL  ";
+### CHANGE-198  原行 584-584
+  L584 前: sqlstr = " SELECT ROUND(" + formula_value + +",5) FROM SYSIBM.DUAL ";
+  L584 后: sqlstr = " SELECT ROUND(" + formula_value + +",5) FROM DUAL ";
+### CHANGE-199  原行 609-609
+  L609 前: sqlstr = "SELECT replace(@symbol,'>','-')  FROM SYSIBM.DUAL  ";
+  L609 后: sqlstr = "SELECT replace(@symbol,'>','-')  FROM DUAL  ";
+### CHANGE-200  原行 617-617
+  L617 前: sqlstr = " SELECT replace(@symbol,'>','-')  FROM SYSIBM.DUAL ";
+  L617 后: sqlstr = " SELECT replace(@symbol,'>','-')  FROM DUAL ";
+### CHANGE-201  原行 634-634
+  L634 前: sqlstr = "SELECT replace(@symbol,'<','+') FROM SYSIBM.DUAL  ";
+  L634 后: sqlstr = "SELECT replace(@symbol,'<','+') FROM DUAL  ";
+### CHANGE-202  原行 642-642
+  L642 前: sqlstr = " SELECT replace(@symbol,'<','+')  FROM SYSIBM.DUAL ";
+  L642 后: sqlstr = " SELECT replace(@symbol,'<','+')  FROM DUAL ";
+### CHANGE-203  原行 688-688
+  L688 前: sqlstr = " SELECT replace(@symbol,@elm_name,'') FROM SYSIBM.DUAL  ";
+  L688 后: sqlstr = " SELECT replace(@symbol,@elm_name,'') FROM DUAL  ";
+### CHANGE-204  原行 696-696
+  L696 前: sqlstr = " SELECT replace(@symbol,@elm_name,'') FROM SYSIBM.DUAL ";
+  L696 后: sqlstr = " SELECT replace(@symbol,@elm_name,'') FROM DUAL ";
+### CHANGE-205  原行 749-749
+  L749 前: sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM SYSIBM.DUAL  ";
+  L749 后: sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM DUAL  ";
+### CHANGE-206  原行 757-757
+  L757 前: sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM SYSIBM.DUAL ";
+  L757 后: sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM DUAL ";
+### CHANGE-207  原行 782-782
+  L782 前: sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM SYSIBM.DUAL  ";
+  L782 后: sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM DUAL  ";
+### CHANGE-208  原行 790-790
+  L790 前: sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM SYSIBM.DUAL ";
+  L790 后: sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM DUAL ";
+### CHANGE-209  原行 823-823
+  L823 前: sqlstr = " SELECT " + symbol + " FROM SYSIBM.DUAL  ";
+  L823 后: sqlstr = " SELECT " + symbol + " FROM DUAL  ";
+### CHANGE-210  原行 831-831
+  L831 前: sqlstr = " SELECT " + symbol + " FROM SYSIBM.DUAL ";
+  L831 后: sqlstr = " SELECT " + symbol + " FROM DUAL ";
+### CHANGE-211  原行 945-945
+  L945 前: sqlstr = " SELECT substr(@formula_std,1,@i-1) || ')' || substr(@formula_std,@i+1) FROM SYSIBM.DUAL  ";
+  L945 后: sqlstr = " SELECT substr(@formula_std,1,@i-1) || ')' || substr(@formula_std,@i+1) FROM DUAL  ";
+### CHANGE-212  原行 953-953
+  L953 前: sqlstr = " SELECT substr(@formula_std,1,@i-1) || ')' || substr(@formula_std,@i+1) FROM SYSIBM.DUAL ";
+  L953 后: sqlstr = " SELECT substr(@formula_std,1,@i-1) || ')' || substr(@formula_std,@i+1) FROM DUAL ";
+### CHANGE-213  原行 975-975
+  L975 前: sqlstr = " SELECT substr(@formula_std,1,@i-1) || 'abs(' || substr(@formula_std,@i+1) FROM SYSIBM.DUAL  ";
+  L975 后: sqlstr = " SELECT substr(@formula_std,1,@i-1) || 'abs(' || substr(@formula_std,@i+1) FROM DUAL  ";
+### CHANGE-214  原行 983-983
+  L983 前: sqlstr = " SELECT substr(@formula_std,1,@i-1) || 'abs(' || substr(@formula_std,@i+1) FROM SYSIBM.DUAL ";
+  L983 后: sqlstr = " SELECT substr(@formula_std,1,@i-1) || 'abs(' || substr(@formula_std,@i+1) FROM DUAL ";
+### CHANGE-215  原行 1029-1029
+  L1029 前: sqlstr = " SELECT replace(@formula_std,@elm_name,'') FROM SYSIBM.DUAL  ";
+  L1029 后: sqlstr = " SELECT replace(@formula_std,@elm_name,'') FROM DUAL  ";
+### CHANGE-216  原行 1037-1037
+  L1037 前: sqlstr = " SELECT replace(@formula_std,@elm_name,'') FROM SYSIBM.DUAL ";
+  L1037 后: sqlstr = " SELECT replace(@formula_std,@elm_name,'') FROM DUAL ";
+### CHANGE-217  原行 1090-1090
+  L1090 前: sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM SYSIBM.DUAL  ";
+  L1090 后: sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM DUAL  ";
+### CHANGE-218  原行 1098-1098
+  L1098 前: sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM SYSIBM.DUAL ";
+  L1098 后: sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM DUAL ";
+### CHANGE-219  原行 1124-1124
+  L1124 前: sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM SYSIBM.DUAL  ";
+  L1124 后: sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM DUAL  ";
+### CHANGE-220  原行 1132-1132
+  L1132 前: sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM SYSIBM.DUAL ";
+  L1132 后: sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM DUAL ";
+### CHANGE-221  原行 1167-1167
+  L1167 前: sqlstr = " SELECT ROUND(" + formula_std + +",5) FROM SYSIBM.DUAL  ";
+  L1167 后: sqlstr = " SELECT ROUND(" + formula_std + +",5) FROM DUAL  ";
+### CHANGE-222  原行 1175-1175
+  L1175 前: sqlstr = " SELECT ROUND(" + formula_std + +",5) FROM SYSIBM.DUAL ";
+  L1175 后: sqlstr = " SELECT ROUND(" + formula_std + +",5) FROM DUAL ";

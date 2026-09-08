@@ -1,0 +1,34 @@
+######## libWM00/f_create_crane_no.cpp
+### CHANGE-234  原行 141-142
+  L142 前: " FROM sysibm.sysdummy1";
+  L142 后: " FROM DUAL";
+
+######## libWM00/f_wm00_pile_comf.cpp
+### CHANGE-234  原行 74-77
+  L76 前: " AND timestampdiff(4, char(current timestamp - timestamp(FIELDNO_UPTIME))) <= 24 * 60 "/*原程序current timestamp - TO_DATE(FIELDNO_UPTIME,'YYYY-MM-DD HH24:MI:SS') <= 24*60*60*/
+  L76 后: " AND timestampdiff(4, char(CURRENT_TIMESTAMP - timestamp(FIELDNO_UPTIME))) <= 24 * 60 "/*原程序current timestamp - TO_DATE(FIELDNO_UPTIME,'YYYY-MM-DD HH24:MI:SS') <= 24*60*60*/
+### CHANGE-235  原行 253-257
+  L256 前: " AND timestampdiff(4, char(current timestamp - timestamp(FIELDNO_UPTIME))) <= 24 * 60"
+  L256 后: " AND timestampdiff(4, char(CURRENT_TIMESTAMP - timestamp(FIELDNO_UPTIME))) <= 24 * 60"
+
+######## libWM00/f_wm00_pile_jud.cpp
+### CHANGE-234  原行 106-107
+  L107 前: " FROM sysibm.sysdummy1";
+  L107 后: " FROM DUAL";
+### CHANGE-235  原行 179-180
+  L180 前: " FROM sysibm.sysdummy1";
+  L180 后: " FROM DUAL";
+
+######## p_wm00_8100/wm00_stockNo.cpp
+### CHANGE-234  原行 93-96
+  L94 前: " SELECT ' ' AS STOCK_NO, ' ' AS STOCK_DESC FROM SYSIBM.SYSDUMMY1 UNION ALL" //  oracle DUAL
+  L94 后: " SELECT ' ' AS STOCK_NO, ' ' AS STOCK_DESC FROM DUAL UNION ALL" //  oracle DUAL
+### CHANGE-235  原行 101-104
+  L102 前: " SELECT ' ' AS STOCK_NO, ' ' AS STOCK_DESC FROM SYSIBM.SYSDUMMY1 UNION ALL"
+  L102 后: " SELECT ' ' AS STOCK_NO, ' ' AS STOCK_DESC FROM DUAL UNION ALL"
+
+######## p_wm00_8200/wm00_stockNo.cpp
+### CHANGE-234  原行 96-101
+  L98 前: " SELECT ' ' AS STOCK_NO, ' ' AS STOCK_DESC FROM SYSIBM.SYSDUMMY1 UNION ALL"
+  L98 后: " SELECT ' ' AS STOCK_NO, ' ' AS STOCK_DESC FROM DUAL UNION ALL"
+

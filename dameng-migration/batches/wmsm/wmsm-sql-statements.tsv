@@ -1,0 +1,838 @@
+file	start	end	preview
+libWMSM/f_auto.cpp	68	72	CString Sql = "SELECT B.MAT_NO,A.PLAN_NO,A.ST_NO,A.MAT_LEN,A.MAT_THICK,A.MAT_WIDTH,B.X_FROM,B.Y_FROM,B.LAYERNO,B.STOCK_PLACE_NO,B.LOGIC_STOCK_NO,B.PACK_NO,B.ROW
+libWMSM/f_auto.cpp	102	103	Sql = "SELECT STOCK_PLACE_NO_TO FROM TWMA7 WHERE STOCK_PLACE_NO_FROM='" + STOCK_PLACE_NO + "' AND YARD_LAYER_FROM='" + layerno_nest.ToString() + "' AND SUBSTR (
+libWMSM/f_auto.cpp	105	106	Sql = "SELECT STOCK_PLACE_NO_TO FROM TWMA7 WHERE STOCK_PLACE_NO_FROM='" + STOCK_PLACE_NO + "' AND YARD_LAYER_FROM='" + layerno_down.ToString() + "' AND SUBSTR (
+libWMSM/f_auto.cpp	112	113	Sql = " SELECT X_FROM, Y_FROM, STOCK_PLACE_NO, LOGIC_STOCK_NO,ROWNO from twm04 where stock_place_no='" + stock_place_no_from + "'";
+libWMSM/f_auto.cpp	465	467	sql = "SELECT STOCK_PLACE_NO,MAX_HEIGHT,MAX_WIDTH,MAX_LEN,MAX_WT,"
+libWMSM/f_auto.cpp	468	469	sqlst = " SELECT MAT_ACT_LEN,MAT_ACT_THICK,MAT_ACT_WIDTH,MAT_ACT_WT FROM TMMSM01 WHERE MAT_NO='" + mat_no + "'";
+libWMSM/f_auto_sm.cpp	83	83	"select distinct stock_place_no, sum(mat_num) mat_num from( "
+libWMSM/f_auto_sm.cpp	84	88	"select distinct stock_place_no, count(1) mat_num from tmmsm01 "
+libWMSM/f_auto_sm.cpp	89	94	"select distinct to_stock_place_no stock_place_no, count(1) mat_num from twma0 "
+libWMSM/f_auto_sm.cpp	99	99	"select distinct stock_place_no, sum(mat_num) mat_num from( "
+libWMSM/f_auto_sm.cpp	100	104	"select distinct stock_place_no, count(1) mat_num from tmmsm01 "
+libWMSM/f_auto_sm.cpp	105	110	"select distinct to_stock_place_no stock_place_no, count(1) mat_num from twma0 "
+libWMSM/f_auto_sm.cpp	152	152	sqlstr1 = " select sum(layernum) from ( "
+libWMSM/f_auto_sm.cpp	153	153	"select count(1) layernum from tmmsm01 where in_flag = '1' and stock_place_no = @stock_place_no and stock_no = 'F11' union all "
+libWMSM/f_auto_sm.cpp	154	155	"select count(1) layernum from twma0 where to_stock_place_no = @stock_place_no and stock_no = 'F11' and stock_oper_order like '1%' ) ";
+libWMSM/f_auto_sm.cpp	187	187	"select distinct stock_place_no, sum(mat_num) mat_num from( "
+libWMSM/f_auto_sm.cpp	188	192	"select distinct stock_place_no, count(1) mat_num from tmmsm01 "
+libWMSM/f_auto_sm.cpp	193	198	"select distinct to_stock_place_no stock_place_no, count(1) mat_num from twma0 "
+libWMSM/f_auto_sm.cpp	235	235	sqlstr1 = " select sum(layernum) from ( "
+libWMSM/f_auto_sm.cpp	236	236	"select count(1) layernum from tmmsm01 where in_flag = '1' and  stock_place_no = @stock_place_no and stock_no = 'F11' union all "
+libWMSM/f_auto_sm.cpp	237	238	"select count(1) layernum from twma0 where to_stock_place_no = @stock_place_no and stock_no = 'F11' and stock_oper_order like '1%' ) ";
+libWMSM/f_auto_sm.cpp	267	271	" select stock_place_no,hall_no from twm04 "
+libWMSM/f_auto_sm.cpp	294	294	sqlstr1 = " select sum(layernum) from ( "
+libWMSM/f_auto_sm.cpp	295	295	"select count(1) layernum from tmmsm01 where in_flag = '1' and  stock_place_no = @stock_place_no and stock_no = 'F11' union all "
+libWMSM/f_auto_sm.cpp	296	297	"select count(1) layernum from twma0 where to_stock_place_no = @stock_place_no and stock_no = 'F11' and stock_oper_order like '1%' ) ";
+libWMSM/f_wmhrsm_cmd_auto.cpp	127	129	CString sql = " SELECT B.STOCK_PLACE_NO,B.STOCK_NO,B.HALL_NO,B.MAT_KIND,B.STOCK_PLACE_TYPE,B.DEV_DIV,B.DEV_NO,B.ROWNO,B.COLUMN_NO, "
+libWMSM/f_wmhrsm_cmd_auto.cpp	185	186	CString sql = "SELECT A.MAT_NO,B.* FROM TWMA2 A left join " + table_name + " B ON A.MAT_NO=B.MAT_NO WHERE A.STOCK_PLACE_NO='" + STOCK_PLACE_NO + "'";
+libWMSM/f_wmhrsm_cmd_auto.cpp	221	222	CString  sql = "SELECT A.MAT_NO,B.STOCK_PLACE_NO FROM " + table_name + " A,TWMA2 B WHERE A.MAT_NO=B.MAT_NO AND A.MAT_NO='" + mat_no + "'";
+libWMSM/f_wmhrsm_cmd_auto.cpp	342	345	CString sql = " SELECT * FROM TWM04 WHERE STOCK_NO= '" + bcls_ret->Tables["AUTO_INFO_IN"].Rows[0]["STOCK_NO"].ToString() + "'";
+libWMSM/f_wmhrsm_cmd_auto.cpp	454	456	sql = " select " + sqlclumno + " from " + table_name + " where mat_no='" + mat_no + "'";
+libWMSM/f_wmhrsm_cmd_del.cpp	62	63	sqlstr = "select * from twma7  where MAIN_MAT_NO='"+ bcls_rec->Tables["WM_CMD"].Rows[0]["MAIN_MAT_NO"].ToString() +"' ORDER BY CMD_SEQ ";
+libWMSM/f_wmhrsm_cmd_del.cpp	128	129	sqlstr = "SELECT STOCK_PLACE_POSITION_FR,STOCK_PLACE_POSITION_TO,MAT_NO,CMD_METHOD,STOCK_PLACE_NO_TO FROM TWMA7 WHERE  MAIN_MAT_NO='" + v_mat_no + "' AND MAT_NO
+libWMSM/f_wmhrsm_cranecmd_make.cpp	84	85	sqlstr = "select mat_no from twma2 where stock_place_no ='" + bcls_rec->Tables["WM_CMD"].Rows[i]["STOCK_PLACE_NO_FROM"].ToString() + "'where mat_no not in (sele
+libWMSM/f_wmhrsm_cranecmd_make.cpp	216	217	sqlstr = "select * from twma2 where stock_place_no ='" + v_stock_place_no_from + "' and mat_no not in(select mat_no from twma7) and mat_no not in ('" + mat_no_s
+libWMSM/f_wmsm_21a009_snd1.cpp	90	91	sqlstr = "select * from twmsm32m t where t.plan_no='" + plan_no + "' and t.mission_no='" + mission_no + "'";
+libWMSM/f_wmsm_21a019_snd.cpp	87	88	sqlstr = "select * from twmsm30m t where t.plan_no='" + plan_no + "'";
+libWMSM/f_wmsm_6380.cpp	92	108	twm41dj["C_DELIVERYID"] = "6240" + c_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+libWMSM/f_wmsm_CraneCmd_C_Make.cpp	89	90	sqlstr = " SELECT COUNT(1) FROM TMMSM01"
+libWMSM/f_wmsm_CraneCmd_C_Make.cpp	100	101	sqlstr = " SELECT COUNT(1) FROM TMMHR01"
+libWMSM/f_wmsm_CraneCmd_C_Make.cpp	168	169	sqlstr = "SELECT mat_no,mat_kind,mat_shape_flag,mat_act_thick,mat_act_width,mat_act_len,mat_act_wt"
+libWMSM/f_wmsm_CraneCmd_C_Make.cpp	631	633	sqlstr = "SELECT a.mat_no,a.stock_no,a.hall_no,a.stock_place_no,a.layerno,b.mat_kind,"
+libWMSM/f_wmsm_CraneCmd_C_follow.cpp	125	126	sqlstr = " select a.layerno, a.mat_no,a.stock_no,a.stock_place_no,b.stock_place_type,c.stock_no_to,b.dev_div,c.stock_oper_order_fin,c.stock_place_no_fin,c.stock
+libWMSM/f_wmsm_CraneCmd_S_Make.cpp	84	85	sqlstr = " SELECT COUNT(1) FROM TMMSM01"
+libWMSM/f_wmsm_CraneCmd_S_Make.cpp	95	96	sqlstr = " SELECT COUNT(1) FROM TMMHR01"
+libWMSM/f_wmsm_CraneCmd_S_Make.cpp	125	126	sqlstr = "SELECT mat_no,mat_kind,mat_shape_flag,mat_act_thick,mat_act_width,mat_act_len,mat_act_wt"
+libWMSM/f_wmsm_CraneCmd_S_Make.cpp	273	274	sqlstr = "SELECT mat_no,mat_kind,mat_shape_flag,mat_act_thick,mat_act_width,mat_act_len,mat_act_wt"
+libWMSM/f_wmsm_CraneCmd_S_Make.cpp	511	514	sqlstr = "select mat_no,stock_place_no,layerno from twma2 a where stock_place_no='" +
+libWMSM/f_wmsm_CraneCmd_S_Make.cpp	531	533	sqlstr = "SELECT a.mat_no,a.stock_no,a.hall_no,a.stock_place_no,a.layerno,b.mat_kind,"
+libWMSM/f_wmsm_CraneCmd_S_Make.cpp	670	673	sqlstr = "select mat_no,stock_place_no,layerno from twma2 a where stock_place_no='" +
+libWMSM/f_wmsm_CraneCmd_S_Make.cpp	690	692	sqlstr = "SELECT a.mat_no,a.stock_no,a.hall_no,a.stock_place_no,a.layerno,b.mat_kind,"
+libWMSM/f_wmsm_auto_db.cpp	112	117	CString v_practice_no = "XG6240" + datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(ZC_SJ.NEXTVAL), 4, '0') FROM DUAl");
+libWMSM/f_wmsm_auto_db.cpp	195	198	CString qx_type = Db::QueryCString("select CODE_DESC_3_CONTENT from TWMSMZD02 where CODE_CLASS='WM02' AND CODE='" + tmmsm01["GUIDE_DEST"].ToString() + "'");
+libWMSM/f_wmsm_auto_db.cpp	210	226	twm41dj["C_DELIVERYID"] = "6240" + datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+libWMSM/f_wmsm_craneCmdMake.cpp	70	71	sqlstr = " SELECT COUNT(1) FROM TMMSM01"
+libWMSM/f_wmsm_craneCmdMake.cpp	81	82	sqlstr = " SELECT COUNT(1) FROM TMMHR01"
+libWMSM/f_wmsm_craneCmdMake.cpp	159	160	sqlstr = "SELECT mat_no,mat_kind,mat_shape_flag,mat_act_thick,mat_act_width,mat_act_len,mat_act_wt"
+libWMSM/f_wmsm_craneCmdMake.cpp	200	202	sqlstr = "SELECT a.mat_no,a.stock_no,a.hall_no,a.stock_place_no,a.layerno,b.mat_kind,"
+libWMSM/f_wmsm_craneCmdMake.cpp	386	391	sqlstr = "SELECT b.stock_place_no FROM twm09 a,twm04 b WHERE stock_no_from = '" +
+libWMSM/f_wmsm_craneCmd_C_2E.cpp	135	137	sqlstr = "SELECT d.measure_wt_flag,a.mat_no,a.plan_no,a.plan_exec_seq_no,b.stock_no,b.hall_no,b.stock_place_no,b.layerno,c.stock_place_type,c.dev_div"
+libWMSM/f_wmsm_craneCmd_C_delete.cpp	61	62	sqlstr = " select a.mat_no,a.stock_place_no_from,b.stock_place_type,b.dev_div,a.main_mat_no,a.yard_layer_from from twma7 a,twm04 b"
+libWMSM/f_wmsm_craneCmd_S_2C_do.cpp	108	109	sqlstr = "select * from twm000f where stock_place_no_fin='" + stock_place_no_fin + "' order by plan_exec_seq_no desc";
+libWMSM/f_wmsm_craneCmd_S_2C_do.cpp	114	115	sqlstr = " delete from twma7 where crane_inst_status = '0' and stock_place_no_fin = '" + stock_place_no_fin + "'";
+libWMSM/f_wmsm_craneCmd_S_2C_do.cpp	469	473	"select mat_no,stock_place_no,layerno from twma2 a where stock_place_no='" +
+libWMSM/f_wmsm_craneCmd_S_2C_do.cpp	484	486	sqlstr = "SELECT a.mat_no,a.stock_no,a.hall_no,a.stock_place_no,a.layerno,b.mat_kind,"
+libWMSM/f_wmsm_craneCmd_S_2C_do.cpp	591	592	sqlstr = "delete from twm000f where stock_place_no_fin='" + stock_place_no_fin + "'";
+libWMSM/f_wmsm_craneCmd_S_2C_do.cpp	596	597	sqlstr = "select mat_no from twm000f where stock_place_no_fin=' ' and rownum<6 order by plan_exec_seq_no";
+libWMSM/f_wmsm_craneCmd_S_delete.cpp	49	50	sqlstr = " select a.mat_no,a.stock_place_no_from,b.stock_place_type,b.dev_div,a.main_mat_no,a.yard_layer_from,c.layerno from twma7 a,twm04 b,twma2 c"
+libWMSM/f_wmsm_craneCmd_S_delete.cpp	58	59	sqlstr = " select a.mat_no,a.stock_place_no_from,a.stock_place_no_to,a.stock_no,b.stock_place_type,b.dev_div,a.main_mat_no,a.yard_layer_from from twma7 a,twm04 
+libWMSM/f_wmsm_craneCmd_S_delete.cpp	156	157	sqlstr = "  select a.mat_no, a.layerno,b.stock_oper_order,b.main_mat_no from twma2 a,twma7 b where a.mat_no=b.mat_no and a.stock_place_no = '" + cmd_dtMat.Rows[
+libWMSM/f_wmsm_craneCmd_S_delete.cpp	211	214	sqlstr = " select mat_no,layerno from twma2 "
+libWMSM/f_wmsm_craneCmd_S_follow.cpp	152	153	sqlstr = " select a.layerno, a.mat_no,a.stock_no,a.stock_place_no,b.stock_place_type,c.stock_no_to,c.stock_no_fin,b.dev_div,c.stock_oper_order_fin,c.stock_place
+libWMSM/f_wmsm_craneCmd_S_follow.cpp	333	334	sqlstr = "select CMD_SEQ from twma7 a,twma2 b where a.mat_no=b.mat_no and b.layerno='" + dtMat.Rows[0]["LAYERNO"].ToString() + "' and b.stock_place_no='" + dtMa
+libWMSM/f_wmsm_craneCmd_layer_update.cpp	83	84	sqlstr = "select b.mat_no,b.layerno,a.stock_oper_order,a.stock_place_no_fin from twma7 a,twma2 b where a.mat_no=b.mat_no and b.stock_place_no='" + stock_place_n
+libWMSM/f_wmsm_craneCmd_layer_update.cpp	106	107	"select a.mat_no,b.cmd_seq,a.layerno from twma2 a LEFT OUTER JOIN twma7 b"
+libWMSM/f_wmsm_craneCmd_layer_update.cpp	112	113	"select a.mat_no,b.cmd_seq,a.layerno from twma2 a LEFT OUTER JOIN twma7 b"
+libWMSM/f_wmsm_craneCmd_layer_update.cpp	148	148	sqlstr = "select b.cmd_seq,a.layerno from twma2 a,twma7 b where a.mat_no=b.mat_no and a.stock_place_no='" + stock_place_no + "' and a.layerno=(select min(layern
+libWMSM/f_wmsm_craneCmd_layer_update.cpp	152	154	sqlstr = "select b.cmd_seq,a.layerno from twma2 a,twma7 b where a.mat_no=b.mat_no and a.stock_place_no='" + stock_place_no + "' and b.vehicle_no='" + vehicle_no
+libWMSM/f_wmsm_craneCmd_layer_update.cpp	162	162	sqlstr = "update twma7  set cmd_seq='" + cmd_seq.Rows[0]["CMD_SEQ"].ToString() + "' where stock_place_no_from='" + stock_place_no + "'";
+libWMSM/f_wmsm_craneCmd_layer_update.cpp	166	169	sqlstr = "update twma7  set cmd_seq='" + cmd_seq.Rows[0]["CMD_SEQ"].ToString() + "' where stock_place_no_from='" + stock_place_no + "'  and vehicle_no='" + vehi
+libWMSM/f_wmsm_craneCmd_layer_update.cpp	176	176	sqlstr = "select mat_no from twma2 where stock_place_no='" + stock_place_no + "' and layerno>='" + cmd_seq.Rows[0]["LAYERNO"].ToString() + "' order by layerno";
+libWMSM/f_wmsm_craneCmd_layer_update.cpp	180	182	sqlstr = "select mat_no from twma2 where stock_place_no='" + stock_place_no + "' and layerno>='" + cmd_seq.Rows[0]["LAYERNO"].ToString() + "' and vehicle_no='" 
+libWMSM/f_wmsm_craneCmd_seq_update.cpp	54	55	sqlstr = "select cmd_seq,mat_no from twma7 order by cmd_seq,yard_layer_from";
+libWMSM/f_wmsm_cranecmd_S_2E_do.cpp	316	317	sqlstr = "select mat_no,stock_place_no,layerno from twma2 a where stock_place_no='" + dtCraneCmd.Rows[i]["STOCK_PLACE_NO_FROM"].ToString() + "'and layerno>='" +
+libWMSM/f_wmsm_cranecmd_S_2E_do.cpp	329	331	sqlstr = "SELECT a.mat_no,a.stock_no,a.hall_no,a.stock_place_no,a.layerno,b.mat_kind,"
+libWMSM/f_wmsm_load_d_proc.cpp	54	55	sqlstr = " delete from wl_load_record where sj_no='" + bcls_rec->Tables["21A009"].Rows[0]["PRACTICE_NO"].ToString() + "' ";
+libWMSM/f_wmsm_load_d_proc.cpp	65	66	sqlstr = " delete from wl_load_record_det																															 \
+libWMSM/f_wmsm_load_proc.cpp	66	121	sqlstr = " insert into WL_LOAD_RECORD (ARRI_STATION, ARRI_STATION_CODE, BACK1, BACK10, BACK2, BACK3, BACK4, BACK5, BACK6, BACK7,\
+libWMSM/f_wmsm_load_proc.cpp	128	163	sqlstr = " insert into WL_LOAD_RECORD_DET (BACK11, BACK12, BACK13, BACK14, BACK15, BACK16, BACK17, BACK18, BACK19, BACK20,					 \
+libWMSM/f_wmsm_slab_check.cpp	100	101	" SELECT SLAB_MAX_LEN,SLAB_MIN_LEN  FROM TPSSM03 WHERE PONO =@pono"
+libWMSM/f_wmsm_slab_check.cpp	139	140	" SELECT * FROM tqmts9cc WHERE STRAND_NO = @mat_destion  AND STEEL_GROUP =@v_hardness_group FETCH FIRST 1 ROWS ONLY "
+libWMSM/f_wmsm_slab_check.cpp	168	169	" SELECT * FROM tqmts9cc WHERE STRAND_NO = @mat_destion  AND STEEL_GROUP =@v_hardness_group FETCH FIRST 1 ROWS ONLY "
+libWMSM/f_wmsm_slab_check.cpp	184	185	" SELECT * FROM tqmts9cc WHERE STRAND_NO = @mat_destion  AND STEEL_GROUP =@v_hardness_group FETCH FIRST 1 ROWS ONLY "
+libWMSM/f_wmsm_slab_check.cpp	197	198	" SELECT * FROM tqmts9cc WHERE STRAND_NO = @mat_destion  AND STEEL_GROUP ='00' FETCH FIRST 1 ROWS ONLY "
+libWMSM/f_wmsm_slab_no.cpp	102	125	sqlstr = " SELECT max(LSLAB_NO)                                                      SLAB_NO,\
+libWMSM/f_wmsm_slab_no.cpp	135	137	sqlstr = " select * from tpssm03 where  SLAB_PROD_FLAG='0' AND CAST_LOT_NO = (select CAST_LOT_NO from tpssm01 where PONO = '" + pono + "') and SUBSTR(PONO, 1, 1
+libWMSM/f_wmsm_slab_no.cpp	175	198	sqlstr = "  SELECT max(LSLAB_NO)                                                      SLAB_NO,\
+libWMSM/f_wmsm_slab_no.cpp	208	210	sqlstr = " select * from tpssm03 where  SLAB_PROD_FLAG='0' AND CAST_LOT_NO = (select CAST_LOT_NO from tpssm01 where PONO = '" + pono + "') and SUBSTR(PONO, 1, 1
+libWMSM/f_wmsm_slab_weight.cpp	84	85	" SELECT SLAB_DENSITY, SLAB_WTADJ_FACTOR, SLAB_CUT_SHK_FACTOR FROM TQMTS9CC WHERE STRAND_NO = @v_strand_no  "
+libWMSM/f_wmsm_t8p301_snd.cpp	73	76	CString old_if_hr = Db::QueryCString(" select CODE_DESC_3_CONTENT from TWMSMZD02 where CODE_CLASS = 'WM02' and CODE =(select GUIDE_DEST from tmmsm01 where MAT_N
+libWMSM/f_wmsm_t8p301_snd.cpp	133	134	sqlstr = " select ELM_CODE,ELM_ACT from tqmts29 where HEAT_NO='" + tmmsm01["HEAT_NO"].ToString() + "' ";
+libWMSM/f_wmsm_t8p301_snd.cpp	139	140	sqlstr = " select TC_ITEM_NAME,REMARK from TEXT2 where TC_NO='T8P301' AND REMARK!=' ' ";
+libWMSM/f_wmsm_t8p303_snd.cpp	51	70	CString v_guide_dest = Db::QueryCString(" select CODE_DESC_1_CONTENT from TWMSMZD02 where CODE_CLASS = 'WM02' and CODE ='" + tmmsm01["GUIDE_DEST"].ToString() + 
+libWMSM/f_wmsm_upperMat_autoCmd.cpp	119	121	sqlstr = "SELECT mat_no,stock_no,stock_place_no,layerno FROM twma2 t WHERE stock_place_no = '" + stockPlaceNo +
+libWMSM/f_wmsmsm13_proc.cpp	202	204	" SELECT STOCK_NO FROM TWM000E"
+libWMSM/f_wmsmsm13_proc.cpp	225	227	" SELECT STOCK_NO FROM TWM000E"
+libWMSM/f_wmsmsm13_proc.cpp	247	248	" SELECT STOCK_PLACE_NO FROM TWM04"
+libWMSM/f_wmsmsm13_proc.cpp	406	407	" SELECT STOCK_NO FROM TWM04"
+libWMSM/f_wmsmsm_crane_up.cpp	185	189	sqlstr = "SELECT COUNT(1) FROM twma2 a WHERE EXISTS(SELECT 1 FROM twma2 b WHERE a.stock_no = b.stock_no"
+libWMSM/f_wmsmsm_crane_up.cpp	193	198	sqlstr = "SELECT COUNT(1) FROM twma2 a WHERE EXISTS(SELECT 1 FROM twma2 b WHERE a.stock_no = b.stock_no"
+libWMSM/f_wmsmsm_crane_up.cpp	247	247	&&Db::QueryCDecimal("select count(1) from twm04 where logic_stock_no='07' and stock_status!='0'")>0)
+libWMSM/f_wmsmsm_crane_up.cpp	249	250	sqlstr = "select * from twma7 where stock_oper_order='1B' and stock_place_no_to='' and CRANE_INST_STATUS='0'";
+libWMSM/f_wmsmsm_cranecmd_check.cpp	93	94	CDecimal count = Db::QueryCDecimal("SELECT COUNT(1) FROM TWMA7 A,TWMA2 B WHERE A.MAT_NO=B.MAT_NO AND A.STOCK_PLACE_NO_FROM!=B.STOCK_PLACE_NO AND B.STOCK_PLACE_N
+libWMSM/f_wmsmsm_cranecmd_check.cpp	120	121	sqlstr = " SELECT COUNT(1) FROM(SELECT DISTINCT STOCK_PLACE_NO_TO FROM TWMA7 WHERE CRANE_CMDGRPNO = INT('" + twma7["CRANE_CMDGRPNO"].ToString() + "'))";
+libWMSM/f_wmsmsm_cranecmd_check.cpp	128	128	sqlstr = " SELECT * FROM ("
+libWMSM/f_wmsmsm_cranecmd_check.cpp	129	130	" SELECT COUNT(1) AS COUNT_UP FROM TWMA7 WHERE CRANE_CMDGRPNO = INT('" + twma7["CRANE_CMDGRPNO"].ToString() + "') AND YARD_LAYER_FROM>INT('" + twma7["YARD_LAYER
+libWMSM/f_wmsmsm_cranecmd_check.cpp	144	145	sqlstr = "SELECT * FROM TWMA7 WHERE CRANE_CMDGRPNO = INT('" + twma7["CRANE_CMDGRPNO"].ToString() + "')";
+libWMSM/f_wmsmsm_cranecmd_check.cpp	152	153	sqlstr = "SELECT * FROM TWMA7 WHERE CRANE_CMDGRPNO = INT('" + twma7["CRANE_CMDGRPNO"].ToString() + "') AND YARD_LAYER_FROM<=INT('" + twma7["YARD_LAYER_FROM"].To
+libWMSM/f_wmsmsm_cranecmd_check.cpp	158	159	sqlstr = "SELECT * FROM TWMA7 WHERE CRANE_CMDGRPNO = INT('" + twma7["CRANE_CMDGRPNO"].ToString() + "') AND YARD_LAYER_FROM>=INT('" + twma7["YARD_LAYER_FROM"].To
+libWMSM/f_wmsmsm_cranecmd_check.cpp	170	171	sqlstr = "SELECT * FROM TWMA7 WHERE CRANE_CMDGRPNO = INT('" + twma7["CRANE_CMDGRPNO"].ToString() + "') AND YARD_LAYER_FROM=INT('" + twma7["YARD_LAYER_FROM"].ToS
+libWMSM/f_wmsmsm_cranecmd_check.cpp	176	177	sqlstr = "SELECT * FROM TWMA7 WHERE CRANE_CMDGRPNO = INT('" + twma7["CRANE_CMDGRPNO"].ToString() + "')";
+libWMSM/f_wmsmsm_cranecmd_delete.cpp	157	159	sqlstr = "SELECT A.MAT_NO,B.CMD_SEQ,A.LAYERNO,A.STOCK_NO,A.HALL_NO,A.STOCK_PLACE_NO,B.CRANE_INST_STATUS,B.STOCK_OPER_ORDER_FIN,A.LAYERNO,B.STOCK_PLACE_NO_TO,B.S
+libWMSM/f_wmsmsm_cranecmd_delete.cpp	163	164	sqlstr = "DELETE FROM TWMA7 WHERE MAT_NO='" + twma2["MAT_NO"].ToString() + "'";
+libWMSM/f_wmsmsm_cranecmd_delete.cpp	192	193	sqlstr = "SELECT A.MAT_NO,B.CMD_SEQ,A.LAYERNO,A.STOCK_NO,A.HALL_NO,A.STOCK_PLACE_NO,B.CRANE_INST_STATUS,B.STOCK_OPER_ORDER_FIN,A.LAYERNO,B.STOCK_PLACE_NO_TO,B.S
+libWMSM/f_wmsmsm_cranecmd_delete.cpp	250	253	sqlstr = "SELECT COUNT(1) FROM TWMA7 A,TWMA2 B WHERE A.MAT_NO=B.MAT_NO AND A.STOCK_PLACE_NO_FROM ='" + twma2["STOCK_PLACE_NO"].ToString().Trim() + "' AND INT(A.
+libWMSM/f_wmsmsm_cranecmd_delete.cpp	255	258	sqlstr = "SELECT A.MAT_NO,B.CMD_SEQ,A.LOGIC_STOCK_NO AS LOGIC_STOCK_NO_TO ,A.LAYERNO,C.X_FROM,C.Y_FROM,A.STOCK_NO,A.HALL_NO,A.STOCK_PLACE_NO,B.CRANE_INST_STATUS
+libWMSM/f_wmsmsm_cranecmd_delete.cpp	347	348	sqlstr = "DELETE FROM TWMA7 WHERE MAT_NO='" + twma2["MAT_NO"].ToString() + "'";
+libWMSM/f_wmsmsm_cranecmd_delete.cpp	370	371	sqlstr = "SELECT A.MAT_NO,A.STOCK_PLACE_NO_TO,A.STOCK_PLACE_NO_FROM,A.STOCK_NO,A.STOCK_NO_FROM,A.STOCK_NO_FIN,A.STOCK_PLACE_NO_FIN FROM TWMA7 A,TWMA2 B WHERE A.
+libWMSM/f_wmsmsm_cranecmd_delete.cpp	375	376	sqlstr = "DELETE FROM TWMA7 WHERE MAT_NO='" + Table_MAT.Rows[t]["MAT_NO"].ToString() + "'";
+libWMSM/f_wmsmsm_cranecmd_delete.cpp	404	407	sqlstr = "SELECT A.MAT_NO,B.CMD_SEQ,A.LOGIC_STOCK_NO AS LOGIC_STOCK_NO_TO ,A.LAYERNO,C.X_FROM,C.Y_FROM,A.STOCK_NO,A.HALL_NO,A.STOCK_PLACE_NO,B.CRANE_INST_STATUS
+libWMSM/f_wmsmsm_cranecmd_delete.cpp	412	414	sqlstr = "SELECT COUNT(1) FROM TWMA2 A , TWMA7 B "
+libWMSM/f_wmsmsm_cranecmd_delete.cpp	425	426	sqlstr = "DELETE FROM TWMA7 WHERE MAT_NO='" + dtMat.Rows[0]["MAT_NO"].ToString() + "'";
+libWMSM/f_wmsmsm_cranecmd_delete.cpp	452	453	sqlstr = "DELETE FROM TWMA7 WHERE MAT_NO='" + dtMat.Rows[j]["MAT_NO"].ToString() + "'";
+libWMSM/f_wmsmsm_cranecmd_follow.cpp	152	153	sqlstr = "UPDATE TWMA7 SET CRANE_INST_STATUS='0' WHERE MAT_NO='" + matNo + "'";
+libWMSM/f_wmsmsm_cranecmd_follow.cpp	155	161	sqlstr = "SELECT A.MAT_NO,A.MAT_ACT_WT,A.MAT_ACT_THICK,C.MAX_HEIGHT,A.CMD_SEQ,' ' AS LOGIC_STOCK_NO_TO,C.LOGIC_STOCK_NO,A.STOCK_PLACE_NO_TO,A.STOCK_OPER_ORDER,A
+libWMSM/f_wmsmsm_cranecmd_follow.cpp	492	495	sqlstr = "SELECT STOCK_PLACE_NO FROM TWM04 WHERE STOCK_PLACE_TYPE='D' AND DEV_DIV='3' AND HALL_NO='"
+libWMSM/f_wmsmsm_cranecmd_make.cpp	246	247	sqlstr = " SELECT COUNT(1) FROM TMMSM01"
+libWMSM/f_wmsmsm_cranecmd_make.cpp	257	258	sqlstr = " SELECT COUNT(1) FROM TMMHP01"
+libWMSM/f_wmsmsm_cranecmd_make.cpp	280	281	sqlstr = " SELECT a.MAT_NO,b.DEV_DIV,b.X_FROM,b.Y_FROM,a.MAT_KIND,a.MAT_THICK,a.MAT_WIDTH,a.MAT_LEN,a.MAT_THEORY_WT,b.STOCK_NO,b.STOCK_PLACE_NO,a.LAYERNO,b.HALL
+libWMSM/f_wmsmsm_cranecmd_make.cpp	287	288	sqlstr = " SELECT a.MAT_NO,b.DEV_DIV,b.X_FROM,b.Y_FROM,a.MAT_KIND,a.MAT_THICK,a.MAT_WIDTH,a.MAT_LEN,a.MAT_THEORY_WT,b.STOCK_NO,b.STOCK_PLACE_NO,a.LAYERNO,b.HALL
+libWMSM/f_wmsmsm_cranecmd_make.cpp	293	294	sqlstr = " SELECT a.MAT_NO,c.DEV_DIV,c.X_FROM,c.Y_FROM,a.MAT_KIND,a.MAT_THICK,a.MAT_WIDTH,a.MAT_LEN,a.MAT_THEORY_WT,b.STOCK_NO,b.STOCK_PLACE_NO,a.LAYERNO,b.HALL
+libWMSM/f_wmsmsm_cranecmd_make.cpp	542	544	sqlstr = "select mat_no,stock_place_no,layerno from twma2 a where mat_no='" + Table_mat.Rows[0]["MAT_NO"].ToString() + "'";
+libWMSM/f_wmsmsm_cranecmd_make.cpp	546	546	sqlstr = "select mat_no,stock_place_no,layerno from twma2 a where mat_no='" + Table_mat.Rows[0]["MAT_NO"].ToString() + "'";
+libWMSM/f_wmsmsm_cranecmd_make.cpp	550	552	sqlstr = "select mat_no,stock_place_no,layerno from twma2 a where stock_place_no='" + Table_mat.Rows[0]["STOCK_PLACE_NO"].ToString() + "' and INT(layerno)>=INT(
+libWMSM/f_wmsmsm_cranecmd_make.cpp	567	569	sqlstr = "select a.MAT_NO,a.MAT_KIND,a.MAT_THICK,a.MAT_WIDTH,a.MAT_LEN,a.MAT_THEORY_WT,b.STOCK_NO,c.HALL_NO,b.STOCK_PLACE_NO,b.LAYERNO,c.X_FROM,c.Y_FROM,c.LOGIC
+libWMSM/f_wmsmsm_cranecmd_make.cpp	860	860	sqlstr = "select mat_no,stock_place_no,layerno from twma2 a where mat_no='" + Table_mat.Rows[0]["MAT_NO"].ToString() + "'";
+libWMSM/f_wmsmsm_cranecmd_make.cpp	864	866	sqlstr = "select mat_no,stock_place_no,layerno from twma2 a where stock_place_no='" + Table_mat.Rows[0]["STOCK_PLACE_NO"].ToString() + "' and INT(layerno)>=INT(
+libWMSM/f_wmsmsm_cranecmd_make.cpp	882	884	sqlstr = "select a.MAT_NO,a.MAT_KIND,a.MAT_THICK,a.MAT_WIDTH,a.MAT_LEN,a.MAT_THEORY_WT,b.STOCK_NO,substr(b.STOCK_PLACE_NO,4,1) HALL_NO,b.STOCK_PLACE_NO,b.LAYERN
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	200	201	sqlstr = "select * from twma7 where stock_oper_order='" + stock_oper_order + "'  order by cmd_seq,yard_layer_from";
+libWMSM/f_wmsmsm_cranecmd_seq_upt.cpp	213	215	sqlstr = "select " + seq_name + ".nextval from dual";
+libWMSM/f_wmsmsm_cranecmd_update.cpp	27	28	CString sqlstr_update = "UPDATE TWMA7 SET ";
+libWMSM/f_wmsmsm_cranecmd_update.cpp	129	130	sqlstr_update = "UPDATE TWMA7 SET ";
+libWMSM/f_wmsmsm_cranecmd_update.cpp	148	149	sqlstr = "select " + SEQ_NO + ".nextval from dual";
+libWMSM/f_wmsmsm_cranecmd_update.cpp	170	171	sqlstr = "SELECT MAT_NO,HALL_NO_TO,STOCK_OPER_ORDER,HALL_NO_FR,STOCK_PLACE_NO_FROM,STOCK_PLACE_NO_FIN,MAT_ACT_WT,MAT_ACT_THICK,MAT_ACT_WIDTH,MAT_ACT_LEN,YARD_LA
+libWMSM/f_wmsmsm_mm0099.cpp	170	177	" SELECT EVENT_ID FROM TWM0B"
+libWMSM/f_wmsmsm_mm0099.cpp	324	325	" SELECT MAT_LINE_TYPE, FACTORY_DIV FROM TWM01"
+libWMSM/f_wmsmsm_modi_pile_layerno.cpp	67	73	" select * "
+libWMSM/f_wmsmsm_stock_back.cpp	151	153	" SELECT * FROM TWMA0"
+libWMSM/f_wmsmsm_stock_back.cpp	218	219	sqlstr = " select * from TWM41DJ where C_BATCHUNIT='" + twma0["MAT_NO"].ToString() + "' and C_STATESIGN='1' ";
+libWMSM/f_wmsmsm_stock_in.cpp	191	193	" SELECT * FROM TWMA0"
+libWMSM/f_wmsmsm_stock_in.cpp	276	277	twma4["STOCK_L2"]= Db::QueryCString(" SELECT STOCK_NO_ANOTHER FROM TWM01 WHERE STOCK_NO='" + v_stock_no + "' ");
+libWMSM/f_wmsmsm_stock_in.cpp	289	290	sqlstr = " SELECT CODE_DESC_3_CONTENT FROM TWMSMZD02  WHERE  CODE_CLASS='WM02' and CODE='" + twma1["GUIDE_DEST"].ToString() + "' ";
+libWMSM/f_wmsmsm_stock_out.cpp	162	164	v_practice_no= "XG6240" + v_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(ZC_SJ.NEXTVAL), 4, '0') FROM DUAl");
+libWMSM/f_wmsmsm_stock_out.cpp	390	393	CString qx_type = Db::QueryCString("select CODE_DESC_3_CONTENT from TWMSMZD02 where CODE_CLASS='WM02' AND CODE='" + twma1["GUIDE_DEST"].ToString() + "'");
+libWMSM/f_wmsmsm_stock_out.cpp	405	413	twm41dj["C_DELIVERYID"] = "6240" + v_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+libWMSM/f_wmsmsm_stock_out_db.cpp	322	330	twm41dj["C_DELIVERYID"] = "6240" + v_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+libWMSM/f_wmsmsm_stock_out_tg.cpp	201	204	v_practice_no = "XG6240" + v_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(ZC_SJ.NEXTVAL), 4, '0') FROM DUAl");
+libWMSM/f_wmsmsm_stock_out_tg.cpp	382	385	CString qx_type = Db::QueryCString("select CODE_DESC_3_CONTENT from TWMSMZD02 where CODE_CLASS='WM02' AND CODE='" + twma1["GUIDE_DEST"].ToString() + "'");
+p_wmsm_8110/wm0c_inq.cpp	133	135	sqlstr1 = " SELECT A.*, B.VEHICLE_NUM AS VEHICLE_NUM1,B.TRUCK_NO,B.FLEET_NAME "
+p_wmsm_8110/wmsm01gg_inq.cpp	68	71	sqlstr = " select slab_no,PONO_SLAB,LSLAB_NO from Vmmsm01 where 1=1 ";
+p_wmsm_8110/wmsm01gg_inq1.cpp	68	69	sqlstr = " select * from Vmmsm01 where 1=1 and slab_no='" + bcls_rec->Tables[0].Rows[0]["SLAB_NO"].ToString() + "'";
+p_wmsm_8110/wmsm01gg_inq1.cpp	120	158	sqlstr = " select T03.CAST_LOT_NO,\
+p_wmsm_8110/wmsm01gg_inq1.cpp	204	235	sqlstr = " select  T03.CAST_LOT_NO, V1.ST_NO,(SELECT MAT_NO FROM VMMSM01 WHERE LSLAB_NO=T03.LSLAB_NO AND PONO IN (SELECT PONO\
+p_wmsm_8110/wmsm01gg_inq1.cpp	247	250	sqlstr = " select decode(LSLAB_NO_LENGTH, 0, SLAB_LEN, LSLAB_NO_LENGTH)             SLAB_LEN,\
+p_wmsm_8110/wmsmbp_inq.cpp	68	71	sqlstr = " select FELDBEZ||'_'||REIHEBEZ||'_'||PLATZBEZ GUNDAO,LOC_NO SLAB_NO,BATCH_NO MAT_NO from entck_vmmi@meslink t where 1=1";
+p_wmsm_8110/wmsmdb_inq.cpp	68	71	sqlstr = " select * from twm41dj where 1=1 ";
+p_wmsm_8110/wmsmgdtl_inq.cpp	68	71	sqlstr = " select * from twmsma0 where 1=1 ";
+p_wmsm_8110/wmsmkqkc_inq.cpp	68	88	sqlstr = " WITH T01 AS (\
+p_wmsm_8110/wmsmkqkc_inq1.cpp	72	72	sqlstr = " SELECT * FROM TMMSM01 WHERE STOCK_NO='" + bcls_rec->Tables[0].Rows[0]["STOCK_NO"].ToString() + "' AND UNLOAD_CODE =' ' ";
+p_wmsm_8110/wmsmkqkc_inq1.cpp	75	81	sqlstr = " SELECT * FROM TMMSM01 WHERE UNLOAD_CODE='" + bcls_rec->Tables[0].Rows[0]["STOCK_NO"].ToString() + "'  ";
+p_wmsm_8110/wmsmldkc_inq.cpp	67	68	sqlstr = " select * from TMM00SM where SAVE_TIME like '" + bcls_rec->Tables[0].Rows[0]["START_DATE"].ToString().SubstringNE(0,8) + "%' ";
+p_wmsm_8110/wmsmlgf_inq.cpp	73	76	sqlstr = " SELECT T1.MAT_NO,   T2.PRODUCT_FLAG,t1.BACK19 SPARE_ITEM_9\
+p_wmsm_8110/wmsmlgpb_inq.cpp	68	70	sqlstr = " SELECT * FROM HMMSM01 T01 LEFT JOIN TWMSMZD02 T02 ON T01.GUIDE_DEST=T02.CODE WHERE T02.CODE_DESC_3_CONTENT LIKE '%4%' AND CODE_CLASS='WM02' AND C_DEL
+p_wmsm_8110/wmsmplan_inq.cpp	68	71	sqlstr = " select * from twmsm60 where 1=1 ";
+p_wmsm_8110/wmsmsm11_inq.cpp	168	190	" select twma0.MAT_NO,\
+p_wmsm_8110/wmsmsm12S_inq1.cpp	217	220	" SELECT COUNT(TWMA0.MAT_NO) FROM TWMA0"
+p_wmsm_8110/wmsmsm12S_inq1.cpp	245	247	" SELECT TWMA1.ST_NO,TWMA1.PONO,TWMA1.MAT_ACT_THICK,TWMA1.MAT_ACT_WIDTH,"
+p_wmsm_8110/wmsmsm12S_inq1.cpp	251	253	" SELECT ISNULL(TWMA1.ST_NO,' '),ISNULL(TWMA1.PONO,' '),ISNULL(TWMA1.MAT_ACT_THICK,0),ISNULL(TWMA1.MAT_ACT_WIDTH,0),"
+p_wmsm_8110/wmsmsm12S_inq1.cpp	257	259	" SELECT TWMA1.ST_NO,TWMA1.PONO,TWMA1.MAT_ACT_THICK,TWMA1.MAT_ACT_WIDTH,"
+p_wmsm_8110/wmsmsm12S_inq2.cpp	152	156	sqlstr = " SELECT * FROM TWMA2 T1 LEFT JOIN TMMSM01 T2 ON T1.MAT_NO=T2.MAT_NO WHERE 1=1 AND T1.STOCK_NO='A11' ";
+p_wmsm_8110/wmsmsm12S_inq2.cpp	265	266	sqlstr_count = "SELECT COUNT(1) FROM (" + sqlstr + ") T ";
+p_wmsm_8110/wmsmsm12S_inq3.cpp	218	221	" SELECT COUNT(TWMA0.MAT_NO) FROM TWMA0"
+p_wmsm_8110/wmsmsm12S_inq3.cpp	246	248	" SELECT TWMA1.ST_NO,TWMA1.PONO,TWMA1.MAT_ACT_THICK,TWMA1.MAT_ACT_WIDTH,"
+p_wmsm_8110/wmsmsm12S_inq3.cpp	252	254	" SELECT ISNULL(TWMA1.ST_NO,' '),ISNULL(TWMA1.PONO,' '),ISNULL(TWMA1.MAT_ACT_THICK,0),ISNULL(TWMA1.MAT_ACT_WIDTH,0),"
+p_wmsm_8110/wmsmsm12S_inq3.cpp	258	260	" SELECT TWMA1.ST_NO,TWMA1.PONO,TWMA1.MAT_ACT_THICK,TWMA1.MAT_ACT_WIDTH,"
+p_wmsm_8110/wmsmsm12S_inq4.cpp	218	221	" SELECT COUNT(TWMA0.MAT_NO) FROM TWMA0"
+p_wmsm_8110/wmsmsm12S_inq4.cpp	246	248	" SELECT TWMA1.ST_NO,TWMA1.PONO,TWMA1.MAT_ACT_THICK,TWMA1.MAT_ACT_WIDTH,"
+p_wmsm_8110/wmsmsm12S_inq4.cpp	252	254	" SELECT ISNULL(TWMA1.ST_NO,' '),ISNULL(TWMA1.PONO,' '),ISNULL(TWMA1.MAT_ACT_THICK,0),ISNULL(TWMA1.MAT_ACT_WIDTH,0),"
+p_wmsm_8110/wmsmsm12S_inq4.cpp	258	260	" SELECT TWMA1.ST_NO,TWMA1.PONO,TWMA1.MAT_ACT_THICK,TWMA1.MAT_ACT_WIDTH,"
+p_wmsm_8110/wmsmsm12S_inq5.cpp	218	221	" SELECT COUNT(TWMA0.MAT_NO) FROM TWMA0"
+p_wmsm_8110/wmsmsm12S_inq5.cpp	246	248	" SELECT TWMA1.ST_NO,TWMA1.PONO,TWMA1.MAT_ACT_THICK,TWMA1.MAT_ACT_WIDTH,"
+p_wmsm_8110/wmsmsm12S_inq5.cpp	252	254	" SELECT ISNULL(TWMA1.ST_NO,' '),ISNULL(TWMA1.PONO,' '),ISNULL(TWMA1.MAT_ACT_THICK,0),ISNULL(TWMA1.MAT_ACT_WIDTH,0),"
+p_wmsm_8110/wmsmsm12S_inq5.cpp	258	260	" SELECT TWMA1.ST_NO,TWMA1.PONO,TWMA1.MAT_ACT_THICK,TWMA1.MAT_ACT_WIDTH,"
+p_wmsm_8110/wmsmsm12_inq.cpp	193	194	" SELECT TWMA1.* "
+p_wmsm_8110/wmsmsm12zk_inq.cpp	115	117	sqlstr = "SELECT a.*,b.TRANSFER_PLAN_NO,b.TRANSFER_BILL_NO,c.* from twma0 a left join twm42 b on a.mat_no=b.mat_no and b.AFFIRM_MARK='8'  "
+p_wmsm_8110/wmsmsm12zk_inq.cpp	163	164	sqlstr = "SELECT COUNT(*) FROM (" + sqlstr + ")";
+p_wmsm_8110/wmsmsm12zklog_inq.cpp	106	109	sqlstr = "SELECT * FROM TWM42 A WHERE AFFIRM_MARK='9'";
+p_wmsm_8110/wmsmsm12zklog_inq.cpp	138	139	sqlstr = "SELECT COUNT(*) FROM (" + sqlstr + ")";
+p_wmsm_8110/wmsmsm13_detail.cpp	67	83	" SELECT MAT_NO,ST_NO,MAT_ACT_THICK,MAT_ACT_WIDTH,MAT_ACT_LEN,MAT_ACT_WT,"
+p_wmsm_8110/wmsmsm13_detail.cpp	84	90	" SELECT MAT_NO,ST_NO,MAT_ACT_THICK,MAT_ACT_WIDTH,MAT_ACT_LEN,MAT_ACT_WT,MAT_NUM,"
+p_wmsm_8110/wmsmsm13_detail.cpp	93	140	" SELECT * FROM "
+p_wmsm_8110/wmsmsm13_detail.cpp	141	144	" SELECT T.*,"
+p_wmsm_8110/wmsmsm13_inq.cpp	100	110	" SELECT"
+p_wmsm_8110/wmsmsm13_inq.cpp	163	164	sqlstrCount = "SELECT COUNT(1) FROM (" + sqlstr + ")";
+p_wmsm_8110/wmsmsm13_inq.cpp	227	229	" SELECT SUM(MAT_NUM) FROM"
+p_wmsm_8110/wmsmsm13_inq.cpp	236	238	" SELECT SUM(MAT_NUM) FROM TMMSM01"
+p_wmsm_8110/wmsmsm13_inq.cpp	244	247	" SELECT SUM(MAT_NUM) FROM"
+p_wmsm_8110/wmsmsm17_inq.cpp	195	198	" SELECT A.STOCK_NO, A.STOCK_PLACE_NO, SUM(NVL(C.MAT_NUM, 0)) MAT_NUM, SUM(NVL(C.MAT_ACT_WT, 0)) MAT_WT"
+p_wmsm_8110/wmsmsm17_inq.cpp	202	205	" SELECT A.STOCK_NO, A.STOCK_PLACE_NO, SUM(ISNULL(C.MAT_NUM, 0)) MAT_NUM, SUM(ISNULL(C.MAT_ACT_WT, 0)) MAT_WT"
+p_wmsm_8110/wmsmsm17_inq.cpp	209	212	" SELECT A.STOCK_NO, A.STOCK_PLACE_NO, SUM(NVL(C.MAT_NUM, 0)) MAT_NUM, SUM(NVL(C.MAT_ACT_WT, 0)) MAT_WT"
+p_wmsm_8110/wmsmsm17_inq_mat.cpp	92	93	" SELECT * FROM TMMSM01 A LEFT JOIN TWMA2 B ON A.MAT_NO=B.MAT_NO "
+p_wmsm_8110/wmsmsm17_inq_mat.cpp	101	106	" SELECT *"
+p_wmsm_8110/wmsmsma2_inq.cpp	158	162	sqlstr = " SELECT * FROM TMMSM01 t1, TWMA2 T2 WHERE T1.MAT_NO = T2.MAT_NO ";
+p_wmsm_8110/wmsmsma2_inq.cpp	279	280	sqlstr_count = "SELECT COUNT(1) FROM (" + sqlstr + ") T ";
+p_wmsm_8110/wmsmsma2_inq.cpp	317	330	" select "
+p_wmsm_8110/wmsmsma2_inq.cpp	331	345	" SELECT "
+p_wmsm_8110/wmsmsma2_inq_h.cpp	159	178	" SELECT T2.HEAT_NO,\
+p_wmsm_8110/wmsmsma2_inq_h.cpp	215	220	sqlstr = " select A.STOCK_NO, MAX(A.STOCK_CAPACITY_WT) STOCK_CAPACITY_WT, SUM(B.MAT_WT) SUM_WT\
+p_wmsm_8110/wmsmsma2_inq_m.cpp	87	98	" SELECT T2.*,CASE "
+p_wmsm_8110/wmsmsma2_wt_inq.cpp	152	161	sqlstr = " SELECT "
+p_wmsm_8110/wmsmsma2b_inq.cpp	197	201	" SELECT COUNT(t2.MAT_NO)"
+p_wmsm_8110/wmsmsma2b_inq.cpp	231	237	" SELECT"
+p_wmsm_8110/wmsmsma4_inq.cpp	197	198	sqlstr = " SELECT COUNT(1) FROM TWMA4 WHERE 1=1 ";
+p_wmsm_8110/wmsmsma4_inq.cpp	226	228	sqlstr = " SELECT * FROM TWMA4 WHERE 1=1 ";
+p_wmsm_8110/wmsmsmdwtj_inq.cpp	61	64	sqlstr = "SELECT A.* FROM TMMSM01 a WHERE 1=1  AND STOCK_PLACE_NO IN('I101','I102','H101') AND CMD_FLAG!='1'";
+p_wmsm_8110/wmsmsmj1_inq.cpp	113	116	sqlstr = "SELECT A.*,B.* FROM TWMJ1 A LEFT JOIN TMMSM01 B ON A.MAT_NO=B.MAT_NO WHERE 1=1 ";
+p_wmsm_8110/wmsmsmj1_inq.cpp	151	152	sqlstr = "SELECT COUNT(*) FROM (" + sqlstr + ")";
+p_wmsm_8110/wmsmsmj2_inq1.cpp	73	76	sqlstr = "SELECT A.* FROM TWM04 A  WHERE 1=1 ";
+p_wmsm_8110/wmsmsmj2_inq2.cpp	58	61	sqlstr = "SELECT A.* FROM TMMSM01 A  WHERE 1=1 ";
+p_wmsm_8110/wmsmsmj3_inq.cpp	70	73	sqlstr = "SELECT A.*,B.* "
+p_wmsm_8110/wmsmsmlzh_cs.cpp	51	53	sqlstr = "SELECT * FROM tmmsm33 WHERE 1 = 1 ";
+p_wmsm_8110/wmsmsmwode_inq.cpp	63	65	sqlstr = "SELECT * FROM TWMHQ02 WHERE 1 = 1 ";
+p_wmsm_8110/wmsmsmwode_inq2.cpp	97	99	sqlstr = "SELECT T.* FROM TWMHQ01 T WHERE 1=1 ";
+p_wmsm_8110/wmsmsmwode_inq2.cpp	121	123	sqlstr = "SELECT T.* FROM TWMHQ02 T WHERE 1=1 ";
+p_wmsm_8110/wmsmsskc_inq.cpp	68	69	sqlstr = " select C_DIV,REMARK,LOCATION,count(MAT_NO) MAT_NUM,sum(MAT_WT) MAT_WT from vwmsmsskc where 1 = 1 ";
+p_wmsm_8110/wmsmsskc_inq1.cpp	68	71	sqlstr = " select *  from vwmsmsskc where 1 = 1 ";
+p_wmsm_8120/wm0c_app.cpp	276	277	sqlstr = "SELECT STOCK_DESC FROM TSI0021 WHERE STOCK_NO =@from_stock_no";
+p_wmsm_8120/wm0c_app.cpp	286	287	sqlstr = "SELECT STOCK_DESC FROM TSI0021 WHERE STOCK_NO =@to_stock_no";
+p_wmsm_8120/wmsmbp_f3.cpp	60	61	sql = " DELETE FROM TWMSMA1 WHERE 1=1 ";
+p_wmsm_8120/wmsmdp_inq.cpp	55	56	sqlstr = " SELECT * FROM VMMSM01 WHERE HEAT_NO ='" + bcls_rec->Tables[0].Rows[0]["HEAT_NO"].ToString() + "' ";
+p_wmsm_8120/wmsmplan_f3.cpp	92	93	sqlstr = " select t.plan_no from twmsm60 t where REC_CREATE_TIME LIKE '" + datetime.Substring(0, 8) + "%' and PLAN_STATUS='0' and DEAL_FLAG='I' ";
+p_wmsm_8120/wmsmplan_f3.cpp	105	106	sqlstr_load = "select t.LOAD_CODE_FACTORY,t.LOAD_CODE_AREA,t.LOAD_CODE,t.LOAD_NAME from TWMSM61A t";
+p_wmsm_8120/wmsmplan_f3.cpp	125	126	sqlstr_unload = "select t.UNLOAD_CODE_FACTORY,t.UNLOAD_CODE_AREA,t.UNLOAD_CODE,t.UNLOAD_NAME from TWMSM62A t";
+p_wmsm_8120/wmsmplan_f3.cpp	141	142	sqlstr = " SELECT LPAD(TO_CHAR(WM_PLANID_SEQ.NEXTVAL), 4, '0') FROM DUAl ";
+p_wmsm_8120/wmsmplan_f4.cpp	103	104	sqlstr_item = "select t.plan_no from twmsm61 t where t.plan_no=@plan_no and t.affirm_flag<>'9'";
+p_wmsm_8120/wmsmsm11_in_reject.cpp	147	148	sqlstr = " select * from TWM41DJ where C_BATCHUNIT='" + twma0["MAT_NO"].ToString() + "' and C_STATESIGN='1' ";
+p_wmsm_8120/wmsmsm11_instock.cpp	120	122	" SELECT COUNT(1) FROM TWMA0"
+p_wmsm_8120/wmsmsm12p_conf.cpp	74	75	sqlstr = " select * from twmsm12 where LOAD_SCHEME_NO='"+ load_scheme_no +"' ";
+p_wmsm_8120/wmsmsm12p_fre.cpp	58	62	sql = " select distinct a.TRUCK_NO,a.PLAN_NO\
+p_wmsm_8120/wmsmsm12p_fre.cpp	71	99	sqlstr = " select b.MAT_NO,\
+p_wmsm_8120/wmsmsm12p_inq.cpp	48	60	sqlstr = " select distinct LOAD_SCHEME_NO,\
+p_wmsm_8120/wmsmsm12p_inq1.cpp	48	50	sqlstr = " select * from (select * from twmsm12 \
+p_wmsm_8120/wmsmsm12p_zc.cpp	95	96	load_scheme_no= bcls_rec->Tables[0].Rows[0]["UNLOAD_CODE"].ToString()+ datetime.SubstringNE(2,12) + Db::QueryCString("SELECT LPAD(TO_CHAR(YZ_SJ.NEXTVAL), 2, '0'
+p_wmsm_8120/wmsmsm12p_zc.cpp	97	98	CString v_practice_no = "XG6240" + datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(ZC_SJ.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8120/wmsmsm12p_zc.cpp	197	214	CString c_qux = Db::QueryCString(" select CODE_DESC_1_CONTENT from twmsmzd02 where CODE_CLASS='WM02' AND CODE='" + tmmsm01["GUIDE_DEST"].ToString() + "' ");
+p_wmsm_8120/wmsmsm12p_zc.cpp	245	246	sqlstr = " INSERT INTO HWMSM12 SELECT * FROM TWMSM12 WHERE LOAD_SCHEME_NO='" + load_scheme_no + "'  ";
+p_wmsm_8120/wmsmsm12zk_outstock.cpp	170	172	" SELECT COUNT(1) FROM TWMA0"
+p_wmsm_8120/wmsmsm13_out.cpp	168	170	" SELECT STOCK_NO FROM TWM000E"
+p_wmsm_8120/wmsmsm1_inq.cpp	45	47	CString sqlstr = "select code from TEP0002 where code_class='WM100' and code_desc_1_content= '" + FUNC_ID + "'";
+p_wmsm_8120/wmsmsm1_inq.cpp	80	86	CString sql = "SELECT  C.LOGIC_STOCK_NO ,E.STOCK_NUM ,E.MAX_WT , SUM(MAT_ACT_WT) AS KC_WT,SUM(1) AS KC_NUM "
+p_wmsm_8120/wmsmsm1_inq.cpp	93	94	sql = "SELECT   SUM(MAT_ACT_WT) AS NOCONFIM_WT FROM TMMSM01 WHERE  COMPLEX_DECIDE_CODE = '0' AND STOCK_NO IN " + STOCK_NO;
+p_wmsm_8120/wmsmsm1_inq.cpp	98	99	sql = "SELECT   SUM(MAT_ACT_WT) AS CONFIM_WT FROM TMMSM01 WHERE  COMPLEX_DECIDE_CODE = '1' AND STOCK_NO IN " + STOCK_NO;
+p_wmsm_8120/wmsmsm1_inq.cpp	121	121	sql = "SELECT G.*, E.*,H.LOGIC_STOCK_NO,H.STOCK_PLACE_TYPE, H.STOCK_STATUS, H.REMARK FROM TWMG10 G LEFT JOIN ( "
+p_wmsm_8120/wmsmsm1_inq.cpp	122	125	" SELECT C.STOCK_PLACE_NO,B.HEAT_NO ,SUM(1) AS STOCK_NUM FROM TWMA2 A, TMMSM01 B, TWM04 C	"
+p_wmsm_8120/wmsmsm60_inq.cpp	74	77	sqlstr = " select * from twmsm60 where PLAN_NO like '" + datetime + "%' ";
+p_wmsm_8120/wmsmsm61_inq.cpp	74	77	sqlstr = " SELECT distinct PRACTICE_NO,PLAN_NO,TRUCK_NO,TRUCK_BOARD_NO,WAGONNO,TRUCK_MODEL,'2' UNLOAD_STATE,TRUCK_MODEL_DESC,LOAD_CODE_FACTORY,LOAD_CODE_AREA,LO
+p_wmsm_8120/wmsmsma2mg_f12.cpp	163	165	" SELECT SLAB_FIX_S_MIN, SLAB_LEN_MAX, SLAB_MIN_WIDTH, SLAB_MAX_WIDTH FROM TQMTS9CC"
+p_wmsm_8120/wmsmsma2mg_f12.cpp	250	251	" SELECT SLAB_DENSITY, SLAB_WTADJ_FACTOR FROM TQMTS9M WHERE STRAND_NO = @v_strand_no"
+p_wmsm_8120/wmsmsma2mg_f12.cpp	477	478	" SELECT COUNT(*)  FROM TWMJ1 WHERE MAT_NO =@mat_no"
+p_wmsm_8120/wmsmsma7_crane_com.cpp	123	124	sqlstr = "update twm04 set PRE_COM_HEIGHT = PRE_COM_HEIGHT - 1 where stock_place_no = @targ_pos";
+p_wmsm_8120/wmsmsma7_crane_com.cpp	130	131	sqlstr = "update twm04 set PRE_COM_HEIGHT = PRE_COM_HEIGHT +1 where stock_place_no = @v_targ_pos_temp";
+p_wmsm_8120/wmsmsma7_crane_com.cpp	182	183	sqlstr = "SELECT count(*)  from tmmsm01 where STOCK_PLACE_NO = @STOCK_PLACE_NO and MAT_POSITION = '2'";
+p_wmsm_8120/wmsmsma7_crane_com.cpp	233	234	sqlstr = "UPDATE TWM04 SET FIELDNO_UPTIME = '20160101000000' WHERE stock_place_no = @stock_place_no";
+p_wmsm_8120/wmsmsma7_crane_com.cpp	243	244	sqlstr = "UPDATE TWM04 SET FIELDNO_UPTIME = '" + dateNow14 + "' WHERE stock_place_no = @stock_place_no";
+p_wmsm_8120/wmsmsma7_crane_com.cpp	263	264	sqlstr = "update TWM04 set pile_main_no = @v_slab_pile, table_no = @v_pile_main_no,"
+p_wmsm_8120/wmsmsma7_crane_com.cpp	282	284	sqlstr = "update tmmsm01	set	stock_place_no =@stock_place_no,"
+p_wmsm_8120/wmsmsma7_crane_com.cpp	296	298	sqlstr = "update TWM04	set PILE_MAT_NUM_ACT = PILE_MAT_NUM_ACT - 1"
+p_wmsm_8120/wmsmsma7_crane_com.cpp	304	306	sqlstr = "update TWM04 set PILE_MAT_NUM_ACT = PILE_MAT_NUM_ACT - 1"
+p_wmsm_8120/wmsmsma7_crane_com.cpp	312	314	sqlstr = "update TWM04 set PILE_MAT_NUM_ACT = @v_num + 1,"/*更新目标垛位板坯块数*/
+p_wmsm_8120/wmsmsma7_crane_com.cpp	323	325	sqlstr = "update twm04 set STOCK_STATUS='0' where stock_place_no = @stock_place_no"
+p_wmsm_8120/wmsmsmj3_rcm.cpp	68	69	sqlstr = "select crane_no from twm06 where hall_no = decode('" + twm04["HALL_NO"].ToString().Trim() + "', 'S00', hall_no, '" + twm04["HALL_NO"].ToString().Trim(
+p_wmsm_8130/tmsm14av_inq.cpp	113	114	sqlstr = " select * from ttmsm14 WHERE 1 = 1";  //查询ttmsm14
+p_wmsm_8130/wmsm01_dep_find.cpp	103	105	sqlstr = " SELECT COUNT(MAT_NO) FROM TMMSM01 WHERE IN_FLAG = '1' ";
+p_wmsm_8130/wmsm01_dep_find.cpp	114	114	Log::Trace("", __FUNCTION__, "SELECT COUNT rowCount=[{0}]", rowCount);
+p_wmsm_8130/wmsm01_dep_find.cpp	117	118	sqlstr = " SELECT * FROM TMMSM01 WHERE IN_FLAG = '1' ";
+p_wmsm_8130/wmsm01_ponoslab_inq.cpp	68	133	sqlstr = " WITH MM1 AS (select *																													   \
+p_wmsm_8130/wmsm01_wt_hand.cpp	128	131	sqlstr = "select sum(mat_act_len*mat_act_width*mat_act_thick), count(mat_no), sum(mat_theory_wt*1000) "
+p_wmsm_8130/wmsm01_wt_hand.cpp	154	157	sqlstr = "select mat_act_len*mat_act_width*mat_act_thick, mat_no, mat_theory_wt*1000 "
+p_wmsm_8130/wmsm01q0_cal.cpp	95	96	sql = " select ELM_NAME,ELM_ACT from tqmts29  t29 left join TEP0002 t2 on t2.CODE_CLASS='QMYS2N' AND T29.ELM_CODE=T2.CODE  where HEAT_NO='"+bcls_rec->Tables[1].
+p_wmsm_8130/wmsm01q0_cal.cpp	132	133	sqlstr = "SELECT " + dest + " FROM DUAL";
+p_wmsm_8130/wmsm01q0_gua.cpp	177	178	sqlstr = " select * from tpssm03 where  LSLAB_NO='" + tmmsm01["LSLAB_NO"].ToString() + "' ";
+p_wmsm_8130/wmsm01q0_gua1.cpp	97	98	sqlstr = " select * from tpssm01 where PONO='" + tpssm03["PONO"].ToString() + "'  ";
+p_wmsm_8130/wmsm01q0_gua1.cpp	184	185	sqlstr = " select * from tpssm03 where  LSLAB_NO='" + tmmsm01["LSLAB_NO"].ToString() + "' AND SLAB_PROD_FLAG <> '1' ";
+p_wmsm_8130/wmsm01q0_inq.cpp	68	73	sqlstr = " select * from vmmsm01 where 1=1 AND MAT_NO NOT IN (SELECT TMMSM35.IN_MAT_NO FROM TMMSM35) ";
+p_wmsm_8130/wmsm01q0_inq1.cpp	73	92	sqlstr = " select T1.*,T3.*,(SELECT ORDER_THICK from tqmom01 where  ORDER_NO = T1.ORDER_NO) ORDER_THICK,ROUND((SELECT sum(DEVO_WT)\
+p_wmsm_8130/wmsm01q0_inq1.cpp	96	115	sqlstr = " select T1.*,T3.*,(SELECT ORDER_THICK from tqmom01 where  ORDER_NO = T1.ORDER_NO) ORDER_THICK,ROUND((SELECT sum(DEVO_WT)\
+p_wmsm_8130/wmsm01q0_inq1.cpp	128	134	sqlstr = " select T29.ELM_NAME,T02.SPE_MAX MAX,T02.SPE_MIN MIN,T29.ELM_ACT AIM, "
+p_wmsm_8130/wmsm01q0_inq1.cpp	141	149	sqlstr = " select T02.ELM_NAME,\
+p_wmsm_8130/wmsm01q0_inq1.cpp	177	178	sqlstr = " SELECT ELM_NAME,ELM_ACT FROM TQMTS29 WHERE HEAT_NO = '" + s_heat_no + "' AND ELM_CODE NOT IN ('103')  ";
+p_wmsm_8130/wmsm01q0_qxupd.cpp	103	109	CString c_quxiang = Db::QueryCString(" select CODE_DESC_1_CONTENT from TWMSMZD02 where CODE_CLASS = 'WM02' and CODE ='" + bcls_rec->Tables[1].Rows[0]["GUIDE_DES
+p_wmsm_8130/wmsm01q0_snd.cpp	130	131	sqlstr = " SELECT CODE_DESC_3_CONTENT FROM TWMSMZD02  WHERE  CODE_CLASS='WM02' and CODE='" + tmmsm01["GUIDE_DEST"].ToString() + "' ";
+p_wmsm_8130/wmsm01q0q_inq.cpp	68	71	sqlstr = " select * from vmmsm01 where 1=1 ";
+p_wmsm_8130/wmsm01q0q_inq1.cpp	70	71	sqlstr = " select T1.*,T3.* from vmmsm01 T1 LEFT JOIN TPSSM03 T3 ON T1.PONO_SLAB=T3.SLAB_NO where T1.SLAB_NO='" + bcls_rec->Tables[0].Rows[0]["SLAB_NO"].ToStrin
+p_wmsm_8130/wmsm01q0q_inq1.cpp	106	125	sqlstr = " select T29.ELM_NAME,T02.SPE_MAX MAX,T02.SPE_MIN MIN,T29.ELM_ACT AIM, "
+p_wmsm_8130/wmsm01q0q_inq1.cpp	132	140	sqlstr = " select T02.ELM_NAME,\
+p_wmsm_8130/wmsm01q0q_inq1.cpp	163	164	sqlstr = " SELECT ELM_NAME,ELM_ACT FROM TQMTS29 WHERE HEAT_NO = '" + s_heat_no + "' ";
+p_wmsm_8130/wmsm02_sg_inq.cpp	62	65	CString sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,nvl(a.SLAB_DEST,' ') AS A,   "
+p_wmsm_8130/wmsm02_sg_inq.cpp	91	94	sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,nvl(a.SLAB_DEST,' ') AS A,   "
+p_wmsm_8130/wmsm02_sg_inq.cpp	119	122	sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,nvl(a.SLAB_DEST,' ') AS A,   "
+p_wmsm_8130/wmsm02_sg_inq.cpp	146	149	sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,nvl(a.SLAB_DEST,' ') AS A,   "
+p_wmsm_8130/wmsm02_sg_inq.cpp	175	178	sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,nvl(a.SLAB_DEST,' ') AS A,   "
+p_wmsm_8130/wmsm02_sg_inq.cpp	232	235	sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,nvl(a.SLAB_DEST,' ') AS A,   "
+p_wmsm_8130/wmsm02_sg_inq.cpp	307	309	sql = "SELECT  mat_no,nvl(hold_flag,' '),stock_place_no  as location,nvl(slab_cut_time,' ') as slab_cut_time,' ',' ',' ',nvl(prec_slab_no,  ' '),nvl(fix_flag,' 
+p_wmsm_8130/wmsm02_sg_inq.cpp	333	335	sql = "SELECT  mat_no, nvl(hold_flag, ' '), stock_place_no  as location, nvl(slab_cut_time, ' ') as slab_cut_time, ' ', ' ', ' ', nvl(prec_slab_no, ' '), nvl(fi
+p_wmsm_8130/wmsm02_sg_inq.cpp	360	364	sql = "SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,' ',' ',' ',  "
+p_wmsm_8130/wmsm02_sg_inq.cpp	392	396	sql = " SELECT  a.mat_no,nvl(hold_flag,' '),a.rest_roller_no as location,nvl(b.slab_cut_time,' ') as slab_cut_time,' ',' ',' ',   "
+p_wmsm_8130/wmsm02_show_inq.cpp	88	92	sqlstr = "select * from tmmsm01 where mat_no = '" + mat_no + "' and mat_position in('1', '2')";
+p_wmsm_8130/wmsm02_show_inq.cpp	107	108	sql = "SELECT  a.mat_no from TWMM1 a left outer join(select * from tmmsm01 where mat_position in('1', '2')) b on a.mat_no = b.mat_no  "
+p_wmsm_8130/wmsmjhkd_inq.cpp	55	56	sqlstr = " select CODE_DESC_1_CONTENT,BACK_N_1,BACK_N_2,BACK_C1,BACK_C2 from twmsmpz WHERE CODE_CLASS='JHKD' ";
+p_wmsm_8130/wmsmqm11_inq.cpp	38	40	sqlstr = " select * from TQMTS11A where 1=1 ";
+p_wmsm_8130/wmsmsm12_push.cpp	106	107	sqlstr = " select * from twmsm61 where PRACTICE_NO='" + practice_no + "' and UNLOAD_STATE='2' ";
+p_wmsm_8130/wmsmsm12_push.cpp	183	186	CString qx_type = Db::QueryCString("select CODE_DESC_3_CONTENT from TWMSMZD02 where CODE_CLASS='WM02' AND CODE='" + tmmsm01["GUIDE_DEST"].ToString() + "'");
+p_wmsm_8130/wmsmsm12_push.cpp	226	243	twm41dj["C_DELIVERYID"] = "6240" + datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8130/wmsmsm12_reset.cpp	75	78	CString qx = Db::QueryCString("select CODE_DESC_1_CONTENT from TWMSMZD02 where CODE_CLASS='WM02' AND CODE='" + tmmsm01["GUIDE_DEST"].ToString() + "'");
+p_wmsm_8130/wmsmsm12_ruturn_verify.cpp	87	88	sqlstr = " select * from(select * from TWM41DJ where 1 = 1 AND C_BATCHUNIT = '"+ twm41dj["C_BATCHUNIT"].ToString()+"'  order by REC_CREATE_TIME desc) where ROWN
+p_wmsm_8130/wmsmsm12_ruturn_verify.cpp	92	95	CString s_sg_grade_1 = Db::QueryCString(" select SG_GRADE_1 from tqmts0x where ST_NO=(select ST_NO from tmmsm01 where MAT_NO='" + tmmsm01["MAT_NO"].ToString() +
+p_wmsm_8130/wmsmsm12_ruturn_verify.cpp	143	160	twm41dj["C_DELIVERYID"] = "6240" + datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8130/wmsmsm1sg_inq.cpp	50	52	CString sqlstr = "select code from TEP0002 where code_class='WM100' and code_desc_1_content= '" + FUNC_ID + "'";
+p_wmsm_8130/wmsmsm1sg_inq.cpp	72	73	CString sql = " SELECT COUNT(1) AS EMPTY_RESULT"
+p_wmsm_8130/wmsmsm1sg_inq.cpp	74	75	" SELECT DISTINCT STOCK_PLACE_NO FROM TWMA2 WHERE TWMA2.STOCK_PLACE_NO = TWM04.STOCK_PLACE_NO) AND TWM04.STOCK_NO='" + STOCK_NO1 + "'";
+p_wmsm_8130/wmsmsm1sg_inq.cpp	79	85	sql = "SELECT  E.STOCK_NUM ,SUM(MAT_ACT_WT) AS KC_WT "
+p_wmsm_8130/wmsmsm1sg_inq.cpp	115	116	sql = "SELECT " + STOCK_NUM + " /SUM(MAX_LAYER_COUNT) AS S_RESULT FROM TWM04  WHERE STOCK_PLACE_TYPE !='9' AND STOCK_NO='" + STOCK_NO1 + "'";
+p_wmsm_8130/wmsmsm1sg_inq.cpp	130	135	sql = "SELECT '主垛位' || (SELECT code_desc_1_content FROM TEP0002 WHERE CODE_CLASS = 'YM01' and code = a.PILE_FIELDNO_NO) || ', "
+p_wmsm_8130/wmsmsm1sg_inq.cpp	161	166	sql = "SELECT G.*,Z.*,H.LOGIC_STOCK_NO,H.STOCK_PLACE_TYPE, H.STOCK_STATUS AS STOCK_STATUS ,Z.HOLD_FLAG AS HOLD_FLAG, H.REMARK,E.STOCK_NUM FROM TWMG10 G "
+p_wmsm_8130/wmsmsm1sg_inq.cpp	173	174	sql = "SELECT * FROM TMMSM01  WHERE STOCK_NO='" + STOCK_NO1 + "' ORDER BY STOCK_PLACE_NO,LAYERNO DESC";
+p_wmsm_8130/wmsmsm2ht_inq.cpp	96	96	sqlstr_count = "SELECT COUNT(1) FROM TWMA7 WHERE 1=1 ";
+p_wmsm_8130/wmsmsm2ht_inq.cpp	98	102	sqlstr = "SELECT * FROM TWMA7 WHERE 1=1 ";
+p_wmsm_8130/wmsmsm2ht_inq.cpp	158	159	sql = "select distinct crane_no from twm06 ";
+p_wmsm_8130/wmsmsm3ec_dd.cpp	172	174	Log::Trace("", __FUNCTION__, "Insert  hwm00a7 [{0}]", kk);
+p_wmsm_8130/wmsmzd_inq.cpp	38	39	sql = "SELECT CODE_DESC_2_CONTENT FROM TWMSMZD02 WHERE  CODE_CLASS like '%YH' and CODE_DESC_1_CONTENT=@userid ";
+p_wmsm_8130/wmsmzd_inq.cpp	54	55	sqlstr = " select * from TWMSMZD01 where 1=1  and CODE_CLASS in (" + v_code + ") ";
+p_wmsm_8130/wmsmzd_inq.cpp	59	61	sqlstr = " select * from TWMSMZD01 where 1=1 ";
+p_wmsm_8130/wmsmzd_inq1.cpp	38	40	sqlstr = " select * from TWMSMZD02 where 1=1 and CODE_CLASS='" + bcls_rec->Tables[0].Rows[0]["CODE_CLASS"].ToString() + "' order by  CASE WHEN REGEXP_LIKE(code,
+p_wmsm_8130/wmsmzdkd_inq.cpp	55	56	sqlstr = " select CODE_DESC_1_CONTENT,BACK_N_1 from twmsmpz WHERE CODE_CLASS='ZDLK' ";
+p_wmsm_8130/wmsmzdqx_inq.cpp	55	56	sqlstr = " select CODE_DESC_1_CONTENT,BACK_C1 from twmsmpz WHERE CODE_CLASS='ZDQX' ";
+p_wmsm_8140/mmsmxmjs_inq.cpp	79	91	sqlstr = " SELECT MAT_NO, SLAB_CUT_TIME, USAGE_DECISION \
+p_wmsm_8140/mmsmxmjs_inq.cpp	95	107	sqlstr = " SELECT MAT_NO, SLAB_CUT_TIME, USAGE_DECISION \
+p_wmsm_8140/sm0004_inq_m1.cpp	121	123	"select (select stock_place_no from tmmsm01 where mat_no = t.mat_no) stock_place_no, "
+p_wmsm_8140/sm0004_inq_m1.cpp	127	127	sqlstr1 = CString("select (select stock_place_no from hmmsm01 where mat_no = t.mat_no fetch first 1 rows only) stock_place_no, t.* from hsmpe02 t where stacking
+p_wmsm_8140/sm0004_inq_m1.cpp	129	136	sqlstr1 = CString("select (select stock_place_no from tmmsm01 where mat_no = t.mat_no) stock_place_no, 'HP' mat_kind, t.* from tsmpea1 t where event_id = '5' an
+p_wmsm_8140/sm0004_inq_m1.cpp	137	137	sqlstr1 = CString("select t.* from hmmsm01 t where plan_no = @bill_of_lading_no ");
+p_wmsm_8140/sm0004_inq_m1.cpp	139	142	sqlstr1 = CString("select t.* from tmmsm01 t where plan_no = @bill_of_lading_no ");
+p_wmsm_8140/sm00_BillOfLadingNO.cpp	113	114	" SELECT DISTINCT T2.BILL_OF_LADING_NO"
+p_wmsm_8140/sm00_BillOfLadingNO.cpp	127	127	sqlstr1 = "SELECT DISTINCT BILL_OF_LADING_NO  FROM tsmpe02 t WHERE 1 = 1";
+p_wmsm_8140/sm00_BillOfLadingNO.cpp	128	130	sqlstr2 = "SELECT DISTINCT STACKING_NO FROM tsmpe02 t WHERE 1 = 1 ";
+p_wmsm_8140/sm00_OrderNO.cpp	84	88	"select ORDER_NO,DELIVY_PLAN_TYPE,DELIVERY_MODE, "
+p_wmsm_8140/smsm02_cancel1.cpp	120	121	" SELECT count(1) from tsmpe02 t where stacking_no = @stacking_no and bill_of_lading_no = @bill_of_lading_no and confm_status = '8' "
+p_wmsm_8140/smsm02_cancel1.cpp	124	137	"		UPDATE tsmpe02 SET                          "
+p_wmsm_8140/smsm02_cancel1.cpp	143	144	" SELECT count(1) from tsmpe02 t WHERE mat_no = @mat_no and confm_status = '8' "
+p_wmsm_8140/smsm02_cancel1.cpp	147	159	"		UPDATE tsmpe02 SET                          "
+p_wmsm_8140/smsm02_cancel1.cpp	162	163	" SELECT count(1) from tsmpe02 where bill_of_lading_no = @bill_of_lading_no and out_mark <> '2' "
+p_wmsm_8140/smsm02_cancel1.cpp	166	167	" select stacking_wt,vehicle_no from tsmpe11 where bill_of_lading_no = @bill_of_lading_no and bill_of_lading_detailno = @bill_of_lading_detailno  and stacking_s
+p_wmsm_8140/smsm02_confm1.cpp	153	154	" SELECT count(1) from tsmpe02 t where bill_of_lading_no = @bill_of_lading_no and confm_status = '8' "
+p_wmsm_8140/smsm02_confm1.cpp	157	164	"  UPDATE tsmpe02 SET  "
+p_wmsm_8140/smsm02_confm1.cpp	167	168	" SELECT count(1) from tsmpe02 where bill_of_lading_no = @bill_of_lading_no and out_mark <> '2' "
+p_wmsm_8140/smsm02_confm1.cpp	171	172	" SELECT out_mark from tsmpe02 where mat_no = @mat_no "
+p_wmsm_8140/smsm02_confm1.cpp	174	175	" SELECT count(1) from tsmsm10 t where remark_share = @remark_share and delivy_plan_status < '4' "
+p_wmsm_8140/smsm02_confm1.cpp	178	179	"SELECT DISTINCT BILL_OF_LADING_NO ,STACKING_NO,ORDER_NO FROM tsmpe02 t WHERE 1 = 1 "
+p_wmsm_8140/smsm02_confm1.cpp	275	277	sqlstr = "select MAT_NO,MAT_WT from tsmpe02 A,tsmpe11 B where A.BILL_OF_LADING_NO = B.BILL_OF_LADING_NO  "
+p_wmsm_8140/smsm02_confm1.cpp	385	389	"  UPDATE tsmpe02 SET "
+p_wmsm_8140/smsm02_confm1.cpp	403	404	EDLog(1, 1, "UPDATE TSMPE02 OK ");
+p_wmsm_8140/smsm02_inq_m1.cpp	116	123	" select a.*,b.*                      "
+p_wmsm_8140/smsm02_inq_m1.cpp	126	133	" select a.*,b.*                      "
+p_wmsm_8140/smsm02_inq_m1.cpp	135	136	"select code_desc_1_content from tep0002 where code_class = 'SM28' and code = @code"
+p_wmsm_8140/smsm02_inq_m1.cpp	139	140	"select * from tmmsm01 where plan_no = @logistics_no"
+p_wmsm_8140/smsm02_inq_m1.cpp	141	145	sqlstr5 = "select DISTINCT DELIVY_PLAN_TYPE,"
+p_wmsm_8140/smsm02_inq_m1.cpp	165	165	" SELECT * FROM tsmpe02 where order_no = @order_no  and  stacking_no = ' ' and confm_status in('4','6')  ");
+p_wmsm_8140/smsm02_inq_m1.cpp	170	177	" SELECT * FROM tsmpe02 where bill_of_lading_no = @bill_of_lading_no ");
+p_wmsm_8140/smsm02_ins1.cpp	243	247	" SELECT count(1) from tsmpe02 t where confm_status = '4' " //'6' "
+p_wmsm_8140/smsm02_ins1.cpp	250	260	"		UPDATE tsmpe02 SET                          "
+p_wmsm_8140/smsm02_ins1.cpp	263	264	" SELECT count(1) from tsmpe02 t WHERE mat_no = @mat_no and confm_status = '4' " //2.接收成功 4.已确认 6.出厂计划已接收 8.开始发货 9.发货完成
+p_wmsm_8140/smsm02_ins1.cpp	267	273	"		UPDATE tsmpe02 SET                          "
+p_wmsm_8140/smsm02_ins1.cpp	276	277	" SELECT count(1) from tsmpe02 where order_no = @order_no and out_mark <> '2' "
+p_wmsm_8140/smsm02_ins1.cpp	280	281	" SELECT count(1) from tsmpe02 where red_flag > ' ' and mat_no in (" + v_mat_no + ") "
+p_wmsm_8140/smsm02_ins1.cpp	297	299	sqlstr1 = CString("select stock_no,sum(MAT_ACT_WT)  from tmmhr01 where plan_no = @logistics_no "
+p_wmsm_8140/smsm02_ins1.cpp	301	302	" SELECT * FROM tsmsm10 WHERE bill_of_lading_detailno = @bill_of_lading_detailno and logistics_no =@logistics_no "
+p_wmsm_8140/smsm02_ins1.cpp	375	376	EDLog(1, 1, "Insert.tsmpe11 ERROR! ");
+p_wmsm_8140/smsm02_ins1.cpp	390	393	sqlstr0 = CString("select count(1) "
+p_wmsm_8140/smsm02_ins1.cpp	395	399	sqlstr1 = CString("select stock_no,sum(MAT_WT) "
+p_wmsm_8140/smsm02_ins1.cpp	401	411	" UPDATE TSMPE02 SET  stacking_no = @stacking_no, "
+p_wmsm_8140/smsm02_ins1.cpp	413	414	" SELECT * FROM tsmpe00 WHERE order_no = @order_no  "
+p_wmsm_8140/smsm02_ins1.cpp	417	418	" SELECT * FROM tsmsm10 WHERE bill_of_lading_no = @bill_of_lading_no and bill_of_lading_detailno = @bill_of_lading_detailno and order_no =@order_no "
+p_wmsm_8140/smsm02_ins1.cpp	421	423	"		select distinct factory_div  from tsmpe02   "
+p_wmsm_8140/smsm02_ins1.cpp	425	426	" SELECT count(1) from tsmpe02 where red_flag = '1' and mat_no in (" + v_mat_no + ") "
+p_wmsm_8140/smsm02_ins1.cpp	429	432	" SELECT SUM(STACKING_WT) from tsmpe11 t where STACKING_STATUS != 'X' "
+p_wmsm_8140/smsm02_ins1.cpp	616	617	EDLog(1, 1, "Insert.tsmpe11 ERROR! ");
+p_wmsm_8140/smsm02_ins1.cpp	625	625	Log::Info("", __FUNCTION__, "Update... t_bill_of_lading_no=[{0}]", t_bill_of_lading_no);
+p_wmsm_8140/smsm02_ins1.cpp	626	626	Log::Info("", __FUNCTION__, "Update... c_bill_of_lading_detailno=[{0}]", c_bill_of_lading_detailno);
+p_wmsm_8140/smsm02_ins1.cpp	627	629	Log::Info("", __FUNCTION__, "Update... c_order_no=[{0}]", c_order_no);
+p_wmsm_8140/smsm02_ins1.cpp	640	642	Log::Info("", __FUNCTION__, "Update... num10=[{0}]", num10);
+p_wmsm_8140/smsm02_ins1.cpp	659	687	Log::Info("", __FUNCTION__, "Update... num09=[{0}]", num09);
+p_wmsm_8140/wm00_TransferPlanNo.cpp	149	154	" SELECT COUNT(*)"
+p_wmsm_8140/wm00_TransferPlanNo.cpp	180	181	sqlstr = " SELECT DISTINCT a.* FROM TWM41 A ,TWM42 B WHERE A.TRANSFER_PLAN_NO = B.TRANSFER_PLAN_NO AND A.TRANSFER_STATUS in ('2','8')  ";
+p_wmsm_8140/wm00_hallNo1.cpp	86	93	sqlstr = " select distinct HALL_NO "
+p_wmsm_8140/wm00_stNo.cpp	96	97	" SELECT DISTINCT ST_NO FROM TMMSM01 T2"
+p_wmsm_8140/wm00_stNo.cpp	102	103	"  SELECT DISTINCT ST_NO FROM TMMSM01 T2"
+p_wmsm_8140/wm00_stockNo2.cpp	107	107	" SELECT ' ' AS STOCK_NO, ' ' AS STOCK_DESC FROM DUAL UNION ALL"
+p_wmsm_8140/wm00_stockNo2.cpp	108	109	" SELECT T2.STOCK_NO, T2.STOCK_DESC"
+p_wmsm_8140/wm00_stockNo2.cpp	124	124	" SELECT ' ' AS STOCK_NO, ' ' AS STOCK_DESC FROM DUAL UNION ALL"
+p_wmsm_8140/wm00_stockNo2.cpp	125	126	" SELECT T2.STOCK_NO, T2.STOCK_DESC"
+p_wmsm_8140/wm00_stockPlace.cpp	118	119	" SELECT T2.STOCK_PLACE_NO"
+p_wmsm_8140/wm00_truckNo1.cpp	91	94	sqlstr1 = "select DELIVERY_MODE,DELIVY_PLAN_TYPE,"
+p_wmsm_8140/wm00_truckNo1.cpp	95	95	sqlstr = "SELECT VEHICLE_NO,LOADING_WT FROM TSMSM14 WHERE  ARCHIVE_FLAG != '1' and  BILL_OF_LADING_NO = @bill_of_lading_no ";//装车下拉框查询
+p_wmsm_8140/wm00_truckNo1.cpp	96	97	sqlstr2 = "SELECT DISTINCT VEHICLE_NO FROM tsmpe02 t WHERE VEHICLE_NO <> '' AND STOCK_NO = @stock_no";//发货车辆下拉框查询
+p_wmsm_8140/wm00_truckNo2.cpp	107	111	"SELECT TWMA1.VEHICLE_NO TRUCK_NO "
+p_wmsm_8140/wm00_truckNo2.cpp	131	132	" SELECT DISTINCT T2.TRUCK_NO FROM TWM0D T2  ";
+p_wmsm_8140/wm_transfer_inq_m1.cpp	125	129	" SELECT A.*, B.STOCK_PLACE_NO, B.LAYERNO "
+p_wmsm_8140/wm_transfer_inq_m1.cpp	144	145	sqlcount = "SELECT COUNT(1),SUM(BILL_MAT_WT) FROM (" + sqlstr + ") T";
+p_wmsm_8140/wm_transfer_out1.cpp	97	99	" SELECT * FROM TEP0002"
+p_wmsm_8140/wm_transfer_out1.cpp	124	125	" SELECT COUNT(1) FROM TMMSM01"
+p_wmsm_8140/wm_transfer_out1.cpp	138	139	" SELECT COUNT(1) FROM TMMHR01"
+p_wmsm_8140/wm_transfer_out1.cpp	152	153	" SELECT COUNT(1) FROM TMMCR01"
+p_wmsm_8140/wm_transfer_out1.cpp	166	167	" SELECT COUNT(1) FROM TMMHP01"
+p_wmsm_8140/wm_transfer_out1.cpp	180	181	" SELECT COUNT(1) FROM TMMBW01"
+p_wmsm_8140/wmsm30c_inq.cpp	73	74	CDbCommand tatpm26(" update twmsm30 g set g.RUN_TRAINID= (select count(*)  from  twmsm32 t where t.Plan_No=g.plan_no and  t.Status='6') where g.BUSY_TYPE='1'", 
+p_wmsm_8140/wmsm30c_inq.cpp	78	79	CDbCommand tatpm26_1(" update twmsm30 g set g.FINISH_WEIGHT= (select sum(t.MAT_WT)  from  twmsm30m t where t.Plan_No=g.plan_no  and t.Status<>' ' )  where  "
+p_wmsm_8140/wmsm30c_inq.cpp	88	92	CString sql = " select t.* from TWMSM30  t where  1=1 and BUSY_TYPE='1' ";
+p_wmsm_8140/wmsm30c_inq1.cpp	26	27	CString sql = " select * from twmsm30m where 1 = 1 ";
+p_wmsm_8140/wmsm30c_mat_inq.cpp	78	81	sqlstr = "select * from tmmsm01 t where  (t.in_flag = '1' or t.UNLOAD_CODE like 'WXK1%') and  t.GUIDE_DEST IN (select CODE from TWMSMZD02 where CODE_CLASS = 'WM
+p_wmsm_8140/wmsm30c_save.cpp	132	133	sqlstr = "INSERT INTO " + table_name;
+p_wmsm_8140/wmsm30c_save1.cpp	159	160	sqlstr = "DELETE FROM " + table_name;
+p_wmsm_8140/wmsm32_f6.cpp	173	174	CDbCommand tatpm26(" update twmsm32  t set t.Real_Quantity = (select sum(g.MAT_WT)  from twmsm32m g where g.Mission_No='" + twmsm32["MISSION_NO"].ToString() + "
+p_wmsm_8140/wmsm32_f7.cpp	108	109	CDbCommand cmd_update(" update    twmsm30m t  set t.Status=' ' where t.Mat_No in(select distinct g.MAT_NO  from twmsm32m g where g.Mission_No='" + twmsm32["MISS
+p_wmsm_8140/wmsm32_inq.cpp	66	70	CString sql = "select t.*,t1.WAGON_NUM,t1.mat_wt  from twmsm32 t left join (select count(*) WAGON_NUM,sum(a.mat_wt) mat_wt,a.mission_no from TWMSM32M a group by
+p_wmsm_8140/wmsm32_inq1.cpp	27	28	CString sql = "select  *  from twmsm32m t  where 1=1  and t.MISSION_NO = @MISSION_NO  and t.PLAN_NO = @PLAN_NO  ";
+p_wmsm_8140/wmsm32_mat_inq.cpp	26	27	CString sql = " select * from twmsm30m t  where  t.STATUS<'3'";
+p_wmsm_8140/wmsm_heatno_turn.cpp	55	56	sqlstr = " UPDATE TMMSM19 SET HEAT_NO = '" + heat_no_new + "' WHERE HEAT_NO = '" + heat_no_old + "' ";//中频炉
+p_wmsm_8140/wmsm_heatno_turn.cpp	60	61	sqlstr = " UPDATE TMMSM20 SET HEAT_NO = '" + heat_no_new + "' WHERE HEAT_NO = '" + heat_no_old + "' ";//电炉
+p_wmsm_8140/wmsm_heatno_turn.cpp	65	66	sqlstr = " UPDATE TMMSM23 SET HEAT_NO = '" + heat_no_new + "',L2_PROC_NO='"+ heat_no_new +"'  WHERE HEAT_NO = '" + heat_no_old + "' ";//RH
+p_wmsm_8140/wmsm_heatno_turn.cpp	70	71	sqlstr = " UPDATE TMMSM24 SET HEAT_NO = '" + heat_no_new + "',L2_PROC_NO='" + heat_no_new + "'  WHERE HEAT_NO = '" + heat_no_old + "' ";//LF
+p_wmsm_8140/wmsm_heatno_turn.cpp	75	76	sqlstr = " UPDATE TMMSM25 SET HEAT_NO = '" + heat_no_new + "',L2_PROC_NO='" + heat_no_new + "'  WHERE HEAT_NO = '" + heat_no_old + "' ";//VOD
+p_wmsm_8140/wmsm_heatno_turn.cpp	80	81	sqlstr = " UPDATE TMMSM26 SET HEAT_NO = '" + heat_no_new + "',L2_PROC_NO='" + heat_no_new + "'  WHERE HEAT_NO = '" + heat_no_old + "' ";//LTS
+p_wmsm_8140/wmsm_heatno_turn.cpp	85	86	sqlstr = " UPDATE TMMSM31 SET HEAT_NO = '" + heat_no_new + "',L2_PROC_NO='" + heat_no_new + "'  WHERE HEAT_NO = '" + heat_no_old + "' ";//连铸
+p_wmsm_8140/wmsm_heatno_turn.cpp	90	91	sqlstr = " UPDATE TMMSM2A SET HEAT_NO = '" + heat_no_new + "',L2_PROC_NO='" + heat_no_new + "'  WHERE HEAT_NO = '" + heat_no_old + "' ";//加料
+p_wmsm_8140/wmsm_heatno_turn.cpp	95	96	sqlstr = " UPDATE TMMSM2A_YL SET HEAT_NO = '" + heat_no_new + "',L2_PROC_NO='" + heat_no_new + "'  WHERE HEAT_NO = '" + heat_no_old + "' ";//原料加料
+p_wmsm_8140/wmsm_heatno_turn.cpp	100	101	sqlstr = " UPDATE TMMSM2B SET HEAT_NO = '" + heat_no_new + "',L2_PROC_NO='" + heat_no_new + "'  WHERE HEAT_NO = '" + heat_no_old + "' ";//测温
+p_wmsm_8140/wmsm_heatno_turn.cpp	105	106	sqlstr = " UPDATE TPSSM11 SET HEAT_NO = '" + heat_no_new + "' WHERE HEAT_NO = '" + heat_no_old + "' ";//计划编制
+p_wmsm_8140/wmsm_heatno_turn.cpp	110	111	sqlstr = " UPDATE TPSSM41 SET HEAT_NO = '" + heat_no_new + "' WHERE HEAT_NO = '" + heat_no_old + "' ";//计划编制
+p_wmsm_8140/wmsm_heatno_turn.cpp	115	116	sqlstr = " UPDATE TPSSM12 SET HEAT_NO = '" + heat_no_new + "' WHERE HEAT_NO = '" + heat_no_old + "' ";//计划工序
+p_wmsm_8140/wmsm_heatno_turn.cpp	120	121	sqlstr = " UPDATE TPSSM42 SET HEAT_NO = '" + heat_no_new + "' WHERE HEAT_NO = '" + heat_no_old + "' ";//计划编制
+p_wmsm_8140/wmsm_heatno_turn.cpp	125	126	sqlstr = " UPDATE TPSSM99 SET HEAT_NO = '" + heat_no_new + "' WHERE HEAT_NO = '" + heat_no_old + "' ";//计划编制
+p_wmsm_8140/wmsm_heatno_turn.cpp	138	139	sqlstr = " UPDATE TQMTS24 SET HEAT_NO = '" + heat_no_new + "' WHERE HEAT_NO = '" + heat_no_old + "' AND SUBSTR(ST_SAMPLE_NO, 10, 1) IN ('C', 'F', 'R', 'S', 'V')
+p_wmsm_8140/wmsm_heatno_turn.cpp	150	151	sqlstr = " UPDATE TQMTS25 SET HEAT_NO = '" + heat_no_new + "' WHERE HEAT_NO = '" + heat_no_old + "' AND SUBSTR(ST_SAMPLE_NO, 10, 1) IN ('C', 'F', 'R', 'S', 'V')
+p_wmsm_8140/wmsm_heatno_turn.cpp	155	156	sqlstr = " UPDATE TQMTS29 SET HEAT_NO = '" + heat_no_new + "' WHERE HEAT_NO = '" + heat_no_old + "' ";//判定成分
+p_wmsm_8140/wmsm_heatno_turn.cpp	169	171	sqlstr = " UPDATE TMMSM33 SET MAT_NO = '" + heat_no_new + "' || SUBSTR(MAT_NO, 9), BATCH = '" + heat_no_new + "' || SUBSTR(BATCH, 9), HEAT_NO = '" + heat_no_new
+p_wmsm_8140/wmsm_heatno_turn.cpp	183	185	sqlstr = " UPDATE TMMSM01 SET MAT_NO = '" + heat_no_new + "' || SUBSTR(MAT_NO, 9), BATCH = '" + heat_no_new + "' || SUBSTR(BATCH, 9), HEAT_NO = '" + heat_no_new
+p_wmsm_8140/wmsm_heatno_turn.cpp	197	199	sqlstr =  " UPDATE TMMSM96 SET MAT_NO = '" + heat_no_new + "' || SUBSTR(MAT_NO, 9), BATCH = '" + heat_no_new + "' || SUBSTR(BATCH, 9), HEAT_NO = '" + heat_no_ne
+p_wmsm_8140/wmsmcpjk_auto.cpp	49	70	sqlstr = " insert into DA_MAT_ZPJK\
+p_wmsm_8140/wmsmdm_auto.cpp	65	89	sqlstr = " insert into DA_MAT_DAY_DM\
+p_wmsm_8140/wmsmgdwg_inq.cpp	79	83	sqlstr = " select MAT_NO, SLAB_CUT_TIME, STOCK_L2, STOCK_PLACE_NO,RECV_MAT_TIME\
+p_wmsm_8140/wmsmggjl_inq.cpp	45	65	sqlstr = " SELECT *\
+p_wmsm_8140/wmsmhrzc_auto.cpp	113	114	sqlstr = " select * from twmsm64 where BACK_C1 != 'S' AND DEAL_FLAG='I' ";
+p_wmsm_8140/wmsmhrzc_auto.cpp	118	118	CString	v_practice_no = "XG6240" + temp.Tables[0].Rows[i]["REC_CREATE_TIME"].ToString().SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(ZC_SJ.NEXTVAL)
+p_wmsm_8140/wmsmhrzc_auto.cpp	130	135	sqlstr_plan = " select PLAN_NO,LOAD_CODE_FACTORY,LOAD_CODE_AREA,LOAD_CODE,UNLOAD_CODE_FACTORY,UNLOAD_CODE_AREA,UNLOAD_CODE\
+p_wmsm_8140/wmsmhrzc_auto.cpp	243	244	sqlstr_load = " SELECT * FROM TWMSM61 WHERE MAT_NO='" + twmsm61["MAT_NO"].ToString() + "' AND UNLOAD_STATE='2' ORDER BY REC_CREATE_TIME DESC  ";
+p_wmsm_8140/wmsmhrzc_auto.cpp	301	311	twm41dj["C_DELIVERYID"] = "6240" + temp.Tables[0].Rows[i]["REC_CREATE_TIME"].ToString().SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL)
+p_wmsm_8140/wmsmhrzc_inq.cpp	79	81	sqlstr = " select * from twmsm64 where BACK_C1 != 'S' ";
+p_wmsm_8140/wmsmhsl_inq.cpp	58	124	sqlstr = " with mm1 as (select C_DIV,\
+p_wmsm_8140/wmsmrsl_inq.cpp	77	90	sqlstr = " with mm1 as (\
+p_wmsm_8140/wmsmsc_inq.cpp	83	109	sqlstr = " with mm1 as (select t1.HEAT_NO,\
+p_wmsm_8140/wmsmsc_inq1.cpp	85	88	sqlstr = " SELECT STRAND_NO, case when MAT_NO like '1A%' then SUBSTR(MAT_NO, 10) else SUBSTR(MAT_NO, 9) end MAT_NO, decode(MEND_FLAG,'1','X',' ')MEND_FLAG, roun
+p_wmsm_8140/wmsmscjc_auto.cpp	46	104	sqlstr = " insert into TMMSMSCJC  WITH MM1 AS (select C_DIV,\
+p_wmsm_8140/wmsmsjwz_auto.cpp	65	88	sqlstr = " insert into DA_MAT_SJWZ\
+p_wmsm_8140/wmsmsm11_inq1.cpp	252	256	" SELECT COUNT(TWMA0.MAT_NO),SUM(TWMA1.MAT_ACT_WT)"
+p_wmsm_8140/wmsmsm11_inq1.cpp	317	322	" SELECT (SELECT CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'M005' AND CODE = TWMA1.MAT_STATUS) MAT_STATUS ,"
+p_wmsm_8140/wmsmsm11_inq1.cpp	326	331	" SELECT (SELECT CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'M005' AND CODE = TWMA1.MAT_STATUS) MAT_STATUS ,"
+p_wmsm_8140/wmsmsm11_inq1.cpp	335	340	" SELECT (SELECT CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'M005' AND CODE = TWMA1.MAT_STATUS) MAT_STATUS ,"
+p_wmsm_8140/wmsmsm11_instock1.cpp	198	200	" SELECT COUNT(1) FROM TWMA0"
+p_wmsm_8140/wmsmsm12_inq1.cpp	191	193	" SELECT TWMA1.* "
+p_wmsm_8140/wmsmsm12_inq1.cpp	198	199	" SELECT TWMA1.* "
+p_wmsm_8140/wmsmsm12_outstock1.cpp	231	233	" SELECT COUNT(1) FROM TWMA0"
+p_wmsm_8140/wmsmsm12_outstock1.cpp	314	315	" SELECT LOADING_PLAN_NO,STOCK_NO,AIM_STOCK_NO FROM twm0d WHERE stock_no =@twm0d.STOCK_NO and EXPIRY_DATE >=@twm0d.DATE_TIME AND PRO_FLAG ='I' and truck_no =@tw
+p_wmsm_8140/wmsmsm12o_inq1.cpp	220	222	" SELECT COUNT(*),SUM(MAT_ACT_WT) FROM  TMMSM01 TWMA1"
+p_wmsm_8140/wmsmsm12o_inq1.cpp	254	258	" SELECT TWMA1.ST_NO,TWMA1.PONO,TWMA1.MAT_ACT_THICK,TWMA1.MAT_ACT_WIDTH,"
+p_wmsm_8140/wmsmsm12o_inq1.cpp	261	265	" SELECT TWMA1.ST_NO,TWMA1.PONO,TWMA1.MAT_ACT_THICK,TWMA1.MAT_ACT_WIDTH,"
+p_wmsm_8140/wmsmsm12o_inq1.cpp	268	273	" SELECT TWMA1.ST_NO,TWMA1.PONO,TWMA1.MAT_ACT_THICK,TWMA1.MAT_ACT_WIDTH,"
+p_wmsm_8140/wmsmsm12o_outstock1.cpp	272	273	" SELECT LOADING_PLAN_NO,STOCK_NO,AIM_STOCK_NO FROM twm0d WHERE stock_no =@twm0d.STOCK_NO and EXPIRY_DATE >=@twm0d.DATE_TIME AND PRO_FLAG ='I' and truck_no =@tw
+p_wmsm_8140/wmsmsm12o_outstock1.cpp	368	369	" SELECT LOADING_PLAN_NO,STOCK_NO,AIM_STOCK_NO FROM twm0d WHERE stock_no =@twm0d.STOCK_NO and EXPIRY_DATE >=@twm0d.DATE_TIME AND PRO_FLAG ='I' and truck_no =@tw
+p_wmsm_8140/wmsmsm17_inq_mat1.cpp	146	149	" SELECT (SELECT CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'M005' AND CODE = A.MAT_STATUS) MAT_STATUS ,* FROM TMMSM01 A LEFT JOIN TWMA2 B ON A.MAT_NO=
+p_wmsm_8140/wmsmsm17_inq_mat1.cpp	156	161	" SELECT (SELECT CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'M005' AND CODE = A.MAT_STATUS) MAT_STATUS ,*"
+p_wmsm_8140/wmsmsm20bd_bat.cpp	124	131	" DELETE FROM TWM20BD T"
+p_wmsm_8140/wmsmsm20bd_bat.cpp	149	240	" UPDATE TWM20BD T1 SET"
+p_wmsm_8140/wmsmsm20bd_bat.cpp	259	268	" SELECT"
+p_wmsm_8140/wmsmsm20bd_bat.cpp	381	388	" SELECT FACTORY_DIV, STOCK_NO FROM TWM20A2 T1"
+p_wmsm_8140/wmsmsm20bd_bat.cpp	411	412	sqlstr_item = " SELECT";
+p_wmsm_8140/wmsmsm20bd_bat.cpp	416	419	" SELECT * FROM TWM20A1"
+p_wmsm_8140/wmsmsm20bd_bat.cpp	462	465	" SELECT * FROM TWM20A2"
+p_wmsm_8140/wmsmsm20bd_bat.cpp	483	486	" SELECT * FROM TWM20A3"
+p_wmsm_8140/wmsmsm20bd_bat.cpp	732	823	" UPDATE TWM20BD T1 SET"
+p_wmsm_8140/wmsmsm20bd_inq.cpp	108	114	" SELECT * FROM TWM20A1 T1"
+p_wmsm_8140/wmsmsm20bd_inq.cpp	141	148	" SELECT * FROM TWM20A3 T1"
+p_wmsm_8140/wmsmsm20bd_inq.cpp	195	200	" SELECT * FROM TWM20BD T1"
+p_wmsm_8140/wmsmsm20bd_upd.cpp	234	353	" UPDATE Twm20bd SET"
+p_wmsm_8140/wmsmsm20bm_bat.cpp	121	128	" DELETE FROM TWM20BM T"
+p_wmsm_8140/wmsmsm20bm_bat.cpp	146	237	" UPDATE TWM20BM T1 SET"
+p_wmsm_8140/wmsmsm20bm_bat.cpp	256	262	" SELECT T.END_WT AS INIT_WT, T.* FROM TWM20BM T"
+p_wmsm_8140/wmsmsm20bm_bat.cpp	372	379	" SELECT FACTORY_DIV, STOCK_NO FROM TWM20A2 T1"
+p_wmsm_8140/wmsmsm20bm_bat.cpp	401	402	sqlstr_item = " SELECT";
+p_wmsm_8140/wmsmsm20bm_bat.cpp	406	409	" SELECT * FROM TWM20A1"
+p_wmsm_8140/wmsmsm20bm_bat.cpp	450	453	" SELECT * FROM TWM20A2"
+p_wmsm_8140/wmsmsm20bm_bat.cpp	471	474	" SELECT * FROM TWM20A3"
+p_wmsm_8140/wmsmsm20bm_bat.cpp	720	811	" UPDATE TWM20BM T1 SET"
+p_wmsm_8140/wmsmsm20bm_inq.cpp	113	119	" SELECT * FROM TWM20A1 T1"
+p_wmsm_8140/wmsmsm20bm_inq.cpp	145	152	" SELECT * FROM TWM20A3 T1"
+p_wmsm_8140/wmsmsm20bm_inq.cpp	211	216	" SELECT * FROM TWM20BM T1"
+p_wmsm_8140/wmsmsm20bm_upd.cpp	233	352	" UPDATE TWM20BM SET"
+p_wmsm_8140/wmsmsma2_inq1.cpp	181	183	sqlstr = " SELECT (SELECT CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'M005' AND CODE = t1.MAT_STATUS) MAT_STATUS ,"
+p_wmsm_8140/wmsmsma2_inq1.cpp	298	299	sqlstr_count = "SELECT COUNT(1),SUM(MAT_ACT_WT) FROM (" + sqlstr + ") T ";
+p_wmsm_8140/wmsmsma7_dwon.cpp	58	59	sqlstr = "update twm04 set pre_mat_num = pre_mat_num - 1 where stock_place_no = @stock_place_no";//更新目标垛位板坯预约块数
+p_wmsm_8140/wmsmsma7_dwon.cpp	65	66	sqlstr = "update tmmsm01 set cmd_flag = '0' where mat_no = @mat_no";;//行车命令标志，1：命令中，0：无命令
+p_wmsm_8140/wmsmsma7_dwon.cpp	78	80	sqlstr = "update twm04 set STOCK_STATUS='0' where stock_place_no = @stock_place_no"
+p_wmsm_8140/wmsmsma7_inq.cpp	126	126	sqlstr_count = "SELECT COUNT(1) FROM TWMA7 WHERE 1=1 ";
+p_wmsm_8140/wmsmsma7_inq.cpp	128	132	sqlstr = "SELECT * FROM TWMA7 WHERE 1=1 ";
+p_wmsm_8140/wmsmsma7_inq1.cpp	141	141	sqlstr_count = "SELECT COUNT(1) FROM TWMA7 WHERE 1=1 ";
+p_wmsm_8140/wmsmsma7_inq1.cpp	143	146	sqlstr = "SELECT (select count(1) from twma7 where CRANE_INST_STATUS = '0' and crane_no = (select crane_no from twm06 where mac = @v_confirm_ip)) NATIVE_NO,"
+p_wmsm_8140/wmsmturn_inq.cpp	28	29	sqlstr = " SELECT * FROM TMMSM01 WHERE HEAT_NO='" + bcls_rec->Tables[0].Rows[0]["HEAT_NO"].ToString() + "' ";
+p_wmsm_8140/wmsmturn_inq.cpp	34	35	sqlstr = " SELECT * FROM TWMSMTURN WHERE 1=1 ORDER BY REC_CREATE_TIME DESC ";
+p_wmsm_8140/wmsmxc_inq.cpp	118	118	sqlstr_count = "SELECT COUNT(1) FROM TWMSM62 WHERE 1=1 ";
+p_wmsm_8140/wmsmxc_inq.cpp	120	124	sqlstr = "SELECT  distinct PRACTICE_NO，PLAN_NO，TRUCK_NO，TRUCK_BOARD_NO，WAGONNO，TRUCK_MODEL，TRUCK_MODEL_DESC，LOAD_CODE_FACTORY，LOAD_CODE，Z_METAGE_NUM，Z_METAGE_WE
+p_wmsm_8140/wmsmxc_inq1.cpp	113	113	sqlstr_count = "SELECT COUNT(1) FROM TWMSM62 WHERE 1=1 ";
+p_wmsm_8140/wmsmxc_inq1.cpp	115	119	sqlstr = "SELECT * FROM TWMSM62 WHERE 1=1 ";
+p_wmsm_8140/wmsmyz_inq.cpp	81	94	sqlstr = " SELECT distinct PLAN_NO,\
+p_wmsm_8140/wmsmyz_inq.cpp	98	111	sqlstr = " SELECT distinct PLAN_NO,\
+p_wmsm_8140/wmsmyz_inq1.cpp	78	79	sqlstr = " SELECT * FROM (select * from twmsm12 union select * from hwmsm12) where 1 = 1 and LOAD_SCHEME_NO='" + bcls_rec->Tables[0].Rows[0]["LOAD_SCHEME_NO"].T
+p_wmsm_8140/wmsmzc_inq.cpp	121	121	sqlstr_count = "SELECT COUNT(1) FROM TWMSM61 WHERE 1=1 ";
+p_wmsm_8140/wmsmzc_inq.cpp	123	127	sqlstr = "SELECT  LOAD_END_TIME,PRACTICE_NO，PLAN_NO，TRUCK_NO，TRUCK_BOARD_NO，SHIFT_GROUP,WAGONNO，TRUCK_MODEL，TRUCK_MODEL_DESC，LOAD_CODE_FACTORY，LOAD_CODE_AREA，LO
+p_wmsm_8140/wmsmzc_inq1.cpp	113	113	sqlstr_count = "SELECT COUNT(1) FROM TWMSM61 WHERE 1=1 ";
+p_wmsm_8140/wmsmzc_inq1.cpp	115	119	sqlstr = "SELECT A.*,A.MAT_LEN MAT_ACT_LEN,A.MAT_WIDTH MAT_ACT_WIDTH,A.MAT_THICK MAT_ACT_THICK,A.MAT_WT MAT_ACT_WT FROM TWMSM61 A WHERE 1=1 ";
+p_wmsm_8140/wmsmzdqx_auto.cpp	65	87	sqlstr = " insert into DA_MAT_ZDQX\
+p_wmsm_8140/wmsmzhiliu_auto.cpp	65	98	sqlstr = " insert into DA_MAT_DAY_ZHILIU\
+p_wmsm_8170/fosmt00b_init.cpp	65	67	" SELECT ITEM_ENAME, REMARK, PAGE_TYPE"
+p_wmsm_8170/fosmt00b_inq.cpp	90	92	" SELECT * FROM TWMSMFOSM95C WHERE 1 = 1"
+p_wmsm_8170/fosmt00b_inq.cpp	109	111	" SELECT * FROM TWMSMFOSM95C WHERE PAGE_NUM = @PAGE_NUM"
+p_wmsm_8170/fosmt00b_inq.cpp	158	160	" SELECT * FROM TWMSMFOSM95A WHERE TABLE_NAME = @TABLE_NAME"
+p_wmsm_8170/fosmt00b_inq.cpp	193	195	" SELECT * FROM TWMSMFOSM95B WHERE TABLE_NAME = @TABLE_NAME"
+p_wmsm_8170/fosmt00b_inq.cpp	229	230	sqlstr = " select to_char(ROWNUM) row_no,PROD_DATE,BACK_S1,BACK_S2,BACK_S3,BACK_S4,BACK_S5,BACK_S6 from TWMSMFOSM01 where PAGE_ID='"+ tbl +"' and  PROD_DATE= to
+p_wmsm_8170/fosmt00b_inq.cpp	238	239	sqlstr = " select BACK_S1,BACK_S2,BACK_S3 from TWMSMFOSM01 where PAGE_ID='" + tbl + "' and PROD_DATE= '" + date_time + "' ";
+p_wmsm_8170/fosmt00b_inq.cpp	247	248	sqlstr = " select BACK_S1,BACK_S2,BACK_S3,BACK_S4,BACK_S5,BACK_S6 from TWMSMFOSM01 where PAGE_ID='" + tbl + "' and PROD_DATE= '" + date_time + "' ";
+p_wmsm_8170/fosmt00b_inq.cpp	262	263	sqlstr = " select SUBSTR(PROD_DATE, 7, 2)||'日'  PROD_DATE,BACK_S1,BACK_S2,BACK_S3,BACK_S4,BACK_S5,BACK_S6 from TWMSMFOSM01 where PAGE_ID='" + tbl + "' and PROD_
+p_wmsm_8170/fosmt00b_inq.cpp	271	272	sqlstr = " select BACK_S1,BACK_S2,BACK_S3,BACK_S4,BACK_S5 from TWMSMFOSM01 where PAGE_ID='" + tbl + "' and PROD_DATE= '" + date_time + "' ";
+p_wmsm_8170/fosmt00b_inq.cpp	332	333	" SELECT CODE, CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = @CODE_CLASS"
+p_wmsm_8170/fosmt00b_inq.cpp	390	393	" SELECT CODE, CODE_DESC_1_CONTENT FROM TEP0002"
+p_wmsm_8170/wmfm01_inq.cpp	90	92	" SELECT * FROM TFOSMT95C WHERE 1 = 1"
+p_wmsm_8170/wmfm01_inq.cpp	109	111	" SELECT * FROM TFOSMT95C WHERE PAGE_NUM = @PAGE_NUM"
+p_wmsm_8170/wmfm01_inq.cpp	158	160	" SELECT * FROM TFOSMT95A WHERE TABLE_NAME = @TABLE_NAME"
+p_wmsm_8170/wmfm01_inq.cpp	193	195	" SELECT * FROM TFOSMT95B WHERE TABLE_NAME = @TABLE_NAME"
+p_wmsm_8170/wmfm01_inq.cpp	229	230	sqlstr = " select ROWNUM row_no,BACK_S1,BACK_S2,BACK_S3,BACK_S4,BACK_S5,BACK_S6 from TWMSMFOSM01 where PROD_DATE= to_char(to_date('" + date_time + "','yyyyMMdd'
+p_wmsm_8170/wmfm01_inq.cpp	267	281	" SELECT A.CODE DEP_NAME, C.BREAKDN_DATE, C.REMARK REMARK_BFR, B.REMARK,"
+p_wmsm_8170/wmfm01_inq.cpp	321	325	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	326	328	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	329	334	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME, B.*"
+p_wmsm_8170/wmfm01_inq.cpp	382	406	" SELECT"
+p_wmsm_8170/wmfm01_inq.cpp	478	482	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	483	485	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	486	491	" SELECT TO_CHAR(A.TIME, 'YYYYMMDD') DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	531	535	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	536	538	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	539	544	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	585	589	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	590	592	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	593	599	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	642	646	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	647	649	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	650	658	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	700	718	" SELECT"
+p_wmsm_8170/wmfm01_inq.cpp	765	769	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	770	772	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	773	781	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	823	841	" SELECT"
+p_wmsm_8170/wmfm01_inq.cpp	884	888	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	889	891	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	892	896	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME, B.IRON_SLAB_RATE_1 / 100 IRON_SLAB_RATE"
+p_wmsm_8170/wmfm01_inq.cpp	935	939	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	940	942	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	943	947	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME, B.IRON_SLAB_RATE_2 / 100 IRON_SLAB_RATE"
+p_wmsm_8170/wmfm01_inq.cpp	1007	1011	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	1012	1014	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	1015	1040	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	1132	1144	" SELECT A.FACTORY_DIV, A.DATE_TIME, A.SHIFT_NO, A.SHIFT_GROUP,"
+p_wmsm_8170/wmfm01_inq.cpp	1175	1185	" SELECT A.FACTORY_DIV, A.DATE_TIME, A.SHIFT_NO, A.SHIFT_GROUP,"
+p_wmsm_8170/wmfm01_inq.cpp	1228	1240	" SELECT A.FACTORY_DIV, A.DATE_TIME, A.SHIFT_NO, A.SHIFT_GROUP,"
+p_wmsm_8170/wmfm01_inq.cpp	1271	1281	" SELECT A.FACTORY_DIV, A.DATE_TIME, A.SHIFT_NO, A.SHIFT_GROUP,"
+p_wmsm_8170/wmfm01_inq.cpp	1325	1338	" SELECT ROW_NUMBER() OVER (ORDER BY DATE_TIME, PROD_TIME, HEAT_NO, SEQ_NO) SEQ_NO,"
+p_wmsm_8170/wmfm01_inq.cpp	1370	1381	" SELECT ROW_NUMBER() OVER (ORDER BY DATE_TIME, PROD_TIME, HEAT_NO, SEQ_NO) SEQ_NO,"
+p_wmsm_8170/wmfm01_inq.cpp	1543	1556	" SELECT ROW_NUMBER() OVER (ORDER BY DATE_TIME, PROD_TIME, HEAT_NO, SEQ_NO) SEQ_NO,"
+p_wmsm_8170/wmfm01_inq.cpp	1588	1599	" SELECT ROW_NUMBER() OVER (ORDER BY DATE_TIME, PROD_TIME, HEAT_NO, SEQ_NO) SEQ_NO,"
+p_wmsm_8170/wmfm01_inq.cpp	1760	1764	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	1765	1767	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	1768	1775	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	1817	1821	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	1822	1824	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	1825	1832	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	1866	1873	" SELECT ELM_DESC, COUNT(ELM_DESC) COUNT_PONO"
+p_wmsm_8170/wmfm01_inq.cpp	1907	1914	" SELECT ELM_DESC, COUNT(ELM_DESC) COUNT_PONO"
+p_wmsm_8170/wmfm01_inq.cpp	1949	1954	" SELECT DATE_TIME, SHIFT_GROUP, HEAT_NO, OLD_ST_NO, ST_NO, REMARK"
+p_wmsm_8170/wmfm01_inq.cpp	1980	1985	" SELECT DATE_TIME, SHIFT_GROUP, HEAT_NO, OLD_ST_NO, ST_NO, REMARK"
+p_wmsm_8170/wmfm01_inq.cpp	2021	2026	" SELECT DATE_TIME, SHIFT_GROUP, HEAT_NO, OLD_ST_NO, ST_NO, REMARK"
+p_wmsm_8170/wmfm01_inq.cpp	2052	2057	" SELECT DATE_TIME, SHIFT_GROUP, HEAT_NO, OLD_ST_NO, ST_NO, REMARK"
+p_wmsm_8170/wmfm01_inq.cpp	2148	2152	" WITH T AS ( SELECT DATE_TIME, SHIFT_GROUP, CC_MACH_NO, PRODUCT_CHARGE, QUALIFIED_CHARGE,"
+p_wmsm_8170/wmfm01_inq.cpp	2153	2153	" SELECT * FROM ("
+p_wmsm_8170/wmfm01_inq.cpp	2154	2157	" SELECT *"
+p_wmsm_8170/wmfm01_inq.cpp	2158	2164	" SELECT DATE_TIME, SHIFT_GROUP, '合计' CC_MACH_NO, SUM(PRODUCT_CHARGE), SUM(QUALIFIED_CHARGE),"
+p_wmsm_8170/wmfm01_inq.cpp	2165	2168	" SELECT *"
+p_wmsm_8170/wmfm01_inq.cpp	2169	2175	" SELECT DATE_TIME, SHIFT_GROUP, '合计' CC_MACH_NO, SUM(PRODUCT_CHARGE), SUM(QUALIFIED_CHARGE),"
+p_wmsm_8170/wmfm01_inq.cpp	2176	2179	" SELECT *"
+p_wmsm_8170/wmfm01_inq.cpp	2180	2186	" SELECT DATE_TIME, SHIFT_GROUP, '合计' CC_MACH_NO, SUM(PRODUCT_CHARGE), SUM(QUALIFIED_CHARGE),"
+p_wmsm_8170/wmfm01_inq.cpp	2187	2190	" SELECT *"
+p_wmsm_8170/wmfm01_inq.cpp	2191	2197	" SELECT DATE_TIME, SHIFT_GROUP, '合计' CC_MACH_NO, SUM(PRODUCT_CHARGE), SUM(QUALIFIED_CHARGE),"
+p_wmsm_8170/wmfm01_inq.cpp	2198	2202	" SELECT TO_CHAR(TO_DATE(@DATE_TIME,'YYYYMMDD') - 1,'YYYYMMDD') DATE_TIME, '当日合计' SHIFT_GROUP, '当日合计' CC_MACH_NO, SUM(PRODUCT_CHARGE), SUM(QUALIFIED_CHARGE),"
+p_wmsm_8170/wmfm01_inq.cpp	2203	2211	" SELECT TO_CHAR(TO_DATE(@DATE_TIME,'YYYYMMDD') - 1,'YYYYMMDD') DATE_TIME, '月度累计' SHIFT_GROUP, '月度累计' CC_MACH_NO, SUM(PRODUCT_CHARGE), SUM(QUALIFIED_CHARGE),"
+p_wmsm_8170/wmfm01_inq.cpp	2248	2258	" SELECT A.DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	2292	2299	" SELECT SHIFT_GROUP, SUM(PRODUCT_CHARGE), SUM(QUALIFIED_CHARGE),"
+p_wmsm_8170/wmfm01_inq.cpp	2335	2341	" SELECT *"
+p_wmsm_8170/wmfm01_inq.cpp	2368	2374	" SELECT *"
+p_wmsm_8170/wmfm01_inq.cpp	2425	2425	" WITH T AS ("
+p_wmsm_8170/wmfm01_inq.cpp	2426	2432	" SELECT A.FACTORY_DIV, A.ITEM_ENAME, A.ITEM_CNAME, A.REMARK RATE_TARGET,"
+p_wmsm_8170/wmfm01_inq.cpp	2433	2437	" SELECT FACTORY_DIV, DEP_NAME, SUM(SLAB_WT_1) SLAB_WT_1, SUM(SLAB_WT_2) SLAB_WT_2"
+p_wmsm_8170/wmfm01_inq.cpp	2438	2448	" SELECT T.*,"
+p_wmsm_8170/wmfm01_inq.cpp	2522	2526	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	2527	2530	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	2531	2534	" SELECT MAT_CODE, DEVO_WT DEVO_WT"
+p_wmsm_8170/wmfm01_inq.cpp	2535	2553	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	2554	2569	" SELECT '合计',"
+p_wmsm_8170/wmfm01_inq.cpp	2609	2625	" SELECT '去年月均实绩' DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	2707	2711	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	2712	2715	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	2716	2719	" SELECT MAT_CODE, DEVO_WT DEVO_WT"
+p_wmsm_8170/wmfm01_inq.cpp	2720	2740	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	2741	2758	" SELECT '合计',"
+p_wmsm_8170/wmfm01_inq.cpp	2800	2818	" SELECT '去年月均实绩' DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	2881	2881	" WITH T AS ("
+p_wmsm_8170/wmfm01_inq.cpp	2882	2886	" SELECT ITEM_CNAME, UNIT, PROC_DIV, SEQ_NO, ITEM_ENAME,"
+p_wmsm_8170/wmfm01_inq.cpp	2887	2891	" SELECT ITEM_ENAME, SUM(REMARK_1) REMARK_1, SUM(REMARK_2) REMARK_2"
+p_wmsm_8170/wmfm01_inq.cpp	2892	2913	" SELECT ROW_NUMBER() OVER () SEQ_NO, T.ITEM_CNAME, T.UNIT, T.PROC_DIV, T.DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	2965	2990	" SELECT A.ITEM_ENAME ENERGY_CODE, SUBSTR(A.ITEM_CNAME,1,LENGTH(A.ITEM_CNAME)-8) ENERGY_CNAME,"
+p_wmsm_8170/wmfm01_inq.cpp	3034	3038	" WITH T(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	3039	3041	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	3042	3051	" SELECT TO_CHAR(T.TIME,'YYYYMMDD') DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	3085	3095	" SELECT T.DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	3132	3138	" SELECT SEQ_NO DATE_TIME, A.ELM_CODE, A.ELM_VALUE"
+p_wmsm_8170/wmfm01_inq.cpp	3171	3177	" SELECT SEQ_NO DATE_TIME, A.ELM_CODE, A.ELM_VALUE"
+p_wmsm_8170/wmfm01_inq.cpp	3210	3216	" SELECT SEQ_NO DATE_TIME, A.ELM_CODE, A.ELM_VALUE"
+p_wmsm_8170/wmfm01_inq.cpp	3263	3267	" WITH T(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	3268	3270	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	3271	3283	" SELECT A.DATE_TIME, A.RAW_IRON_WT RAW_IRON_WT_1, A.SCRAP_STEEL_IN SCRAP_STEEL_IN_1,"
+p_wmsm_8170/wmfm01_inq.cpp	3327	3331	" WITH T(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	3332	3334	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	3335	3347	" SELECT '合计' DATE_TIME, SUM(A.RAW_IRON_WT) RAW_IRON_WT_1, SUM(A.SCRAP_STEEL_IN) SCRAP_STEEL_IN_1,"
+p_wmsm_8170/wmfm01_inq.cpp	3395	3399	" WITH T(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	3400	3402	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	3403	3412	" SELECT A.DATE_TIME, A.PRODUCT_CHARGE PRODUCT_CHARGE_1, A.QUALIFIED_CHARGE QUALIFIED_CHARGE_1,"
+p_wmsm_8170/wmfm01_inq.cpp	3455	3459	" WITH T(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	3460	3462	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	3463	3474	" SELECT '合计' DATE_TIME, SUM(A.PRODUCT_CHARGE) PRODUCT_CHARGE_1, SUM(A.QUALIFIED_CHARGE) QUALIFIED_CHARGE_1,"
+p_wmsm_8170/wmfm01_inq.cpp	3512	3519	" SELECT A.DATE_TIME, A.ADJUST_CHARGE ADJUST_CHARGE_1, A.MOLTIRON_WT MOLTIRON_WT_1, A.REMARK REMARK_1,"
+p_wmsm_8170/wmfm01_inq.cpp	3552	3561	" SELECT '合计' DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	3617	3621	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	3622	3624	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	3625	3642	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	3691	3695	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	3696	3698	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	3699	3716	" SELECT '合计' DATE_TIME,"
+p_wmsm_8170/wmfm01_inq.cpp	3766	3770	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	3771	3773	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	3774	3785	" SELECT TO_CHAR(A.TIME,'YYYYMMDD') DATE_TIME, B1.PRODUCT_CHARGE PRODUCT_CHARGE_1,"
+p_wmsm_8170/wmfm01_inq.cpp	3832	3836	" WITH A(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	3837	3839	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	3840	3855	" SELECT '合计' DATE_TIME, SUM(B1.PRODUCT_CHARGE) PRODUCT_CHARGE_1,"
+p_wmsm_8170/wmfm01_inq.cpp	3899	3903	" WITH T(LEVEL, TIME) AS"
+p_wmsm_8170/wmfm01_inq.cpp	3904	3906	" SELECT LEVEL + 1,TIME + 1"
+p_wmsm_8170/wmfm01_inq.cpp	3907	3912	" SELECT TO_CHAR(T.TIME,'YYYYMMDD') DATE_TIME, '' AAA, SLAB_WT, TO_CHAR(CAST(MOLTIRON_WT AS DECIMAL(10,0))) MOLTIRON_WT, TO_CHAR(CAST(SCRAP_STEEL_TPC AS DECIMAL
+p_wmsm_8170/wmfm01_inq.cpp	3945	3954	" SELECT"
+p_wmsm_8170/wmfm01_inq.cpp	4002	4022	" SELECT '年度累计（万吨）' DATE_TIME, '' AAA,"
+p_wmsm_8170/wmfm01_inq.cpp	4068	4078	" SELECT DATE_TIME,AAA,SLAB_WT,MOLTIRON_WT,SCRAP_STEEL_TPC,STOCK_TOTAL_WT,IRON_STEEL_RATE1,IRON_STEEL_RATE2,T.DAYS,RATE_FINISH_DAY FROM"
+p_wmsm_8170/wmfm01_inq.cpp	4079	4080	" SELECT '2','铁厂','钢厂',0,'','',0,'',0,'',0 FROM DUAL"
+p_wmsm_8170/wmfm01_inq.cpp	4081	4086	" SELECT '3',B1.REMARK,B2.REMARK,0,'','',0,'',0,'',0 FROM DUAL"
+p_wmsm_8170/wmfm01_inq.cpp	4132	4140	" SELECT ROUND((ROUND((B.SLAB_WT / C.REMARK) * 100,2) - A.TIME_PROGRESS) * C.REMARK / 100,2)"
+p_wmsm_8170/wmfm01_inq.cpp	4228	4249	" SELECT A.CODE, A2.CODE FACTORY_DIV, A.CODE_DESC_1_CONTENT ITEM_CNAME,"
+p_wmsm_8170/wmfm01_inq.cpp	4250	4266	" SELECT ITEM_ENAME, FACTORY_DIV, SUM(TO_NUMBER(REMARK1)), SUM(TO_NUMBER(REMARK2)),"
+p_wmsm_8170/wmfm01_inq.cpp	4267	4285	" SELECT ITEM_ENAME, FACTORY_DIV, SUM(TO_NUMBER(REMARK1)), SUM(TO_NUMBER(REMARK2)),"
+p_wmsm_8170/wmfm01_inq.cpp	4366	4387	" SELECT A.CODE, A2.CODE FACTORY_DIV, A.CODE_DESC_1_CONTENT ITEM_CNAME,"
+p_wmsm_8170/wmfm01_inq.cpp	4388	4404	" SELECT ITEM_ENAME, FACTORY_DIV, SUM(TO_NUMBER(REMARK1)), SUM(TO_NUMBER(REMARK2)),"
+p_wmsm_8170/wmfm01_inq.cpp	4405	4423	" SELECT ITEM_ENAME, FACTORY_DIV, SUM(TO_NUMBER(REMARK1)), SUM(TO_NUMBER(REMARK2)),"
+p_wmsm_8170/wmfm01_inq.cpp	4461	4468	" SELECT FACTORY_DIV, STATION_ID STATION_NAME,"
+p_wmsm_8170/wmfm01_inq.cpp	4488	4492	" SELECT CODE,CODE_DESC_1_CONTENT DEP_NAME"
+p_wmsm_8170/wmfm01_inq.cpp	4555	4556	" SELECT CODE, CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = @CODE_CLASS"
+p_wmsm_8170/wmfm01_inq.cpp	4613	4616	" SELECT CODE, CODE_DESC_1_CONTENT FROM TEP0002"
+p_wmsm_8170/wmsm33c_f2.cpp	180	181	sqlstr = " SELECT CODE_DESC_1_CONTENT FROM TWMSMZD02 WHERE  CODE_CLASS ='MMBMZL' and code='" + tmmsm01["SURF_QUALITY"].ToString() + "' ";
+p_wmsm_8170/wmsm33c_f2.cpp	253	254	sqlstr = "SELECT  SG_GRADE_1,C_DIV  FROM TQMTS0X  WHERE ST_NO = '" + tmmsm01["ST_NO"].ToString().Trim() + "'";
+p_wmsm_8170/wmsm33c_f3.cpp	55	58	CString v_mat = Db::QueryCString("SELECT COUNT(1) FROM VMMSM01 WHERE HEAT_NO='" + tmmsm33c["HEAT_NO"].ToString() + "' AND RCV_MAT_FLAG='S'");
+p_wmsm_8170/wmsm33c_f3.cpp	72	73	sqlstr = " SELECT * FROM tmmsm01 WHERE HEAT_NO='" + tmmsm33c["HEAT_NO"].ToString() + "'  ";
+p_wmsm_8170/wmsm33c_f4.cpp	51	54	cmd_inq.SetCommandText("select count(1) from tqmts0x t0x left join tqmts02 t02 on t0x.ELM_STD_IDX_A = t02.IDX_NO where t0x.ST_NO = '" + tmmsm33c["ST_NO"].ToStri
+p_wmsm_8170/wmsm33c_f4.cpp	58	70	sqlstr = " select 'MMSM33C'                            REC_CREATOR,\
+p_wmsm_8170/wmsm33c_f5.cpp	58	60	sqlstr = " SELECT * FROM TQMTS29 WHERE HEAT_NO='"+ tqmts29["HEAT_NO"].ToString() +"' ";
+p_wmsm_8170/wmsm33c_f8.cpp	62	63	sqlstr = " SELECT SUM(MAT_WT) FROM VMMSM01 WHERE HEAT_NO='" + tmmsm33c["HEAT_NO"].ToString() + "' ";
+p_wmsm_8170/wmsm33c_f8.cpp	85	86	CString v_unit_code = Db::QueryCString("select UNIT_CODE from TMMSM33C_GGL where ST_NO='" + tmmsm33c["ST_NO"].ToString() + "' and rownum=1");
+p_wmsm_8170/wmsm33c_f8.cpp	88	89	sqlstr = " select * from TMMSM33C_DGDH where ST_NO='" + tmmsm33c["ST_NO"].ToString() + "' ";
+p_wmsm_8170/wmsm33c_f8.cpp	133	135	CString SeqNo = Db::QueryCString("SELECT LPAD(TO_CHAR(MMLC_2AYL.NEXTVAL),5 ,'0') FROM DUAL");
+p_wmsm_8170/wmsm33c_f8.cpp	139	145	sqlstr = " select QUALITY_BATCH_NO,LOT_NO,WEIGH_NO from tmmsm81 "
+p_wmsm_8170/wmsm33c_f8.cpp	162	167	sqlstr = " select QUALITY_BATCH_NO,LOT_NO,WEIGH_NO from tmmsm81 "
+p_wmsm_8170/wmsm33c_f8.cpp	194	198	sqlstr = "INSERT INTO TMMSM31 (REC_CREATE_TIME, REC_CREATOR, HEAT_NO, PROC_NO, PONO,SM_PLAN_NOL2, DEV_CODE,L2_PROC_NO,PROD_DATE,PROD_SHIFT_NO,PROD_SHIFT_GROUP,S
+p_wmsm_8170/wmsm33c_f8.cpp	210	211	sqlstr = " select * from TMMSM33C_GGL where ST_NO='" + tmmsm33c["ST_NO"].ToString() + "' ";
+p_wmsm_8170/wmsm33c_f8.cpp	248	252	sqlstr = "INSERT INTO " + v_table_name + " (REC_CREATE_TIME, REC_CREATOR, HEAT_NO, PROC_NO, PONO,SM_PLAN_NOL2, START_TIME, END_TIME,DEV_CODE,L2_PROC_NO,PROD_DAT
+p_wmsm_8170/wmsm33c_f9.cpp	64	65	sqlstr = " SELECT SUM(MAT_WT) FROM VMMSM01 WHERE HEAT_NO='" + tmmsm33c["HEAT_NO"].ToString() + "' ";
+p_wmsm_8170/wmsm33c_f9.cpp	76	77	sqlstr = " SELECT SUM(MAT_WT) FROM VMMSM01 WHERE HEAT_NO='" + v_heat_no_1 + "' ";
+p_wmsm_8170/wmsm33c_f9.cpp	96	97	sqlstr = " select * from tmmsm2a_yl where HEAT_NO='" + v_heat_no_1 + "' ";
+p_wmsm_8170/wmsm33c_f9.cpp	136	138	CString SeqNo = Db::QueryCString("SELECT LPAD(TO_CHAR(MMLC_2AYL.NEXTVAL),5 ,'0') FROM DUAL");
+p_wmsm_8170/wmsm33c_f9.cpp	142	148	sqlstr = " select QUALITY_BATCH_NO,LOT_NO,WEIGH_NO from tmmsm81 "
+p_wmsm_8170/wmsm33c_f9.cpp	165	170	sqlstr = " select QUALITY_BATCH_NO,LOT_NO,WEIGH_NO from tmmsm81 "
+p_wmsm_8170/wmsm33c_f9.cpp	224	242	sqlstr = " select HEAT_NO,PROC_NO,PONO,SM_PLAN_NOL2,DEV_CODE,L2_PROC_NO ,ST_NO,STATION_ID\
+p_wmsm_8170/wmsm33c_inq.cpp	41	44	sqlstr = " select A.*,(SELECT COUNT(1) FROM VMMSM01 WHERE VMMSM01.HEAT_NO=A.HEAT_NO) COUNT_NUM from TMMSM33C A where 1=1 ";
+p_wmsm_8170/wmsm33c_inq1.cpp	41	43	sqlstr = " select * from vmmsm01 where 1=1 and heat_no='" + bcls_rec->Tables[0].Rows[0]["HEAT_NO"].ToString() + "' ";
+p_wmsm_8170/wmsm33c_inq1.cpp	51	55	sqlstr = " select t29.*, t02.MAIN_AIM, t02.MAIN_MAX, t02.MAIN_MIN, t02.SPE_MAX, t02.SPE_MIN \
+p_wmsm_8170/wmsm33c_inq1.cpp	65	67	sqlstr = " select * from tmmsmgy06"
+p_wmsm_8170/wmsm33c_inq1.cpp	77	83	sqlstr = " select stat_date,sm_plan_nol2,heat_no,st_no,dev_code,mat_code,MAT_NAME,LOT_NO,SUM(OUT_STOCK_WT) as DEVO_WT	 "
+p_wmsm_8180/wmsm_form_save.cpp	42	43	sqlstr = "  insert into  TWMSMFORM (REC_REVISOR,REC_REVISE_TIME,FORM_DESC,CONDITIONS,VIEW_FLAG,IDX_REQ) "
+p_wmsm_8180/wmsmcpaod1_inq.cpp	88	89	sql = " SELECT ST_NO,HEAT_NO FROM V_PSSM_DEV_ST_NO WHERE DEV_CODE = '" + bcls_rec->Tables[0].Rows[0]["STATION_NO"].ToString() + "' ";
+p_wmsm_8180/wmsmcpaod1_inq.cpp	119	122	sql = " with t1 as (select *\
+p_wmsm_8180/wmsmcpaod1_inq.cpp	124	125	sql += " select T3.*, T2.ELM_ACT,T2.ST_SAMPLE_NO,T2.HEAT_NO from t3 left join  t2 on t3.ELM_NAME = t2.ELM_NAME where 1 = 1 ";
+p_wmsm_8180/wmsmcpaod1_inq.cpp	132	133	sql = " SELECT * FROM TWMSMCP_GCZBAOD where 1 = 1 ";
+p_wmsm_8180/wmsmcpaod1_inq.cpp	142	144	sql = " SELECT * FROM (SELECT T.*,ROW_NUMBER() OVER (PARTITION BY T.REMARK ORDER BY T.REC_CREATE_TIME DESC) RN FROM TWMSMZHZLLL T WHERE T.HEAT_NO = '" + HEAT_NO
+p_wmsm_8180/wmsmczts_inq.cpp	65	66	sql = " SELECT CODE_DESC_4_CONTENT,CODE_DESC_2_CONTENT,CODE_DESC_3_CONTENT,CODE_DESC_5_CONTENT FROM TWMSMZD02 WHERE CODE_CLASS = 'WMCZT' AND CODE_DESC_1_CONTENT
+p_wmsm_8180/wmsmczts_inq.cpp	88	89	sql = " SELECT ST_NO,HEAT_NO FROM V_PSSM_DEV_ST_NO WHERE DEV_CODE = '" + bcls_rec->Tables[0].Rows[0]["STATION_NO"].ToString() + "' ";
+p_wmsm_8180/wmsmczts_inq.cpp	101	102	sql = " select  MEMO_DETAIL,st_no,GUICHENG,MEMO_DETAIL1,'1' ok_flag from TWMSMCZTS where ST_NO like '%" + ST_NO_NOW + "%'\
+p_wmsm_8180/wmsmczts_inq.cpp	146	149	sql = " with t1 as (select *\
+p_wmsm_8180/wmsmczts_inq.cpp	151	152	sql += " select T3.*, T2.ELM_ACT,T2.ST_SAMPLE_NO from t3 left join  t2 on t3.ELM_NAME = t2.ELM_NAME where 1 = 1 ";
+p_wmsm_8180/wmsmczts_inq.cpp	158	161	sql = " SELECT MEMO_DETAIL,MEMO_DETAIL1 FROM TWMSMCZTS_GYHX WHERE FACTORY_2 = '" + FACTORY_2 + "' ";
+p_wmsm_8180/wmsmczts_inq.cpp	178	180	sql = " SELECT * FROM (SELECT T.*,ROW_NUMBER() OVER (PARTITION BY T.REMARK ORDER BY T.REC_CREATE_TIME DESC) RN FROM TWMSMZHZLLL T WHERE T.HEAT_NO = '" + HEAT_NO
+p_wmsm_8180/wmsmczts_n_inq.cpp	65	66	sql = " SELECT CODE_DESC_4_CONTENT,CODE_DESC_2_CONTENT,CODE_DESC_3_CONTENT,CODE_DESC_5_CONTENT FROM TWMSMZD02 WHERE CODE_CLASS = 'WMCZT' AND CODE_DESC_1_CONTENT
+p_wmsm_8180/wmsmczts_n_inq.cpp	89	90	sql = " SELECT ST_NO,HEAT_NO FROM V_PSSM_DEV_ST_NO_NEXT WHERE DEV_CODE = '" + bcls_rec->Tables[0].Rows[0]["STATION_NO"].ToString() + "' ";
+p_wmsm_8180/wmsmczts_n_inq.cpp	101	102	sql = " select  MEMO_DETAIL,st_no,GUICHENG,MEMO_DETAIL1,'1' ok_flag from TWMSMCZTS where ST_NO like '%" + ST_NO_NEXT + "%' AND FACTORY_2 = '" + FACTORY_2 + "'  
+p_wmsm_8180/wmsmczts_n_inq.cpp	144	147	sql = " with t1 as (select *\
+p_wmsm_8180/wmsmczts_n_inq.cpp	149	150	sql += " select T3.*, T2.ELM_ACT,T2.ST_SAMPLE_NO from t3 left join  t2 on t3.ELM_NAME = t2.ELM_NAME where 1 = 1 ";
+p_wmsm_8180/wmsmczts_n_inq.cpp	156	159	sql = " SELECT MEMO_DETAIL,MEMO_DETAIL1 FROM TWMSMCZTS_GYHX WHERE FACTORY_2 = '" + FACTORY_2 + "' ";
+p_wmsm_8180/wmsmcztscp_inq.cpp	69	70	sql = " SELECT CODE_DESC_4_CONTENT,CODE_DESC_2_CONTENT,CODE_DESC_3_CONTENT,CODE_DESC_5_CONTENT FROM TWMSMZD02 WHERE CODE_CLASS = 'WMCZT' AND CODE_DESC_1_CONTENT
+p_wmsm_8180/wmsmcztscp_inq.cpp	106	107	sql = " select  MEMO_DETAIL,st_no,GUICHENG,MEMO_DETAIL1,'1' ok_flag from TWMSMCZTS where ST_NO like '%" + bcls_rec->Tables[0].Rows[0]["ST_NO"].ToString() + "%'\
+p_wmsm_8180/wmsmcztscp_inq.cpp	149	150	sql = " SELECT t.st_no,re.spe_min,re.spe_max,re.elm_code,re.elm_name,re.* from tqmts0x t "
+p_wmsm_8180/wmsmcztscp_inq.cpp	158	159	sql = " SELECT MEMO_DETAIL FROM TWMSMSGAL WHERE FACTORY_2 = '" + FACTORY_2 + "' " + "AND ST_NO='" + v_st_no + "'";
+p_wmsm_8180/wmsmcztscp_inq.cpp	170	173	sql = " SELECT MEMO_DETAIL1 FROM TWMSMCZTS_GYHX WHERE FACTORY_2 = '" + FACTORY_2 + "' ";
+p_wmsm_8180/wmsmform_inq.cpp	34	35	sqlstr = " select * from twmsmform where 1=1 order by IDX_REQ ";
+p_wmsm_8180/wmsmform_inq.cpp	40	41	sqlstr = " select * from twmsmformcon where 1=1 order by equip_code ";
+p_wmsm_8180/wmsmfosm_auto.cpp	63	64	sqlstr = " delete from twmsmfosm where 1=1 ";
+p_wmsm_8180/wmsmfosm_auto.cpp	69	77	sqlstr = " insert into TWMSMFOSM\
+p_wmsm_8180/wmsmfosm_auto.cpp	84	94	sqlstr = "insert into TWMSMFOSM \
+p_wmsm_8180/wmsmfosm_auto.cpp	101	109	sqlstr = " insert into TWMSMFOSM\
+p_wmsm_8180/wmsmfosm_auto.cpp	116	126	sqlstr = "insert into TWMSMFOSM \
+p_wmsm_8180/wmsmfosm_auto.cpp	135	141	sqlstr = " insert into TWMSMFOSM\
+p_wmsm_8180/wmsmfosm_auto.cpp	149	155	sqlstr = " insert into TWMSMFOSM\
+p_wmsm_8180/wmsmfosm_auto.cpp	162	168	sqlstr = " insert into TWMSMFOSM\
+p_wmsm_8180/wmsmfosm_auto.cpp	179	182	sqlstr = " INSERT INTO TWMSMFOSM\
+p_wmsm_8180/wmsmfosm_auto.cpp	189	192	sqlstr = " INSERT INTO TWMSMFOSM\
+p_wmsm_8180/wmsmfosm_auto.cpp	199	213	sqlstr = " insert into TWMSMFOSM\
+p_wmsm_8180/wmsmfosm_auto.cpp	221	233	sqlstr = " insert into TWMSMFOSM\
+p_wmsm_8180/wmsmfosm_auto.cpp	240	260	sqlstr = " INSERT INTO TWMSMFOSM\
+p_wmsm_8180/wmsmfosmc_inq.cpp	60	61	sqlstr = " select * from twmsmfosm where C_DIV='2' order by WORK_CODE,BACKC1 ";
+p_wmsm_8180/wmsmfosmq_inq.cpp	59	60	sqlstr = " select * from twmsmfosm where C_DIV='0' order by WORK_CODE,BACKC1 ";
+p_wmsm_8180/wmsmfosms_inq.cpp	60	61	sqlstr = " select * from twmsmfosm where C_DIV='1' order by WORK_CODE,BACKC1 ";
+p_wmsm_8180/wmsmgclr_ins.cpp	72	73	sql = " insert into TWMSMCZTS  (GUICHENG,GRADE_TYPE2,C_DIV,FACTORY_2,ST_NO,MEMO_DETAIL,MEMO_DETAIL1,MEMO_DETAIL2,OP_FLAG,REC_CREATOR,REC_CREATE_TIME,REC_REVISOR
+p_wmsm_8180/wmsmpcgz_inq.cpp	86	86	sqlstr = " SELECT DISTINCT(ST_NO) FROM("
+p_wmsm_8180/wmsmpcgz_inq.cpp	87	95	" SELECT  a.*, B.CC_SEQ, B.SG_SIGN, B.CAST_LOT_NO, B.CAST_LOT_DIV_NO, B.CAST_LOT_SUM, B.REFINE_DIV, B.PLAN_POUR_WT, B.NEW_TEST_NO, B.PLAN_DATE"
+p_wmsm_8180/wmsmpcgz_inq.cpp	111	111	sqlstr = " SELECT T.ST_NO,T2.GRADE_TYPE1,T2.F_ROUTE1,T2.COMPOSE_LIST_NO2 FROM ("
+p_wmsm_8180/wmsmpcgz_inq.cpp	112	112	" SELECT DISTINCT(ST_NO) FROM("
+p_wmsm_8180/wmsmpcgz_inq.cpp	113	123	" SELECT  a.*, B.CC_SEQ, B.SG_SIGN, B.CAST_LOT_NO, B.CAST_LOT_DIV_NO, B.CAST_LOT_SUM, B.REFINE_DIV, B.PLAN_POUR_WT, B.NEW_TEST_NO, B.PLAN_DATE"
+p_wmsm_8180/wmsmshow_init.cpp	34	35	sqlstr = " select * from twmsmfoRm where 1=1 and VIEW_FLAG!='F' order by IDX_REQ ";
+p_wmsm_8180/wmsmshow_init.cpp	40	41	sqlstr = " select * from twmsmformcon ";
+p_wmsm_8180/wmsmshow_inq.cpp	45	46	sqlstr = " select * from twmsmformcon where SQL_CONTEXT!=' ' ";
+p_wmsm_8180/wmsmyry_inq.cpp	102	105	sql = "select substr(heat_no, 0, 4) as HEAT_NO_A,to_number(substr(heat_no, 5, 4)) AS HEAT_NO_B, DEV_CODE AS FACTORY_2 from(\
+p_wmsm_8180/wmsmyry_inq.cpp	149	152	sql = "select substr(heat_no, 0, 4) as HEAT_NO_A,to_number(substr(heat_no, 5, 4)) AS HEAT_NO_B, DEV_CODE AS FACTORY_2 from(\
+p_wmsm_8180/wmsmyry_inq.cpp	196	199	sql = "select substr(heat_no, 0, 4) as HEAT_NO_A,to_number(substr(heat_no, 5, 4)) AS HEAT_NO_B, DEV_CODE AS FACTORY_2 from(\
+p_wmsm_8180/wmsmyry_inq.cpp	243	246	sql = "select substr(heat_no, 0, 4) as HEAT_NO_A,to_number(substr(heat_no, 5, 4)) AS HEAT_NO_B, DEV_CODE AS FACTORY_2 from(\
+p_wmsm_8180/wmsmyry_inq.cpp	291	294	sql = "select substr(heat_no, 0, 4) as HEAT_NO_A,to_number(substr(heat_no, 5, 4)) AS HEAT_NO_B, DEV_CODE AS FACTORY_2 from(\
+p_wmsm_8180/wmsmyry_inq.cpp	338	341	sql = "select substr(heat_no, 0, 4) as HEAT_NO_A,to_number(substr(heat_no, 5, 4)) AS HEAT_NO_B, DEV_CODE AS FACTORY_2 from(\
+p_wmsm_8180/wmsmyry_inq.cpp	385	388	sql = "select substr(heat_no, 0, 4) as HEAT_NO_A,to_number(substr(heat_no, 5, 4)) AS HEAT_NO_B, DEV_CODE AS FACTORY_2 from(\
+p_wmsm_8180/wmsmyry_inq.cpp	432	435	sql = "select substr(heat_no, 0, 4) as HEAT_NO_A,to_number(substr(heat_no, 5, 4)) AS HEAT_NO_B, DEV_CODE AS FACTORY_2 from(\
+p_wmsm_8180/wmsmyry_inq.cpp	479	482	sql = "select substr(heat_no, 0, 4) as HEAT_NO_A,to_number(substr(heat_no, 5, 4)) AS HEAT_NO_B, DEV_CODE AS FACTORY_2 from(\
+p_wmsm_8180/wmsmyry_inq.cpp	529	569	sql = "SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.OUT_STEEL_TIME,T
+p_wmsm_8180/wmsmyry_inq.cpp	581	621	sql = "SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.OUT_STEEL_TIME,T
+p_wmsm_8180/wmsmyry_inq.cpp	629	669	sql = "SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.OUT_STEEL_TIME,T
+p_wmsm_8180/wmsmyry_inq.cpp	678	716	sql = "SELECT * FROM (SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.O
+p_wmsm_8180/wmsmyry_inq.cpp	724	762	sql = "SELECT * FROM (SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.O
+p_wmsm_8180/wmsmyry_inq.cpp	770	808	sql = "SELECT * FROM (SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.O
+p_wmsm_8180/wmsmyry_inq.cpp	816	854	sql = "SELECT * FROM (SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.O
+p_wmsm_8180/wmsmyry_inq.cpp	863	901	sql = "SELECT * FROM (SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.O
+p_wmsm_8180/wmsmyry_inq.cpp	909	947	sql = "SELECT * FROM (SELECT DECODE(T2.HEAT_NO,T2.HEAT_NO_OLD,T2.HEAT_NO_OLD,T2.HEAT_NO) AS HEAT_NO,T2.HEAT_NO_OLD,T.FACTORY_2,T2.ST_NO,T2.SAP_ERP_PRCSPATH,T2.O
+p_wmsm_8180/wmsmyry_upd.cpp	60	61	twmsmyryts["IDCARD"] = datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT TWMSMYRYTS_SEQ.NEXTVAL FROM DUAL");
+p_wmsm_8180/wmsmyryccm_inq.cpp	68	70	sql = " select t2.st_no,t1.start_time as CC_BEGIN_TIME,t1.end_time as CC_END_TIME \
+p_wmsm_8180/wmsmyryccm_inq.cpp	81	83	sql = " select t2.st_no,t1.start_time as CC_BEGIN_TIME,t1.end_time as CC_END_TIME \
+p_wmsm_8180/wmsmyryccm_inq.cpp	94	96	sql = " select t2.st_no,t1.start_time as CC_BEGIN_TIME,t1.end_time as CC_END_TIME \
+p_wmsm_8180/wmsmyryccm_inq.cpp	104	105	sql = " SELECT MEMO_DETAIL FROM (SELECT FACTORY_2,LISTAGG(MEMO_DETAIL,';'||chr(10)) AS MEMO_DETAIL FROM TWMSMYRYTS T GROUP BY FACTORY_2)T WHERE T.FACTORY_2 = 'A
+p_wmsm_8180/wmsmyryccm_inq.cpp	115	116	sql = " SELECT MEMO_DETAIL FROM (SELECT FACTORY_2,LISTAGG(MEMO_DETAIL,';'||chr(10)) AS MEMO_DETAIL FROM TWMSMYRYTS T GROUP BY FACTORY_2)T WHERE T.FACTORY_2 = 'A
+p_wmsm_8180/wmsmyryccm_inq.cpp	126	127	sql = " SELECT MEMO_DETAIL FROM (SELECT FACTORY_2,LISTAGG(MEMO_DETAIL,';'||chr(10)) AS MEMO_DETAIL FROM TWMSMYRYTS T GROUP BY FACTORY_2)T WHERE T.FACTORY_2 = 'E
+p_wmsm_8180/wmsmyryccm_inq.cpp	138	140	sql = "SELECT T.PROC_NO AS HEAT_NO,T.IRON_LADLE_NO AS IRON_LADLE_ID,T.DE_S_REP_TEMP AS OUT_STEEL_TEMP,T.END_TIME AS OUT_STEEL_TIME FROM TMMSM14 T \
+p_wmsm_8180/wmsmyx_pro.cpp	61	62	sql = " SELECT * FROM TMMSM01 WHERE MAT_NO  IN (SELECT TABLE_NAME FROM TMMSMTEST) ";
+p_wmsm_8190/cm_a02102_rcv.cpp	112	113	sqlstr = " UPDATE TWMSM60 SET ARCHIVE_FLAG='1' WHERE PLAN_NO='" + twm0d["PLAN_NO"].ToString() + "' ";
+p_wmsm_8190/cm_a02102_rcv.cpp	160	161	sqlstr = " UPDATE TWMSM60 SET ARCHIVE_FLAG=' ' WHERE PLAN_NO='" + twm0d["PLAN_NO"].ToString() + "' ";
+p_wmsm_8190/cm_a02102_rcv.cpp	184	185	sqlstr = " UPDATE TWMSM60 SET ARCHIVE_FLAG=' ' WHERE PLAN_NO='" + twm0d["PLAN_NO"].ToString() + "' ";
+p_wmsm_8190/cm_a02102_rcv.cpp	197	199	sqlstr = CString("update twm0d set "
+p_wmsm_8190/cm_a02106_rcv.cpp	116	117	sqlstr3 = "select * from twm0g where STATION_TRACK=@station_track and wagonno =@wagonno";
+p_wmsm_8190/cm_a02109_rcv.cpp	263	266	CString if_lg = Db::QueryCString("select CODE_DESC_3_CONTENT from TWMSMZD02 where CODE_CLASS='WM02' AND CODE ='" + tmmsm01["GUIDE_DEST"].ToString() + "'");
+p_wmsm_8190/cm_a02109_rcv.cpp	368	369	sqlstr = " update WL_LOAD_RECORD set IS_SEND='2' where SJ_NO='" + twmsm61["PRACTICE_NO"].ToString() + "' ";
+p_wmsm_8190/cm_a02110_rcv.cpp	197	199	sql_inq2 = CString("delete from twm0g "
+p_wmsm_8190/cm_a02110_rcv.cpp	208	215	sql_inq3 = CString("update twm0g set "
+p_wmsm_8190/cm_a02111_rcv.cpp	132	148	twm41dj["C_DELIVERYID"] = "6240" + c_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8190/cm_a02112_rcv.cpp	58	60	sqlstr = "SELECT * FROM twm0z t WHERE t.load_code = @load_code";
+p_wmsm_8190/cm_a02113_rcv.cpp	97	102	Log::Trace("", "__FUNCTION__", "insert count  = [{0}]", count);
+p_wmsm_8190/cm_a02114_rcv.cpp	123	124	sql = " select * from twmsm32m where MISSION_NO='" + twmsm32m["MISSION_NO"].ToString() + "' and mat_no!=' ' ";
+p_wmsm_8190/cm_a02114_rcv.cpp	148	165	twm41dj["C_DELIVERYID"] = "6240" + c_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8190/cm_a02114_rcv.cpp	208	209	sql = " select * from twm41dj where C_BATCHID='" + tmmsm01["MAT_NO"].ToString() + "' and C_STATESIGN='1' ";
+p_wmsm_8190/cm_a02114_rcv.cpp	248	249	sql = " select * from twmsm32m where MISSION_NO='" + twmsm32m["MISSION_NO"].ToString() + "' ";
+p_wmsm_8190/cm_p3t801_rcv.cpp	108	108	CString	v_practice_no = "XG6240" + c_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(ZC_SJ.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8190/cm_p3t801_rcv.cpp	120	125	sqlstr = " select PLAN_NO,LOAD_CODE_FACTORY,LOAD_CODE_AREA,LOAD_CODE,UNLOAD_CODE_FACTORY,UNLOAD_CODE_AREA,UNLOAD_CODE\
+p_wmsm_8190/cm_p3t801_rcv.cpp	267	268	sqlstr = " SELECT * FROM TWMSM61 WHERE MAT_NO='" + twmsm61["MAT_NO"].ToString() + "' AND UNLOAD_STATE='2' ORDER BY REC_CREATE_TIME DESC  ";
+p_wmsm_8190/cm_p3t801_rcv.cpp	325	335	twm41dj["C_DELIVERYID"] = "6240" + c_datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT LPAD(TO_CHAR(DB_NO.NEXTVAL), 4, '0') FROM DUAl");
+p_wmsm_8190/wmsm60_snd_bat.cpp	89	90	sqlstr_plan = "select t.plan_no from twmsm60 t where t.plan_status IN ('0','1')";
+p_wmsm_8190/wmsm60_snd_bat.cpp	100	101	sqlstr_item = "select t.plan_no from twmsm61 t where t.plan_no=@plan_no and t.affirm_flag<>'9'";
+p_wmsm_8190/wmsm60_snd_bat.cpp	142	143	sqlstr_load = "select t.LOAD_CODE_FACTORY,t.LOAD_CODE_AREA,t.LOAD_CODE,t.LOAD_NAME from TWMSM61A t";
+p_wmsm_8190/wmsm60_snd_bat.cpp	162	163	sqlstr_unload = "select t.UNLOAD_CODE_FACTORY,t.UNLOAD_CODE_AREA,t.UNLOAD_CODE,t.UNLOAD_NAME from TWMSM62A t";
+p_wmsm_8190/wmsm60_snd_bat.cpp	169	171	sqlstr = " SELECT LPAD(TO_CHAR(WM_PLANID_SEQ.NEXTVAL), 4, '0') FROM DUAl ";

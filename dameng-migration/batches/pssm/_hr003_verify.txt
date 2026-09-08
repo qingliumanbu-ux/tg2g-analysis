@@ -1,0 +1,41 @@
+backup=analysis/dameng-migration/batches/pssm/f_pssm27_upd_plno_n.pre-change388.bak
+orig_restored=True
+residue=[]
+new_sql_lines=1
+
+100				}
+101				cmd_tpssm27_inq.Close();
+102				sm_plan_no_used=sm_plan_no_used.TrimOrBlank();
+103	
+104				////Log::Info("", __FUNCTION__, "已使用的计划顺序号=[{0}]", sm_plan_no_used);
+105				//判断记录已使用的计划顺序号是否为空,
+106				if (sm_plan_no_used[0] == ' ')
+107				{
+108					//如果记录已使用的计划顺序号为空, 则将当前PONO的作业计划号写入记录表
+109					tpssm27["USE_STATUS"] = "1";
+110	
+111					sqlstr = "DELETE FROM TPSSM27 "
+112							 " WHERE FACTORY_DIV = @tpssm27.FACTORY_DIV "
+113							 // DM8 适配 CHANGE-388（HR-003 已确认 2026-09-08）：删除无计划号的 TPSSM27 记录，SM_PLAN_NO 为 NULL、空串、纯空格三种情况一起删除。
+114							 // 改写原因：原写法 TRIM(SM_PLAN_NO) IS NULL 依赖"TRIM 后空串视为 NULL"的兼容行为；DM8 不同兼容模式下空串与 NULL 的处理不一致，可能漏删。
+115							 // 改写口径：COALESCE(LENGTH(TRIM(SM_PLAN_NO)), 0) = 0 不做空串字面量比较，任何兼容配置下三种情况都命中；分厂条件与绑定参数保持不变。
+116							 // 原方案A（完整保留）：
+117							 // // "   AND TRIM(SM_PLAN_NO)is NULL ";
+118							 // // 方案B(DM8):
+119							 // "   AND TRIM(SM_PLAN_NO)is NULL ";
+120							 // 方案B（DM8 SQL）：
+121							 // "   AND TRIM(SM_PLAN_NO)is NULL ";
+122							 // 方案B(DM8):
+123							 "   AND COALESCE(LENGTH(TRIM(SM_PLAN_NO)), 0) = 0 ";
+124					cmd_tpssm27_del.SetCommandText(sqlstr);
+125					cmd_tpssm27_del.Parameters.Set("tpssm27.FACTORY_DIV",tpssm27["FACTORY_DIV"].ToString());
+126					cmd_tpssm27_del.ExecuteNonQuery();
+127	
+128					sqlstr = "tpssm27.Insert() -1 ";
+129					tpssm27.Insert();
+130	
+131				}
+132				else
+133				{
+134					l_sm_plan_no_used = atol(sm_plan_no_used);
+135					l_sm_plan_no      = atol(tpssm27["SM_PLAN_NO"].ToString());

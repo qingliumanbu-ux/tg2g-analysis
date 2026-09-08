@@ -1,0 +1,823 @@
+file	start	end	preview
+libFBSM/f_fbsm01_copy.cpp	66	67	sqlstr = "SELECT MARK_POS_CODE FROM TFBSM11 WHERE ST_NO = '" + st_no + "'";
+libFBSM/f_fbsm01_copy.cpp	195	196	sqlstr = "SELECT MARK_POS_CODE FROM TFBSM11 WHERE ST_NO = '" + st_no + "'";
+libFBSM/f_fbsm01_save.cpp	24	26	Log::Trace("", "", "insert start");
+libFBSM/f_fbsm01_save.cpp	97	100	Log::Trace("", "", "update start");
+libFBSM/f_fbsm01_save.cpp	250	252	Log::Trace("", "", "delete start");
+libFBSM/f_fbsm01_save.cpp	260	260	sqlstr = "delete from tfbsm01 where MAT_CODE='" + tfbsm01["MAT_CODE"].ToString() + "' and ST_NO='" + tfbsm01["ST_NO"].ToString() + "' and MATERIAL_CODE='" + tfb
+libFBSM/f_fbsm01_save.cpp	261	262	Log::Trace("", "", "delete sqlstr{0}", sqlstr);
+libFBSM/f_fbsm01_save.cpp	320	323	else if (position > 1 && table_name.Substring(position, table_name.GetLength() - position) == "DELETE")
+libFBSM/f_fbsm11_save.cpp	52	53	sqlstr = "INSERT INTO TFBSM11 (ST_NO, REC_CREATOR, REC_CREATE_TIME) "
+libFBSM/f_fbsm12_save.cpp	76	79	sqlstr = "SELECT AVG(ELM_002) FROM TQMTS24 "
+libFBSM/f_fbsm12_save.cpp	115	116	sqlstr = " SELECT AVG(TOTAL_WEIGHT) as AVG_TOTAL_WEIGHT "
+libFBSM/f_fbsm12_save.cpp	117	129	"   SELECT "
+libFBSM/f_fbsm12_save.cpp	188	189	sqlstr = " select COUNT(*)+1  from tfbsm31 where ST_NO='" + tfbsm31["ST_NO"].ToString() + "' and DATE_C='" + tfbsm31["DATE_C"].ToString() + "' ";
+libFBSM/f_fbsm12_save.cpp	230	231	sqlstr = " select COMM_FMLY_CODE,MATERIAL_CODE from TFBSM11 where ST_NO='" + tfbsm12["ST_NO"].ToString() + "' ";
+libFBSM/f_fbsm12_save.cpp	242	243	sqlstr = "SELECT COUNT(*) FROM TFBSM05 WHERE ST_NO = '" + t05_st_no + "'";
+libFBSM/f_fbsm12_save.cpp	251	252	sqlstr = "SELECT ST_NO FROM TFBSM11 WHERE MATERIAL_CODE = '" + material_code + "' AND MARK_POS_CODE = '1'";
+libFBSM/f_fbsm12_save.cpp	262	263	sqlstr = "SELECT ST_NO FROM TFBSM11 WHERE COMM_FMLY_CODE = '" + comm_fmly_code + "' AND MARK_POS_CODE = '2'";
+libFBSM/f_fbsm12_save.cpp	274	275	sqlstr = "SELECT COUNT(*) FROM tfbsm05 WHERE ST_NO='" + t05_st_no + "' AND BACKLOG_EA='" + tfbsm12["BACKLOG_EA"].ToString() + "'";
+libFBSM/f_fbsm12_save.cpp	297	298	sqlstr = "select MATERIAL_CODE from tfbsm11 where ST_NO='" + tfbsm12["ST_NO"].ToString() + "'";
+libFBSM/f_fbsm12_save.cpp	313	314	sqlstr = " select COUNT(*)+1  from tfbsm12 where ST_NO='" + tfbsm12["ST_NO"].ToString() + "' and DATE_C='" + tfbsm12["DATE_C"].ToString() + "' and BACKLOG_EA='"
+libFBSM/f_fbsm12_save.cpp	370	373	Log::Trace("", "", "update start");
+libFBSM/f_fbsm12_save.cpp	389	390	sqlstr = " update tfbsm31 set REC_REVISOR='" + tfbsm31["REC_REVISOR"].ToString() + "',REC_REVISE_TIME='" + datetime + "',BACKLOG_EA='" + tfbsm31["BACKLOG_EA"].T
+libFBSM/f_fbsm12_save.cpp	427	428	sqlstr = " select COMM_FMLY_CODE,MATERIAL_CODE from TFBSM11 where ST_NO='" + tfbsm12["ST_NO"].ToString() + "' ";
+libFBSM/f_fbsm12_save.cpp	439	440	sqlstr = "SELECT COUNT(*) FROM TFBSM05 WHERE ST_NO = '" + t05_st_no + "'";
+libFBSM/f_fbsm12_save.cpp	448	449	sqlstr = "SELECT ST_NO FROM TFBSM11 WHERE MATERIAL_CODE = '" + material_code + "' AND MARK_POS_CODE = '1'";
+libFBSM/f_fbsm12_save.cpp	459	460	sqlstr = "SELECT ST_NO FROM TFBSM11 WHERE COMM_FMLY_CODE = '" + comm_fmly_code + "' AND MARK_POS_CODE = '2'";
+libFBSM/f_fbsm12_save.cpp	471	472	sqlstr = "SELECT COUNT(*) FROM tfbsm05 WHERE ST_NO='" + t05_st_no + "' AND BACKLOG_EA='" + tfbsm12["BACKLOG_EA"].ToString() + "'";
+libFBSM/f_fbsm12_save.cpp	491	492	sqlstr = " update tfbsm12 set REC_REVISOR='" + tfbsm12["REC_REVISOR"].ToString() + "',REC_REVISE_TIME='" + datetime + "',BACKLOG_EA='" + tfbsm12["BACKLOG_EA"].T
+libFBSM/f_fbsm12_save.cpp	550	551	sqlstr = " delete from tfbsm31   where DATE_C='" + tfbsm31["DATE_C"].ToString() + "' and FURNACE_COUNT='" + tfbsm31["FURNACE_COUNT"].ToString() + "' and ST_NO='
+libFBSM/f_fbsm12_save.cpp	574	575	sqlstr = " delete from tfbsm12   where DATE_C='" + tfbsm12["DATE_C"].ToString() + "' and FURNACE_COUNT='" + tfbsm12["FURNACE_COUNT"].ToString() + "' and ST_NO='
+libFBSM/f_fbsm12_save.cpp	578	595	Log::Trace("", __FUNCTION__, "delete.sqlstr = [{0}]", sqlstr);
+libFBSM/f_fbsm12_save.cpp	649	652	else if (position > 1 && table_name.Substring(position, table_name.GetLength() - position) == "DELETE")
+libFBSM/f_fbsm41_mx_ins.cpp	88	89	sqlstr = " SELECT CODE FROM TEP0002 WHERE CODE_CLASS = 'FBSM23' ";
+libFBSM/f_fbsm41_mx_ins.cpp	140	140	sqlstr = " SELECT DISTINCT * FROM ( "
+libFBSM/f_fbsm41_mx_ins.cpp	141	148	" SELECT T14.COMPOSE_LIST_NO, T14.MAT_NAME, T14.MAT_CODE, T14.LOT_NO, T14.STOCK_NAME, T14.WEIGHT, T14.BACK_C2 FROM TFBSM14 T14 "
+libFBSM/f_fbsm41_mx_ins.cpp	198	199	sqlstr = " SELECT COUNT(1) FROM TFBSM43 WHERE COMPOSE_LIST_NO = @COMPOSE_LIST_NO AND CHECK_FLAG = '1' ";
+libFBSM/f_fbsm41_mx_ins.cpp	231	232	sqlstr = "SELECT BUNKER_NUM, BUNKER_WEIGHT_MAX FROM TFBSM42 WHERE ST_GRD_DIS_BEF = @TYPE";
+libFBSM/f_fbsm41_mx_ins.cpp	295	297	sqlstr = " DELETE FROM TFBSM41 "
+libFBSM/f_fbsm41_mx_ins.cpp	298	299	"   SELECT COMPOSE_LIST_NO_EAF FROM TFBSM43 "
+libFBSM/f_fbsm41_mx_ins.cpp	306	307	sqlstr = " DELETE FROM TFBSM43 "
+libFBSM/f_fbsm41_mx_ins.cpp	317	318	sqlstr = " SELECT MAX(TO_NUMBER(SUBSTR(COMPOSE_LIST_NO_EAF, -3))) FROM TFBSM43 WHERE COMPOSE_LIST_NO = @COMPOSE_LIST_NO ";
+libFBSM/f_fbsm41_mx_ins.cpp	331	334	sqlstr = " SELECT SEQ_NO FROM TFBSM12 "
+libFBSM/f_fbsm41_mx_ins.cpp	381	384	sqlstr = " UPDATE TFBSM12 "
+libFBSM/f_fbsm41_mx_ins.cpp	449	451	sqlstr = " DELETE FROM TFBSM41 "
+libFBSM/f_fbsm41_mx_ins.cpp	452	453	"   SELECT COMPOSE_LIST_NO_EAF FROM TFBSM43 "
+libFBSM/f_fbsm41_mx_ins.cpp	460	461	sqlstr = " DELETE FROM TFBSM43 "
+libFBSM/f_fbsm41_mx_ins.cpp	470	471	sqlstr = " SELECT MAX(TO_NUMBER(SUBSTR(COMPOSE_LIST_NO_EAF, -3))) FROM TFBSM43 WHERE COMPOSE_LIST_NO = @COMPOSE_LIST_NO ";
+libFBSM/f_fbsm41_mx_ins.cpp	484	487	sqlstr = " SELECT SEQ_NO FROM TFBSM12 "
+libFBSM/f_fbsm41_mx_ins.cpp	531	534	sqlstr = " UPDATE TFBSM12 "
+libFBSM/f_fbsm_save.cpp	27	29	CString sql_ins = "INSERT INTO T";
+libFBSM/f_fbsm_save.cpp	137	138	CString sql_clear = "UPDATE T" + form_name + " SET MARK_POS_CODE = ' ' WHERE MATERIAL_CODE = '" + material_code + "' AND MARK_POS_CODE = '1' AND ST_NO != '" + s
+libFBSM/f_fbsm_save.cpp	145	146	CString sql_clear = "UPDATE T" + form_name + " SET MARK_POS_CODE = ' ' WHERE COMM_FMLY_CODE = '" + comm_fmly_code + "' AND MARK_POS_CODE = '2' AND ST_NO != '" +
+libFBSM/f_fbsm_save.cpp	191	194	Log::Trace("", "", "update start");
+libFBSM/f_fbsm_save.cpp	201	203	CString sql_ins = "INSERT INTO H" + form_name + " ( ";
+libFBSM/f_fbsm_save.cpp	286	287	CString sql_upd = "UPDATE T" + form_name + " SET ";
+libFBSM/f_fbsm_save.cpp	378	379	Log::Trace("", "", "UPDATE sql_upd{0}", sqlstr);
+libFBSM/f_fbsm_save.cpp	393	394	CString sql_clear = "UPDATE T" + form_name + " SET MARK_POS_CODE = ' ' WHERE MATERIAL_CODE = '" + material_code + "' AND MARK_POS_CODE = '1' AND ST_NO != '" + s
+libFBSM/f_fbsm_save.cpp	401	402	CString sql_clear = "UPDATE T" + form_name + " SET MARK_POS_CODE = ' ' WHERE COMM_FMLY_CODE = '" + comm_fmly_code + "' AND MARK_POS_CODE = '2' AND ST_NO != '" +
+libFBSM/f_fbsm_save.cpp	446	450	CString sql_ins = "INSERT INTO H" + form_name + " (";
+libFBSM/f_fbsm_save.cpp	467	470	CString sql_del = "DELETE FROM T" + form_name + " WHERE 1 = 1 ";
+libFBSM/f_fbsm_save.cpp	473	479	sql_del = "DELETE FROM T" + form_name +
+libFBSM/f_fbsm_save.cpp	484	489	sql_del = "DELETE FROM T" + form_name +
+libFBSM/f_fbsm_save.cpp	494	498	sql_del = "DELETE FROM T" + form_name +
+libFBSM/f_fbsm_save.cpp	503	506	sql_del = "DELETE FROM T" + form_name +
+libFBSM/f_fbsm_save.cpp	511	518	sql_del = "DELETE FROM T" + form_name +
+libFBSM/f_fbsm_save.cpp	646	647	sqlstr = "SELECT DATE_C, FURNACE_COUNT, ST_NO, CC_MACH_NO, BACKLOG_EA, REMARK_PS FROM TFBSM12 WHERE DATE_C = '" + date_c + "'";
+libFBSM/f_fbsm_save.cpp	684	685	sqlstr = " SELECT COMM_FMLY_CODE,MATERIAL_CODE FROM TFBSM11 WHERE ST_NO='" + row_st_no + "' ";
+libFBSM/f_fbsm_save.cpp	696	697	sqlstr = "SELECT COUNT(*) FROM TFBSM05 WHERE ST_NO = '" + t05_st_no + "'";
+libFBSM/f_fbsm_save.cpp	705	706	sqlstr = "SELECT ST_NO FROM TFBSM11 WHERE MATERIAL_CODE = '" + material_code + "' AND MARK_POS_CODE = '1'";
+libFBSM/f_fbsm_save.cpp	716	717	sqlstr = "SELECT ST_NO FROM TFBSM11 WHERE COMM_FMLY_CODE = '" + comm_fmly_code + "' AND MARK_POS_CODE = '2'";
+libFBSM/f_fbsm_save.cpp	728	729	sqlstr = "SELECT COUNT(*) FROM tfbsm05 WHERE ST_NO='" + t05_st_no + "' AND BACKLOG_EA='" + row_backlog_ea + "'";
+libFBSM/f_fbsm_save.cpp	742	743	sqlstr = " UPDATE TFBSM12 SET REC_REVISOR='" + userid + "',REC_REVISE_TIME='" + datetime + "',REMARK_PS='" + row_remark_ps + "' WHERE DATE_C='" + row_date_c + "
+libFBSM/f_fbsm_save.cpp	806	808	else if (position > 1 && table_name.Substring(position, table_name.GetLength() - position) == "DELETE")
+p_fbsm_13400/fbsm00_inq.cpp	35	36	sqlstr = "SELECT MATERIAL_CODE, COMM_FMLY_CODE FROM TFBSM11 WHERE ST_NO = '" + st_no + "'";
+p_fbsm_13400/fbsm00_inq.cpp	48	49	sqlstr = "SELECT COMM_FMLY_CODE FROM TFBSM11 WHERE MATERIAL_CODE = '" + material_code + "'";
+p_fbsm_13400/fbsm00_inq.cpp	63	105	sqlstr = " SELECT DISTINCT "
+p_fbsm_13400/fbsm00_inq.cpp	106	107	"     SELECT DISTINCT ST_NO, BACKLOG_EA FROM TFBSM05 "
+p_fbsm_13400/fbsm00_inq.cpp	108	113	"     SELECT DISTINCT t11.ST_NO, t05.BACKLOG_EA "
+p_fbsm_13400/fbsm00_inq.cpp	114	119	"     SELECT DISTINCT t11.ST_NO, t05.BACKLOG_EA "
+p_fbsm_13400/fbsm00_inq.cpp	120	124	"         SELECT 1 FROM TFBSM11 r JOIN TFBSM05 t ON r.ST_NO = t.ST_NO "
+p_fbsm_13400/fbsm01_inq.cpp	38	39	sqlstr = "SELECT MATERIAL_CODE, COMM_FMLY_CODE FROM TFBSM11 WHERE ST_NO = '" + st_no + "'";
+p_fbsm_13400/fbsm01_inq.cpp	51	52	sqlstr = "SELECT COMM_FMLY_CODE FROM TFBSM11 WHERE MATERIAL_CODE = '" + material_code + "'";
+p_fbsm_13400/fbsm01_inq.cpp	66	71	sqlstr = " SELECT t.BACKLOG_EA,t.QUALITY_FLAS,t.MAT_CODE,t.MAT_NAME,t.MUST_DO_FLAG,t.UPPER_LIMIT_VALUE,t.LOWER_LIMIT_VALUE,m50.MAT_TYPE_PL1 AS BACK_C2, "
+p_fbsm_13400/fbsm01_inq.cpp	72	79	" SELECT BACKLOG_EA,QUALITY_FLAS,MAT_CODE,MAT_NAME,MUST_DO_FLAG,UPPER_LIMIT_VALUE,LOWER_LIMIT_VALUE,REC_CREATOR,REC_CREATE_TIME,REC_REVISOR,REC_REVISE_TIME, "
+p_fbsm_13400/fbsm01_inq.cpp	105	111	" SELECT MAT_CODE,SUM( CASE WHEN STOCK_NAME != '5' THEN WEIGHT / 1000 ELSE WEIGHT END ) AS WEIGHT, "
+p_fbsm_13400/fbsm01_inq.cpp	124	125	sqlstr = "SELECT ST_NO FROM TFBSM11 WHERE MATERIAL_CODE = '" + material_code + "' AND MARK_POS_CODE = '1'";
+p_fbsm_13400/fbsm01_inq.cpp	141	146	sqlstr = " SELECT t.BACKLOG_EA,t.QUALITY_FLAS,t.MAT_CODE,t.MAT_NAME,t.MUST_DO_FLAG,t.UPPER_LIMIT_VALUE,t.LOWER_LIMIT_VALUE,m50.MAT_TYPE_PL1 AS BACK_C2, "
+p_fbsm_13400/fbsm01_inq.cpp	147	154	" SELECT BACKLOG_EA,QUALITY_FLAS,MAT_CODE,MAT_NAME,MUST_DO_FLAG,UPPER_LIMIT_VALUE,LOWER_LIMIT_VALUE,REC_CREATOR,REC_CREATE_TIME,REC_REVISOR,REC_REVISE_TIME, "
+p_fbsm_13400/fbsm01_inq.cpp	172	178	" SELECT MAT_CODE,SUM( CASE WHEN STOCK_NAME != '5' THEN WEIGHT / 1000 ELSE WEIGHT END ) AS WEIGHT, "
+p_fbsm_13400/fbsm01_inq.cpp	193	194	sqlstr = "SELECT ST_NO FROM TFBSM11 WHERE COMM_FMLY_CODE = '" + comm_fmly_code + "' AND MARK_POS_CODE = '2'";
+p_fbsm_13400/fbsm01_inq.cpp	210	215	sqlstr = " SELECT t.BACKLOG_EA,t.QUALITY_FLAS,t.MAT_CODE,t.MAT_NAME,t.MUST_DO_FLAG,t.UPPER_LIMIT_VALUE,t.LOWER_LIMIT_VALUE,m50.MAT_TYPE_PL1 AS BACK_C2, "
+p_fbsm_13400/fbsm01_inq.cpp	216	223	" SELECT BACKLOG_EA,QUALITY_FLAS,MAT_CODE,MAT_NAME,MUST_DO_FLAG,UPPER_LIMIT_VALUE,LOWER_LIMIT_VALUE,REC_CREATOR,REC_CREATE_TIME,REC_REVISOR,REC_REVISE_TIME, "
+p_fbsm_13400/fbsm01_inq.cpp	241	247	" SELECT MAT_CODE,SUM( CASE WHEN STOCK_NAME != '5' THEN WEIGHT / 1000 ELSE WEIGHT END ) AS WEIGHT, "
+p_fbsm_13400/fbsm01_inq.cpp	337	340	sqlstr = "SELECT ST_NO, MARK_POS_CODE FROM TFBSM11 WHERE 1=1 ";
+p_fbsm_13400/fbsm12_inq.cpp	31	38	sqlstr = " SELECT numbers.rn          AS ROW_NUM, "
+p_fbsm_13400/fbsm12_inq.cpp	39	43	" SELECT LEVEL as rn "
+p_fbsm_13400/fbsm12_inq.cpp	44	48	" SELECT IRON_SI, ROW_NUMBER() OVER(ORDER BY REC_CREATE_TIME DESC) as rn "
+p_fbsm_13400/fbsm12_inq.cpp	49	53	" SELECT STEEL_TEMP, ROW_NUMBER() OVER(ORDER BY REC_CREATE_TIME DESC) as rn "
+p_fbsm_13400/fbsm12_inq.cpp	54	58	" SELECT IRON_SI, ROW_NUMBER() OVER(ORDER BY REC_CREATE_TIME DESC) as rn "
+p_fbsm_13400/fbsm12_inq.cpp	59	63	" SELECT STEEL_TEMP, ROW_NUMBER() OVER(ORDER BY REC_CREATE_TIME DESC) as rn "
+p_fbsm_13400/fbsm12_inq.cpp	64	68	" SELECT IRON_SI, ROW_NUMBER() OVER(ORDER BY REC_CREATE_TIME DESC) as rn "
+p_fbsm_13400/fbsm12_inq.cpp	69	73	" SELECT STEEL_TEMP, ROW_NUMBER() OVER(ORDER BY REC_CREATE_TIME DESC) as rn "
+p_fbsm_13400/fbsm13_inq.cpp	48	73	sqlstr = " select "
+p_fbsm_13400/fbsm13a_save.cpp	31	32	sqlstr = "DELETE FROM TFBSM13A";
+p_fbsm_13400/fbsm13a_save.cpp	37	37	sqlstr = "INSERT INTO TFBSM13A (MAT_CODE, STOCK_WT, STOCK_NAME, QUALITY_BATCH_NO) "
+p_fbsm_13400/fbsm13a_save.cpp	38	59	"SELECT tmmsm85.MAT_CODE, "
+p_fbsm_13400/fbsm19_inq.cpp	37	58	sqlstr = " SELECT "
+p_fbsm_13400/fbsm21_inq.cpp	39	39	sqlstr = "WITH FBSM13_DATA AS ("
+p_fbsm_13400/fbsm21_inq.cpp	40	51	"    SELECT "
+p_fbsm_13400/fbsm21_inq.cpp	61	67	" SELECT "
+p_fbsm_13400/fbsm21_inq.cpp	68	74	" SELECT MAX(TRIM(DATE_C)) "
+p_fbsm_13400/fbsm21_inq.cpp	75	86	"    SELECT "
+p_fbsm_13400/fbsm21_inq.cpp	97	110	"SELECT "
+p_fbsm_13400/fbsm23_elm_inq.cpp	30	31	sqlstr = " select ST_NO,BACK_C2,UPPER_LIMIT_VALUE,LOWER_LIMIT_VALUE,MUST_DO_FLAG,VALUE_MAX,VALUE_MIN from tfbsm23 "
+p_fbsm_13400/fbsm23_inq.cpp	32	34	sqlstr = " select ST_NO,MATERIAL_CODE,DATE_C,SUM(FURNACE_COUNT) AS FURNACE_COUNT from tfbsm12 "
+p_fbsm_13400/fbsm23_save.cpp	52	53	sqlstr = "DELETE FROM TFBSM23 WHERE ST_NO='" + st_no + "' AND BACK_C2='" + back_c2 + "' AND UPPER_LIMIT_VALUE='" + upper_limit_value + "' AND LOWER_LIMIT_VALUE=
+p_fbsm_13400/fbsm23_save.cpp	57	58	sqlstr = "INSERT INTO TFBSM23 (ST_NO, BACK_C2, UPPER_LIMIT_VALUE, LOWER_LIMIT_VALUE, MUST_DO_FLAG, VALUE_MAX, VALUE_MIN, MATERIAL_CODE, REC_CREATOR, REC_CREATE_
+p_fbsm_13400/fbsm23_save.cpp	100	102	Log::Trace("", "", "update start");
+p_fbsm_13400/fbsm23_save.cpp	130	131	sqlstr = "UPDATE TFBSM23 SET UPPER_LIMIT_VALUE='" + upper_limit_value + "', LOWER_LIMIT_VALUE='" + lower_limit_value + "', MUST_DO_FLAG='" + must_do_flag + "', 
+p_fbsm_13400/fbsm23_save.cpp	189	190	sqlstr = "DELETE FROM TFBSM23 WHERE ST_NO='" + st_no + "' AND BACK_C2='" + back_c2 + "'";
+p_fbsm_13400/fbsm23_save.cpp	252	254	else if (position > 1 && table_name.Substring(position, table_name.GetLength() - position) == "DELETE")
+p_fbsm_13400/fbsm_stock_name_inq.cpp	20	21	sqlstr = " SELECT CODE, CODE_DESC_1_CONTENT as code_desc FROM tep0002 WHERE code_class = 'FBSM13' "
+p_fbsm_13400/fbsm_stock_name_inq.cpp	22	23	" SELECT BUNKER_NO as CODE, MAT_NAME as code_desc FROM tmmsm60 WHERE BUNKER_NO like 'VS%' "
+p_fbsm_13400/fbsma12_inq.cpp	26	26	sqlstr = " SELECT * FROM( "
+p_fbsm_13400/fbsma12_inq.cpp	27	28	"   select DATE_TIME,DATE_C,FURNACE_COUNT,ST_NO,REMARK_PS,BACKLOG_EA,CC_MACH_NO,REC_CREATOR,REC_CREATE_TIME,REC_REVISOR,REC_REVISE_TIME from tfbsm12 WHERE SEQ_N
+p_fbsm_13400/fbsma12_inq.cpp	29	30	"   select DATE_TIME,DATE_C,FURNACE_COUNT,ST_NO,REMARK_PS,BACKLOG_EA,CC_MACH_NO,REC_CREATOR,REC_CREATE_TIME,REC_REVISOR,REC_REVISE_TIME from tfbsm31 WHERE SEQ_N
+p_fbsm_13400/fbsma_inq.cpp	37	40	sqlstr = "SELECT * FROM " + sql_tableName + " where 1=1 ";
+p_fbsm_13400/fbsma_inq.cpp	52	55	sqlstr = "SELECT * FROM " + sql_tableName + " where 1=1 ";
+p_fbsm_13400/fbsma_inq.cpp	59	60	sqlstr1 = "SELECT MATERIAL_CODE, COMM_FMLY_CODE FROM TFBSM11 WHERE ST_NO = '" + st_no + "'";
+p_fbsm_13400/fbsma_inq.cpp	72	73	sqlstr1 = "SELECT COMM_FMLY_CODE FROM TFBSM11 WHERE MATERIAL_CODE = '" + material_code + "'";
+p_fbsm_13400/fbsma_inq.cpp	113	114	sqlstr1 = "SELECT ST_NO FROM TFBSM11 WHERE MATERIAL_CODE = '" + material_code + "' AND MARK_POS_CODE = '1'";
+p_fbsm_13400/fbsma_inq.cpp	128	129	sqlstr = "SELECT * FROM " + sql_tableName + " where 1=1 ";
+p_fbsm_13400/fbsma_inq.cpp	149	150	sqlstr1 = "SELECT ST_NO FROM TFBSM11 WHERE COMM_FMLY_CODE = '" + comm_fmly_code + "' AND MARK_POS_CODE = '2'";
+p_fbsm_13400/fbsma_inq.cpp	164	165	sqlstr = "SELECT * FROM " + sql_tableName + " where 1=1 ";
+p_fbsm_13400/fbsma_inq.cpp	200	201	sqlstr1 = "SELECT ST_NO, MARK_POS_CODE FROM TFBSM11 WHERE ST_NO IN (" + st_no_list + ")";
+p_fbsm_13400/fbsma_inq.cpp	232	234	CString sql = "SELECT * FROM " + sql_tableName;
+p_fbsm_13400/fbsma_inq.cpp	237	240	CString sql_count = "SELECT COUNT(*) FROM " + sql_tableName;
+p_fbsm_13400/fbsmcs_inq.cpp	71	72	sqlstr = " select case when MAT_NAME like '%硅铁%' then '1' ELSE ' ' END as ARCHIVE_FLAG1,a.* from tfbsmcs a  order by REC_CREATE_TIME  asc ";
+p_fbsm_13400/fbsmpl_inq.cpp	49	50	sqlstr = "SELECT COMM_FMLY_CODE FROM TFBSM11 WHERE ST_NO = '" + st_no + "'";
+p_fbsm_13400/fbsmpl_inq.cpp	62	66	sqlstr = " SELECT T11.*,T06.backlog_ea "
+p_fbsm_13400/fbsmpl_inq.cpp	94	96	sqlstr = " SELECT * "
+p_fbsm_13400/fbsmplt_inq.cpp	42	44	sqlstr = " SELECT DISTINCT ST_NO  "
+p_fbsm_13400/fbsmxx_elm_inq.cpp	31	32	sqlstr = " select * from tfbsmxx where st_no='"+st_no+"' and  COMPOSE_LIST_NO='" + compose_list_no + "' ";
+p_fbsm_13400/fbsmxx_inq.cpp	30	32	sqlstr = "select distinct DATE_C,ST_NO,COMPOSE_LIST_NO,BACKLOG_EA from tfbsmxx WHERE 1 = 1";
+p_fbsm_13400/fbsmxx_save.cpp	43	44	sqlstr = " select COMM_FMLY_CODE,MATERIAL_CODE from TFBSM11 where ST_NO='" + st_no + "' ";
+p_fbsm_13400/fbsmxx_save.cpp	53	54	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2)) fr
+p_fbsm_13410/fbsm15_elm_inq.cpp	32	39	sqlstr = " SELECT  STATION_ID FROM ( select "
+p_fbsm_13410/fbsm15_elm_inq.cpp	65	89	sqlstr = " SELECT "
+p_fbsm_13410/fbsm15_elm_inq.cpp	104	104	sqlstr = " WITH original_data AS ("
+p_fbsm_13410/fbsm15_elm_inq.cpp	105	128	"    SELECT"
+p_fbsm_13410/fbsm15_elm_inq.cpp	129	134	"            SELECT MAT_NAME FROM TMMSM60 "
+p_fbsm_13410/fbsm15_elm_inq.cpp	135	151	"    SELECT"
+p_fbsm_13410/fbsm15_elm_inq.cpp	152	182	"    SELECT"
+p_fbsm_13410/fbsm15_elm_inq.cpp	183	183	"SELECT * FROM ("
+p_fbsm_13410/fbsm15_elm_inq.cpp	184	185	"    SELECT * FROM original_data"
+p_fbsm_13410/fbsm15_elm_inq.cpp	186	191	"    SELECT * FROM supplement_data"
+p_fbsm_13410/fbsm15_elm_inq.cpp	198	203	sqlstr = " select case when STATION_ID='Y' THEN 'A' ELSE  STATION_ID END STATION_ID,case when STATION_ID='Y' THEN 1  when (MAT_CODE='PL0001' or MAT_CODE='PL0002
+p_fbsm_13410/fbsm15_elm_inq.cpp	211	211	sqlstr = " WITH original_data AS ("
+p_fbsm_13410/fbsm15_elm_inq.cpp	212	235	"    SELECT"
+p_fbsm_13410/fbsm15_elm_inq.cpp	236	241	"            SELECT MAT_NAME FROM TMMSM60 "
+p_fbsm_13410/fbsm15_elm_inq.cpp	242	258	"    SELECT"
+p_fbsm_13410/fbsm15_elm_inq.cpp	259	289	"    SELECT"
+p_fbsm_13410/fbsm15_elm_inq.cpp	290	290	"SELECT * FROM ("
+p_fbsm_13410/fbsm15_elm_inq.cpp	291	292	"    SELECT * FROM original_data"
+p_fbsm_13410/fbsm15_elm_inq.cpp	293	298	"    SELECT * FROM supplement_data"
+p_fbsm_13410/fbsm15_elm_inq.cpp	306	311	sqlstr = " select case when STATION_ID='Y' THEN 'A' ELSE  STATION_ID END STATION_ID,case when STATION_ID='Y' THEN 1  when (MAT_CODE='PL0001' or MAT_CODE='PL0002
+p_fbsm_13410/fbsm15_elm_inq.cpp	319	319	sqlstr = " WITH original_data AS ("
+p_fbsm_13410/fbsm15_elm_inq.cpp	320	343	"    SELECT"
+p_fbsm_13410/fbsm15_elm_inq.cpp	344	349	"            SELECT MAT_NAME FROM TMMSM60 "
+p_fbsm_13410/fbsm15_elm_inq.cpp	350	366	"    SELECT"
+p_fbsm_13410/fbsm15_elm_inq.cpp	367	397	"    SELECT"
+p_fbsm_13410/fbsm15_elm_inq.cpp	398	398	"SELECT * FROM ("
+p_fbsm_13410/fbsm15_elm_inq.cpp	399	400	"    SELECT * FROM original_data"
+p_fbsm_13410/fbsm15_elm_inq.cpp	401	406	"    SELECT * FROM supplement_data"
+p_fbsm_13410/fbsm15_elm_inq.cpp	413	418	sqlstr = " select case when STATION_ID='Y' THEN 'A' ELSE  STATION_ID END STATION_ID,case when STATION_ID='Y' THEN 1  when (MAT_CODE='PL0001' or MAT_CODE='PL0002
+p_fbsm_13410/fbsm15_elm_inq_1.cpp	51	51	sqlstr = " WITH original_data AS ("
+p_fbsm_13410/fbsm15_elm_inq_1.cpp	52	82	"    SELECT"
+p_fbsm_13410/fbsm15_elm_inq_1.cpp	83	90	"            SELECT MAT_NAME FROM TMMSM60 "
+p_fbsm_13410/fbsm15_elm_inq_1.cpp	91	114	"    SELECT"
+p_fbsm_13410/fbsm15_elm_inq_1.cpp	115	152	"    SELECT"
+p_fbsm_13410/fbsm15_elm_inq_1.cpp	153	153	"SELECT * FROM ("
+p_fbsm_13410/fbsm15_elm_inq_1.cpp	154	155	"    SELECT * FROM original_data"
+p_fbsm_13410/fbsm15_elm_inq_1.cpp	156	163	"    SELECT * FROM supplement_data"
+p_fbsm_13410/fbsm15_elm_inq_1.cpp	191	244	sql_control = " SELECT "
+p_fbsm_13410/fbsm15_elm_inq_2.cpp	33	34	sqlstr = "SELECT STATION_ID, BACK "
+p_fbsm_13410/fbsm15_elm_inq_2.cpp	35	37	"    SELECT 'IF' AS STATION_ID, BACK_IF AS BACK, 1 AS rn FROM TFBSM12 t12 "
+p_fbsm_13410/fbsm15_elm_inq_2.cpp	38	43	"          SELECT 1 FROM TFBSM14 "
+p_fbsm_13410/fbsm15_elm_inq_2.cpp	44	46	"    SELECT 'EAF' AS STATION_ID, BACK_EAF AS BACK, 2 AS rn FROM TFBSM12 t12 "
+p_fbsm_13410/fbsm15_elm_inq_2.cpp	47	52	"          SELECT 1 FROM TFBSM14 "
+p_fbsm_13410/fbsm15_elm_inq_2.cpp	53	55	"    SELECT 'AOD' AS STATION_ID, BACK_AOD AS BACK, 3 AS rn FROM TFBSM12 t12 "
+p_fbsm_13410/fbsm15_elm_inq_2.cpp	56	62	"          SELECT 1 FROM TFBSM14 "
+p_fbsm_13410/fbsm15_elm_inq_3.cpp	31	32	sqlstr = " SELECT 'IF' AS STATION_ID, BACK_IF AS BACK FROM TFBSM12 "
+p_fbsm_13410/fbsm15_elm_inq_3.cpp	33	34	" SELECT 'EAF' AS STATION_ID, BACK_EAF AS BACK FROM TFBSM12 "
+p_fbsm_13410/fbsm15_elm_inq_3.cpp	35	37	" SELECT 'AOD' AS STATION_ID, BACK_AOD AS BACK FROM TFBSM12 "
+p_fbsm_13410/fbsm15_elm_inq_4.cpp	31	46	sqlstr = "  SELECT  "
+p_fbsm_13410/fbsm15_excel_inq.cpp	48	72	sqlstr = "select COMPOSE_LIST_NO as 配料单号,"
+p_fbsm_13410/fbsm15_inq.cpp	31	33	sqlstr = " SELECT max(t12.REMARK_PS) as REMARK_PS,t12.DATE_C, t12.DATE_TIME, sum(1) FURNACE_COUNT, t12.ST_NO, t12.COMPOSE_LIST_NO, t12.BACKLOG_EA, max(1) AS SEQ
+p_fbsm_13410/fbsm15_mb_del.cpp	38	39	sqlstr = " update tfbsm12 set MB_MARK='0', MB_CREATOR='" + tfbsm12["MB_CREATOR"].ToString() + "',MB_CREATE_TIME='" + datetime + "' where COMPOSE_LIST_NO='" + co
+p_fbsm_13410/fbsm15_mb_upd.cpp	38	39	sqlstr = " update tfbsm12 set MB_MARK='1', MB_CREATOR='" + tfbsm12["MB_CREATOR"].ToString() + "',MB_CREATE_TIME='" + datetime + "' where COMPOSE_LIST_NO='" + co
+p_fbsm_13410/fbsm15_mx_ins.cpp	248	249	sqlstr = " select COMM_FMLY_CODE,MATERIAL_CODE from TFBSM11 where ST_NO='" + st_no + "' ";
+p_fbsm_13410/fbsm15_mx_ins.cpp	266	276	sqlstr = " SELECT COUNT(1)  "
+p_fbsm_13410/fbsm15_mx_ins.cpp	288	299	sqlstr = " SELECT COUNT(1)  "
+p_fbsm_13410/fbsm15_mx_ins.cpp	311	316	sqlstr = " SELECT "
+p_fbsm_13410/fbsm15_mx_ins.cpp	317	319	" SELECT A.*,b.BACK_C2,b.MAT_NAME "
+p_fbsm_13410/fbsm15_mx_ins.cpp	320	321	" SELECT t.MAT_CODE,t.MAT_NAME,t.MATERIAL_CODE,t.ST_NO,t.BACK_C2 "
+p_fbsm_13410/fbsm15_mx_ins.cpp	322	346	" SELECT "
+p_fbsm_13410/fbsm15_mx_ins.cpp	556	557	sql_k = " SELECT MAT_NAME FROM TMMSM60 WHERE BUNKER_NO in (SELECT BUNKER_NO   FROM TMMSM85 WHERE  MAT_CODE='" + tfbsm18["MAT_CODE"].ToString().Trim() + "' AND L
+p_fbsm_13410/fbsm15_mx_ins.cpp	620	621	sqlstr = " SELECT * FROM TFBSM13 WHERE BACKLOG_EA='" + backlog_ea + "' ";
+p_fbsm_13410/fbsm15_mx_ins.cpp	656	671	sqlstr = "SELECT "
+p_fbsm_13410/fbsm15_mx_ins.cpp	672	684	"    SELECT "
+p_fbsm_13410/fbsm15_mx_ins.cpp	685	717	"        SELECT "
+p_fbsm_13410/fbsm15_mx_ins.cpp	718	753	"    SELECT "
+p_fbsm_13410/fbsm15_mx_ins.cpp	871	893	sqlstr = "SELECT "
+p_fbsm_13410/fbsm15_mx_ins.cpp	894	904	"    SELECT "
+p_fbsm_13410/fbsm15_mx_ins.cpp	905	940	"        SELECT "
+p_fbsm_13410/fbsm15_mx_ins.cpp	1031	1071	sqlstr = "SELECT '" + st_no + "'                                                     ST_NO,"
+p_fbsm_13410/fbsm15_mx_ins.cpp	1072	1089	"    SELECT j.*,"
+p_fbsm_13410/fbsm15_mx_ins.cpp	1090	1114	"        SELECT A.*,"
+p_fbsm_13410/fbsm15_mx_ins.cpp	1115	1137	"            SELECT"
+p_fbsm_13410/fbsm15_mx_ins.cpp	1138	1139	"            SELECT *"
+p_fbsm_13410/fbsm15_mx_ins.cpp	1140	1188	"                SELECT"
+p_fbsm_13410/fbsm15_mx_ins.cpp	1283	1284	sqlstr = " update tfbsm12 set REMARK_PS='" + outDMST02.Tables["ERROR_INFO"].Rows[z]["ERROR_MSG"].ToString() + "' where ST_NO='" + outDMST02.Tables["ERROR_INFO"]
+p_fbsm_13410/fbsm15_mx_ins.cpp	1305	1306	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO=' ',PLAN_ID=' ' where DATE_C='" + date + "' AND ST_NO='" + st_no + "' and BACKLOG_EA='" + backlog_ea + "' and SEQ_
+p_fbsm_13410/fbsm15_mx_ins.cpp	1328	1329	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2)) fr
+p_fbsm_13410/fbsm15_mx_ins.cpp	1360	1361	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2)) fr
+p_fbsm_13410/fbsm15_mx_ins.cpp	1396	1397	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO='" + compose_list_no + "',PLAN_ID='" + plan_id + "',SINGLECOST='" + outDMST02.Tables["WORK_TABLE"].Rows[i]["SINGLE
+p_fbsm_13410/fbsm15_mx_ins.cpp	1402	1403	sqlstr = " select SI_PDI from tfbsm20 where COMM_FMLY_CODE='" + f_comm_fmly_code + "' and BACKLOG_EA='" + f_backlog_ea + "'  ";
+p_fbsm_13410/fbsm15_mx_ins.cpp	1424	1425	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='001' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13410/fbsm15_mx_ins.cpp	1433	1434	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='005' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13410/fbsm15_mx_ins.cpp	1482	1483	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='001' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13410/fbsm15_mx_ins.cpp	1491	1492	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='005' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13410/fbsm15_mx_ins.cpp	1576	1577	sqlstr = " update tfbsm12 set REMARK_PS='" + outDMST02.Tables["ERROR_INFO"].Rows[z]["ERROR_MSG"].ToString() + "' where ST_NO='" + outDMST02.Tables["ERROR_INFO"]
+p_fbsm_13410/fbsm15_mx_ins.cpp	1599	1600	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO=' ',PLAN_ID=' '  where DATE_C='" + date + "' AND ST_NO='" + st_no + "' and BACKLOG_EA='" + backlog_ea + "' and SEQ
+p_fbsm_13410/fbsm15_mx_ins.cpp	1624	1625	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2)) fr
+p_fbsm_13410/fbsm15_mx_ins.cpp	1658	1659	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2)) fr
+p_fbsm_13410/fbsm15_mx_ins.cpp	1694	1695	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO='" + compose_list_no + "',PLAN_ID='" + plan_id + "',SINGLECOST='" + outDMST02.Tables["WORK_TABLE"].Rows[i]["SINGLE
+p_fbsm_13410/fbsm15_mx_ins.cpp	1700	1701	sqlstr = " select SI_PDI from tfbsm20 where COMM_FMLY_CODE='" + f_comm_fmly_code + "' and BACKLOG_EA='" + f_backlog_ea + "'  ";
+p_fbsm_13410/fbsm15_mx_ins.cpp	1724	1725	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='001' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13410/fbsm15_mx_ins.cpp	1733	1734	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='005' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13410/fbsm15_mx_ins.cpp	1786	1786	sqlstr = " SELECT * FROM ( "
+p_fbsm_13410/fbsm15_mx_ins.cpp	1787	1791	"   SELECT C_VALUE, SI_VALUE, MN_VALUE, CR_VALUE "
+p_fbsm_13410/fbsm15_mx_ins.cpp	1825	1826	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='001' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13410/fbsm15_mx_ins.cpp	1834	1835	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='005' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13410/fbsm15_mx_ins.cpp	1886	1886	sqlstr = " SELECT * FROM ( "
+p_fbsm_13410/fbsm15_mx_ins.cpp	1887	1891	"   SELECT C_VALUE, SI_VALUE, MN_VALUE, CR_VALUE "
+p_fbsm_13410/fbsm15_save.cpp	157	158	sqlstr = " select SEQ_NO from tfbsm12 where COMPOSE_LIST_NO='" + compose_list_no_l + "' ";
+p_fbsm_13410/fbsm15_save.cpp	173	174	sqlstr = " select COMM_FMLY_CODE,MATERIAL_CODE from TFBSM11 where ST_NO='" + st_no + "' ";
+p_fbsm_13410/fbsm15_save.cpp	186	190	sqlstr = " SELECT "
+p_fbsm_13410/fbsm15_save.cpp	191	193	" SELECT A.*,b.BACK_C2,b.MAT_NAME "
+p_fbsm_13410/fbsm15_save.cpp	194	195	" SELECT t.MAT_CODE,t.MAT_NAME,t.MATERIAL_CODE,t.ST_NO,t.BACK_C2 "
+p_fbsm_13410/fbsm15_save.cpp	196	214	" SELECT "
+p_fbsm_13410/fbsm15_save.cpp	218	222	sqlstr = " SELECT "
+p_fbsm_13410/fbsm15_save.cpp	223	225	" SELECT A.*,b.BACK_C2,b.MAT_NAME "
+p_fbsm_13410/fbsm15_save.cpp	226	227	" SELECT t.MAT_CODE,t.MAT_NAME,t.MATERIAL_CODE,t.ST_NO,t.BACK_C2 "
+p_fbsm_13410/fbsm15_save.cpp	228	246	" SELECT "
+p_fbsm_13410/fbsm15_save.cpp	284	285	sql_k = " SELECT MAT_NAME FROM TMMSM60 WHERE BUNKER_NO in (SELECT BUNKER_NO   FROM TMMSM85 WHERE  MAT_CODE='" + tfbsm18["MAT_CODE"].ToString().Trim() + "' AND L
+p_fbsm_13410/fbsm15_save.cpp	336	340	sqlstr = " SELECT "
+p_fbsm_13410/fbsm15_save.cpp	341	343	" SELECT A.*,b.BACK_C2,b.MAT_NAME "
+p_fbsm_13410/fbsm15_save.cpp	344	345	" SELECT t.MAT_CODE,t.MAT_NAME,t.MATERIAL_CODE,t.ST_NO,t.BACK_C2 "
+p_fbsm_13410/fbsm15_save.cpp	346	364	" SELECT "
+p_fbsm_13410/fbsm15_save.cpp	368	372	sqlstr =" SELECT "
+p_fbsm_13410/fbsm15_save.cpp	373	375	" SELECT A.*,b.BACK_C2,b.MAT_NAME "
+p_fbsm_13410/fbsm15_save.cpp	376	377	" SELECT t.MAT_CODE,t.MAT_NAME,t.MATERIAL_CODE,t.ST_NO,t.BACK_C2 "
+p_fbsm_13410/fbsm15_save.cpp	378	396	" SELECT "
+p_fbsm_13410/fbsm15_save.cpp	414	415	sql_k = " SELECT MAT_NAME FROM TMMSM60 WHERE BUNKER_NO in (SELECT BUNKER_NO   FROM TMMSM85 WHERE  MAT_CODE='" + tfbsm18["MAT_CODE"].ToString().Trim() + "' AND L
+p_fbsm_13410/fbsm15_save.cpp	480	484	sqlstr = " SELECT "
+p_fbsm_13410/fbsm15_save.cpp	485	487	" SELECT A.*,b.BACK_C2,b.MAT_NAME "
+p_fbsm_13410/fbsm15_save.cpp	488	489	" SELECT t.MAT_CODE,t.MAT_NAME,t.MATERIAL_CODE,t.ST_NO,t.BACK_C2 "
+p_fbsm_13410/fbsm15_save.cpp	490	508	" SELECT "
+p_fbsm_13410/fbsm15_save.cpp	512	516	sqlstr =" SELECT "
+p_fbsm_13410/fbsm15_save.cpp	517	519	" SELECT A.*,b.BACK_C2,b.MAT_NAME "
+p_fbsm_13410/fbsm15_save.cpp	520	521	" SELECT t.MAT_CODE,t.MAT_NAME,t.MATERIAL_CODE,t.ST_NO,t.BACK_C2 "
+p_fbsm_13410/fbsm15_save.cpp	522	540	" SELECT "
+p_fbsm_13410/fbsm15_save.cpp	558	559	sql_k = " SELECT MAT_NAME FROM TMMSM60 WHERE BUNKER_NO in (SELECT BUNKER_NO   FROM TMMSM85 WHERE  MAT_CODE='" + tfbsm18["MAT_CODE"].ToString().Trim() + "' AND L
+p_fbsm_13410/fbsm15_save.cpp	625	626	sqlstr = " SELECT * FROM TFBSM13 WHERE BACKLOG_EA='" + backlog_ea + "' ";
+p_fbsm_13410/fbsm15_save.cpp	658	672	sqlstr = " SELECT "
+p_fbsm_13410/fbsm15_save.cpp	673	682	" SELECT "
+p_fbsm_13410/fbsm15_save.cpp	683	706	" SELECT "
+p_fbsm_13410/fbsm15_save.cpp	707	725	" SELECT "
+p_fbsm_13410/fbsm15_save.cpp	842	862	sqlstr = "SELECT "
+p_fbsm_13410/fbsm15_save.cpp	863	873	"    SELECT "
+p_fbsm_13410/fbsm15_save.cpp	874	899	"        SELECT "
+p_fbsm_13410/fbsm15_save.cpp	980	1012	sqlstr = "SELECT '" + st_no + "'                                                     ST_NO,"
+p_fbsm_13410/fbsm15_save.cpp	1013	1025	"    SELECT j.*,"
+p_fbsm_13410/fbsm15_save.cpp	1026	1050	"        SELECT A.*,"
+p_fbsm_13410/fbsm15_save.cpp	1051	1068	"            SELECT"
+p_fbsm_13410/fbsm15_save.cpp	1069	1070	"            SELECT *"
+p_fbsm_13410/fbsm15_save.cpp	1071	1110	"                SELECT"
+p_fbsm_13410/fbsm15_save.cpp	1183	1184	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO=' ',PLAN_ID=' '  where DATE_C='" + date + "' AND ST_NO='" + st_no + "' and BACKLOG_EA='" + backlog_ea + "' and SEQ
+p_fbsm_13410/fbsm15_save.cpp	1207	1208	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2)) fr
+p_fbsm_13410/fbsm15_save.cpp	1236	1237	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2)) fr
+p_fbsm_13410/fbsm15_save.cpp	1268	1269	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO='" + compose_list_no + "',PLAN_ID='" + plan_id + "',SINGLECOST='" + outDMST02.Tables["WORK_TABLE"].Rows[i]["SINGLE
+p_fbsm_13410/fbsm15_save.cpp	1274	1275	sqlstr = " select SI_PDI from tfbsm20 where COMM_FMLY_CODE='" + f_comm_fmly_code + "' and BACKLOG_EA='" + f_backlog_ea + "'  ";
+p_fbsm_13410/fbsm15_save.cpp	1294	1295	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='001' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13410/fbsm15_save.cpp	1303	1304	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='005' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13410/fbsm15_save.cpp	1359	1360	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='001' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13410/fbsm15_save.cpp	1368	1369	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='005' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13410/fbsm15_sg_save.cpp	80	81	sqlstr = " select COMM_FMLY_CODE,MATERIAL_CODE from TFBSM11 where ST_NO='" + st_no + "' ";
+p_fbsm_13410/fbsm15_sg_save.cpp	89	90	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2)) fr
+p_fbsm_13410/fbsm15_sg_save.cpp	117	118	sqlstr = " update tfbsm12 set ORIGIN_CODE='1', compose_list_no='" + compose_list_no + "' where COMPOSE_LIST_NO='" + compose_list_no_l + "' and  DATE_C='" + date
+p_fbsm_13410/fbsm15_sg_save.cpp	123	124	sqlstr = " select SI_PDI from tfbsm20 where COMM_FMLY_CODE='" + comm_fmly_code + "' and BACKLOG_EA='" + backlog_ea + "'  ";
+p_fbsm_13410/fbsm15_sg_save.cpp	215	216	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + st_no + "' and ELM_CODE='001' and MATERIAL_CODE='" + material_code + "' and BACKLOG_EA='" + back
+p_fbsm_13410/fbsm15_sg_save.cpp	224	225	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + st_no + "' and ELM_CODE='005' and MATERIAL_CODE='" + material_code + "' and BACKLOG_EA='" + back
+p_fbsm_13410/fbsm15_sg_save.cpp	234	242	sqlstr = " select SUM(WEIGHT) WEIGHT, "
+p_fbsm_13410/fbsm15_sg_save.cpp	278	322	sqlstr = "INSERT INTO TFBSM14 ("
+p_fbsm_13410/fbsm15_sg_save.cpp	329	329	sqlstr = " select  round(1000/(METAL_CONS_PERT),5) AS METAL_CONS_PERT from ( "
+p_fbsm_13410/fbsm15_sg_save.cpp	330	346	" SELECT A.*, "
+p_fbsm_13410/fbsm15_sg_save.cpp	354	366	sqlstr = " select CASE "
+p_fbsm_13410/fbsm15_sg_save.cpp	381	389	sqlstr = " SELECT " + tfbsm14["SI_VALUE"].ToString() + " * " + metal_cons_pert.ToString() + "* " + yeild_minus + " as SI_VALUE, "
+p_fbsm_13410/fbsm15_sg_save.cpp	425	469	sqlstr = "INSERT INTO TFBSM14 ("
+p_fbsm_13410/fbsm15_sg_save.cpp	477	478	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + st_no + "' and ELM_CODE='001' and MATERIAL_CODE='" + material_code + "' and BACKLOG_EA='" + back
+p_fbsm_13410/fbsm15_sg_save.cpp	486	487	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + st_no + "' and ELM_CODE='005' and MATERIAL_CODE='" + material_code + "' and BACKLOG_EA='" + back
+p_fbsm_13410/fbsm15_sg_save.cpp	496	504	sqlstr = " select SUM(WEIGHT) WEIGHT, "
+p_fbsm_13410/fbsm15_sg_save.cpp	542	542	sqlstr = " select  round(1000/(METAL_CONS_PERT),5) AS METAL_CONS_PERT from ( "
+p_fbsm_13410/fbsm15_sg_save.cpp	543	559	" SELECT A.*, "
+p_fbsm_13410/fbsm15_sg_save.cpp	567	579	sqlstr = " select CASE "
+p_fbsm_13410/fbsm15_sg_save.cpp	594	602	sqlstr = " SELECT " + tfbsm14["SI_VALUE"].ToString() + " * " + metal_cons_pert.ToString() + "* " + yeild_minus + " as SI_VALUE, "
+p_fbsm_13410/fbsm15_sg_save.cpp	644	657	CString sql_z_e_pl0002 = "SELECT "
+p_fbsm_13410/fbsm15_sg_save.cpp	658	692	"    SELECT "
+p_fbsm_13410/fbsm15_sg_save.cpp	750	777	CString sql_insert_pl0003 = "INSERT INTO TFBSM14 ("
+p_fbsm_13410/fbsm15_sg_save.cpp	787	800	CString sql_z_e_pl0002 = "SELECT "
+p_fbsm_13410/fbsm15_sg_save.cpp	801	835	"    SELECT "
+p_fbsm_13410/fbsm15_sg_save.cpp	893	920	CString sql_insert_pl0003 = "INSERT INTO TFBSM14 ("
+p_fbsm_13410/fbsm15_sg_save.cpp	930	931	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + st_no + "' and ELM_CODE='001' and MATERIAL_CODE='" + material_code + "' and BACKLOG_EA='" + back
+p_fbsm_13410/fbsm15_sg_save.cpp	939	940	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + st_no + "' and ELM_CODE='005' and MATERIAL_CODE='" + material_code + "' and BACKLOG_EA='" + back
+p_fbsm_13410/fbsm15_sg_save.cpp	949	957	sqlstr = " select SUM(WEIGHT) WEIGHT, "
+p_fbsm_13410/fbsm15_sg_save.cpp	995	995	sqlstr = " select  round(1000/(METAL_CONS_PERT),5) AS METAL_CONS_PERT from ( "
+p_fbsm_13410/fbsm15_sg_save.cpp	996	1012	" SELECT A.*, "
+p_fbsm_13410/fbsm15_sg_save.cpp	1020	1032	sqlstr = " select CASE "
+p_fbsm_13410/fbsm15_sg_save.cpp	1047	1055	sqlstr = " SELECT " + tfbsm14["SI_VALUE"].ToString() + " * " + metal_cons_pert.ToString() + "* " + yeild_minus + " as SI_VALUE, "
+p_fbsm_13410/fbsm15_sg_save.cpp	1095	1108	CString sql_z_e_pl0002 = "SELECT "
+p_fbsm_13410/fbsm15_sg_save.cpp	1109	1143	"    SELECT "
+p_fbsm_13410/fbsm15_sg_save.cpp	1201	1228	CString sql_insert_pl0003 = "INSERT INTO TFBSM14 ("
+p_fbsm_13410/fbsm15_sh_del.cpp	38	39	sqlstr = " update tfbsm12 set CHECK_FLAG='0', CHECK_MAKE='" + tfbsm12["CHECK_MAKE"].ToString() + "',CHECK_DATE='" + datetime + "' where COMPOSE_LIST_NO='" + com
+p_fbsm_13410/fbsm15_sh_upd.cpp	39	40	sqlstr = "SELECT COUNT(*) FROM tfbsm12 WHERE COMPOSE_LIST_NO='" + compose_list_no + "'";
+p_fbsm_13410/fbsm15_sh_upd.cpp	53	54	sqlstr = " update tfbsm12 set CHECK_FLAG='1', CHECK_MAKE='" + tfbsm12["CHECK_MAKE"].ToString() + "',CHECK_DATE='" + datetime + "' where COMPOSE_LIST_NO='" + com
+p_fbsm_13410/fbsm15_sh_upd.cpp	62	63	sqlstr = " update tfbsm31 set CHECK_FLAG='1', CHECK_MAKE='" + tfbsm31["CHECK_MAKE"].ToString() + "',CHECK_DATE='" + datetime + "' where COMPOSE_LIST_NO='" + com
+p_fbsm_13410/fbsm15c_inq.cpp	31	33	sqlstr = " SELECT t12.DATE_C, t12.DATE_TIME, t12.FURNACE_COUNT, t12.ST_NO, t12.COMPOSE_LIST_NO, t12.BACKLOG_EA, count(t12.SEQ_NO) AS SEQ_NO, t12.COST_DG, t12.SI
+p_fbsm_13410/fbsm15d_elm_inq.cpp	30	37	sqlstr = " SELECT  STATION_ID FROM ( select "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	61	78	sqlstr = "SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	79	83	"    SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	84	92	"        SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	93	105	"                        SELECT 1 "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	106	119	"    SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	120	167	"        SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	178	195	sqlstr = "SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	196	200	"    SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	201	209	"        SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	210	222	"                        SELECT 1 "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	223	236	"    SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	237	284	"        SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	294	311	sqlstr = "SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	312	316	"    SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	317	325	"        SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	326	338	"                        SELECT 1 "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	339	352	"    SELECT "
+p_fbsm_13410/fbsm15d_elm_inq.cpp	353	400	"        SELECT "
+p_fbsm_13410/fbsm15d_inq.cpp	31	36	sqlstr = " SELECT"
+p_fbsm_13410/fbsm15d_inq.cpp	37	42	"    SELECT"
+p_fbsm_13410/fbsm15d_inq.cpp	43	67	"        SELECT"
+p_fbsm_13410/fbsm15d_inq.cpp	68	81	"            SELECT"
+p_fbsm_13410/fbsm15d_inq.cpp	82	94	"    SELECT"
+p_fbsm_13410/fbsm15g_inq.cpp	39	40	sqlstr = " select COMM_FMLY_CODE,MATERIAL_CODE from TFBSM11 where ST_NO='" + st_no + "' ";
+p_fbsm_13410/fbsm15g_inq.cpp	51	52	sqlstr = "SELECT COUNT(*) FROM TFBSM01 WHERE ST_NO = '" + st_no + "' AND (BACKLOG_EA = ' ' OR BACKLOG_EA = '" + backlog_ea + "')";
+p_fbsm_13410/fbsm15g_inq.cpp	60	61	sqlstr = "SELECT ST_NO FROM TFBSM11 WHERE MATERIAL_CODE = '" + material_code + "' AND MARK_POS_CODE = '1'";
+p_fbsm_13410/fbsm15g_inq.cpp	71	72	sqlstr = "SELECT ST_NO FROM TFBSM11 WHERE COMM_FMLY_CODE = '" + comm_fmly_code + "' AND MARK_POS_CODE = '2'";
+p_fbsm_13410/fbsm15g_inq.cpp	85	85	sqlstr = " WITH t01 AS ("
+p_fbsm_13410/fbsm15g_inq.cpp	86	87	" SELECT MAT_CODE, MAT_NAME, STATION_ID, '" + st_no + "' AS ST_NO, BACKLOG_EA, BACK_C2"
+p_fbsm_13410/fbsm15g_inq.cpp	88	97	" SELECT a.MAT_CODE, a.MAT_NAME, a.STATION_ID, a.ST_NO, a.BACKLOG_EA, NVL(m50.MAT_TYPE_PL1, a.BACK_C2) AS BACK_C2,"
+p_fbsm_13410/fbsm15g_inq.cpp	98	102	" SELECT * FROM TFBSM18"
+p_fbsm_13410/fbsm15g_inq.cpp	103	148	" SELECT"
+p_fbsm_13410/fbsm15g_inq.cpp	156	157	sqlstr = " SELECT * FROM TFBSM19 WHERE COMPOSE_LIST_NO='" + compose_list_no  + "' and ST_NO='" + st_no + "' and BACKLOG_EA='" + backlog_ea + "'";
+p_fbsm_13410/fbsm15g_inq.cpp	162	163	sqlstr = " SELECT * FROM TFBSM26 WHERE COMPOSE_LIST_NO='" + compose_list_no  + "' and ST_NO='" + st_no + "'";
+p_fbsm_13410/fbsm15g_inq.cpp	169	170	sqlstr = " SELECT * FROM TFBSM27 WHERE COMPOSE_LIST_NO='" + compose_list_no  + "' and ST_NO='" + st_no + "' and BACKLOG_EA='" + backlog_ea + "'";
+p_fbsm_13410/fbsm15h_inq.cpp	61	62	sqlstr = " select distinct COMPOSE_LIST_NO,ST_NO,'20' || DATE_C AS DATE_C,BACKLOG_EA,SINGLECOST,COST_DG from tfbsm14a where 1=1 " + where +
+p_fbsm_13410/fbsm15m_inq.cpp	82	82	sqlstr = " SELECT * FROM ( "
+p_fbsm_13410/fbsm15m_inq.cpp	83	104	" SELECT DISTINCT "
+p_fbsm_13410/fbsm15m_inq.cpp	105	125	" SELECT DISTINCT "
+p_fbsm_13410/fbsm15r_inq.cpp	34	36	sqlstr = " SELECT t12.*, t11.BIG_CLASS_NAME,t11.COMM_FMLY_CODE,t11.MAT_DIVISION_DESC,t0.ST_NO_DESC FROM tfbsm12 t12 LEFT JOIN tfbsm11 t11 ON t12.ST_NO = t11.ST_
+p_fbsm_13410/fbsm15y_inq.cpp	36	36	sqlstr = " WITH original_data AS ("
+p_fbsm_13410/fbsm15y_inq.cpp	37	67	"    SELECT"
+p_fbsm_13410/fbsm15y_inq.cpp	68	75	"            SELECT MAT_NAME FROM TMMSM60 "
+p_fbsm_13410/fbsm15y_inq.cpp	76	99	"    SELECT"
+p_fbsm_13410/fbsm15y_inq.cpp	100	137	"    SELECT"
+p_fbsm_13410/fbsm15y_inq.cpp	138	138	"SELECT * FROM ("
+p_fbsm_13410/fbsm15y_inq.cpp	139	140	"    SELECT * FROM original_data"
+p_fbsm_13410/fbsm15y_inq.cpp	141	148	"    SELECT * FROM supplement_data"
+p_fbsm_13410/fbsm15y_inq.cpp	159	162	sqlstr = "select BACK_AOD,BACK_BOF,BACK_IF,BACK_EAF"
+p_fbsm_13410/fbsm15y_inq.cpp	171	189	sqlstr = " SELECT MAX(CASE WHEN ELM_NAME = 'C' THEN MAIN_AIM ELSE 0 END) C_AIM,MAX(CASE WHEN ELM_NAME = 'C' THEN MAIN_MIN ELSE 0 END) C_MIN,MAX(CASE WHEN ELM_NA
+p_fbsm_13410/fbsm15z_inq.cpp	46	86	sqlstr = "    SELECT t1.compose_list_no,t1.STATION_ID,"
+p_fbsm_13410/fbsm15z_inq.cpp	95	99	sqlstr = "select BACK_AOD,BACK_BOF,BACK_IF,BACK_EAF,BACK_DS,' ' BACK_AOD_LL"
+p_fbsm_13410/fbsm15z_inq.cpp	105	113	sqlstr = " select MAT_CODE,SUM(WEIGHT) WEIGHT,BACKLOG_EA"
+p_fbsm_13410/fbsm15z_inq.cpp	123	126	sqlstr = " SELECT   BIG_LOAD_WT_MAX, BIG_LOAD_WT_MIN, SMALL_LOAD_WT_MAX, SMALL_LOAD_WT_MIN"
+p_fbsm_13410/fbsm15z_inq.cpp	127	130	" select MAT_CODE, BIG_LOAD_WT_MAX, BIG_LOAD_WT_MIN, SMALL_LOAD_WT_MAX, SMALL_LOAD_WT_MIN, 2 seq_no from tfbsm25 t2  where t2.BACKLOG_EA = ' '  and mat_code = @
+p_fbsm_13410/fbsm15z_inq.cpp	183	219	sqlstr = "    SELECT t1.compose_list_no,t1.STATION_ID,"
+p_fbsm_13410/fbsm15z_inq.cpp	227	247	sqlstr = " SELECT nvl(MAX(CASE WHEN ELM_NAME = 'C' THEN MAIN_AIM ELSE 0 END),0) C_AIM,nvl(MAX(CASE WHEN ELM_NAME = 'C' THEN SPE_MIN ELSE 0 END),0) C_MIN,nvl(MAX
+p_fbsm_13410/fbsm15z_inq.cpp	255	259	sqlstr = " select COMM_FMLY_CODE,MATERIAL_CODE,CO_ST_NO,VOD_USE_FLAG "
+p_fbsm_13410/fbsm15z_inq.cpp	288	290	sqlstr = " select case when @flag_vod='1'  then VOD_MIN else TAPPING_WT_MIN end "
+p_fbsm_13410/fbsm15z_inq.cpp	291	292	"    SELECT t.*,ROW_NUMBER() OVER (ORDER BY seq_rn ) as rn"
+p_fbsm_13410/fbsm15z_inq.cpp	293	294	"         select t.*,1 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' and ST_NO = '" + st_no + "'"
+p_fbsm_13410/fbsm15z_inq.cpp	295	296	"         select t.*,2 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' and ST_NO = '" + st_no_1 + "'"
+p_fbsm_13410/fbsm15z_inq.cpp	297	301	"         select t.*,3 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' and ST_NO = '" + st_no_2 + "'"
+p_fbsm_13410/fbsm15z_inq.cpp	324	327	sqlstr = " select P_FLAG "
+p_fbsm_13410/fbsm15z_inq2.cpp	49	52	sqlstr = "select CODE, CODE_DESC_1_CONTENT as code_desc"
+p_fbsm_13410/fbsm15z_inq2.cpp	60	62	sqlstr = "select CODE, DESCRIP as code_desc"
+p_fbsm_13410/fbsm15z_inq2.cpp	69	72	sqlstr = "select CODE, CODE_DESC_1_CONTENT as code_desc"
+p_fbsm_13410/fbsm15z_inq2.cpp	89	96	sqlstr = "select * from"
+p_fbsm_13410/fbsm15z_inq2.cpp	97	104	" select METAL_CONS_PERT, YIELD_CR,YIELD_NI, YIELD_MO, 2 as seq_no"
+p_fbsm_13410/fbsm15z_inq2.cpp	105	114	" select METAL_CONS_PERT, YIELD_CR,YIELD_NI, YIELD_MO, 3 as seq_no"
+p_fbsm_13410/fbsm15z_inq2.cpp	150	157	sqlstr = "select * from"
+p_fbsm_13410/fbsm15z_inq2.cpp	158	165	" select METAL_CONS_PERT, YIELD_CR,YIELD_NI, YIELD_MO, 2 as seq_no"
+p_fbsm_13410/fbsm15z_inq2.cpp	166	175	" select METAL_CONS_PERT, YIELD_CR,YIELD_NI, YIELD_MO, 3 as seq_no"
+p_fbsm_13410/fbsm15z_inq2.cpp	211	218	sqlstr = "select * from"
+p_fbsm_13410/fbsm15z_inq2.cpp	219	226	" select METAL_CONS_PERT, YIELD_CR,YIELD_NI, YIELD_MO, 2 as seq_no"
+p_fbsm_13410/fbsm15z_inq2.cpp	227	236	" select METAL_CONS_PERT, YIELD_CR,YIELD_NI, YIELD_MO, 3 as seq_no"
+p_fbsm_13410/fbsm15z_inq2.cpp	272	279	sqlstr = "select * from"
+p_fbsm_13410/fbsm15z_inq2.cpp	280	287	" select METAL_CONS_PERT, YIELD_CR,YIELD_NI, YIELD_MO, 2 as seq_no"
+p_fbsm_13410/fbsm15z_inq2.cpp	288	297	" select METAL_CONS_PERT, YIELD_CR,YIELD_NI, YIELD_MO, 3 as seq_no"
+p_fbsm_13410/fbsm15z_material_inq.cpp	33	36	sqlstr = "select count(1) "
+p_fbsm_13410/fbsm15z_material_inq.cpp	45	49	sqlstr = " select st_no,material_code,comm_fmly_code"
+p_fbsm_13410/fbsm15z_material_inq.cpp	50	54	" select st_no,material_code,comm_fmly_code"
+p_fbsm_13410/fbsm15z_material_inq.cpp	69	78	sqlstr = " select  t3.mat_name ,t2.mat_code ,t2.Weight"
+p_fbsm_13410/fbsm15z_material_inq.cpp	79	85	" select mat_code,LOT_NO,STOCK_NAME"
+p_fbsm_13410/fbsm15z_material_inq.cpp	86	98	" select mat_code,' ' LOT_NO,'5' STOCK_NAME"
+p_fbsm_13410/fbsm15z_save.cpp	77	82	sqlstr = " select CHECK_FLAG,BACKLOG_EA,DATE_TIME,MATERIAL_CODE,DATE_C,ORIGIN_CODE,ST_NO"
+p_fbsm_13410/fbsm15z_save.cpp	104	108	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2))"
+p_fbsm_13410/fbsm15z_save.cpp	145	153	sqlstr = " update tfbsm12"
+p_fbsm_13410/fbsm15z_save.cpp	198	203	sqlstr = "select CODE"
+p_fbsm_13410/fbsm15z_save.cpp	204	209	" select BUNKER_NO "
+p_fbsm_13410/fbsm15z_save.cpp	306	311	sqlstr = "select CODE"
+p_fbsm_13410/fbsm15z_save.cpp	312	317	" select BUNKER_NO "
+p_fbsm_13410/fbsm15z_save.cpp	424	429	sqlstr = "select CODE"
+p_fbsm_13410/fbsm15z_save.cpp	430	435	" select BUNKER_NO "
+p_fbsm_13410/fbsm15z_save.cpp	528	533	sqlstr = "select CODE"
+p_fbsm_13410/fbsm15z_save.cpp	534	539	" select BUNKER_NO "
+p_fbsm_13410/fbsm15z_save.cpp	633	638	sqlstr = "select CODE"
+p_fbsm_13410/fbsm15z_save.cpp	639	644	" select BUNKER_NO "
+p_fbsm_13410/fbsm15z_save.cpp	703	713	sqlstr = " update tfbsm12"
+p_fbsm_13410/fbsm15z_save.cpp	736	746	sqlstr = " update tfbsm14a"
+p_fbsm_13410/fbsm15z_save.cpp	830	838	sqlstr = " update tfbsm12"
+p_fbsm_13410/fbsm15z_save.cpp	849	857	sqlstr = " update tfbsm14a"
+p_fbsm_13410/fbsm17_inq.cpp	34	40	sqlstr = " select t.*,t2.MATERIAL_CODE,t2.comm_fmly_code,t2.material_code,t2.ST_NO_DESC"
+p_fbsm_13410/fbsm17_mb.cpp	28	31	sqlstr = " select  MB_MARK "
+p_fbsm_13410/fbsm17_pp.cpp	28	31	sqlstr = " select CHECK_FLAG,CHECK_MAKE,CHECK_DATE,ORIGIN_CODE,BACKLOG_EA,SINGLECOST,COST_DG "
+p_fbsm_13410/fbsm17_pp.cpp	71	83	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO = @compose_list_no_new"
+p_fbsm_13410/fbsm17_sh.cpp	35	41	sqlstr = " select t1.CHECK_FLAG,t1.ST_NO,t2.COMM_FMLY_CODE,count(1),t1.BACKLOG_EA,nvl(t3.DESCRIPTION,' ') DESCRIPTION"
+p_fbsm_13410/fbsm31_inq.cpp	31	50	sqlstr = " SELECT max(t31.REMARK_PS) as REMARK_PS,"
+p_fbsm_13410/fbsm31_mb_upd.cpp	38	39	sqlstr = " update tfbsm31 set MB_MARK='1', MB_CREATOR='" + tfbsm31["MB_CREATOR"].ToString() + "',MB_CREATE_TIME='" + datetime + "' where COMPOSE_LIST_NO='" + co
+p_fbsm_13410/fbsm31_sh_del.cpp	38	39	sqlstr = " update tfbsm31 set CHECK_FLAG=' ', CHECK_MAKE=' ',CHECK_DATE=' ' where COMPOSE_LIST_NO='" + compose_list_no + "' ";
+p_fbsm_13410/fbsm31_sh_upd.cpp	38	39	sqlstr = " update tfbsm31 set CHECK_FLAG='1', CHECK_MAKE='" + tfbsm31["CHECK_MAKE"].ToString() + "',CHECK_DATE='" + datetime + "' where COMPOSE_LIST_NO='" + com
+p_fbsm_13410/fbsm31c_inq.cpp	31	48	sqlstr = " SELECT t31.DATE_C, "
+p_fbsm_13410/fbsm31g_inq.cpp	46	47	sqlstr = "SELECT COUNT(1) FROM TFBSM10 WHERE ST_NO = '" + st_no + "'";
+p_fbsm_13410/fbsm31g_inq.cpp	70	73	sqlstr = "SELECT * FROM TFBSM33 WHERE 1=1 ";
+p_fbsm_13410/fbsm31g_inq.cpp	90	93	sqlstr = "SELECT * FROM TFBSM34 WHERE 1=1 ";
+p_fbsm_13410/fbsm31g_inq.cpp	106	109	sqlstr = "SELECT * FROM TFBSM35 WHERE 1=1 ";
+p_fbsm_13410/fbsm31r_inq.cpp	34	36	sqlstr = " SELECT t31.*, t11.BIG_CLASS_NAME,t11.COMM_FMLY_CODE,t11.MAT_DIVISION_DESC,t0.ST_NO_DESC FROM tfbsm31 t31 LEFT JOIN tfbsm11 t11 ON t31.ST_NO = t11.ST_
+p_fbsm_13410/fbsm31y_inq.cpp	37	39	sqlstr = " SELECT STATION_ID, DATE_C, ST_NO, BACKLOG_EA, MAT_CODE, "
+p_fbsm_13410/fbsm31y_inq.cpp	40	48	"     SELECT MAT_NAME FROM TMMSM60 "
+p_fbsm_13410/fbsm31y_inq.cpp	59	61	sqlstr = " SELECT BACK_BOF "
+p_fbsm_13410/fbsm31z_inq.cpp	37	39	sqlstr = " SELECT T1.STATION_ID, T1.DATE_C, T1.ST_NO, T1.BACKLOG_EA, T1.MAT_CODE, "
+p_fbsm_13410/fbsm31z_inq.cpp	40	52	"     SELECT MAT_NAME FROM TMMSM60 "
+p_fbsm_13410/fbsm31z_inq.cpp	63	65	sqlstr = " SELECT BACK_BOF "
+p_fbsm_13410/fbsm31z_material_inq.cpp	32	34	sqlstr = " select count(1) "
+p_fbsm_13410/fbsm31z_material_inq.cpp	47	58	sqlstr = " SELECT "
+p_fbsm_13410/fbsm31z_plan_map.cpp	60	64	sqlstr = " SELECT CHECK_FLAG, SINGLECOST, COST_DG FROM TFBSM31 "
+p_fbsm_13410/fbsm31z_plan_map.cpp	97	99	sqlstr = " SELECT COUNT(1) FROM TFBSM32 "
+p_fbsm_13410/fbsm31z_plan_map.cpp	131	134	sqlstr = " SELECT CHECK_FLAG FROM TFBSM31 "
+p_fbsm_13410/fbsm31z_plan_map.cpp	165	172	sqlstr = " UPDATE TFBSM31 "
+p_fbsm_13410/fbsm31z_print.cpp	38	40	sqlstr = " SELECT T1.STATION_ID, T1.DATE_C, T1.ST_NO, T1.BACKLOG_EA, T1.MAT_CODE, "
+p_fbsm_13410/fbsm31z_print.cpp	41	51	"     SELECT MAT_NAME FROM TMMSM60 "
+p_fbsm_13410/fbsm31z_print_1.cpp	40	42	sqlstr = " SELECT DISTINCT COMPOSE_LIST_NO,ST_NO,BACK_BOF "
+p_fbsm_13410/fbsm31z_save.cpp	62	66	sqlstr = " SELECT COUNT(1) FROM TFBSM31 "
+p_fbsm_13410/fbsm31z_save.cpp	83	86	sqlstr = " SELECT COUNT(1) FROM TFBSM31 "
+p_fbsm_13410/fbsm31z_save.cpp	110	111	sqlstr = " SELECT ORIGIN_CODE FROM TFBSM14A "
+p_fbsm_13410/fbsm31z_save.cpp	126	128	sqlstr = " SELECT MAX(TO_NUMBER(SUBSTR(COMPOSE_LIST_NO, 8, 3))) "
+p_fbsm_13410/fbsm31z_save.cpp	167	171	sqlstr = " UPDATE TFBSM31 "
+p_fbsm_13410/fbsm31z_save.cpp	235	236	sqlstr = " UPDATE TFBSM31 SET BACK_BOF=@BEIZHU "
+p_fbsm_13410/fbsm31z_save.cpp	244	245	sqlstr = " UPDATE TFBSM14A SET BACK_BOF=@BEIZHU "
+p_fbsm_13410/fbsm31z_save.cpp	260	264	sqlstr = " SELECT NVL(Cr, 0) AS CR_VALUE, NVL(Ni, 0) AS NI_VALUE, NVL(Mo, 0) AS MO_VALUE "
+p_fbsm_13410/fbsm31z_save.cpp	324	326	sqlstr = " UPDATE TFBSM31 "
+p_fbsm_13410/fbsm31z_save.cpp	338	340	sqlstr = " UPDATE TFBSM14A "
+p_fbsm_13410/fbsm41_detail_save.cpp	63	65	sqlstr = " SELECT CHECK_FLAG FROM TFBSM43 "
+p_fbsm_13410/fbsm41_detail_save.cpp	81	85	sqlstr = " UPDATE TFBSM43 "
+p_fbsm_13410/fbsm41_inq.cpp	31	43	sqlstr = " SELECT T12.ST_NO,T12.BACKLOG_EA,T12.DATE_TIME,T12.DATE_C,T12.SEQ_NO,T12.REMARK_PS,T12.COMPOSE_LIST_NO,"
+p_fbsm_13410/fbsm41_inq_dtl.cpp	36	47	sqlstr = " SELECT T41.*,T14.* FROM TFBSM41 T41 "
+p_fbsm_13410/fbsm41_inq_dtl.cpp	56	76	sqlstr = " SELECT "
+p_fbsm_13410/fbsm41_inq_dtl.cpp	87	93	sqlstr = " SELECT "
+p_fbsm_13410/fbsm41_material_inq.cpp	24	25	sqlstr = " WITH "
+p_fbsm_13410/fbsm41_material_inq.cpp	26	26	"   SELECT * FROM ( "
+p_fbsm_13410/fbsm41_material_inq.cpp	27	50	"     SELECT QUALITY_BATCH_NO, MAT_CODE, "
+p_fbsm_13410/fbsm41_material_inq.cpp	51	69	"   SELECT COALESCE(b.MAT_CODE, a.MAT_CODE) AS MAT_CODE, "
+p_fbsm_13410/fbsm41_material_inq.cpp	70	70	"     SELECT * FROM ( "
+p_fbsm_13410/fbsm41_material_inq.cpp	71	73	"       SELECT ' ' AS QUALITY_BATCH_NO, MAT_CODE, Mn, Ni, P, C, Si, S, Cr, Mo, Cu, CO, TI, NB, AL, V, B, N, Ca, "
+p_fbsm_13410/fbsm41_material_inq.cpp	74	98	"         SELECT QUALITY_BATCH_NO, MAT_CODE, REC_CREATE_TIME, "
+p_fbsm_13410/fbsm41_material_inq.cpp	99	99	"     SELECT * FROM ( "
+p_fbsm_13410/fbsm41_material_inq.cpp	100	106	"       SELECT MAT_ID as MAT_CODE, '' AS Mn, Ni, '' AS P, '' AS C, '' AS Si, '' AS S, "
+p_fbsm_13410/fbsm41_material_inq.cpp	107	125	"   SELECT COALESCE(d.MAT_CODE, b.MAT_CODE, a.MAT_CODE) AS MAT_CODE, "
+p_fbsm_13410/fbsm41_material_inq.cpp	126	126	"     SELECT * FROM ( "
+p_fbsm_13410/fbsm41_material_inq.cpp	127	129	"       SELECT ' ' AS QUALITY_BATCH_NO, MAT_CODE, Mn, Ni, P, C, Si, S, Cr, Mo, Cu, CO, TI, NB, AL, V, B, N, Ca, "
+p_fbsm_13410/fbsm41_material_inq.cpp	130	155	"         SELECT QUALITY_BATCH_NO, MAT_CODE, REC_CREATE_TIME, "
+p_fbsm_13410/fbsm41_material_inq.cpp	156	156	"     SELECT * FROM ( "
+p_fbsm_13410/fbsm41_material_inq.cpp	157	159	"       SELECT MAT_CODE, '' AS Mn, Ni, '' AS P, '' AS C, '' AS Si, '' AS S, "
+p_fbsm_13410/fbsm41_material_inq.cpp	160	168	"         SELECT MAT_CODE, NI_VALUE AS Ni, CR_VALUE AS Cr, MO_VALUE AS Mo, "
+p_fbsm_13410/fbsm41_material_inq.cpp	169	169	"     SELECT * FROM ( "
+p_fbsm_13410/fbsm41_material_inq.cpp	170	177	"       SELECT MAT_CODE, MN_VALUE AS Mn, NI_VALUE as Ni, '' AS P, '' AS C, '' AS Si, '' AS S, "
+p_fbsm_13410/fbsm41_material_inq.cpp	178	180	"   SELECT MAT_CODE, STOCK_WT, BUNKER_NO AS STOCK_NAME, '2-NORTH-SCRAP' AS SOURCE_TYPE, "
+p_fbsm_13410/fbsm41_material_inq.cpp	181	183	"     SELECT A.MAT_CODE, A.BUNKER_NO, A.LOT_NO, A.QUALITY_BATCH_NO, SUM(A.STOCK_WT) STOCK_WT "
+p_fbsm_13410/fbsm41_material_inq.cpp	184	191	"       SELECT t60.MAT_CODE, t60.BUNKER_NO FROM tmmsm60 t60 "
+p_fbsm_13410/fbsm41_material_inq.cpp	192	195	"   SELECT A.MAT_CODE, SUM(A.STOCK_WT) AS STOCK_WT, '1' AS STOCK_NAME, '7-RECYCLE-SCRAP' AS SOURCE_TYPE, "
+p_fbsm_13410/fbsm41_material_inq.cpp	196	204	"     SELECT MAT_CODE, BUNKER_NO FROM tmmsm60 "
+p_fbsm_13410/fbsm41_material_inq.cpp	205	210	"   SELECT MAT_CODE, SUM(STOCK_WT * 1000) AS STOCK_WT, '1' AS STOCK_NAME, '6-SCRAP-YARD-1' AS SOURCE_TYPE, "
+p_fbsm_13410/fbsm41_material_inq.cpp	211	234	" SELECT rownum AS seq_id, "
+p_fbsm_13410/fbsm41_material_inq.cpp	235	239	"   SELECT e.MAT_CODE, e.STOCK_NAME, e.QUALITY_BATCH_NO, e.LOT_NO, e.STOCK_WT AS WEIGHT, "
+p_fbsm_13410/fbsm41_material_inq.cpp	240	244	"   SELECT e.MAT_CODE, e.STOCK_NAME, e.QUALITY_BATCH_NO, e.LOT_NO, e.STOCK_WT AS WEIGHT, "
+p_fbsm_13410/fbsm41_material_inq.cpp	245	251	"   SELECT e.MAT_CODE, e.STOCK_NAME, e.QUALITY_BATCH_NO, e.LOT_NO, e.STOCK_WT AS WEIGHT, "
+p_fbsm_13410/fbsm41_material_inq.cpp	261	263	sqlstr = " SELECT  BUNKER_NO FROM TMMSM60 WHERE BUNKER_TYPE = 'EAFBOX' "
+p_fbsm_13410/fbsm41_plan_map.cpp	74	76	sqlstr = " SELECT COUNT(1) FROM TFBSM43 "
+p_fbsm_13410/fbsm41_plan_map.cpp	92	94	sqlstr = " SELECT COUNT(1) FROM TFBSM41 "
+p_fbsm_13410/fbsm41_plan_map.cpp	110	112	sqlstr = " SELECT CHECK_FLAG FROM TFBSM43 "
+p_fbsm_13410/fbsm41_plan_map.cpp	147	151	sqlstr = " SELECT COMPOSE_LIST_NO, COMPOSE_LIST_NO_EAF FROM TFBSM12 "
+p_fbsm_13410/fbsm41_plan_map.cpp	185	186	sqlstr = " SELECT MAX(TO_NUMBER(SUBSTR(COMPOSE_LIST_NO_EAF, -3))) FROM TFBSM43 "
+p_fbsm_13410/fbsm41_plan_map.cpp	212	213	sqlstr = " INSERT INTO TFBSM43 (COMPOSE_LIST_NO, COMPOSE_LIST_NO_EAF, ST_NO, REC_CREATOR, REC_CREATE_TIME) "
+p_fbsm_13410/fbsm41_plan_map.cpp	224	231	sqlstr = " UPDATE TFBSM12 "
+p_fbsm_13410/fbsm41_plan_map.cpp	246	249	sqlstr = " SELECT * FROM TFBSM41 "
+p_fbsm_13410/fbsm41_print_1.cpp	36	53	sqlstr = " SELECT T43.COMPOSE_LIST_NO, T43.ST_NO, T43.REMARK, T43.RESP, "
+p_fbsm_13410/fbsm41_print_1.cpp	54	79	"   SELECT T41.COMPOSE_LIST_NO, T41.COMPOSE_LIST_NO_EAF, "
+p_fbsm_13410/fbsm41_print_2.cpp	40	51	sqlstr = " SELECT T41.*,T14.* FROM TFBSM41 T41 "
+p_fbsm_13410/fbsm41_print_2.cpp	61	62	sqlstr = " SELECT CODE, CODE_DESC_1_CONTENT as code_desc FROM tep0002 WHERE code_class = 'FBSM13' "
+p_fbsm_13410/fbsm41_print_2.cpp	63	64	" SELECT BUNKER_NO as CODE, MAT_NAME as code_desc FROM tmmsm60 WHERE BUNKER_NO like 'VS%' ";
+p_fbsm_13410/fbsm41_print_3.cpp	38	43	sqlstr = " SELECT DISTINCT T41.BUNKER_SEQ,T41.BUNKER_NO FROM TFBSM41 T41 "
+p_fbsm_13410/fbsm41_print_4.cpp	36	41	sqlstr = " SELECT ROWNUM AS ROW_NO, T14.* FROM TFBSM14 T14 "
+p_fbsm_13410/fbsm41_sh_upd.cpp	60	62	sqlstr = " SELECT CHECK_FLAG FROM TFBSM43 "
+p_fbsm_13410/fbsm41_sh_upd.cpp	78	81	sqlstr = " UPDATE TFBSM43 "
+p_fbsm_13410/fbsm41_sh_upd.cpp	93	96	sqlstr = " UPDATE TFBSM12 "
+p_fbsm_13410/fbsm41_sh_upd.cpp	107	111	sqlstr = " SELECT MAX(TO_NUMBER(SUBSTR(T41.BUNKER_NO, INSTR(T41.BUNKER_NO, '#') + 1))) "
+p_fbsm_13410/fbsm41_sh_upd.cpp	148	151	sqlstr = " SELECT DISTINCT BUNKER_SEQ, BUNKER_NO FROM TFBSM41 "
+p_fbsm_13410/fbsm41_sh_upd.cpp	181	185	sqlstr = " UPDATE TFBSM41 "
+p_fbsm_13410/fbsm41_sh_upd.cpp	203	205	sqlstr = " SELECT CHECK_FLAG FROM TFBSM43 "
+p_fbsm_13410/fbsm41_sh_upd.cpp	221	224	sqlstr = " UPDATE TFBSM43 "
+p_fbsm_13410/fbsm41_sh_upd.cpp	234	237	sqlstr = " UPDATE TFBSM12 "
+p_fbsm_13410/fbsm41_sh_upd.cpp	248	251	sqlstr = " SELECT DISTINCT BUNKER_SEQ, BUNKER_NO FROM TFBSM41 "
+p_fbsm_13410/fbsm41_sh_upd.cpp	275	279	sqlstr = " UPDATE TFBSM41 "
+p_fbsm_13410/fbsm41m_dtl_inq.cpp	27	29	sqlstr = " SELECT * FROM TFBSM41 T41 "
+p_fbsm_13410/fbsm41m_inq.cpp	31	33	sqlstr = " SELECT * FROM TFBSM43 T43 "
+p_fbsm_13420/fbsm_price_rcv.cpp	97	101	sqlstr = " select decode(USE_CR,0,0,round(UNIT_PRICE/USE_CR,3)) from tqmtscb00_dr"
+p_fbsm_13420/fbsm_price_rcv.cpp	113	117	sqlstr = " select decode(USE_NI,0,0,round(UNIT_PRICE/USE_NI,3)) from tqmtscb00_dr"
+p_fbsm_13420/fbsm_price_rcv.cpp	129	133	sqlstr = " select decode(USE_MO,0,0,round(UNIT_PRICE/USE_MO,3)) from tqmtscb00_dr"
+p_fbsm_13420/fbsm_price_rcv.cpp	145	149	sqlstr = " select round(UNIT_PRICE/100,3) from tqmtscb00_dr"
+p_fbsm_13420/fbsm_price_rcv.cpp	162	167	sqlstr = " update tqmtscb00_dr set UNIT_PRICE_NI = round(USE_CR*@unit_cr+USE_NI*@unit_ni+USE_MO*@unit_mo-UNIT_PRICE,2)"
+p_fbsm_13430/fbsm15_mx_ins.cpp	100	101	sql_ENVIRONMENT = " SELECT CODE FROM TEP0002 WHERE CODE_CLASS = 'FBSM23' ";
+p_fbsm_13430/fbsm15_mx_ins.cpp	243	244	sqlstr = " select COMM_FMLY_CODE,MATERIAL_CODE from TFBSM11 where ST_NO='" + st_no + "' ";
+p_fbsm_13430/fbsm15_mx_ins.cpp	259	264	sqlstr = " SELECT COUNT(1)  "
+p_fbsm_13430/fbsm15_mx_ins.cpp	274	280	sqlstr = " SELECT COUNT(1)  "
+p_fbsm_13430/fbsm15_mx_ins.cpp	291	292	sqlstr = " select COUNT(1) from tfbsm01 where ST_NO='" + st_no + "' and BACKLOG_EA='" + backlog_ea + "' ";
+p_fbsm_13430/fbsm15_mx_ins.cpp	297	297	sqlstr = " SELECT a.*, NVL(b.WEIGHT, 0), (a.STOCK_WT - NVL(b.WEIGHT, 0)) AS STOCK_WT_QC FROM ( "
+p_fbsm_13430/fbsm15_mx_ins.cpp	298	309	" SELECT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	310	312	" SELECT A.*,b.BACK_C2,b.MAT_NAME, b.COMM_FMLY_CODE "
+p_fbsm_13430/fbsm15_mx_ins.cpp	313	320	" SELECT DISTINCT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	321	350	"    SELECT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	351	360	" SELECT J.MAT_CODE, J.LOT_NO, WEIGHT * COUNT(f.COMPOSE_LIST_NO) WEIGHT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	363	363	sqlstr = " select  a.*,  NVL(b.WEIGHT, 0), (a.STOCK_WT - NVL(b.WEIGHT, 0)) as STOCK_WT_QC from ( "
+p_fbsm_13430/fbsm15_mx_ins.cpp	364	375	" SELECT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	376	378	" SELECT A.*,b.BACK_C2,b.MAT_NAME, b.COMM_FMLY_CODE "  // 【2】带出 COMM_FMLY_CODE
+p_fbsm_13430/fbsm15_mx_ins.cpp	379	386	" SELECT DISTINCT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	387	416	"    SELECT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	417	429	" select J.MAT_CODE, J.LOT_NO, WEIGHT * count(f.COMPOSE_LIST_NO) WEIGHT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	552	553	sqlstr = " SELECT * FROM TFBSM13 WHERE BACKLOG_EA='" + backlog_ea + "' ";
+p_fbsm_13430/fbsm15_mx_ins.cpp	590	600	sqlstr = "SELECT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	601	602	"    SELECT STATION_ID, ELM_NAME, SPE_MIN,  SPE_MAX,0 YIELD "
+p_fbsm_13430/fbsm15_mx_ins.cpp	603	604	"  SELECT  A.*,  ROW_NUMBER() OVER ( PARTITION BY A.ELM_NAME, A.STATION_ID ORDER BY  SEQ_RN ) as rn "
+p_fbsm_13430/fbsm15_mx_ins.cpp	605	606	"	select STATION_ID,ELM_NAME,SPE_MAX,SPE_MIN,MAIN_AIM,1 as seq_rn from tfbsm05 where  BACKLOG_EA = '" + backlog_ea + "' and ST_NO = '" + st_no + "'"
+p_fbsm_13430/fbsm15_mx_ins.cpp	607	608	"	select STATION_ID,ELM_NAME,SPE_MAX,SPE_MIN,MAIN_AIM,2 as seq_rn from tfbsm05 where  BACKLOG_EA = '" + backlog_ea + "' and MARK_POS_CODE = '1' AND MATERIAL_COD
+p_fbsm_13430/fbsm15_mx_ins.cpp	609	610	"	select STATION_ID,ELM_NAME,SPE_MAX,SPE_MIN,MAIN_AIM,3 as seq_rn from tfbsm05 where  BACKLOG_EA = '" + backlog_ea + "' and MARK_POS_CODE = '2' AND COMM_FMLY_CO
+p_fbsm_13430/fbsm15_mx_ins.cpp	611	612	"	select STATION_ID,ELM_NAME,SPE_MAX,SPE_MIN,MAIN_AIM,4 as seq_rn from tfbsm05 where  BACKLOG_EA = '" + backlog_ea + "' and MARK_POS_CODE = '3' AND  MATERIAL_CO
+p_fbsm_13430/fbsm15_mx_ins.cpp	613	614	"	select STATION_ID,ELM_NAME,SPE_MAX,SPE_MIN,MAIN_AIM,5 as seq_rn from tfbsm05 where  BACKLOG_EA = '" + backlog_ea + "' and MARK_POS_CODE = '3' AND COMM_FMLY_CO
+p_fbsm_13430/fbsm15_mx_ins.cpp	615	619	"	select 'A' as STATION_ID,ELM_NAME,SPE_MAX, SPE_MIN,MAIN_AIM,0 as seq_rn from TQMTS02 WHERE ELM_NAME in ('C','Si','Mn','P','S','Cr','Ni','Mo','Cu','Co') and ID
+p_fbsm_13430/fbsm15_mx_ins.cpp	621	621	" SELECT STATION_ID, ELM_NAME, 0 SPE_MIN,  0 SPE_MAX, YIELD from ( "
+p_fbsm_13430/fbsm15_mx_ins.cpp	622	623	"  SELECT  B.*,  ROW_NUMBER() OVER ( PARTITION BY B.ELM_NAME, B.STATION_ID ORDER BY  SEQ_RN ) as rn "
+p_fbsm_13430/fbsm15_mx_ins.cpp	624	626	" select STATION_ID,'Cr' ELM_NAME, CASE WHEN YIELD_CR != 0 THEN YIELD_CR else 100  END YIELD, 1 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	627	629	" select STATION_ID,'Ni' ELM_NAME, CASE WHEN YIELD_ni != 0 THEN YIELD_ni else 100  END YIELD, 1 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	630	632	" select STATION_ID,'Mo' ELM_NAME, CASE WHEN YIELD_mo != 0 THEN YIELD_mo else 100  END YIELD, 1 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	633	635	" select STATION_ID,'Cr' ELM_NAME, CASE WHEN YIELD_CR != 0 THEN YIELD_CR else 100  END YIELD, 2 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	636	638	" select STATION_ID,'Ni' ELM_NAME, CASE WHEN YIELD_ni != 0 THEN YIELD_ni else 100  END YIELD, 2 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	639	641	" select STATION_ID,'Mo' ELM_NAME, CASE WHEN YIELD_mo != 0 THEN YIELD_mo else 100  END YIELD, 2 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	642	644	" select STATION_ID,'Cr' ELM_NAME, CASE WHEN YIELD_CR != 0 THEN YIELD_CR else 100  END YIELD, 3 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	645	647	" select STATION_ID,'Ni' ELM_NAME, CASE WHEN YIELD_ni != 0 THEN YIELD_ni else 100  END YIELD, 3 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	648	650	" select STATION_ID,'Mo' ELM_NAME, CASE WHEN YIELD_mo != 0 THEN YIELD_mo else 100  END YIELD, 3 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	651	653	" select STATION_ID,'Cr' ELM_NAME, CASE WHEN YIELD_CR != 0 THEN YIELD_CR else 100  END YIELD, 4 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	654	656	" select STATION_ID,'Ni' ELM_NAME, CASE WHEN YIELD_ni != 0 THEN YIELD_ni else 100  END YIELD, 4 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	657	659	" select STATION_ID,'Mo' ELM_NAME, CASE WHEN YIELD_mo != 0 THEN YIELD_mo else 100  END YIELD, 4 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	660	662	" select STATION_ID,'Cr' ELM_NAME, CASE WHEN YIELD_CR != 0 THEN YIELD_CR else 100  END YIELD, 5 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	663	665	" select STATION_ID,'Ni' ELM_NAME, CASE WHEN YIELD_ni != 0 THEN YIELD_ni else 100  END YIELD, 5 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	666	674	" select STATION_ID,'Mo' ELM_NAME, CASE WHEN YIELD_mo != 0 THEN YIELD_mo else 100  END YIELD, 5 seq_rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	704	721	sqlstr = "SELECT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	722	732	"    SELECT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	733	760	"        SELECT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	763	780	sqlstr = "SELECT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	781	796	"    SELECT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	875	906	sqlstr = "SELECT '" + st_no + "' ST_NO,"
+p_fbsm_13430/fbsm15_mx_ins.cpp	907	907	" select * from ("
+p_fbsm_13430/fbsm15_mx_ins.cpp	908	909	"    SELECT t.*,ROW_NUMBER() OVER ( PARTITION BY t.STATION_ID ORDER BY seq_rn ) as rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	910	911	"         select t.STATION_ID ,METAL_CONS_PERT,MARK_POS_CODE,COMM_FMLY_CODE,BACKLOG_EA,1 seq_rn  from tfbsm04 t where BACKLOG_EA ='" + backlog_ea + "' and ST_NO
+p_fbsm_13430/fbsm15_mx_ins.cpp	912	913	"         select t.STATION_ID ,METAL_CONS_PERT,MARK_POS_CODE,COMM_FMLY_CODE,BACKLOG_EA,2 seq_rn  from tfbsm04 t where BACKLOG_EA ='" + backlog_ea + "' and  (t.M
+p_fbsm_13430/fbsm15_mx_ins.cpp	914	915	"         select t.STATION_ID ,METAL_CONS_PERT,MARK_POS_CODE,COMM_FMLY_CODE,BACKLOG_EA,3 seq_rn  from tfbsm04 t where BACKLOG_EA ='" + backlog_ea + "' and  (t.M
+p_fbsm_13430/fbsm15_mx_ins.cpp	916	917	"         select t.STATION_ID ,METAL_CONS_PERT,MARK_POS_CODE,COMM_FMLY_CODE,BACKLOG_EA,4 seq_rn  from tfbsm04 t where BACKLOG_EA ='" + backlog_ea + "' and  (t.M
+p_fbsm_13430/fbsm15_mx_ins.cpp	918	924	"         select t.STATION_ID ,METAL_CONS_PERT,MARK_POS_CODE,COMM_FMLY_CODE,BACKLOG_EA,5 seq_rn  from tfbsm04 t where BACKLOG_EA ='" + backlog_ea + "' and  (t.M
+p_fbsm_13430/fbsm15_mx_ins.cpp	925	925	" select * from ("
+p_fbsm_13430/fbsm15_mx_ins.cpp	926	927	"    SELECT t.*,ROW_NUMBER() OVER (ORDER BY seq_rn ) as rn"
+p_fbsm_13430/fbsm15_mx_ins.cpp	928	929	"         select t.*,1 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' and ST_NO = '" + st_no + "'"
+p_fbsm_13430/fbsm15_mx_ins.cpp	930	931	"         select t.*,2 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' and  (t.MARK_POS_CODE = '1' AND t.MATERIAL_CODE = '" + material_code + "'
+p_fbsm_13430/fbsm15_mx_ins.cpp	932	933	"         select t.*,3 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' and  (t.MARK_POS_CODE = '2' AND t.comm_fmly_code = '" + comm_fmly_code + 
+p_fbsm_13430/fbsm15_mx_ins.cpp	934	935	"         select t.*,4 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' and  (t.MARK_POS_CODE = '3' AND t.MATERIAL_CODE = '" + material_code + "'
+p_fbsm_13430/fbsm15_mx_ins.cpp	936	942	"         select t.*,5 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' and  (t.MARK_POS_CODE = '3' AND t.comm_fmly_code = '" + comm_fmly_code + 
+p_fbsm_13430/fbsm15_mx_ins.cpp	979	980	sqlstr = " select distinct IF_WT_MAX from tfbsm25 where BACKLOG_EA='" + backlog_ea + "'  ";
+p_fbsm_13430/fbsm15_mx_ins.cpp	992	993	sqlstr = " select  BACKLOG_EA,MAT_CODE,MAT_NAME,BIG_LOAD_WT_MAX,BIG_LOAD_WT_Min,SMALL_LOAD_WT_MAX,SMALL_LOAD_WT_MIN from tfbsm25 where BACKLOG_EA='" + backlog_e
+p_fbsm_13430/fbsm15_mx_ins.cpp	1011	1012	sqlstr = " select  BACKLOG_EA,MAT_CODE,MAT_NAME,BIG_LOAD_WT_MAX,BIG_LOAD_WT_Min,SMALL_LOAD_WT_MAX,SMALL_LOAD_WT_MIN from tfbsm25 where BACKLOG_EA='" + backlog_e
+p_fbsm_13430/fbsm15_mx_ins.cpp	1028	1029	sqlstr = " select  BACKLOG_EA,MAT_CODE,MAT_NAME,BIG_LOAD_WT_MAX,BIG_LOAD_WT_Min,SMALL_LOAD_WT_MAX,SMALL_LOAD_WT_MIN from tfbsm25 where BACKLOG_EA=' '   ";
+p_fbsm_13430/fbsm15_mx_ins.cpp	1158	1187	sqlstr = " update tfbsm12 set ERROR_REMARK ='" + outDMST02.Tables["ERROR_INFO"].Rows[z]["ERROR_MSG"].ToString() + "' where ST_NO='" + outDMST02.Tables["ERROR_IN
+p_fbsm_13430/fbsm15_mx_ins.cpp	1199	1200	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO=' ',PLAN_ID=' ' ,ERROR_REMARK=' ' where DATE_C='" + date + "' AND ST_NO='" + st_no + "' and BACKLOG_EA='" + backlo
+p_fbsm_13430/fbsm15_mx_ins.cpp	1287	1288	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2)) fr
+p_fbsm_13430/fbsm15_mx_ins.cpp	1316	1317	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2)) fr
+p_fbsm_13430/fbsm15_mx_ins.cpp	1349	1350	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO='" + compose_list_no + "',PLAN_ID='" + plan_id + "',SINGLECOST='" + outDMST02.Tables["WORK_TABLE"].Rows[i]["SINGLE
+p_fbsm_13430/fbsm15_mx_ins.cpp	1358	1370	sqlstr = " MERGE INTO tfbsm14A t "
+p_fbsm_13430/fbsm15_mx_ins.cpp	1371	1379	"  UPDATE SET "
+p_fbsm_13430/fbsm15_mx_ins.cpp	1380	1381	"  INSERT (COMPOSE_LIST_NO, SINGLECOST, COST_DG, DATE_C, ST_NO, BACKLOG_EA, REC_CREATOR, REC_CREATE_TIME) "
+p_fbsm_13430/fbsm15_mx_ins.cpp	1389	1390	sqlstr = " select SI_PDI from tfbsm20 where COMM_FMLY_CODE='" + f_comm_fmly_code + "' and BACKLOG_EA='" + f_backlog_ea + "'  ";
+p_fbsm_13430/fbsm15_mx_ins.cpp	1407	1408	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='001' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13430/fbsm15_mx_ins.cpp	1416	1417	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='005' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13430/fbsm15_mx_ins.cpp	1469	1469	sqlstr = " SELECT * FROM ( "
+p_fbsm_13430/fbsm15_mx_ins.cpp	1470	1475	"   SELECT C_VALUE, SI_VALUE, MN_VALUE, CR_VALUE, "
+p_fbsm_13430/fbsm15_mx_ins.cpp	1571	1572	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='001' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13430/fbsm15_mx_ins.cpp	1580	1581	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='005' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13430/fbsm15_mx_ins.cpp	1636	1636	sqlstr = " SELECT * FROM ( "
+p_fbsm_13430/fbsm15_mx_ins.cpp	1637	1642	"   SELECT C_VALUE, SI_VALUE, MN_VALUE, CR_VALUE, "
+p_fbsm_13430/fbsm15_mx_ins.cpp	1841	1841	sqlstr = " update tfbsm12 set ERROR_REMARK ='" + outDMST02.Tables["ERROR_INFO"].Rows[z]["ERROR_MSG"].ToString() + "' where ST_NO='" + outDMST02.Tables["ERROR_IN
+p_fbsm_13430/fbsm15_mx_ins.cpp	1843	1845	sqlstr = " update tfbsm12 set ERROR_REMARK  =  '"
+p_fbsm_13430/fbsm15_mx_ins.cpp	1846	1846	+ "SELECT T1.MAT_CODE, T1.MAT_NAME FROM ( "
+p_fbsm_13430/fbsm15_mx_ins.cpp	1847	1857	+ "SELECT DISTINCT MAT_CODE, MAT_NAME, "
+p_fbsm_13430/fbsm15_mx_ins.cpp	1858	1869	+ "SELECT DISTINCT MAT_CODE,SUM(STOCK_WT/1000) OVER (PARTITION BY MAT_CODE) STOCK_WT "
+p_fbsm_13430/fbsm15_mx_ins.cpp	1883	1884	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO=' ',PLAN_ID=' '  where DATE_C='" + date + "' AND ST_NO='" + st_no + "' and BACKLOG_EA='" + backlog_ea + "' and SEQ
+p_fbsm_13430/fbsm15_mx_ins.cpp	1973	1974	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2)) fr
+p_fbsm_13430/fbsm15_mx_ins.cpp	2002	2003	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2)) fr
+p_fbsm_13430/fbsm15_mx_ins.cpp	2034	2035	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO='" + compose_list_no + "',PLAN_ID='" + plan_id + "',SINGLECOST='" + outDMST02.Tables["WORK_TABLE"].Rows[i]["SINGLE
+p_fbsm_13430/fbsm15_mx_ins.cpp	2041	2053	sqlstr = " MERGE INTO tfbsm14A t "
+p_fbsm_13430/fbsm15_mx_ins.cpp	2054	2062	"  UPDATE SET "
+p_fbsm_13430/fbsm15_mx_ins.cpp	2063	2064	"  INSERT (COMPOSE_LIST_NO, SINGLECOST, COST_DG, DATE_C, ST_NO, BACKLOG_EA, REC_CREATOR, REC_CREATE_TIME) "
+p_fbsm_13430/fbsm15_mx_ins.cpp	2072	2073	sqlstr = " select SI_PDI from tfbsm20 where COMM_FMLY_CODE='" + f_comm_fmly_code + "' and BACKLOG_EA='" + f_backlog_ea + "'  ";
+p_fbsm_13430/fbsm15_mx_ins.cpp	2092	2093	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='001' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13430/fbsm15_mx_ins.cpp	2101	2102	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='005' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13430/fbsm15_mx_ins.cpp	2144	2144	sqlstr = " SELECT * FROM ( "
+p_fbsm_13430/fbsm15_mx_ins.cpp	2145	2150	"   SELECT C_VALUE, SI_VALUE, MN_VALUE, CR_VALUE, "
+p_fbsm_13430/fbsm15_mx_ins.cpp	2254	2255	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='001' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13430/fbsm15_mx_ins.cpp	2263	2264	sqlstr = " select SPE_MAX,SPE_MIN from tfbsm05 where ST_NO='" + f_st_no + "' and ELM_CODE='005' and MATERIAL_CODE='" + f_material_code + "' and BACKLOG_EA='" + 
+p_fbsm_13430/fbsm15_mx_ins.cpp	2307	2307	sqlstr = " SELECT * FROM ( "
+p_fbsm_13430/fbsm15_mx_ins.cpp	2308	2313	"   SELECT C_VALUE, SI_VALUE, MN_VALUE, CR_VALUE, "
+p_fbsm_13430/fbsm15z_col.cpp	102	104	sqlstr = " SELECT CODE FROM TEP0002 "
+p_fbsm_13430/fbsm15z_col.cpp	233	240	sqlstr = " select check_flag"
+p_fbsm_13430/fbsm15z_col.cpp	258	266	sqlstr = " update tfbsm12 set MODEL_ID = @model_id,ORIGIN_CODE = ' ',COMPOSE_LIST_NO = ' '"
+p_fbsm_13430/fbsm15z_col.cpp	278	282	sqlstr = " select st_no,backlog_ea,date_c"
+p_fbsm_13430/fbsm15z_col.cpp	292	296	sqlstr = " select COMM_FMLY_CODE,MATERIAL_CODE,CO_ST_NO,VOD_USE_FLAG  "
+p_fbsm_13430/fbsm15z_col.cpp	320	326	sqlstr = " select nvl(max(case when ELM_NAME = 'P' then SPE_MAX else 0 end),100)"
+p_fbsm_13430/fbsm15z_col.cpp	361	368	sqlstr = " select seq_no,FURNACE_COUNT"
+p_fbsm_13430/fbsm15z_col.cpp	395	396	" SELECT st_no,backlog_ea,rn"
+p_fbsm_13430/fbsm15z_col.cpp	397	398	" SELECT  st_no,backlog_ea,1 rn from TFBSM01 where backlog_ea=@backlog_ea and st_no=@st_no"
+p_fbsm_13430/fbsm15z_col.cpp	399	400	" SELECT  st_no,backlog_ea,2 rn from TFBSM01 t where  st_no=@st_no  and backlog_ea = ' '"
+p_fbsm_13430/fbsm15z_col.cpp	401	402	" SELECT  st_no,backlog_ea,3 rn from TFBSM01 t where  backlog_ea=@backlog_ea and st_no=@st_no_1"
+p_fbsm_13430/fbsm15z_col.cpp	403	404	" SELECT  st_no,backlog_ea,4 rn from TFBSM01 t where  st_no=@st_no_1  and backlog_ea = ' '"
+p_fbsm_13430/fbsm15z_col.cpp	405	406	" SELECT  st_no,backlog_ea,5 rn from TFBSM01 t where  backlog_ea=@backlog_ea and st_no=@st_no_2"
+p_fbsm_13430/fbsm15z_col.cpp	407	410	" SELECT  st_no,backlog_ea,6 rn from TFBSM01 t where  st_no=@st_no_2  and backlog_ea = ' '"
+p_fbsm_13430/fbsm15z_col.cpp	441	446	sqlstr = "select CODE"
+p_fbsm_13430/fbsm15z_col.cpp	447	452	" select BUNKER_NO "
+p_fbsm_13430/fbsm15z_col.cpp	481	486	sqlstr = "select CODE"
+p_fbsm_13430/fbsm15z_col.cpp	487	492	" select BUNKER_NO "
+p_fbsm_13430/fbsm15z_col.cpp	521	526	sqlstr = "select CODE"
+p_fbsm_13430/fbsm15z_col.cpp	527	532	" select BUNKER_NO "
+p_fbsm_13430/fbsm15z_col.cpp	561	566	sqlstr = "select CODE"
+p_fbsm_13430/fbsm15z_col.cpp	567	572	" select BUNKER_NO "
+p_fbsm_13430/fbsm15z_col.cpp	588	595	sqlstr = " select t1.mat_code, nvl(t3.MAT_TYPE_PL1, ' ') as BACK_C2 ,t3.mat_name,t2.STOCK_NAME,t2.lot_no"
+p_fbsm_13430/fbsm15z_col.cpp	596	606	" select mat_code"
+p_fbsm_13430/fbsm15z_col.cpp	607	615	"   select mat_code,lot_no,stock_name,sum(WEIGHT) WEIGHT"
+p_fbsm_13430/fbsm15z_col.cpp	660	665	sqlstr = "select CODE"
+p_fbsm_13430/fbsm15z_col.cpp	666	671	" select BUNKER_NO "
+p_fbsm_13430/fbsm15z_col.cpp	712	717	sqlstr = "select CODE"
+p_fbsm_13430/fbsm15z_col.cpp	718	723	" select BUNKER_NO "
+p_fbsm_13430/fbsm15z_col.cpp	764	769	sqlstr = "select CODE"
+p_fbsm_13430/fbsm15z_col.cpp	770	775	" select BUNKER_NO "
+p_fbsm_13430/fbsm15z_col.cpp	818	823	sqlstr = "select CODE"
+p_fbsm_13430/fbsm15z_col.cpp	824	829	" select BUNKER_NO "
+p_fbsm_13430/fbsm15z_col.cpp	908	909	sqlstr = " SELECT * FROM TFBSM13 WHERE BACKLOG_EA='" + backlog_ea + "' ";
+p_fbsm_13430/fbsm15z_col.cpp	946	956	sqlstr = "SELECT "
+p_fbsm_13430/fbsm15z_col.cpp	957	958	"    SELECT STATION_ID, ELM_NAME, SPE_MIN,  SPE_MAX,0 YIELD "
+p_fbsm_13430/fbsm15z_col.cpp	959	960	"  SELECT  A.*,  ROW_NUMBER() OVER ( PARTITION BY A.ELM_NAME, A.STATION_ID ORDER BY  SEQ_RN ) as rn "
+p_fbsm_13430/fbsm15z_col.cpp	961	962	"	select STATION_ID,ELM_NAME,SPE_MAX,SPE_MIN,MAIN_AIM,1 as seq_rn from tfbsm05 where  BACKLOG_EA = '" + backlog_ea + "' and ST_NO = '" + st_no + "'"
+p_fbsm_13430/fbsm15z_col.cpp	963	964	"	select STATION_ID,ELM_NAME,SPE_MAX,SPE_MIN,MAIN_AIM,2 as seq_rn from tfbsm05 where  BACKLOG_EA = '" + backlog_ea + "' and ST_NO = '" + st_no_1 + "'"
+p_fbsm_13430/fbsm15z_col.cpp	965	966	"	select STATION_ID,ELM_NAME,SPE_MAX,SPE_MIN,MAIN_AIM,3 as seq_rn from tfbsm05 where  BACKLOG_EA = '" + backlog_ea + "' and ST_NO = '" + st_no_2 + "'"
+p_fbsm_13430/fbsm15z_col.cpp	967	971	"	select 'A' as STATION_ID,ELM_NAME, SPE_MAX, SPE_MIN, MAIN_AIM,0 as seq_rn from TQMTS02 WHERE ELM_NAME in ('C','Si','Mn','P','S','Cr','Ni','Mo','Cu','Co') and 
+p_fbsm_13430/fbsm15z_col.cpp	973	973	" SELECT STATION_ID, ELM_NAME, 0 SPE_MIN,  0 SPE_MAX, YIELD from ( "
+p_fbsm_13430/fbsm15z_col.cpp	974	975	"  SELECT  B.*,  ROW_NUMBER() OVER ( PARTITION BY B.ELM_NAME, B.STATION_ID ORDER BY  SEQ_RN ) as rn "
+p_fbsm_13430/fbsm15z_col.cpp	976	978	" select STATION_ID,'Cr' ELM_NAME, CASE WHEN YIELD_CR != 0 THEN YIELD_CR else 100  END YIELD, 1 seq_rn"
+p_fbsm_13430/fbsm15z_col.cpp	979	981	" select STATION_ID,'Ni' ELM_NAME, CASE WHEN YIELD_ni != 0 THEN YIELD_ni else 100  END YIELD, 1 seq_rn"
+p_fbsm_13430/fbsm15z_col.cpp	982	984	" select STATION_ID,'Mo' ELM_NAME, CASE WHEN YIELD_mo != 0 THEN YIELD_mo else 100  END YIELD, 1 seq_rn"
+p_fbsm_13430/fbsm15z_col.cpp	985	987	" select STATION_ID,'Cr' ELM_NAME, CASE WHEN YIELD_CR != 0 THEN YIELD_CR else 100  END YIELD, 2 seq_rn"
+p_fbsm_13430/fbsm15z_col.cpp	988	990	" select STATION_ID,'Ni' ELM_NAME, CASE WHEN YIELD_ni != 0 THEN YIELD_ni else 100  END YIELD, 2 seq_rn"
+p_fbsm_13430/fbsm15z_col.cpp	991	993	" select STATION_ID,'Mo' ELM_NAME, CASE WHEN YIELD_mo != 0 THEN YIELD_mo else 100  END YIELD, 2 seq_rn"
+p_fbsm_13430/fbsm15z_col.cpp	994	996	" select STATION_ID,'Cr' ELM_NAME, CASE WHEN YIELD_CR != 0 THEN YIELD_CR else 100  END YIELD, 3 seq_rn"
+p_fbsm_13430/fbsm15z_col.cpp	997	999	" select STATION_ID,'Ni' ELM_NAME, CASE WHEN YIELD_ni != 0 THEN YIELD_ni else 100  END YIELD, 3 seq_rn"
+p_fbsm_13430/fbsm15z_col.cpp	1000	1008	" select STATION_ID,'Mo' ELM_NAME, CASE WHEN YIELD_mo != 0 THEN YIELD_mo else 100  END YIELD, 3 seq_rn"
+p_fbsm_13430/fbsm15z_col.cpp	1033	1048	sqlstr = "SELECT "
+p_fbsm_13430/fbsm15z_col.cpp	1049	1064	"    SELECT "
+p_fbsm_13430/fbsm15z_col.cpp	1131	1164	sqlstr = "SELECT '" + st_no + "' ST_NO,"
+p_fbsm_13430/fbsm15z_col.cpp	1165	1169	" select CODE AS BACKLOG_EA,DESCRIPTION,TRIM(REGEXP_SUBSTR(DESCRIPTION, '[^,]+', 1, LEVEL)) AS STATION_ID   FROM TFBSM02  WHERE   code = '" + backlog_ea + "' "
+p_fbsm_13430/fbsm15z_col.cpp	1170	1170	" select * from ("
+p_fbsm_13430/fbsm15z_col.cpp	1171	1172	"    SELECT t.*,ROW_NUMBER() OVER ( PARTITION BY t.STATION_ID ORDER BY seq_rn ) as rn"
+p_fbsm_13430/fbsm15z_col.cpp	1173	1174	"         select t.STATION_ID ,METAL_CONS_PERT,MARK_POS_CODE,COMM_FMLY_CODE,BACKLOG_EA,1 seq_rn  from tfbsm04 t where BACKLOG_EA ='" + backlog_ea + "' and ST_NO
+p_fbsm_13430/fbsm15z_col.cpp	1175	1176	"         select t.STATION_ID ,METAL_CONS_PERT,MARK_POS_CODE,COMM_FMLY_CODE,BACKLOG_EA,2 seq_rn  from tfbsm04 t where BACKLOG_EA ='" + backlog_ea + "' AND ST_NO
+p_fbsm_13430/fbsm15z_col.cpp	1177	1183	"         select t.STATION_ID ,METAL_CONS_PERT,MARK_POS_CODE,COMM_FMLY_CODE,BACKLOG_EA,3 seq_rn  from tfbsm04 t where BACKLOG_EA ='" + backlog_ea + "' AND ST_NO
+p_fbsm_13430/fbsm15z_col.cpp	1184	1184	" select * from ("
+p_fbsm_13430/fbsm15z_col.cpp	1185	1186	"    SELECT t.*,ROW_NUMBER() OVER (ORDER BY seq_rn ) as rn"
+p_fbsm_13430/fbsm15z_col.cpp	1187	1188	"         select t.*,1 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' and ST_NO = '" + st_no + "'"
+p_fbsm_13430/fbsm15z_col.cpp	1189	1190	"         select t.*,2 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' AND ST_NO = '" + st_no_1 + "' "
+p_fbsm_13430/fbsm15z_col.cpp	1191	1196	"         select t.*,3 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' AND ST_NO = '" + st_no_2 + "' "
+p_fbsm_13430/fbsm15z_col.cpp	1230	1231	sqlstr = " select distinct IF_WT_MAX from tfbsm25 where BACKLOG_EA='" + backlog_ea + "'  ";
+p_fbsm_13430/fbsm15z_col.cpp	1242	1243	sqlstr = " select  BACKLOG_EA,MAT_CODE,MAT_NAME,BIG_LOAD_WT_MAX,BIG_LOAD_WT_Min,SMALL_LOAD_WT_MAX,SMALL_LOAD_WT_MIN from tfbsm25 where BACKLOG_EA='" + backlog_e
+p_fbsm_13430/fbsm15z_col.cpp	1261	1262	sqlstr = " select  BACKLOG_EA,MAT_CODE,MAT_NAME,BIG_LOAD_WT_MAX,BIG_LOAD_WT_Min,SMALL_LOAD_WT_MAX,SMALL_LOAD_WT_MIN from tfbsm25 where BACKLOG_EA='" + backlog_e
+p_fbsm_13430/fbsm15z_col.cpp	1278	1279	sqlstr = " select  BACKLOG_EA,MAT_CODE,MAT_NAME,BIG_LOAD_WT_MAX,BIG_LOAD_WT_Min,SMALL_LOAD_WT_MAX,SMALL_LOAD_WT_MIN from tfbsm25 where BACKLOG_EA=' '   ";
+p_fbsm_13430/fbsm15z_col.cpp	1333	1337	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2))"
+p_fbsm_13430/fbsm15z_col.cpp	1366	1368	sqlstr = " insert into tfbsm14A(COMPOSE_LIST_NO, DATE_C, ST_NO, BACKLOG_EA, SINGLECOST, COST_DG, REC_CREATOR, REC_CREATE_TIME,MODEL_ID) "
+p_fbsm_13430/fbsm15z_col.cpp	1393	1403	sqlstr = " update tfbsm12 set compose_list_no = @compose_list_no "
+p_fbsm_13430/fbsm15z_col.cpp	1419	1425	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO=' ',PLAN_ID=' ',singlecost = 0,cost_dg = 0"
+p_fbsm_13430/fbsm15z_col.cpp	1448	1450	sqlstr = " select SI_PDI from tfbsm20 "
+p_fbsm_13430/fbsm15z_col.cpp	1461	1466	sqlstr = "   SELECT C_VALUE, SI_VALUE, MN_VALUE, CR_VALUE, "
+p_fbsm_13430/fbsm15z_col.cpp	1582	1586	sqlstr = " select MAX(CASE WHEN ELM_NAME = 'C' THEN MAIN_AIM ELSE 0 END) C_AIM "
+p_fbsm_13430/fbsm15z_col.cpp	1652	1658	sqlstr = " update tfbsm12 set ERROR_REMARK=@col_remark"
+p_fbsm_13430/fbsm15z_col.cpp	1674	1678	sqlstr = "update tfbsm14a t1 set  ERROR_REMARK = (select ERROR_REMARK from tfbsm12 t2 where t1.COMPOSE_LIST_NO = t2.COMPOSE_LIST_NO and t2.model_id=@model_id an
+p_fbsm_13430/fbsm17_col.cpp	106	108	sqlstr = " SELECT CODE FROM TEP0002 "
+p_fbsm_13430/fbsm17_col.cpp	240	248	sqlstr = " update tfbsm12 set MODEL_ID = @model_id,ORIGIN_CODE = ' ',COMPOSE_LIST_NO = ' '"
+p_fbsm_13430/fbsm17_col.cpp	259	260	sqlstr = " insert into tfbsm17(REC_CREATOR,REC_CREATE_TIME,MODEL_ID"
+p_fbsm_13430/fbsm17_col.cpp	261	267	" select @rec_creator,@rec_create_time,@model_id, mat_code,STOCK_NAME,nvl(lot_no,' ') lot_no,nvl(QUALITY_BATCH_NO,' ')"
+p_fbsm_13430/fbsm17_col.cpp	276	281	sqlstr = " select st_no,backlog_ea,date_c"
+p_fbsm_13430/fbsm17_col.cpp	305	309	sqlstr = " select COMM_FMLY_CODE,MATERIAL_CODE,CO_ST_NO,VOD_USE_FLAG "
+p_fbsm_13430/fbsm17_col.cpp	338	344	sqlstr = " select nvl(max(case when ELM_NAME = 'P' then SPE_MAX else 0 end),100)"
+p_fbsm_13430/fbsm17_col.cpp	377	385	sqlstr = " select seq_no,FURNACE_COUNT,CHECK_FLAG"
+p_fbsm_13430/fbsm17_col.cpp	415	416	" SELECT st_no,backlog_ea,rn"
+p_fbsm_13430/fbsm17_col.cpp	417	418	" SELECT  st_no,backlog_ea,1 rn from TFBSM01 where backlog_ea=@backlog_ea and st_no=@st_no"
+p_fbsm_13430/fbsm17_col.cpp	419	420	" SELECT  st_no,backlog_ea,2 rn from TFBSM01 t where  st_no=@st_no and backlog_ea = ' '"
+p_fbsm_13430/fbsm17_col.cpp	421	422	" SELECT  st_no,backlog_ea,3 rn from TFBSM01 t where  backlog_ea=@backlog_ea and st_no=@st_no_1"
+p_fbsm_13430/fbsm17_col.cpp	423	425	" SELECT  st_no,backlog_ea,4 rn from TFBSM01 t where  st_no=@st_no_1 and backlog_ea = ' '"
+p_fbsm_13430/fbsm17_col.cpp	426	427	" SELECT  st_no,backlog_ea,5 rn from TFBSM01 t where   backlog_ea=@backlog_ea and st_no=@st_no_2"
+p_fbsm_13430/fbsm17_col.cpp	428	431	" SELECT  st_no,backlog_ea,6 rn from TFBSM01 t where  st_no=@st_no_2 and backlog_ea = ' '"
+p_fbsm_13430/fbsm17_col.cpp	451	458	sqlstr = " select t1.mat_code,nvl(t3.MAT_TYPE_PL1,' ') as  BACK_C2,t3.mat_name,t2.STOCK_NAME,nvl(t2.lot_no,' ') lot_no"
+p_fbsm_13430/fbsm17_col.cpp	459	469	" select mat_code"
+p_fbsm_13430/fbsm17_col.cpp	470	478	"   select mat_code,lot_no,stock_name,sum(WEIGHT) WEIGHT"
+p_fbsm_13430/fbsm17_col.cpp	563	564	sqlstr = " SELECT * FROM TFBSM13 WHERE BACKLOG_EA='" + backlog_ea + "' ";
+p_fbsm_13430/fbsm17_col.cpp	594	604	sqlstr = "SELECT "
+p_fbsm_13430/fbsm17_col.cpp	605	606	"    SELECT STATION_ID, ELM_NAME, SPE_MIN,  SPE_MAX,0 YIELD "
+p_fbsm_13430/fbsm17_col.cpp	607	608	"  SELECT  A.*,  ROW_NUMBER() OVER ( PARTITION BY A.ELM_NAME, A.STATION_ID ORDER BY  SEQ_RN ) as rn "
+p_fbsm_13430/fbsm17_col.cpp	609	610	"	select STATION_ID,ELM_NAME,SPE_MAX,SPE_MIN,MAIN_AIM,1 as seq_rn from tfbsm05 where  BACKLOG_EA = '" + backlog_ea + "' and ST_NO = '" + st_no + "'"
+p_fbsm_13430/fbsm17_col.cpp	611	612	"	select STATION_ID,ELM_NAME,SPE_MAX,SPE_MIN,MAIN_AIM,2 as seq_rn from tfbsm05 where  BACKLOG_EA = '" + backlog_ea + "' and ST_NO = '" + st_no_1 + "'"
+p_fbsm_13430/fbsm17_col.cpp	613	614	"	select STATION_ID,ELM_NAME,SPE_MAX,SPE_MIN,MAIN_AIM,3 as seq_rn from tfbsm05 where  BACKLOG_EA = '" + backlog_ea + "' and  ST_NO ='" + st_no_2 + "'"
+p_fbsm_13430/fbsm17_col.cpp	615	619	"	select 'A' as STATION_ID,ELM_NAME, SPE_MAX, SPE_MIN, MAIN_AIM,0 as seq_rn from TQMTS02 WHERE ELM_NAME in ('C','Si','Mn','P','S','Cr','Ni','Mo','Cu','Co') and 
+p_fbsm_13430/fbsm17_col.cpp	621	621	" SELECT STATION_ID, ELM_NAME, 0 SPE_MIN,  0 SPE_MAX, YIELD from ( "
+p_fbsm_13430/fbsm17_col.cpp	622	623	"  SELECT  B.*,  ROW_NUMBER() OVER ( PARTITION BY B.ELM_NAME, B.STATION_ID ORDER BY  SEQ_RN ) as rn "
+p_fbsm_13430/fbsm17_col.cpp	624	626	" select STATION_ID,'Cr' ELM_NAME, CASE WHEN YIELD_CR != 0 THEN YIELD_CR else 100  END YIELD, 1 seq_rn"
+p_fbsm_13430/fbsm17_col.cpp	627	629	" select STATION_ID,'Ni' ELM_NAME, CASE WHEN YIELD_ni != 0 THEN YIELD_ni else 100  END YIELD, 1 seq_rn"
+p_fbsm_13430/fbsm17_col.cpp	630	632	" select STATION_ID,'Mo' ELM_NAME, CASE WHEN YIELD_mo != 0 THEN YIELD_mo else 100  END YIELD, 1 seq_rn"
+p_fbsm_13430/fbsm17_col.cpp	633	635	" select STATION_ID,'Cr' ELM_NAME, CASE WHEN YIELD_CR != 0 THEN YIELD_CR else 100  END YIELD, 2 seq_rn"
+p_fbsm_13430/fbsm17_col.cpp	636	638	" select STATION_ID,'Ni' ELM_NAME, CASE WHEN YIELD_ni != 0 THEN YIELD_ni else 100  END YIELD, 2 seq_rn"
+p_fbsm_13430/fbsm17_col.cpp	639	641	" select STATION_ID,'Mo' ELM_NAME, CASE WHEN YIELD_mo != 0 THEN YIELD_mo else 100  END YIELD, 2 seq_rn"
+p_fbsm_13430/fbsm17_col.cpp	642	644	" select STATION_ID,'Cr' ELM_NAME, CASE WHEN YIELD_CR != 0 THEN YIELD_CR else 100  END YIELD, 3 seq_rn"
+p_fbsm_13430/fbsm17_col.cpp	645	647	" select STATION_ID,'Ni' ELM_NAME, CASE WHEN YIELD_ni != 0 THEN YIELD_ni else 100  END YIELD, 3 seq_rn"
+p_fbsm_13430/fbsm17_col.cpp	648	656	" select STATION_ID,'Mo' ELM_NAME, CASE WHEN YIELD_mo != 0 THEN YIELD_mo else 100  END YIELD, 3 seq_rn"
+p_fbsm_13430/fbsm17_col.cpp	685	700	sqlstr = "SELECT "
+p_fbsm_13430/fbsm17_col.cpp	701	716	"    SELECT "
+p_fbsm_13430/fbsm17_col.cpp	790	823	sqlstr = "SELECT '" + st_no + "' ST_NO,"
+p_fbsm_13430/fbsm17_col.cpp	824	828	" select CODE AS BACKLOG_EA,DESCRIPTION,TRIM(REGEXP_SUBSTR(DESCRIPTION, '[^,]+', 1, LEVEL)) AS STATION_ID   FROM TFBSM02  WHERE   code = '" + backlog_ea + "' "
+p_fbsm_13430/fbsm17_col.cpp	829	829	" select * from ("
+p_fbsm_13430/fbsm17_col.cpp	830	831	"    SELECT t.*,ROW_NUMBER() OVER ( PARTITION BY t.STATION_ID ORDER BY seq_rn ) as rn"
+p_fbsm_13430/fbsm17_col.cpp	832	833	"         select t.STATION_ID ,METAL_CONS_PERT,MARK_POS_CODE,COMM_FMLY_CODE,BACKLOG_EA,1 seq_rn  from tfbsm04 t where BACKLOG_EA ='" + backlog_ea + "' and ST_NO
+p_fbsm_13430/fbsm17_col.cpp	834	835	"         select t.STATION_ID ,METAL_CONS_PERT,MARK_POS_CODE,COMM_FMLY_CODE,BACKLOG_EA,2 seq_rn  from tfbsm04 t where BACKLOG_EA ='" + backlog_ea + "' and ST_NO
+p_fbsm_13430/fbsm17_col.cpp	836	842	"         select t.STATION_ID ,METAL_CONS_PERT,MARK_POS_CODE,COMM_FMLY_CODE,BACKLOG_EA,3 seq_rn  from tfbsm04 t where BACKLOG_EA ='" + backlog_ea + "' and ST_NO
+p_fbsm_13430/fbsm17_col.cpp	843	843	" select * from ("
+p_fbsm_13430/fbsm17_col.cpp	844	845	"    SELECT t.*,ROW_NUMBER() OVER (ORDER BY seq_rn ) as rn"
+p_fbsm_13430/fbsm17_col.cpp	846	847	"         select t.*,1 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' and ST_NO = '" + st_no + "'"
+p_fbsm_13430/fbsm17_col.cpp	848	849	"         select t.*,2 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' and ST_NO = '" + st_no_1 + "'"
+p_fbsm_13430/fbsm17_col.cpp	850	855	"         select t.*,3 seq_rn  from tfbsm09 t where   BACKLOG_EA ='" + backlog_ea + "' and ST_NO = '" + st_no_2 + "'"
+p_fbsm_13430/fbsm17_col.cpp	895	896	sqlstr = " select distinct IF_WT_MAX from tfbsm25 where BACKLOG_EA='" + backlog_ea + "'  ";
+p_fbsm_13430/fbsm17_col.cpp	908	909	sqlstr = " select  BACKLOG_EA,MAT_CODE,MAT_NAME,BIG_LOAD_WT_MAX,BIG_LOAD_WT_Min,SMALL_LOAD_WT_MAX,SMALL_LOAD_WT_MIN from tfbsm25 where BACKLOG_EA='" + backlog_e
+p_fbsm_13430/fbsm17_col.cpp	927	928	sqlstr = " select  BACKLOG_EA,MAT_CODE,MAT_NAME,BIG_LOAD_WT_MAX,BIG_LOAD_WT_Min,SMALL_LOAD_WT_MAX,SMALL_LOAD_WT_MIN from tfbsm25 where BACKLOG_EA='" + backlog_e
+p_fbsm_13430/fbsm17_col.cpp	944	945	sqlstr = " select  BACKLOG_EA,MAT_CODE,MAT_NAME,BIG_LOAD_WT_MAX,BIG_LOAD_WT_Min,SMALL_LOAD_WT_MAX,SMALL_LOAD_WT_MIN from tfbsm25 where BACKLOG_EA=' '   ";
+p_fbsm_13430/fbsm17_col.cpp	999	1003	sqlstr = " select  max(substr(COMPOSE_LIST_NO,12,14)),max(substr(COMPOSE_LIST_NO,14,1)),max(substr(COMPOSE_LIST_NO,13, 1)),max(substr(COMPOSE_LIST_NO,13, 2))"
+p_fbsm_13430/fbsm17_col.cpp	1034	1036	sqlstr = " insert into tfbsm14A(COMPOSE_LIST_NO, DATE_C, ST_NO, BACKLOG_EA, SINGLECOST, COST_DG, REC_CREATOR, REC_CREATE_TIME,MODEL_ID) "
+p_fbsm_13430/fbsm17_col.cpp	1061	1071	sqlstr = " update tfbsm12 set compose_list_no = @compose_list_no "
+p_fbsm_13430/fbsm17_col.cpp	1088	1094	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO=' ',PLAN_ID=' ',singlecost = 0,cost_dg = 0"
+p_fbsm_13430/fbsm17_col.cpp	1147	1149	sqlstr = " select SI_PDI from tfbsm20 "
+p_fbsm_13430/fbsm17_col.cpp	1160	1165	sqlstr = "   SELECT C_VALUE, SI_VALUE, MN_VALUE, CR_VALUE, "
+p_fbsm_13430/fbsm17_col.cpp	1252	1256	sqlstr = " select MAX(CASE WHEN ELM_NAME = 'C' THEN MAIN_AIM ELSE 0 END) C_AIM "
+p_fbsm_13430/fbsm17_col.cpp	1323	1329	sqlstr = " update tfbsm12 set COMPOSE_LIST_NO = ' ',PLAN_ID=' ',SINGLECOST = 0 ,COST_DG = 0"
+p_fbsm_13430/fbsm17_col.cpp	1345	1351	sqlstr = " update tfbsm12 set ERROR_REMARK=@col_remark"
+p_fbsm_13430/fbsm17_col.cpp	1368	1374	sqlstr = " update tfbsm12 set ERROR_REMARK=@col_remark"
+p_fbsm_13430/fbsm17_col.cpp	1389	1393	sqlstr = "update tfbsm14a t1 set  ERROR_REMARK = (select ERROR_REMARK from tfbsm12 t2 where t1.COMPOSE_LIST_NO = t2.COMPOSE_LIST_NO and t2.model_id=@model_id an
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	144	146	sql_ENVIRONMENT = " SELECT CODE FROM TEP0002 WHERE CODE_CLASS = 'FBSM23' ";
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	158	159	sqlstr = "SELECT MAT_CODE, YEILD_MINUS FROM TMMSM50";
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	177	179	sqlstr = " SELECT IRON_SI, IRON_TEMP FROM TMMSM21 "
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	320	321	sqlstr = "SELECT ST_NO, MAT_CODE, MAT_NAME, BACK_C2, DECODE(COOL_COEF,0,1,COOL_COEF) AS COOL_COEF, DECODE(NVL(UPPER_LIMIT_VALUE,0),0,999,UPPER_LIMIT_VALUE) AS U
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	337	338	sqlstr = "SELECT LOT_NO, MAT_CODE, STOCK_NAME, WEIGHT, NVL(Cr, 0) AS CR_VALUE, NVL(Ni, 0) AS NI_VALUE, NVL(Mo, 0) AS MO_VALUE FROM FBSM_13_AI WHERE MAT_CODE IN 
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	351	352	sqlstr = "SELECT TAPPING_WT, ST_NO, BACK_C2, UPPER_LIMIT_VALUE, LOWER_LIMIT_VALUE, DECODE(NVL(TYPE_QTY_LIMIT,0),0,1,TYPE_QTY_LIMIT) AS TYPE_QTY_LIMIT FROM TFBSM
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	386	388	sqlstr = " SELECT SEQ_NO FROM TFBSM31 "
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	410	417	sqlstr = " update tfbsm31 set ORIGIN_CODE = ' ',COMPOSE_LIST_NO = ' '"
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	529	533	sqlstr = " SELECT B.MAT_CODE, NVL(SUM(B.WEIGHT), 0) FROM TFBSM31 A "
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	690	691	sqlstr = "UPDATE TFBSM31 SET COMPOSE_LIST_NO=' ', PLAN_ID=' ',SINGLECOST = 0 ,COST_DG = 0 "
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	717	722	sqlstr = " SELECT MAX(COMPOSE_LIST_NO) "
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	807	814	sqlstr = "INSERT INTO TFBSM32 ("
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	834	841	sqlstr = "INSERT INTO TFBSM32 ("
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	881	889	sqlstr = "UPDATE TFBSM31 SET "
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	916	917	sqlstr = " UPDATE TFBSM31 SET ERROR_REMARK = @MSG "
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	1025	1026	sqlstr = "INSERT INTO TFBSM33 (COMPOSE_LIST_NO, ST_NO, FURNACE_COUNT, DATE_C, TAPPING_WT, REC_CREATOR, REC_CREATE_TIME) "
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	1049	1050	sqlstr = "INSERT INTO TFBSM33 (COMPOSE_LIST_NO, ST_NO, SEQ_NO, FURNACE_COUNT, DATE_C, TAPPING_WT, REC_CREATOR, REC_CREATE_TIME) "
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	1079	1080	sqlstr = "INSERT INTO TFBSM34 (COMPOSE_LIST_NO, ST_NO, MAT_CODE, MAT_NAME, STOCK_WT, STOCK_NAME, BACK_C2, COST, YEILD_MINUS, REC_CREATOR, REC_CREATE_TIME,COOL_C
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	1112	1113	sqlstr = "INSERT INTO TFBSM34 (COMPOSE_LIST_NO, ST_NO, MAT_CODE, MAT_NAME, STOCK_WT, STOCK_NAME, BACK_C2, COST, YEILD_MINUS, REC_CREATOR, REC_CREATE_TIME,COOL_C
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	1148	1149	sqlstr = "INSERT INTO TFBSM35 (COMPOSE_LIST_NO, TAPPING_WT, BACK_C2, UPPER_LIMIT_VALUE, LOWER_LIMIT_VALUE, ST_NO, REC_CREATOR, REC_CREATE_TIME,TYPE_QTY_LIMIT) "
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	1176	1177	sqlstr = "INSERT INTO TFBSM35 (COMPOSE_LIST_NO, TAPPING_WT, BACK_C2, UPPER_LIMIT_VALUE, LOWER_LIMIT_VALUE, ST_NO, REC_CREATOR, REC_CREATE_TIME) "
+p_fbsm_13440/fbsm15tg_mx_ins.cpp	1202	1203	sqlstr = "INSERT INTO TFBSM14A (COMPOSE_LIST_NO, ST_NO, SINGLECOST, COST_DG, DATE_C, BACKLOG_EA, REC_CREATOR, REC_CREATE_TIME) "

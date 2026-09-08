@@ -1,0 +1,25 @@
+1051						{
+1052							x1j197b.mat_act_wt = tmmsm01.mat_theory_wt;
+1053							strcpy(wt_flag, "0");
+1054						}
+1055	
+1056						//获取板坯重量修正系数
+1057						slab_wtadj = 1;
+1058						v_slab_tapper_width_lmt = 0;
+1059						EXEC SQL
+1060							SELECT  nvl(SLAB_WTADJ_FACTOR, 1), nvl(SLAB_TAPPER_WIDTH_LMT, 0)
+1061						INTO  :slab_wtadj, : v_slab_tapper_width_lmt
+1062							   FROM  TQMTS9M
+1063							   WHERE  STRAND_NO = 'J'
+1064							   FETCH  FIRST 1 ROWS ONLY
+1065							   ;
+1066						//slab_wt = int(x1j197b.mat_act_wt * slab_wtadj);
+1067						//增加送热轧自动处置功能 20220122:zhenglei
+1068						if (v_slab_tapper_width_lmt <= 0)
+1069						{
+1070							slab_wtadj = 1;
+1071						}
+1072	
+1073						if (slab_wtadj > 1.1 or slab_wtadj < 0.9)
+1074							slab_wtadj = 1.0;
+1075	

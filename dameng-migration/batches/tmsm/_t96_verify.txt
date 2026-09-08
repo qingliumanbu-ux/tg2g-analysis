@@ -1,0 +1,56 @@
+L88 [头]
+  活动: 			sqlstr = "select DATEDIFF(DAY, TO_TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "','YYYYMMDDHH24MISS'), TO_TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "','YYYYMMDDHH24MISS')) from D
+
+L121 [头]
+
+L129 [头]
+  活动: 					sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP(" + ttmsm66["REC_CREATE_TIME"].ToString() + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP(" + ttmsm66["CHANGE_TIME"].ToString() + "'YYYYMMDDHH24MISS')) / 3600 
+
+L163 [头]
+
+L171 [头]
+  活动: 					sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP(" + ttmsm66["REC_CREATE_TIME"].ToString() + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP(" + ttmsm66["CHANGE_TIME"].ToString() + "'YYYYMMDDHH24MISS')) / 60 fr
+
+L286 [头]
+
+L294 [头]
+  活动: 								sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP(" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP(" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "'YY
+
+L339 [头]
+
+L347 [头]
+  活动: 								sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP(" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP(" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "'YY
+
+L393 [头]
+
+L401 [头]
+  活动: 								sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP(" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP(" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "'YY
+
+L447 [头]
+
+L455 [头]
+  活动: 								sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP(" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP(" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "'YY
+
+L501 [头]
+
+L509 [头]
+  活动: 								sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP(" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP(" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "'YY
+
+L555 [头]
+
+L563 [头]
+  活动: 								sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP(" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP(" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "'YY
+
+L609 [头]
+
+L617 [头]
+  活动: 								sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP(" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP(" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "'YY
+
+L660 [头]
+
+L668 [头]
+  活动: 							sqlstr = "select DATEDIFF(SECOND, TO_TIMESTAMP(" + dt_temp.Rows[j]["S_DATETIME"].ToString().Trim() + "'YYYYMMDDHH24MISS'), TO_TIMESTAMP(" + dt_temp.Rows[j]["E_DATETIME"].ToString().Trim() + "'Y
+
+L702 [头]
+  活动: 			sqlstr = "SELECT ROUND(" + use_time.ToString() + "/60,2),ROUND((" + all_time.ToString()+" - "+ use_time.ToString() + ")/ 60, 2), ROUND(" 
+

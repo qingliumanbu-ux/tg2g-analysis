@@ -1,0 +1,3 @@
+### CHANGE-151  原行 66-66
+  L66 前: sqlstr = "SELECT DECODE(max(now_row),null,0,max(now_row)) FROM TQMTS0RDR where heat_no='" + v_heat_no + "'and order_no='" + v_order_no + "'";
+  L66 后: sqlstr = "SELECT CASE WHEN max(now_row) IS NULL THEN 0 ELSE max(now_row) END FROM TQMTS0RDR where heat_no='" + v_heat_no + "'and order_no='" + v_order_no + "'";

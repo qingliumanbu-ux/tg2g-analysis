@@ -1,0 +1,12 @@
+{
+  "scope": "application_sql_only",
+  "converted_expressions": 2,
+  "changed_files": 2,
+  "changed_lines": 6,
+  "byte_reversal_matches_original_hash": true,
+  "candidate_files_retained": 5155,
+  "scope_links_valid": true,
+  "runtime_tested": false,
+  "git_diff_check": "passed for both modified repositories",
+  "baseline_note": "Original scan remains a pre-conversion snapshot; new file hashes are in sql-conversion-log.json"
+}

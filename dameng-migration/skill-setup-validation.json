@@ -1,0 +1,76 @@
+{
+  "date": "2026-09-06",
+  "skill": "taigang-dm8-sql",
+  "library_id": "8e9a93a3-4388-4245-85b9-7aa972597318",
+  "source_path": "D:\\work\\company\\太钢二炼钢\\analysis\\skills\\taigang-dm8-sql",
+  "central_path": "C:\\Users\\AIGC\\.skills-manager\\skills\\taigang-dm8-sql",
+  "deployed_to": [
+    "claude_code",
+    "codex",
+    "deepseek_harness",
+    "github_copilot",
+    "zcode"
+  ],
+  "requested_deployments_verified": [
+    "codex",
+    "zcode"
+  ],
+  "codex_path": "C:\\Users\\AIGC\\.codex\\skills\\taigang-dm8-sql",
+  "zcode_path": "C:\\Users\\AIGC\\.zcode\\skills\\taigang-dm8-sql",
+  "quick_validate": "passed after module-gate update with D:/tools/Python/python.exe",
+  "file_checks": [
+    {
+      "file": "agents/openai.yaml",
+      "source_sha256": "243b1ee5cadae6909baf8297bea88fbaa005c7d794fa574413e960edfd9d2640",
+      "central_matches": true,
+      "codex_matches": true,
+      "zcode_matches": true
+    },
+    {
+      "file": "references/comment-format.md",
+      "source_sha256": "1106c09ea32e689aa97d2cdb93ba12688632aee950b5110338898c7e30386b91",
+      "central_matches": true,
+      "codex_matches": true,
+      "zcode_matches": true
+    },
+    {
+      "file": "references/project-context.md",
+      "source_sha256": "68d8949c9b5b017a0a8b8597d731452966ebf09dedab4a9c062535ff7e912219",
+      "central_matches": true,
+      "codex_matches": true,
+      "zcode_matches": true
+    },
+    {
+      "file": "SKILL.md",
+      "source_sha256": "9c54232ec0368b3717a13a181bb8a627e16ab1fa958f04d934e94da23311139a",
+      "central_matches": true,
+      "codex_matches": true,
+      "zcode_matches": true
+    }
+  ],
+  "independent_forward_check": "analysis/skill-forward-check/evaluation.md",
+  "original_source_file_count_verified": 6338,
+  "source_changes_match_comment_log": true,
+  "comment_additions_restore_prior_executable_content": true,
+  "module_gate_update": {
+    "module_boundary_report_required": true,
+    "next_module_requires_user_decision": true,
+    "evidence_levels": [
+      "E1_static_contract",
+      "E2_dm8_execution",
+      "E3_differential_equivalence",
+      "E4_application_path"
+    ]
+  },
+  "skills_manager_refresh": {
+    "refreshed": true,
+    "codex_verified": true,
+    "zcode_verified": true,
+    "source_central_codex_zcode_files_match": true
+  },
+  "checked_local_link_occurrences": 63,
+  "link_validation_scope": "handoff, module acceptance, report template, README, main plan, and skill",
+  "broken_links": [],
+  "database_executed": false,
+  "application_built": false
+}

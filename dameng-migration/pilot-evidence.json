@@ -1,0 +1,300 @@
+{
+  "date": "2026-09-04",
+  "status": "static_trace_and_design_only",
+  "pilot": "FBSM23S2N 每日配料规则维护",
+  "source_database": "Oracle (project document; live version not inspected)",
+  "target_database": "DM8 (project document; instance settings not inspected)",
+  "bm2_adapter_status": "user_confirmed_adapted",
+  "business_code_changed": false,
+  "database_connected": false,
+  "runtime_test_executed": false,
+  "files": {
+    "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13430/fbsm17_col.cpp": {
+      "sha256": "5563f192fe5a9693281ee1a3c8539aa3340788854c94d7d1e6e07bd04c7357ed",
+      "encoding": "gb18030",
+      "line_count": 1422
+    },
+    "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM21S2N/FBSM21S2N.vue": {
+      "sha256": "e221effa8dd70a870c806e6ea8d520397d7d8c6684e39a3889f08a8594f29aa5",
+      "encoding": "utf-8",
+      "line_count": 143
+    },
+    "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM23S2N/FBSM23S2N.ts": {
+      "sha256": "bafc1ad62e97e4e3aee3af7c496de263d3a05a28c81f67d16ffa059557ca95a6",
+      "encoding": "utf-8",
+      "line_count": 383
+    },
+    "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm_form_get.cpp": {
+      "sha256": "6fa5001c9ac18be3c21a50c8238a68e1b00e10c3cd8f950d89e5e0f89e040ad8",
+      "encoding": "gb18030",
+      "line_count": 44
+    },
+    "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_inq.cpp": {
+      "sha256": "f413a602dcb6a489a21b524425a878c9cc903336aee1a98394831c04378e119b",
+      "encoding": "gb18030",
+      "line_count": 61
+    },
+    "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_elm_inq.cpp": {
+      "sha256": "aa22a45ecc83c1d1e8d137f8961680046efe11e7d0a22a663e3c33b084172957",
+      "encoding": "gb18030",
+      "line_count": 60
+    },
+    "D:/work/company/太钢二炼钢/Client/xr-fbsm/@mf-types/ERX/index.d.ts": {
+      "sha256": "caa158653bf5946a38e53decfae49fb2d5fa6b4555dfb25782dacf83a1065dbb",
+      "encoding": "utf-8",
+      "line_count": 6531
+    },
+    "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_save.cpp": {
+      "sha256": "f8aabc51e42fc994878503c453e5159cdab9acf448fb5e065988ada7cc4843b3",
+      "encoding": "utf-8",
+      "line_count": 286
+    }
+  },
+  "evidence": [
+    {
+      "id": "PILOT-E001",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13430/fbsm17_col.cpp",
+      "line": 490,
+      "line_sha256": "a0936e60bd5920ec5a61e08312df6ab351ebef9ecfea3ef78ed5be6702c9ba0d",
+      "source_line": "sqlstr = sqlstr + \"  and not exists ( select 1 from tfbsm23 t23 where NVL(t2.Ni, 0)<t23.UPPER_LIMIT_VALUE and NVL(t2.Ni, 0)>t23.LOWER_LIMIT_VALUE and t23.st_no=@st_no and t23.BACK_C2 = t3.MAT_TYPE_PL1 and t23.MUST_DO_FLAG = '1')\";"
+    },
+    {
+      "id": "PILOT-E002",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM21S2N/FBSM21S2N.vue",
+      "line": 123,
+      "line_sha256": "5306b19bcbd26dcc0afe1f1665f8849506d1a23047f34a880ba08ac9908d676c",
+      "source_line": "const outInfo = await erFormHelper.callService('fbsm21_inq', inInfo);"
+    },
+    {
+      "id": "PILOT-E003",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM23S2N/FBSM23S2N.ts",
+      "line": 39,
+      "line_sha256": "848c1040efa112b1abf1cd9f3169450fcf18cde827c85f4f29d67e016e471709",
+      "source_line": "const initializeService = \"fbsm_form_get\";"
+    },
+    {
+      "id": "PILOT-E004",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM23S2N/FBSM23S2N.ts",
+      "line": 190,
+      "line_sha256": "ea11335f5daddc6ab341bdf5ef72c889cca59dc7baeafd4b4b0617d745931cae",
+      "source_line": "const initialResult = await erFormHelper.Initialize("
+    },
+    {
+      "id": "PILOT-E005",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm_form_get.cpp",
+      "line": 25,
+      "line_sha256": "3fbe7f7b946518b28ccc2e8008459bf229b425cd76e4a254ebe9878b4f3a15c7",
+      "source_line": "doFlag = BE2::CFormDevConfig::GetFormDevConfig(bcls_rec, bcls_ret, conn);"
+    },
+    {
+      "id": "PILOT-E006",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM23S2N/FBSM23S2N.ts",
+      "line": 230,
+      "line_sha256": "8f90dcfe139cca15a51cc5c1313537ebfb9b8ce75fc53080ddd599701aa4d6fa",
+      "source_line": "\"fbsm23_inq\","
+    },
+    {
+      "id": "PILOT-E007",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_inq.cpp",
+      "line": 23,
+      "line_sha256": "dd0b8c6afb87afab2ef27301b82659d73c12e99d4ac1a8f9a3fe8a15e8d191b9",
+      "source_line": "if (bcls_rec->Tables[0].Columns.Contains(\"DATE_C\"))"
+    },
+    {
+      "id": "PILOT-E008",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_inq.cpp",
+      "line": 32,
+      "line_sha256": "68adff85dac875dc27858fb7e22ccfc353119e7367ac70440232dbf889fe1903",
+      "source_line": "sqlstr = \" select ST_NO,MATERIAL_CODE,DATE_C,SUM(FURNACE_COUNT) AS FURNACE_COUNT from tfbsm12 \""
+    },
+    {
+      "id": "PILOT-E009",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM23S2N/FBSM23S2N.ts",
+      "line": 150,
+      "line_sha256": "7998f2e2ff14162a443e840bb7730934dc5e86a192e3f8a8f26a754edd1fa56a",
+      "source_line": "const queryRightByRow = async (row: any) => {"
+    },
+    {
+      "id": "PILOT-E010",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM23S2N/FBSM23S2N.ts",
+      "line": 161,
+      "line_sha256": "12f12ceaf1aff722fc7e86eec83a62b7351c11be6d3c5e8242abe90ee35c432a",
+      "source_line": "'fbsm23_elm_inq',"
+    },
+    {
+      "id": "PILOT-E011",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_elm_inq.cpp",
+      "line": 24,
+      "line_sha256": "85590a2ef26c47bcb488c0ee43a529c1f3bd912d21d8d94451652d608a368bdd",
+      "source_line": "if (bcls_rec->Tables[0].Columns.Contains(\"ST_NO\"))"
+    },
+    {
+      "id": "PILOT-E012",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_elm_inq.cpp",
+      "line": 30,
+      "line_sha256": "fcd3180cf186df35f7c5029abeabd2b133cc4732cb9fa1eedd947189b195c862",
+      "source_line": "sqlstr = \" select ST_NO,BACK_C2,UPPER_LIMIT_VALUE,LOWER_LIMIT_VALUE,MUST_DO_FLAG,VALUE_MAX,VALUE_MIN from tfbsm23 \""
+    },
+    {
+      "id": "PILOT-E013",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM23S2N/FBSM23S2N.ts",
+      "line": 291,
+      "line_sha256": "6b69c75a2c936775c098a44271d876d6ca7ccf6c64b4be6fb9ff579bfea027d0",
+      "source_line": "const stNoList = leftRows.map((r: any) => `'${r.ST_NO}'`).join(',');"
+    },
+    {
+      "id": "PILOT-E014",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM23S2N/FBSM23S2N.ts",
+      "line": 295,
+      "line_sha256": "b8a77d7eab17604c65fe6fb0c68a344a42696fb2005c563a6f68623a13a07b04",
+      "source_line": "const queryRes = await erFormHelper.querySql('', querySql);"
+    },
+    {
+      "id": "PILOT-E015",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/@mf-types/ERX/index.d.ts",
+      "line": 4658,
+      "line_sha256": "21ad23218f10057140b7c47d9ab92435910fa2012e8463a72179a0f46788ec77",
+      "source_line": "* @param svcName 自定义服务名称，传空时默认系统服务"
+    },
+    {
+      "id": "PILOT-E016",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM23S2N/FBSM23S2N.ts",
+      "line": 306,
+      "line_sha256": "ce829d7a5bef701eaa716d4afaa5fdb3db945df2a014875d40231b04d98d1f48",
+      "source_line": "if (existingRows.length > 0) {"
+    },
+    {
+      "id": "PILOT-E017",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM23S2N/FBSM23S2N.ts",
+      "line": 315,
+      "line_sha256": "70d34e49e1c5d10dfdd6fe158a22a830611af59de79cb419e96e101e7e597842",
+      "source_line": "const addRows: any[] = [];"
+    },
+    {
+      "id": "PILOT-E018",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM23S2N/FBSM23S2N.ts",
+      "line": 330,
+      "line_sha256": "6d612aca12f3a29ebe272c5657dfb700cdd8ac5fc4d782e09380a03838b1fc4e",
+      "source_line": "'fbsm23_save',"
+    },
+    {
+      "id": "PILOT-E019",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_save.cpp",
+      "line": 226,
+      "line_sha256": "fdabd1e3ce88ee32581d69eec114e0faacb172dc981f63e5e86d79b7b2ab58fc",
+      "source_line": "for (size_t i = 0; i < bcls_rec->Tables.get_Count(); i++)"
+    },
+    {
+      "id": "PILOT-E020",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_save.cpp",
+      "line": 189,
+      "line_sha256": "aba02cb1da8af9fc6ab5e4a534278745228852da7c851c45ed84ad8f1490498c",
+      "source_line": "sqlstr = \"DELETE FROM TFBSM23 WHERE ST_NO='\" + st_no + \"' AND BACK_C2='\" + back_c2 + \"'\";"
+    },
+    {
+      "id": "PILOT-E021",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_save.cpp",
+      "line": 27,
+      "line_sha256": "f75867dfeec84de0108c0abb3b3298d71de950a6fb102be43cdc9f320fb460cd",
+      "source_line": "CString st_no = data_table->Rows[i][\"ST_NO\"].ToString().Trim();"
+    },
+    {
+      "id": "PILOT-E022",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_save.cpp",
+      "line": 52,
+      "line_sha256": "21bf7ce7db68ce15a037b5f6f0f6d2907755dbc504671a53307c9c1223337fa0",
+      "source_line": "sqlstr = \"DELETE FROM TFBSM23 WHERE ST_NO='\" + st_no + \"' AND BACK_C2='\" + back_c2 + \"' AND UPPER_LIMIT_VALUE='\" + upper_limit_value + \"' AND LOWER_LIMIT_VALUE='\" + lower_limit_value + \"' \";"
+    },
+    {
+      "id": "PILOT-E023",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_save.cpp",
+      "line": 57,
+      "line_sha256": "161a8899da60c4a5d3637905da37f310df8ca8200061b59c6cfdaca34917fb7e",
+      "source_line": "sqlstr = \"INSERT INTO TFBSM23 (ST_NO, BACK_C2, UPPER_LIMIT_VALUE, LOWER_LIMIT_VALUE, MUST_DO_FLAG, VALUE_MAX, VALUE_MIN, MATERIAL_CODE, REC_CREATOR, REC_CREATE_TIME) \""
+    },
+    {
+      "id": "PILOT-E024",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_save.cpp",
+      "line": 61,
+      "line_sha256": "5247e9498aac63764f4da8328a3817b54b8852bebd293293a8c374976df7dfe2",
+      "source_line": "cmd.Parameters.Set(\"rec_creator\", s.userid);"
+    },
+    {
+      "id": "PILOT-E025",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_save.cpp",
+      "line": 130,
+      "line_sha256": "2b9ed0b7149886d2f43ea72793b6303937cfa9bf532d4baf796f3eb92c5ab237",
+      "source_line": "sqlstr = \"UPDATE TFBSM23 SET UPPER_LIMIT_VALUE='\" + upper_limit_value + \"', LOWER_LIMIT_VALUE='\" + lower_limit_value + \"', MUST_DO_FLAG='\" + must_do_flag + \"', VALUE_MAX='\" + value_max + \"', VALUE_MIN='\" + value_min + \"', MATERIAL_CODE='\" + material_code + \"', REC_REVISOR=@rec_revisor, REC_REVISE_TIME=@rec_revise_time \""
+    },
+    {
+      "id": "PILOT-E026",
+      "path": "D:/work/company/太钢二炼钢/Server/FBSM/p_fbsm_13400/fbsm23_save.cpp",
+      "line": 241,
+      "line_sha256": "4b9f9fd7c1b9b180db2134d23bec0d41a701e56fa158cd49071a094f5d1f8f4a",
+      "source_line": "else if (position > 1 && table_name.Substring(position, table_name.GetLength() - position) == \"MODIFY\")"
+    },
+    {
+      "id": "PILOT-E027",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM23S2N/FBSM23S2N.ts",
+      "line": 296,
+      "line_sha256": "0afb1954b9e5a491ed3c7326d6155ac07a34600243831c3a4babc5c9451f7284",
+      "source_line": "if (queryRes.sys.status < 0) {"
+    },
+    {
+      "id": "PILOT-E028",
+      "path": "D:/work/company/太钢二炼钢/Client/xr-fbsm/src/views/FBSM23S2N/FBSM23S2N.ts",
+      "line": 237,
+      "line_sha256": "1c8dd17a40c5f8f7c3ccfcbca36abf7a8c81a985f8194d054a12a34f3898f855",
+      "source_line": "//if (outInfo.sys.status < 0) erFormHelper.messageError(outInfo.sys.msg);"
+    }
+  ],
+  "known_tables": [
+    {
+      "name": "TFBSM12",
+      "operations": [
+        "SELECT"
+      ],
+      "ddl_status": "not_available_in_trace"
+    },
+    {
+      "name": "TFBSM23",
+      "operations": [
+        "SELECT",
+        "DELETE",
+        "INSERT",
+        "UPDATE"
+      ],
+      "ddl_status": "not_available_in_trace"
+    }
+  ],
+  "known_services": [
+    "fbsm_form_get",
+    "fbsm23_inq",
+    "fbsm23_elm_inq",
+    "fbsm23_save"
+  ],
+  "unresolved_edges": [
+    "ER.FormHelper.querySql empty svcName to actual default service",
+    "CFormDevConfig.GetFormDevConfig to layout/dictionary/query configuration tables",
+    "BM2F_ENTERACE service transaction configuration and rollback decision",
+    "TFBSM23 triggers and downstream effects from deployed database"
+  ],
+  "not_covered": [
+    "CModel-generated SQL",
+    "paging",
+    "DB_KIND dialect routing",
+    "sequences and lock allocation",
+    "LOB",
+    "stored procedures and JOB",
+    "production calculation or dispatch",
+    "external interfaces"
+  ],
+  "validation": {
+    "source_reference_count": 28,
+    "file_count": 8,
+    "line_bounds_checked": true,
+    "encoding_decoded_strictly": true,
+    "runtime_status": "not_run",
+    "nonempty_source_lines_checked": true
+  }
+}

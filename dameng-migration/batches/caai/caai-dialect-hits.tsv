@@ -1,0 +1,238 @@
+file	line	text
+libCAAI/f_caai_allft.cpp	142	" select DST_MAT_CODE as mat_code,SRC_STOCK_CODE ,NET_WT,NVL(BACK_C2,' ') sub_Backlog_code"
+libCAAI/f_caai_allft.cpp	316	" and rownum = 1"
+libCAAI/f_caai_allft.cpp	491	" and rownum = 1"
+libCAAI/f_caai_allft.cpp	626	" and rownum = 1"
+libCAAI/f_caai_allft.cpp	798	" and rownum = 1"
+libCAAI/f_caai_cost.cpp	40	" AND DEPT_CODE = DECODE(@dept_code, ' ',dept_code,@dept_code)"
+libCAAI/f_caai_cost.cpp	61	" AND DEPT_CODE = DECODE(@dept_code, ' ',dept_code,@dept_code)"
+libCAAI/f_caai_cost.cpp	82	" AND DEPT_CODE = DECODE(@dept_code, ' ',dept_code,@dept_code)"
+libCAAI/f_caai_ft.cpp	115	sqlstr = " select NVL(SUM(divvy_basic_n),0) from tcaai01 "
+libCAAI/f_caai_ft.cpp	500	" FETCH FIRST 1 ROWS  ONLY"
+libCAAI/f_caai_ft.cpp	525	" and rownum=1"
+libCAAI/f_caai_ft.cpp	567	" FETCH FIRST 1 ROWS  ONLY"
+libCAAI/f_caai_ft.cpp	592	" and rownum=1"
+libCAAI/f_caai_gb.cpp	131	" and nvl(total_wt,0)!=0"
+libCAAI/f_caai_gb.cpp	132	" and nvl(use_wt,0)!=0"
+libCAAI/f_caai_gb.cpp	155	" left join tcaaia12 t12 on t12.plan_no = decode(t1.dept_code,'S',t1.pono,t1.RELATION_NO) and t12.equ_no = t1.equ_no and t12.busi_type = 'SC'"
+libCAAI/f_caai_gb.cpp	158	" AND NVL(COMSUME_WT,0)!=0"
+libCAAI/f_caai_gb.cpp	182	" AND NVL(COMSUME_WT,0)!=0"
+libCAAI/f_caai_gb.cpp	208	" AND NVL(PROD_WT,0)!=0"
+libCAAI/f_caai_gb.cpp	239	" select @rec_creator, @rec_create_time,decode(use_unit,0,'3','2') ,'DE',mat_code,' ',@stats_period,@dept_code,cost_center,cost_center,use_unit, unit_cost,@stats_period,equ_no,sg_sign,mat_thick,mat_width,mat_len "
+libCAAI/f_caai_gb.cpp	262	" select @rec_creator, @rec_create_time,decode(use_unit,0,'3','2') ,'DE',mat_code,' ',@stats_period,@dept_code,cost_center,cost_center,use_unit*out_wt, unit_cost*out_wt,@stats_period,equ_no,sg_sign,mat_thick,mat_width,mat_len "
+libCAAI/f_caai_gb.cpp	274	" AND NVL(out_wt,0) !=0"
+libCAAI/f_caai_getcb.cpp	60	",MIN_THICK,MAX_THICK,MIN_WIDTH,MAX_WIDTH,MIN_LEN,MAX_LEN,whole_backlog,SLAB_THICK,SLAB_WIDTH,nvl(INGOT_CODE,' '),case when SLAB_THICK=SLAB_WIDTH AND nvl(INGOT_CODE,' ')!=' ' then 'A6' ELSE 'A7' END MAT_CODE"
+libCAAI/f_caai_getcb.cpp	61	",nvl(psc,' ') psc,nvl(DELIVY_STATUS_CODE,'0') DELIVY_STATUS_CODE,nvl(HOT_TREAT_METHOD_CODE,'0') HOT_TREAT_METHOD_CODE"
+libCAAI/f_caai_getcb.cpp	85	" where nvl(INGOT_CODE,' ')!=' '"
+libCAAI/f_caai_getcb.cpp	86	" and nvl(prod_code, ' ') != ' '"
+libCAAI/f_caai_getcb.cpp	87	" and nvl(MIN_THICK, 99999999) != 99999999"
+libCAAI/f_caai_getcb.cpp	112	",MIN_THICK,MAX_THICK,MIN_WIDTH,MAX_WIDTH,MIN_LEN,MAX_LEN,whole_backlog,SLAB_THICK,SLAB_WIDTH,nvl(INGOT_CODE,' '),case when SLAB_THICK=SLAB_WIDTH AND nvl(INGOT_CODE,' ')!=' ' then 'A6' ELSE 'A7' END MAT_CODE"
+libCAAI/f_caai_getcb.cpp	113	",nvl(psc,' ') psc,nvl(DELIVY_STATUS_CODE,'0') DELIVY_STATUS_CODE,nvl(HOT_TREAT_METHOD_CODE,'0') HOT_TREAT_METHOD_CODE"
+libCAAI/f_caai_getcb.cpp	137	" where nvl(INGOT_CODE,' ')!=' '"
+libCAAI/f_caai_getcb.cpp	138	" and nvl(prod_code, ' ') != ' '"
+libCAAI/f_caai_getcb.cpp	139	" and nvl(MIN_THICK, 99999999) != 99999999"
+libCAAI/f_caai_getcb.cpp	160	",nvl(psc,' ') psc,nvl(DELIVY_STATUS_CODE,'0') DELIVY_STATUS_CODE,nvl(HOT_TREAT_METHOD_CODE,'0') HOT_TREAT_METHOD_CODE,DECODE(SLAB_THICK,SLAB_WIDTH,'A6','A7')"
+libCAAI/f_caai_getcb.cpp	179	" where nvl(INGOT_CODE,' ')!=' '"
+libCAAI/f_caai_getcb.cpp	180	" and nvl(prod_code, ' ') != ' '"
+libCAAI/f_caai_getcb.cpp	195	" left join TQMTS0X ts0x on tmac.ST_NO = ts0x.ST_NO ) t2 where t1.msc =t2.msc and t1.MSC_LINE_NO = t2.MSC_LINE_NO and rownum=1)"
+libCAAI/f_caai_getcb.cpp	200	" left join TQMTS0X ts0x on tmac.ST_NO = ts0x.ST_NO where nvl(ts0x.REFINE_ROUTE_CODE,' ')!=' ') t2 where t1.msc =t2.msc and t1.MSC_LINE_NO = t2.MSC_LINE_NO)"
+libCAAI/f_caai_getcb.cpp	289	" = (select round(sum(nvl(t2.price_unit,0)*USE_UNIT),2) AS  AMT from tcaac05c t1"
+libCAAI/f_caai_getcb.cpp	310	" = (select round(sum(nvl(t2.price_unit,0)*USE_UNIT/1000),2) AS  AMT from tcaac05c t1"
+libCAAI/f_caai_getcb.cpp	345	sqlstr = " update tcaac05b set RH_COST = decode(REFINE_ROUTE_CODE,'RLR',2,1) * @fy_use"
+libCAAI/f_caai_getcb.cpp	472	sqlstr = "update tcaac05b set PRICE_UNIT = round((A1_COST+ALLOY_COST+GTL_COST+RH_COST)/decode(CCL,0,100,CCL)*100,2)"
+libCAAI/f_caai_getprice.cpp	46	sqlstr = "SELECT PRICE_UNIT FROM TCAAC12  WHERE rownum=1 "
+libCAAI/f_caai_hs.cpp	37	int rownum = 0;
+libCAAI/f_caai_hs.cpp	134	sqlstr = " select sum(decode(elm_name,'Ni',elm_act,0)) Ni"
+libCAAI/f_caai_hs.cpp	135	",sum(decode(elm_name,'Mo',elm_act,0)) Mo"
+libCAAI/f_caai_hs.cpp	136	", sum(decode(elm_name, 'Ti', elm_act, 0)) Ti"
+libCAAI/f_caai_hs.cpp	137	", sum(decode(elm_name, 'S', elm_act, 0)) S"
+libCAAI/f_caai_hs.cpp	138	", sum(decode(elm_name, 'Cu', elm_act, 0)) Cu"
+libCAAI/f_caai_jg.cpp	32	int rownum = 0;
+libCAAI/f_caai_jg.cpp	116	rownum = 0;
+libCAAI/f_caai_jg.cpp	122	rownum++;
+libCAAI/f_caai_jg.cpp	123	if (rownum == 1) //避免重复
+libCAAI/f_caai_jg2.cpp	33	int rownum = 0;
+libCAAI/f_caai_jg3.cpp	33	int rownum = 0;
+libCAAI/f_caai_jg4.cpp	33	int rownum = 0;
+libCAAI/f_caai_jg4.cpp	104	" and rownum=1"
+libCAAI/f_caai_ny.cpp	197	" select @datenow,dept_code,prod_date,sub_backlog_code,cost_center,stats_period,product_CODE,equ_no, sg_sign,prod_shift_group,prod_shift_no, mat_thick, mat_width,@mat_code,'4',DIVVY_TYPE,decode(@all_wt,0,0,ROUND(DIVVY_BASIC_N/@all_wt*@use_w
+libCAAI/f_caai_ny.cpp	271	" and rownum=1"
+libCAAI/f_caai_pcost.cpp	686	sqlstr = "update tcaai04 t1 set mat_name = (select mat_name from tcaac11 t2 where decode (INSTR(t1.mat_code,'_', 1, 1),0,t1.mat_code,substr(t1.mat_code,1,INSTR(t1.mat_code,'_', 1, 1)-1)) = t2.mat_code)"
+libCAAI/f_caai_pcost.cpp	688	" and exists (select 1 from tcaac11 t2 where decode (INSTR(t1.mat_code,'_', 1, 1),0,t1.mat_code,substr(t1.mat_code,1,INSTR(t1.mat_code,'_', 1, 1)-1)) = t2.mat_code)"
+libCAAI/f_caai_sj.cpp	90	" select @datenow,dept_code,t1.cost_center,stats_period,t1.RELATION_NO,product_code,mat_code,'1',decode(all_wt,0,0,ROUND(WT*use_wt/all_wt,4))"
+libCAAI/f_caai_sj.cpp	167	" FETCH FIRST 1 ROWS  ONLY"
+libCAAI/f_caai_sj.cpp	183	" and rownum = 1"
+libCAAI/f_caai_unit.cpp	54	" from (select cost_center ,mat_code,SUM(decode(type_code,'GJ',unit_cost,0)) unit_cost,SUM(decode(type_code,'CJ',unit_cost,0)) unit_cost2"
+libCAAI/f_caai_unit.cpp	108	sqlstr = " select mat_code,cost_center, SUM(decode(type_code,'GJ',unit_cost,0)) unit_cost, SUM(decode(type_code,'CJ',unit_cost,0)) unit_cost2"
+libCAAI/f_caai_unit.cpp	156	" left join (SELECT COST_CENTER,MAT_CODE,SUM(decode(type_code,'GJ',unit_cost,0)) unit_cost, SUM(decode(type_code,'CJ',unit_cost,0)) unit_cost2 FROM tcaac10 where mat_code ='06020005' and sg_sign =@sg_sign and dept_code  =@dept_code group by
+libCAAI/f_caai_unit.cpp	180	sqlstr = " select mat_code,cost_center, SUM(decode(type_code,'GJ',unit_cost,0)) unit_cost, SUM(decode(type_code,'CJ',unit_cost,0)) unit_cost2"
+libCAAI/f_caai_unit.cpp	228	" left join (SELECT COST_CENTER,MAT_CODE,SUM(decode(type_code,'GJ',unit_cost,0)) unit_cost, SUM(decode(type_code,'CJ',unit_cost,0)) unit_cost2 FROM tcaac10 where mat_code ='06020001' and sg_sign = @sg_sign and dept_code = @dept_code group b
+libCAAI/f_caai_unit.cpp	251	sqlstr = " select mat_code,cost_center, SUM(decode(type_code,'GJ',unit_cost,0)) unit_cost, SUM(decode(type_code,'CJ',unit_cost,0)) unit_cost2"
+libCAAI/f_caai_unit.cpp	298	" left join (SELECT COST_CENTER,MAT_CODE,SUM(decode(type_code,'GJ',unit_cost,0)) unit_cost, SUM(decode(type_code,'CJ',unit_cost,0)) unit_cost2 FROM tcaac10 where mat_code ='06020024' and sg_sign = @sg_sign and dept_code = @dept_code group b
+libCAAI/f_caai_unit.cpp	579	" select mat_code,decode(type_code,'GJ',unit_cost,0) unit_cost1,decode(type_code,'CJ',unit_cost,0) unit_cost2 "
+libCAAI/f_caai_unit.cpp	597	" select mat_code,decode(type_code,'GJ',unit_cost,0) unit_cost1,decode(type_code,'CJ',unit_cost,0) unit_cost2 "
+libCAAI/f_caai_unit.cpp	615	" select mat_code,decode(type_code,'GJ',unit_cost,0) unit_cost1,decode(type_code,'CJ',unit_cost,0) unit_cost2 "
+libCAAI/f_caai_unit.cpp	633	" select mat_code,decode(type_code,'GJ',unit_cost,0) unit_cost1,decode(type_code,'CJ',unit_cost,0) unit_cost2 "
+libCAAI/f_caai_xnmes.cpp	64	", mat_num, wt, 'MM' ||@stats_period||trim(to_char(rownum, '0000000')),@stats_period,@rec_create_time,@rec_creator"
+libCAAI/f_caai_xnmes.cpp	66	"  select  acjc_relation_id as relation_no, transaction_code,product_code,DECODE(factory_div,'X',whole_backlog_code||'01',equ_no) EQU_NO,whole_backlog_code,mat_line_type,unit_code"
+libCAAI/f_caai_xnmes.cpp	78	" group by acjc_relation_id, transaction_code,product_code,DECODE(factory_div,'X',whole_backlog_code||'01',equ_no)"
+libCAAI/f_caai_xnmes.cpp	106	" and nvl(t2.dev_code,' ')!=' '"
+libCAAI/f_caai_xnmes.cpp	200	",decode(factory_div,'S',HEAT_NO,SUBSTR(MAT_NO,1,10)),substr(WHOLE_BACKLOG_ACT,length(WHOLE_BACKLOG_ACT)-1,2),MAT_THICK,sg_sign,sum(mat_Wt) mat_wt,PRODUCT_CODE,PROD_SHIFT_NO,PROD_SHIFT_GROUP"
+libCAAI/f_caai_xnmes.cpp	207	" group by transaction_code,balance_date, substr(WHOLE_BACKLOG_ACT,length(WHOLE_BACKLOG_ACT)-1,2), MAT_THICK, sg_sign,PRODUCT_CODE,decode(factory_div,'S',HEAT_NO,SUBSTR(MAT_NO,1,10)),PROD_SHIFT_NO,PROD_SHIFT_GROUP"
+libCAAI/f_caai_xnmes.cpp	232	" select  @datenow,t2.pono,t1.heat_no,t1.heat_no,t1.sm_plan_no,@dept_code,@stats_period,t1.dev_code,SUBSTR(t1.dev_code,1,1),round(sum(TO_NUMBER((to_date(decode(t1.end_time_real,' ',t1.end_time,t1.end_time_real),'yyyymmddhh24miss')-to_date(d
+libCAAI/f_caai_xnmes.cpp	347	sqlstr = " update tcaai08 t1 set (equ_no,prod_date)= (select equ_no,stats_period from tcaaia14 t2 where t1.plan_no=t2.plan_no and t2.sub_Backlog_code=decode(@dept_code,'S','C',t2.sub_Backlog_code))"
+libCAAI/f_caai_xnmes.cpp	348	" where exists(select 1 from tcaaia14 t2 where t1.plan_no=t2.plan_no and t2.sub_Backlog_code=decode(@dept_code,'S','C',t2.sub_Backlog_code))"
+p_caac_3820/caac04_getcode.cpp	31	sqlstr = " select num_code mat_code,mat_cname||decode(scale,'无','',' ','',scale)||decode(tech_critr,'无','',' ','',tech_critr)||decode(sg_sign,'无','',' ','',sg_sign) mat_name ,measure_unit mat_unit,'1' valid_flag "
+p_caac_3820/caac05_1_inq.cpp	61	sqlstr = "	SELECT	NVL(max(VERSION_NO),0)+1"
+p_caac_3820/caac12_getcw.cpp	65	sqlstr = " select to_char(add_months(to_date('" + prod_time + "','yyyyMM'),-1),'yyyyMM')  from  dual ";
+p_caac_3820/caac12_getcw.cpp	76	" select distinct t3.mat_code,t3.mat_name,'" + dept_code + "',round(decode(period_end_qty,0,0,period_end_amt/period_end_qty),4) price,'PJ','1' from tacacmx4 t1,tsiac06 t2,tcaac03 t3 "
+p_caac_3820/caac12_getcw.cpp	86	" select distinct t1.mat_code,t1.mat_name,'" + dept_code + "',round(decode(period_end_qty,0,0,period_end_amt/period_end_qty),4) price,'PJ','1' from tacacmx4 t1,tcaac03 t2 "
+p_caac_3820/caaib1_ins.cpp	58	sqlstr = "select  @project_id||CASE WHEN key_seq IS NULL OR key_seq = '' THEN '000001' ELSE trim(to_char(to_number(nvl(key_seq,0))+1, '000000')) END from ("
+p_caai_3840/caai12_inq.cpp	70	" AND PLAN_NO IN (SELECT DECODE(DEPT_CODE,'S',PONO,PLAN_NO) FROM TCAAIA14 WHERE STATS_PERIOD >=@begin_time AND STATS_PERIOD <=@end_time )"
+p_caai_3840/caai12s_inq.cpp	72	" AND PLAN_NO IN (SELECT DECODE(DEPT_CODE,'S',PONO,PLAN_NO) FROM TCAAIA14 WHERE STATS_PERIOD >=@begin_time AND STATS_PERIOD <=@end_time )"
+p_caai_3840/caaicx32_inq.cpp	54	" ,decode(sum(WT),0,0,round(1.000000*sum(COST_GJ)/sum(WT),6)) PRICE_UNIT_GJ"
+p_caai_3840/caaicx32_inq.cpp	55	" ,decode(sum(WT),0,0,round(1.000000*sum(COST_YJ)/sum(WT), 6)) PRICE_UNIT_YJ "
+p_caai_3840/caaicx32_inq.cpp	56	" ,decode(sum(WT),0,0,round(1.000000*sum(COST_CJ)/sum(WT), 6)) PRICE_UNIT_CJ "
+p_caai_3840/caaicx32_inq2.cpp	46	" from (SELECT	mat_code,mat_name,sum(WT) WT,sum(COST_GJ) AMT,sum(COST_GJ) COST_GJ,sum(COST_YJ) COST_YJ,sum(COST_CJ) COST_CJ,round(decode(sum(output),0,0,sum(WT)/sum(output)),3) STD_WT "
+p_caai_3840/caaicx32_inq2.cpp	47	" ,decode(sum(WT),0,0,round(1.000000*sum(COST_GJ)/sum(WT),6)) PRICE_UNIT_GJ"
+p_caai_3840/caaicx32_inq2.cpp	48	" ,decode(sum(WT),0,0,round(1.000000*sum(COST_YJ)/sum(WT),6)) PRICE_UNIT_YJ"
+p_caai_3840/caaicx32_inq2.cpp	49	" ,decode(sum(WT),0,0,round(1.000000*sum(COST_CJ)/sum(WT),6)) PRICE_UNIT_CJ"
+p_caai_3840/caaicx33_inq.cpp	69	" left join tcaac11 t2 on decode (INSTR(t.mat_code,'_', 1, 1),0,t.mat_code,substr(t.mat_code,1,INSTR(t.mat_code,'_', 1, 1)-1)) = t2.mat_code"
+p_caai_3840/caaicx35_inq.cpp	47	" select t1.mat_code,t1.mat_name,t1.mat_unit,decode(best_proc_wt,0,0,round(best_wt/best_proc_wt,6)) best_wt,decode(best_proc_wt,0,0,round(best_cost/best_proc_wt,6)) best_cost"
+p_caai_3840/caaicx35_inq.cpp	48	",decode(proc_wt,0,0,round(wt/proc_wt,6)) UNIT_WT,decode(proc_wt,0,0,round(cost/proc_wt,6)) UNIT_COST"
+p_caai_3840/caaicx35_inq.cpp	61	" and stats_period >= to_char(add_months(to_date(@begin_time,'yyyyMMdd hh24:mi:ss'),-24),'yyyyMMdd')"
+p_caai_3840/caaicx35_inq.cpp	70	" and stats_period >= to_char(add_months(to_date(@begin_time,'yyyyMMdd hh24:mi:ss'),-24),'yyyyMMdd')"
+p_caai_3840/caaicx36_inq.cpp	53	sqlstr = "	SELECT	SUB_BACKLOG_CODE,EQU_NO,sum(QTY) qty,sum(WT) WT,sum(COST_GJ) COST_GJ,sum(COST_YJ) COST_YJ,sum(COST_CJ) COST_CJ,decode(sum(WT),0,0,round(sum(COST_GJ) / sum(WT), 6)) PRICE_UNIT_GJ,decode(sum(WT),0,0,round(sum(COST_YJ) / sum(
+p_caai_3840/caaicx36_inq2.cpp	46	" ,decode(sum(WT),0,0,round(sum(COST_GJ)/sum(WT),6)) PRICE_UNIT_GJ"
+p_caai_3840/caaicx36_inq2.cpp	47	" ,decode(sum(WT),0,0,round(sum(COST_YJ)/sum(WT),6)) PRICE_UNIT_YJ"
+p_caai_3840/caaicx36_inq2.cpp	48	" ,decode(sum(WT),0,0,round(sum(COST_CJ)/sum(WT),6)) PRICE_UNIT_CJ"
+p_caai_3840/caaicx37_inq.cpp	49	sqlstr = "	SELECT	SUB_BACKLOG_CODE,SG_SIGN,MAT_THICK,sum(QTY) qty,sum(WT) WT,sum(COST_GJ) COST_GJ,sum(COST_YJ) COST_YJ,sum(COST_CJ) COST_CJ,decode(sum(WT),0,0,round(sum(COST_GJ) / sum(WT), 6)) PRICE_UNIT_GJ,decode(sum(WT),0,0,round(sum(COST
+p_caai_3840/caaicx37_inq2.cpp	46	" ,decode(sum(WT),0,0,round(sum(COST_GJ)/sum(WT),6)) PRICE_UNIT_GJ"
+p_caai_3840/caaicx37_inq2.cpp	47	" ,decode(sum(WT),0,0,round(sum(COST_YJ)/sum(WT),6)) PRICE_UNIT_YJ"
+p_caai_3840/caaicx37_inq2.cpp	48	" ,decode(sum(WT),0,0,round(sum(COST_CJ)/sum(WT),6)) PRICE_UNIT_CJ"
+p_caai_3840/caaicx38_inq.cpp	50	",sum(COST_GJ) COST_GJ,sum(COST_YJ) COST_YJ,sum(COST_YJ) COST_CJ,decode(sum(WT),0,0,round(sum(COST_GJ) / sum(WT), 6)) PRICE_UNIT_GJ,decode(sum(WT),0,0,round(sum(COST_YJ) / sum(WT), 6)) PRICE_UNIT_YJ,decode(sum(WT),0,0,round(sum(COST_CJ) / s
+p_caai_3840/caaicx38_inq2.cpp	46	" ,decode(sum(WT),0,0,round(sum(COST_GJ)/sum(WT),6)) PRICE_UNIT_GJ"
+p_caai_3840/caaicx38_inq2.cpp	47	" ,decode(sum(WT),0,0,round(sum(COST_YJ)/sum(WT),6)) PRICE_UNIT_YJ"
+p_caai_3840/caaicx38_inq2.cpp	48	" ,decode(sum(WT),0,0,round(sum(COST_CJ)/sum(WT),6)) PRICE_UNIT_CJ"
+p_caai_3840/caaicx41_inq.cpp	27	int rownum = 1;
+p_caai_3840/caaicx41_inq.cpp	119	rownum++;
+p_caai_3840/caaicx41_inq.cpp	120	if (rownum == 100)
+p_caai_3840/caaicx41_inq.cpp	131	sqlstr = " SELECT T1.VFREE1,T1.SUB_BACKLOG_CODE,T1.PRODUCT_CODE,T1.SG_SIGN,T1.MAT_THICK,T1.EQU_NO,DECODE(WT, 0, 0, ROUND(T1.COST_YJ/T1.WT, 6)) AS PRICE_UNIT_GJ,T1.WT,T1.COST_YJ,T1.STATS_PERIOD AS PROD_DATE,HUISHOU_USE,DONGLI_USE,ZHIZAO_USE,
+p_caai_3840/caaicx41_inq.cpp	162	sqlstr = " SELECT T1.VFREE1,T1.SUB_BACKLOG_CODE,T1.PRODUCT_CODE,T1.SG_SIGN,T1.MAT_THICK,T1.EQU_NO,DECODE(WT, 0, 0, ROUND(T1.COST_YJ/T1.WT, 6)) AS PRICE_UNIT_GJ,T1.WT,T1.COST_YJ,T1.STATS_PERIOD AS PROD_DATE,HUISHOU_USE,DONGLI_USE,ZHIZAO_USE,
+p_caai_3840/caaicx41_inq.cpp	198	sqlstr = " SELECT T1.VFREE1,T1.PRODUCT_CODE,T1.SG_SIGN,T1.MAT_THICK,DECODE(WT, 0, 0, ROUND(T1.COST_YJ/T1.WT, 6)) AS PRICE_UNIT_GJ,T1.WT,T1.COST_YJ,T1.STATS_PERIOD AS PROD_DATE,HUISHOU_USE,DONGLI_USE,ZHIZAO_USE,GONGZI_USE,T2.* "
+p_caai_3840/caaicx41_inq.cpp	228	sqlstr = " SELECT T1.VFREE1,T1.PRODUCT_CODE,T1.SG_SIGN,T1.MAT_THICK,DECODE(WT, 0, 0, ROUND(T1.COST_YJ/T1.WT, 6)) AS PRICE_UNIT_GJ,T1.WT,T1.COST_YJ,T1.STATS_PERIOD AS PROD_DATE,HUISHOU_USE,DONGLI_USE,ZHIZAO_USE,GONGZI_USE,T2.* "
+p_caai_3840/caaicx42_inq.cpp	29	int rownum = 1;
+p_caai_3840/caaicx42_inq.cpp	115	rownum++;
+p_caai_3840/caaicx42_inq.cpp	116	if (rownum == 100)
+p_caai_3840/caaicx42_inq.cpp	126	sqlstr_fl = " ,decode(all_outwt,0,0,round(cost_pl/all_outwt,2)) as cost_pl"
+p_caai_3840/caaicx42_inq.cpp	127	" ,decode(all_outwt,0,0,round(cost_a/all_outwt,2)) as cost_a"
+p_caai_3840/caaicx42_inq.cpp	128	" ,decode(all_outwt,0,0,round(cost_b/all_outwt,2)) as cost_b"
+p_caai_3840/caaicx42_inq.cpp	129	" ,decode(all_outwt,0,0,round(cost_c/all_outwt,2)) as cost_c"
+p_caai_3840/caaicx42_inq.cpp	130	" ,decode(all_outwt,0,0,round(cost_d/all_outwt,2)) as cost_d"
+p_caai_3840/caaicx42_inq.cpp	131	" ,decode(all_outwt,0,0,round(cost_e/all_outwt,2)) as cost_e"
+p_caai_3840/caaicx42_inq.cpp	136	sqlstr_fl = " ,decode(all_outwt,0,0,round(cost_pl*outwt/all_outwt,22)) as cost_pl"
+p_caai_3840/caaicx42_inq.cpp	137	" ,decode(all_outwt,0,0,round(cost_a*outwt/all_outwt,2)) as cost_a"
+p_caai_3840/caaicx42_inq.cpp	138	" ,decode(all_outwt,0,0,round(cost_b*outwt/all_outwt,2)) as cost_b"
+p_caai_3840/caaicx42_inq.cpp	139	" ,decode(all_outwt,0,0,round(cost_c*outwt/all_outwt,2)) as cost_c"
+p_caai_3840/caaicx42_inq.cpp	140	" ,decode(all_outwt,0,0,round(cost_d*outwt/all_outwt,2)) as cost_d"
+p_caai_3840/caaicx42_inq.cpp	141	" ,decode(all_outwt,0,0,round(cost_e*outwt/all_outwt,2)) as cost_e"
+p_caai_3840/caaicx42_inq.cpp	150	" ,decode(sum(case when t3.mat_code='GP_CODE' then USE_WT else 0 end),0,0,round(t5.all_outwt/SUM((case when t3.mat_code='GP_CODE' then USE_WT else 0 end))*100,2)) as  CCL"
+p_caai_3840/caaicx42_inq.cpp	162	" and sub_backlog_code = DECODE(@sub_backlog_code,' ',sub_backlog_code,@sub_backlog_code)"
+p_caai_3840/caaicx42_inq.cpp	172	" and sub_backlog_code = DECODE(@sub_backlog_code,' ',sub_backlog_code,@sub_backlog_code)"
+p_caai_3840/caaicx42_inq.cpp	187	" and sub_backlog_code = DECODE(@sub_backlog_code,' ',sub_backlog_code,@sub_backlog_code)"
+p_caai_3840/caaicx42_inq.cpp	197	" and sub_backlog_code = DECODE(@sub_backlog_code,' ',sub_backlog_code,@sub_backlog_code)"
+p_caai_3840/caaicx42_inq.cpp	211	" and sub_backlog_code = DECODE(@sub_backlog_code,' ',sub_backlog_code,@sub_backlog_code)"
+p_caai_3840/caaicx42_inq.cpp	229	" and t04.sub_backlog_code = DECODE(@sub_backlog_code,' ',t04.sub_backlog_code,@sub_backlog_code)"
+p_caai_3840/caaicx42_inq.cpp	248	sqlstr = sqlstr +" and t1.sub_backlog_code = DECODE(@sub_backlog_code,' ',t1.sub_backlog_code,@sub_backlog_code)"
+p_caai_3840/caaicx43_inq.cpp	28	int rownum = 1;
+p_caai_3840/caaicx43_inq.cpp	122	rownum++;
+p_caai_3840/caaicx43_inq.cpp	123	if (rownum == 100)
+p_caai_3840/caaicx43_inq.cpp	134	",t1.wt,t1.COST_YJ,decode(t1.wt,0,0,round(t1.COST_YJ/t1.wt,6)) PRICE_UNIT_GJ"
+p_caai_3840/caaicx43_inq.cpp	176	",t1.wt,t1.COST_YJ,decode(t1.wt,0,0,round(t1.COST_YJ/t1.wt,6)) PRICE_UNIT_GJ"
+p_caai_3840/caais2_ins.cpp	99	sqlstr = "select  @data_from||CASE WHEN key_seq IS NULL OR key_seq = '' THEN '00001' ELSE trim(to_char(to_number(nvl(key_seq,0))+1, '00000')) END from ("
+p_caai_3850/caaicx31_inq2.cpp	59	sqlstr = " select t1.mat_code,t3.mat_name,round(nvl(t2.price_unit,0),4) as PRICE_UNIT,sub_backlog_code,nvl(t1.use_unit*@out_wt,0) AS WT,round(nvl(t1.use_unit*@out_wt*t2.price_unit,0),4) as AMT from tcaac05 t1"
+p_caai_3850/caaicx34_inq2.cpp	58	sqlstr = " select t1.mat_code,t3.mat_name,round(nvl(t2.price_unit,0),4) as PRICE_UNIT,USE_UNIT AS WT,round(nvl(t2.price_unit,0)*USE_UNIT,2) AS  AMT,sub_backlog_code from tcaac05 t1"
+p_caai_3860/caai01_col.cpp	54	for (int i1 = 0; i1 <=timeSpan.Days(); i1++)
+p_caai_3860/caai01_col.cpp	62	cmd_inq.Parameters.Set("date", CDateTime::Parse(begin_time).AddDays(i1).ToString("yyyyMMdd"));
+p_caai_3860/caai01_col.cpp	68	sprintf(s.msg, "日期[%s]所在的会计期已经关账，不能核算，请重新选择日期!", (const char*)CDateTime::Parse(begin_time).AddDays(i1).ToString("yyyyMMdd"));
+p_caai_3860/caai01_col.cpp	75	doFlag = f_caai_start(dept_code, CDateTime::Parse(begin_time).AddDays(i1).ToString("yyyyMMdd"), CDateTime::Parse(begin_time).AddDays(i1).ToString("yyyyMMdd") + "000000", CDateTime::Parse(begin_time).AddDays(i1).ToString("yyyyMMdd") + "23595
+p_caai_3860/caai_ins_start.cpp	108	", wt, 'MM' ||prod_time||trim(to_char(rownum, '0000000')),stats_period,@rec_create_time,@rec_creator"
+p_caai_3860/caai_ins_start.cpp	110	"  select  EVENT_DATETIME prod_time, prod_shift_group, prod_shift_no, decode(substr(prod_unit_code,0,2),'IL',' ',prod_unit_code) prod_unit_code, substr(prod_unit_code,0,2) sub_backlog_code "
+p_caai_3860/caai_ins_start.cpp	111	" , deal_flag, decode(substr(prod_unit_code,0,2),'IL','IL',prod_unit_code) ACJC_RELATION_ID, PRODUCT_CODE,SUPPLIER_CODE"
+p_caai_3860/caai_ins_start.cpp	168	" select @rec_create_time,@rec_creator,@dept_code,EVENT_DATETIME,EVENT_DATETIME,prod_shift_no,prod_shift_group,@DIVVY_TYPE,decode(prod_unit_code,'IL0',' ',prod_unit_code),product_code,mat_name,substr(prod_unit_code,0,2),case when  product_c
+p_caai_3880/caai_prt201.cpp	96	"   ,decode(sum(wt), 0, 0, round(sum(cost_YJ) / sum(wt),6)) price, "
+p_caai_3880/caai_prt201.cpp	97	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt201.cpp	101	" 	select mat_code, decode(sum(case when stats_period >= @begin_date and stats_period <= @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period >= @begin_date and stats_period <= @end_date  then  wt*use_unit else 0 end) / s
+p_caai_3880/caai_prt201.cpp	102	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt201.cpp	171	"   , decode(sum(wt), 0, 0, round(sum(cost_GJ) / sum(wt),6)) price, "
+p_caai_3880/caai_prt201.cpp	172	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt201.cpp	176	" 	select mat_code, decode(sum(case when prod_date >= @begin_date and prod_date <= @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date >= @begin_date and prod_date <= @end_date  then  wt*use_unit else 0 end) / sum(case when
+p_caai_3880/caai_prt201.cpp	177	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt204.cpp	97	"   ,decode(sum(wt), 0, 0, round(sum(cost_YJ) / sum(wt),6)) price, "
+p_caai_3880/caai_prt204.cpp	98	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt204.cpp	102	" 	select mat_code, decode(sum(case when stats_period >= @begin_date and stats_period <= @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period >= @begin_date and stats_period <= @end_date  then  wt*use_unit else 0 end) / s
+p_caai_3880/caai_prt204.cpp	103	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt204.cpp	172	"   ,decode(sum(wt), 0, 0, round(sum(cost_GJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt204.cpp	173	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt204.cpp	177	" 	select mat_code, decode(sum(case when prod_date >= @begin_date and prod_date <= @end_date  then  wt else 0 end), 0, 0, sum(case when prod_date >= @begin_date and prod_date <= @end_date  then  wt*use_unit else 0 end) / sum(case when prod_
+p_caai_3880/caai_prt204.cpp	178	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt20401.cpp	98	"   ,decode(sum(wt), 0, 0, round(sum(cost_YJ) / sum(wt),6)) price, "
+p_caai_3880/caai_prt20401.cpp	99	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt20401.cpp	103	" 	select mat_code, decode(sum(case when stats_period >= @begin_date and stats_period <= @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period >= @begin_date and stats_period <= @end_date  then  wt*use_unit else 0 end) / s
+p_caai_3880/caai_prt20401.cpp	104	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt20401.cpp	176	"   ,decode(sum(wt), 0, 0, round(sum(cost_GJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt20401.cpp	177	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt20401.cpp	181	" 	select mat_code, decode(sum(case when prod_date >= @begin_date and prod_date <= @end_date  then  wt else 0 end), 0, 0, sum(case when prod_date >= @begin_date and prod_date <= @end_date  then  wt*use_unit else 0 end) / sum(case when prod_
+p_caai_3880/caai_prt20401.cpp	182	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt303.cpp	65	" 	, NVL(sum(wt),0) m_wt, NVL(sum(cost_YJ),0) m_amt "
+p_caai_3880/caai_prt303.cpp	66	"   , decode(sum(wt), 0, 0, round(sum(cost_YJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt303.cpp	67	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt303.cpp	71	" 	select decode(sum(case when stats_period = @end_date  then  wt else 0 end), 0, 0, NVL(ROUND(sum(case when stats_period = @end_date  then  wt*use_unit else 0 end) / sum(case when stats_period = @end_date  then  wt else 0 end),3),0)) use_u
+p_caai_3880/caai_prt303.cpp	72	" 	, decode(sum(wt), 0, 0, NVL(ROUND(sum(wt*use_unit) / sum(wt),3),0)) m_use_unit "
+p_caai_3880/caai_prt303.cpp	122	" 	, NVL(sum(wt),0) m_wt, NVL(sum(cost_GJ),0) m_amt "
+p_caai_3880/caai_prt303.cpp	123	"   , decode(sum(wt), 0, 0, round(sum(cost_GJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt303.cpp	124	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt303.cpp	128	" 	select decode(sum(case when prod_date = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date = @end_date  then  wt*use_unit else 0 end) / sum(case when prod_date = @end_date  then  wt else 0 end),3)) use_unit "
+p_caai_3880/caai_prt303.cpp	129	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt304.cpp	102	"   , decode(sum(wt), 0, 0, round(sum(cost_YJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt304.cpp	103	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt304.cpp	107	" 	select mat_code, decode(sum(case when stats_period = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period = @end_date  then  wt*use_unit else 0 end) / sum(case when stats_period = @end_date  then  wt else 0 end),3)) us
+p_caai_3880/caai_prt304.cpp	108	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt304.cpp	191	"   , decode(sum(wt), 0, 0, round(sum(cost_GJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt304.cpp	192	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt304.cpp	196	" 	select mat_code, decode(sum(case when prod_date = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date = @end_date  then  wt*use_unit else 0 end) / sum(case when prod_date = @end_date  then  wt else 0 end),3)) use_unit "
+p_caai_3880/caai_prt304.cpp	197	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt305.cpp	67	"   , decode(sum(wt), 0, 0, round(sum(cost_YJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt305.cpp	68	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt305.cpp	72	" 	select mat_code, decode(sum(case when stats_period = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period = @end_date  then  wt*use_unit else 0 end) / sum(case when stats_period = @end_date  then  wt else 0 end),3)) us
+p_caai_3880/caai_prt305.cpp	73	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt305.cpp	124	"   , decode(sum(wt), 0, 0, round(sum(cost_GJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt305.cpp	125	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt305.cpp	129	" 	select mat_code, decode(sum(case when prod_date = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date = @end_date  then  wt*use_unit else 0 end) / sum(case when prod_date = @end_date  then  wt else 0 end),3)) use_unit "
+p_caai_3880/caai_prt305.cpp	130	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt403.cpp	66	" 	, NVL(sum(wt),0) m_wt, NVL(sum(cost_YJ),0) m_amt "
+p_caai_3880/caai_prt403.cpp	67	"   , decode(sum(wt), 0, 0, round(sum(cost_YJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt403.cpp	68	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt403.cpp	72	" 	select decode(sum(case when stats_period = @end_date  then  wt else 0 end), 0, 0, NVL(ROUND(sum(case when stats_period = @end_date  then  wt*use_unit else 0 end) / sum(case when stats_period = @end_date  then  wt else 0 end),3),0)) use_u
+p_caai_3880/caai_prt403.cpp	73	" 	, decode(sum(wt), 0, 0, NVL(ROUND(sum(wt*use_unit) / sum(wt),3),0)) m_use_unit "
+p_caai_3880/caai_prt403.cpp	133	" 	, NVL(sum(wt),0) m_wt, NVL(sum(cost_GJ),0) m_amt "
+p_caai_3880/caai_prt403.cpp	134	"   , decode(sum(wt), 0, 0, round(sum(cost_GJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt403.cpp	135	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt403.cpp	139	" 	select decode(sum(case when prod_date = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date = @end_date  then  wt*use_unit else 0 end) / sum(case when prod_date = @end_date  then  wt else 0 end),3)) use_unit "
+p_caai_3880/caai_prt403.cpp	140	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt404.cpp	109	"   , decode(sum(wt), 0, 0, round(sum(cost_YJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt404.cpp	110	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt404.cpp	114	" 	select mat_code, decode(sum(case when stats_period = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period = @end_date  then  wt*use_unit else 0 end) / sum(case when stats_period = @end_date  then  wt else 0 end),3)) us
+p_caai_3880/caai_prt404.cpp	115	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt404.cpp	207	"   , decode(sum(wt), 0, 0, round(sum(cost_GJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt404.cpp	208	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt404.cpp	212	" 	select mat_code, decode(sum(case when prod_date = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date = @end_date  then  wt*use_unit else 0 end) / sum(case when prod_date = @end_date  then  wt else 0 end),3)) use_unit "
+p_caai_3880/caai_prt404.cpp	213	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt405.cpp	68	"   , decode(sum(wt), 0, 0, round(sum(cost_YJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt405.cpp	69	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt405.cpp	73	" 	select mat_code, decode(sum(case when stats_period = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when stats_period = @end_date  then  wt*use_unit else 0 end) / sum(case when stats_period = @end_date  then  wt else 0 end),3)) us
+p_caai_3880/caai_prt405.cpp	74	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "
+p_caai_3880/caai_prt405.cpp	135	"   , decode(sum(wt), 0, 0, round(sum(cost_GJ) / sum(wt), 6)) price, "
+p_caai_3880/caai_prt405.cpp	136	"   NVL(use_unit, 0) AS use_unit, NVL(m_use_unit, 0) AS m_use_unit "
+p_caai_3880/caai_prt405.cpp	140	" 	select mat_code, decode(sum(case when prod_date = @end_date  then  wt else 0 end), 0, 0, ROUND(sum(case when prod_date = @end_date  then  wt*use_unit else 0 end) / sum(case when prod_date = @end_date  then  wt else 0 end),3)) use_unit "
+p_caai_3880/caai_prt405.cpp	141	" 	, decode(sum(wt), 0, 0, ROUND(sum(wt*use_unit) / sum(wt),3)) m_use_unit "

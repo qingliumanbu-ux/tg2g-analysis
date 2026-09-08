@@ -1,0 +1,13 @@
+file	line	text
+p_ps00_14990/ps00p1_ins.cpp	56	sqlstr = "SELECT NVL(MAX(SEQ_NO),0)  FROM TPS00P1 "
+p_ps00_14990/si0016_f5.cpp	32	int		RowNumer = 0;
+p_ps00_14990/si0016_f5.cpp	57	for (RowNumer = 1; RowNumer <= RowCount ;RowNumer++ )
+p_ps00_14990/si0016_f5.cpp	60	tsi0016["UNIT_CODE"]  = bcls_rec->Tables[1].Rows[RowNumer-1]["UNIT_CODE"];
+p_ps00_14990/si0016_upd.cpp	32	int		  RowNumer = 0;
+p_ps00_14990/si0016_upd.cpp	53	for (RowNumer = 0; RowNumer < RowCount; RowNumer++)
+p_ps00_14990/si0016_upd.cpp	56	tsi0001["WHOLE_BACKLOG_CODE"] = bcls_rec->Tables[0].Rows[RowNumer]["WHOLE_BACKLOG_CODE"];
+p_ps00_14990/si0016_upd.cpp	57	tsi0001["PS_BACKLOG_TYPE_CODE"] = bcls_rec->Tables[0].Rows[RowNumer]["PS_BACKLOG_TYPE_CODE"];
+p_ps00_14990/si0016_upd.cpp	58	tsi0001["PS_PLAN_SORT"] = bcls_rec->Tables[0].Rows[RowNumer]["PS_PLAN_SORT"];
+p_ps00_14990/si0016_upd.cpp	96	for (RowNumer = 0; RowNumer < RowCount; RowNumer++)
+p_ps00_14990/si0016_upd.cpp	99	tsi0015["UNIT_CODE"] = bcls_rec->Tables[1].Rows[RowNumer]["UNIT_CODE"];
+p_ps00_14990/si0016_upd.cpp	100	tsi0015["STD_WAIT_TIME"] = bcls_rec->Tables[1].Rows[RowNumer]["STD_WAIT_TIME"];

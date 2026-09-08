@@ -1,0 +1,1088 @@
+file	start	end	preview
+libQMTS/f_210010_snd.cpp	38	77	sqlstr = " SELECT TQMTS29.ST_NO, TQMTS29.PONO, TQMTS29.ELM_CODE, TQMTS29.ELM_NAME, TQMTS29.ELM_ACT FROM tep0002"
+libQMTS/f_210010_snd.cpp	122	122	sqlstr = " SELECT CODE AS ELM_CODE, CODE_DESC_1_CONTENT AS ELM_NAME, 0 AS ELM_ACT FROM tep0002  WHERE CODE_CLASS = 'QMYS2N' AND CODE IN("
+libQMTS/f_210010_snd.cpp	123	156	"			SELECT CODE  FROM tep0002  WHERE CODE_CLASS = 'QMYS2N' AND CODE IN('001',"
+libQMTS/f_210010_snd.cpp	192	193	sqlstr = " SELECT sum(DEVO_WT) FROM TMMSMGY08 WHERE HEAT_NO = '" + heat_no + "' AND MAT_CODE IN (select MAT_CODE from tmmsm50 t WHERE CS_FLAG IN ('1','3','5','6
+libQMTS/f_210010_snd.cpp	201	202	sqlstr = " SELECT sum(DEVO_WT) FROM TMMSMGY08 WHERE HEAT_NO = '" + heat_no + "' AND MAT_CODE IN (select MAT_CODE from tmmsm50 t WHERE CS_FLAG IN ('2','3','5','7
+libQMTS/f_210010_snd.cpp	210	211	sqlstr = " SELECT sum(DEVO_WT) FROM TMMSMGY08 WHERE HEAT_NO = '" + heat_no + "' AND MAT_CODE IN (select MAT_CODE from tmmsm50 t WHERE CS_FLAG IN ('1','3','4','7
+libQMTS/f_210010_snd.cpp	219	220	sqlstr = "SELECT sum(DEVO_WT)  FROM TMMSMGY08  WHERE HEAT_NO  ='"+ heat_no +"' AND  MAT_CODE IN (select MAT_CODE  from tmmsm50 t where MAT_TYPE in ('1','2','4')
+libQMTS/f_210010_snd.cpp	236	237	tqmtsfgb["SEQ_NO"] = Db::QueryCString("SELECT NVL(MAX(SEQ_NO),0)+1 FROM TQMTSFGB WHERE HEAT_NO='" + heat_no + "'");
+libQMTS/f_push_baowu_chat.cpp	556	558	sqlstr = " SELECT  MODULE_NAME,LOGINNAME,LOGINNAME_LIST,MESSAGE_TITLE,MESSAGE_LIST,KZABSCHL "
+libQMTS/f_push_baowu_chat.cpp	593	595	sqlstr = " SELECT  SEND_FLAG "
+libQMTS/f_push_baowu_chat_dd.cpp	533	535	sqlstr = " SELECT  MODULE_NAME,LOGINNAME,LOGINNAME_LIST,MESSAGE_TITLE,MESSAGE_LIST,KZABSCHL "
+libQMTS/f_push_baowu_chat_dd.cpp	558	560	sqlstr = " SELECT  SEND_FLAG "
+libQMTS/f_push_baowu_chat_dd.cpp	816	817	sqlstr = " SELECT USER_ID FROM TQMTSBWU_YH WHERE CODE = @code  ";
+libQMTS/f_push_baowu_pro.cpp	92	94	sqlstr = " SELECT  MODULE_NAME,LOGINNAME,LOGINNAME_LIST,MESSAGE_TITLE,MESSAGE_LIST,KZABSCHL "
+libQMTS/f_qmbs_sample_select.cpp	33	37	sqlstr = " SELECT * FROM( "
+libQMTS/f_qmbs_sample_select.cpp	38	41	" SELECT * FROM( "
+libQMTS/f_qmbs_save.cpp	25	27	CString sql_ins = "INSERT INTO T";
+libQMTS/f_qmbs_save.cpp	154	157	Log::Trace("", "", "update start");
+libQMTS/f_qmbs_save.cpp	163	165	CString sql_ins = "INSERT INTO H" + formName + " ( ";
+libQMTS/f_qmbs_save.cpp	248	249	CString sql_upd = "UPDATE T" + formName + " SET ";
+libQMTS/f_qmbs_save.cpp	303	304	Log::Trace("", "", "UPDATE sql_upd{0}", sqlstr);
+libQMTS/f_qmbs_save.cpp	346	350	CString sql_ins = "INSERT INTO H" + from_name + " (";
+libQMTS/f_qmbs_save.cpp	367	373	CString sql_del = "DELETE FROM T" + from_name + " WHERE 1 = 1 ";
+libQMTS/f_qmbs_save.cpp	490	492	else if (position > 1 && table_name.Substring(position, table_name.GetLength() - position) == "DELETE")
+libQMTS/f_qmtjp_00.cpp	86	87	sqlstr = "SELECT NVL(MAX(SEQ_ID)+1,0) FROM TQMTS99 ";
+libQMTS/f_qmts21_ins.cpp	120	122	sqlstr = " SELECT ABNR_DESC,ABNY_LV "
+libQMTS/f_qmts21_ins.cpp	149	151	sqlstr = " SELECT ABNR_TREAT_GRP_CODE "
+libQMTS/f_qmts21_ins.cpp	170	174	sqlstr = " SELECT ABN_DEAL "
+libQMTS/f_qmts21_ins.cpp	202	204	sqlstr = " SELECT * "
+libQMTS/f_qmts21_ins.cpp	264	267	sqlstr = " DELETE FROM TQMTS21"
+libQMTS/f_qmts25_get_qx.cpp	81	85	sqlstr = " SELECT ST_SAMPLE_NO,REP_ELM_SEL_FLAG,ST_SAMPLE_SEQ,ST_NO "
+libQMTS/f_qmts25_get_qx.cpp	109	113	sqlstr = " SELECT elm_code,elm_name,elm_act,elm_ok "
+libQMTS/f_qmts25_jud.cpp	133	136	sqlstr = " SELECT WHOLE_BACKLOG_CODE,ST_SAMPLE_DIV,GAS_TYPE_DIV "
+libQMTS/f_qmts25_jud.cpp	167	169	sqlstr = "SELECT NVL(TRIM(O_GAS_DIV),'0'),NVL(TRIM(N_GAS_DIV),'0'),NVL(TRIM(H_GAS_DIV),'0') "
+libQMTS/f_qmts25_jud.cpp	192	197	sqlstr = "SELECT * "
+libQMTS/f_qmts25_jud.cpp	229	231	sqlstr = "SELECT ELM_FMLA_CODE1,ELM_FMLA_CODE2,SMELT_DIV "  /*SMELT_DIV:  B-转炉；E-电炉*/
+libQMTS/f_qmts25_jud.cpp	255	258	sqlstr = "SELECT CODE_DESC_3_CONTENT,CODE_DESC_4_CONTENT "
+libQMTS/f_qmts25_jud.cpp	279	283	sqlstr = "SELECT * "
+libQMTS/f_qmts25_jud.cpp	293	294	cmd_inq_02.SetCommandText(" SELECT replace(@formula_value,@elm_name,@elm_act) FROM DUAL ");
+libQMTS/f_qmts25_jud.cpp	374	375	cmd_inq_01.SetCommandText(" SELECT ROUND(" + formula_value + + ",2) FROM DUAL ");
+libQMTS/f_qmts25_jud.cpp	425	428	sqlstr = "SELECT CODE_DESC_3_CONTENT,CODE_DESC_4_CONTENT "
+libQMTS/f_qmts25_jud.cpp	449	453	sqlstr = "SELECT * "
+libQMTS/f_qmts25_jud.cpp	463	464	cmd_inq_02.SetCommandText(" SELECT replace(@formula_value,@elm_name,@elm_act) FROM DUAL ");
+libQMTS/f_qmts25_jud.cpp	543	544	cmd_inq_01.SetCommandText(" SELECT ROUND(" + formula_value + + ",2) FROM DUAL ");
+libQMTS/f_qmts25_jud.cpp	595	597	sqlstr = "SELECT * "
+libQMTS/f_qmts25_jud.cpp	655	659	sqlstr = "SELECT * "
+libQMTS/f_qmts25_jud.cpp	1055	1056	cmd_upd.SetCommandText(" UPDATE TQMTS25 SET elm_ok = 2 WHERE HEAT_NO = @heat_no AND ST_SAMPLE_NO = @st_sample_no AND ELM_CODE IN ('052','058','064') ");
+libQMTS/f_qmts25_jud.cpp	1065	1066	cmd_upd.SetCommandText(" UPDATE TQMTS25 SET ELM_OK = 2 WHERE HEAT_NO = @heat_no AND ST_SAMPLE_NO = @st_sample_no AND ELM_CODE IN ('011','048','051','075','093',
+libQMTS/f_qmts25_jud.cpp	1073	1074	cmd_upd.SetCommandText(" UPDATE TQMTS25 SET ELM_OK = 9 WHERE HEAT_NO = @heat_no AND ST_SAMPLE_NO = @st_sample_no AND ELM_OK = 0 ");
+libQMTS/f_qmts27_jud.cpp	85	88	sqlstr = " SELECT * "
+libQMTS/f_qmts27_jud.cpp	109	111	sqlstr = " SELECT * "
+libQMTS/f_qmts27_jud.cpp	576	578	sqlstr = " SELECT MIN(TO_NUMBER(JUDGE_CODE)) "
+libQMTS/f_qmts29_jud.cpp	135	139	sqlstr = "SELECT * "
+libQMTS/f_qmts29_jud.cpp	168	170	sqlstr = "SELECT ELM_FMLA_CODE1,ELM_FMLA_CODE2 "
+libQMTS/f_qmts29_jud.cpp	193	196	sqlstr = "SELECT CODE_DESC_3_CONTENT,CODE_DESC_4_CONTENT "
+libQMTS/f_qmts29_jud.cpp	217	220	sqlstr = "SELECT * "
+libQMTS/f_qmts29_jud.cpp	229	230	cmd_inq_02.SetCommandText(" SELECT replace(@formula_value,@elm_name,@elm_value) FROM DUAL ");
+libQMTS/f_qmts29_jud.cpp	309	310	cmd_inq_01.SetCommandText(" SELECT ROUND(" + formula_value + + ",2) FROM DUAL ");
+libQMTS/f_qmts29_jud.cpp	360	363	sqlstr = "SELECT CODE_DESC_3_CONTENT,CODE_DESC_4_CONTENT "
+libQMTS/f_qmts29_jud.cpp	384	387	sqlstr = "SELECT * "
+libQMTS/f_qmts29_jud.cpp	396	397	cmd_inq_02.SetCommandText(" SELECT replace(@formula_value,@elm_name,@elm_value) FROM DUAL ");
+libQMTS/f_qmts29_jud.cpp	476	477	cmd_inq_01.SetCommandText(" SELECT ROUND(" + formula_value + + ",2) FROM DUAL ");
+libQMTS/f_qmts29_jud.cpp	527	529	sqlstr = "SELECT * "
+libQMTS/f_qmts29_jud.cpp	586	589	sqlstr = "SELECT * "
+libQMTS/f_qmts29_jud.cpp	870	871	cmd_upd.SetCommandText(" UPDATE TQMTS29 SET elm_ok = 2 WHERE HEAT_NO = @heat_no AND ELM_CODE IN ('052','058','064') ");
+libQMTS/f_qmts29_jud.cpp	879	880	cmd_upd.SetCommandText(" UPDATE TQMTS29 SET ELM_OK = 2 WHERE HEAT_NO = @heat_no AND ELM_CODE IN ('011','048','051','075','093','119') ");
+libQMTS/f_qmts29_jud.cpp	886	887	cmd_upd.SetCommandText(" UPDATE TQMTS29 SET ELM_OK = 9 WHERE HEAT_NO = @heat_no AND ELM_OK = 0 ");
+libQMTS/f_qmts2b_jud.cpp	134	138	sqlstr = "SELECT * "
+libQMTS/f_qmts2b_jud.cpp	167	169	sqlstr = "SELECT ELM_FMLA_CODE1,ELM_FMLA_CODE2 "
+libQMTS/f_qmts2b_jud.cpp	192	195	sqlstr = "SELECT CODE_DESC_3_CONTENT,CODE_DESC_4_CONTENT "
+libQMTS/f_qmts2b_jud.cpp	216	219	sqlstr = "SELECT * "
+libQMTS/f_qmts2b_jud.cpp	228	229	cmd_inq_02.SetCommandText(" SELECT replace(@formula_value,@elm_name,@elm_value) FROM DUAL ");
+libQMTS/f_qmts2b_jud.cpp	308	309	cmd_inq_01.SetCommandText(" SELECT ROUND(" + formula_value + + ",2) FROM DUAL ");
+libQMTS/f_qmts2b_jud.cpp	359	362	sqlstr = "SELECT CODE_DESC_3_CONTENT,CODE_DESC_4_CONTENT "
+libQMTS/f_qmts2b_jud.cpp	383	386	sqlstr = "SELECT * "
+libQMTS/f_qmts2b_jud.cpp	395	396	cmd_inq_02.SetCommandText(" SELECT replace(@formula_value,@elm_name,@elm_value) FROM DUAL ");
+libQMTS/f_qmts2b_jud.cpp	475	476	cmd_inq_01.SetCommandText(" SELECT ROUND(" + formula_value + + ",2) FROM DUAL ");
+libQMTS/f_qmts2b_jud.cpp	526	528	sqlstr = "SELECT * "
+libQMTS/f_qmts2b_jud.cpp	565	568	sqlstr = "SELECT * "
+libQMTS/f_qmts2b_jud.cpp	838	839	cmd_upd.SetCommandText(" UPDATE TQMTS2C SET elm_ok = 2 WHERE ST_SAMPLE_NO = @st_sample_no AND ELM_CODE IN ('052','058','064') ");
+libQMTS/f_qmts2b_jud.cpp	848	849	cmd_upd.SetCommandText(" UPDATE TQMTS2C SET ELM_OK = 2 WHERE ST_SAMPLE_NO = @st_sample_no AND ELM_CODE IN ('011','048','051','075','093','119') ");
+libQMTS/f_qmts2b_jud.cpp	855	856	cmd_upd.SetCommandText(" UPDATE TQMTS2C SET ELM_OK = 9 WHERE ST_SAMPLE_NO = @st_sample_no AND ELM_OK = 0 ");
+libQMTS/f_qmts2b_spe.cpp	88	89	cmd_del.SetCommandText(" DELETE TQMTS2C WHERE ST_SAMPLE_NO = @st_sample_no AND ELM_CODE IN ('C01','C03') ");
+libQMTS/f_qmts2b_spe.cpp	100	102	sqlstr = "SELECT ELM_FMLA_CODE1,ELM_FMLA_CODE2 "
+libQMTS/f_qmts2b_spe.cpp	125	128	sqlstr = "SELECT CODE_DESC_2_CONTENT "
+libQMTS/f_qmts2b_spe.cpp	146	149	sqlstr = "SELECT * "
+libQMTS/f_qmts2b_spe.cpp	158	159	cmd_inq_02.SetCommandText(" SELECT replace(@formula_value,@elm_name,@elm_value) FROM DUAL ");
+libQMTS/f_qmts2b_spe.cpp	238	239	cmd_inq_01.SetCommandText(" SELECT ROUND(" + formula_value + + ",2) FROM DUAL ");
+libQMTS/f_qmts2b_spe.cpp	278	281	sqlstr = "SELECT CODE_DESC_2_CONTENT "
+libQMTS/f_qmts2b_spe.cpp	299	302	sqlstr = "SELECT * "
+libQMTS/f_qmts2b_spe.cpp	311	312	cmd_inq_02.SetCommandText(" SELECT replace(@formula_value,@elm_name,@elm_value) FROM DUAL ");
+libQMTS/f_qmts2b_spe.cpp	391	392	cmd_inq_01.SetCommandText(" SELECT ROUND(" + formula_value + + ",2) FROM DUAL ");
+libQMTS/f_qmts_21b004_snd.cpp	36	37	sqlstr = "SELECT *  FROM TMMSM11 WHERE heat_no  = @heat_no ";
+libQMTS/f_qmts_23_ins.cpp	33	34	sqlstr = " SELECT * FROM tpssm11 WHERE heat_no = @heat_no"
+libQMTS/f_qmts_23_ins.cpp	35	36	"				SELECT * FROM tpssm41 WHERE heat_no = @heat_no ";
+libQMTS/f_qmts_23_ins.cpp	60	61	sqlstr = "SELECT * FROM TQMTS24 WHERE   HEAT_NO = @heat_no  AND REP_ELM_SEL_FLAG = '1' AND JUDGE_CODE = '2'";
+libQMTS/f_qmts_23_upd.cpp	99	100	sqlstr = "SELECT ST_SAMPLE_NO  FROM tqmts24 WHERE HEAT_NO = @heat_no AND WHOLE_BACKLOG_CODE = 'C'";
+libQMTS/f_qmts_24_ins.cpp	55	56	sqlstr = " SELECT pono, ST_NO,HEAT_NO  FROM tpssm13 WHERE   heat_no = @heat_no ";
+libQMTS/f_qmts_24_ins.cpp	87	88	sqlstr = " SELECT * FROM tpssm11 WHERE heat_no = @heat_no"
+libQMTS/f_qmts_24_ins.cpp	89	90	"				SELECT * FROM tpssm41 WHERE heat_no = @heat_no ";
+libQMTS/f_qmts_24_ins.cpp	103	104	sqlstr = "SELECT * FROM tpssm11 WHERE heat_no = (select HEAT_NO from vpssm12 where PROC_NO=@heat_no and PRE_SOLUTION_FLAG=1 and ROWNUM=1) "
+libQMTS/f_qmts_24_ins.cpp	105	106	" SELECT * FROM tpssm41 WHERE heat_no = (select HEAT_NO from vpssm12 where PROC_NO =@heat_no and PRE_SOLUTION_FLAG = 1 and ROWNUM = 1) ";
+libQMTS/f_qmts_24_ins.cpp	145	145	sqlstr = " SELECT CODE,CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'QMYS2N' ";
+libQMTS/f_qmts_24_ins.cpp	149	151	sqlstr = " SELECT CODE,CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'QMZS2N' ";
+libQMTS/f_qmts_24_ins_form.cpp	43	44	sqlstr = " SELECT pono, ST_NO,HEAT_NO  FROM tpssm13 WHERE   heat_no = @heat_no ";
+libQMTS/f_qmts_24_ins_form.cpp	62	63	sqlstr = " SELECT * FROM tpssm11 WHERE heat_no = @heat_no"
+libQMTS/f_qmts_24_ins_form.cpp	64	65	"				SELECT * FROM tpssm41 WHERE heat_no = @heat_no ";
+libQMTS/f_qmts_25_ins.cpp	34	35	sqlstr = " SELECT CODE,CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'QMYS2N' ";
+libQMTS/f_qmts_25_ins.cpp	46	47	sqlstr = " SELECT pono, ST_NO,HEAT_NO  FROM tpssm13 WHERE   heat_no = @heat_no ";
+libQMTS/f_qmts_25_ins.cpp	65	66	sqlstr = " SELECT * FROM tpssm11 WHERE heat_no = @heat_no"
+libQMTS/f_qmts_25_ins.cpp	67	68	"				SELECT * FROM tpssm41 WHERE heat_no = @heat_no ";
+libQMTS/f_qmts_25_ins_form.cpp	34	35	sqlstr = " SELECT CODE,CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'QMYS2N' ";
+libQMTS/f_qmts_25_ins_form.cpp	46	47	sqlstr = " SELECT pono, ST_NO,HEAT_NO  FROM tpssm13 WHERE   heat_no = @heat_no ";
+libQMTS/f_qmts_25_ins_form.cpp	65	66	sqlstr = " SELECT * FROM tpssm11 WHERE heat_no = @heat_no"
+libQMTS/f_qmts_25_ins_form.cpp	67	68	"				SELECT * FROM tpssm41 WHERE heat_no = @heat_no ";
+libQMTS/f_qmts_25_upd.cpp	250	251	sqlstr = "UPDATE tqmts25 SET ELM_OK = '0' WHERE HEAT_NO = @heat_no AND st_sample_no = @st_sample_no";
+libQMTS/f_qmts_25_upd.cpp	257	260	sqlstr = " SELECT t1.ELM_CODE, T1.ELM_NAME, T1.MAIN_MIN, T1.MAIN_MAX, T1.MAIN_AIM, T1.SPE_MIN, T1.SPE_MAX, T2.ELM_ACT, T2.ELM_ACT_OLD  FROM TQMTS02 T1"
+libQMTS/f_qmts_26_ins.cpp	32	33	sqlstr = " SELECT CODE_DESC_1_CONTENT,CODE FROM TEP0002 WHERE CODE_CLASS = 'QMZS2N' ";
+libQMTS/f_qmts_26_ins.cpp	41	42	sqlstr = " SELECT * FROM tpssm11 WHERE heat_no = @heat_no"
+libQMTS/f_qmts_26_ins.cpp	43	44	"				SELECT * FROM tpssm41 WHERE heat_no = @heat_no ";
+libQMTS/f_qmts_30_ins.cpp	50	51	sqlstr = "SELECT * FROM TQMTS24 WHERE   HEAT_NO = @heat_no  AND REP_ELM_SEL_FLAG = '1'";
+libQMTS/f_qmts_30_ins.cpp	74	75	sqlstr = "SELECT sum(SLAB_WT),count(*),max(SLAB_THICK),max(SLAB_WIDTH) FROM tmmsm33 WHERE HEAT_NO = @heat_no";
+libQMTS/f_qmts_30_ins.cpp	87	88	sqlstr = "SELECT C_DIV FROM VMMSM01 WHERE HEAT_NO = @heat_no ORDER BY REC_CREATE_TIME DESC";
+libQMTS/f_qmts_30_ins.cpp	116	118	sqlstr = " SELECT T2.ELM_NAME, CASE WHEN (decode(SUBSTR(ELM_ACT,1,1),'.','0'||ELM_ACT,ELM_ACT)) IS NULL THEN '无检验或缺失' ELSE (decode(SUBSTR(ELM_ACT,1,1),'.','0'||
+libQMTS/f_qmts_call_judge.cpp	62	69	tgzyq["IDCARD"] = datetime.SubstringNE(0, 8) + Db::QueryCString("SELECT TWMSMZHZLLL_SEQ.NEXTVAL FROM DUAL");
+libQMTS/f_qmts_cf_copy.cpp	102	104	sqlstr_tqq0 = "SELECT * "
+libQMTS/f_qmts_cf_rev.cpp	161	163	sqlstr = "SELECT ST_NO,FACTORY_DIV FROM"
+libQMTS/f_qmts_cf_rev.cpp	164	165	"  SELECT ST_NO,FACTORY_DIV FROM TPSSM41 WHERE HEAT_NO = @heat_no )"
+libQMTS/f_qmts_cf_rev.cpp	201	204	sqlstr = "SELECT REC_CREATOR,REC_CREATE_TIME "
+libQMTS/f_qmts_cf_rev.cpp	266	267	sqlstr = "SELECT ST_NO ,SM_PLAN_NO,PONO FROM "
+libQMTS/f_qmts_cf_rev.cpp	319	321	Log::Trace("", __FUNCTION__, "INSERT TQMTS26");
+libQMTS/f_qmts_cf_rev.cpp	354	357	sqlstr = "SELECT CODE_DESC_1_CONTENT "
+libQMTS/f_qmts_cf_rev.cpp	386	389	Log::Trace("", __FUNCTION__, "INSERT TQMTS25");
+libQMTS/f_qmts_cf_rev.cpp	452	456	sqlstr = "SELECT CODE_DESC_1_CONTENT "
+libQMTS/f_qmts_confm.cpp	117	119	sqlstr = " SELECT elm_code,elm_name,elm_pos,elm_unit,elm_value "
+libQMTS/f_qmts_count_temp.cpp	96	99	sqlstr = "SELECT * "
+libQMTS/f_qmts_elm_cal.cpp	59	60	sqlstr = " SELECT * FROM tpssm11 WHERE heat_no = @heat_no"
+libQMTS/f_qmts_elm_cal.cpp	61	62	"				SELECT * FROM tpssm41 WHERE heat_no = @heat_no ";
+libQMTS/f_qmts_elm_cal.cpp	111	113	sqlstr = " DELETE FROM " + table_name +
+libQMTS/f_qmts_elm_cal.cpp	133	134	sqlstr = "SELECT ELM_NAME, ELM_ACT,WHOLE_BACKLOG_CODE FROM TQMTS25 WHERE ST_SAMPLE_NO = @st_sample_no AND HEAT_NO =@heat_no ORDER BY LENGTH(ELM_NAME) DESC ";
+libQMTS/f_qmts_elm_cal.cpp	140	148	sqlstr = " SELECT"
+libQMTS/f_qmts_elm_cal.cpp	191	192	sqlstr = "SELECT ROUND(" + dest + ",5) FROM DUAL";
+libQMTS/f_qmts_elm_cal.cpp	200	201	sqlstr = "INSERT INTO TQMTS25 (PONO,HEAT_NO,ST_SAMPLE_NO,ST_NO,ELM_CODE,ELM_NAME,ELM_ACT,ELM_ACT_OLD,ELM_OK,REC_CREATOR,REC_CREATE_TIME,WHOLE_BACKLOG_CODE) "
+libQMTS/f_qmts_elm_catch.cpp	41	58	sqlstr = "SELECT ELM_CODE, "
+libQMTS/f_qmts_elm_catch.cpp	59	60	" SELECT   ELM_CODE  FROM tqmts02 WHERE ST_NO = @st_no AND whole_backlog_code = @whole_backlog_code and factory_div = @factory_div) "
+libQMTS/f_qmts_elm_rcv.cpp	93	94	sqlstr = " SELECT CODE,CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'QMYS2N' ";
+libQMTS/f_qmts_elm_rcv.cpp	240	240	sqlstr = " select * from tqmts26 where HEAT_NO='" + tqmts25["HEAT_NO"].ToString() + "' and ST_SAMPLE_NO='" + tqmts25["ST_SAMPLE_NO"].ToString() + "' ";
+libQMTS/f_qmts_elm_rcv.cpp	244	247	sqlstr = " select * from tqmts25 where HEAT_NO='" + tqmts25["HEAT_NO"].ToString() + "' and ST_SAMPLE_NO='" + tqmts25["ST_SAMPLE_NO"].ToString() + "' ";
+libQMTS/f_qmts_grind_desc.cpp	28	29	sqlstr = " SELECT COUNT(*) FROM TQMTS11A WHERE STEEL_GRADE = @steel_grade AND casting_pre_judgment is null and spec_min is null and spec_max is null and use is 
+libQMTS/f_qmts_grind_desc.cpp	42	43	sqlstr1 = " SELECT CASTING_PRE_JUDGMENT,SPEC_MIN,SPEC_MAX,USE FROM TQMTS11A WHERE STEEL_GRADE = @steel_grade order by CASTING_PRE_JUDGMENT,SPEC_MIN,SPEC_MAX,USE
+libQMTS/f_qmts_inqy.cpp	138	141	sqlstr = " SELECT COUNT(1) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	153	156	sqlstr = " SELECT COUNT(1) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	173	177	sqlstr = " SELECT COUNT(distinct heat_no) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	190	195	sqlstr = " SELECT heat_no FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	215	218	sqlstr = " SELECT MAX(ST_SAMPLE_NO) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	228	231	sqlstr = " SELECT MAX(ST_SAMPLE_NO) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	241	244	sqlstr = " SELECT MAX(ST_SAMPLE_NO) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	254	257	sqlstr = " SELECT MAX(ST_SAMPLE_NO) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	267	270	sqlstr = " SELECT MAX(ST_SAMPLE_NO) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	280	283	sqlstr = " SELECT MAX(ST_SAMPLE_NO) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	293	296	sqlstr = " SELECT COUNT(1) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	307	310	sqlstr = " SELECT MAX(ST_SAMPLE_NO) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	321	324	sqlstr = " SELECT COUNT(1) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	335	338	sqlstr = " SELECT MAX(ST_SAMPLE_NO) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	349	352	sqlstr = " SELECT COUNT(1) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	363	366	sqlstr = " SELECT MAX(ST_SAMPLE_NO) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	377	380	sqlstr = " SELECT COUNT(1) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	391	394	sqlstr = " SELECT MAX(ST_SAMPLE_NO) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	405	408	sqlstr = " SELECT COUNT(1) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	419	422	sqlstr = " SELECT MAX(ST_SAMPLE_NO) FROM TQMTS24 "
+libQMTS/f_qmts_inqy.cpp	435	440	sqlstr = " SELECT * "
+libQMTS/f_qmts_jud.cpp	216	219	sqlstr = " SELECT a.* "
+libQMTS/f_qmts_jud.cpp	247	250	sqlstr = " SELECT WHOLE_BACKLOG_CODE,ST_SAMPLE_DIV,GAS_TYPE_DIV "
+libQMTS/f_qmts_jud.cpp	283	285	sqlstr = "SELECT ST_NO,FACTORY_DIV FROM"
+libQMTS/f_qmts_jud.cpp	286	287	"  SELECT ST_NO,FACTORY_DIV FROM TPSSM41 WHERE HEAT_NO = @heat_no )"
+libQMTS/f_qmts_jud.cpp	318	326	sqlstr = " SELECT * "
+libQMTS/f_qmts_jud.cpp	334	340	sqlstr = " SELECT * "
+libQMTS/f_qmts_jud.cpp	372	378	sqlstr = " SELECT * "
+libQMTS/f_qmts_jud.cpp	388	394	sqlstr = " SELECT * "
+libQMTS/f_qmts_jud.cpp	473	474	sqlstr = " SELECT ";
+libQMTS/f_qmts_jud.cpp	489	489	Log::Trace("", __FUNCTION__, " select sqlstr[{0}] ", sqlstr);
+libQMTS/f_qmts_jud.cpp	490	490	Log::Trace("", __FUNCTION__, " select elm_code[{0}] ", tqmts02["ELM_CODE"].ToString());
+libQMTS/f_qmts_jud.cpp	491	493	Log::Trace("", __FUNCTION__, " select st_sample_no[{0}] ", s_st_sample_no);
+libQMTS/f_qmts_jud.cpp	955	958	sqlstr = " UPDATE " + s_table_name +
+libQMTS/f_qmts_jud.cpp	1011	1014	sqlstr = " UPDATE " + s_table_name +
+libQMTS/f_qmts_jud.cpp	1040	1043	sqlstr = " UPDATE " + s_table_name +
+libQMTS/f_qmts_jud.cpp	1069	1072	sqlstr = " UPDATE " + s_table_name +
+libQMTS/f_qmts_jud.cpp	1098	1101	sqlstr = " UPDATE " + s_table_name +
+libQMTS/f_qmts_jud.cpp	1127	1130	sqlstr = " UPDATE " + s_table_name +
+libQMTS/f_qmts_jud.cpp	1151	1154	sqlstr = " UPDATE " + s_table_name +
+libQMTS/f_qmts_jud.cpp	1178	1179	sqlstr = " UPDATE ";
+libQMTS/f_qmts_jud_01.cpp	101	104	sqlstr = " SELECT * "
+libQMTS/f_qmts_jud_pono.cpp	115	117	sqlstr = "UPDATE TQMTS24 "
+libQMTS/f_qmts_jud_pono.cpp	146	150	sqlstr = " SELECT * "
+libQMTS/f_qmts_jud_pono.cpp	173	176	sqlstr = "UPDATE TQMTS24 "
+libQMTS/f_qmts_jud_pono.cpp	193	197	sqlstr = "UPDATE TQMTS24 "
+libQMTS/f_qmts_jud_pono.cpp	230	232	sqlstr = "UPDATE TQMTS23 "
+libQMTS/f_qmts_jud_pono.cpp	247	249	sqlstr = "UPDATE TPSSM11 "
+libQMTS/f_qmts_jud_pono.cpp	286	288	sqlstr = "UPDATE TQMTS23 "
+libQMTS/f_qmts_jud_pono.cpp	309	313	sqlstr = "SELECT * "
+libQMTS/f_qmts_jud_pono.cpp	331	332	sqlstr = "DELETE FROM TQMTS29 WHERE PONO = @pono ";
+libQMTS/f_qmts_rep_elm_confm.cpp	86	90	sqlstr = " SELECT * "
+libQMTS/f_qmts_rep_elm_confm.cpp	113	118	sqlstr = " SELECT * "
+libQMTS/f_qmts_rep_elm_confm.cpp	138	141	sqlstr = " SELECT CODE_DESC_2_CONTENT "
+libQMTS/f_qmts_rep_elm_confm.cpp	216	221	sqlstr = " SELECT * "
+libQMTS/f_qmts_rep_elm_confm.cpp	257	260	sqlstr = " SELECT CODE_DESC_2_CONTENT "
+libQMTS/f_qmts_rep_elm_confm.cpp	290	295	sqlstr = " SELECT * "
+libQMTS/f_qmts_rep_elm_confm.cpp	331	334	sqlstr = " SELECT CODE_DESC_2_CONTENT "
+libQMTS/f_qmts_rep_sel.cpp	91	92	sqlstr = " SELECT * FROM tqmts25 WHERE  HEAT_NO = @heat_no"
+libQMTS/f_qmts_rep_sel.cpp	106	107	sqlstr = "DELETE FROM PM_SAMPLE  WHERE HEATNUMBER = @heat_no";
+libQMTS/f_qmts_rep_sel.cpp	110	158	sqlstr = " INSERT"
+libQMTS/f_qmts_rep_sel.cpp	159	206	"				SELECT"
+libQMTS/f_qmts_rep_sel.cpp	242	243	CString sqlstrph = "SELECT SG_GRADE_1 FROM TQMTS0X  WHERE ST_NO = @st_no";
+libQMTS/f_qmts_rep_sel.cpp	252	257	sqlstr = "SELECT CODE_DESC_1_CONTENT AS  ELM_ENAME, "
+libQMTS/f_qmts_rep_upd.cpp	166	169	sqlstr = "SELECT * "
+libQMTS/f_qmts_rep_upd.cpp	241	245	sqlstr = " SELECT MAX(ST_SAMPLE_NO) "
+libQMTS/f_qmts_rep_upd.cpp	265	268	sqlstr = "SELECT * "
+libQMTS/f_qmts_rep_upd.cpp	327	331	sqlstr = " SELECT MAX(ST_SAMPLE_NO) "
+libQMTS/f_qmts_rep_upd.cpp	351	354	sqlstr = "SELECT * "
+libQMTS/f_qmts_rep_upd.cpp	417	421	sqlstr = " SELECT JUDGE_CODE "
+libQMTS/f_qmts_rep_upd.cpp	517	521	sqlstr = " UPDATE TQMTS23 "
+libQMTS/f_qmts_rep_upd.cpp	571	575	sqlstr = " SELECT * "
+libQMTS/f_qmts_sample_init.cpp	28	29	sqlstr = " SELECT MAX(ST_SAMPLE_SEQ) FROM TQMTS24 WHERE HEAT_NO = @heat_no"
+libQMTS/f_qmts_sample_no_snd.cpp	164	166	sqlstr = "SELECT * FROM "
+libQMTS/f_qmts_sample_no_snd.cpp	167	168	" SELECT * FROM TPSSM42 WHERE HEAT_NO = @heat_no and dev_code=@s_dev_code AND AREA_ID < 6 )"
+libQMTS/f_qmts_sample_no_snd.cpp	189	190	sqlstr = "  SELECT LABEL1,IC_CC_FLAG FROM TQMTS0X WHERE ST_NO = @ST_NO 	";
+libQMTS/f_qmts_sample_no_snd.cpp	291	294	sqlstr = "SELECT * FROM tqmts02 WHERE st_no=@tqmts24.ST_NO"
+libQMTS/f_qmts_sample_no_snd.cpp	298	300	sqlstr = "SELECT * FROM tqmts02 WHERE st_no=@tqmts24.ST_NO"
+libQMTS/f_qmts_spe_single.cpp	134	137	sqlstr = " SELECT CODE_DESC_1_CONTENT,UPPER(CODE_DESC_2_CONTENT),CODE_DESC_3_CONTENT "
+libQMTS/f_qmts_spe_single.cpp	179	180	sqlstr = " SELECT substr(@formula_value,1,@i-1) || ')' || substr(@formula_value,@i+1) FROM DUAL  ";
+libQMTS/f_qmts_spe_single.cpp	184	185	sqlstr = " SELECT substr(@formula_value,1,@i-1) || ')' || substr(@formula_value,@i+1) FROM DUAL ";
+libQMTS/f_qmts_spe_single.cpp	193	194	sqlstr = " SELECT substr(@formula_value,1,@i-1) || ')' || substr(@formula_value,@i+1) FROM DUAL ";
+libQMTS/f_qmts_spe_single.cpp	221	222	sqlstr = " SELECT substr(@formula_value,1,@i-1) || 'abs(' || substr(@formula_value,@i+1) FROM DUAL  ";
+libQMTS/f_qmts_spe_single.cpp	226	227	sqlstr = " SELECT substr(@formula_value,1,@i-1) || 'abs(' || substr(@formula_value,@i+1) FROM DUAL ";
+libQMTS/f_qmts_spe_single.cpp	235	236	sqlstr = " SELECT substr(@formula_value,1,@i-1) || 'abs(' || substr(@formula_value,@i+1) FROM DUAL ";
+libQMTS/f_qmts_spe_single.cpp	262	266	sqlstr = " SELECT CODE,CODE_DESC_1_CONTENT "
+libQMTS/f_qmts_spe_single.cpp	288	289	sqlstr = " SELECT replace(@formula_value,@elm_name,'') FROM DUAL  ";
+libQMTS/f_qmts_spe_single.cpp	293	294	sqlstr = " SELECT replace(@formula_value,@elm_name,'') FROM DUAL ";
+libQMTS/f_qmts_spe_single.cpp	302	303	sqlstr = " SELECT replace(@formula_value,@elm_name,'') FROM DUAL ";
+libQMTS/f_qmts_spe_single.cpp	402	403	sqlstr = " SELECT ROUND(" + formula_value + +",4) FROM DUAL  ";
+libQMTS/f_qmts_spe_single.cpp	407	408	sqlstr = " SELECT ROUND(" + formula_value + +",4) FROM DUAL ";
+libQMTS/f_qmts_spe_single.cpp	416	417	sqlstr = " SELECT ROUND(" + formula_value + +",4) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	162	162	Log::Trace("", __FUNCTION__, "DELETE------s_heat_no[{0}]s_st_sample_no[{1}]", s_heat_no, s_st_sample_no);
+libQMTS/f_qmts_spe_sm.cpp	170	172	sqlstr = " DELETE FROM " + s_table_name +
+libQMTS/f_qmts_spe_sm.cpp	193	193	Log::Trace("", __FUNCTION__, "UPDATE s_table_name[{0}]sqlstr[{1}]", s_table_name, sqlstr);
+libQMTS/f_qmts_spe_sm.cpp	203	206	sqlstr = " UPDATE " + s_table_name +
+libQMTS/f_qmts_spe_sm.cpp	219	219	Log::Trace("", __FUNCTION__, "SELECT  TQMTS0X");
+libQMTS/f_qmts_spe_sm.cpp	229	231	sqlstr_elm_code = " SELECT ELM_FMLA_CODE1,ELM_FMLA_CODE2,ELM_FMLA_CODE3,ELM_FMLA_CODE4,ELM_FMLA_CODE5,IC_CC_FLAG "
+libQMTS/f_qmts_spe_sm.cpp	267	272	sqlstr_elm_code = " SELECT * "
+libQMTS/f_qmts_spe_sm.cpp	311	314	sqlstr = " SELECT CODE_DESC_2_CONTENT,CODE_DESC_3_CONTENT,CODE_DESC_4_CONTENT "
+libQMTS/f_qmts_spe_sm.cpp	357	358	sqlstr = " SELECT substr(@formula_value,1,@i-1) || ')' || substr(@formula_value,@i+1) FROM  DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	362	363	sqlstr = " SELECT substr(@formula_value,1,@i-1) || ')' || substr(@formula_value,@i+1)  FROM  DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	371	372	sqlstr = " SELECT substr(@formula_value,1,@i-1) || ')' || substr(@formula_value,@i+1)  FROM  DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	399	400	sqlstr = " SELECT substr(@formula_value,1,@i-1) || 'abs(' || substr(@formula_value,@i+1) FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	404	405	sqlstr = " SELECT substr(@formula_value,1,@i-1) || 'abs(' || substr(@formula_value,@i+1) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	413	414	sqlstr = " SELECT substr(@formula_value,1,@i-1) || 'abs(' || substr(@formula_value,@i+1) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	441	446	sqlstr = " SELECT CODE,CODE_DESC_1_CONTENT "
+libQMTS/f_qmts_spe_sm.cpp	466	467	sqlstr = " SELECT replace(@formula_value,@elm_name,'') FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	471	472	sqlstr = " SELECT replace(@formula_value,@elm_name,'') FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	480	481	sqlstr = " SELECT replace(@formula_value,@elm_name,'') FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	506	507	sqlstr = " SELECT ELM_NAME ";
+libQMTS/f_qmts_spe_sm.cpp	540	541	sqlstr = "SELECT replace(@formula_value,@elm_name,@elm_value)  FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	545	546	sqlstr = " SELECT replace(@formula_value,@elm_name,@elm_value)  FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	554	555	sqlstr = " SELECT replace(@formula_value,@elm_name,@elm_value)  FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	586	587	sqlstr = " SELECT replace(@formula_value,@elm_name,@elm_value) FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	591	592	sqlstr = " SELECT replace(@formula_value,@elm_name,@elm_value) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	600	601	sqlstr = " SELECT replace(@formula_value,@elm_name,@elm_value) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	642	643	sqlstr = " SELECT ROUND(" + formula_value + +",5) FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	647	648	sqlstr = " SELECT ROUND(" + formula_value + +",5) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	656	657	sqlstr = " SELECT ROUND(" + formula_value + +",5) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	687	688	sqlstr = "SELECT replace(@symbol,'>','-')  FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	692	693	sqlstr = " SELECT replace(@symbol,'>','-')  FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	701	702	sqlstr = " SELECT replace(@symbol,'>','-')  FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	724	725	sqlstr = "SELECT replace(@symbol,'<','+') FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	729	730	sqlstr = " SELECT replace(@symbol,'<','+')  FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	738	739	sqlstr = " SELECT replace(@symbol,'<','+')  FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	765	769	sqlstr = " SELECT CODE,CODE_DESC_1_CONTENT "
+libQMTS/f_qmts_spe_sm.cpp	790	791	sqlstr = " SELECT replace(@symbol,@elm_name,'') FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	795	796	sqlstr = " SELECT replace(@symbol,@elm_name,'') FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	804	805	sqlstr = " SELECT replace(@symbol,@elm_name,'') FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	830	831	sqlstr = " SELECT ELM_NAME ";
+libQMTS/f_qmts_spe_sm.cpp	863	864	sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	868	869	sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	877	878	sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	908	909	sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	913	914	sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	922	923	sqlstr = " SELECT replace(@symbol,@elm_name,@elm_value) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	961	962	sqlstr = " SELECT " + symbol + " FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	966	967	sqlstr = " SELECT " + symbol + " FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	975	976	sqlstr = " SELECT " + symbol + " FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	1002	1004	sqlstr = " INSERT INTO " + s_table_name;
+libQMTS/f_qmts_spe_sm.cpp	1041	1043	sqlstr = " INSERT INTO " + s_table_name;
+libQMTS/f_qmts_spe_sm.cpp	1095	1096	sqlstr = " SELECT substr(@formula_std,1,@i-1) || ')' || substr(@formula_std,@i+1) FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	1100	1101	sqlstr = " SELECT substr(@formula_std,1,@i-1) || ')' || substr(@formula_std,@i+1) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	1109	1110	sqlstr = " SELECT substr(@formula_std,1,@i-1) || ')' || substr(@formula_std,@i+1) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	1137	1138	sqlstr = " SELECT substr(@formula_std,1,@i-1) || 'abs(' || substr(@formula_std,@i+1) FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	1142	1143	sqlstr = " SELECT substr(@formula_std,1,@i-1) || 'abs(' || substr(@formula_std,@i+1) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	1151	1152	sqlstr = " SELECT substr(@formula_std,1,@i-1) || 'abs(' || substr(@formula_std,@i+1) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	1178	1182	sqlstr = " SELECT CODE,CODE_DESC_1_CONTENT "
+libQMTS/f_qmts_spe_sm.cpp	1203	1204	sqlstr = " SELECT replace(@formula_std,@elm_name,'') FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	1208	1209	sqlstr = " SELECT replace(@formula_std,@elm_name,'') FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	1217	1218	sqlstr = " SELECT replace(@formula_std,@elm_name,'') FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	1243	1244	sqlstr = " SELECT ELM_NAME ";
+libQMTS/f_qmts_spe_sm.cpp	1276	1277	sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	1281	1282	sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	1290	1291	sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	1322	1323	sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	1327	1328	sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	1336	1337	sqlstr = " SELECT replace(@formula_std,@elm_name,@elm_value) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	1377	1378	sqlstr = " SELECT ROUND(" + formula_std + +",5) FROM DUAL  ";
+libQMTS/f_qmts_spe_sm.cpp	1382	1383	sqlstr = " SELECT ROUND(" + formula_std + +",5) FROM DUAL ";
+libQMTS/f_qmts_spe_sm.cpp	1391	1392	sqlstr = " SELECT ROUND(" + formula_std + +",5) FROM DUAL ";
+libQMTS/f_qmts_stno_chg.cpp	124	126	sqlstr = "UPDATE TQMTS25 "
+libQMTS/f_qmts_stno_chg.cpp	143	147	sqlstr = "UPDATE TQMTS25 "
+libQMTS/f_qmts_stno_chg.cpp	165	167	sqlstr = "UPDATE TQMTS24 "
+libQMTS/f_qmts_stno_chg.cpp	183	187	sqlstr = "UPDATE TQMTS24 "
+libQMTS/f_qmts_stno_chg.cpp	204	208	sqlstr = "SELECT * "
+libQMTS/f_qmts_stno_chgd.cpp	168	172	sqlstr = " UPDATE TQMTS25 "
+libQMTS/f_qmts_stno_chgd.cpp	189	193	sqlstr = " UPDATE TQMTS25 "
+libQMTS/f_qmts_stno_chgd.cpp	211	215	sqlstr = " UPDATE TQMTS25 "
+libQMTS/f_qmts_stno_chgd.cpp	232	235	sqlstr = " UPDATE TQMTS25 "
+libQMTS/f_qmts_stno_chgd.cpp	252	255	sqlstr = " UPDATE TQMTS25 "
+libQMTS/f_qmts_stno_chgd.cpp	274	276	sqlstr = " UPDATE TQMTS24 "
+libQMTS/f_qmts_stno_chgd.cpp	292	294	sqlstr = " UPDATE TQMTS24 "
+libQMTS/f_qmts_stno_chgd.cpp	311	313	sqlstr = " UPDATE TQMTS24 "
+libQMTS/f_qmts_stno_chgd.cpp	329	333	sqlstr = " UPDATE TQMTS24 "
+libQMTS/f_qmts_stno_chgd.cpp	350	354	sqlstr = " UPDATE TQMTS24 "
+libQMTS/f_qmts_stno_chgd.cpp	367	369	sqlstr = " UPDATE TQMTS23 "
+libQMTS/f_qmts_stno_chgd.cpp	377	379	sqlstr = " UPDATE TQMTS23 "
+libQMTS/f_qmts_stno_chgd.cpp	388	390	sqlstr = " UPDATE TQMTS23 "
+libQMTS/f_qmts_stno_chgd.cpp	398	401	sqlstr = " UPDATE TQMTS23 "
+libQMTS/f_qmts_stno_chgd.cpp	410	413	sqlstr = " UPDATE TQMTS23 "
+libQMTS/f_qmts_stno_chgd.cpp	435	438	sqlstr = " SELECT * "
+libQMTS/f_qmts_stno_inq_01.cpp	123	133	sqlstr = " SELECT SMELT_DIV, "
+libQMTS/f_qmts_stno_set.cpp	40	41	sqlstr = " SELECT MAT_NO, CUT_ST_NO,'TMMSM01' FROM tmmsm01 WHERE HEAT_NO = @HEAT_NO AND JUDGE_ST_NO = ' '";
+libQMTS/f_qmtsm_inq.cpp	39	40	CString sql = "SELECT * FROM " + sql_tableName;
+libQMTS/f_qmtsm_inq.cpp	42	44	CString sql_count = "SELECT COUNT(*) FROM " + sql_tableName;
+libQMTS/f_t82302_snd.cpp	42	43	sqlstr = " select CODE_DESC_1_CONTENT from TWMSMZD02 where CODE_CLASS='MMBMZL'  and code = '" + tmmsm01["SURF_QUALITY"].ToString() + "' and code <> '47' ";
+libQMTS/f_t82305_snd.cpp	29	30	CString sqlstr1 = "SELECT DEV_CODE,ST_NO FROM TQMTSB0 WHERE HEAT_NO = '" + heat_no + "'";
+libQMTS/f_t82305_snd.cpp	72	73	sqlstr = "SELECT * FROM TQMTS29 WHERE HEAT_NO = @heat_no AND ELM_ACT < 100 AND ELM_ACT > 0";
+libQMTS/f_t82306_snd.cpp	77	77	cmd_sqla1.SetCommandText("  SELECT END_TIME,ACTRESULT, SM_PLAN_NOL2 FROM("
+libQMTS/f_t82306_snd.cpp	78	79	" select END_TIME, ACTRESULT,SM_PLAN_NOL2 from TMMSM27 "
+libQMTS/f_t82306_snd.cpp	80	81	" SELECT END_TIME,ACTRESULT, SM_PLAN_NOL2 FROM TMMSM21 "
+libQMTS/f_t82306_snd.cpp	133	133	cmd_inq.SetCommandText(" SELECT  MAX(RECV_MAT_TIME),SUM(RECEIVE_WEIGHT) FROM ( "
+libQMTS/f_t82306_snd.cpp	134	135	" SELECT MAX(RECV_MAT_TIME) RECV_MAT_TIME, SUM(NVL(RECEIVE_WEIGHT, 0)) RECEIVE_WEIGHT FROM TMMSM01 WHERE CONCESS_CON_FLAG!='1'  and mat_no not in (select in_mat
+libQMTS/f_t82306_snd.cpp	136	137	" SELECT MAX(RECV_MAT_TIME), SUM(NVL(RECEIVE_WEIGHT, 0)) RECEIVE_WEIGHT FROM HMMSM01 WHERE CONCESS_CON_FLAG!='1'  and mat_no not in (select in_mat_no  from tmms
+libQMTS/f_t82308_snd.cpp	139	141	" SELECT ROUND(TO_NUMBER(TO_DATE('" + tmmsm23["END_TIME"].ToString() + "', 'YYYYMMDDhh24miss') - "
+libQMTS/f_t823s3_snd.cpp	78	79	cmd_inq.SetCommandText(" SELECT SUM(RECEIVE_WEIGHT) FROM VMMSM01  where HEAT_NO='" + tmmsm19["HEAT_NO"].ToString()+"' ");
+libQMTS/f_t823s4_snd.cpp	79	80	cmd_inq.SetCommandText(" SELECT SUM(RECEIVE_WEIGHT) FROM VMMSM01  where HEAT_NO='" + tmmsm21["HEAT_NO"].ToString() + "' ");
+libQMTS/f_t823s5_snd.cpp	77	78	cmd_inq.SetCommandText(" SELECT SUM(RECEIVE_WEIGHT) FROM VMMSM01  where HEAT_NO='" + tmmsm20["HEAT_NO"].ToString() + "' ");
+libQMTS/f_t823s6_snd.cpp	76	77	cmd_inq.SetCommandText(" SELECT SUM(RECEIVE_WEIGHT) FROM VMMSM01  where HEAT_NO='" + tmmsm27["HEAT_NO"].ToString() + "' ");
+libQMTS/f_t823s9_snd.cpp	77	78	cmd_inq.SetCommandText(" SELECT SUM(RECEIVE_WEIGHT) FROM VMMSM01  where HEAT_NO='" + tmmsm25["HEAT_NO"].ToString() + "' ");
+libQMTS/f_t823sa_snd.cpp	77	78	cmd_inq.SetCommandText(" SELECT SUM(RECEIVE_WEIGHT) FROM VMMSM01  where HEAT_NO='" + tmmsm31["HEAT_NO"].ToString() + "' ");
+libQMTS/f_t823sa_snd.cpp	107	114	cmd.SetCommandText(" SELECT COUNT(*) OVER(PARTITION BY CAST_DIV_NO, TD_NO_1, CAST_DIV_NO_1) AS LJLS FROM "
+libQMTS/f_t823sa_snd.cpp	118	123	cmd.SetCommandText(" SELECT COUNT(*) OVER(PARTITION BY DEV_CODE, CAST_DIV_NO, TD_NO_1 ORDER BY DEV_CODE, CAST_DIV_NO, LADLE_LEAVE_TIME, TD_NO_1) AS LJLS "
+libQMTS/f_t823sb_snd.cpp	76	77	cmd_inq.SetCommandText(" SELECT SUM(RECEIVE_WEIGHT) FROM VMMSM01  where HEAT_NO='" + tmmsm34["HEAT_NO"].ToString() + "' ");
+libQMTS/f_t823sb_snd.cpp	91	91	cmd_inq.SetCommandText(" SELECT * FROM ( "
+libQMTS/f_t823sb_snd.cpp	92	92	" SELECT MEND_BEFORE_WEIGHT, MEND_AFTER_WEIGHT, HEAT_NO FROM( "
+libQMTS/f_t823sb_snd.cpp	93	93	" SELECT T3.*, ROW_NUMBER() OVER(PARTITION BY HEAT_NO ORDER BY END_TIME) AS RN FROM( "
+libQMTS/f_t823sb_snd.cpp	94	99	" SELECT  GRINDING_START_TIME AS END_TIME, T.HEAT_NO, T2.MEND_BEFORE_WEIGHT, T2.MEND_AFTER_WEIGHT "
+p_qmts_4700/qmtifa_del.cpp	55	58	sqlstr = "DELETE FROM TQMTIFA WHERE LOT_NO_PE =@lot_no_pe ";
+p_qmts_4700/qmtifa_inq.cpp	98	98	sql="SELECT "+sql_selectCols+" FROM "+sql_fromTable+" WHERE "+sql_where+" "+sql_orderBy+ " FETCH FIRST "+ nfetchRowsStr +" ROWS ONLY";
+p_qmts_4700/qmtifa_inq.cpp	99	101	sql_count="SELECT COUNT(1) FROM "+sql_fromTable+" WHERE "+sql_where;
+p_qmts_4700/qmtifa_inq.cpp	162	164	sql="SELECT " + sql_selectCols + " FROM " + sql_fromTable + " WHERE "+sql_where;
+p_qmts_4700/qmtifa_ins.cpp	134	137	strSql = " INSERT INTO TQMTIFA" "(" + strSqlCols + ") VALUES (" + strSqlValues + ") " ;
+p_qmts_4700/qmtifa_upd.cpp	54	56	CString sql_upd = "UPDATE ";
+p_qmts_4700/qmtifa_upd2.cpp	111	113	sqlstr = " SELECT FE_FE2O3,FE_CAO,FE_SIO2,FE_MNO,FE_AL2O3,FE_CL,FE_SO4,FE_FEO, "
+p_qmts_4700/qmtifa_upd2.cpp	268	269	sqlstr = "UPDATE TQMTIFA";
+p_qmts_4700/qmtism_inq.cpp	156	193	CString sql_sm =  "SELECT sjf.*,e.MAT_WT_ERROR_SUM FROM "
+p_qmts_4700/qmtism_inq.cpp	256	293	CString sql_oth = "SELECT sfp.*,e.MAT_WT_ERROR_SUM FROM "
+p_qmts_4700/qmtisn_inq.cpp	31	68	CString sql_sm = "SELECT sjf.*,e.MAT_WT_ERROR_SUM FROM "
+p_qmts_4700/qmtisn_inq.cpp	122	159	CString sql_oth = "SELECT sfp.*,e.MAT_WT_ERROR_SUM FROM "
+p_qmts_4700/qmtiz1_chk.cpp	93	94	sqlstr = " SELECT PONO FROM TQMTQTBC1 WHERE RL_NO = @rl_no ";
+p_qmts_4700/qmtiz1_chk.cpp	199	201	sqlstr = " SELECT COUNT(1) "
+p_qmts_4700/qmtiz1_dtl.cpp	22	26	sqlstr=" SELECT ITEM_CNAME,ITEM_VALUE,ITEM_UPPER_VALUE,ITEM_LOWER_VALUE,SAMPLE_LOT_NO "
+p_qmts_4700/qmtiz1_inq.cpp	83	86	CString sql_count=" SELECT count(1) FROM TQMTIZ1 "+sql_select;
+p_qmts_4700/qmtiz1_inq.cpp	100	104	sqlstr=" SELECT * FROM TQMTIZ1 "+sql_select;
+p_qmts_4700/qmtiz3_inq.cpp	97	98	CString sql_count = " SELECT count(1) FROM TQMTIZ0 WHERE 1=1 " + sql_where;
+p_qmts_4700/qmtiz3_inq.cpp	107	108	CString sqlstr = " SELECT * FROM TQMTIZ0 WHERE 1=1 " + sql_where;
+p_qmts_4700/qmtiz4_inq.cpp	33	42	CString sql_count = " SELECT count(1) "
+p_qmts_4700/qmtiz4_inq.cpp	66	75	CString sqlstr = " SELECT TQMTIZ1.ORDER_NO,TQMTIZ1.SG_SIGN,TQMTIZ1.CUST_STD,TQMTIZ1.PONO,TQMTIZ1.REP_PONO,TQMTIZ2.* "
+p_qmts_4700/qmts04b_inq.cpp	64	66	sqlstr = " SELECT * "
+p_qmts_4700/qmts04b_upd.cpp	67	69	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG "
+p_qmts_4700/qmts10_inq.cpp	71	73	sqlstr = " SELECT * "
+p_qmts_4700/qmts10_inq1.cpp	68	70	sqlstr = " SELECT ST_NO "
+p_qmts_4700/qmts10_inq1.cpp	95	97	sqlstr = " SELECT ST_NO "
+p_qmts_4700/qmts10_upd.cpp	67	69	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG,REMARK "
+p_qmts_4700/qmts10_upd1.cpp	66	68	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG "
+p_qmts_4700/qmts9c1_inq.cpp	75	77	sqlstr = " SELECT * "
+p_qmts_4700/qmts9c1_upd.cpp	74	77	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG,REMARK "
+p_qmts_4700/qmts9c2_inq.cpp	75	77	sqlstr = " SELECT * "
+p_qmts_4700/qmts9c2_upd.cpp	73	76	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG,REMARK "
+p_qmts_4700/qmts9c3_inq.cpp	75	77	sqlstr = " SELECT * "
+p_qmts_4700/qmts9c3_upd.cpp	73	76	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG,REMARK "
+p_qmts_4700/qmts9c4_inq.cpp	75	77	sqlstr = " SELECT * "
+p_qmts_4700/qmts9c4_upd.cpp	73	76	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG,REMARK "
+p_qmts_4700/qmts9c5_inq.cpp	75	77	sqlstr = " SELECT * "
+p_qmts_4700/qmts9c5_upd.cpp	73	76	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG,REMARK "
+p_qmts_4700/qmts9c6_inq.cpp	75	77	sqlstr = " SELECT * "
+p_qmts_4700/qmts9c6_upd.cpp	74	77	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG,REMARK "
+p_qmts_4700/qmts9c7_inq.cpp	75	77	sqlstr = " SELECT * "
+p_qmts_4700/qmts9c7_upd.cpp	74	77	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG,REMARK "
+p_qmts_4700/qmts9c8_inq.cpp	75	77	sqlstr = " SELECT * "
+p_qmts_4700/qmts9c8_upd.cpp	73	76	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG,REMARK "
+p_qmts_4700/qmts9c9_inq.cpp	75	77	sqlstr = " SELECT * "
+p_qmts_4700/qmts9c9_upd.cpp	74	77	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG,REMARK "
+p_qmts_4700/qmts9ca_inq.cpp	75	77	sqlstr = " SELECT * "
+p_qmts_4700/qmts9ca_upd.cpp	73	75	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG,REMARK "
+p_qmts_4700/qmtsm1_del.cpp	66	73	CString sql_del = "DELETE FROM T" + from_name + " WHERE 1 = 1 ";
+p_qmts_4700/qmtsm1_ins.cpp	28	30	CString sql_ins = "INSERT INTO T";
+p_qmts_4700/qmtsm1_upd.cpp	33	36	Log::Trace("", "", "update start");
+p_qmts_4700/qmtsm1_upd.cpp	46	48	CString sql_ins = "INSERT INTO H" + formName + " ( ";
+p_qmts_4700/qmtsm1_upd.cpp	122	129	CString		sql_upd = "UPDATE T" + formName + " SET ";
+p_qmts_4700/qmtsm1_upd.cpp	180	182	Log::Trace("", "", "UPDATE sql_upd{0}", sqlstr);
+p_qmts_4700/qmtsmu_inq.cpp	38	40	CString sql = "SELECT " + sql_colName + " FROM " + sql_tableName;
+p_qmts_4700/qmtsmu_inq.cpp	43	46	CString sql_count = "SELECT COUNT(*) FROM " + sql_tableName;
+p_qmts_4750/qm_mmsm01_bp.cpp	37	41	sqlstr = " SELECT MAT_NO, MAT_STATUS FROM tmmsm01 WHERE MAT_NO IN(";
+p_qmts_4750/qmbs25_inq.cpp	23	26	sqlstr = "SELECT * FROM HQMTS25 WHERE 1=1 ";
+p_qmts_4750/qmbs_mmsm01_inq.cpp	59	59	CString sql_count = "SELECT COUNT(*) FROM ( ";
+p_qmts_4750/qmbs_mmsm01_inq.cpp	61	64	sqlstr = "SELECT * FROM TMMSM01 WHERE 1=1 ";
+p_qmts_4750/qmbsm2_single_inq.cpp	21	22	CString sql = "SELECT * FROM " + bcls_rec->Tables[0].get_TableName();
+p_qmts_4750/qmbsm8_inq.cpp	22	28	sqlstr = " SELECT tqmts0x.ST_NO, TQMTMS0.IDX_NO, TQMTMS0.ELM_NAME, TQMTMS0.ELM_MAIN_MIN, TQMTMS0.ELM_MAIN_MAX, TQMTMS0.ELM_SPE_MIN, TQMTMS0.ELM_SPE_MAX, TQMTS02
+p_qmts_4750/qmbsm8_ins.cpp	34	35	sqlstr = "delete from TQMTMS0";
+p_qmts_4750/qmbsm_inq.cpp	37	39	CString sql = "SELECT * FROM " + sql_tableName;
+p_qmts_4750/qmbsm_inq.cpp	42	45	CString sql_count = "SELECT COUNT(*) FROM " + sql_tableName;
+p_qmts_4750/qmbsm_save_pro.cpp	34	35	CString sqlstr1 = "SELECT MAX(SEQ_ID) FROM  TQMTS11A";
+p_qmts_4750/qmts01_catch.cpp	114	118	sqlstr = "SELECT * "
+p_qmts_4750/qmts01_catch.cpp	143	148	sqlstr = "SELECT COUNT(1)"
+p_qmts_4750/qmts01_catch.cpp	190	195	sqlstr = "SELECT COUNT(1)"
+p_qmts_4750/qmts01_catch.cpp	244	250	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts01_catch.cpp	330	335	sqlstr = "SELECT COUNT(1)"
+p_qmts_4750/qmts01_catch.cpp	376	381	sqlstr = "SELECT COUNT(1)"
+p_qmts_4750/qmts01_inq.cpp	101	108	sqlstr = "SELECT  ST_NO,FACTORY_DIV "
+p_qmts_4750/qmts01_inq.cpp	138	145	sqlstr = "SELECT ST_NO,FACTORY_DIV "
+p_qmts_4750/qmts01_inq.cpp	183	190	sqlstr = "SELECT * "
+p_qmts_4750/qmts01_ins.cpp	77	82	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts01_send.cpp	86	92	sqlstr = " SELECT IF_PASS "
+p_qmts_4750/qmts01_send.cpp	122	127	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts01_send.cpp	164	169	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts01_send.cpp	192	197	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts01_send.cpp	220	225	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts01_send.cpp	248	253	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts01_send.cpp	276	281	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts01_send.cpp	304	309	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts01_send.cpp	332	337	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts02_inq.cpp	95	99	sqlstr = "SELECT * "
+p_qmts_4750/qmts02_inq.cpp	139	139	Log::Trace("", "","SELECT TQMTS02");
+p_qmts_4750/qmts02_inq.cpp	151	154	sqlstr = " SELECT * "
+p_qmts_4750/qmts02_inq.cpp	239	245	sqlstr = "SELECT * "
+p_qmts_4750/qmts02_inq.cpp	275	292	sqlstr = "SELECT REC_CREATOR,REC_CREATE_TIME,REC_REVISOR,REC_REVISE_TIME,VERSION "
+p_qmts_4750/qmts02_inq.cpp	330	332	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts02_inq_st.cpp	67	70	sqlstr = " SELECT DISTINCT st_no "
+p_qmts_4750/qmts02_ins.cpp	129	133	sqlstr = " SELECT COUNT(1) "
+p_qmts_4750/qmts02_ins.cpp	158	163	sqlstr = " SELECT COUNT(1) "
+p_qmts_4750/qmts02_ins.cpp	187	192	sqlstr = "SELECT WHOLE_BACKLOG_SEQ "
+p_qmts_4750/qmts02_ins.cpp	215	219	sqlstr = " SELECT * "
+p_qmts_4750/qmts02_ins.cpp	323	329	sqlstr = " SELECT COUNT(1) "
+p_qmts_4750/qmts02_upd.cpp	111	117	sqlstr = " SELECT * "
+p_qmts_4750/qmts02_upd.cpp	173	177	sqlstr = " SELECT * "
+p_qmts_4750/qmts03_catch.cpp	107	111	sqlstr = "SELECT * "
+p_qmts_4750/qmts03_catch.cpp	139	143	sqlstr = "SELECT * "
+p_qmts_4750/qmts03_catch.cpp	195	200	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts04_catch.cpp	106	110	sqlstr = "SELECT * "
+p_qmts_4750/qmts04_catch.cpp	138	142	sqlstr = "SELECT * "
+p_qmts_4750/qmts04_catch.cpp	194	199	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts04_inq.cpp	33	34	CString sql = " SELECT * "
+p_qmts_4750/qmts04_inq.cpp	37	38	CString sql_count = "SELECT COUNT(*) FROM ( ";
+p_qmts_4750/qmts05_catch.cpp	107	111	sqlstr = "SELECT * "
+p_qmts_4750/qmts05_catch.cpp	139	143	sqlstr = "SELECT * "
+p_qmts_4750/qmts05_catch.cpp	195	200	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts06_catch.cpp	107	111	sqlstr = "SELECT * "
+p_qmts_4750/qmts06_catch.cpp	139	143	sqlstr = "SELECT * "
+p_qmts_4750/qmts06_catch.cpp	195	200	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts07_catch.cpp	110	114	sqlstr = "SELECT * "
+p_qmts_4750/qmts07_catch.cpp	142	146	sqlstr = "SELECT * "
+p_qmts_4750/qmts07_catch.cpp	199	204	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts08_catch.cpp	107	111	sqlstr = "SELECT * "
+p_qmts_4750/qmts08_catch.cpp	139	143	sqlstr = "SELECT * "
+p_qmts_4750/qmts08_catch.cpp	184	189	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts09_inq.cpp	63	66	sqlstr = " SELECT * "
+p_qmts_4750/qmts09_upd.cpp	76	78	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG,VERSION "
+p_qmts_4750/qmts0a_catch.cpp	106	110	sqlstr = "SELECT * "
+p_qmts_4750/qmts0a_catch.cpp	137	141	sqlstr = "SELECT * "
+p_qmts_4750/qmts0a_catch.cpp	193	198	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts0l_catch.cpp	107	111	sqlstr = "SELECT * "
+p_qmts_4750/qmts0l_catch.cpp	140	144	sqlstr = "SELECT * "
+p_qmts_4750/qmts0l_catch.cpp	196	201	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts0m_catch.cpp	106	110	sqlstr = "SELECT * "
+p_qmts_4750/qmts0m_catch.cpp	137	141	sqlstr = "SELECT * "
+p_qmts_4750/qmts0m_catch.cpp	201	206	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts0x_aud.cpp	128	131	sqlstr = " SELECT MAX(VALID_FLAG) "
+p_qmts_4750/qmts0x_aud.cpp	160	163	sqlstr = " SELECT IDX_NO_ELM "
+p_qmts_4750/qmts0x_aud.cpp	189	192	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_aud.cpp	218	222	sqlstr = " SELECT COUNT(1) "
+p_qmts_4750/qmts0x_cancel.cpp	69	72	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_del.cpp	129	133	sqlstr = " SELECT VALID_FLAG "
+p_qmts_4750/qmts0x_del.cpp	170	170	Log::Trace("", "", "INSERT HQMTS0X");
+p_qmts_4750/qmts0x_del.cpp	178	182	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_del.cpp	203	205	Log::Trace("", "", "DELETE TQMTS0X");
+p_qmts_4750/qmts0x_del.cpp	281	281	Log::Trace("", "", "INSERT HQMTS02");
+p_qmts_4750/qmts0x_del.cpp	289	293	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_del.cpp	319	321	Log::Trace("", "", "DELETE TQMTS02");
+p_qmts_4750/qmts0x_del.cpp	355	355	Log::Trace("", "", "INSERT HQMTS02");
+p_qmts_4750/qmts0x_del.cpp	363	369	sqlstr = " SELECT COUNT(1)"
+p_qmts_4750/qmts0x_del.cpp	390	396	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_del.cpp	419	421	Log::Trace("", "", "DELETE TQMTS02");
+p_qmts_4750/qmts0x_inq.cpp	103	105	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_inq.cpp	168	172	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_inq.cpp	190	194	sqlstr = " SELECT IDX_NO_ELM "
+p_qmts_4750/qmts0x_inq.cpp	221	231	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_inq.cpp	247	253	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_inq.cpp	301	305	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_inq_ts.cpp	95	100	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_ins.cpp	99	103	sqlstr = " SELECT VALID_FLAG "
+p_qmts_4750/qmts0x_ins.cpp	204	207	sqlstr = " SELECT COUNT(1) "
+p_qmts_4750/qmts0x_ins.cpp	282	287	sqlstr = " SELECT COUNT(1) "
+p_qmts_4750/qmts0x_ins.cpp	342	345	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_send.cpp	82	85	sqlstr = " SELECT MIN(VALID_FLAG) "
+p_qmts_4750/qmts0x_upd.cpp	107	111	sqlstr = " SELECT VALID_FLAG "
+p_qmts_4750/qmts0x_upd.cpp	148	148	Log::Trace("", "","INSERT HQMTS0X");
+p_qmts_4750/qmts0x_upd.cpp	156	160	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_upd.cpp	181	183	Log::Trace("", "","DELETE TQMTS0X");
+p_qmts_4750/qmts0x_upd.cpp	186	187	Log::Trace("", "","INSERT TQMTS0X");
+p_qmts_4750/qmts0x_upd.cpp	306	311	sqlstr = " SELECT COUNT(1) "
+p_qmts_4750/qmts0x_upd.cpp	347	350	sqlstr = " SELECT * "
+p_qmts_4750/qmts0x_upd.cpp	388	393	sqlstr = " SELECT * "
+p_qmts_4750/qmts0xa_inq.cpp	47	47	CString sql_count = "SELECT COUNT(*) FROM ( ";
+p_qmts_4750/qmts0xa_inq.cpp	49	52	sqlstr = "SELECT * FROM TQMTS0XA WHERE 1=1 ";
+p_qmts_4750/qmts0y_aud.cpp	65	67	sqlstr = " SELECT VALID_FLAG "
+p_qmts_4750/qmts0y_aud.cpp	91	94	sqlstr = " SELECT * "
+p_qmts_4750/qmts0y_cancel.cpp	63	66	sqlstr = " SELECT VALID_FLAG "
+p_qmts_4750/qmts0y_del.cpp	78	81	sqlstr = " SELECT VALID_FLAG "
+p_qmts_4750/qmts0y_del.cpp	114	114	Log::Trace("", "","INSERT HQMTS0Y");
+p_qmts_4750/qmts0y_del.cpp	122	125	sqlstr = " SELECT * "
+p_qmts_4750/qmts0y_del.cpp	144	145	Log::Trace("", "","DELETE TQMTS0Y");
+p_qmts_4750/qmts0y_inq.cpp	83	88	sqlstr = " SELECT DISTINCT SG_CODE, SG_SIGN, VALID_FLAG, HEAT_ELM_IDX "
+p_qmts_4750/qmts0y_inq.cpp	116	119	sqlstr = " SELECT * "
+p_qmts_4750/qmts0y_ins.cpp	346	352	sqlstr = " SELECT COUNT(1) "
+p_qmts_4750/qmts0y_upd.cpp	167	172	sqlstr = " SELECT VALID_FLAG "
+p_qmts_4750/qmts0y_upd.cpp	238	238	Log::Trace("", "","INSERT HQMTS0Y");
+p_qmts_4750/qmts0y_upd.cpp	254	261	sqlstr = " SELECT * "
+p_qmts_4750/qmts0y_upd.cpp	293	295	Log::Trace("", "","INSERT HQMTS0Y");
+p_qmts_4750/qmts0y_upd.cpp	301	303	Log::Trace("", "","DELETE TQMTS0Y");
+p_qmts_4750/qmts0y_upd.cpp	309	311	Log::Trace("", "","INSERT TQMTS0Y");
+p_qmts_4750/qmts27_inqv.cpp	75	77	sqlstr = " SELECT * "
+p_qmts_4750/qmts6c_inq.cpp	63	66	sqlstr = " SELECT * "
+p_qmts_4750/qmts9a_inq.cpp	111	115	sqlstr = "SELECT * "
+p_qmts_4750/qmts9a_inq.cpp	149	149	Log::Trace("", "", "SELECT TQMTS9A...");
+p_qmts_4750/qmts9a_inq.cpp	156	163	sqlstr = " SELECT * "
+p_qmts_4750/qmts9a_inq.cpp	175	181	sqlstr = " SELECT * "
+p_qmts_4750/qmts9a_inq.cpp	233	237	sqlstr = "SELECT STATION_NAME "
+p_qmts_4750/qmts9a_inq.cpp	270	274	sqlstr = "SELECT * "
+p_qmts_4750/qmts9a_inq.cpp	296	299	sqlstr = "SELECT REC_CREATOR,REC_CREATE_TIME,REC_REVISOR,REC_REVISE_TIME "
+p_qmts_4750/qmts9a_inq.cpp	333	339	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts9a_ins.cpp	122	124	sqlstr = "SELECT PONO,SM_PLAN_NO,ST_NO,FIN_ST_NO "
+p_qmts_4750/qmts9a_ins.cpp	152	154	sqlstr = "SELECT STATION_ID,STATION_NO "
+p_qmts_4750/qmts9a_ins.cpp	176	181	sqlstr = "SELECT MAX(ST_SAMPLE_SEQ) "
+p_qmts_4750/qmts9a_ins.cpp	211	214	sqlstr = "SELECT count(*) "
+p_qmts_4750/qmts9a_ins.cpp	228	229	Log::Trace("", "", "INSERT TQMTS9A");
+p_qmts_4750/qmts9a_ins.cpp	240	240	Log::Trace("", "", "INSERT TQMTS9A-2");
+p_qmts_4750/qmts9a_ins.cpp	248	252	sqlstr = "SELECT * "
+p_qmts_4750/qmts9a_upd.cpp	102	105	sqlstr = "SELECT * "
+p_qmts_4750/qmts9a_upd.cpp	153	157	sqlstr = "SELECT * "
+p_qmts_4750/qmts_class_code.cpp	24	25	sqlstr = "SELECT CODE_CLASS,CODE,CODE_DESC_1_CONTENT,CODE_DESC_2_CONTENT,CODE_DESC_3_CONTENT,CODE_DESC_4_CONTENT,CODE_DESC_5_CONTENT FROM TEP0002 WHERE CODE_CLA
+p_qmts_4750/qmts_del.cpp	260	265	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts_delstd.cpp	88	89	sql_del = "DELETE FROM " + table_name;
+p_qmts_4750/qmts_inq.cpp	119	122	sqlstr = "SELECT DISTINCT ST_NO "
+p_qmts_4750/qmts_inq.cpp	144	148	sqlstr = "SELECT IF_PASS"
+p_qmts_4750/qmts_inq.cpp	184	188	sqlstr = "SELECT DISTINCT ST_NO "
+p_qmts_4750/qmts_inq.cpp	201	205	sqlstr = "SELECT DISTINCT ST_NO "
+p_qmts_4750/qmts_inq.cpp	218	221	sqlstr = "SELECT DISTINCT ST_NO "
+p_qmts_4750/qmts_inq.cpp	243	246	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts_inq.cpp	299	301	sqlstr= "SELECT * "
+p_qmts_4750/qmts_inq.cpp	322	326	sqlstr = "SELECT * "
+p_qmts_4750/qmts_inq.cpp	343	347	sqlstr = "SELECT * "
+p_qmts_4750/qmts_inq.cpp	392	394	sqlstr= "SELECT CATCH_TIME "
+p_qmts_4750/qmts_inq.cpp	429	432	sqlstr = "SELECT IF_PASS "
+p_qmts_4750/qmts_inqchemi.cpp	85	89	sqlstr = "SELECT * "
+p_qmts_4750/qmts_inqchemi.cpp	106	112	sqlstr = "SELECT * "
+p_qmts_4750/qmts_inqmessage.cpp	117	122	sqlstr = "SELECT CATCH_TIME "
+p_qmts_4750/qmts_inqmessage.cpp	175	180	sqlstr = "SELECT IF_PASS "
+p_qmts_4750/qmts_inqstd.cpp	87	91	sqlstr = "SELECT * "
+p_qmts_4750/qmts_inqstno.cpp	92	92	sqlstr = "SELECT DISTINCT ST_NO,FACTORY_DIV,BASE_CODE,EQU_NO,INGOT_CODE ";
+p_qmts_4750/qmts_inqstno.cpp	96	100	sqlstr = "SELECT DISTINCT ST_NO,FACTORY_DIV,BASE_CODE ";
+p_qmts_4750/qmts_inqstno.cpp	138	144	sqlstr = "SELECT IF_PASS"
+p_qmts_4750/qmts_inqstnonew.cpp	83	87	sqlstr = "SELECT DISTINCT ST_NO,FACTORY_DIV,BASE_CODE "
+p_qmts_4750/qmts_inqstnonew.cpp	127	133	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts_ins.cpp	191	195	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts_inschemi.cpp	122	128	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts_inschemi.cpp	178	184	sqlstr = "SELECT WHOLE_BACKLOG_SEQ "
+p_qmts_4750/qmts_inschemi.cpp	207	210	sqlstr = "SELECT * "
+p_qmts_4750/qmts_insstd.cpp	83	88	sql_ins = "INSERT INTO " + table_name + " ( ST_NO, ";
+p_qmts_4750/qmts_insstd.cpp	149	159	sql = "UPDATE " + table_name
+p_qmts_4750/qmts_pass.cpp	85	90	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts_pass.cpp	114	119	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts_pass.cpp	144	150	sqlstr = "SELECT *  "
+p_qmts_4750/qmts_upd.cpp	144	148	sqlstr = "SELECT ST_NO,FACTORY_DIV,BASE_CODE "
+p_qmts_4750/qmts_upd.cpp	151	156	sqlstr =  "SELECT ST_NO,FACTORY_DIV,EQU_NO,INGOT_CODE,BASE_CODE "
+p_qmts_4750/qmts_upd.cpp	536	541	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts_updchemi.cpp	137	143	sqlstr = "SELECT COUNT(1) "
+p_qmts_4750/qmts_updchemi.cpp	176	181	sqlstr = "SELECT WHOLE_BACKLOG_SEQ "
+p_qmts_4750/qmts_updchemi.cpp	204	207	sqlstr = "SELECT * "
+p_qmts_4750/qmts_updchemi.cpp	233	239	sqlstr = "SELECT VERSION "
+p_qmts_4750/qmts_updstd.cpp	84	89	sql_upd = "UPDATE " + table_name + " SET ";
+p_qmts_4750/qmts_updstd.cpp	124	131	sql = "UPDATE " + table_name
+p_qmts_4750/qmtsa8_inq.cpp	84	86	sqlstr = " SELECT * "
+p_qmts_4750/qmtsh0xs2n_inq.cpp	31	34	sqlstr = "SELECT * FROM "+ tableName + " WHERE 1=1 ";
+p_qmts_4750/qmtsh5_inq.cpp	119	119	CString sql_count = "SELECT COUNT(*) FROM ( ";
+p_qmts_4750/qmtsh5_inq.cpp	121	123	sqlstr = " SELECT * "
+p_qmts_4750/qmtsm_del.cpp	38	39	sqlstr = "SELECT * FROM TQMTS02 WHERE ST_NO = @st_no AND WHOLE_BACKLOG_CODE = @whole_backlog_code AND FACTORY_DIV = @factory_div";
+p_qmts_4750/qmtsm_elm_inq.cpp	28	29	sqlstr = "SELECT * FROM " + table_name + " WHERE ST_NO = @st_no";
+p_qmts_4750/qmtsm_elm_inq.cpp	35	36	sqlstr = "SELECT * FROM TQMTS02 WHERE IDX_NO = (SELECT ELM_STD_IDX_A FROM TQMTS0X WHERE ST_NO = @st_no)";
+p_qmts_4750/qmtszz_inq.cpp	67	69	sqlstr = " SELECT * "
+p_qmts_4750/qmtszz_inq.cpp	86	90	sqlstr = " SELECT CODE_DESC_1_CONTENT "
+p_qmts_4750/qmtszz_ins.cpp	70	73	sqlstr = " SELECT COUNT(1) "
+p_qmts_4750/qmtszz_ins.cpp	95	97	sqlstr = " SELECT MAX(CODE) "
+p_qmts_4750/qmtszz_upd.cpp	72	75	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME "
+p_qmts_4800/cm_002001_rcv.cpp	97	99	sqlstr = " DELETE FROM TQMTS0X "
+p_qmts_4800/cm_002001_rcv.cpp	115	117	sqlstr = " DELETE FROM TQMTS02 "
+p_qmts_4800/cm_002001_rcv.cpp	133	135	sqlstr = " DELETE FROM TQMTS01 "
+p_qmts_4800/cm_002001_rcv.cpp	153	154	sqlstr_tep02 = "SELECT CODE_DESC_4_CONTENT FROM TEP0002 WHERE CODE_CLASS='QMZ7'"
+p_qmts_4800/cm_002001_rcv.cpp	169	171	sqlstr = " DELETE FROM TQMTS01 "
+p_qmts_4800/cm_002001_rcv.cpp	266	269	sqlstr = "SELECT * "
+p_qmts_4800/cm_200001_rcv.cpp	129	133	sqlstr = "   SELECT * "
+p_qmts_4800/cm_200001_rcv.cpp	292	296	sqlstr = " SELECT * "
+p_qmts_4800/cm_200003_rcv.cpp	93	95	sqlstr = " SELECT MIN(TO_NUMBER(JUDGE_CODE)) "
+p_qmts_4800/qmbs25s_h5_inq.cpp	87	87	sql = " SELECT * FROM ( "
+p_qmts_4800/qmbs25s_h5_inq.cpp	88	90	"SELECT A.HEAT_NO, A.PONO, A.SM_PLAN_NO, B.JUDGE_ST_NO ST_NO, A.REFINE_ROUTE_CODE, A.FACTORY_DIV,A. CAST_NO || '-' || A.CAST_DIV_NO CAST_NO_SHOW, "
+p_qmts_4800/qmbs25s_h5_inq.cpp	102	104	CString sql_count = "SELECT COUNT(*) FROM ( ";
+p_qmts_4800/qmbs25s_inq.cpp	98	99	sqlstr = sqlstr = "SELECT * FROM ";
+p_qmts_4800/qmbs25s_inq.cpp	125	126	sqlstr = "SELECT COUNT(1) FROM ";
+p_qmts_4800/qmbs25s_inq.cpp	163	165	sqlstr = "SELECT MAX(PONO_STATUS) "
+p_qmts_4800/qmbs25s_inq.cpp	166	167	"        SELECT PONO_STATUS FROM TPSSM41 WHERE HEAT_NO = @heat_no) ";
+p_qmts_4800/qmbs25s_inq.cpp	183	184	sqlstr = "SELECT LABEL1 "
+p_qmts_4800/qmbs25s_inq.cpp	216	217	sqlstr = "SELECT REP_ELM_SEL_FLAG "
+p_qmts_4800/qmbs25s_inqe.cpp	25	26	sqlstr = " SELECT PONO, ST_NO,HEAT_NO  FROM TPSSM11 WHERE HEAT_NO = @heat_no "
+p_qmts_4800/qmbs25s_inqe.cpp	27	28	"			SELECT PONO, ST_NO,HEAT_NO  FROM TPSSM41 WHERE HEAT_NO = @heat_no ";
+p_qmts_4800/qmbs25s_inqe.cpp	36	37	sqlstr = " select ST_NO from tqmts24 where ST_SAMPLE_NO='"+ st_sample_no +"' ";
+p_qmts_4800/qmbs25s_inqe.cpp	49	54	sqlstr = " SELECT TQMTS02.ELM_CODE, CODE_DESC_3_CONTENT AS  ELM_NAME, CODE_DESC_1_CONTENT AS  ELM_ENAME,MAIN_MIN, MAIN_MAX, MAIN_AIM,SPE_MIN,SPE_MAX,T2.ELM_ACT,
+p_qmts_4800/qmbs25s_inqe.cpp	55	68	" SELECT"
+p_qmts_4800/qmbs25s_inqe.cpp	69	78	" SELECT"
+p_qmts_4800/qmbs25s_inqe.cpp	79	115	" SELECT"
+p_qmts_4800/qmbs25s_inqe.cpp	116	123	" SELECT"
+p_qmts_4800/qmbs25s_inqe.cpp	124	131	" SELECT"
+p_qmts_4800/qmbs25s_inqe.cpp	132	140	" SELECT"
+p_qmts_4800/qmbs25s_inqs.cpp	27	28	sqlstr = "SELECT count(*) FROM TPSSM11 WHERE HEAT_NO =@heat_no";
+p_qmts_4800/qmbs25s_inqs.cpp	41	42	CString sqlstr1 = "SELECT COUNT(*) FROM TPSSM42 WHERE HEAT_NO = '" + heat_no + "' AND DEV_CODE ='C0'";
+p_qmts_4800/qmbs25s_inqs.cpp	47	50	sqlstr = " SELECT " + table_name + ".HEAT_NO, " + table_name + ".PONO, " + table_name + ".ST_NO, " + table_name2 + ".DEV_CODE, " + table_name2 + ".CHARGE_NO, " 
+p_qmts_4800/qmbs25s_inqs.cpp	67	70	sqlstr = " SELECT " + table_name + ".HEAT_NO, " + table_name + ".PONO, " + table_name + ".ST_NO, " + table_name2 + ".DEV_CODE, " + table_name2 + ".CHARGE_NO, " 
+p_qmts_4800/qmbs25s_inqs.cpp	85	86	sqlstr = " SELECT HEAT_NO, PONO, ST_NO, DEV_CODE, ST_SAMPLE_NO, REP_ELM_SEL_FLAG, JUDGE_CODE, ANALYSE_TIME, SAMPLE_TAKEN_TIME, ST_SAMPLE_DIV,ID_ELM "
+p_qmts_4800/qmbsbwu_yh_inqs.cpp	27	30	sqlstr = "SELECT * FROM  TQMTSBWU_YH WHERE 1=1 ";
+p_qmts_4800/qmbsm5_qmts30_add.cpp	66	67	sqlstr = "select count(MAT_NUM), sum(MAT_WT) from tmmsm01 where HEAT_NO = '" + bcls_rec->Tables[0].Rows[i]["HEAT_NO"].ToString() + "' ";
+p_qmts_4800/qmbsm5_qmts30_add.cpp	80	80	sqlstr = " SELECT SAMPLE_TAKEN_TIME  FROM TQMTS24 WHERE ST_SAMPLE_NO = ("
+p_qmts_4800/qmbsm5_qmts30_add.cpp	81	82	"				SELECT ST_SAMPLE_NO  FROM TQMTSB0 WHERE HEAT_NO = @heat_no )";
+p_qmts_4800/qmbsm5_qmts30_add.cpp	94	95	sqlstr = "SELECT RCV_MAT_FLAG FROM TMMSM01 WHERE MAT_NO='" + bcls_rec->Tables[0].Rows[i]["MAT_NO"].ToString() + "' AND HEAT_NO='" + bcls_rec->Tables[0].Rows[i][
+p_qmts_4800/qmbsm5_qmts30_add.cpp	122	123	sqlstr = "select MAT_NUM, MAT_WT from tmmsm01 where HEAT_NO = '" + bcls_rec->Tables[0].Rows[i]["HEAT_NO"].ToString() + "' AND MAT_NO='" + bcls_rec->Tables[0].Ro
+p_qmts_4800/qmbsm5_qmts30_add.cpp	134	135	sqlstr = " SELECT SLAB_CUT_TIME FROM TMMSM01 WHERE MAT_NO = @mat_no ";
+p_qmts_4800/qmts0r_detail.cpp	55	59	sqlstr = " SELECT * FROM QMTS0R WHERE 1 = 1 ";
+p_qmts_4800/qmts0r_detail1.cpp	59	63	sqlstr = " SELECT * FROM QMTS0RXY WHERE 1 = 1 ";
+p_qmts_4800/qmts0r_inq.cpp	69	73	sqlstr = " SELECT * FROM " + v_table_name_1 + " WHERE 1 = 1 ";
+p_qmts_4800/qmts0r_inq1.cpp	53	54	sqlstr = " SELECT T.ELM_01_TC AS ELM_TC,T.ELM_01_MIN_TC AS ELM_MIN_TC,T.ELM_01_MAX_TC AS ELM_MAX_TC,T.ELM_VALUE_01 AS ELM_VALUE "
+p_qmts_4800/qmts0r_inq2.cpp	56	57	sqlstr = " SELECT '01' AS ELM_ROW,T.HEAT_NO,T.ORDER_NO,T.NOW_ROW,T.ELM_01_TC AS ELM_TC,T.ELM_01_MIN_TC AS ELM_MIN_TC,T.ELM_01_MAX_TC AS ELM_MAX_TC,T.ELM_VALUE_0
+p_qmts_4800/qmts0r_pro.cpp	48	48	cmd_inq.SetCommandText(" select MAX(SLAB_CUT_TIME) AS SLAB_CUT_TIME from ( "
+p_qmts_4800/qmts0r_pro.cpp	49	50	" select SLAB_CUT_TIME, HEAT_NO from TMMSM01 "
+p_qmts_4800/qmts0r_pro.cpp	51	52	" select SLAB_CUT_TIME, HEAT_NO from HMMSM01 "
+p_qmts_4800/qmts0r_pro1.cpp	64	64	cmd_inq.SetCommandText(" select MAX(SLAB_CUT_TIME) AS SLAB_CUT_TIME from ( "
+p_qmts_4800/qmts0r_pro1.cpp	65	66	" select SLAB_CUT_TIME, HEAT_NO from TMMSM01 "
+p_qmts_4800/qmts0r_pro1.cpp	67	68	" select SLAB_CUT_TIME, HEAT_NO from HMMSM01 "
+p_qmts_4800/qmts0r_pro1.cpp	176	178	cmd_inq.SetCommandText(" SELECT ANA_TIME_TG FROM qmts0rxy_tg "
+p_qmts_4800/qmts0r_pro1.cpp	220	222	cmd_inq.SetCommandText(" SELECT ANA_TIME_TG FROM qmts0rxy_tg "
+p_qmts_4800/qmts0r_pro1.cpp	256	260	cmd_inq.SetCommandText(" select CHECK_TIME from TQMTS0R05 "
+p_qmts_4800/qmts0r_pro1.cpp	312	345	sqlstr = "SELECT CASE WHEN T.ELM_01_TC = ' ' THEN '01' "
+p_qmts_4800/qmts0rdr_inq.cpp	69	70	cmd_inq_1.SetCommandText("select CODE_DESC_4_CONTENT from TWMSMZD02 WHERE CODE_CLASS = 'YH0RXY' AND CODE_DESC_1_CONTENT = '" + v_userid + "' ");
+p_qmts_4800/qmts0rdr_inq.cpp	133	133	sqlstr = "	SELECT * FROM ( "
+p_qmts_4800/qmts0rdr_inq.cpp	134	136	" SELECT T.*, CASE WHEN T.ELM_01_TC IS NULL OR T.ELM_01_TC = '' THEN '0' ELSE '1' END AS XY_FLAG,"
+p_qmts_4800/qmts0rdr_inq.cpp	137	171	" SELECT T1.*, T2.AYL_FLAG, T2.CHECK_FLAG, T2.DECIDE_CODE,"
+p_qmts_4800/qmts11_add.cpp	39	40	CDbCommand getSeq1("SELECT max(seq_id)+1  FROM TQMTS11", conn);
+p_qmts_4800/qmts11_inq.cpp	66	66	"select * from TQMTS11  where 1=1 ";
+p_qmts_4800/qmts11_inq.cpp	67	70	sqlstr_count = " SELECT COUNT(1) FROM TQMTS11  where 1=1 ";
+p_qmts_4800/qmts21_final_jud.cpp	83	85	sqlstr = " SELECT COUNT(1) "
+p_qmts_4800/qmts21_final_jud.cpp	107	109	sqlstr = " SELECT * "
+p_qmts_4800/qmts21_final_jud.cpp	146	153	sqlstr = " UPDATE TQMTS23 "
+p_qmts_4800/qmts21_force_jud.cpp	185	187	sqlstr = " SELECT COUNT(1) "
+p_qmts_4800/qmts21_force_jud.cpp	208	210	sqlstr = " SELECT * "
+p_qmts_4800/qmts21_force_jud.cpp	336	342	sqlstr = " UPDATE TQMTS23 "
+p_qmts_4800/qmts21_force_jud.cpp	376	378	sqlstr = " UPDATE TQMTS29 "
+p_qmts_4800/qmts21_force_jud.cpp	394	397	sqlstr = " UPDATE TQMTS24 "
+p_qmts_4800/qmts21_force_jud.cpp	414	416	sqlstr = " SELECT SUM(SLAB_WT) "
+p_qmts_4800/qmts21_force_jud.cpp	463	466	sqlstr = " SELECT * "
+p_qmts_4800/qmts21_force_jud.cpp	545	550	sqlstr = "   SELECT * "
+p_qmts_4800/qmts21_inq_21.cpp	51	53	sqlstr = " SELECT * "
+p_qmts_4800/qmts21_inq_23.cpp	65	67	sqlstr = " SELECT * "
+p_qmts_4800/qmts21_inq_27db.cpp	56	59	sqlstr = " SELECT * "
+p_qmts_4800/qmts21_inq_27ly.cpp	56	59	sqlstr = " SELECT * "
+p_qmts_4800/qmts21_inq_29.cpp	53	56	sqlstr = " SELECT * "
+p_qmts_4800/qmts21_inq_29.cpp	73	76	sqlstr = " SELECT * "
+p_qmts_4800/qmts21_inq_sm.cpp	51	54	sqlstr = " SELECT * "
+p_qmts_4800/qmts21_jud.cpp	189	191	sqlstr = " SELECT COUNT(1) "
+p_qmts_4800/qmts21_jud.cpp	212	214	sqlstr = " SELECT * "
+p_qmts_4800/qmts21_jud.cpp	350	356	sqlstr = " UPDATE TQMTS23 "
+p_qmts_4800/qmts21_jud.cpp	390	392	sqlstr = " UPDATE TQMTS29 "
+p_qmts_4800/qmts21_jud.cpp	408	411	sqlstr = " UPDATE TQMTS24 "
+p_qmts_4800/qmts21_jud.cpp	428	430	sqlstr = " SELECT SUM(SLAB_WT) "
+p_qmts_4800/qmts21_jud.cpp	477	480	sqlstr = " SELECT * "
+p_qmts_4800/qmts21_mmgp.cpp	73	75	sqlstr = " SELECT COUNT(1) "
+p_qmts_4800/qmts21_mmgp.cpp	101	106	sqlstr = " UPDATE TMMSM01 "
+p_qmts_4800/qmts21m_inq_23.cpp	73	74	sql = " SELECT A.* ,B.*   FROM " + table_name + " A ";
+p_qmts_4800/qmts21m_inq_23.cpp	78	81	CString sql_count = "SELECT COUNT(*) FROM " + table_name + " A ";
+p_qmts_4800/qmts21m_inq_23.cpp	185	189	cmd1.SetCommandText("SELECT  ST_SAMPLE_NO	 FROM TQMTS24 "
+p_qmts_4800/qmts21m_inq_23.cpp	200	201	cmd1.SetCommandText("SELECT ABNY_CODE,ABN_CONT  FROM TQMTS21  WHERE PONO = @pono ");
+p_qmts_4800/qmts21m_inq_23.cpp	211	212	cmd1.SetCommandText("SELECT PURE_DEGAS_DURATION  FROM TMMSM23  WHERE PONO = @pono "
+p_qmts_4800/qmts21m_inq_23.cpp	223	224	cmd1.SetCommandText("SELECT SUM(O2_SUM_COMSUME)  FROM TMMSM23  WHERE PONO = @pono ");
+p_qmts_4800/qmts21m_inq_23.cpp	233	234	cmd1.SetCommandText("SELECT *  FROM TQMTS0X  WHERE ST_NO = @st_no ");
+p_qmts_4800/qmts21m_inq_24.cpp	68	70	sqlstr = "SELECT * "
+p_qmts_4800/qmts21m_inq_25.cpp	71	73	sqlstr = "SELECT * "
+p_qmts_4800/qmts21m_jud.cpp	138	140	sqlstr = " SELECT HEAT_CONFM_TIME, HEAT_NO "
+p_qmts_4800/qmts21m_jud.cpp	166	168	sqlstr = " SELECT  ST_NO, DECI_ST_NO, FIN_ST_NO, SM_PLAN_NO "
+p_qmts_4800/qmts21m_jud.cpp	229	232	sqlstr = " SELECT  COUNT(MAT_NO) "
+p_qmts_4800/qmts21m_jud.cpp	262	264	sqlstr = " SELECT HEAT_CONFM_TIME, HEAT_NO "
+p_qmts_4800/qmts21m_jud.cpp	289	291	sqlstr = " SELECT  ST_NO, DECI_ST_NO, FIN_ST_NO, SM_PLAN_NO "
+p_qmts_4800/qmts21m_jud.cpp	353	355	sqlstr = " SELECT COUNT(1) "
+p_qmts_4800/qmts21p_inq_elm.cpp	101	105	sqlstr = "SELECT * "
+p_qmts_4800/qmts21p_inq_elm.cpp	147	151	sqlstr = "SELECT * "
+p_qmts_4800/qmts21p_inq_elm.cpp	172	175	sqlstr = "SELECT * "
+p_qmts_4800/qmts21p_inq_elm.cpp	205	209	sqlstr = "SELECT * "
+p_qmts_4800/qmts21p_inq_st.cpp	82	83	sqlstr = "SELECT b.ST_NO,b.VALID_FLAG,b.LABEL1,b.FACTORY_DIV,b.REMARK FROM TQMTS6C a, TQMTS0X b WHERE 1=1 and a.ST_NO_JJ=b.st_no AND b.VALID_FLAG ='1' ";
+p_qmts_4800/qmts21p_inq_st.cpp	112	113	sqlstr = "SELECT  (b.ELM_VALUE -a.MAIN_MAX ) v1,(b.ELM_VALUE -a.MAIN_MIN ) v2,(b.ELM_VALUE -a.SPE_MAX ) v3,(b.ELM_VALUE -a.SPE_MIN ) v4,b.ELM_NAME,b.ELM_VALUE,a
+p_qmts_4800/qmts21p_inq_st.cpp	180	181	sqlstr = "SELECT * FROM TQMTS0X WHERE 1=1  ";
+p_qmts_4800/qmts21p_jud.cpp	104	108	sqlstr = "SELECT * "
+p_qmts_4800/qmts21p_jud.cpp	145	149	sqlstr = "SELECT * "
+p_qmts_4800/qmts21p_jud.cpp	172	175	sqlstr = "SELECT * "
+p_qmts_4800/qmts22_hn_jud.cpp	218	220	sqlstr = " SELECT COUNT(1) "
+p_qmts_4800/qmts22_hn_jud.cpp	244	246	sqlstr = " SELECT * "
+p_qmts_4800/qmts22_hn_jud.cpp	335	337	sqlstr = " SELECT HEAT_NO, PONO ,SLAB_NO  FROM TQMTS2A WHERE HEAT_NO =(SELECT MAX(HEAT_NO)"
+p_qmts_4800/qmts22_hn_jud.cpp	446	449	sqlstr = " UPDATE TQMTS2C"
+p_qmts_4800/qmts22_hn_jud.cpp	494	496	sqlstr_ts2b = "SELECT * "
+p_qmts_4800/qmts22_hn_jud.cpp	617	619	sqlstr = " SELECT * "
+p_qmts_4800/qmts22_inq_23.cpp	54	57	sqlstr = " SELECT * "
+p_qmts_4800/qmts22_inq_27db.cpp	56	59	sqlstr = " SELECT * "
+p_qmts_4800/qmts22_inq_27ly.cpp	56	59	sqlstr = " SELECT * "
+p_qmts_4800/qmts22_inq_2b.cpp	56	59	sqlstr = " SELECT * "
+p_qmts_4800/qmts22_jud.cpp	199	201	sqlstr = " SELECT COUNT(1) "
+p_qmts_4800/qmts22_jud.cpp	224	226	sqlstr = " SELECT * "
+p_qmts_4800/qmts22_jud.cpp	342	346	sqlstr = " SELECT PONO_SLAB "
+p_qmts_4800/qmts23_inq.cpp	112	121	sqlstr = " SELECT * "
+p_qmts_4800/qmts23_inq.cpp	136	145	sqlstr = " SELECT * "
+p_qmts_4800/qmts23_inq.cpp	193	201	sqlstr = " SELECT COUNT(1) "
+p_qmts_4800/qmts23_inq.cpp	237	239	sqlstr = " SELECT * "
+p_qmts_4800/qmts23t802_inq.cpp	43	45	CString sql = " SELECT * FROM  TQMTST802";
+p_qmts_4800/qmts23t802_inq.cpp	48	52	CString sql_count = "SELECT COUNT(*) FROM ( ";
+p_qmts_4800/qmts24s2n_f3.cpp	70	71	sqlstr = " SELECT CODE_DESC_1_CONTENT,CODE FROM TEP0002 WHERE CODE_CLASS = 'QMYS2N' ";
+p_qmts_4800/qmts24s2n_inq.cpp	23	25	CString sql = " SELECT * FROM TQMTS24_INIT ";
+p_qmts_4800/qmts24s2n_inq.cpp	35	39	CString sql_count = "SELECT COUNT(*) FROM ( ";
+p_qmts_4800/qmts25_chk.cpp	107	110	sqlstr = "SELECT ST_NO,PONO "
+p_qmts_4800/qmts25_chk.cpp	159	161	sqlstr = "SELECT PROC_NO FROM "
+p_qmts_4800/qmts25_chk.cpp	162	163	" SELECT PROC_NO FROM TPSSM42 WHERE  SM_PLAN_NO = @sm_plan_no AND AREA_ID = '5' ) "
+p_qmts_4800/qmts25_h5_inq.cpp	31	31	CString sql = " WITH qmts25 AS("
+p_qmts_4800/qmts25_h5_inq.cpp	32	35	"		SELECT"
+p_qmts_4800/qmts25_h5_inq.cpp	36	194	"		SELECT"
+p_qmts_4800/qmts25_h5_inq.cpp	195	220	"		SELECT"
+p_qmts_4800/qmts25_h5_inq.cpp	226	248	CString sql_count = "SELECT COUNT(*) FROM ( ";
+p_qmts_4800/qmts25_inq.cpp	132	136	sqlstr = "SELECT * "
+p_qmts_4800/qmts25_inq.cpp	174	174	Log::Trace("", "","SELECT TQMTS25");
+p_qmts_4800/qmts25_inq.cpp	181	185	sqlstr = " SELECT * "
+p_qmts_4800/qmts25_inq.cpp	208	212	sqlstr = " SELECT * "
+p_qmts_4800/qmts25_inq.cpp	244	247	Log::Trace("", "", "SELECT TQMTS24");
+p_qmts_4800/qmts25_inq.cpp	279	283	sqlstr = "SELECT STATION_NAME "
+p_qmts_4800/qmts25_inq.cpp	322	326	sqlstr = "SELECT * "
+p_qmts_4800/qmts25_inq.cpp	350	354	sqlstr = "SELECT * "
+p_qmts_4800/qmts25_inq.cpp	377	380	sqlstr = "SELECT REC_CREATOR,REC_CREATE_TIME,REC_REVISOR,REC_REVISE_TIME "
+p_qmts_4800/qmts25_inq.cpp	414	417	sqlstr = "SELECT COUNT(1) "
+p_qmts_4800/qmts25_inq_test.cpp	146	150	sqlstr = "SELECT * "
+p_qmts_4800/qmts25_inq_test.cpp	205	212	Log::Trace("", "", "SELECT TQMTS24");
+p_qmts_4800/qmts25_inq_test.cpp	213	217	sqlstr = " SELECT * "
+p_qmts_4800/qmts25_inq_test.cpp	241	245	sqlstr = " SELECT * "
+p_qmts_4800/qmts25_inq_test.cpp	322	326	sqlstr = "SELECT STATION_NAME "
+p_qmts_4800/qmts25_inq_test.cpp	368	372	sqlstr = "SELECT * "
+p_qmts_4800/qmts25_inq_test.cpp	397	401	sqlstr = "SELECT * "
+p_qmts_4800/qmts25_inq_test.cpp	424	427	sqlstr = "SELECT REC_CREATOR,REC_CREATE_TIME,REC_REVISOR,REC_REVISE_TIME "
+p_qmts_4800/qmts25_inq_test.cpp	466	469	sqlstr = "SELECT COUNT(1) "
+p_qmts_4800/qmts25s2n_h5_inq.cpp	23	25	CString sql = "SELECT * FROM TQMTS24 ";
+p_qmts_4800/qmts25s2n_h5_inq.cpp	29	33	CString sql_count = "SELECT COUNT(*) FROM ( ";
+p_qmts_4800/qmts25s_del.cpp	100	103	sqlstr = "SELECT ST_SAMPLE_DIV,REP_ELM_SEL_FLAG "
+p_qmts_4800/qmts25s_inqe.cpp	105	107	sqlstr = "SELECT ST_NO,FACTORY_DIV FROM"
+p_qmts_4800/qmts25s_inqe.cpp	108	109	"  SELECT ST_NO,FACTORY_DIV FROM TPSSM41 WHERE HEAT_NO = @heat_no )"
+p_qmts_4800/qmts25s_inqe.cpp	156	160	sqlstr = "SELECT * "
+p_qmts_4800/qmts25s_inqe.cpp	191	195	sqlstr = "SELECT * "
+p_qmts_4800/qmts25s_inqe.cpp	225	230	sqlstr = "SELECT * "
+p_qmts_4800/qmts25s_inqe.cpp	292	297	sqlstr = "SELECT * "
+p_qmts_4800/qmts25s_inqe.cpp	333	337	sqlstr = "SELECT * "
+p_qmts_4800/qmts25s_inqe.cpp	389	393	sqlstr = "SELECT * "
+p_qmts_4800/qmts25s_inqp.cpp	87	88	sqlstr = "SELECT * FROM "
+p_qmts_4800/qmts25s_inqp.cpp	121	123	sqlstr = "SELECT MAX(PONO_STATUS) "
+p_qmts_4800/qmts25s_inqp.cpp	124	125	"        SELECT PONO_STATUS FROM TPSSM41 WHERE HEAT_NO = @heat_no) ";
+p_qmts_4800/qmts25s_inqp.cpp	141	142	sqlstr = "SELECT LABEL1 "
+p_qmts_4800/qmts25s_inqp.cpp	174	175	sqlstr = "SELECT REP_ELM_SEL_FLAG "
+p_qmts_4800/qmts25s_inqs.cpp	22	23	sqlstr = "SELECT count(*) FROM TPSSM11 WHERE HEAT_NO =@heat_no";
+p_qmts_4800/qmts25s_inqs.cpp	34	38	sqlstr = " SELECT "+table_name+".HEAT_NO, "+table_name+".PONO, "+table_name+".ST_NO, TPSSM12.DEV_CODE, TPSSM12.CHARGE_NO, TPSSM12.SM_PLAN_NO AS PLAN_NO, TPSSM12
+p_qmts_4800/qmts25s_ins.cpp	118	123	sqlstr = "select PROC_NO "
+p_qmts_4800/qmts25s_ins.cpp	151	154	sqlstr = "SELECT STATION_ID,STATION_NO "
+p_qmts_4800/qmts25s_ins.cpp	176	182	sqlstr = "SELECT MAX(ST_SAMPLE_SEQ) "
+p_qmts_4800/qmts25s_upd.cpp	99	102	sqlstr = "SELECT WHOLE_BACKLOG_CODE,ST_SAMPLE_DIV,GAS_TYPE_DIV,ST_SAMPLE_SEQ "
+p_qmts_4800/qmts26_inq.cpp	130	134	sqlstr = "SELECT * "
+p_qmts_4800/qmts26_inq.cpp	168	175	Log::Trace("", "","SELECT TQMTS24...");
+p_qmts_4800/qmts26_inq.cpp	176	183	sqlstr = " SELECT * "
+p_qmts_4800/qmts26_inq.cpp	196	202	sqlstr = " SELECT * "
+p_qmts_4800/qmts26_inq.cpp	291	295	sqlstr = "SELECT * "
+p_qmts_4800/qmts26_inq.cpp	320	323	sqlstr = "SELECT REC_CREATOR,REC_CREATE_TIME,REC_REVISOR,REC_REVISE_TIME "
+p_qmts_4800/qmts26_inq.cpp	357	363	sqlstr = "SELECT COUNT(1) "
+p_qmts_4800/qmts26_ins.cpp	122	124	sqlstr = "SELECT PONO,SM_PLAN_NO,ST_NO,FIN_ST_NO "
+p_qmts_4800/qmts26_ins.cpp	176	181	sqlstr = "SELECT MAX(ST_SAMPLE_SEQ) "
+p_qmts_4800/qmts26_ins.cpp	211	214	sqlstr = "SELECT count(*) "
+p_qmts_4800/qmts26_ins.cpp	228	229	Log::Trace("", "","INSERT TQMTS26");
+p_qmts_4800/qmts26_ins.cpp	240	240	Log::Trace("", "", "INSERT TQMTS26-2");
+p_qmts_4800/qmts26_ins.cpp	248	252	sqlstr = "SELECT * "
+p_qmts_4800/qmts26_upd.cpp	102	105	sqlstr = "SELECT * "
+p_qmts_4800/qmts26_upd.cpp	153	157	sqlstr = "SELECT * "
+p_qmts_4800/qmts26s2n_h5_inq.cpp	43	43	CString sql = " WITH qmts26 AS("
+p_qmts_4800/qmts26s2n_h5_inq.cpp	44	47	"		SELECT"
+p_qmts_4800/qmts26s2n_h5_inq.cpp	48	77	"		SELECT"
+p_qmts_4800/qmts26s2n_h5_inq.cpp	78	103	"		SELECT"
+p_qmts_4800/qmts26s2n_h5_inq.cpp	109	113	CString sql_count = "SELECT COUNT(*) FROM ( ";
+p_qmts_4800/qmts27_del.cpp	92	94	sqlstr = " SELECT MIN(TO_NUMBER(JUDGE_CODE)) "
+p_qmts_4800/qmts27_inq.cpp	54	57	sqlstr = "SELECT MAT_NO FROM TQMTS27 WHERE 1=1";
+p_qmts_4800/qmts27_ins.cpp	97	99	sqlstr = " SELECT COUNT(1) "
+p_qmts_4800/qmts27_ins.cpp	117	122	sqlstr = " SELECT COUNT(1) "
+p_qmts_4800/qmts27_ins.cpp	162	164	sqlstr = " SELECT HEAT_NO,PONO,ST_NO,PREC_ST_NO,DECI_ST_NO,FIN_ST_NO,JUDGE_ST_NO,ROUND(MAT_LEN),ROUND(MAT_WIDTH) "
+p_qmts_4800/qmts27_ins.cpp	202	204	sqlstr = " SELECT SM_PLAN_NO "
+p_qmts_4800/qmts27_mat_detail.cpp	22	23	sqlstr = "SELECT REC_CREATOR,REC_REVISOR,REC_REVISE_TIME,ARCHIVE_FLAG,ARCHIVE_STAMP_NO,COMPANY_CODE,COMPANY_NAME,HEAT_NO,ST_NO,MAT_NO,MAT_THICK,CENTER_SGRG_PORO
+p_qmts_4800/qmts27_upd.cpp	87	90	sqlstr = " SELECT REC_CREATOR,REC_CREATE_TIME,ARCHIVE_FLAG "
+p_qmts_4800/qmts27_upd.cpp	119	121	sqlstr = " SELECT HEAT_NO,PONO,ST_NO,PREC_ST_NO,DECI_ST_NO,FIN_ST_NO,JUDGE_ST_NO,ROUND(MAT_WIDTH),ROUND(MAT_THICK) "
+p_qmts_4800/qmts27_upd.cpp	158	160	sqlstr = " SELECT SM_PLAN_NO "
+p_qmts_4800/qmts28_del.cpp	82	85	sqlstr = "SELECT SEND_NUM "
+p_qmts_4800/qmts28_inq.cpp	39	42	sqlstr = "SELECT * FROM  TMMSM01 WHERE 1=1 ";
+p_qmts_4800/qmts28_inq.cpp	67	70	sqlstr = "SELECT * FROM TQMTS2J WHERE 1=1 ";
+p_qmts_4800/qmts28_ins.cpp	97	100	sqlstr = "SELECT count(1) "
+p_qmts_4800/qmts28_ins.cpp	122	124	sqlstr = "SELECT HEAT_NO,PONO,ST_NO "
+p_qmts_4800/qmts28_ins.cpp	153	155	sqlstr = "SELECT substr(MAX(HEAT_NO),length(MAX(HEAT_NO)),1)"
+p_qmts_4800/qmts28_ins.cpp	272	275	sqlstr = "SELECT CODE_DESC_1_CONTENT "
+p_qmts_4800/qmts28_ins.cpp	295	298	sqlstr = "SELECT CODE_DESC_1_CONTENT "
+p_qmts_4800/qmts28_ins.cpp	328	331	sqlstr = "SELECT count(1) "
+p_qmts_4800/qmts28_ins.cpp	353	355	sqlstr = "SELECT HEAT_NO,PONO,ST_NO "
+p_qmts_4800/qmts28_ins.cpp	379	381	sqlstr = "SELECT  substr(MAX(HEAT_NO),length(MAX(HEAT_NO)),1)"
+p_qmts_4800/qmts28_ins.cpp	451	454	sqlstr = "SELECT CODE_DESC_1_CONTENT "
+p_qmts_4800/qmts28_ins.cpp	474	477	sqlstr = "SELECT CODE_DESC_1_CONTENT "
+p_qmts_4800/qmts28_snd.cpp	83	86	sqlstr = "SELECT SEND_NUM "
+p_qmts_4800/qmts28_upd.cpp	81	84	sqlstr = "SELECT SEND_NUM "
+p_qmts_4800/qmts28_upd.cpp	109	112	sqlstr = "SELECT VERSION,HEAT_NO,PONO,ST_NO "
+p_qmts_4800/qmts28_upd.cpp	153	156	sqlstr = "SELECT CODE_DESC_1_CONTENT "
+p_qmts_4800/qmts28_upd.cpp	176	179	sqlstr = "SELECT CODE_DESC_1_CONTENT "
+p_qmts_4800/qmts29_chk.cpp	89	91	sqlstr = "SELECT ST_NO "
+p_qmts_4800/qmts29_inq.cpp	105	109	sqlstr = "SELECT * "
+p_qmts_4800/qmts29_inq.cpp	138	138	Log::Trace("", "", "SELECT TQMTS29");
+p_qmts_4800/qmts29_inq.cpp	163	168	sqlstr = " SELECT * "
+p_qmts_4800/qmts29_inq.cpp	221	224	sqlstr = "SELECT * "
+p_qmts_4800/qmts29_inq.cpp	281	285	sqlstr = "SELECT COUNT(1) "
+p_qmts_4800/qmts29_inq_h5.cpp	115	119	sqlstr = "SELECT * "
+p_qmts_4800/qmts29_inq_h5.cpp	158	183	Log::Trace("", "", "SELECT TQMTS29");
+p_qmts_4800/qmts29_inq_h5.cpp	184	189	sqlstr = " SELECT * "
+p_qmts_4800/qmts29_inq_h5.cpp	245	248	sqlstr = "SELECT * "
+p_qmts_4800/qmts29_inq_h5.cpp	305	309	sqlstr = "SELECT COUNT(1) "
+p_qmts_4800/qmts29_ins.cpp	101	103	sqlstr = "SELECT COUNT(*) "
+p_qmts_4800/qmts29_ins.cpp	133	135	sqlstr = "SELECT PONO,ST_NO,JUDGE_CODE,FIN_ST_NO "
+p_qmts_4800/qmts29_ins.cpp	171	175	sqlstr = "SELECT * "
+p_qmts_4800/qmts29_upd.cpp	98	100	sqlstr = "SELECT REC_CREATOR,REC_CREATE_TIME,PONO,ST_NO "
+p_qmts_4800/qmts29_upd.cpp	139	143	sqlstr = "SELECT * "
+p_qmts_4800/qmts2b_inq.cpp	79	79	Log::Trace("", "","SELECT TQMTS2A");
+p_qmts_4800/qmts2b_inq.cpp	87	91	sqlstr = " SELECT * "
+p_qmts_4800/qmts2b_inq.cpp	117	121	sqlstr = " SELECT * "
+p_qmts_4800/qmts2b_inq.cpp	134	135	Log::Trace("", "","SELECT TQMTS2B");
+p_qmts_4800/qmts2b_inq.cpp	146	149	sqlstr = " SELECT * "
+p_qmts_4800/qmts2b_inq.cpp	177	180	sqlstr = " SELECT * "
+p_qmts_4800/qmts2b_inq.cpp	211	215	sqlstr = " SELECT * "
+p_qmts_4800/qmts2b_ins.cpp	112	115	sqlstr = "SELECT PONO,HEAT_NO,ST_NO,SAMPLE_POS,SAMPLE_MODE_CODE,SAMPLE_MODE,REC_CREATE_TIME "
+p_qmts_4800/qmts2b_ins.cpp	154	157	sqlstr = "SELECT count(ST_SAMPLE_NO) "
+p_qmts_4800/qmts2b_ins.cpp	179	183	sqlstr = "SELECT ST_SAMPLE_NO "
+p_qmts_4800/qmts2b_ins.cpp	214	215	Log::Trace("", "","INSERT TQMTS2C");
+p_qmts_4800/qmts2b_ins.cpp	240	244	sqlstr = "SELECT * "
+p_qmts_4800/qmts2b_upd.cpp	94	96	sqlstr = "SELECT * "
+p_qmts_4800/qmts2b_upd.cpp	145	149	sqlstr = "SELECT * "
+p_qmts_4800/qmts30_add.cpp	54	55	CString	sqlzr = "SELECT COUNT(*) FROM TQMTS30 WHERE MAT_NO ='" + mat_no + "'";
+p_qmts_4800/qmts30_inq.cpp	86	89	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmts30_inq.cpp	91	95	sqlstr = "SELECT * FROM TQMTS30 WHERE MAT_NO <> ' ' AND FULL_FURNACE='否'";
+p_qmts_4800/qmts30_inq_ls.cpp	87	90	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmts30_inq_ls.cpp	91	95	sqlstr = "SELECT * FROM hqmts30 WHERE MAT_NO <> ' ' AND FULL_FURNACE='否'";
+p_qmts_4800/qmts30lc_inq.cpp	96	99	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmts30lc_inq.cpp	101	106	sqlstr = " SELECT T1.REC_CREATOR,T1.MESSAGE_LIST, T1.REC_CREATE_TIME,T1.C_DIV, T1.REC_REVISOR,T1.REMARK_3, T1.REC_REVISE_TIME,T1.AREA, T1.REPORT_TIME,T1.NOTE, T
+p_qmts_4800/qmts30lc_inq_ls.cpp	94	97	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmts30lc_inq_ls.cpp	99	104	sqlstr = " SELECT T1.REC_CREATOR, T1.MESSAGE_LIST,T1.REC_CREATE_TIME,T1.C_DIV,T1.REMARK_3,T1.REMARK_4,T1.REMARK_5,T1.NOTE,T1.REMARK_6, T1.REC_REVISOR, T1.REC_RE
+p_qmts_4800/qmts30lh_add.cpp	56	57	CString	sqlzr = "SELECT COUNT(*) FROM TQMTS30 WHERE HEAT_NO ='" + heat_no + "'";
+p_qmts_4800/qmts9a_inq.cpp	139	139	Log::Trace("", "", "SELECT TQMTS9A");
+p_qmts_4800/qmts9a_inq.cpp	151	154	sqlstr = " SELECT * "
+p_qmts_4800/qmts9a_inq.cpp	205	207	sqlstr = "SELECT COUNT(1) "
+p_qmts_4800/qmts9a_ins.cpp	122	124	sqlstr = "SELECT PONO,SM_PLAN_NO,ST_NO,FIN_ST_NO "
+p_qmts_4800/qmts9a_ins.cpp	152	154	sqlstr = "SELECT STATION_ID,STATION_NO "
+p_qmts_4800/qmts9a_ins.cpp	176	181	sqlstr = "SELECT MAX(ST_SAMPLE_SEQ) "
+p_qmts_4800/qmts9a_ins.cpp	211	214	sqlstr = "SELECT count(*) "
+p_qmts_4800/qmts9a_ins.cpp	228	229	Log::Trace("", "", "INSERT TQMTS26");
+p_qmts_4800/qmts9a_ins.cpp	240	240	Log::Trace("", "", "INSERT TQMTS26-2");
+p_qmts_4800/qmts9a_ins.cpp	248	252	sqlstr = "SELECT * "
+p_qmts_4800/qmts9a_upd.cpp	102	105	sqlstr = "SELECT * "
+p_qmts_4800/qmts9a_upd.cpp	153	157	sqlstr = "SELECT * "
+p_qmts_4800/qmts_get_czdm.cpp	55	59	sqlstr = " SELECT * "
+p_qmts_4800/qmtsb0s2n_inq.cpp	54	56	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtsb0s2n_inq.cpp	59	62	sqlstr = "SELECT * FROM TQMTSB0  WHERE 1=1 ";
+p_qmts_4800/qmtsbwu_dy_pro.cpp	44	45	CString sqlstr_yh = "SELECT USER_ID FROM TQMTSBWU_YH WHERE USER_ID='" + bcls_rec->Tables[0].Rows[i]["USER_ID"].ToString() + "' AND CODE='" + bcls_rec->Tables["R
+p_qmts_4800/qmtsbwu_dy_pro.cpp	62	63	CString sqlstr1 = "SELECT MAX(SEQ_NO) FROM TQMTSBWU_YH WHERE CODE='" + bcls_rec->Tables["ROW_CODE"].Rows[0]["CODE"].ToString() + "'";
+p_qmts_4800/qmtsbwu_dy_pro.cpp	86	87	sqlstr = "SELECT USER_ID FROM TQMTSBWU_YH WHERE CODE= '" + bcls_rec->Tables["ROW_CODE"].Rows[0]["CODE"].ToString() + "'";
+p_qmts_4800/qmtsbwu_inq.cpp	32	35	sqlstr = "SELECT * FROM  TQMTSBWU WHERE 1=1 ";
+p_qmts_4800/qmtsbwu_ins.cpp	32	35	sqlstr = "SELECT * FROM  TQMTSBWU_H WHERE 1=1 ";
+p_qmts_4800/qmtsbwu_pro.cpp	56	57	CString sqlstr = "SELECT COUNT(*) FROM TQMTSBWU WHERE CODE= '" + bcls_rec->Tables[0].Rows[0]["CODE"].ToString().Trim() + "'";
+p_qmts_4800/qmtsbwu_pro.cpp	114	115	CString sqlstr = "SELECT USER_ID FROM TQMTSBWU_YH WHERE USER_ID='" + bcls_rec->Tables["B_ADD"].Rows[i]["USER_ID"].ToString() + "' AND CODE='" + bcls_rec->Tables
+p_qmts_4800/qmtsbwu_pro.cpp	129	130	CString sqlstr1 = "SELECT MAX(SEQ_NO) FROM TQMTSBWU_YH WHERE CODE='" + bcls_rec->Tables["ROW_CODE"].Rows[0]["CODE"].ToString() + "'";
+p_qmts_4800/qmtsbwu_pro.cpp	148	149	CString sqlstr = "SELECT USER_ID FROM TQMTSBWU_YH WHERE CODE= '" + bcls_rec->Tables["ROW_CODE"].Rows[0]["CODE"].ToString() + "'";
+p_qmts_4800/qmtsbwu_pro.cpp	193	194	CString sqlstr = "SELECT USER_ID FROM TQMTSBWU_YH WHERE CODE= '" + bcls_rec->Tables["ROW_CODE"].Rows[0]["CODE"].ToString() + "'";
+p_qmts_4800/qmtsbwu_pro.cpp	241	242	CString sqlstr = "SELECT USER_ID FROM TQMTSBWU_YH WHERE CODE= '" + bcls_rec->Tables["ROW_CODE"].Rows[0]["CODE"].ToString() + "'";
+p_qmts_4800/qmtscb_add.cpp	111	115	sqlstr = " select mat_code,mat_name,XY_FLAG"
+p_qmts_4800/qmtscb_add.cpp	142	146	sqlstr = " select decode(USE_CR,0,0,round(UNIT_PRICE/USE_CR,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_add.cpp	156	160	sqlstr = " select decode(USE_NI,0,0,round(UNIT_PRICE/USE_NI,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_add.cpp	169	173	sqlstr = " select decode(USE_MO,0,0,round(UNIT_PRICE/USE_MO,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_add.cpp	183	187	sqlstr = " select round(UNIT_PRICE/100,3) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_add.cpp	199	204	sqlstr = " update tqmtscb00_dr set UNIT_PRICE_NI = round(USE_CR*@unit_cr+USE_NI*@unit_ni+USE_MO*@unit_mo-UNIT_PRICE,2)"
+p_qmts_4800/qmtscb_add.cpp	494	499	sqlstr = " select mat_code,mat_name"
+p_qmts_4800/qmtscb_add.cpp	609	611	sqlstr = " SELECT "
+p_qmts_4800/qmtscb_del.cpp	410	411	sqlstr = "SELECT  LPAD(TO_CHAR(RESUME_SEQ_NO.NEXTVAL), 8, '0') FROM DUAL ";
+p_qmts_4800/qmtscb_del.cpp	420	425	sqlstr = " update tmmsm0r91 set RESUME_SEQ_NO=@resume_seq_no "
+p_qmts_4800/qmtscb_del.cpp	438	439	sqlstr = "select T.STEEL_WT from tmmsm0r91 T WHERE T.RESUME_SEQ_NO= @resume_seq_no";
+p_qmts_4800/qmtscb_del.cpp	465	466	sqlstr = "select T.BACKC2 from TMMSMOPR T WHERE T.RESUME_SEQ_NO= @resume_seq_no";
+p_qmts_4800/qmtscb_edit.cpp	145	150	sqlstr = " select decode(USE_CR,0,0,round(UNIT_PRICE/USE_CR,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_edit.cpp	160	165	sqlstr = " select decode(USE_NI,0,0,round(UNIT_PRICE/USE_NI,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_edit.cpp	174	179	sqlstr = " select decode(USE_MO,0,0,round(UNIT_PRICE/USE_MO,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_edit.cpp	189	194	sqlstr = " select round(UNIT_PRICE/100,3) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_edit.cpp	205	211	sqlstr = " update tqmtscb00_dr set UNIT_PRICE_NI = round(USE_CR*@unit_cr+USE_NI*@unit_ni+USE_MO*@unit_mo-UNIT_PRICE,2)"
+p_qmts_4800/qmtscb_edit.cpp	257	262	sqlstr = " select decode(USE_CR,0,0,round(UNIT_PRICE/USE_CR,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_edit.cpp	272	277	sqlstr = " select decode(USE_NI,0,0,round(UNIT_PRICE/USE_NI,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_edit.cpp	286	291	sqlstr = " select decode(USE_MO,0,0,round(UNIT_PRICE/USE_MO,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_edit.cpp	301	306	sqlstr = " select round(UNIT_PRICE/100,3) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_edit.cpp	317	323	sqlstr = " update tqmtscb00_dr set UNIT_PRICE_NI = round(USE_CR*@unit_cr+USE_NI*@unit_ni+USE_MO*@unit_mo-UNIT_PRICE,2)"
+p_qmts_4800/qmtscb_inexcel.cpp	110	114	sqlstr = " select mat_code,mat_name,XY_FLAG"
+p_qmts_4800/qmtscb_inexcel.cpp	141	146	sqlstr = " select decode(USE_CR,0,0,round(UNIT_PRICE/USE_CR,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	156	161	sqlstr = " select decode(USE_NI,0,0,round(UNIT_PRICE/USE_NI,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	170	175	sqlstr = " select decode(USE_MO,0,0,round(UNIT_PRICE/USE_MO,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	185	190	sqlstr = " select round(UNIT_PRICE/100,3) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	202	208	sqlstr = " update tqmtscb00_dr set UNIT_PRICE_NI = round(USE_CR*@unit_cr+USE_NI*@unit_ni+USE_MO*@unit_mo-UNIT_PRICE,2)"
+p_qmts_4800/qmtscb_inexcel.cpp	240	245	sqlstr = " select mat_code,mat_name,XY_FLAG"
+p_qmts_4800/qmtscb_inexcel.cpp	272	277	sqlstr = " select decode(USE_CR,0,0,round(UNIT_PRICE/USE_CR,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	287	292	sqlstr = " select decode(USE_NI,0,0,round(UNIT_PRICE/USE_NI,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	301	306	sqlstr = " select decode(USE_MO,0,0,round(UNIT_PRICE/USE_MO,3)) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	316	321	sqlstr = " select round(UNIT_PRICE/100,3) from tqmtscb00_dr"
+p_qmts_4800/qmtscb_inexcel.cpp	333	339	sqlstr = " update tqmtscb00_dr set UNIT_PRICE_NI = round(USE_CR*@unit_cr+USE_NI*@unit_ni+USE_MO*@unit_mo-UNIT_PRICE,2)"
+p_qmts_4800/qmtscb_inexcel.cpp	626	631	sqlstr = " select mat_code,mat_name,mat_name_t"
+p_qmts_4800/qmtscb_inexcel.cpp	770	772	sqlstr = " SELECT "
+p_qmts_4800/qmtscb_inq.cpp	113	117	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	119	122	sqlstr = "SELECT * FROM TQMTSCB00_DR"
+p_qmts_4800/qmtscb_inq.cpp	178	182	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	184	187	sqlstr = "SELECT * FROM TQMTSCB00_DR"
+p_qmts_4800/qmtscb_inq.cpp	237	240	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	242	246	sqlstr = "SELECT * FROM TQMTSCB01_DR WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	283	286	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	288	292	sqlstr = "SELECT * FROM TQMTSCB02_DR WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	327	330	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	332	336	sqlstr = "SELECT * FROM TQMTSCB03_DR WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	370	373	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	375	379	sqlstr = "SELECT * FROM TQMTSCB04_DR WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	404	407	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	409	413	sqlstr = "SELECT * FROM TQMTSCB05_DR WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	449	452	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	454	458	sqlstr = "SELECT * FROM TQMTSCB06_DR WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	494	497	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	499	503	sqlstr = "SELECT * FROM TQMTSCB07_DR WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	542	545	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	547	551	sqlstr = "SELECT * FROM TQMTSCB08_DR WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	597	600	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	602	606	sqlstr = "SELECT * FROM TQMTSCB09_DR WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	653	656	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	658	662	sqlstr = "SELECT * FROM TQMTSCB03_FX WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	693	696	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	698	702	sqlstr = "SELECT * FROM ttk0001 WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	740	743	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	745	750	sqlstr = "SELECT * FROM TQMTSCB11A_DR WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	790	793	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	795	798	sqlstr = "SELECT * FROM TQMTSCB01_EN WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	844	847	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	849	853	sqlstr = "SELECT * FROM TMMSMW5 WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	881	884	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	886	890	sqlstr = "SELECT * FROM TMMSM2A_YL2 WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	917	920	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	922	926	sqlstr = "SELECT * FROM TQMTSCB11B_DR WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	953	956	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	958	964	sqlstr = "SELECT * FROM (select T.DATE_C,T.ST_NO,round(SUM(T.UNIT_PRICE*T.WT_UNIT)) as UNIT_PRICE,round(SUM(T.UNIT_PRICE_XY)) as UNIT_PRICE_XY from TQMTSCB11C t
+p_qmts_4800/qmtscb_inq.cpp	998	1001	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inq.cpp	1003	1007	sqlstr = "SELECT * FROM TQMTSCB11D_DR WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	1075	1079	sqlstr = "SELECT distinct COMPOSE_LIST_NO2,DATE_TIME,DATE_C,GRADE_TYPE1,F_ROUTE1,STATUS_DESC FROM TQMTSCB11D_DR WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	1151	1151	sqlstr = "SELECT * FROM (SELECT t.*,g.end_time FROM TMMSM0R91 t,tmmsmgy05 g  WHERE t.heat_no=g.heat_no) WHERE 1=1";
+p_qmts_4800/qmtscb_inq.cpp	1155	1159	sqlstr = "SELECT * FROM (SELECT t.*,g.end_time FROM  (select t1.* from (SELECT t0.*, row_number() over (partition by HEAT_NO ORDER BY rec_create_time desc) max_
+p_qmts_4800/qmtscb_inq.cpp	1225	1228	sqlstr = "select * from tmmsmgy05 t WHERE HEAT_NO like 'A%'";
+p_qmts_4800/qmtscb_inq.cpp	1268	1274	sqlstr = "select * from"
+p_qmts_4800/qmtscb_inqs.cpp	70	73	sqlstr_count = " SELECT COUNT(1) "
+p_qmts_4800/qmtscb_inqs.cpp	75	81	sqlstr = "SELECT * FROM TQMTSCB11C WHERE 1=1";
+p_qmts_4800/qmtscb_inqsamg.cpp	64	64	sqlstr_count = " SELECT COUNT(1)+1 FROM" + sqlstr_temp;
+p_qmts_4800/qmtscb_inqsamg.cpp	66	67	sqlstr1 = "SELECT T.AREA_CODE,T.YIELD,T.MAT_CODE_NAME,T.WEIGHT,T.C_VALUE,T.SI_VALUE,T.MN_VALUE,T.P_VALUE,T.S_VALUE,T.CR_VALUE,T.NI_VALUE,T.MO_VALUE,T.CU_VALUE,T
+p_qmts_4800/qmtscb_inqsaod.cpp	61	61	sqlstr_count = " SELECT COUNT(1)+1 FROM" + sqlstr_temp;
+p_qmts_4800/qmtscb_inqsaod.cpp	63	64	sqlstr1 = "SELECT T.AREA_CODE,T.YIELD,T.MAT_CODE_NAME,T.WEIGHT,T.C_VALUE,T.SI_VALUE,T.MN_VALUE,T.P_VALUE,T.S_VALUE,T.CR_VALUE,T.NI_VALUE,T.MO_VALUE,T.CU_VALUE,T
+p_qmts_4800/qmtscb_inqseaf.cpp	64	64	sqlstr_count = " SELECT COUNT(1)+1 FROM" + sqlstr_temp;
+p_qmts_4800/qmtscb_inqseaf.cpp	66	67	sqlstr1 = "SELECT T.AREA_CODE,T.YIELD,T.MAT_CODE_NAME,T.WEIGHT,T.C_VALUE,T.SI_VALUE,T.MN_VALUE,T.P_VALUE,T.S_VALUE,T.CR_VALUE,T.NI_VALUE,T.MO_VALUE,T.CU_VALUE,T
+p_qmts_4800/qmtslg_inq.cpp	86	88	sqlstr = CString(" SELECT count(1) "
+p_qmts_4800/qmtslg_inq.cpp	122	124	sqlstr = CString("SELECT * "
+p_qmts_4800/qmtssq_inq.cpp	36	39	sqlstr = "SELECT * FROM  TQMTSSQ WHERE 1=1 ";
+p_qmts_4800/qmtssq_pro.cpp	43	44	CString sqlstr1 = "SELECT MAX(KEY_SEQ) FROM  TQMTSSQ";
+p_qmts_4800/qmtswg_inq.cpp	36	39	sqlstr = "SELECT * FROM  TQMTSWG WHERE 1=1 ";
+p_qmts_4800/qmtswg_pro.cpp	75	76	CString	sqlzr = "SELECT COUNT(*) FROM TEP0002 WHERE CODE_CLASS='QMWG01' AND CODE_DESC_1_CONTENT ='" + bcls_rec->Tables[0].Rows[i]["SAP_ZRDW_DESC"].ToString().Tr
+p_qmts_4800/qmtswg_pro.cpp	90	91	CString	sqllx = "SELECT COUNT(*) FROM TEP0002 WHERE CODE_CLASS='QMWG02' AND CODE_DESC_1_CONTENT ='" + bcls_rec->Tables[0].Rows[i]["UNRULL_FLAG_LX"].ToString().T
+p_qmts_4800/qmtswg_pro.cpp	105	106	CString	sqljb = "SELECT COUNT(*) FROM TEP0002 WHERE CODE_CLASS='QMWG03' AND CODE_DESC_1_CONTENT ='" + bcls_rec->Tables[0].Rows[i]["UNRULL_FLAG_ID"].ToString().T
+p_qmts_4800/qmtswg_pro.cpp	120	121	CString sqlstr1 = "SELECT MAX(KEY_SEQ) FROM TQMTSWG ";
+p_qmts_4810/qm_push_baowu_wb.cpp	131	133	sqlstr = " SELECT  MODULE_NAME,LOGINNAME,LOGINNAME_LIST,MESSAGE_TITLE,MESSAGE_LIST,KZABSCHL "
+p_qmts_4810/qm_push_baowu_wb.cpp	156	158	sqlstr = " SELECT  SEND_FLAG "
+p_qmts_4850/cm_002128_rcv.cpp	106	110	CString old_if_hr = Db::QueryCString(" select CODE_DESC_3_CONTENT from TWMSMZD02 where CODE_CLASS = 'WM02' and CODE =(select GUIDE_DEST from tmmsm01 where MAT_N
+p_qmts_4850/cm_0rt805_rcv.cpp	103	104	sqlstr = "SELECT CASE WHEN max(now_row) IS NULL THEN 0 ELSE max(now_row) END FROM TQMTS0R05 where heat_no='" + v_heat_no + "'and order_no='" + v_order_no + "'";
+p_qmts_4850/f_qm_002113_snd.cpp	35	40	sqlstr = "SELECT "
+p_qmts_4850/qm_002110_rcv.cpp	46	47	sqlstr = "DELETE  FROM NCX_ST_STEEL_CARD_R WHERE st_no = @st_no";
+p_qmts_4850/qm_002110_rcv.cpp	51	119	sqlstr = " insert into NCX_ST_STEEL_CARD_R"
+p_qmts_4850/qm_002110_rcv.cpp	120	188	"			select"
+p_qmts_4850/qm_002112_rcv.cpp	44	45	sqlstr = " select * from tqmts0x where ELM_STD_IDX_A='" + tqmts02["IDX_NO"].ToString() + "' ";
+p_qmts_4860/cm_qxsm01_rcv.cpp	187	189	sqlstr = " SELECT COUNT(1) "
+p_qmts_4860/cm_qxsm01_rcv.cpp	210	212	sqlstr = " SELECT * "
+p_qmts_4860/cm_qxsm01_rcv.cpp	257	263	sqlstr = " UPDATE TQMTS23 "
+p_qmts_4860/cm_qxsm01_rcv.cpp	297	299	sqlstr = " UPDATE TQMTS29 "
+p_qmts_4860/cm_qxsm01_rcv.cpp	315	318	sqlstr = " UPDATE TQMTS24 "
+p_qmts_4860/cm_qxsm01_rcv.cpp	335	337	sqlstr = " SELECT SUM(SLAB_WT) "
+p_qmts_4860/cm_qxsm01_rcv.cpp	383	386	sqlstr = " SELECT * "
+p_qmts_4860/cm_qxsm02_rcv.cpp	199	201	sqlstr = " SELECT COUNT(1) "
+p_qmts_4860/cm_qxsm02_rcv.cpp	224	226	sqlstr = " SELECT * "
+p_qmts_4860/cm_qxsm02_rcv.cpp	342	346	sqlstr = " SELECT PONO_SLAB "
+p_qmts_4860/f_mmsm_hjjrl_proc.cpp	70	73	sqlstr1 = "SELECT ST_NO FROM TMMSM27 WHERE HEAT_NO = '" + heat_no + "'";
+p_qmts_4860/f_mmsm_hjjrl_proc.cpp	91	93	sqlstr = "SELECT * FROM(SELECT  HEAT_NO,'" + sta_code + "' ASGW,SUM(DEVO_WT) / 1000 AS WT FROM TMMSM2A_YL WHERE HEAT_NO = '" + heat_no + "' AND HEAT_NO LIKE 'A%
+p_qmts_4860/form_helper.cpp	22	25	sqlstr = "SELECT FORM_BASE_NAME,FORM_NAME FROM TESFORMPARA WHERE FORM_BASE_NAME = @form_base_name";
+p_qmts_4860/mmsm_bc_pro.cpp	49	51	sqlstr = "SELECT  COUNT(*) "
+p_qmts_4860/mmsm_bc_pro.cpp	65	69	sqlstr = "SELECT  BUNKER_NO, MAT_CODE, ROUND(STOCK_WT/1000) "
+p_qmts_4860/mmsm_drcl_pro.cpp	94	96	sqlstr = "SELECT  ROUND(SUM(MAT_ACT_WT)) MAT_ACT_WT, substr(to_date(sysdate - 1), 0, 2) RECV_TIME FROM VMMSMTS_CGCL";
+p_qmts_4860/mmsm_drcl_pro.cpp	117	119	sqlstr = "SELECT  ROUND(SUM(MAT_ACT_WT)/10000,2) MAT_ACT_WT  FROM VMMSMTS_CGCL_LJ";
+p_qmts_4860/mmsm_drcl_pro.cpp	137	139	sqlstr = "SELECT  ROUND(SUM(MAT_ACT_WT)) MAT_ACT_WT FROM VMMSMTS_BXGCL";
+p_qmts_4860/mmsm_drcl_pro.cpp	158	160	sqlstr = "SELECT  ROUND(SUM(MAT_ACT_WT)/10000,2) MAT_ACT_WT  FROM VMMSMTS_BXGCL_LJ";
+p_qmts_4860/mmsm_drcl_pro.cpp	177	178	sqlstr = "SELECT ROUND(SUM(MEND_BEFORE_WEIGHT)), COUNT(MEND_BEFORE_WEIGHT), substr(to_date(sysdate - 1), 0, 2) DATE_TIME_TO "
+p_qmts_4860/mmsm_drcl_pro.cpp	199	201	sqlstr = "SELECT ROUND(SUM(MAT_ACT_WT)), substr(to_date(sysdate - 1), 0, 2) DATE_TIME_TO  FROM MMSM_MR_KC WHERE C_DIV = '2'";
+p_qmts_4860/mmsm_drcl_pro.cpp	218	220	sqlstr = "SELECT ROUND(SUM(MAT_ACT_WT))  FROM MMSM_MR_KC WHERE C_DIV = '1' ";
+p_qmts_4860/mmsm_fglc_pro.cpp	51	54	sqlstr = "SELECT  COUNT(*) "
+p_qmts_4860/mmsm_fglc_pro.cpp	68	71	sqlstr = "SELECT BUNKER_NO, MAT_CODE, ROUND(STOCK_WT/1000) "
+p_qmts_4860/mmsm_hc_pro.cpp	51	53	sqlstr = "SELECT  COUNT(*) "
+p_qmts_4860/mmsm_hc_pro.cpp	67	69	sqlstr = "SELECT  BUNKER_NO, MAT_CODE, ROUND(STOCK_WT/1000) "
+p_qmts_4860/mmsm_lc_pro.cpp	51	53	sqlstr = "SELECT  COUNT(*) "
+p_qmts_4860/mmsm_lc_pro.cpp	67	69	sqlstr = "SELECT  BUNKER_NO, MAT_CODE, ROUND(STOCK_WT/1000) "
+p_qmts_4860/mmsm_mrts_pro.cpp	230	232	sqlstrn = " select SUM_H from VMMSM_NQ_LJ ";
+p_qmts_4860/mmsm_mrts_pro.cpp	248	250	sqlstr = "SELECT  ROUND(SUM(MAT_ACT_WT)) MAT_ACT_WT, substr(to_date(sysdate - 1), 0, 2) RECV_TIME FROM VMMSMTS_CGCL";
+p_qmts_4860/mmsm_mrts_pro.cpp	271	273	sqlstr = "SELECT  ROUND(SUM(MAT_ACT_WT)/10000,2) MAT_ACT_WT  FROM VMMSMTS_CGCL_LJ";
+p_qmts_4860/mmsm_mrts_pro.cpp	291	293	sqlstr = "SELECT  ROUND(SUM(MAT_ACT_WT)) MAT_ACT_WT FROM VMMSMTS_BXGCL";
+p_qmts_4860/mmsm_mrts_pro.cpp	312	314	sqlstr = "SELECT  ROUND(SUM(MAT_ACT_WT)/10000,2) MAT_ACT_WT  FROM VMMSMTS_BXGCL_LJ";
+p_qmts_4860/mmsm_mrts_pro.cpp	332	361	sqlstr = " SELECT tap_date, "
+p_qmts_4860/mmsm_mrts_pro.cpp	408	427	sqlstr = " select  "
+p_qmts_4860/mmsm_sjgl_pro.cpp	45	46	sqlstr = "SELECT DAYS, CONTENT FROM TQMTSBWSJ WHERE SEND_FLAG='0' ORDER BY DAYS ";
+p_qmts_4860/mmsm_sjgl_pro.cpp	67	68	sqlstr = " UPDATE TQMTSBWSJ set SEND_FLAG = '0' where 1=1 ";
+p_qmts_4860/mmsm_wlxxsb_pro.cpp	184	204	sqlstr = " select tap_date, "
+p_qmts_4860/mmsm_wlxxsb_pro.cpp	240	259	sqlstr = " select  "
+p_qmts_4860/mmsm_xium_pro.cpp	60	61	sqlstr = "SELECT ROUND(SUM(MEND_BEFORE_WEIGHT)), COUNT(MEND_BEFORE_WEIGHT), substr(to_date(sysdate - 1), 0, 2) DATE_TIME_TO "
+p_qmts_4860/qmbs_test.cpp	24	27	sqlstr = " SELECT HEAT_NO,MAT_NO  FROM  TQMTS27"
+p_qmts_4860/qmts_chem_qc.cpp	62	63	sqlstr = " SELECT CODE,CODE_DESC_1_CONTENT FROM TEP0002 WHERE CODE_CLASS = 'QMYS2N' ";
+p_qmts_4860/qmts_chem_qc.cpp	98	142	sqlstr = " SELECT SAMPLEID AS ST_SAMPLE_NO,"
+p_qmts_4860/qmts_chem_qc.cpp	171	172	sqlstr = "UPDATE PM_SAMPLE  SET AGGREGATENAME = '2' WHERE HEATNUMBER = @heat_no ";
+p_qmts_4860/qmts_chem_qc.cpp	210	211	sqlstr = "UPDATE PM_SAMPLE  SET AGGREGATENAME = '1' WHERE HEATNUMBER = @heat_no ";
+p_qmts_4860/qmts_dyts_pro.cpp	64	66	sqlstr = " select TOPIC,CONTENT from TQMTSBWDY where DATE_CODE='"+tap_date+"' ";
+p_qmts_4860/qmts_qm_test.cpp	53	54	sqlstr = "DELETE  FROM TQMTSSC24 WHERE 1=1";
+p_qmts_4860/qmts_qm_test2.cpp	53	54	sqlstr = "DELETE  FROM TQMTSSC25 WHERE 1=1";
+p_qmts_4860/qmts_qm_test3.cpp	52	53	sqlstr = "DELETE  FROM TQMTSSC26 WHERE 1=1";
+p_qmts_4860/qmts_qm_test4.cpp	52	53	sqlstr = "DELETE  FROM TQMTSSC27 WHERE 1=1";
+p_qmts_4860/qmts_qm_test5.cpp	52	53	sqlstr = "DELETE  FROM TQMTSSC28 WHERE 1=1";
+p_qmts_4860/qmts_qm_test6.cpp	52	53	sqlstr = "DELETE  FROM TQMTSSC29 WHERE 1=1";
+p_qmts_4860/qmts_tmsm203_ts.cpp	68	70	strSql = "SELECT MODULE_NAME, LOGINNAME, MESSAGE_TITLE, MESSAGE_LIST, KZABSCHL FROM TQMTSBWU WHERE CODE = '26' ";
+p_qmts_4860/qmts_tmsm203_ts.cpp	87	88	strSql = "SELECT TT.SEQ_NO, TT.WORK_AREA, TT.DEV_NAME, TT.ITEM_NAME, TT.RESP, TT.IS_ABNORMAL, TT.IS_ADVENT, TT.SHIFT_CLASS ";
+p_qmts_4860/qmts_tmsm203_ts.cpp	114	115	CString sqlUser = "SELECT USER_ID FROM TQMTSBWU_YH WHERE USER_NAME = '" + resp + "' AND GWNAME='点检员' AND CODE = '26'";
+p_qmts_4860/qmts_tmsm203_ts.cpp	136	137	sqlArea = "SELECT USER_ID FROM TQMTSBWU_YH WHERE WORK_AREA= '" + workArea + "' AND GWNAME='作业长' AND REMARK LIKE '" + shiftno.SubstringNE(0, 2) + "%' AND CODE = 
+p_qmts_4860/qmts_tmsm203_ts.cpp	141	142	sqlArea = "SELECT USER_ID FROM TQMTSBWU_YH WHERE WORK_AREA= '" + workArea + "' AND GWNAME='作业长' AND CODE = '26'";
+p_qmts_4860/qmts_tmsm203_ts.cpp	161	162	CString sqlFac = "SELECT USER_ID FROM TQMTSBWU_YH WHERE SUBSTR(WORK_AREA,0,1)='" + areaPrefix + "' AND GWNAME='工场长' AND CODE='26'";
+p_qmts_4860/qmts_tmsm203_ts.cpp	185	186	sqlArea = "SELECT USER_ID FROM TQMTSBWU_YH WHERE WORK_AREA= '" + workArea + "' AND GWNAME='作业长' AND REMARK LIKE '" + shiftno.SubstringNE(0, 2) + "%' AND CODE = 
+p_qmts_4860/qmts_tmsm203_ts.cpp	190	191	sqlArea = "SELECT USER_ID FROM TQMTSBWU_YH WHERE WORK_AREA= '" + workArea + "' AND GWNAME='作业长' AND CODE = '26'";
+p_qmts_4860/qmts_tmsm203_ts.cpp	207	208	CString sqlFactory = "SELECT USER_ID FROM TQMTSBWU_YH WHERE SUBSTR(WORK_AREA,0,1) = '" + areaPrefix + "' AND GWNAME='工场长' AND CODE = '26'";
+p_qmts_4860/qmts_tmsm203_ts.cpp	223	224	CString sqlDirector = "SELECT USER_ID FROM TQMTSBWU_YH WHERE CODE = '26' AND (GWNAME='主任' OR GWNAME='管理')";
+p_qmts_4860/wmsm_chbj_pro.cpp	64	66	sqlstr = "SELECT ROUND(SUM(MAT_ACT_WT)), substr(to_date(sysdate - 1), 0, 2) DATE_TIME_TO  FROM MMSM_MR_KC WHERE C_DIV = '2'";
+p_qmts_4860/wmsm_chbj_pro.cpp	83	85	sqlstr1 = "SELECT ROUND(SUM(MAT_ACT_WT))  FROM MMSM_MR_KC WHERE C_DIV = '1' ";

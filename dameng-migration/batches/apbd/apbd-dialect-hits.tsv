@@ -1,0 +1,3 @@
+file	line	text
+p_apbd_13300/addplan_col.cpp	42	"	LISTAGG(to_char(T1.DEV_TECH_CODE), '') WITHIN GROUP("
+p_apbd_13300/addplan_col.cpp	44	"		LISTAGG(to_char(T1.CHARGE_NO), '') WITHIN GROUP("

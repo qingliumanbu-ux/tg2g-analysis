@@ -1,0 +1,5 @@
+file	start	end	preview
+gc00_GetTs.cpp	30	31	cmd.SetCommandText("select * from " + table_name);
+gc00_GetTs.cpp	39	40	cmd.SetCommandText("select * from " + table_name);
+gc00_GetTsCol.cpp	31	32	cmd.SetCommandText("select " + table_columns + " from " + table_name);
+gc00_GetTsCol.cpp	41	42	cmd.SetCommandText("select " + table_columns + " from " + table_name);

@@ -1,0 +1,137 @@
+
+=== Server/MM00/p_mm00_18010/mm00su47a1_m.cpp ===
+L164: "THEN TO_CHAR(TIMESTAMPDIFF(16,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.SLAB_CUT_TIME,'YYYYMMDDHH24MISS') ))) "
+L168: "THEN TO_CHAR(TIMESTAMPDIFF(8,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.SLAB_CUT_TIME,'YYYYMMDDHH24MISS') ))) "
+L172: "THEN TO_CHAR(TIMESTAMPDIFF(16,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.IN_STOCK_TIME,'YYYYMMDDHH24MISS') ))) "
+L176: "THEN TO_CHAR(TIMESTAMPDIFF(8,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.IN_STOCK_TIME,'YYYYMMDDHH24MISS') ))) "
+L228: "THEN TO_CHAR(TIMESTAMPDIFF(16,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.COILED_TIME,'YYYYMMDDHH24MISS') ))) "
+L232: "THEN TO_CHAR(TIMESTAMPDIFF(8,TO_CHAR(CURRENT_TIMESTAMP-TO_DATE(t1.COILED_TIME,'YYYYMMDDHH24MISS') ))) "
+
+=== Server/MMSM/p_mmsm_17520/mmsmis02a1_inq.cpp ===
+L1128: sqlstr_COLDTIME="select timestampdiff(8,char(CURRENT_TIMESTAMP - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+L1150: sqlstr_COLDTIME="select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')
+
+=== Server/MMSM/p_mmsm_17520/mmsmis02a1_inqa.cpp ===
+L1072: sqlstr_COLDTIME="select timestampdiff(8,char(CURRENT_TIMESTAMP - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+L1094: sqlstr_COLDTIME="select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')
+
+=== Server/MMSM/p_mmsm_17520/mmsmis02_inq.cpp ===
+L330: sqlstr_outTIME = "select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss'
+
+=== Server/MMSM/p_mmsm_17520/mmsmis02_inqa.cpp ===
+L241: sqlstr_outTIME = "select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss'
+
+=== Server/PSSM/p_pssm_13060/mmlgap07_inq.cpp ===
+L201: "sum(drzzq) * 100 / 24 / 60 / 60 drzyl, sum(ljzzq) * 100 / 24 / 60 / 60 / timestampdiff(16, to_date(@datetime2, 'yyyymmddhh24miss') - to_date(@datetime1, 'yyyym
+L228: "as decimal(20, 2)) ljzq, sum(drzzq) * 100 / 24 / 60 / 60 / 3 drzyl, sum(ljzzq) * 100 / 24 / 60 / 60 / 3 / timestampdiff(16, to_date(@datetime2, 'yyyymmddhh24mi
+
+=== Server/PSSM/p_pssm_13060/mmlgap09_inq.cpp ===
+L701: "to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 
+L702: "- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, "
+L704: "to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 
+L713: "to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 
+L714: "- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, "
+L716: "to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 
+L725: "to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 
+L726: "- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, "
+L728: "to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') "
+L738: "cast(100 * (1 - sum(tjsjjg)*1.0 / timestampdiff(16, to_date(substr(@datetime2, 1, 8), 'yyyymmdd') - to_date(substr(@datetime1, 1, 8), 'yyyymmdd')) / 1440) "
+L740: "to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 
+L741: "- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, "
+L743: "to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 
+L753: "'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') "
+L754: "+ 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24), 'yyyymmdd') "
+L756: "'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - to_date(to_char( "
+L765: "to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 
+L766: "- (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, "
+L768: "to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 
+L840: "to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, "
+L844: "cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - to_date(to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, "
+L854: "sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') "
+L855: "+ 3.0/24) - (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char( "
+L857: "+ 3.0/24)) as  bigint)), 4) sjc2, to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, "
+L868: "'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - (to_date( "
+L869: "sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, "
+L871: "to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') "
+L881: "cast(100 * (1 - sum(tjsjjg)*1.0 / timestampdiff(16, to_date(substr(@datetime2, 1, 8), 'yyyymmdd') - to_date(substr(@datetime1, 1, 8), 'yyyymmdd')) / 1440 / 3) 
+L883: "select substr(sjc.cast_no, 2, 1) zjh, to_char(to_date(sjc.close_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date
+L884: "xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4
+L886: "+ 3.0/24)) as  bigint)), 4) sjc2, to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date( "
+L896: "digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - (to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) s
+L897: "right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24), 'yyyymmdd') || '240000', 'yyyymmddhh24miss')) - (to
+L899: "right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - to_date(to_char(to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24,
+L908: "'yyyymmddhh24miss') + 3.0/24, 'yyyymmdd') rq, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - (to_date(sjc.CLOSE_TIM
+L909: "'yyyymmddhh24miss') + 3.0/24)) as  bigint)), 4) sjc1, right(digits(cast(timestampdiff(4, (to_date(to_char((to_date(sjc.CLOSE_TIME, 'yyyymmddhh24miss') + 3.0/24
+L911: "+ 3.0/24, 'yyyymmdd') rq2, right(digits(cast(timestampdiff(4, (to_date(xjc.open_time, 'yyyymmddhh24miss') + 3.0/24) - to_date(to_char(to_date(xjc.open_time, 'y
+
+=== Server/PSSM/p_pssm_13060/mmsmap07_inq.cpp ===
+L141: "sum(ljzzq) * 100 / 24 / 60 / 60 / timestampdiff(16, to_date(@datetime2, 'yyyymmddhh24miss') - to_date(@datetime1, 'yyyymmddhh24miss')) ljzyl, "
+L169: "as decimal(20, 2)) ljzq, sum(drzzq) * 100 / 24 / 60 / 60 / 3 drzyl, sum(ljzzq) * 100 / 24 / 60 / 60 / 3 / timestampdiff(16, to_date(@datetime2, 'yyyymmddhh24mi
+
+=== Server/PSSM/p_pssm_13060/mmsmap09_inq.cpp ===
+L704: "							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigi
+L705: "							  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(t
+L707: "							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+L723: "							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigi
+L724: "							  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(t
+L726: "							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+L742: "							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigi
+L743: "							  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(t
+L745: "							  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+L766: "							  select zjh, 0 drtjsj, 0 drzjzyl, cast(sum(tjsjjg)/60 as decimal(20,0)) ljtjsj, cast(100 * (1 - sum(tjsjjg) / 60 *1.0 / timestampdiff(16, to_date(subst
+L770: "							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigi
+L771: "							  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(t
+L773: "							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+L789: "							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigi
+L790: "							  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(t
+L792: "							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+L808: "							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) as  bigi
+L809: "							  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24miss'))-(t
+L811: "							  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0
+L949: "															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) 
+L950: "															  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24mi
+L952: "															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss
+L968: "															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) 
+L969: "															  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24mi
+L971: "															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss
+L987: "															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) 
+L988: "															  right(digits(cast(timestampdiff(4,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24mi
+L990: "															  right(digits(cast(timestampdiff(4,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss
+L1011: "															 select zjh, 0 drtjsj, 0 drzjzyl, cast(sum(tjsjjg)/60 as decimal(20,0)) ljtjsj, cast(100 * (1 - sum(tjsjjg)/60*1.0 / timestampdiff(16, to_date(s
+L1015: "															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) 
+L1016: "															  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24mi
+L1018: "															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss
+L1034: "															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) 
+L1035: "															  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24mi
+L1037: "															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss
+L1053: "															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-(to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24)) 
+L1054: "															  right(digits(cast(timestampdiff(2,(to_date(to_char((to_date(sjc.CLOSE_TIME,'yyyymmddhh24miss') + 3.0/24),'yyyymmdd')||'240000','yyyymmddhh24mi
+L1056: "															  right(digits(cast(timestampdiff(2,(to_date(xjc.open_time,'yyyymmddhh24miss') + 3.0/24)-to_date(to_char(to_date(xjc.open_time,'yyyymmddhh24miss
+
+=== Server/TMSM/libTMSM/f_tmsm01_60106.cpp ===
+L168: sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + datetime + "')  - TIMESTAMP('" + usage_st + "'))) from DUAL";
+
+=== Server/TMSM/p_tmsm_7160/tmsme96_inq.cpp ===
+L110: sqlstr = "select TIMESTAMPDIFF(8, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) fr
+L138: sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) fr
+L247: sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+L286: sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+L326: sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+L366: sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+L406: sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+L446: sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+L486: sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToStri
+L523: sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["E_DATETIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["S_DATETIME"].ToSt
+
+=== Server/WM00/libWM00/f_create_crane_no.cpp ===
+L148: sqlstr = "SELECT timestampdiff(8, CHAR(TIMESTAMP(to_date('" + dateNow14 + "', 'yyyy-mm-dd hh24:mi:ss')) - TIMESTAMP(to_date('" + tmmsm01["SLAB_CUT_TIME"].ToStri
+
+=== Server/WM00/libWM00/f_wm00_pile_comf.cpp ===
+L85: " AND timestampdiff(4, char(CURRENT_TIMESTAMP - timestamp(FIELDNO_UPTIME))) <= 24 * 60 "/*原程序current timestamp - TO_DATE(FIELDNO_UPTIME,'YYYY-MM-DD HH24:MI:SS')
+L275: " AND timestampdiff(4, char(CURRENT_TIMESTAMP - timestamp(FIELDNO_UPTIME))) <= 24 * 60"
+
+=== Server/WM00/libWM00/f_wm00_pile_jud.cpp ===
+L113: sqlstr = "SELECT timestampdiff(8, CHAR(TIMESTAMP(to_date('" + dateNow14 + "', 'yyyy-mm-dd hh24:mi:ss')) - TIMESTAMP(to_date('" + tmmsm01.SLAB_CUT_TIME + "', 'yy
+L193: sqlstr = "SELECT timestampdiff(8, CHAR(TIMESTAMP(to_date('" + dateNow14 + "', 'yyyy-mm-dd hh24:mi:ss')) - TIMESTAMP(to_date('" + v_cut_time_min + "', 'yyyy-mm-d
+
+TOTAL active 2-param TIMESTAMPDIFF lines: 107 in 14 files

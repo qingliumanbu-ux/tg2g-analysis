@@ -1,0 +1,562 @@
+ENC=gb18030
+60			ttmsm66.MergeFrom(bcls_rec->Tables[0].Rows[0]);
+61			Log::Trace("", __FUNCTION__, "ttmsm66.DEV_NO	= [{0}]", (const char*)ttmsm66["DEV_NO"].ToString());
+62	
+63			if (ttmsm66["SM_UNIT_NO"].ToString().Trim() != "")
+64			{
+65				sqlwhere += " AND SM_UNIT_NO = @sm_unti_no ";
+66			}
+67			if (ttmsm66["REC_CREATE_TIME"].ToString().Trim() != "")
+68			{
+69				sqlwhere += "  AND CHANGE_TIME >= @begin_time ";
+70			}
+71			if (ttmsm66["CHANGE_TIME"].ToString().Trim() != "")
+72			{
+73				sqlwhere += "  AND CHANGE_TIME <= @end_time ";
+74			}
+75	
+76			switch (conn->DatabaseKind)
+77			{
+78			case DB_KIND_DB2:	        // DB2 数据库（未开Oracle兼容）
+79			case DB_KIND_DB2_ORACLE:	// DB2 数据库（开Oracle兼容）
+80			case DB_KIND_MSSQL:	        // MS SQL Server数据库
+81			case DB_KIND_ORACLE:	    // Oracle 数据库
+82			default:
+83				sqlstr = "select DAYS(DATE(TIMESTAMP ('" + ttmsm66["CHANGE_TIME"].ToString() + "'))) - DAYS(DATE(TIMESTAMP ('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) from SYSIBM.SYSDUMMY1";
+84				break;
+85			}
+86			cmd_inq.Parameters.Clear();
+87			cmd_inq.SetCommandText(sqlstr);
+88	
+89			Log::Trace("", "", "时间差天数语句 sqlstr：{0}", sqlstr);
+90			cmd_inq.ExecuteReader();
+91	
+92			if (cmd_inq.Read())
+93			{
+94				days_diffx = cmd_inq.GetDecimal(1);
+95			}
+96			else
+97			{
+98				days_diffx = 0;
+99			}
+100			cmd_inq.Close();
+101			Log::Trace("", "", "时间差天数计算值 days_diffx：{0}", days_diffx.ToString());
+102	
+103			switch (conn->DatabaseKind)
+104			{
+105			case DB_KIND_DB2:	        // DB2 数据库（未开Oracle兼容）
+106			case DB_KIND_DB2_ORACLE:	// DB2 数据库（开Oracle兼容）
+107			case DB_KIND_MSSQL:	        // MS SQL Server数据库
+108			case DB_KIND_ORACLE:	    // Oracle 数据库
+109			default:
+110				sqlstr = "select TIMESTAMPDIFF(8, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) from SYSIBM.SYSDUMMY1";
+111				//sqlstr = "select timestampdiff(8, char(timestamp(sysdate) - timestamp('2023-05-25 10:14:01'))) AS "间隔小时" from ttmsm66
+112				break;
+113			}
+114			cmd_inq.Parameters.Clear();
+115			cmd_inq.SetCommandText(sqlstr);
+116	
+117			Log::Trace("", "", "时间差小时语句 sqlstr：{0}", sqlstr);
+118			cmd_inq.ExecuteReader();
+119	
+120			if (cmd_inq.Read())
+121			{
+122				hours_diffx = cmd_inq.GetDecimal(1);
+123			}
+124			else
+125			{
+126				hours_diffx = 0;
+127			}
+128			cmd_inq.Close();
+129			Log::Trace("", "", "小时差计算值 days_diffx：{0}", hours_diffx.ToString());
+130	
+131			switch (conn->DatabaseKind)
+132			{
+133			case DB_KIND_DB2:	        // DB2 数据库（未开Oracle兼容）
+134			case DB_KIND_DB2_ORACLE:	// DB2 数据库（开Oracle兼容）
+135			case DB_KIND_MSSQL:	        // MS SQL Server数据库
+136			case DB_KIND_ORACLE:	    // Oracle 数据库
+137			default:
+138				sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + ttmsm66["CHANGE_TIME"].ToString() + "')  - TIMESTAMP('" + ttmsm66["REC_CREATE_TIME"].ToString() + "'))) from SYSIBM.SYSDUMMY1";
+139				//sqlstr = "select timestampdiff(8, char(timestamp(sysdate) - timestamp('2023-05-25 10:14:01'))) AS "间隔分钟" from ttmsm66
+140				break;
+141			}
+142			cmd_inq.Parameters.Clear();
+143			cmd_inq.SetCommandText(sqlstr);
+144	
+145			Log::Trace("", "", "时间差分钟语句 sqlstr：{0}", sqlstr);
+146			cmd_inq.ExecuteReader();
+147	
+148			if (cmd_inq.Read())
+149			{
+150				minutes_diffx = cmd_inq.GetDecimal(1);
+151			}
+152			else
+153			{
+154				minutes_diffx = 0;
+155			}
+156			cmd_inq.Close();
+157			Log::Trace("", "", "分钟差计算值 days_diffx：{0}", hours_diffx.ToString());
+158	
+159			all_time = all_time + minutes_diffx;
+160	
+161			//----------实际设备使用率查询-------------------------------
+162			//bcls_ret->Tables.Add("TOTALINFO");	//增加块
+163			//bcls_ret->Tables["TOTALINFO"].Columns.Add(DT_STRING, "DEV_NO");    //总记录数
+164			//bcls_ret->Tables["TOTALINFO"].Columns.Add(DT_DECIMAL, "USE_TIME");    //总记录数
+165			//bcls_ret->Tables["TOTALINFO"].Columns.Add(DT_DECIMAL, "SPARE_TIME");    //总记录数
+166			//bcls_ret->Tables["TOTALINFO"].Columns.Add(DT_DECIMAL, "MAINTAIN_TIME");    //总记录数
+167			//bcls_ret->Tables["TOTALINFO"].Columns.Add(DT_DECIMAL, "USE_RATE");    //总记录数
+168			//bcls_ret->Tables["TOTALINFO"].Columns.Add(DT_STRING, "DEV_NAME");    //总记录数
+169			bcls_ret->Tables[0].Columns.Add(DT_STRING, "DEV_NO");    //总记录数
+170			bcls_ret->Tables[0].Columns.Add(DT_STRING, "DEV_NAME");    //总记录数
+171			bcls_ret->Tables[0].Columns.Add(DT_DECIMAL, "REMARK_1");    //总记录数
+172			bcls_ret->Tables[0].Columns.Add(DT_DECIMAL, "REMARK_2");    //总记录数
+173			bcls_ret->Tables[0].Columns.Add(DT_DECIMAL, "REMARK_3");    //总记录数
+174			bcls_ret->Tables[0].Columns.Add(DT_DECIMAL, "REMARK_4");    //总记录数
+175			bcls_ret->Tables[0].Columns.Add(DT_STRING, "REMARK_6");    //总记录数
+176	
+177			sqlstr = " SELECT *,STATION_ID||'0'||LPAD(STATION_NO,2,'0') DEV_NO FROM TPSSMD1 ORDER BY AREA_ID";
+178	
+179			//EXEC SQL DECLARE ttmsm96_q CURSOR FOR
+180			//	SELECT tpssmd1.*, station_id || '0' || lpad(station_no, 2, '0')
+181			//	FROM tpssmd1
+182			//	WHERE MAIN_BACKLOG_CODE = :c_sm_unit_no
+183			//	ORDER BY AREA_ID;
+184			//EXEC SQL OPEN ttmsm96_q;
+185	
+186			/*SELECT tpssmd1.*,station_id,station_no,station_name,station_id||'0'||lpad(station_no,2,'0')  FROM tpssmd1 */
+187	
+188			//Log::Trace("", "", "sqlstr：{0}", sqlstr);
+189			Db::QueryTable(sqlstr, dt_dev);
+190			//Log::Trace("", "", "Count：{0}", dt_dev.Rows.get_Count());
+191			for (int i = 0; i < dt_dev.Rows.get_Count(); i++)
+192			{
+193				use_time = 0;
+194				free_time = 0;
+195				repair_time = 0;
+196				/* ***** 倒罐 ***** */
+197				//if (strcmp(tpssmd1.station_id, "P") == 0)
+198				if (strcmp(dt_dev.Rows[i]["STATION_ID"].ToString().Trim(), "P") == 0)
+199				{
+200					sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM12 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+201						" AND START_TIME BETWEEN '" + ttmsm66["REC_CREATE_TIME"].ToString() + "' AND '" + ttmsm66["CHANGE_TIME"].ToString().Trim() + "'";
+202					Db::QueryTable(sqlstr1, dt_temp);
+203					Log::Trace("", "", "倒罐语句 sqlstr：{0}", sqlstr1);
+204					for (int j = 0; j < dt_temp.Rows.get_Count(); j++)
+205					{
+206						if (dt_temp.Rows[j]["START_TIME"].ToString().Trim().GetLength() > 0 && dt_temp.Rows[j]["END_TIME"].ToString().Trim().GetLength() > 0)
+207						{
+208							//ret = EPTimeDiff(leave_time, arrive_time, &days_diffx, &hours_diffx, &minutes_diffx, &seconds_diffx, msg);
+209							//sqlstr = "select DAYS(DATE(TIMESTAMP ('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "'))) - DAYS(DATE(TIMESTAMP ('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) f
+210							//cmd_inq.Parameters.Clear();
+211							//cmd_inq.SetCommandText(sqlstr);
+212							//Log::Trace("", "", "倒灌时间差天数语句 sqlstr：{0}", sqlstr);
+213							//cmd_inq.ExecuteReader();
+214							//if (cmd_inq.Read())
+215							//{
+216							//	days_diffx = cmd_inq.GetDecimal(1);
+217							//	//use_time = use_time + days_diffx * 24 * 60 + hours_diffx * 60 + minutes_diffx;
+218							//	use_time = use_time + days_diffx * 24 * 60 ;
+219	
+220							//	Log::Trace("", "", "倒灌时间差天数值 use_time：{0}", use_time);
+221							//}
+222							//else
+223							//{
+224							//	use_time = use_time ;
+225							//}
+226							//cmd_inq.Close();
+227	
+228							//sqlstr = "select TIMESTAMPDIFF(8, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) fr
+229							//cmd_inq.Parameters.Clear();
+230							//cmd_inq.SetCommandText(sqlstr);
+231							//Log::Trace("", "", "倒灌时间差小时语句 sqlstr：{0}", sqlstr);
+232							//cmd_inq.ExecuteReader();
+233							//if (cmd_inq.Read())
+234							//{
+235							//	hours_diffx = cmd_inq.GetDecimal(1);
+236							//	//use_time = use_time + days_diffx * 24 * 60 + hours_diffx * 60 + minutes_diffx;
+237							//	use_time = use_time + hours_diffx * 60;
+238	
+239							//	Log::Trace("", "", "倒灌时间差小时值 use_time：{0}", use_time);
+240							//}
+241							//else
+242							//{
+243							//	use_time = use_time;
+244							//}
+245							//cmd_inq.Close();
+246	
+247							sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from
+248							cmd_inq.Parameters.Clear();
+249							cmd_inq.SetCommandText(sqlstr);
+250							Log::Trace("", "", "倒灌时间差分钟语句 sqlstr：{0}", sqlstr);
+251							cmd_inq.ExecuteReader();
+252							if (cmd_inq.Read())
+253							{
+254								minutes_diffx = cmd_inq.GetDecimal(1);
+255								//use_time = use_time + days_diffx * 24 * 60 + hours_diffx * 60 + minutes_diffx;
+256								use_time = use_time + minutes_diffx;
+257	
+258								Log::Trace("", "", "倒灌时间差分钟值 use_time：{0}", use_time);
+259							}
+260							else
+261							{
+262								use_time = use_time;
+263							}
+264							cmd_inq.Close();
+265							//dt_temp.Clear();
+266						}
+267	
+268					}
+269				}
+270	
+271				//-----------------------------------------------------------
+272				/* ***** 脱硫 ***** */
+273				//if (strcmp(tpssmd1.station_id, "S") == 0)
+274				dt_temp.Clear();
+275				if (strcmp(dt_dev.Rows[i]["STATION_ID"].ToString().Trim(), "S") == 0)
+276				{												//TMMSM14 炼钢脱硫实绩表
+277					sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM14 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+278						" AND START_TIME BETWEEN '" + ttmsm66["REC_CREATE_TIME"].ToString() + "' AND '" + ttmsm66["CHANGE_TIME"].ToString().Trim() + "'";
+279					dt_temp.Clear();
+280					Db::QueryTable(sqlstr1, dt_temp);
+281					Log::Trace("", "", "脱硫语句 sqlstr：{0}", sqlstr1);
+282					for (int j = 0; j < dt_temp.Rows.get_Count(); j++)
+283					{
+284						if (dt_temp.Rows[j]["START_TIME"].ToString().Trim().GetLength() > 0 && dt_temp.Rows[j]["END_TIME"].ToString().Trim().GetLength() > 0)
+285						{
+286							sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from
+287							cmd_inq.Parameters.Clear();
+288							cmd_inq.SetCommandText(sqlstr);
+289							Log::Trace("", "", "脱硫时间差分钟语句 sqlstr：{0}", sqlstr);
+290							cmd_inq.ExecuteReader();
+291							if (cmd_inq.Read())
+292							{
+293								minutes_diffx = cmd_inq.GetDecimal(1);
+294								//use_time = use_time + days_diffx * 24 * 60 + hours_diffx * 60 + minutes_diffx;
+295								use_time = use_time + minutes_diffx;
+296	
+297								Log::Trace("", "", "脱硫时间差分钟值 use_time：{0}", use_time);
+298							}
+299							else
+300							{
+301								use_time = use_time;
+302							}
+303							cmd_inq.Close();
+304	
+305						}
+306	
+307					}
+308				}
+309				//-----------------------------------------------------------
+310	
+311				//-----------------------------------------------------------
+312				/* ***** 转炉 ***** */
+313				//if (strcmp(tpssmd1.station_id,"B") == 0)
+314				dt_temp.Clear();
+315				if (strcmp(dt_dev.Rows[i]["STATION_ID"].ToString().Trim(), "B") == 0)
+316				{												//TMMSM21 炼钢转炉实绩表
+317					sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM21 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+318						" AND START_TIME BETWEEN '" + ttmsm66["REC_CREATE_TIME"].ToString() + "' AND '" + ttmsm66["CHANGE_TIME"].ToString().Trim() + "'";
+319					dt_temp.Clear();
+320					Db::QueryTable(sqlstr1, dt_temp);
+321					Log::Trace("", "", "转炉语句 sqlstr：{0}", sqlstr1);
+322					for (int j = 0; j < dt_temp.Rows.get_Count(); j++)
+323					{
+324						if (dt_temp.Rows[j]["START_TIME"].ToString().Trim().GetLength() > 0 && dt_temp.Rows[j]["END_TIME"].ToString().Trim().GetLength() > 0)
+325						{
+326							sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from
+327							cmd_inq.Parameters.Clear();
+328							cmd_inq.SetCommandText(sqlstr);
+329							Log::Trace("", "", "转炉时间差分钟语句 sqlstr：{0}", sqlstr);
+330							cmd_inq.ExecuteReader();
+331							if (cmd_inq.Read())
+332							{
+333								minutes_diffx = cmd_inq.GetDecimal(1);
+334								//use_time = use_time + days_diffx * 24 * 60 + hours_diffx * 60 + minutes_diffx;
+335								use_time = use_time + minutes_diffx;
+336	
+337								Log::Trace("", "", "转炉时间差分钟值 use_time：{0}", use_time);
+338							}
+339							else
+340							{
+341								use_time = use_time;
+342							}
+343							cmd_inq.Close();
+344	
+345						}
+346	
+347					}
+348				}
+349				//-----------------------------------------------------------
+350	
+351				//-----------------------------------------------------------
+352				/* ***** 吹氩 ***** */
+353				//if (strcmp(tpssmd1.station_id, "A") == 0)
+354				dt_temp.Clear();
+355				if (strcmp(dt_dev.Rows[i]["STATION_ID"].ToString().Trim(), "A") == 0)
+356				{												//TMMSM22 炼钢吹氩作业实绩表
+357					sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM22 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+358						" AND START_TIME BETWEEN '" + ttmsm66["REC_CREATE_TIME"].ToString() + "' AND '" + ttmsm66["CHANGE_TIME"].ToString().Trim() + "'";
+359					dt_temp.Clear();
+360					Db::QueryTable(sqlstr1, dt_temp);
+361					Log::Trace("", "", "吹氩语句 sqlstr：{0}", sqlstr1);
+362					for (int j = 0; j < dt_temp.Rows.get_Count(); j++)
+363					{
+364						if (dt_temp.Rows[j]["START_TIME"].ToString().Trim().GetLength() > 0 && dt_temp.Rows[j]["END_TIME"].ToString().Trim().GetLength() > 0)
+365						{
+366							sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from
+367							cmd_inq.Parameters.Clear();
+368							cmd_inq.SetCommandText(sqlstr);
+369							Log::Trace("", "", "吹氩时间差分钟语句 sqlstr：{0}", sqlstr);
+370							cmd_inq.ExecuteReader();
+371							if (cmd_inq.Read())
+372							{
+373								minutes_diffx = cmd_inq.GetDecimal(1);
+374								//use_time = use_time + days_diffx * 24 * 60 + hours_diffx * 60 + minutes_diffx;
+375								use_time = use_time + minutes_diffx;
+376	
+377								Log::Trace("", "", "吹氩时间差分钟值 use_time：{0}", use_time);
+378							}
+379							else
+380							{
+381								use_time = use_time;
+382							}
+383							cmd_inq.Close();
+384	
+385						}
+386	
+387					}
+388				}
+389				//-----------------------------------------------------------
+390	
+391				//-----------------------------------------------------------
+392				/* ***** RH ***** */
+393				//if (strcmp(tpssmd1.station_id,"R") == 0)
+394				dt_temp.Clear();
+395				if (strcmp(dt_dev.Rows[i]["STATION_ID"].ToString().Trim(), "R") == 0)
+396				{												//TMMSM23 炼钢RH作业实绩表
+397					sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM23 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+398						" AND START_TIME BETWEEN '" + ttmsm66["REC_CREATE_TIME"].ToString() + "' AND '" + ttmsm66["CHANGE_TIME"].ToString().Trim() + "'";
+399					dt_temp.Clear();
+400					Db::QueryTable(sqlstr1, dt_temp);
+401					Log::Trace("", "", "RH语句 sqlstr：{0}", sqlstr1);
+402					for (int j = 0; j < dt_temp.Rows.get_Count(); j++)
+403					{
+404						if (dt_temp.Rows[j]["START_TIME"].ToString().Trim().GetLength() > 0 && dt_temp.Rows[j]["END_TIME"].ToString().Trim().GetLength() > 0)
+405						{
+406							sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from
+407							cmd_inq.Parameters.Clear();
+408							cmd_inq.SetCommandText(sqlstr);
+409							Log::Trace("", "", "RH时间差分钟语句 sqlstr：{0}", sqlstr);
+410							cmd_inq.ExecuteReader();
+411							if (cmd_inq.Read())
+412							{
+413								minutes_diffx = cmd_inq.GetDecimal(1);
+414								//use_time = use_time + days_diffx * 24 * 60 + hours_diffx * 60 + minutes_diffx;
+415								use_time = use_time + minutes_diffx;
+416	
+417								Log::Trace("", "", "RH时间差分钟值 use_time：{0}", use_time);
+418							}
+419							else
+420							{
+421								use_time = use_time;
+422							}
+423							cmd_inq.Close();
+424	
+425						}
+426	
+427					}
+428				}
+429				//-----------------------------------------------------------
+430	
+431				//-----------------------------------------------------------
+432				/* ***** LF ***** */
+433				//if (strcmp(tpssmd1.station_id,"L") == 0)
+434				dt_temp.Clear();
+435				if (strcmp(dt_dev.Rows[i]["STATION_ID"].ToString().Trim(), "A") == 0)
+436				{												//TMMSM24 炼钢LF作业实绩表
+437					sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM22 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+438						" AND START_TIME BETWEEN '" + ttmsm66["REC_CREATE_TIME"].ToString() + "' AND '" + ttmsm66["CHANGE_TIME"].ToString().Trim() + "'";
+439					dt_temp.Clear();
+440					Db::QueryTable(sqlstr1, dt_temp);
+441					Log::Trace("", "", "LF语句 sqlstr：{0}", sqlstr1);
+442					for (int j = 0; j < dt_temp.Rows.get_Count(); j++)
+443					{
+444						if (dt_temp.Rows[j]["START_TIME"].ToString().Trim().GetLength() > 0 && dt_temp.Rows[j]["END_TIME"].ToString().Trim().GetLength() > 0)
+445						{
+446							sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from
+447							cmd_inq.Parameters.Clear();
+448							cmd_inq.SetCommandText(sqlstr);
+449							Log::Trace("", "", "LF时间差分钟语句 sqlstr：{0}", sqlstr);
+450							cmd_inq.ExecuteReader();
+451							if (cmd_inq.Read())
+452							{
+453								minutes_diffx = cmd_inq.GetDecimal(1);
+454								//use_time = use_time + days_diffx * 24 * 60 + hours_diffx * 60 + minutes_diffx;
+455								use_time = use_time + minutes_diffx;
+456	
+457								Log::Trace("", "", "LF时间差分钟值 use_time：{0}", use_time);
+458							}
+459							else
+460							{
+461								use_time = use_time;
+462							}
+463							cmd_inq.Close();
+464	
+465						}
+466	
+467					}
+468				}
+469				//-----------------------------------------------------------
+470	
+471				//-----------------------------------------------------------
+472				/* ***** CC连铸 ***** */
+473				//if (strcmp(tpssmd1.station_id,"R") == 0)
+474				dt_temp.Clear();
+475				if (strcmp(dt_dev.Rows[i]["STATION_ID"].ToString().Trim(), "R") == 0)
+476				{												//TMMSM23 炼钢连铸作业实绩表
+477					sqlstr1 = " SELECT START_TIME, END_TIME	FROM TMMSM31 WHERE STATION_NO = '" + dt_dev.Rows[i]["STATION_NO"].ToString() + "'"
+478						" AND START_TIME BETWEEN '" + ttmsm66["REC_CREATE_TIME"].ToString() + "' AND '" + ttmsm66["CHANGE_TIME"].ToString().Trim() + "'";
+479					dt_temp.Clear();
+480					Db::QueryTable(sqlstr1, dt_temp);
+481					Log::Trace("", "", "RH语句 sqlstr：{0}", sqlstr1);
+482					for (int j = 0; j < dt_temp.Rows.get_Count(); j++)
+483					{
+484						if (dt_temp.Rows[j]["START_TIME"].ToString().Trim().GetLength() > 0 && dt_temp.Rows[j]["END_TIME"].ToString().Trim().GetLength() > 0)
+485						{
+486							sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["END_TIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["START_TIME"].ToString().Trim() + "'))) from
+487							cmd_inq.Parameters.Clear();
+488							cmd_inq.SetCommandText(sqlstr);
+489							Log::Trace("", "", "连铸时间差分钟语句 sqlstr：{0}", sqlstr);
+490							cmd_inq.ExecuteReader();
+491							if (cmd_inq.Read())
+492							{
+493								minutes_diffx = cmd_inq.GetDecimal(1);
+494								//use_time = use_time + days_diffx * 24 * 60 + hours_diffx * 60 + minutes_diffx;
+495								use_time = use_time + minutes_diffx;
+496	
+497								Log::Trace("", "", "连铸时间差分钟值 use_time：{0}", use_time);
+498							}
+499							else
+500							{
+501								use_time = use_time;
+502							}
+503							cmd_inq.Close();
+504	
+505						}
+506	
+507					}
+508				}
+509				//-----------------------------------------------------------
+510	
+511	
+512				/* ***** 维修 ***** */                        //梅钢工器具历史信息表
+513				dt_temp.Clear();
+514				sqlstr1 = " SELECT S_DATETIME,E_DATETIME FROM TTMSM95 WHERE STATUS = '11'  AND DEV_NO = '" + dt_dev.Rows[i]["DEV_NO"].ToString() + "'"
+515					" AND S_DATETIME BETWEEN '" + ttmsm66["REC_CREATE_TIME"].ToString() + "' AND '" + ttmsm66["CHANGE_TIME"].ToString().Trim() + "'";
+516				dt_temp.Clear();
+517				Db::QueryTable(sqlstr1, dt_temp);
+518				Log::Trace("", "", "维修语句 sqlstr：{0}", sqlstr1);
+519				for (int j = 0; j < dt_temp.Rows.get_Count(); j++)
+520				{
+521					if (dt_temp.Rows[j]["S_DATETIME"].ToString().Trim().GetLength() > 0 && dt_temp.Rows[j]["E_DATETIME"].ToString().Trim().GetLength() > 0)
+522					{
+523						sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + dt_temp.Rows[j]["E_DATETIME"].ToString().Trim() + "')  - TIMESTAMP('" + dt_temp.Rows[j]["S_DATETIME"].ToString().Trim() + "'))) fro
+524						cmd_inq.Parameters.Clear();
+525						cmd_inq.SetCommandText(sqlstr);
+526						Log::Trace("", "", "维修时间差分钟语句 sqlstr：{0}", sqlstr);
+527						cmd_inq.ExecuteReader();
+528						if (cmd_inq.Read())
+529						{
+530							minutes_diffx = cmd_inq.GetDecimal(1);
+531							//repair_time = repair_time + days_diffx*24*60 + hours_diffx*60 + minutes_diffx;
+532							repair_time = repair_time + minutes_diffx;
+533	
+534							Log::Trace("", "", "连铸时间差分钟值 use_time：{0}", use_time);
+535						}
+536						else
+537						{
+538							use_time = use_time;
+539						}
+540						cmd_inq.Close();
+541	
+542					}
+543				}
+544				//-----------------------------------------------------------
+545	
+546				//SELECT round(:use_time / 60, 2), round((:all_time - : use_time) / 60, 2), round(:repair_time / 60, 2), round((:use_time / : all_time) * 100, 2)
+547				//INTO :use_time, : free_time, : repair_time, : good_rate
+548				//	  FROM sysibm.dual;
+549				sqlstr = "SELECT ROUND(" + use_time.ToString() + "/60,2),ROUND((" + all_time.ToString()+" - "+ use_time.ToString() + ")/ 60, 2), ROUND("
+550					"" + repair_time.ToString() + " / 60, 2),ROUND((" + use_time.ToString() + "/" + all_time.ToString() + ") * 100, 2)"
+551					 " FROM SYSIBM.SYSDUMMY1";
+552				cmd_inq.Parameters.Clear();
+553				cmd_inq.SetCommandText(sqlstr);
+554				Log::Trace("", "", "总结时间差分钟语句 sqlstr：{0}", sqlstr);
+555				cmd_inq.ExecuteReader();
+556				if (cmd_inq.Read())
+557				{
+558					use_time = cmd_inq.GetDecimal(1);
+559					free_time = cmd_inq.GetDecimal(2);
+560					repair_time = cmd_inq.GetDecimal(3);
+561					good_rate = cmd_inq.GetDecimal(4);
+562	
+563					Log::Trace("", "", "总结时间差分钟值 use_time：{0}", use_time);
+564					Log::Trace("", "", "总结时间差分钟值 free_time：{0}", free_time);
+565					Log::Trace("", "", "总结时间差分钟值 repair_time：{0}", repair_time);
+566					Log::Trace("", "", "总结时间差分钟值 good_rate：{0}", good_rate);
+567				}
+568				else
+569				{
+570					//use_time = use_time;
+571				}
+572				cmd_inq.Close();
+573	
+574	
+575				////bcls_ret->Tables.Add("TOTALINFO");	//增加块
+576				////bcls_ret->Tables["TOTALINFO"].Columns.Add(DT_STRING, "DEV_NO");    //总记录数
+577				////bcls_ret->Tables["TOTALINFO"].Columns.Add(DT_DECIMAL, "USE_TIME");    //总记录数
+578				////bcls_ret->Tables["TOTALINFO"].Columns.Add(DT_DECIMAL, "SPARE_TIME");    //总记录数
+579				////bcls_ret->Tables["TOTALINFO"].Columns.Add(DT_DECIMAL, "MAINTAIN_TIME");    //总记录数
+580				////bcls_ret->Tables["TOTALINFO"].Columns.Add(DT_DECIMAL, "USE_RATE");    //总记录数
+581				////bcls_ret->Tables["TOTALINFO"].Columns.Add(DT_STRING, "DEV_NAME");    //总记录数
+582				//bcls_ret->Tables["TOTALINFO"].Rows.Add();
+583				//bcls_ret->Tables["TOTALINFO"].Rows[0][0] = dt_dev.Rows[i]["DEV_NO"].ToString();
+584				//bcls_ret->Tables["TOTALINFO"].Rows[0][1] = use_time;
+585				//bcls_ret->Tables["TOTALINFO"].Rows[0][2] = free_time;
+586				//bcls_ret->Tables["TOTALINFO"].Rows[0][3] = repair_time;
+587				//bcls_ret->Tables["TOTALINFO"].Rows[0][4] = good_rate;
+588	
+589				Log::Trace("", "", "结果验证 i：{0}", i);
+590				Log::Trace("", "", "结果验证 DEV_NO：{0}", dt_dev.Rows[i]["DEV_NO"].ToString());
+591				bcls_ret->Tables[0].Rows.Add();
+592				//bcls_ret->Tables[0].Columns.Add(DT_STRING, "FURNACE_NO_BOF");
+593				//bcls_ret->Tables[0].Columns.Add(DT_STRING, "FURNACE_NO_LF");
+594	
+595				bcls_ret->Tables[0].Rows[i][0] = dt_dev.Rows[i]["DEV_NO"].ToString();
+596				//bcls_ret->Tables[0].Rows[i]["REMARK_1"] = use_time;
+597				//bcls_ret->Tables[0].Rows[i]["REMARK_2"] = free_time;
+598				//bcls_ret->Tables[0].Rows[i]["REMARK_3"] = repair_time;
+599				//bcls_ret->Tables[0].Rows[i]["REMARK_4"] = good_rate;
+600				//bcls_ret->Tables[0].Rows[i]["REMARK_6"] = good_rate;
+601	
+602	
+603				//bcls_ret->Tables[0].Rows[i][1] = use_time;
+604				//bcls_ret->Tables[0].Rows[i][2] = use_time;
+605				//bcls_ret->Tables[0].Rows[i][3] = free_time;
+606				//bcls_ret->Tables[0].Rows[i][4] = repair_time;
+607				//bcls_ret->Tables[0].Rows[i][5] = good_rate;
+608				//bcls_ret->Tables[0].Rows[i][6] = "TEMP";
+609				bcls_ret->Tables[0].Rows[i]["REMARK_1"] = use_time;
+610				bcls_ret->Tables[0].Rows[i]["REMARK_6"] = "TEMP";
+611				bcls_ret->Tables[0].Rows[i]["REMARK_2"] = free_time;
+612				bcls_ret->Tables[0].Rows[i]["REMARK_3"] = repair_time;
+613				bcls_ret->Tables[0].Rows[i]["REMARK_4"] = good_rate;
+614				bcls_ret->Tables[0].Rows[i]["DEV_NAME"] = "DEV_NAME";
+615	
+616			}
+617	
+618			/*-----------------------------------------------------------*/
+619	
+620	

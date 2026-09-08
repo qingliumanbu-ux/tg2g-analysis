@@ -1,0 +1,8 @@
+######## libWM10/f_wmhrhr_crane_make.cpp
+### CHANGE-273  原行 199-199
+  L199 前: sqlstr = "values nextval for seqTest";
+  L199 后: sqlstr = "values seqTest.NEXTVAL";
+### CHANGE-274  原行 643-643
+  L643 前: sqlstr = "values nextval for seqTest";
+  L643 后: sqlstr = "values seqTest.NEXTVAL";
+

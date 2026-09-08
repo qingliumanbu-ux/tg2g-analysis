@@ -1,0 +1,378 @@
+
+===== Server/TMSM/libTMSM/f_tmsm01_60106.cpp L150-L185 =====
+150	
+151			}
+152			cmd_inq.Close();
+153	
+154			//l_ladle_fill_time  = (l_systime - l_usage_st) * 24 * 60;                          			//--计算钢包盛钢时间
+155			switch (conn->DatabaseKind)
+156			{
+157			case DB_KIND_DB2:	        // DB2 数据库（未开Oracle兼容）
+158			case DB_KIND_DB2_ORACLE:	// DB2 数据库（开Oracle兼容）
+159			case DB_KIND_MSSQL:	        // MS SQL Server数据库
+160			case DB_KIND_ORACLE:	    // Oracle 数据库
+161			default:
+162	// DM8 适配 CHANGE-340:查询。SYSIBM 辅助表改为 DUAL。
+163	// 改写原因：SYSIBM 辅助表改为 DUAL；依据 DM 官方文档,DM8 尚未实测。
+164	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+165	// 原 SQL（完整保留）：
+166				// sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + datetime + "')  - TIMESTAMP('" + usage_st + "'))) from SYSIBM.SYSDUMMY1";
+167	// DM8 SQL：
+168				sqlstr = "select TIMESTAMPDIFF(4, CHAR(TIMESTAMP('" + datetime + "')  - TIMESTAMP('" + usage_st + "'))) from DUAL";
+169				break;
+170			}
+171			cmd_inq.Parameters.Clear();
+172			cmd_inq.SetCommandText(sqlstr);
+173	
+174			Log::Trace("", "", "时间差分钟语句 sqlstr：{0}", sqlstr);
+175			cmd_inq.ExecuteReader();
+176	
+177			if (cmd_inq.Read())
+178			{
+179				l_ladle_fill_time = cmd_inq.GetDecimal(1);
+180			}
+181			else
+182			{
+183				l_ladle_fill_time = 0;
+184			}
+185			cmd_inq.Close();
+
+===== Server/MMSM/p_mmsm_17520/mmsmis02_inq.cpp L315-L345 =====
+315			CString v_mat_no_temp = "";
+316	
+317			for(int row = 0;row<bcls_ret->Tables["MMSMIS02_INQ"].Rows.get_Count();row++)
+318			{
+319				v_in_stock_hot_time = bcls_ret->Tables["MMSMIS02_INQ"].Rows[row]["IN_STOCK_HOT_TIME"];
+320				v_slab_cut_time = bcls_ret->Tables["MMSMIS02_INQ"].Rows[row]["SLAB_CUT_TIME"];
+321				v_out_hot_time = "";
+322				if(v_in_stock_hot_time.Trim().GetLength()==14 && v_slab_cut_time.Trim().GetLength()==14)
+323				{
+324	// DM8 适配 CHANGE-163:查询。SYSIBM 辅助表改为 DUAL。
+325	// 改写原因：SYSIBM 辅助表改为 DUAL；依据 DM 官方文档,DM8 尚未实测。
+326	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+327	// 原 SQL（完整保留）：
+328					// sqlstr_outTIME = "select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+329	// DM8 SQL：
+330					sqlstr_outTIME = "select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+331					cmdtime.SetCommandText(sqlstr_outTIME);
+332					cmdtime.ExecuteReader();
+333					if(cmdtime.Read())
+334					{
+335						v_out_hot_time = cmdtime.GetString(1);  //切断时间
+336						Log::Trace("",__FUNCTION__,"v_out_hot_time b= [{0}]", (const char*)v_out_hot_time);
+337					}
+338					cmdtime.Close();
+339					bcls_ret->Tables["MMSMIS02_INQ"].Rows[row]["OUT_HOT_TIME"] = v_out_hot_time;
+340				}
+341	
+342				//20131219新增获取合同主表的副钢级代码根据合同号
+343				v_order_no = bcls_ret->Tables["MMSMIS02_INQ"].Rows[row]["ORDER_NO"];
+344				v_sign_code_1 = "";
+345				v_sign_code_2 = "";
+
+===== Server/MMSM/p_mmsm_17520/mmsmis02_inqa.cpp L228-L258 =====
+228			for(int row = 0;row<bcls_ret->Tables["MMSMIS02_INQ"].Rows.get_Count();row++)
+229			{
+230				v_in_stock_hot_time = bcls_ret->Tables["MMSMIS02_INQ"].Rows[row]["IN_STOCK_HOT_TIME"];
+231				v_slab_cut_time = bcls_ret->Tables["MMSMIS02_INQ"].Rows[row]["SLAB_CUT_TIME"];
+232				v_out_hot_time = "";
+233				if(v_in_stock_hot_time.Trim().GetLength()==14 && v_slab_cut_time.Trim().GetLength()==14)
+234				{
+235	// DM8 适配 CHANGE-164:查询。SYSIBM 辅助表改为 DUAL。
+236	// 改写原因：SYSIBM 辅助表改为 DUAL；依据 DM 官方文档,DM8 尚未实测。
+237	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+238	// 原 SQL（完整保留）：
+239					// sqlstr_outTIME = "select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+240	// DM8 SQL：
+241					sqlstr_outTIME = "select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+242					cmdtime.SetCommandText(sqlstr_outTIME);
+243					cmdtime.ExecuteReader();
+244					if(cmdtime.Read())
+245					{
+246						v_out_hot_time = cmdtime.GetString(1);  //切断时间
+247						Log::Trace("",__FUNCTION__,"v_out_hot_time b= [{0}]", (const char*)v_out_hot_time);
+248					}
+249					cmdtime.Close();
+250					bcls_ret->Tables["MMSMIS02_INQ"].Rows[row]["OUT_HOT_TIME"] = v_out_hot_time;
+251				}
+252	
+253				//20131219新增获取合同主表的副钢级代码根据合同号
+254				v_order_no = bcls_ret->Tables["MMSMIS02_INQ"].Rows[row]["ORDER_NO"];
+255				v_sign_code_1 = "";
+256				v_sign_code_2 = "";
+257				v_sign_code_3 = "";
+258				if (v_order_no.Trim().GetLength() > 0)
+
+===== Server/MMSM/p_mmsm_17520/mmsmis02a1_inq.cpp L1112-L1168 =====
+1112	
+1113	
+1114				}
+1115				if(v_st_no_temp.Trim().GetLength()>0)
+1116				{
+1117					//产出时间计算
+1118					//CDecimal hourDiff = GetHourDiff(CDateTime::Now().ToString("yyyyMMddHHmmss"), v_slab_cut_time);
+1119					//CDecimal hourDiff = TIMESTAMPDIFF(8,CHAR(CURRENT TIMESTAMP-TO_DATE(v_slab_cut_time,'YYYYMMDDHH24MISS')));
+1120					if(v_slab_cut_time.Trim().GetLength() == 14)
+1121					{
+1122	// DM8 适配 CHANGE-165:查询。SYSIBM 辅助表改为 DUAL。
+1123	// 改写原因：SYSIBM 辅助表改为 DUAL；DB2 特殊寄存器 current date/time/timestamp 改为 DM 的 CURRENT_DATE/CURRENT_TIME/CURRENT_TIMESTAMP(官方函数手册支持)；依据 DM 官方文档,DM8 尚未实测。
+1124	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+1125	// 原 SQL（完整保留）：
+1126						// sqlstr_COLDTIME="select timestampdiff(8,char(current timestamp - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+1127	// DM8 SQL：
+1128						sqlstr_COLDTIME="select timestampdiff(8,char(CURRENT_TIMESTAMP - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+1129						comma.SetCommandText(sqlstr_COLDTIME);
+1130						comma.ExecuteReader();
+1131						if(comma.Read())
+1132						{
+1133							CDecimal in_stock_dura = comma.GetDecimal(1);  //在库时间
+1134							if(in_stock_dura > 999999)
+1135							{
+1136								in_stock_dura = 999999;
+1137							}
+1138							//Log::Trace("",__FUNCTION__,"in_stock_dura b= [{0}]", (const char*)in_stock_dura);
+1139							bcls_ret->Tables["MMSMIS02A1_INQ"].Rows[row]["IN_STOCK_DURA"] = in_stock_dura;
+1140						}
+1141						comma.Close();
+1142						if(v_in_stock_hot_time.Trim().GetLength() == 14)
+1143						{
+1144	// DM8 适配 CHANGE-166:查询。SYSIBM 辅助表改为 DUAL。
+1145	// 改写原因：SYSIBM 辅助表改为 DUAL；依据 DM 官方文档,DM8 尚未实测。
+1146	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+1147	// 原 SQL（完整保留）：
+1148							// sqlstr_COLDTIME="select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+1149	// DM8 SQL：
+1150							sqlstr_COLDTIME="select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+1151							comma.SetCommandText(sqlstr_COLDTIME);
+1152							comma.ExecuteReader();
+1153							if(comma.Read())
+1154							{
+1155							    in_stock_time_dura = comma.GetDecimal(1);  //在库时间
+1156								if(in_stock_time_dura > 999999)
+1157								{
+1158									in_stock_time_dura = 999999;
+1159								}
+1160								//Log::Trace("",__FUNCTION__,"in_stock_time_dura b= [{0}]", (const char*)in_stock_time_dura);
+1161								bcls_ret->Tables["MMSMIS02A1_INQ"].Rows[row]["IN_STOCK_TIME_DURA"] = in_stock_time_dura;
+1162							}
+1163							comma.Close();
+1164						}
+1165					}
+1166	
+1167					//在库时间计算
+1168					/*CDecimal hourDiff1 = GetHourDiff(v_in_stock_hot_time.ToString("yyyyMMddHHmmss"), v_slab_cut_time);
+
+===== Server/MMSM/p_mmsm_17520/mmsmis02a1_inqa.cpp L1056-L1112 =====
+1056	                bcls_ret->Tables["MMSMIS02A1_INQ"].Rows[row]["BACKLOGDF"] = backlog_tmp;
+1057	
+1058			    }
+1059				if(v_st_no_temp.Trim().GetLength()>0)
+1060				{
+1061					//产出时间计算
+1062					//CDecimal hourDiff = GetHourDiff(CDateTime::Now().ToString("yyyyMMddHHmmss"), v_slab_cut_time);
+1063					//CDecimal hourDiff = TIMESTAMPDIFF(8,CHAR(CURRENT TIMESTAMP-TO_DATE(v_slab_cut_time,'YYYYMMDDHH24MISS')));
+1064					if(v_slab_cut_time.Trim().GetLength() == 14)
+1065					{
+1066	// DM8 适配 CHANGE-167:查询。SYSIBM 辅助表改为 DUAL。
+1067	// 改写原因：SYSIBM 辅助表改为 DUAL；DB2 特殊寄存器 current date/time/timestamp 改为 DM 的 CURRENT_DATE/CURRENT_TIME/CURRENT_TIMESTAMP(官方函数手册支持)；依据 DM 官方文档,DM8 尚未实测。
+1068	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+1069	// 原 SQL（完整保留）：
+1070						// sqlstr_COLDTIME="select timestampdiff(8,char(current timestamp - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+1071	// DM8 SQL：
+1072						sqlstr_COLDTIME="select timestampdiff(8,char(CURRENT_TIMESTAMP - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+1073						comma.SetCommandText(sqlstr_COLDTIME);
+1074						comma.ExecuteReader();
+1075						if(comma.Read())
+1076						{
+1077							CDecimal in_stock_dura = comma.GetDecimal(1);  //在库时间
+1078							if(in_stock_dura > 999999)
+1079							{
+1080								in_stock_dura = 999999;
+1081							}
+1082							//Log::Trace("",__FUNCTION__,"in_stock_dura b= [{0}]", (const char*)in_stock_dura);
+1083							bcls_ret->Tables["MMSMIS02A1_INQ"].Rows[row]["IN_STOCK_DURA"] = in_stock_dura;
+1084						}
+1085						comma.Close();
+1086						if(v_in_stock_hot_time.Trim().GetLength() == 14)
+1087						{
+1088	// DM8 适配 CHANGE-168:查询。SYSIBM 辅助表改为 DUAL。
+1089	// 改写原因：SYSIBM 辅助表改为 DUAL；依据 DM 官方文档,DM8 尚未实测。
+1090	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+1091	// 原 SQL（完整保留）：
+1092							// sqlstr_COLDTIME="select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from sysibm.sysdummy1";
+1093	// DM8 SQL：
+1094							sqlstr_COLDTIME="select timestampdiff(8,char(timestamp('"+v_in_stock_hot_time+"','yyyy-MM-DD hh:mm:ss') - timestamp('"+v_slab_cut_time+"','yyyy-MM-DD hh:mm:ss')))  from DUAL";
+1095							comma.SetCommandText(sqlstr_COLDTIME);
+1096							comma.ExecuteReader();
+1097							if(comma.Read())
+1098							{
+1099							    in_stock_time_dura = comma.GetDecimal(1);  //在库时间
+1100								if(in_stock_time_dura > 999999)
+1101								{
+1102									in_stock_time_dura = 999999;
+1103								}
+1104								//Log::Trace("",__FUNCTION__,"in_stock_time_dura b= [{0}]", (const char*)in_stock_time_dura);
+1105								bcls_ret->Tables["MMSMIS02A1_INQ"].Rows[row]["IN_STOCK_TIME_DURA"] = in_stock_time_dura;
+1106							}
+1107							comma.Close();
+1108						}
+1109					}
+1110	
+1111					//在库时间计算
+1112					/*CDecimal hourDiff1 = GetHourDiff(v_in_stock_hot_time.ToString("yyyyMMddHHmmss"), v_slab_cut_time);
+
+===== Server/WM00/libWM00/f_create_crane_no.cpp L136-L165 =====
+136				if (!twm04_T.Query("STOCK_PLACE_NO")){
+137					sprintf(s.msg, "目标垛位没有在垛位信息中维护！");
+138					doFlag = -1;
+139					throw CApplicationException(-1, s.msg, log.Location);
+140				}
+141	// DM8 适配 CHANGE-234:查询。SYSIBM 辅助表改为 DUAL。
+142	// 改写原因：SYSIBM 辅助表改为 DUAL；依据 DM 官方文档,DM8 尚未实测。
+143	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+144	// 原 SQL（完整保留）：
+145				// sqlstr = "SELECT timestampdiff(8, CHAR(TIMESTAMP(to_date('" + dateNow14 + "', 'yyyy-mm-dd hh24:mi:ss')) - TIMESTAMP(to_date('" + tmmsm01["SLAB_CUT_TIME"].ToString() + "', 'yyyy-mm-dd hh24:mi:ss')))) AS diffTimes16"
+146					// " FROM sysibm.sysdummy1";
+147	// DM8 SQL：
+148				sqlstr = "SELECT timestampdiff(8, CHAR(TIMESTAMP(to_date('" + dateNow14 + "', 'yyyy-mm-dd hh24:mi:ss')) - TIMESTAMP(to_date('" + tmmsm01["SLAB_CUT_TIME"].ToString() + "', 'yyyy-mm-dd hh24:mi:ss')))) AS diffTimes16"
+149					" FROM DUAL";
+150				cmd_inq.Close();
+151				cmd_inq.SetCommandText(sqlstr);
+152				Log::Trace("", __FUNCTION__, "sqlstr = [{0}]", sqlstr);
+153				cmd_inq.ExecuteReader();
+154				if (!cmd_inq.Read()){
+155					s.flag = -1;
+156					strcpy(s.msg, "获取失败！");
+157					return -1;
+158				}
+159				CDecimal v_max_cold_time = cmd_inq.GetDecimal(1);//时间差
+160				if (twm04_T["COLD_HOT_REQ"].ToDecimal() !=999)
+161				{
+162					if (twm04_T["COLD_HOT_REQ"].ToDecimal() > v_max_cold_time)
+163					{
+164						sprintf(s.msg,  "板坯冷却小时数小于跺位要求！");
+165						doFlag = -1;
+
+===== Server/WM00/libWM00/f_wm00_pile_comf.cpp L72-L100 =====
+72	
+73			Log::Debug("", __FUNCTION__, "***D1**18小时内使用垛位集推荐开始**D1***");
+74	// DM8 适配 CHANGE-235:查询。见改写原因。
+75	// 改写原因：DB2 特殊寄存器 current date/time/timestamp 改为 DM 的 CURRENT_DATE/CURRENT_TIME/CURRENT_TIMESTAMP(官方函数手册支持)；依据 DM 官方文档,DM8 尚未实测。
+76	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+77	// 原 SQL（完整保留）：
+78			// sqlstr = "SELECT STOCK_PLACE_NO FROM TWM04 WHERE stock_no  = 'SA4' AND PILE_MAIN_NO = @v_circle "
+79				// " AND(PILE_MAT_NUM_ACT + PRE_MAT_NUM) < MAX_HEIGHT AND MAX_HEIGHT > 0 AND STOCK_STATUS = '0'"
+80				// " AND timestampdiff(4, char(current timestamp - timestamp(FIELDNO_UPTIME))) <= 24 * 60 "/*原程序current timestamp - TO_DATE(FIELDNO_UPTIME,'YYYY-MM-DD HH24:MI:SS') <= 24*60*60*/
+81				// " ORDER BY FIELDNO_UPTIME DESC, PILE_FIELDNO_NO ASC ";
+82	// DM8 SQL：
+83			sqlstr = "SELECT STOCK_PLACE_NO FROM TWM04 WHERE stock_no  = 'SA4' AND PILE_MAIN_NO = @v_circle "
+84				" AND(PILE_MAT_NUM_ACT + PRE_MAT_NUM) < MAX_HEIGHT AND MAX_HEIGHT > 0 AND STOCK_STATUS = '0'"
+85				" AND timestampdiff(4, char(CURRENT_TIMESTAMP - timestamp(FIELDNO_UPTIME))) <= 24 * 60 "/*原程序current timestamp - TO_DATE(FIELDNO_UPTIME,'YYYY-MM-DD HH24:MI:SS') <= 24*60*60*/
+86				" ORDER BY FIELDNO_UPTIME DESC, PILE_FIELDNO_NO ASC ";
+87			cmd_inq.Close();
+88			cmd_inq.SetCommandText(sqlstr);
+89			Log::Trace("", __FUNCTION__, "sqlstr = [{0}]", sqlstr);
+90			Log::Trace("", __FUNCTION__, "v_circle = [{0}]", v_circle);
+91			cmd_inq.Parameters.Set("v_circle", v_circle);
+92			int count=cmd_inq.ExecuteQuery(bcls_temp.Tables[0]);
+93			for (int i = 0; i < count;i++)
+94			{
+95				v_stock_place_no = bcls_temp.Tables[0].Rows[i]["STOCK_PLACE_NO"];
+96	
+97				if (i>100){
+98					Log::Debug("", __FUNCTION__, "24小时内使用过垛位集循环推荐结束，未获取到有效垛位(D1)");
+99					flag = 0;
+100					break;
+
+===== Server/WM00/libWM00/f_wm00_pile_comf.cpp L262-L290 =====
+262	// DM8 适配 CHANGE-236:查询。见改写原因。
+263	// 改写原因：DB2 特殊寄存器 current date/time/timestamp 改为 DM 的 CURRENT_DATE/CURRENT_TIME/CURRENT_TIMESTAMP(官方函数手册支持)；依据 DM 官方文档,DM8 尚未实测。
+264	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+265	// 原 SQL（完整保留）：
+266				// sqlstr = "SELECT STOCK_PLACE_NO FROM twm04 WHERE	stock_no  = 'SA4' AND PILE_ASSIS_NO = @v_circle_1 AND PILE_MAT_NUM_ACT > 0 "
+267					// " AND PILE_MAT_NUM_ACT < MAX_HEIGHT AND MAX_HEIGHT > 0 AND PRE_MAT_NUM = 0"
+268					// " AND STOCK_STATUS = '0' AND STORE_AREA = '1' AND FIELDNO = '9' AND PILE_MAIN_NO <> @v_circle "
+269					// " AND timestampdiff(4, char(current timestamp - timestamp(FIELDNO_UPTIME))) <= 24 * 60"
+270					// " ORDER BY PILE_MAT_NUM_ACT DESC";
+271	// DM8 SQL：
+272				sqlstr = "SELECT STOCK_PLACE_NO FROM twm04 WHERE	stock_no  = 'SA4' AND PILE_ASSIS_NO = @v_circle_1 AND PILE_MAT_NUM_ACT > 0 "
+273					" AND PILE_MAT_NUM_ACT < MAX_HEIGHT AND MAX_HEIGHT > 0 AND PRE_MAT_NUM = 0"
+274					" AND STOCK_STATUS = '0' AND STORE_AREA = '1' AND FIELDNO = '9' AND PILE_MAIN_NO <> @v_circle "
+275					" AND timestampdiff(4, char(CURRENT_TIMESTAMP - timestamp(FIELDNO_UPTIME))) <= 24 * 60"
+276					" ORDER BY PILE_MAT_NUM_ACT DESC";
+277				cmd_inq.Close();
+278				cmd_inq.SetCommandText(sqlstr);
+279				Log::Trace("", __FUNCTION__, "sqlstr = [{0}]", sqlstr);
+280				cmd_inq.Parameters.Set("v_circle", v_circle);
+281				cmd_inq.Parameters.Set("v_circle_1", v_circle_1);
+282				int count5 = cmd_inq.ExecuteQuery(bcls_temp.Tables[0]);
+283				if (count5 == 0){
+284					v_stock_place_no = "ZZZ";
+285				}
+286				for (int i = 0; i < count5; i++)
+287				{
+288					v_stock_place_no = " ";
+289					v_stock_place_no = bcls_temp.Tables[0].Rows[i]["STOCK_PLACE_NO"];
+290	
+
+===== Server/WM00/libWM00/f_wm00_pile_jud.cpp L102-L130 =====
+102					slab_cold_flag = 1;
+103				}
+104	
+105				//板坯冷却时间：当前时间-切断时间
+106	// DM8 适配 CHANGE-237:查询。SYSIBM 辅助表改为 DUAL。
+107	// 改写原因：SYSIBM 辅助表改为 DUAL；依据 DM 官方文档,DM8 尚未实测。
+108	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+109	// 原 SQL（完整保留）：
+110				// sqlstr = "SELECT timestampdiff(8, CHAR(TIMESTAMP(to_date('" + dateNow14 + "', 'yyyy-mm-dd hh24:mi:ss')) - TIMESTAMP(to_date('" + tmmsm01.SLAB_CUT_TIME + "', 'yyyy-mm-dd hh24:mi:ss')))) AS diffTimes16"
+111					// " FROM sysibm.sysdummy1";
+112	// DM8 SQL：
+113				sqlstr = "SELECT timestampdiff(8, CHAR(TIMESTAMP(to_date('" + dateNow14 + "', 'yyyy-mm-dd hh24:mi:ss')) - TIMESTAMP(to_date('" + tmmsm01.SLAB_CUT_TIME + "', 'yyyy-mm-dd hh24:mi:ss')))) AS diffTimes16"
+114					" FROM DUAL";
+115				cmd_inq.Close();
+116				cmd_inq.SetCommandText(sqlstr);
+117				Log::Trace("", __FUNCTION__, "sqlstr = [{0}]", sqlstr);
+118				cmd_inq.ExecuteReader();
+119				if (!cmd_inq.Read()){
+120					s.flag = -1;
+121					strcpy(s.msg, "获取失败！");
+122					return -1;
+123				}
+124				slab_cold_time = cmd_inq.GetDecimal(1);//时间差
+125	
+126				//垛位判断
+127				if (twm04.COLD_HOT_REQ == 999 || twm04.COLD_HOT_REQ < slab_cold_time)//冷热要求判断
+128				{
+129					Log::Trace("", __FUNCTION__, "冷热要求判断符合要求");
+130					if (tmmsm01.MAT_ACT_LEN < twm04.MAX_LEN && tmmsm01.MAT_ACT_WIDTH < twm04.MAX_WIDTH)//长度、宽度范围判断
+
+===== Server/WM00/libWM00/f_wm00_pile_jud.cpp L182-L210 =====
+182							l_max = cmd_inq.GetDecimal(4);
+183							v_cut_time_min = cmd_inq.GetString(5);
+184	
+185							//最大冷却时间
+186	// DM8 适配 CHANGE-238:查询。SYSIBM 辅助表改为 DUAL。
+187	// 改写原因：SYSIBM 辅助表改为 DUAL；依据 DM 官方文档,DM8 尚未实测。
+188	// 本共用分支面向 DM8,其他 DB_KIND 标签也会执行此 SQL;参数、结果列、条件与排序保持不变。
+189	// 原 SQL（完整保留）：
+190							// sqlstr = "SELECT timestampdiff(8, CHAR(TIMESTAMP(to_date('" + dateNow14 + "', 'yyyy-mm-dd hh24:mi:ss')) - TIMESTAMP(to_date('" + v_cut_time_min + "', 'yyyy-mm-dd hh24:mi:ss')))) AS diffTimes16"
+191								// " FROM sysibm.sysdummy1";
+192	// DM8 SQL：
+193							sqlstr = "SELECT timestampdiff(8, CHAR(TIMESTAMP(to_date('" + dateNow14 + "', 'yyyy-mm-dd hh24:mi:ss')) - TIMESTAMP(to_date('" + v_cut_time_min + "', 'yyyy-mm-dd hh24:mi:ss')))) AS diffTimes16"
+194								" FROM DUAL";
+195							cmd_inq.Close();
+196							cmd_inq.SetCommandText(sqlstr);
+197							Log::Trace("", __FUNCTION__, "sqlstr = [{0}]", sqlstr);
+198							cmd_inq.ExecuteReader();
+199							if (!cmd_inq.Read()){
+200								s.flag = -1;
+201								strcpy(s.msg, "获取失败！");
+202								return -1;
+203							}
+204							v_max_cold_time = cmd_inq.GetDecimal(1);//时间差
+205	
+206							if ((w_min >= 1200 && tmmsm01.MAT_ACT_WIDTH >= 1200) || ((tmmsm01.MAT_ACT_WIDTH - w_min).Abs() <= twm04.WID_DIFF_MAX && (tmmsm01.MAT_ACT_WIDTH - w_max).Abs() <= twm04.WID_DIFF_MAX))//2016-10-13:
+207							{
+208								//EDLog(1, 1, "宽度与垛位中板坯判断满足要求");
+209								if ((tmmsm01.MAT_ACT_LEN - l_min).Abs() <= twm04.LEN_DIFF_MAX && (tmmsm01.MAT_ACT_LEN - l_max).Abs() <= twm04.LEN_DIFF_MAX)//2016-10-13:
+210								{
