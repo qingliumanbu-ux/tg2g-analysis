@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-# 生成《炼钢北区周边系统清单及通讯方式.xlsx》
+# 生成《炼钢北区周边系统清单及通讯方式.xlsx》v2
+# Sheet1 从官方原表逐字读取(7列原样) + 附加"代码侧印证"列 + 2行代码侧补充行
+# 冻结只锁行(A5,无竖线);列宽自适应
 import sys, os, io
 
 XLSX_SKILL_DIR = r'C:\Users\AIGC\.zcode\cli\plugins\cache\zcode-plugins-official\document-skills\0.1.4\skills\xlsx'
@@ -8,57 +10,81 @@ for sub in [XLSX_SKILL_DIR, os.path.join(XLSX_SKILL_DIR, 'templates')]:
         sys.path.insert(0, sub)
 
 from base import *  # noqa
-from openpyxl import Workbook
+from openpyxl import Workbook, load_workbook
 from openpyxl.utils import get_column_letter
 
-OUT = r'D:\work\company\太钢二炼钢\analysis\炼钢北区周边系统清单及通讯方式.xlsx'
+WS = r'D:\work\company\太钢二炼钢'
+OUT = WS + r'\analysis\炼钢北区周边系统清单及通讯方式.xlsx'
+SRC = WS + r'\analysis\dameng-migration\batches\外部接口接口整理_20230705.xlsx'
+
+def norm(v):
+    return '' if v is None else str(v).strip()
+
+# ---------- 读取官方原表(逐字) ----------
+sws = load_workbook(SRC, read_only=True, data_only=True)['Sheet1']
+src_rows = []
+for row in sws.iter_rows(min_row=2, max_col=8):
+    vals = [norm(c.value) for c in row]
+    if any(vals):
+        if len(vals) == 8 and vals[7] and not any(vals[:7]):
+            vals[6] = vals[7]        # 纯H列内容行 -> 并入备注列
+        src_rows.append(vals[:7])    # [系统名,厂商,节点,现有接口,改造后接口,电文解析结构,备注]
+assert len(src_rows) == 23, len(src_rows)
+
+EVIDENCE = [
+    'cm_002021/22/23_rcv 接收制造命令(PSSM);REC_CREATOR="XCOM"',
+    'f_xxpa04_snd(铁运车皮,XXPA04)、f_xxsm01_snd(发货码单,7000S4)',
+    'mmsm2a_snd/n(给资源铁区发消耗)',
+    'cm_32t809_rcv(铁区库存);f_mmsm_21b004/005/006_snd(质量/卸货确认/消耗实绩)',
+    'cm_nyme01/02_rcv(能源消耗接收);f_cm_mesac3_snd、t8f004/005/007/fsb/se(能源动态发送)',
+    'cm_ewt801_rcv、f_mmsm81_d021_handle_rcv、cm_b02103_rcv(计量实绩接收)',
+    'QMTS 工序制造标准11工序双向(002113~002123)、cm_200001_rcv、f_002103_snd(检验批)、cm_210003_rcv(检查结果)、cm_002128(物料改判)',
+    '电文描述中(北)/【二炼北】标识32处;北区与南区经前置机双向转发',
+    '代码库未见Broner直连(与官方结论一致)',
+    '同南区路径(经一钢前置机转发)',
+    '同南区路径(经一钢前置机转发)',
+    'sendbuff/receviedbuff 表模式(与倒罐站同构)',
+    '—', '—', '—', '—', '—',
+    'cm_1a1013/15/21(转炉实绩)、cm_1a1087(连铸切断)、f_mmsm3301(板坯原始数据)收;T8E2S1计划状态、PAS1P1出钢计划、PAS1P2铸坯命令、PAS1P3钢种变更、t8e2原料系列发;电文号含E2',
+    'QMTS cm_210003_rcv(检查结果接收【二炼北】)',
+    '—(官方表注:需要协调)',
+    '—',
+    '—(应用代码无直连证据;DBLink在数据库侧)',
+    '—',
+]
+assert len(EVIDENCE) == 23
+
+EXTRA_ROWS = [
+    ['TPS工艺模型【代码侧补充】', '宝信', '—', '—', 'REST/JSON', '—', '端点配置在iPlat4C EX04,系统代码MZX_TEST,服务CP_MODEL_TG',
+     'f_epex_call_rest_tpsmodel*(APBD 3个程序),CRestClient,JSON/UTF-8'],
+    ['宝武chat消息推送【代码侧补充】', '宝信', '—', 'EPEX电文', 'EPEX电文', '含wxurl字段', '消息通知通道',
+     'QMTS f_push_baowu_chat/_dd/_pro、qm_push_baowu_wb(4个程序)'],
+]
+
 wb = Workbook()
 wb.properties.creator = "Z.ai"
 
-# ================= Sheet1 周边系统总表 =================
+# ================= Sheet1 周边系统总表(原表逐字) =================
 ws = wb.active
 ws.title = '周边系统总表'
-H1 = ['序号', '对端系统', '厂商', '节点', '现有接口', '改造后接口', '电文解析结构/格式', '代码侧印证']
-rows1 = [
-    (1, '太钢制造管理系统', '宝信', '0R', 'PO', 'xcom直接通讯', 'JSON(GBK)', 'cm_002021 接收制造命令(PSSM);框架分发数据增加北区'),
-    (2, '物流运输管理系统', '宝信', '31', 'PO', '测试:xcom直接通讯\n运行:xcom+IXBUS', 'JSON(GBK),子母表形式', 'f_xxpa04_snd(铁运车皮,XXPA04)、f_xxsm01_snd(发货码单,7000S4)'),
-    (3, '资源综合利用系统', '宝信', '33', 'PO', 'xcom直接通讯', 'JSON(GBK),TLD协议', 'mmsm2a_snd/n(给资源铁区发消耗)'),
-    (4, '铁区动态管控系统', '宝信', '32', 'PO', 'xcom直接通讯', 'JSON(GBK),TLD协议', 'cm_32t809_rcv(铁区库存)、21B004/21B005/21B006 发送'),
-    (5, '能源动态管控系统', '宝信/宝能', 'F0', '前置机+IXBUS', 'xcom+IXBUS', '—', 'cm_nyme01/02_rcv(能源消耗接收)、t8f004/005/007/fsb/se 能源动态发送'),
-    (6, '计量系统', '宝信自动化', 'EW', 'PO', 'restful(不走xcom)', 'JSON', 'cm_ewt801_rcv、f_mmsm81_d021_handle_rcv、cm_b02103_rcv;已部署'),
-    (7, '智慧质量系统', '宝信', '23', '前置机+IXBUS', 'xcom直接通讯', '默认格式', 'QMTS 工序制造标准 11 工序双向(002113~002123)、cm_200001_rcv'),
-    (8, '炼钢二厂南区MES', '中冶赛迪', 'T7', 'PO', 'xcom+南区前置机', 'TGPO/29S', '南区接收:北区MES->前置机->PO->南区MES;南区发送反向;北/南标识32处'),
-    (9, 'Broner排程系统', '—', '—', '产销->PO->MES(转写Broner本地表)->Broner读取;发送反向经MES->L2', '不直接通讯', '—', '代码库未见Broner直连(与官方结论一致)'),
-    (10, '炼钢一厂不锈钢MES', '山宝', 'U0', 'PO', 'xcom+一钢前置机', 'TGPO/29S', '路由路径同南区MES'),
-    (11, '炼钢一厂碳钢MES', '山宝', 'V0', 'PO', 'xcom+一钢前置机', 'TGPO/29S', '同上'),
-    (12, '热连轧2250MES', 'Psi', 'P3', 'PO', 'xcom直接通讯', 'TGPO/29S', '北区->2250:框架直接写2250接口表;2250->北区:写xcom的sendbuff表'),
-    (13, '热连轧1549MES', '宝信', 'M7', 'PO', 'xcom直接通讯', 'JSON(GBK),TLD协议', '—'),
-    (14, '型材厂MES', '宝信', 'P1', 'PO', 'xcom直接通讯', 'JSON(GBK),TLD协议', '—'),
-    (15, '不锈线材厂MES', '宝信', 'P0', 'PO', 'xcom直接通讯', 'JSON(GBK),TLD协议', '—'),
-    (16, '4300中厚板厂MES', '宝信', '24', '前置机+IXBUS', 'xcom直接通讯', 'JSON(GBK),TLD协议', '—'),
-    (17, '太钢中板MES', '宝信', 'M9', '前置机+IXBUS', 'xcom直接通讯', 'JSON(GBK),TLD协议', '—'),
-    (18, 'L2 com系统(含板坯库L2)', '普瑞特/中冶南方/宝信', 'E2', 'DBLink', 'xcom+独立前置机', 'SHIGANG', 'cm_1a1013/15/21转炉实绩收、cm_1a1087连铸切断收、f_mmsm3301板坯原始数据收;发T8E2S1计划状态/PAS1P1出钢计划/PAS1P2铸坯命令/PAS1P3钢种变更/t8e2原料系列'),
-    (19, '检化验L2系统前置通讯机', '—', 'EJ', 'DBLink', 'xcom+独立前置机', '—', '检化验采用Oracle,通过ID号=5判断是否给MES;QMTS检查结果接收(210003)'),
-    (20, '炼钢二厂iPlat集控平台', '宝信自动化', '16', '数据抽取', '数据抽取', '—', '官方表注:需要协调'),
-    (21, '倒罐站数采系统', '—', 'ED', '新建', '新建', '默认', '北区MES->前置机receviedbuff;倒罐站->写前置sentbuff表'),
-    (22, '不锈冷轧系统', '—', '—', 'DBLink', 'DBLink(保留)', '—', '原10.11.132.212需转换为10.162/163/164(新库网段);现有北区10.13.133.136'),
-    (23, 'TPS工艺模型(代码侧补充)', '宝信', '—', '—', 'REST/JSON', '—', 'f_epex_call_rest_tpsmodel*(APBD 3个),CRestClient(conn,"MZX_TEST"),服务CP_MODEL_TG,端点在iPlat4C EX04'),
-    (24, '宝武chat消息推送(代码侧补充)', '宝信', '—', 'EPEX电文', 'EPEX电文', '含wxurl字段', 'QMTS f_push_baowu_chat/_dd/_pro、qm_push_baowu_wb,4个程序,消息通知通道'),
-]
-setup_sheet(ws, title='炼钢北区(二炼钢)周边系统总表 — 2026-09-08 梳理(官方接口整理表20230705+代码证据)', last_col=1 + len(H1))
+H1 = ['系统名', '厂商', '节点', '现有接口', '改造后接口', '电文解析结构', '备注', '代码侧印证(本次梳理)']
+last1 = 1 + len(H1)
+setup_sheet(ws, title='炼钢北区(二炼钢)周边系统总表 — 前7列逐字取自官方《外部接口接口整理_20230705》,末列为本次代码梳理印证', last_col=last1)
 for c, h in enumerate(H1, 2):
     ws.cell(row=4, column=c, value=h)
-style_header_row(ws, row_num=4, col_start=2, col_end=1 + len(H1))
-for i, r in enumerate(rows1):
+style_header_row(ws, row_num=4, col_start=2, col_end=last1)
+all_rows = src_rows + EXTRA_ROWS
+for i, r in enumerate(all_rows):
+    rownum = 5 + i
     for c, v in enumerate(r, 2):
-        ws.cell(row=5 + i, column=c, value=v)
-    style_data_row(ws, row_num=5 + i, col_start=2, col_end=1 + len(H1), row_index=i)
-ws.freeze_panes = 'C5'
+        ws.cell(row=rownum, column=c, value=v)
+    style_data_row(ws, row_num=rownum, col_start=2, col_end=last1, row_index=i)
+ws.freeze_panes = 'A5'
 ws.page_setup.orientation = 'landscape'
 ws.page_setup.fitToWidth = 1
 ws.page_setup.fitToHeight = 0
 ws.print_title_rows = '4:4'
-auto_fit_columns(ws, min_width=8, max_width=40, header_row=4, data_start_row=5)
+auto_fit_columns(ws, min_width=8, max_width=60, header_row=4, data_start_row=5)
 auto_fit_row_heights(ws, header_row=4, data_start_row=5)
 
 # ================= Sheet2 通道机制说明 =================
@@ -82,11 +108,11 @@ for i, r in enumerate(rows2):
     for c, v in enumerate(r, 2):
         ws2.cell(row=5 + i, column=c, value=v)
     style_data_row(ws2, row_num=5 + i, col_start=2, col_end=1 + len(H2), row_index=i)
-ws2.freeze_panes = 'C5'
+ws2.freeze_panes = 'A5'
 ws2.page_setup.orientation = 'landscape'
 ws2.page_setup.fitToWidth = 1
 ws2.page_setup.fitToHeight = 0
-auto_fit_columns(ws2, min_width=8, max_width=40, header_row=4, data_start_row=5)
+auto_fit_columns(ws2, min_width=8, max_width=60, header_row=4, data_start_row=5)
 auto_fit_row_heights(ws2, header_row=4, data_start_row=5)
 
 # ================= Sheet3 电文程序统计 =================
@@ -109,7 +135,7 @@ for c, h in enumerate(H3, 2):
 style_header_row(ws3, row_num=4, col_start=2, col_end=1 + len(H3))
 for i, r in enumerate(rows3):
     for c, v in enumerate(r, 2):
-        cell = ws3.cell(row=5 + i, column=c, value=v)
+        ws3.cell(row=5 + i, column=c, value=v)
     style_data_row(ws3, row_num=5 + i, col_start=2, col_end=1 + len(H3), row_index=i)
     for c in range(3, 6):
         ws3.cell(row=5 + i, column=c).alignment = align_number()
@@ -119,7 +145,7 @@ for c in range(3, 6):
     L = get_column_letter(c)
     ws3.cell(row=tr, column=c, value=f'=SUM({L}5:{L}{tr-1})')
 style_total_row(ws3, row_num=tr, col_start=2, col_end=1 + len(H3))
-ws3.freeze_panes = 'C5'
+ws3.freeze_panes = 'A5'
 auto_fit_columns(ws3, min_width=8, max_width=30, header_row=4, data_start_row=5)
 auto_fit_row_heights(ws3, header_row=4, data_start_row=5)
 
@@ -134,12 +160,12 @@ for i, r in enumerate(inv):
     for c, v in enumerate(r, 2):
         ws4.cell(row=5 + i, column=c, value=v)
     style_data_row(ws4, row_num=5 + i, col_start=2, col_end=1 + len(H4), row_index=i)
-ws4.freeze_panes = 'C5'
+ws4.freeze_panes = 'A5'
 ws4.page_setup.orientation = 'landscape'
 ws4.page_setup.fitToWidth = 1
 ws4.page_setup.fitToHeight = 0
 ws4.print_title_rows = '4:4'
-auto_fit_columns(ws4, min_width=8, max_width=40, header_row=4, data_start_row=5)
+auto_fit_columns(ws4, min_width=8, max_width=45, header_row=4, data_start_row=5)
 auto_fit_row_heights(ws4, header_row=4, data_start_row=5)
 
 # ================= Sheet5 DM8迁移关系与待确认事项 =================
@@ -164,11 +190,11 @@ for i, r in enumerate(rows5):
     for c, v in enumerate(r, 2):
         ws5.cell(row=5 + i, column=c, value=v)
     style_data_row(ws5, row_num=5 + i, col_start=2, col_end=1 + len(H5), row_index=i)
-ws5.freeze_panes = 'C5'
+ws5.freeze_panes = 'A5'
 ws5.page_setup.orientation = 'landscape'
 ws5.page_setup.fitToWidth = 1
 ws5.page_setup.fitToHeight = 0
-auto_fit_columns(ws5, min_width=8, max_width=40, header_row=4, data_start_row=5)
+auto_fit_columns(ws5, min_width=8, max_width=60, header_row=4, data_start_row=5)
 auto_fit_row_heights(ws5, header_row=4, data_start_row=5)
 
 wb.save(OUT)
