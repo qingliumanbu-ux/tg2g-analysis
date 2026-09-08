@@ -1,0 +1,25 @@
+===== 工作表: Sheet1 (24行 x 8列) =====
+系统名	厂商	节点	现有接口	改造后接口	电文解析结构		
+太钢制造管理系统	宝信	0R	PO	xcom直接通讯	JSON(GBK)	框架分发数据增加北区	
+物流运输管理系统	宝信	31	PO	测试:xcom直接通讯⏎运行:xcom+IXBUS	JSON(GBK)	采用JSON(GBK)，因电文存在子母表形式	
+资源综合利用系统	宝信	33	PO	xcom直接通讯	JSON(GBK)	TLD协议、JSON(GBK)格式	
+铁区动态管控系统	宝信	32	PO	xcom直接通讯	JSON(GBK)	TLD协议、JSON(GBK)格式	
+能源动态管控系统	宝信\宝能	F0	前置机+IXBUS	xcom+IXBUS			
+计量系统	宝信自动化	EW	PO	restful(不走xcom)	JSON	程婕已部署	
+智慧质量系统	宝信	23	前置机+IXBUS	xcom直接通讯	默认	默认格式	
+炼钢二厂南区MES系统（现有系统）	中冶赛迪	T7	PO	xcom+南区前置机	TGPO/29S	南区接收：北区MES->前置机->PO->南区MES⏎南区发送：南区MES->PO->前置机->北区MES	
+Broner排程系统			Broner接收:产销->PO->MES(转写Broner需要的本地表)->Broner读取⏎Broner发送:Broner写本地表->MES读取->L2	不直接通讯			
+炼钢一厂不锈钢MES系统	山宝	U0	PO	xcom+一钢前置机	TGPO/29S	南区接收：北区MES->前置机->PO->南区MES⏎南区发送：南区MES->PO->前置机->北区MES	
+炼钢一厂碳钢MES系统	山宝	V0	PO	xcom+一钢前置机	TGPO/29S	南区接收：北区MES->前置机->PO->南区MES⏎南区发送：南区MES->PO->前置机->北区MES	
+热连轧2250MES系统	Psi	P3	PO	xcom直接通讯	TGPO/29S	北区MES->2250：框架直接写 2250接口表⏎2250->北区MES：2250写xcom(2250)的sendbuff表	
+热连轧1549MES系统	宝信	M7	PO	xcom直接通讯	JSON(GBK)	TLD协议、JSON(GBK)格式	
+型材厂MES系统	宝信	P1	PO	xcom直接通讯	JSON(GBK)	TLD协议、JSON(GBK)格式	
+不锈线材厂MES系统	宝信	P0	PO	xcom直接通讯	JSON(GBK)	TLD协议、JSON(GBK)格式	
+4300中厚板厂MES系统	宝信	24	前置机+IXBUS	xcom直接通讯	JSON(GBK)	TLD协议、JSON(GBK)格式	
+太钢中板MES	宝信	M9	前置机+IXBUS	xcom直接通讯	JSON(GBK)	TLD协议、JSON(GBK)格式	
+L2 com系统(含板坯库L2系统)	普瑞特⏎中冶南方⏎宝信	E2	DBLink	xcom+独立前置机	SHIGANG		
+检化验L2系统前置通讯机		EJ	DBLink	xcom+独立前置机		检化验采用oracle，通过ID号为5判断是否给MES	
+炼钢二厂iPlat集控平台	宝信自动化	16	数据抽取	数据抽取		需要协调	
+倒罐站数采系统		ED	新建	新建	默认	倒罐站接收:北区MES->前置机->倒罐站读前置机的receviedbuff表⏎倒罐站发送：倒罐站->写前置sentbuff表	
+不锈冷轧系统			DBLink	DBLink		10.11.132.212(需要转换成10.162/163/164的)	
+							10.13.133.136(现有北区)

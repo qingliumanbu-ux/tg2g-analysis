@@ -1,0 +1,445 @@
+模块	程序	方向	描述	电文号	电文入口
+CAAI	caai20_snd.cpp	snd	月平衡抛sap		
+CAAI	caais7_snd.cpp	snd	委外加工费计划发送		
+CAAI	caais7_snd2.cpp	snd	委外加工费计划发送取消		
+CAAI	cm_nyme01_rcv.cpp	rcv	生产按炉/计划号能源消耗		TELE
+CAAI	cm_nyme02_rcv.cpp	rcv	非生产按班能源信息		TELE
+CAAI	cm_samec1_rcv.cpp	rcv	物料编码接收信息		TELE
+CAAI	cm_samec2_rcv.cpp	rcv	物料价格接收信息		TELE
+CAAI	cm_samec3_rcv.cpp	rcv	月总耗用接收信息		TELE
+CAAI	cm_samec4_rcv.cpp	rcv	bom 信息接收信息		TELE
+CAAI	cm_samec5_rcv.cpp	rcv	月总费用明细接收信息		TELE
+CAAI	f_cm_mesac1_snd.cpp	snd	副产品回收发送	MESAC1	
+CAAI	f_cm_mesac2_snd.cpp	snd	委外加工费发送	MESAC2	
+CAAI	f_cm_mesac3_snd.cpp	snd	能源消耗发送	MESAC3	
+FBSM	fbsm_cost_rcv.cpp	rcv	标准成本		
+FBSM	fbsm_price_rcv.cpp	rcv	周利润原料价格		
+FBSM	fbsm_scrap_rcv.cpp	rcv	废钢基准成分		
+MM00	cm_sm0008_rcv.cpp	rcv	码单红冲		TELE
+MM00	cm_sm0009_rcv.cpp	rcv	发货码单接收		TELE
+MM00	cm_sm0010_rcv.cpp	rcv	厂外库入库		TELE
+MMSM	cm_0020ma_rcv.cpp	rcv	PES侧接收炼钢钢坯物料信息倒灌(MMS->炼钢PES)电文		TELE
+MMSM	cm_0020mz_rcv.cpp	rcv	PES侧接收炼钢板坯信息同步(MMS->炼钢PES)电文		TELE
+MMSM	cm_002108_rcv.cpp	rcv	empty 注意这是空配置程序，无任何作用！		TELE
+MMSM	cm_002109_rcv.cpp	rcv	empty 注意这是空配置程序，无任何作用！		TELE
+MMSM	cm_002126_rcv.cpp	rcv	PES侧接收炼钢板坯信息同步(MMS->炼钢PES)电文		TELE
+MMSM	cm_002131_rcv.cpp	rcv	empty 注意这是空配置程序，无任何作用！		TELE
+MMSM	cm_002132_rcv.cpp	rcv	empty 注意这是空配置程序，无任何作用！		TELE
+MMSM	cm_002151_rcv.cpp	rcv	empty 注意这是空配置程序，无任何作用！		TELE
+MMSM	cm_0rt801_rcv.cpp	rcv	PES侧接收铸坯收货反馈信息(MMS->炼钢PES)电文		TELE
+MMSM	cm_0rt8d1_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_0rt8m0_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_0rt8m0_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_0rt8s0_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_0rt8s0_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_1a1013_rcv.cpp	rcv	接收二级转炉实绩		TELE
+MMSM	cm_1a1015_rcv.cpp	rcv	接收二级转炉实绩		TELE
+MMSM	cm_1a1021_rcv.cpp	rcv	接收二级转炉实绩		TELE
+MMSM	cm_1a1087_rcv.cpp	rcv	接收二级板坯连铸切断实绩		TELE
+MMSM	cm_200002_rcv.cpp	rcv	接收PES钢种判定电文		TELE
+MMSM	cm_200012_rcv.cpp	rcv	接收PES铁水倒罐实绩		TELE
+MMSM	cm_200013_rcv.cpp	rcv	接收PES铁水扒渣实绩		TELE
+MMSM	cm_200014_rcv.cpp	rcv	接收PES铁水脱硫实绩		TELE
+MMSM	cm_200020_rcv.cpp	rcv	接收PES电炉作业实绩		TELE
+MMSM	cm_200021_rcv.cpp	rcv	接收PES转炉作业实绩		TELE
+MMSM	cm_200022_rcv.cpp	rcv	接收PES转炉作业实绩		TELE
+MMSM	cm_200023_rcv.cpp	rcv	接收PESRH作业实绩		TELE
+MMSM	cm_200024_rcv.cpp	rcv	接收PESLF作业实绩		TELE
+MMSM	cm_200025_rcv.cpp	rcv	接收PESVD作业实绩		TELE
+MMSM	cm_20002a_rcv.cpp	rcv	接收PES炼钢合金消耗实绩		TELE
+MMSM	cm_20002b_rcv.cpp	rcv	接收PES炼钢测温实绩		TELE
+MMSM	cm_20002d_rcv.cpp	rcv	接收PES炼钢通电实绩		TELE
+MMSM	cm_200031_rcv.cpp	rcv	接收PES连铸炉次实绩		TELE
+MMSM	cm_200033_rcv.cpp	rcv	接收PES发送的铸坯切断实绩信息		TELE
+MMSM	cm_200034_rcv.cpp	rcv	接收PES发送的铸坯精整实绩信息		TELE
+MMSM	cm_200035_rcv.cpp	rcv	炼钢材料分切电文接收		TELE
+MMSM	cm_20003g_rcv.cpp	rcv	炼钢材料拆批电文接收		TELE
+MMSM	cm_20003h_rcv.cpp	rcv	炼钢材料并批电文接收		TELE
+MMSM	cm_20003y_rcv.cpp	rcv	炼钢缺陷信息电文接受		TELE
+MMSM	cm_2000ma_rcv.cpp	rcv	MMS侧接收炼钢钢坯信息新增(炼钢PES->MMS)电文		
+MMSM	cm_2000mb_rcv.cpp	rcv	MMS侧接收炼钢钢坯信息修改(炼钢PES->MMS)电文		
+MMSM	cm_2000mc_rcv.cpp	rcv	MMS侧接收炼钢钢坯信息删除(炼钢PES->MMS)电文		
+MMSM	cm_2000mz_rcv.cpp	rcv	MMS侧接收炼钢板坯信息同步(炼钢PES->MMS)电文		TELE
+MMSM	cm_210036_rcv.cpp	rcv	PES侧接收炼钢板坯信息同步(MMS->炼钢PES)电文		TELE
+MMSM	cm_32t809_rcv.cpp	rcv	铁区库存信息接收		TELE
+MMSM	cm_33t805_rcv.cpp	rcv	资源库存信息接收		TELE
+MMSM	cm_33t806_rcv.cpp	rcv	资源及时库存信息接收		TELE
+MMSM	cm_a02101_rcv.cpp	rcv	接收资源系统		TELE
+MMSM	cm_b02101_rcv.cpp	rcv	高炉出铁实绩接收		TELE
+MMSM	cm_b02102_rcv.cpp	rcv	铁水分配信息接收		TELE
+MMSM	cm_b02103_rcv.cpp	rcv	接收计量信息		TELE
+MMSM	cm_b02104_rcv.cpp	rcv	质量数据接收		TELE
+MMSM	cm_b02105_rcv.cpp	rcv	物料移动实绩		TELE
+MMSM	cm_b02106_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_b02107_rcv.cpp	rcv	磅单号与质检组批对应关系接收		TELE
+MMSM	cm_b02108_rcv.cpp	rcv	石灰采购订单接收		TELE
+MMSM	cm_c02101_rcv.cpp	rcv	接收资源系统		TELE
+MMSM	cm_c02102_rcv.cpp	rcv	接收资源系统		TELE
+MMSM	cm_c02103_rcv.cpp	rcv	接收资源系统		TELE
+MMSM	cm_c02104_rcv.cpp	rcv	接收资源系统		TELE
+MMSM	cm_e2t8a1_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8c1_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8c2_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8e1_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8e2_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8e3_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8e4_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8f1_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8m0_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8m1_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8m4_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8m5_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8q0_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8q1_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8s1_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8s2_rcv.cpp	rcv	实绩接收		TELE
+MMSM	cm_e2t8s3_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8s4_rcv.cpp	rcv	实绩接收		TELE
+MMSM	cm_e2t8s5_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8s6_rcv.cpp	rcv	实绩接收		TELE
+MMSM	cm_e2t8s7_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8s8_rcv.cpp	rcv	实绩接收		TELE
+MMSM	cm_e2t8s9_rcv.cpp	rcv	实绩接收		TELE
+MMSM	cm_e2t8sa_rcv.cpp	rcv	实绩接收		TELE
+MMSM	cm_e2t8t1_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8t2_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8w2_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8w3_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8z1_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8z2_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_e2t8z3_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_ect801_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_ect802_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_ect803_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_ect804_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_edt801_rcv.cpp	rcv	鱼雷罐过程跟踪信息接收		TELE
+MMSM	cm_edt802_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_edt803_rcv.cpp	rcv	鱼雷罐实绩接收		TELE
+MMSM	cm_edt804_rcv.cpp	rcv	铁水罐实绩接收		TELE
+MMSM	cm_edt805_rcv.cpp	rcv	倒罐倾倒过程接收		TELE
+MMSM	cm_edt806_rcv.cpp	rcv	铁水罐实时重量跟踪接收		TELE
+MMSM	cm_edt807_rcv.cpp	rcv	鱼雷罐运转事件接收		TELE
+MMSM	cm_edt808_rcv.cpp	rcv	过程操作记录接收		TELE
+MMSM	cm_edt809_rcv.cpp	rcv	倒罐操作履历接收		TELE
+MMSM	cm_edt810_rcv.cpp	rcv	倒罐操作履历接收		TELE
+MMSM	cm_edt811_rcv.cpp	rcv	倒罐操作履历接收		TELE
+MMSM	cm_edt812_rcv.cpp	rcv	倒罐操作履历接收		TELE
+MMSM	cm_edt813_rcv.cpp	rcv	倒罐操作履历接收		TELE
+MMSM	cm_ekt801_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_ekt82a_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_elt801_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_elt804_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_ewt801_rcv.cpp	rcv	一钢计量实绩接收		TELE
+MMSM	cm_eyt801_rcv.cpp	rcv	接收上料		TELE
+MMSM	cm_f0t8s1_rcv.cpp	rcv	**************************************************/		TELE
+MMSM	cm_p3t803_rcv.cpp	rcv	获取板坯数据		TELE
+MMSM	f_21b003_snd.cpp	snd	铁水收料确认实绩发送	21B003	
+MMSM	f_21b004_snd.cpp	snd	铁水质量信息发送	21B004	
+MMSM	f_mmsm009a_snd.cpp	snd	炼钢实绩总调电文发送		
+MMSM	f_mmsm009b_snd.cpp	snd	炼钢实绩电文发送（智慧质量）		
+MMSM	f_mmsm009c_snd.cpp	snd	集控大屏数据添加		
+MMSM	f_mmsm009d_snd.cpp	snd	集控大屏加料数据添加		
+MMSM	f_mmsm009e_snd.cpp	snd	集控大屏数据添加		
+MMSM	f_mmsm191c13_snd.cpp	snd	一炼钢高炉铁水信息发送电文	191C13	
+MMSM	f_mmsm3301_rcv.cpp	rcv	接收二级板坯原始数据		
+MMSM	f_mmsm81_d021_handle_rcv.cpp	rcv	一钢计量实绩接收		
+MMSM	f_mmsm_210034_snd.cpp	snd	二切实绩接收 发送L4电文	210034	
+MMSM	f_mmsm_210036_snd.cpp	snd	【二炼北】锭坯精整、修磨实绩	210036;T823SB	
+MMSM	f_mmsm_210038_snd.cpp	snd	【二炼北】缓冷发送实绩	210038	
+MMSM	f_mmsm_210044_snd.cpp	snd	钢坯切废实绩 发送L4电文	210044	
+MMSM	f_mmsm_210045_snd.cpp	snd	钢坯切废实绩 发送L4电文	210045	
+MMSM	f_mmsm_210046_snd.cpp	snd	钢坯初判等级 发送L4电文	210046	
+MMSM	f_mmsm_210047_snd.cpp	snd	钢坯切废实绩 发送L4电文	210047	
+MMSM	f_mmsm_210048_snd.cpp	snd	废品转正品 发送L4电文	210048	
+MMSM	f_mmsm_210049_snd.cpp	snd	炼钢倒罐实绩处理		
+MMSM	f_mmsm_210050_snd.cpp	snd	铁水数据发送	210050	
+MMSM	f_mmsm_21a001_snd.cpp	snd	一给物流-汽运/火车采购进厂卸货确认		
+MMSM	f_mmsm_21a002_snd.cpp	snd	一给物流-采购退货装货确认	21A002	
+MMSM	f_mmsm_21a003_snd.cpp	snd	一给物流-采购退货装货确认	21A003	
+MMSM	f_mmsm_21a004_snd.cpp	snd	一给物流-采购退货装货确认	21A004	
+MMSM	f_mmsm_21a008_snd.cpp	snd	一给物流-厂内转运用车计划	21A008	
+MMSM	f_mmsm_21a009_snd.cpp	snd	汽运、铁路装车电文	21A009	
+MMSM	f_mmsm_21a010_snd.cpp	snd	一配送物料及调拨物料确认卸货时，给物流系统发送电文21A010-汽运、铁路卸车确认		
+MMSM	f_mmsm_21a018_snd.cpp	snd	一给物流-采购退货装货确认	21A018	
+MMSM	f_mmsm_21b001_snd.cpp	snd	一给物流-采购退货装货确认	21B001	
+MMSM	f_mmsm_21b002_snd.cpp	snd	一给物流-采购退货装货确认	21B002	
+MMSM	f_mmsm_21b003_snd.cpp	snd	一给物流-采购退货装货确认	21B003	
+MMSM	f_mmsm_21b004_snd.cpp	snd	一给铁区-质量数据		
+MMSM	f_mmsm_21b005_snd.cpp	snd	一给铁区-采购进厂卸货确认		
+MMSM	f_mmsm_21b006_snd.cpp	snd	一铁区系统-消耗实绩发送电文	21B006	
+MMSM	f_mmsm_21c001_snd.cpp	snd	要料信息申请		
+MMSM	f_mmsm_21c002_snd.cpp	snd	交料信息申请		
+MMSM	f_mmsm_21c004_snd.cpp	snd	一资源系统-废钢料篮计量信息		
+MMSM	f_mmsm_21c005_snd.cpp	snd	一资源系统-废钢合金消耗实绩发送电文	21C005	
+MMSM	f_mmsm_21c006_snd.cpp	snd	一资源系统-自循环废钢收料实绩		
+MMSM	f_mmsm_21c007_snd.cpp	snd	一给物流-采购退货装货确认	21C007	
+MMSM	f_mmsm_21c011_snd.cpp	snd	一给资源-采购进厂卸货确认		
+MMSM	f_mmsm_e2t8m1_snd.cpp	snd	制造出库	T8E2M1	
+MMSM	f_mmsm_t80r91_snd.cpp	snd	炉成本核算计算发送L4电文	T80R91	
+MMSM	f_mmsm_t80rs0_snd.cpp	snd	物料事件同步	T800S0	
+MMSM	f_mmsm_t80rya_snd.cpp	snd	制造入库	T80RYA	
+MMSM	f_mmsm_t80ryb_snd.cpp	snd	制造出库	T80RYB	
+MMSM	f_mmsm_t80ryc_snd.cpp	snd	制造倒垛	T80RYC	
+MMSM	f_mmsm_t82303_snd.cpp	snd	二切实绩接收 发送L4电文	T82303	
+MMSM	f_mmsm_t823sb_snd.cpp	snd	修磨难度系数实绩---发智慧质量	T823SB	
+MMSM	f_mmsm_t83313_snd.cpp	snd	一给原料L2-原料成分		
+MMSM	f_mmsm_t8e2m1_snd.cpp	snd	制造出库	T8E2M1	
+MMSM	f_mmsm_t8e2yb_snd.cpp	snd	一给原料L2-原料成分		
+MMSM	f_mmsm_t8e2yc_snd.cpp	snd	一给原料L2-电炉加料数据		
+MMSM	f_mmsm_t8e2yx_snd.cpp	snd	一给原料L2-各工序料槽信息		
+MMSM	f_mmsm_t8e2yy_snd.cpp	snd	一给原料L2-各工序料仓物料信息		
+MMSM	f_mmsm_t8t701_snd.cpp	snd	要料信息申请		
+MMSM	f_mmsmacsh_snd.cpp	snd	制造入库	210033	
+MMSM	f_mmsmlcjk_snd.cpp	snd	集控大屏数据添加		
+MMSM	f_mmsmlcnb01_snd.cpp	snd	一给物流-汽运/火车采购进厂卸货确认	21B007;21C012	
+MMSM	f_t82304_snd.cpp	snd	发送实际工艺路径	T82304	
+MMSM	f_t823_snd.cpp	snd	智慧质量函数		
+MMSM	f_t8ed01_snd.cpp	snd	来铁信息发送倒罐站	T8ED01	
+MMSM	f_t8ed02_snd.cpp	snd	铁水质量发送倒罐站	T8ED02	
+MMSM	f_t8f001_snd.cpp	snd	转炉冶炼计划		
+MMSM	f_t8f002_snd.cpp	snd	脱硫实绩		
+MMSM	f_t8f003_snd.cpp	snd	投料实绩		
+MMSM	f_t8f004_snd.cpp	snd	能源动态转炉发送		
+MMSM	f_t8f005_snd.cpp	snd	能源动态LF发送		
+MMSM	f_t8f006_snd.cpp	snd	RH实绩		
+MMSM	f_t8f007_snd.cpp	snd	能源AOD发送		
+MMSM	f_t8f008_snd.cpp	snd	VOD发送		
+MMSM	f_t8f009_snd.cpp	snd	合金融化炉实绩		
+MMSM	f_t8f010_snd.cpp	snd	电炉实绩		
+MMSM	f_t8f011_snd.cpp	snd	连铸炉次实绩		
+MMSM	f_t8f012_snd.cpp	snd	投料实绩		
+MMSM	f_t8f0s1_snd.cpp	snd	**************************************************/		
+MMSM	f_t8f0sa_snd.cpp	snd	出钢计划		
+MMSM	f_t8fsb_snd.cpp	snd	能源动态VOD发送		
+MMSM	f_t8fse_snd.cpp	snd	能源动态VOD发送		
+MMSM	mmsm11_dk_snd.cpp	snd	制造命令号对应的板坯查询		
+MMSM	mmsm11cv_snd.cpp	snd	铁水实绩电文发送		
+MMSM	mmsm2a_snd.cpp	snd	给资源铁区发消耗		
+MMSM	mmsm2a_sndn.cpp	snd	给资源铁区发消耗		
+MMSM	mmsm50af8_snd.cpp	snd	制造命令号对应的板坯查询	GEG901	
+MMSM	mmsm50af9_snd.cpp	snd	制造命令号对应的板坯查询		
+MMSM	mmsm65_snd.cpp	snd	MMSM65增删改		
+MMSM	mmsm67_snd.cpp	snd	MMSM67		
+MMSM	mmsm67car_snd.cpp	snd	废钢装车		
+MMSM	mmsm81_d021_rcv.cpp	rcv	一钢计量实绩接收		TELE
+MMSM	mmsm81_rcv_inq.cpp	rcv	原辅料主信息查询		
+MMSM	mmsm82a_snd.cpp	snd	炉次信息		
+MMSM	mmsm82a_snd2_batch.cpp	snd	自动抛实绩消耗		
+MMSM	mmsm82a_snd_batch.cpp	snd	批量执行抛帐		
+MMSM	mmsm82a_snd_force.cpp	snd	炉次信息		
+MMSM	mmsm82d_snd.cpp	snd	分摊量发送		
+MMSM	mmsm82h_snd.cpp	snd	炉次信息		
+MMSM	mmsm89_rcv_inq.cpp	rcv	原辅料主信息查询		
+MMSM	mmsm89_rcv_inq1.cpp	rcv	原辅料主信息查询		
+MMSM	mmsm89_rcv_inq2.cpp	rcv	原辅料主信息查询		
+MMSM	mmsm89_rcv_inq3.cpp	rcv	原辅料主信息查询		
+MMSM	mmsmnb01_snd.cpp	snd	MMSM65增删改		
+MMSM	mmsmnb02_snd.cpp	snd	MMSM65增删改		
+MMSM	mmsmt823sj_snd.cpp	snd	自动抛实绩消耗		
+PSSM	cm_002021_rcv.cpp	rcv	PES系统接受对MMS系统下发的制造命令进行接受		TELE
+PSSM	cm_002022_rcv.cpp	rcv	PES系统接受对MMS系统下发的板坯制造命令进行接收		TELE
+PSSM	cm_002023_rcv.cpp	rcv	PES系统接受对MMS系统下发的板坯制造命令进行接收		TELE
+PSSM	cm_002124_rcv.cpp	rcv	PES系统接受对MMS系统下发的制造命令进行接受		TELE
+PSSM	cm_002134_rcv.cpp	rcv	PES系统接受对MMS系统下发的板坯制造命令进行接收		TELE
+PSSM	cm_0rt8p1_rcv.cpp	rcv	PES系统接受对MMS系统下发的制造命令进行接受		TELE
+PSSM	cm_200007_rcv.cpp	rcv	MMS系统接受PES的命令应答		TELE
+PSSM	cm_200008_rcv.cpp	rcv	MMS系统接收PES上传的钢种变更		TELE
+PSSM	cm_200009_rcv.cpp	rcv	MMS系统接受PES的计划状态		TELE
+PSSM	cm_2000k1_rcv.cpp	rcv	热送炉次信息接收电文	0070K1	TELE
+PSSM	cm_e2t8r2_rcv.cpp	rcv	甘特图信号模拟		TELE
+PSSM	f_cm_002021_snd.cpp	snd	炉次制造命令下发电文	002021	
+PSSM	f_cm_002022_snd.cpp	snd	LOT信息下发电文	002022	
+PSSM	f_cm_002023_snd.cpp	snd	LOT信息下发电文	002023	
+PSSM	f_cm_002024_snd.cpp	snd	炼钢计划日备注信息下发	H3H424	
+PSSM	f_cm_200007_snd.cpp	snd	发送命令接收应答至MMS。	200007	
+PSSM	f_cm_200008_snd.cpp	snd	发送钢种变更信息至MMS	200008	
+PSSM	f_cm_200009_snd.cpp	snd	发送计划状态信息至MMS。	210011	
+PSSM	f_cm_2000k1_snd.cpp	snd	自动热送开始	2000K1	
+PSSM	f_cm_20qx04_snd.cpp	snd	给智慧质量发送炉次确定电文	20QX04	
+PSSM	f_order_snd.cpp	snd	发送计划状态信息至MMS。	T8E2R1;T8E2R2;T8E2R3;T8E2R4;T8E2R5;T8E2R6	
+PSSM	f_plan_delete_snd.cpp	snd	发送计划状态信息至l2。	T8E2S1	
+PSSM	f_plan_delete_snd2.cpp	snd	发送计划状态信息至l2。	T8E2S1	
+PSSM	f_plan_insert_snd.cpp	snd	发送计划状态信息至l2。	T8E2S1	
+PSSM	f_plan_slab_snd.cpp	snd	发送计划状态信息至MMS。	T8E2S3	
+PSSM	f_plan_update_snd.cpp	snd	发送计划状态信息至l2。		
+PSSM	f_plan_update_snd2.cpp	snd	发送计划状态信息至l2。	T8E2S1	
+PSSM	f_pssm11_cut_rcv.cpp	rcv	根据传入的炼钢厂别区分，制造命令号、切割结束标记来修改钢种管理表中切割结束标记。		
+PSSM	f_pssm12_mm_rcv.cpp	rcv	写入实绩接收标记。		
+PSSM	f_pssm_paimp1_snd.cpp	snd	发送连铸预计化至铁前	PAIMP1	
+PSSM	f_pssm_paimp2_snd.cpp	snd	发送停机实绩给铁区。	PAIMP2	
+PSSM	f_pssm_paimp3_snd.cpp	snd	发送转炉开吹时刻给铁区。	PAIMP3	
+PSSM	f_pssm_pas1p1_snd.cpp	snd	发送出钢计划至L2。	PAS1P1;PAS2P1;PAS3P1	
+PSSM	f_pssm_pas1p2_snd.cpp	snd	发送铸坯命令至L2。	PAS1P2;PAS2P2;PAS3P2	
+PSSM	f_pssm_pas1p3_snd.cpp	snd	钢种变更下发L2电文。	HMJL03;PAS1P3;PAS2P3;PAS3P3	
+PSSM	f_t8e2s1_snd.cpp	snd	发送计划状态信息至MMS。		
+PSSM	pssm05_snd.cpp	snd	下发炼钢计划		
+PSSM	pssm11_snd.cpp	snd	出钢计划下发		
+PSSM	pssm24_snd.cpp	snd			
+PSSM	pssm27_snd.cpp	snd			
+PSSM	pssm38_snd.cpp	snd	月出钢计划维护送信至EMS系统		
+PSSM	pssm82_snd.cpp	snd	钢水返送信息一览查询		
+QMTS	cm_002001_rcv.cpp	rcv	工艺卡电文接收		TELE
+QMTS	cm_002002_rcv.cpp	rcv	混杂元素电文接收		TELE
+QMTS	cm_0020q1_rcv.cpp	rcv	工艺卡制造标准接收		TELE
+QMTS	cm_002128_rcv.cpp	rcv	物料改判发送（北）		TELE
+QMTS	cm_002133_rcv.cpp	rcv	PM[炼钢二厂北MES]合同信息变更发送（北）		TELE
+QMTS	cm_002161_rcv.cpp	rcv	合同信息接收		TELE
+QMTS	cm_0rt802_rcv.cpp	rcv	0RT802		TELE
+QMTS	cm_0rt803_rcv.cpp	rcv	0RT803		TELE
+QMTS	cm_0rt804_rcv.cpp	rcv	0RT804		TELE
+QMTS	cm_0rt805_rcv.cpp	rcv	0RT805		TELE
+QMTS	cm_200001_rcv.cpp	rcv	炉次确定电文接收		TELE
+QMTS	cm_200003_rcv.cpp	rcv	低倍硫印实绩接收		TELE
+QMTS	cm_210003_rcv.cpp	rcv	【二炼北】检查结果接收		TELE
+QMTS	cm_32t804_rcv.cpp	rcv	铁水质量数据接收		TELE
+QMTS	cm_e2t8q1_rcv.cpp	rcv	炉次质量等级值		TELE
+QMTS	cm_qxsm01_rcv.cpp	rcv	根据工序一贯上传的出钢记号修改炉次最终出钢记号		TELE
+QMTS	cm_qxsm02_rcv.cpp	rcv	根据工序一贯上传的出钢记号修改钢坯最终出钢记号		TELE
+QMTS	f_002103_snd.cpp	snd	检验批发送（北）	002103	
+QMTS	f_210010_snd.cpp	snd	成分发送L4		
+QMTS	f_210030_snd.cpp	snd			
+QMTS	f_qm_002113_snd.cpp	snd	工序制造标准_预处理（北）	002113	
+QMTS	f_qm_002114_snd.cpp	snd	工序制造标准_转炉（北）		
+QMTS	f_qm_002115_snd.cpp	snd	工序制造标准_电炉（北）		
+QMTS	f_qm_002116_snd.cpp	snd	工序制造标准_LTS（北）		
+QMTS	f_qm_002117_snd.cpp	snd	工序制造标准_RH（北）		
+QMTS	f_qm_002118_snd.cpp	snd	工序制造标准_LF（北）		
+QMTS	f_qm_002119_snd.cpp	snd	工序制造标准_IEF（北）		
+QMTS	f_qm_002120_snd.cpp	snd	工序制造标准_AOD（北）		
+QMTS	f_qm_002121_snd.cpp	snd	工序制造标准_VOD（北）		
+QMTS	f_qm_002122_snd.cpp	snd	工序制造标准_连铸（北）		
+QMTS	f_qm_002123_snd.cpp	snd	工序制造标准_模铸（北）		
+QMTS	f_qm_002156_snd.cpp	snd	修磨标准（二厂北）		
+QMTS	f_qmts_21b004_snd.cpp	snd	发送铁区质量数据		
+QMTS	f_qmts_elm_rcv.cpp	rcv	成分接收函数，后备新增画面调用函数		
+QMTS	f_qmts_sample_no_snd.cpp	snd		MEJY01	
+QMTS	f_t80rye_snd.cpp	snd	请求修约成分发送电文		
+QMTS	f_t82302_snd.cpp	snd	二炼钢表面电文		
+QMTS	f_t82303_snd.cpp	snd	二炼钢水爆电文		
+QMTS	f_t82305_snd.cpp	snd	成分发送智慧质量		
+QMTS	f_t82306_snd.cpp	snd	二炼钢炉次投料接收电文		
+QMTS	f_t82307_snd.cpp	snd	炼钢二厂转炉冶炼操作记录		
+QMTS	f_t82308_snd.cpp	snd	二钢RH冶炼操作记录电文		
+QMTS	f_t82309_snd.cpp	snd	低倍实绩发送电文		
+QMTS	f_t823s1_snd.cpp	snd	三脱预处理难度系数实绩		
+QMTS	f_t823s2_snd.cpp	snd	脱硫站难度系数实绩		
+QMTS	f_t823s3_snd.cpp	snd	合金熔化炉难度系数实绩		
+QMTS	f_t823s4_snd.cpp	snd	转炉难度系数实绩		
+QMTS	f_t823s5_snd.cpp	snd	电炉难度系数实绩		
+QMTS	f_t823s6_snd.cpp	snd	AOD难度系数实绩		
+QMTS	f_t823s7_snd.cpp	snd	LF难度系数实绩		
+QMTS	f_t823s8_snd.cpp	snd	RH难度系数实绩		
+QMTS	f_t823s9_snd.cpp	snd	VOD难度系数实绩		
+QMTS	f_t823sa_snd.cpp	snd	连铸难度系数实绩		
+QMTS	f_t823sb_snd.cpp	snd	修磨难度系数实绩		
+QMTS	f_t8ed03_snd.cpp	snd	倒灌站铁水成分		
+QMTS	qm_002104_rcv.cpp	rcv	质量判定数据接收		TELE
+QMTS	qm_002110_rcv.cpp	rcv	工艺卡接收		TELE
+QMTS	qm_002111_rcv.cpp	rcv	工艺卡路径（北）		TELE
+QMTS	qm_002112_rcv.cpp	rcv	成分标准（北）		TELE
+QMTS	qm_002113_rcv.cpp	rcv	工序制造标准_预处理（北）		TELE
+QMTS	qm_002114_rcv.cpp	rcv	工序制造标准_转炉（北）		TELE
+QMTS	qm_002115_rcv.cpp	rcv	工序制造标准_电炉（北）		TELE
+QMTS	qm_002116_rcv.cpp	rcv	工序制造标准_LTS（北）		TELE
+QMTS	qm_002117_rcv.cpp	rcv	工序制造标准_RH（北）		TELE
+QMTS	qm_002118_rcv.cpp	rcv	工序制造标准_LF（北）		TELE
+QMTS	qm_002119_rcv.cpp	rcv	工序制造标准_IEF（北）		TELE
+QMTS	qm_002120_rcv.cpp	rcv	工序制造标准_AOD（北）		TELE
+QMTS	qm_002121_rcv.cpp	rcv	工序制造标准_VOD（北）		TELE
+QMTS	qm_002122_rcv.cpp	rcv	工序制造标准_连铸（北）		TELE
+QMTS	qm_002123_rcv.cpp	rcv	工序制造标准_模铸（北）		TELE
+QMTS	qm_002156_rcv.cpp	rcv	修磨标准（二厂北）		TELE
+QMTS	qm_002159_rcv.cpp	rcv	铁水接收应答		TELE
+QMTS	qm_002161_rcv.cpp	rcv	合同信息接收		TELE
+QMTS	qm_23t801_rcv.cpp	rcv	二炼钢炉次改判结果电文		TELE
+QMTS	qm_23t802_rcv.cpp	rcv	二炼钢铸坯分级判定结果		TELE
+QMTS	qm_23t803_rcv.cpp	rcv	二炼钢异常坯处置意见		TELE
+QMTS	qm_ej2101_rcv.cpp	rcv	化学成分接收		TELE
+QMTS	qmts0rdr_snd.cpp	snd	质保书导入发送请求		
+QMTS	qmts27_snd_sj.cpp	snd	低倍硫印实绩发送		
+QMTS	qmts28_snd.cpp	snd	宏观试验委托单发送		
+SM00	cm_0000sd_rcv.cpp	rcv			TELE
+SM00	cm_0000sd_rcv.cpp	rcv			TELE
+SM00	f_00xxa1_rcv.cpp	rcv	准发计划头文件接收		
+SM00	f_00xxa2_rcv.cpp	rcv	准发计划体电文接收函数		
+SM00	f_00xxsa_rcv.cpp	rcv			TELE
+SM00	f_00xxsb_rcv.cpp	rcv			TELE
+SM00	f_00xxsc_rcv.cpp	rcv			TELE
+SM00	f_paxx01_rcv.cpp	rcv	铁运上道信息		
+SM00	f_paxx02_rcv.cpp	rcv	厂内汽运配车信息		
+SM00	f_sm00_jlxxsj_rcv.cpp	rcv			TELE
+SM00	f_sm00_xxjlwt_snd.cpp	snd	计量委托发送	P1J104;P3J104;P4J104;P5J104	
+SM00	f_smxx01_rcv.cpp	rcv	发货/转库计划电文接收		
+SM00	f_smxx02_rcv.cpp	rcv	车皮批复电文接收		
+SM00	f_xx00s4_snd.cpp	snd		7000S4	
+SM00	f_xxpa03_snd.cpp	snd	车皮调出通知	XXPA03	
+SM00	f_xxpa04_snd.cpp	snd	铁运车皮材料信息给物流运输	XXPA04	
+SM00	f_xxpa07_snd.cpp	snd	铁运车皮空车确认电文发送	XXPA07	
+SM00	f_xxsm01_snd.cpp	snd	发货码单电文发送	7000S4	
+SM00	f_xxsm02_snd.cpp	snd	车号修改	7000S4	
+SM00	f_xxsm04_snd.cpp	snd	计划结案	7000S4	
+SM00	f_xxsm05_snd.cpp	snd	产成品厂内库入库/退库入库	7000S4	
+SMSM	cm_0rt806_rcv.cpp	rcv	**************************************************/		TELE
+SMSM	cm_0rt807_rcv.cpp	rcv	**************************************************/		TELE
+SMSM	cm_0rt890_rcv.cpp	rcv	**************************************************/		TELE
+SMSM	cm_0rt891_rcv.cpp	rcv	**************************************************/		TELE
+TK00	cm_91t801_rcv.cpp	rcv	接收碳排因子信息		TELE
+TMSM	cm_e2t8d1_rcv.cpp	rcv	**************************************************/		TELE
+TMSM	cm_e2t8d2_rcv.cpp	rcv	**************************************************/		TELE
+TMSM	cm_e2t8d3_rcv.cpp	rcv	**************************************************/		TELE
+TMSM	cm_e2t8d4_rcv.cpp	rcv	**************************************************/		TELE
+TMSM	cm_e2t8r1_rcv.cpp	rcv	**************************************************/		TELE
+TMSM	f_hmjl05_snd.cpp	snd		HMJL05	
+TMSM	f_hmzl06_snd.cpp	snd		HMZL06	
+TMSM	f_t8z_23m_snd.cpp	snd			
+TMSM	f_tmsm_t8e2d1_snd.cpp	snd	铁路装车线可走车	T8E2D1	
+TMSM	tmsm_l2_mess_auto_snd.cpp	snd	低频工艺数据发送		
+TMSM	tmsm_t82326_snd.cpp	snd	低频工艺数据发送		
+TMSM	tmsm_t82327_snd.cpp	snd	低频工艺数据发送		
+WM00	f_cm_00xxn1_snd.cpp	snd	板坯/方坯入出库确认应答电文		
+WM00	f_wm00_wm01_snd.cpp	snd	入库电文发送	WM0000	
+WM00	f_wm00_wm02_snd.cpp	snd	出库电文发送	WM0000	
+WM00	f_wm00_wm03_snd.cpp	snd	库位变更电文发送	WM0000	
+WM00	f_wm00_wmy1_snd.cpp	snd	转库计划材料吊销电文发送		
+WMSM	cm_002162_rcv.cpp	rcv	**************************************************/		TELE
+WMSM	cm_24t801_rcv.cpp	rcv			TELE
+WMSM	cm_6021yx_rcv.cpp	rcv			TELE
+WMSM	cm_a02102_rcv.cpp	rcv			TELE
+WMSM	cm_a02103_rcv.cpp	rcv			TELE
+WMSM	cm_a02104_rcv.cpp	rcv			TELE
+WMSM	cm_a02105_rcv.cpp	rcv			TELE
+WMSM	cm_a02106_rcv.cpp	rcv			TELE
+WMSM	cm_a02107_rcv.cpp	rcv			TELE
+WMSM	cm_a02108_rcv.cpp	rcv			TELE
+WMSM	cm_a02109_rcv.cpp	rcv			TELE
+WMSM	cm_a02110_rcv.cpp	rcv			TELE
+WMSM	cm_a02111_rcv.cpp	rcv		T80RY0	TELE
+WMSM	cm_a02112_rcv.cpp	rcv			TELE
+WMSM	cm_a02113_rcv.cpp	rcv			TELE
+WMSM	cm_a02114_rcv.cpp	rcv			TELE
+WMSM	cm_g0t801_rcv.cpp	rcv			TELE
+WMSM	cm_m7t801_rcv.cpp	rcv			TELE
+WMSM	cm_m9t801_rcv.cpp	rcv			TELE
+WMSM	cm_p0t801_rcv.cpp	rcv			TELE
+WMSM	cm_p3t801_rcv.cpp	rcv			TELE
+WMSM	cm_p3t802_rcv.cpp	rcv			TELE
+WMSM	cm_t7t801_rcv.cpp	rcv			TELE
+WMSM	cm_u0t801_rcv.cpp	rcv			TELE
+WMSM	cm_v0t801_rcv.cpp	rcv			TELE
+WMSM	f_wmsm_21a006_snd.cpp	snd	倒运计划发送	21A006	
+WMSM	f_wmsm_21a007_snd.cpp	snd	拒收重车实绩	21A007	
+WMSM	f_wmsm_21a008_snd.cpp	snd	厂内转运用车计划	21A008	
+WMSM	f_wmsm_21a009_snd.cpp	snd	汽运、铁路装车电文	21A009	
+WMSM	f_wmsm_21a009_snd1.cpp	snd	临钢坯装车实绩发送	21A009	
+WMSM	f_wmsm_21a010_snd.cpp	snd	汽运、铁路卸车确认	21A010	
+WMSM	f_wmsm_21a015_snd.cpp	snd	铁路自备车运输作业计划	21A015	
+WMSM	f_wmsm_21a017_snd.cpp	snd	铁路装车线可走车	21A017	
+WMSM	f_wmsm_21a019_snd.cpp	snd	非销售出厂计划发送	21A019	
+WMSM	f_wmsm_t80ry0_snd.cpp	snd	调拨申请	T80RY0	
+WMSM	f_wmsm_t8p301_snd.cpp	snd	板坯信息电文	T8P301	
+WMSM	f_wmsm_t8p302_snd.cpp	snd	板坯删除信息电文	T8P302	
+WMSM	f_wmsm_t8p303_snd.cpp	snd	板坯去向电文	T8P303	
+WMSM	f_wmsmsm_allot_snd.cpp	snd	调拨单发送	2130YX;2150YX;2160YX;2170YX;T82401;T8G001;T8	
+WMSM	wmsm01_wt_snd.cpp	snd	称重请求		
+WMSM	wmsm01q0_snd.cpp	snd	板坯向2250发送电文		
+WMSM	wmsm60_snd_bat.cpp	snd	倒运计划定时生成		

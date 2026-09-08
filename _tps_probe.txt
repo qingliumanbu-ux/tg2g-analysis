@@ -1,0 +1,63 @@
+1	/*************************************************
+2	Copyright: Baosight Software LTD.co Copyright (c) 2023
+3	Author:      195255
+4	Version:     1.0
+5	Date:        2023-02-16 15:19:48
+6	Description: 调用TPS模型
+7	**************************************************/
+9	#include "stdafx.h"
+10	#include "epex.h"
+11	#include <cstdio>
+13	int f_epex_call_rest_tpsmodel(EIClass * bcls_rec, EIClass * bcls_ret, CDbConnection * conn)
+14	{
+15		CTracer log(__FUNCTION__);
+16		int doFlag = 0;
+17		CString sqlstr = " ";
+18		try
+19		{
+20			// -----Begin IPLAT4C::IPLAT4CServiceCompositeStatementObj()----- //
+21			iPlat4C::CRestClient restClient(conn, "MZX_TEST");//EX04中配置的系统代码
+22			Log::Trace("", __FUNCTION__, "restClient finish");
+23			restClient.AddHttpHeader("Accept", "*");
+24			Log::Trace("", __FUNCTION__, "Accept finish");
+25			restClient.AddHttpHeader("Content-Type", "application/json;charset=UTF-8");
+26			Log::Trace("", __FUNCTION__, "Content-Type finish");
+27			restClient.Call("CP_MODEL_TG", bcls_rec, bcls_ret);
+28			Log::Trace("", __FUNCTION__, "call finish");
+30			ei_sys the_s;
+31			bcls_ret->GetSYS(&the_s);
+32			Log::Trace("", __FUNCTION__, "GetSYS finish");
+33			if (the_s.flag < 0)
+34			{
+35				Log::Trace("", "", "--ei_outsys.msg: [{0}]", the_s.msg);
+36				throw CException(the_s.msg);
+37			}
+38			// -----End IPLAT4C::IPLAT4CServiceCompositeStatementObj()----- //
+39		}
+40		catch (CDbException& ex)
+41		{
+42			CFormattable arguments[] = { ex.GetCode(), ex.GetMsg() };
+43			CMessageFormat::Format(s.msg, "Database Error,sqlcode=[{0}],sqlmsg=[{1}]", arguments, 2);
+44			CString str = sqlstr + "\r\n" + ex.GetMsg();
+45			strncpy(s.sysmsg, (const char*)str, sizeof(s.sysmsg) - 1);
+46			s.flag = -1;
+47			doFlag = -1;
+48		}
+49		catch (CApplicationException& ex)
+50		{
+51			s.flag = ex.GetCode();
+52			doFlag = -1;
+53		}
+54		catch (CException& ex)
+55		{
+56			strcpy(s.msg, ex.GetMsg());
+57			s.flag = ex.GetCode();
+58			doFlag = -1;
+59		}
+60		return doFlag;
+KEY 6	Description: 调用TPS模型
+KEY 20	// -----Begin IPLAT4C::IPLAT4CServiceCompositeStatementObj()----- //
+KEY 21	iPlat4C::CRestClient restClient(conn, "MZX_TEST");//EX04中配置的系统代码
+KEY 23	restClient.AddHttpHeader("Accept", "*");
+KEY 25	restClient.AddHttpHeader("Content-Type", "application/json;charset=UTF-8");
+KEY 38	// -----End IPLAT4C::IPLAT4CServiceCompositeStatementObj()----- //

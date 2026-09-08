@@ -1,0 +1,485 @@
+关键词	文件	行	内容
+连铸	MMSM/libMMSM/f_e2t8m1_proc.cpp	6	Description: 连铸坯产出
+连铸	MMSM/libMMSM/f_e2t8m1_proc.cpp	307	//若连铸出钢记号和计划出钢记号相同，则匹配命令坯 若不同，则不匹配命令坯 按余材收  mfj  初亮  20240520 10：56
+连铸	MMSM/libMMSM/f_mmsm0055_proc.cpp	226	//连铸钢水实绩
+连铸	MMSM/libMMSM/f_mmsm0055_proc.cpp	251	//炼钢连铸炉次流实绩表
+连铸	MMSM/libMMSM/f_mmsm0055_proc.cpp	276	//连铸板坯切割实绩
+连铸	MMSM/libMMSM/f_mmsm009a_snd.cpp	96	//连铸时间查询
+连铸	MMSM/libMMSM/f_mmsm009a_snd.cpp	1693	//连铸实绩
+连铸	MMSM/libMMSM/f_mmsm009a_snd.cpp	1812	//连铸流实绩
+连铸	MMSM/libMMSM/f_mmsm01_ins.cpp	6	Description: 连铸产出材料信息新增
+连铸	MMSM/libMMSM/f_mmsm01_ins.cpp	13	//连铸铸坯产出实绩
+连铸	MMSM/libMMSM/f_mmsm01_ins.cpp	313	//查询tpssm01表，获取标记，区分后备制造命令的炉次  连铸产出时按余才产出，不需要匹配命令板坯_防止错误
+连铸	MMSM/libMMSM/f_mmsm01_ins.cpp	1254	//获取连铸初判数据，获取不到赋默认值A
+连铸	MMSM/libMMSM/f_mmsm3301_rcv.cpp	308	//若连铸出钢记号和计划出钢记号相同，则匹配命令坯 若不同，则不匹配命令坯 按余材收  mfj  初亮  20240520 10：56
+连铸	MMSM/libMMSM/f_mmsm3331_proc.cpp	22	//连铸铸坯产出处理函数
+连铸	MMSM/libMMSM/f_mmsm33_check.cpp	77	//太钢定制 从连铸坯信号电文获取钢种，存在连铸坯产出时，连铸信号还没来的情况，故解开限制
+连铸	MMSM/libMMSM/f_mmsm33_delete.cpp	21	//连铸铸坯产出处理函数
+连铸	MMSM/libMMSM/f_mmsm33_insert.cpp	19	//连铸铸坯产出处理函数_按件
+连铸	MMSM/libMMSM/f_mmsm33_update.cpp	22	//连铸铸坯产出处理函数
+连铸	MMSM/libMMSM/f_mmsm_getdata.cpp	6	Description:	查询物料数据 - 转炉，精炼，连铸数据（智慧质量调用）
+连铸	MMSM/libMMSM/f_mmsm_getdata.cpp	115	/*****************3、连铸实绩 ****************/
+连铸	MMSM/libMMSM/f_mmsm_gyins2.cpp	205	// 插入精炼连铸炉次信息
+连铸	MMSM/libMMSM/f_mmsm_sj.cpp	6	Description: 到达连铸后去判断是否有流通炉号数据错误
+连铸	MMSM/libMMSM/f_mmsm_t80r91_snd.cpp	152	//工位	浇次炉数	中包号	连铸叉臂重量
+连铸	MMSM/libMMSM/f_mmsm_zxh01.cpp	153	//更新钢水量	1、一级 2、连铸 3、AOD  4、连铸前最后一个精炼
+连铸	MMSM/libMMSM/f_mmsm_zxh01.cpp	189	//如果是转炉而且没有钢水的按消耗量按连铸前一个个去找
+连铸	MMSM/libMMSM/f_mmsm_zxh01.cpp	437	//更新连铸炉次班组
+连铸	MMSM/libMMSM/f_t8f011_snd.cpp	6	Description: 连铸炉次实绩
+连铸	MMSM/p_mmsm_17520/mmsm01g41_inq.cpp	8	///1.炼钢连铸作业实绩表 TMMSM31
+连铸	MMSM/p_mmsm_17520/mmsm01g6_inq.cpp	8	///1.炼钢连铸作业实绩表 TMMSM31
+连铸	MMSM/p_mmsm_17520/mmsmisng_inq.cpp	57	//如果传入的炼钢区分与连铸机号都不为空时查询输出相应的出库表
+连铸	MMSM/p_mmsm_17550/mmsmt82306_inq.cpp	6	Description: 连铸退钢水查询
+连铸	MMSM/p_mmsm_17550/mmsmtl_inq.cpp	6	Description: 连铸退钢水查询
+连铸	MMSM/p_mmsm_17550/mmsmtl_pro.cpp	6	Description: 连铸退钢水
+连铸	MMSM/p_mmsm_17610/mmsm01a1f3_ins.cpp	590	//获取连铸初判数据，获取不到赋默认值A
+连铸	MMSM/p_mmsm_17620/cm_e2t8t2_rcv.cpp	136	//存连铸测温数据
+连铸	MMSM/p_mmsm_17640/cm_1a1087_rcv.cpp	6	Description: 接收二级板坯连铸切断实绩
+连铸	MMSM/p_mmsm_17640/cm_1a1087_rcv.cpp	25	/// 接收PES板坯连铸炉次实绩
+连铸	MMSM/p_mmsm_17640/cm_1a1087_rcv.cpp	27	/// 接收PES板坯连铸炉次实绩并处理
+连铸	MMSM/p_mmsm_17640/cm_1a1087_rcv.cpp	28	/// </para>方坯2#连铸L2系统方坯连铸切断实绩，C2--GE接收方坯连铸切断实绩
+连铸	MMSM/p_mmsm_17640/cm_1a1087_rcv.cpp	30	/// <param name="tmmsm33">板坯连铸炉次实绩</param>
+L2	FOSMT/p_fosmt_28180/fosm02_inq.cpp	2329	// " B3.SMELT_CHARGE SMELT_CHARGE_L2, B3.RATE RATE_L2, B3.TOTAL_DURATION TOTAL_DURATION_L2,"
+L2	FOSMT/p_fosmt_28180/fosmt00_inq.cpp	2330	// " B3.SMELT_CHARGE SMELT_CHARGE_L2, B3.RATE RATE_L2, B3.TOTAL_DURATION TOTAL_DURATION_L2,"
+L2	GCPM/p_gcpm_9320/gcpm_tele.cpp	17	//5152L2	合同变更封锁信息
+L2	GCPM/p_gcpm_9320/gcpm_tele.cpp	102	//5152L2	合同变更封锁信息
+L2	MMSM/libMMSM/f_e2t8m1_proc.cpp	188	//		bcls_rec_MMSM33.Tables["TMMSM33"].Rows[0]["HEAT_NO"].ToString().Trim() + "'  AND  SM_PLAN_NOL2_TEST ='" +
+L2	MMSM/libMMSM/f_e2t8m1_proc.cpp	189	//		bcls_rec_MMSM33.Tables["TMMSM33"].Rows[0]["SM_PLAN_NOL2"].ToString().Trim() + "' ";
+L2	MMSM/libMMSM/f_mmsm009a_snd.cpp	1927	/*tmmsm2a["L2_PROC_NO"] = bcls_rec->Tables["MMSMSND"].Rows[0]["L2_PROC_NO"].ToString().Trim();
+L2	MMSM/libMMSM/f_mmsm009a_snd.cpp	2301	/*tmmsm2a.Query("L2_PROC_NO,MAT_CODE,HEAT_NO,PROD_SEQ_NO");*/
+L2	MMSM/libMMSM/f_mmsm009d_snd.cpp	90	//原材料L2发送数据时间
+L2	MMSM/libMMSM/f_mmsm009d_snd.cpp	160	//原材料L2发送数据时间
+L2	MMSM/libMMSM/f_mmsm009d_snd.cpp	227	//原材料L2发送数据时间
+L2	MMSM/libMMSM/f_mmsm009d_snd.cpp	348	//原材料L2发送数据时间
+L2	MMSM/libMMSM/f_mmsm009d_snd.cpp	416	//原材料L2发送数据时间
+L2	MMSM/libMMSM/f_mmsm009d_snd.cpp	484	//原材料L2发送数据时间
+L2	MMSM/libMMSM/f_mmsm009d_snd.cpp	552	//原材料L2发送数据时间
+L2	MMSM/libMMSM/f_mmsm009d_snd.cpp	608	//原材料L2发送数据时间
+L2	MMSM/libMMSM/f_mmsm009e_snd.cpp	162	//L2_PROC_NO
+L2	MMSM/libMMSM/f_mmsm009e_snd.cpp	198	//SM_PLAN_NOL2
+L2	MMSM/libMMSM/f_mmsm009e_snd.cpp	204	//PROC_COUNT,L2_PROC_NO,PROD_SEQ_NO
+L2	MMSM/libMMSM/f_mmsm009e_snd.cpp	622	//L2_PROC_NO
+L2	MMSM/libMMSM/f_mmsm19_proc.cpp	458	//L2_PROC_NO
+L2	MMSM/libMMSM/f_mmsm25_proc.cpp	549	//L2_PROC_NO
+L2	MMSM/libMMSM/f_mmsm27_proc.cpp	545	//L2_PROC_NO
+L2	MMSM/libMMSM/f_mmsm3301_rcv.cpp	189	//		bcls_rec_MMSM33.Tables["TMMSM33"].Rows[0]["HEAT_NO"].ToString().Trim() + "'  AND  SM_PLAN_NOL2_TEST ='" +
+L2	MMSM/libMMSM/f_mmsm3301_rcv.cpp	190	//		bcls_rec_MMSM33.Tables["TMMSM33"].Rows[0]["SM_PLAN_NOL2"].ToString().Trim() + "' ";
+L2	MMSM/libMMSM/f_mmsm3301_rcv.cpp	1048	//	+ tmmsm33_1["SM_PLAN_NOL2"].ToString().Trim() + "', 0, 1, '" + tmmsm33_1["STRAND_NO"].ToString() + "', '" +
+L2	MMSM/libMMSM/f_mmsm831_upd_mmlc83.cpp	89	//给原料L2-发送料仓物料信息
+L2	MMSM/libMMSM/f_mmsm83z_bacth_proc.cpp	343	//给原料L2-发送料仓物料信息
+L2	MMSM/libMMSM/f_mmsmgglwt_proc.cpp	880	//					tmmsmgy06["L2_PROC_NO"] = tmmsm19["L2_PROC_NO"];
+L2	MMSM/libMMSM/f_mmsmgglwt_proc.cpp	883	//					if (tmmsmgy06.Query("HEAT_NO,L2_PROC_NO,DEV_CODE")){
+L2	MMSM/libMMSM/f_mmsmgglwt_proc.cpp	885	//						tmmsmgy06.Update("DURATION_TIME,TOGETHER_TIME", "HEAT_NO,L2_PROC_NO,DEV_CODE");
+L2	MMSM/libMMSM/f_mmsmgglwt_proc.cpp	908	//					tmmsmgy06["L2_PROC_NO"] = tmmsm27["L2_PROC_NO"];
+L2	MMSM/libMMSM/f_mmsmgglwt_proc.cpp	911	//					if (tmmsmgy06.Query("HEAT_NO,L2_PROC_NO,DEV_CODE")){
+L2	MMSM/libMMSM/f_mmsmgglwt_proc.cpp	913	//						tmmsmgy06.Update("DURATION_TIME,TOGETHER_TIME", "HEAT_NO,L2_PROC_NO,DEV_CODE");
+L2	MMSM/libMMSM/f_mmsmgglwt_proc.cpp	935	//					tmmsmgy06["L2_PROC_NO"] = tmmsm20["L2_PROC_NO"];
+L2	MMSM/libMMSM/f_mmsmgglwt_proc.cpp	938	//					if (tmmsmgy06.Query("HEAT_NO,L2_PROC_NO,DEV_CODE")){
+L2	MMSM/libMMSM/f_mmsmgglwt_proc.cpp	940	//						tmmsmgy06.Update("DURATION_TIME,TOGETHER_TIME", "HEAT_NO,L2_PROC_NO,DEV_CODE");
+L2	MMSM/libMMSM/f_mmsmgglwt_proc.cpp	962	//					tmmsmgy06["L2_PROC_NO"] = tmmsm21["L2_PROC_NO"];
+L2	MMSM/libMMSM/f_mmsmgglwt_proc.cpp	965	//					if (tmmsmgy06.Query("HEAT_NO,L2_PROC_NO,DEV_CODE")){
+L2	MMSM/libMMSM/f_mmsmgglwt_proc.cpp	967	//						tmmsmgy06.Update("DURATION_TIME,TOGETHER_TIME", "HEAT_NO,L2_PROC_NO,DEV_CODE");
+行车	SM00/libSM00/f_sm00_md_create.cpp	352	////////	sprintf(s.msg, "读取库区代码表TSI0021上行车标记出错，库区号=%s", (const char *)tsmpe10["STOCK_NO"].ToString());
+行车	SM00/libSM00/f_smxx01_rcv.cpp	1454	//						// 发送无人行车电文
+行车	SM00/libSM00/f_smxx01_rcv.cpp	1462	//						// 热轧行车电文 2021-9-8
+行车	SM00/libSM00/f_smxx01_rcv.cpp	1465	//							// 是热轧1780 铁运时不生成行车命令，到作业单生成时再生成行车指令 2021-11-29
+行车	SM00/p_sm00_25910/sm0008_pro.cpp	356	//			// 按库区代码读取仓库的行车标记
+行车	SM00/p_sm00_25910/sm0008_pro.cpp	369	//				sprintf(s.msg, "读取库区代码表TSI0021上行车标记出错，库区号=%s", (const char *)tsmpe02["STOCK_NO"].ToString());
+行车	SM00/p_sm00_25910/sm0008_pro.cpp	437	//						CMessageFormat::Format(s.msg, "此库区{0}是有行车系统，请先在仓库做材料出库，材料号{1}", arguments, 2);
+行车	SM00/p_sm00_25930/sm0008_pro.cpp	356	//			// 按库区代码读取仓库的行车标记
+行车	SM00/p_sm00_25930/sm0008_pro.cpp	369	//				sprintf(s.msg, "读取库区代码表TSI0021上行车标记出错，库区号=%s", (const char *)tsmpe02["STOCK_NO"].ToString());
+行车	SM00/p_sm00_25930/sm0008_pro.cpp	437	//						CMessageFormat::Format(s.msg, "此库区{0}是有行车系统，请先在仓库做材料出库，材料号{1}", arguments, 2);
+行车	SMSM/p_smsm_25610/smsm02_ins.cpp	171	/* 读取行车标记 */
+行车	SMSM/p_smsm_25610/smsm02_ins.cpp	337	// 判此仓库是否需要发送行车指令,且是否已经发送了行车指令
+行车	SMSM/p_smsm_25610/smsm02_req.cpp	2	*	程序功能：	产成品出厂处理……下行车指令					*
+行车	SMSM/p_smsm_25610/smsm02_req.cpp	11	*	行车命令生成参数：	mat_no  材料号 comd_div 吊车类型(E)		*
+行车	SMSM/p_smsm_25610/smsm02_req.cpp	24	//int f_ymhrc_cmdmk_chg(EIClass * bcls_rec, EIClass * bcls_ret,CDbConnection * conn);		// 热轧钢卷库行车命令生成
+行车	SMSM/p_smsm_25610/smsm02_req.cpp	164	//			 CMessageFormat::Format (s.msg , _RES("SM00S0000008")/*调用仓库行车命令未成功!,{0}*/ , arguments,1);
+行车	TMSM/libTMSM/f_tmsm53_status_chg.cpp	6	Description: 行车命令状态变动
+行车	TMSM/libTMSM/f_tmsm53_status_chg.cpp	82	/*行车状态跟踪*/
+行车	TMSM/libTMSM/f_tmsm53_status_chg.cpp	113	/*行车命令状态是删除或卸下时归档*/
+行车	TMSM/p_tmsm_7120/tmsm31bf7_bind.cpp	6	Description:行车作业命令新增
+行车	TMSM/p_tmsm_7120/tmsm31bf7_bind.cpp	81	//	sprintf(s.msg, "行车命令号[%s]不存在", (const char*)ttmsm53["CRANE_INST_NO"].ToString());
+行车	TMSM/p_tmsm_7120/tmsm51_inq.cpp	6	Description:行车作业码查询
+行车	TMSM/p_tmsm_7120/tmsm51_ins.cpp	6	Description:行车作业码新增
+行车	TMSM/p_tmsm_7120/tmsm52_del.cpp	6	Description:行车状态信息删除
+行车	TMSM/p_tmsm_7120/tmsm52_ins.cpp	6	Description:行车状态信息新增
+行车	TMSM/p_tmsm_7120/tmsm52_rep_e.cpp	6	Description:行车维修开始
+行车	TMSM/p_tmsm_7120/tmsm52_rep_e.cpp	68	/* 查询该行车状态是否存在 */
+行车	TMSM/p_tmsm_7120/tmsm52_rep_s.cpp	6	Description:行车维修开始
+行车	TMSM/p_tmsm_7120/tmsm52_rep_s.cpp	67	/* 查询该行车状态是否存在 */
+行车	TMSM/p_tmsm_7120/tmsm52_rep_s.cpp	91	//CRANE_STAT = '2'		/*行车状态 2--维修*/
+行车	TMSM/p_tmsm_7120/tmsm52_upd.cpp	6	Description:行车状态修改
+行车	TMSM/p_tmsm_7120/tmsm53_ins.cpp	6	Description:行车作业命令新增
+行车	TMSM/p_tmsm_7120/tmsm53_status.cpp	6	Description:行车作业命令修改
+行车	TMSM/p_tmsm_7120/tmsm53_upd.cpp	6	Description:行车作业命令修改
+行车	TMSM/p_tmsm_7120/tmsm54_inq.cpp	6	Description: 历史行车信息查询
+行车	TMSM/p_tmsm_7160/tmsme59_inq.cpp	6	Description: 行车作业率查询
+行车	TMSM/p_tmsm_7160/tmsme59_inq.cpp	187	//----------实际行车使用率查询-------------------------------
+行车	WM00/libWM00/f_create_crane_no.cpp	10	//行车命令表
+行车	WM00/libWM00/f_create_crane_no.cpp	244	//行车命令号生成
+行车	WM00/libWM00/f_create_crane_no.cpp	285	//EXEC SQL update tmmsm01 set cmd_flag = '1' where mat_position = '2'	and mat_no = :tymsm10.mat_no;//行车命令标志，1：
+计量	CAAI/p_caai_3840/caaijl_inq.cpp	6	Description: 厂内计量查询
+计量	MM00/p_mm00_18010/mm00sud4f2_inq.cpp	87	//材料状态27不计入统计量 2013-1-14 9:26:15
+计量	MMSM/libMMSM/f_mmsm009a_snd.cpp	2077	// 计量单号 tmmsm52.weight_no
+计量	MMSM/libMMSM/f_mmsm009d_snd.cpp	84	//计量单号
+计量	MMSM/libMMSM/f_mmsm009d_snd.cpp	154	//计量单号
+计量	MMSM/libMMSM/f_mmsm009d_snd.cpp	221	//计量单号
+计量	MMSM/libMMSM/f_mmsm009d_snd.cpp	342	//计量单号
+计量	MMSM/libMMSM/f_mmsm009d_snd.cpp	410	//计量单号
+计量	MMSM/libMMSM/f_mmsm009d_snd.cpp	478	//计量单号
+计量	MMSM/libMMSM/f_mmsm009d_snd.cpp	546	//计量单号
+计量	MMSM/libMMSM/f_mmsm009d_snd.cpp	602	//计量单号
+计量	MMSM/libMMSM/f_mmsm81_d021_handle_rcv.cpp	6	Description: 一钢计量实绩接收
+计量	MMSM/libMMSM/f_mmsm81_d021_handle_rcv.cpp	48	//计量系统传入参数接收
+计量	MMSM/libMMSM/f_mmsm81_ins_h.cpp	6	Description: 一钢计量实绩接收
+计量	MMSM/libMMSM/f_mmsm81_ins_h.cpp	126	//判断是原料计量单还是交废钢计量单
+计量	MMSM/libMMSM/f_mmsm81_ins_h.cpp	153	//新建或更新计量表
+计量	MMSM/libMMSM/f_mmsm831_upd_mmlc83.cpp	6	Description: 一钢计量实绩接收
+计量	MMSM/libMMSM/f_mmsm_21a001_snd.cpp	85	// 后补充，CG_ORDER_NO GX_PLAN_NO MISSION_NO 数据来源计量电文
+计量	MMSM/libMMSM/f_mmsm_21a002_snd.cpp	85	// 后补充，CG_ORDER_NO GX_PLAN_NO MISSION_NO 数据来源计量电文
+计量	MMSM/libMMSM/f_mmsm_21a003_snd.cpp	84	// 后补充，CG_ORDER_NO GX_PLAN_NO MISSION_NO 数据来源计量电文
+计量	MMSM/libMMSM/f_mmsm_21a004_snd.cpp	85	// 后补充，CG_ORDER_NO GX_PLAN_NO MISSION_NO 数据来源计量电文
+计量	MMSM/libMMSM/f_mmsm_21a008_snd.cpp	65	// 后补充，CG_ORDER_NO GX_PLAN_NO MISSION_NO 数据来源计量电文
+计量	MMSM/libMMSM/f_mmsm_21a010_snd.cpp	89	// 后补充，CG_ORDER_NO GX_PLAN_NO MISSION_NO 数据来源计量电文
+计量	MMSM/libMMSM/f_mmsm_21a018_snd.cpp	85	// 后补充，CG_ORDER_NO GX_PLAN_NO MISSION_NO 数据来源计量电文
+计量	MMSM/libMMSM/f_mmsm_21b003_snd.cpp	49	// 后补充，CG_ORDER_NO GX_PLAN_NO MISSION_NO 数据来源计量电文
+计量	MMSM/libMMSM/f_mmsm_21b004_snd.cpp	117	// 后补充，C_FLAG_DIF 3:  汽运4：部分数据来源计量电文
+计量	MMSM/libMMSM/f_mmsm_21b005_snd.cpp	118	// 后补充，C_FLAG_DIF 3:  汽运4：部分数据来源计量电文
+计量	MMSM/libMMSM/f_mmsm_21c004_snd.cpp	6	Description:一资源系统-废钢料篮计量信息
+计量	MMSM/libMMSM/f_mmsm_updcf.cpp	48	//计量单成分
+计量	MMSM/libMMSM/f_mmsm_zxh01.cpp	491	//计量单成分
+计量	MMSM/libMMSM/f_mmsm_zxh01.cpp	499	//" and TYPE_DESC ='计量单成分'"
+计量	MMSM/p_mmsm_17590/cm_ewt801_rcv.cpp	6	Description: 一钢计量实绩接收
+计量	MMSM/p_mmsm_17590/mmsm2a_snd.cpp	91	//测试接口 废钢料篮计量信息21C004
+计量	MMSM/p_mmsm_17590/mmsm2a_sndn.cpp	91	//测试接口 废钢料篮计量信息21C004
+计量	MMSM/p_mmsm_17590/mmsm533bv_inq.cpp	80	//查询计量单
+计量	MMSM/p_mmsm_17590/mmsm81al_upd.cpp	152	//区分 复制过一次成分且保存后，还未生成质检批号，再次修改成分，根据计量单更新
+计量	MMSM/p_mmsm_17590/mmsm81al_upd.cpp	157	//质检批为空 ，根据计量单  维护该质检批！
+计量	MMSM/p_mmsm_17590/mmsm81s_del.cpp	139	/*	sprintf(s.msg, "冲销重量不能大于选中计量单库存重量");
+计量	MMSM/p_mmsm_17590/mmsm81s_del.cpp	152	//判断是手动还是 计量磅单传入
+计量	MMSM/p_mmsm_17590/mmsm81s_del.cpp	183	//保留原始计量单
+二级	CAAI/libCAAI/f_cm_mesac3_snd.cpp	481	//动力-二级除盐水
+二级	CAAI/libCAAI/f_cm_mesac3_snd.cpp	486	//动力-二级除盐水用量
+二级	CAAI/libCAAI/f_cm_mesac3_snd.cpp	491	//动力-二级除盐水单位
+二级	GCPM/p_gcpm_1300/gcpmz1_ins.cpp	228	//若有DLL信息，二级模块= DLL 的前4位信息。
+二级	GCPM/p_gcpm_1300/gcpmz1_upd.cpp	714	//若有DLL信息，二级模块= DLL 的前4位信息。
+二级	GCPM/p_gcpm_1300/gcpmz2epg_inq.cpp	87	/*--一级模块，二级模块，画面名称，功能状态，画面下的功能个数
+二级	GCPM/p_gcpm_1300/gcpmz2epg_inq.cpp	184	//暂定， 将后台程序个数， 记录在‘二级模块’第一次出现的行信息中。
+二级	GCPM/p_gcpm_1300/gcpmz2epg_inq.cpp	198	//根据二级模块，获取对应的后台，svr,函数总数。
+二级	GCPM/p_gcpm_1300/gcpmz2_fun_upd.cpp	8	/*== [service功能]： 后台函数对应的二级模块_修改                          ==*/
+二级	GCPM/p_gcpm_1300/gcpmz2_fun_upd.cpp	17	/// 后台函数对应的二级模块_修改
+二级	GCPM/p_gcpm_1300/gcpmz2_fun_upd.cpp	19	///    /// TEA00,TEA03,===后台函数对应的二级模块的修改。
+二级	GCPM/p_gcpm_1300/gcpmz2_fun_upd.cpp	71	//获取2#BLK中的，目标‘二级模块’
+二级	GCPM/p_gcpm_1300/gcpmz2_inqdll.cpp	119	//二级模块.
+二级	GCPM/p_gcpm_1300/gcpmz2_inqdll.cpp	127	////二级模块范围==v_moid
+二级	GCPM/p_gcpm_1300/gcpmz2_inqs.cpp	99	////二级模块范围==v_moid
+二级	GCPM/p_gcpm_1300/gcpmz2_inqs.cpp	119	/* 程序名称，程序描述，程序类型，二级模块，service号。
+二级	GCPM/p_gcpm_1300/gcpmz2_inqs.cpp	139	//	"    where  aa.CODE_CLASS = 'GCPP'                  " //GCPP小代码控制的二级模块。
+二级	GCPM/p_gcpm_1300/gcpmz2_inqs.cpp	163	//"    where  aa.CODE_CLASS = 'GCPP'                  " //GCPP小代码控制的二级模块。
+二级	GCPM/p_gcpm_1300/gcpmz2_inqs.cpp	181	//"         where  aa.CODE_CLASS = 'GCPP'                  " //GCPP小代码控制的二级模块。
+二级	GCPM/p_gcpm_1300/gcpmz2_inqs_id.cpp	89	////二级模块范围==v_moid
+二级	GCPM/p_gcpm_1300/gcpmz2_inqs_id.cpp	118	//" where    sub_system_ename like @sub_system_ename || '%' " //二级模块.
+二级	GCPM/p_gcpm_1300/gcpmz2_inqs_id.cpp	119	//" order    by sub_system_ename,srv_id "//二级模块，server号。
+二级	GCPM/p_gcpm_1300/gcpmz2_moid_upd.cpp	8	/*== [service功能]： 后台程序对应的二级模块_修改                          ==*/
+二级	GCPM/p_gcpm_1300/gcpmz2_moid_upd.cpp	17	/// 后台程序对应的二级模块_修改
+二级	GCPM/p_gcpm_1300/gcpmz2_moid_upd.cpp	19	///    /// TEA00,TEA03,===后台程序对应的二级模块的修改。
+二级	GCPM/p_gcpm_1300/gcpmz2_moid_upd.cpp	71	//获取2#BLK中的，目标‘二级模块’
+二级	GCPM/p_gcpm_29620/gcpmsi02_import.cpp	147	////tgcpmsi02["MOID"] = "";   //二级模块
+二级	GCPM/p_gcpm_29620/gcpmsi02_init.cpp	105	//根据 MODE_NO  ，初始化相关信息。比如 二级模块， ED54功能号名称等。
+二级	GCPM/p_gcpm_29620/gcpmsi02_init.cpp	159	//CString MOID;   //模块号 = 二级模块 = 业务表名称的第2~5位
+二级	GCPM/p_gcpm_29620/gcpmsi02_init.cpp	160	//CString SEQ_CODE;   //显示序号代码 = 二级模块_ZZ
+二级	GCPM/p_gcpm_29620/gcpmsi02_init.cpp	161	//CString FORM_CODE;   //画面编号 = 若画面模式=01=多表单记录，则， 画面编号 = 二级模块SIC=静态表集合画面
+二级	GCPM/p_gcpm_29620/gcpmsi02_init.cpp	187	//若二级模块为空， 则默认= = 业务表名称的第2~5位
+二级	GCPM/p_gcpm_29620/gcpmsi02_init.cpp	221	//CString KEYVALUE_2;   //关键字串3 =ED54功能号_多记录显示 = 二级模块_表名称 = PMOL_TPMOLSI00
+二级	GCPM/p_gcpm_29620/gcpmsi02_init.cpp	222	//CString KEYVALUE_3;   //关键字串2 =ED54功能号_查询条件 = 二级模块_表名称_WHERE = PMOL_TPMOLSI00_WHERE
+二级	GCPM/p_gcpm_29620/gcpmsi02_init.cpp	223	//CString KEYVALUE_4;   //关键字串4 =ED54功能号_单记录显示 = 二级模块_表名称_ONE = PMOL_TPMOLSI00_ONE
+二级	GCPM/p_gcpm_29620/gcpmsi02_init.cpp	257	//CString MOID;   //模块号 = 二级模块 = 业务表名称的第2~5位
+二级	GCPM/p_gcpm_29620/gcpmsi02_init.cpp	258	//CString SEQ_CODE;   //显示序号代码 = 二级模块_ZZ
+二级	GCPM/p_gcpm_29620/gcpmsi02_init.cpp	259	//CString FORM_CODE;   //画面编号 = 若画面模式=01=多表单记录，则， 画面编号 = 二级模块SIC=静态表集合画面
+二级	GCPM/p_gcpm_29620/gcpmsi02_ins.cpp	150	//tgcpmsi02["MOID"] = "";   //二级模块
+二级	GCPM/p_gcpm_29620/gcpmsied54_del.cpp	123	//功能号 =二级模块_表名称===> GCPM_TGCPMSI01
+热轧	CAAI/p_caai_3840/caaicx32_inq2.cpp	6	Description:查询热轧煤耗的明细信息
+热轧	CAAI/p_caai_3840/caaicx37_inq2.cpp	6	Description:查询热轧煤耗的明细信息
+热轧	CAAI/p_caai_3840/caaicx38_inq2.cpp	6	Description:查询热轧煤耗的明细信息
+热轧	CAAI/p_caai_3850/caaicx31_inq2.cpp	6	Description:查询热轧煤耗的明细信息
+热轧	MM00/libMM00/f_mm0099_04.cpp	226	//热轧未放冷
+热轧	MM00/libMM00/f_mm0099_04.cpp	291	//热轧未放冷
+热轧	MM00/libMM00/f_mm0099_04.cpp	432	//板坯去向（00：1热轧，01：2热轧）
+热轧	MM00/p_mm00_18010/mm00datarz1_inq.cpp	6	Description: 数据切换后对账--08热轧存货对账
+热轧	MM00/p_mm00_18010/mm00su47a1_m.cpp	16	/// 热轧物料当前库存信息查询
+热轧	MM00/p_mm00_18010/mm00su47a1_m.cpp	17	/// <para>根据查询条件查询热轧物料主表TMMHRMA01</para>
+热轧	MM00/p_mm00_18010/mm00su47a1_m.cpp	25	/// <returns>满足查询条件的热轧物料主表TMMHRMA01或热轧物料主表TMMHRMA01数据</returns>
+热轧	MM00/p_mm00_18010/mm00su47a1_m.cpp	116	/*根据标记行号查询热轧主档*/
+热轧	MM00/p_mm00_18010/mm00su47a1_q.cpp	21	/// 热轧当前库存汇总
+热轧	MM00/p_mm00_18010/mm00su47a1_q.cpp	22	/// <para>根据查询条件查询热轧物料主档TMMHRMA01</para>
+热轧	MM00/p_mm00_18010/mm00su47a1_q.cpp	24	/// <returns>满足查询条件的热轧物料主档TMMHRMA01的总量数据</returns>
+热轧	MM00/p_mm00_18010/mm00su47a1_q.cpp	472	//CSP热轧成品库
+热轧	MM00/p_mm00_18010/mm00sud1f1_inq.cpp	12	///					TMMHR01 热轧物料主表
+热轧	MM00/p_mm00_18010/mm00sud1f2_inq.cpp	15	///					TMMHR01 热轧物料主表
+热轧	MM00/p_mm00_18010/mm00sud1f2_inq.cpp	207	//热轧		一热轧                  二热轧                  三热轧                  北营热轧
+热轧	MM00/p_mm00_18010/mm00sud1f2_inq.cpp	283	//热轧		一热轧                  二热轧                  三热轧                  北营热轧
+热轧	MM00/p_mm00_18010/mm00sud1f2_inq.cpp	308	//热轧		一热轧                  二热轧                  三热轧                  北营热轧
+热轧	MM00/p_mm00_18010/mm00sud2f1_inq.cpp	12	///					TMMHR01 热轧物料主表
+热轧	MM00/p_mm00_18010/mm00sud2f2_inq.cpp	16	///					TMMHR01 热轧物料主表
+热轧	MM00/p_mm00_18010/mm00sud4f1_inq.cpp	12	///					TMMHR01 热轧物料主表
+热轧	MM00/p_mm00_18010/mm00sud4f2_inq.cpp	15	///					TMMHR01 热轧物料主表
+热轧	MM00/p_mm00_18010/mm00sud5f2_inq.cpp	16	/// <para>根据查询条件查询冷轧主档TMMCR01-热轧物料主档TMMHR01</para>
+热轧	MM00/p_mm00_18010/mm00sud5f2_inq.cpp	92	//查询热轧物料档
+热轧	MM00/p_mm00_18010/mm00sud5f2_inq.cpp	137	//将取出的热轧数据与之前的表合起来
+热轧	MM00/p_mm00_18010/mm00sud5f2_inq.cpp	145	//清空热轧数据表
+热轧	MM00/p_mm00_18010/mm00sud5f2_inq.cpp	213	//崔先雄要求增加热轧产出时间和热卷入冷轧库时间显示列
+热轧	MM00/p_mm00_18010/mm00sue5f2_inq.cpp	11	/// <para>根据有超量的合同信息遍历冷轧主档表TMMCR01或热轧主档表TMMHR01的材料信息</para>
+热轧	MM00/p_mm00_18010/mm00sue5f2_inq.cpp	13	/// <returns>冷轧主档表TMMCR01或热轧主档表TMMHR01的材料信息</returns>
+热轧	MM00/p_mm00_18010/mm00sue5f2_inq.cpp	188	//热轧存货
+热轧	MM00/p_mm00_18010/mm00suy1a3_m.cpp	22	/// <returns>满足查询条件的热轧物料主表</returns>
+热轧	MM00/p_mm00_18010/mm00suy1a3_q.cpp	6	Description: 热轧钢卷信息查询
+热轧	MMSM/libMMSM/f_e2t8m1_proc.cpp	410	//10-1549热轧去向  11-2250热轧去向   卷板
+热轧	MMSM/libMMSM/f_e2t8m1_proc.cpp	427	//10-1549热轧去向  11-2250热轧去向   卷板
+热轧	MMSM/libMMSM/f_mmsm01_ins.cpp	700	////tmmsm01["INITIAL_SG_SIGN_HR"] = tmmsm01[""];//初始牌号(钢级)_热轧形态
+热轧	MMSM/libMMSM/f_mmsm3301_rcv.cpp	411	//10-1549热轧去向  11-2250热轧去向   卷板
+热轧	MMSM/libMMSM/f_mmsm3301_rcv.cpp	428	//10-1549热轧去向  11-2250热轧去向   卷板
+L4	GCPM/p_gcpm_9320/gcpm_tele.cpp	19	//5152L4	现货资源信息
+L4	GCPM/p_gcpm_9320/gcpm_tele.cpp	104	//5152L4	现货资源信息
+L4	MM00/libMM00/f_mm0099_04.cpp	480	//	//L4封闭
+L4	MM00/libMM00/f_mm0099_04.cpp	549	//	//L4封闭
+L4	MM00/p_mm00_18010/mm0000b1f2_inq.cpp	6	Description: L3L4材料对账信息查询
+L4	MM00/p_mm00_18010/mm0000b1f2_inq.cpp	14	/// L3L4材料对账信息查询
+L4	MM00/p_mm00_18010/mm0000b1f2_pes_inq.cpp	6	Description: L3L4材料对账信息查询
+L4	MM00/p_mm00_18010/mm0000b1f2_pes_inq.cpp	14	/// L3L4材料对账信息查询
+L4	MM00/p_mm00_18010/mm00sue5f2_inq.cpp	86	//" and  C.ORDER_NO ='L4BC009151'"
+L4	MMSM/libMMSM/f_mmsm009e_snd.cpp	61	//调用L4发送电文
+L4	MMSM/libMMSM/f_mmsm009e_snd.cpp	271	//给L4发送
+L4	MMSM/libMMSM/f_mmsm009e_snd.cpp	326	//L4
+L4	MMSM/libMMSM/f_mmsm009e_snd.cpp	380	//L4
+L4	MMSM/libMMSM/f_mmsm009e_snd.cpp	437	//L4
+L4	MMSM/libMMSM/f_mmsm009e_snd.cpp	521	//L4
+L4	MMSM/libMMSM/f_mmsm01_ins.cpp	1419	//2023/9/15 鉴于方坯批量产出，L3仅封锁最后一块，L4全部封锁。故把赋值放在循环内
+L4	MMSM/libMMSM/f_mmsm01_ins.cpp	1483	//2023/9/15 鉴于方坯批量产出，L3仅封锁最后一块，L4全部封锁。故把赋值放在循环内
+L4	MMSM/libMMSM/f_mmsm33dbsx_proc.cpp	123	//发送L4二切实绩电文
+L4	MMSM/libMMSM/f_mmsm33dbsx_proc.cpp	515	////N 未收货  W等待(等L4的反馈)  S收货成功   当未收货成功时，不允许二切  mfj   20231120  因接口问题，暂定W，等反馈状态就可进行分切   后续接口完善再更改  mfj  2024011
+L4	MMSM/libMMSM/f_mmsm33dbsx_proc.cpp	699	/********   太钢定制 发送L4电文 二切实绩   ***********/
+L4	MMSM/libMMSM/f_mmsm39_proc.cpp	144	/********   太钢定制 发送L4电文 钢坯切废实绩   ***********/
+L4	MMSM/libMMSM/f_mmsmzdsh_proc.cpp	230	//将L4层的判断添加在这里
+L4	MMSM/libMMSM/f_mmsm_210034_snd.cpp	6	Description:二切实绩接收 发送L4电文
+L4	MMSM/libMMSM/f_mmsm_210044_snd.cpp	6	Description:钢坯切废实绩 发送L4电文
+L4	MMSM/libMMSM/f_mmsm_210045_snd.cpp	6	Description:钢坯切废实绩 发送L4电文
+L4	MMSM/libMMSM/f_mmsm_210046_snd.cpp	6	Description:钢坯初判等级 发送L4电文
+L4	MMSM/libMMSM/f_mmsm_210047_snd.cpp	6	Description:钢坯切废实绩 发送L4电文
+L4	MMSM/libMMSM/f_mmsm_210048_snd.cpp	6	Description:废品转正品 发送L4电文
+L4	MMSM/libMMSM/f_mmsm_t80r91_snd.cpp	6	Description:炉成本核算计算发送L4电文
+L4	MMSM/libMMSM/f_mmsm_t82303_snd.cpp	6	Description:二切实绩接收 发送L4电文
+L4	MMSM/p_mmsm_17560/mmsm35f6_cut.cpp	188	//N 未收货  W等待(等L4的反馈)  S收货成功   当未收货成功时，不允许二切  mfj   20231120  因接口问题，暂定W，等反馈状态就可进行分切   后续接口完善再更改  mfj  20240118
+L4	MMSM/p_mmsm_17560/mmsm35f6_cut.cpp	648	/********   太钢定制 发送L4电文 二切实绩   ***********/
+L4	MMSM/p_mmsm_17560/mmsm35f7_cut.cpp	155	//N 未收货  W等待(等L4的反馈)  S收货成功   当未收货成功时，不允许二切  mfj   20231120  因接口问题，暂定W，等反馈状态就可进行分切   后续接口完善再更改  mfj  20240118
+L4	MMSM/p_mmsm_17560/mmsm35f7_cut.cpp	483	/********   太钢定制 发送L4电文 二切实绩   ***********/
+L4	MMSM/p_mmsm_17560/mmsm35f9_del.cpp	226	/********   太钢定制 发送L4电文 二切实绩   ***********/
+L4	MMSM/p_mmsm_17560/mmsm391_pro.cpp	391	/********   太钢定制 发送L4电文 钢坯切废实绩   ***********/
+L4	MMSM/p_mmsm_17560/mmsm391_pro.cpp	407	/********   太钢定制 发送L4电文 钢坯切废实绩   ***********/
+L4	MMSM/p_mmsm_17560/mmsm39f3_pro.cpp	670	/********   太钢定制 发送L4电文 钢坯切废实绩   ***********/
+L4	MMSM/p_mmsm_17560/mmsm39f6_pro.cpp	251	/********   太钢定制 发送L4电文 钢坯切废实绩   ***********/
+L4	MMSM/p_mmsm_17570/mmsm35f6_cut.cpp	188	//N 未收货  W等待(等L4的反馈)  S收货成功   当未收货成功时，不允许二切  mfj   20231120  因接口问题，暂定W，等反馈状态就可进行分切   后续接口完善再更改  mfj  20240118
+铁区	CAAI/p_caai_3860/caai_ins_start.cpp	103	//铁区生产数据
+铁区	CAAI/p_caai_3860/caai_ins_start.cpp	143	//铁区能源数据,如果按系数分摊则插入tcaaia12表
+铁区	CAAI/p_caai_3860/caai_ins_start.cpp	166	//铁区能源数据，如果不是按系数分摊则插入tcaais2表
+铁区	MMSM/libMMSM/f_mmsm11_proc.cpp	150	//发送铁区MES收料实绩
+铁区	MMSM/libMMSM/f_mmsm12a_proc.cpp	98	//发送铁区
+铁区	MMSM/libMMSM/f_mmsm831_upd_mmlc83.cpp	644	//SYSTEM_ID_MAT 物料来源系统   资源-C 铁区-B
+铁区	MMSM/libMMSM/f_mmsm83z_bacth_proc.cpp	465	//如果是石灰上料 ，需要给铁区发卸车确认
+铁区	MMSM/libMMSM/f_mmsm83z_bacth_proc.cpp	512	//SYSTEM_ID_MAT 物料来源系统   资源-C 铁区-B
+铁区	MMSM/libMMSM/f_mmsm83z_bacth_proc.cpp	544	//	//给铁区系统-发成分电文
+铁区	MMSM/libMMSM/f_mmsm_21a001_snd.cpp	103	//2024-04-24,找初亮再次确认，凡是直供料，给物流/铁区/资源的卸货电文，重量和扣重的单位都是千克，21A001给物流的重量为0
+铁区	MMSM/libMMSM/f_mmsm_21a010_snd.cpp	112	//2024-04-24,找初亮再次确认，凡是直供料，给物流/铁区/资源的卸货电文，重量和扣重的单位都是千克，21A010给物流的重量为0
+铁区	MMSM/libMMSM/f_mmsm_21b004_snd.cpp	6	Description:一给铁区-质量数据
+铁区	MMSM/libMMSM/f_mmsm_21b005_snd.cpp	6	Description:一给铁区-采购进厂卸货确认
+铁区	MMSM/libMMSM/f_mmsm_21b005_snd.cpp	171	//2024-04-24,找初亮再次确认，凡是直供料，给物流/铁区/资源的卸货电文，重量和扣重的单位都是千克
+铁区	MMSM/libMMSM/f_mmsm_21b006_snd.cpp	6	Description:一铁区系统-消耗实绩发送电文
+铁区	MMSM/libMMSM/f_mmsm_21c011_snd.cpp	97	//2024-04-24,找初亮再次确认，凡是直供料，给物流/铁区/资源的卸货电文，重量和扣重的单位都是千克
+铁区	MMSM/p_mmsm_17580/mmsm82a_snd.cpp	79	//发送消耗-资源/铁区
+铁区	MMSM/p_mmsm_17580/mmsm82a_snd.cpp	228	//给铁区发送
+铁区	MMSM/p_mmsm_17580/mmsm82a_snd.cpp	523	//给铁区发送
+铁区	MMSM/p_mmsm_17580/mmsm82a_snd.cpp	816	//给铁区发送
+铁区	MMSM/p_mmsm_17580/mmsm82a_snd.cpp	1000	//给铁区发送
+铁区	MMSM/p_mmsm_17580/mmsm82a_snd2_batch.cpp	82	//发送消耗-资源/铁区
+铁区	MMSM/p_mmsm_17580/mmsm82a_snd2_batch.cpp	366	//给铁区发送
+铁区	MMSM/p_mmsm_17580/mmsm82a_snd_force.cpp	79	//发送消耗-资源/铁区
+铁区	MMSM/p_mmsm_17580/mmsm82a_snd_force.cpp	228	//给铁区发送
+铁区	MMSM/p_mmsm_17580/mmsm82a_snd_force.cpp	536	//给铁区发送
+铁区	MMSM/p_mmsm_17580/mmsm82a_snd_force.cpp	829	//给铁区发送
+铁区	MMSM/p_mmsm_17580/mmsm82a_snd_force.cpp	1013	//给铁区发送
+铁区	MMSM/p_mmsm_17580/mmsm82d_snd.cpp	52	//发送消耗-资源/铁区
+铁区	MMSM/p_mmsm_17580/mmsm82d_snd.cpp	90	//给铁区发送
+铁区	MMSM/p_mmsm_17580/mmsm82d_snd.cpp	240	//给铁区发送
+铁区	MMSM/p_mmsm_17580/mmsm82h_snd.cpp	166	//给铁区发送
+铁区	MMSM/p_mmsm_17580/mmsm82h_snd.cpp	383	//给铁区发送
+铁区	MMSM/p_mmsm_17590/mmsm2a_snd.cpp	6	Description: 给资源铁区发消耗
+铁区	MMSM/p_mmsm_17590/mmsm2a_sndn.cpp	6	Description: 给资源铁区发消耗
+铁区	MMSM/p_mmsm_17590/mmsm81f3_ins.cpp	385	//给物流/资源/铁区-汽运/火车采购进厂卸货确认
+铁区	MMSM/p_mmsm_17590/mmsm81f3_ins.cpp	386	//1、直供物料确认卸货时给物流系统发送电文21A001 - 汽运采购进厂卸货确认，同时按照物料编码区分给铁区系统发送电文21B005 - 卸车确认 或者 资源系统发送电文21C011 - 采购进厂卸货确认信息
+铁区	MMSM/p_mmsm_17590/mmsm81f3_ins.cpp	387	//2、配送物料及调拨物料确认卸货时，给物流系统发送电文21A010 - 汽运、铁路卸车确认，由物流系统给资源系统或者铁区系统转发卸车电文
+铁区	MMSM/p_mmsm_17590/mmsm81f3_ins.cpp	433	//SYSTEM_ID_MAT 物料来源系统   资源-C 铁区-B
+铁区	MMSM/p_mmsm_17590/mmsm81f3_nb_ins.cpp	387	//	//SYSTEM_ID_MAT 物料来源系统   资源-C 铁区-B
+能源	CAAI/libCAAI/f_caai_allft.cpp	9	//函数说明：需要分摊的数量或金额进行分摊。RULE_TYPE = '2' 分摊重量，RULE_TYPE = '3'分摊金额，RULE_TYPE = '4' 能源特殊
+能源	CAAI/libCAAI/f_caai_allft.cpp	332	//能源
+能源	CAAI/libCAAI/f_caai_ft.cpp	9	//函数说明：需要分摊的数量或金额进行分摊。RULE_TYPE = '2' 分摊重量，RULE_TYPE = '3'分摊金额，RULE_TYPE = '4' 能源特殊
+能源	CAAI/libCAAI/f_caai_gb.cpp	147	//插入能源的消耗
+能源	CAAI/libCAAI/f_caai_ny.cpp	9	//函数说明：能源特殊方式分摊，根据具体的要求
+能源	CAAI/libCAAI/f_caai_pcost.cpp	270	//能源
+能源	CAAI/libCAAI/f_caai_pcost.cpp	305	//能源
+能源	CAAI/libCAAI/f_cm_mesac3_snd.cpp	6	Description:能源消耗发送
+能源	CAAI/p_caai_3840/caai12s_inq.cpp	6	Description:能源采集信息查询
+能源	CAAI/p_caai_3840/caai12_del.cpp	6	Description:能源采集信息删除
+能源	CAAI/p_caai_3840/caai12_inq.cpp	6	Description:能源采集信息查询
+能源	CAAI/p_caai_3840/caai12_ins.cpp	6	Description:能源采集信息新增
+能源	CAAI/p_caai_3840/caai12_upd.cpp	6	Description:能源采集信息修改
+能源	CAAI/p_caai_3840/caai13_upd.cpp	6	Description:能源采集信息修改
+能源	CAAI/p_caai_3860/caai_ins_start.cpp	82	//删除tcaaia12表能源数据
+能源	CAAI/p_caai_3860/caai_ins_start.cpp	92	//删除tcaais2表能源数据
+能源	CAAI/p_caai_3860/caai_ins_start.cpp	143	//铁区能源数据,如果按系数分摊则插入tcaaia12表
+能源	CAAI/p_caai_3860/caai_ins_start.cpp	166	//铁区能源数据，如果不是按系数分摊则插入tcaais2表
+能源	CAAI/p_caai_3870/cm_nyme01_rcv.cpp	6	Description: 生产按炉/计划号能源消耗
+能源	CAAI/p_caai_3870/cm_nyme02_rcv.cpp	6	Description: 非生产按班能源信息
+能源	CAAI/p_caai_3870/cm_nyme02_rcv.cpp	77	//平时的能源，如果是电，则插入单价到价格表
+能源	FOSMT/p_fosmt_28180/fosm02_inq.cpp	1814	//九、主要能源介质实绩
+能源	FOSMT/p_fosmt_28180/fosmt00_inq.cpp	1815	//九、主要能源介质实绩
+能源	MMSM/libMMSM/f_mmsm009c_snd.cpp	235	////能源介质管理模块读取时间
+能源	MMSM/libMMSM/f_mmsm009c_snd.cpp	237	////能源介质管理模块读取时间
+能源	MMSM/libMMSM/f_mmsm009e_snd.cpp	132	//能源
+能源	MMSM/libMMSM/f_mmsm009e_snd.cpp	294	//能源
+能源	MMSM/libMMSM/f_mmsm009e_snd.cpp	338	//能源发送
+能源	MMSM/libMMSM/f_mmsm009e_snd.cpp	403	//能源
+能源	MMSM/libMMSM/f_mmsm009e_snd.cpp	462	//能源
+能源	MMSM/libMMSM/f_mmsm009e_snd.cpp	472	//能源实绩
+能源	MMSM/libMMSM/f_mmsm3301n_proc.cpp	628	//发送能源接口电文
+能源	MMSM/libMMSM/f_t8f004_snd.cpp	6	Description: 能源动态转炉发送
+能源	MMSM/libMMSM/f_t8f005_snd.cpp	6	Description: 能源动态LF发送
+能源	MMSM/libMMSM/f_t8f007_snd.cpp	6	Description: 能源AOD发送
+能源	MMSM/libMMSM/f_t8f0s1_snd.cpp	15	/// 能源请求消耗
+能源	MMSM/libMMSM/f_t8fsb_snd.cpp	6	Description: 能源动态VOD发送
+能源	MMSM/libMMSM/f_t8fse_snd.cpp	6	Description: 能源动态VOD发送
+能源	MMSM/p_mmsm_17550/mmsmtf08_xf.cpp	46	//能源
+能源	MMSM/p_mmsm_17580/mmsm82a_snd_batch.cpp	182	//抛送能源消耗
+运输	MMSM/p_mmsm_17590/mmsm_jlbd_task.cpp	338	//	tmmsm81["TRNP_MODE_CODE"] = bcls_ret->Tables["ZCHO_JLBD_RFC"].Rows[i]["TRNP_MODE_CODE"].ToString();//运输方式
+运输	SM00/libSM00/f_00xxa2_rcv.cpp	361	//tsmpe00["TRNP_MODE_CODE"] = c_trnp_mode_code;//运输方式代码
+运输	SM00/libSM00/f_sm00_load_wt_check.cpp	100	// 按车号、计划号、合同号到发货计划表上读取计划量、运输方式
+运输	SM00/libSM00/f_sm00_load_wt_check.cpp	124	// 运输方式是铁运时到车皮信息表TSM00B4上读取车辆类型VEHICLE_TYPE,根据车辆类型确定装载量
+运输	SM00/libSM00/f_sm00_md_create.cpp	314	// 按提单号读取运输方式，物料种类
+运输	SM00/libSM00/f_xxpa04_snd.cpp	6	Description: 铁运车皮材料信息给物流运输
+运输	SM00/libSM00/f_xxsm01_snd.cpp	176	//|| epex.SetValue(block_name_master, "TRNP_MODE_CODE", 0, tsmpe11["TRNP_MODE_CODE"].ToString()) < 0 // 运输方式
+运输	SM00/p_sm00_25900/sm0003_inq.cpp	33	/// 1.根据传入的合同号、发货计划号、材料号、准发计划号、运输方式、红冲标志查询出符合条件的材料。
+运输	SM00/p_sm00_25910/sm0006_inq.cpp	33	/// 1.根据传入的合同号、发货计划号、材料号、准发计划号、运输方式、红冲标志查询出符合条件的材料。
+运输	SM00/p_sm00_25910/sm0006_inq1.cpp	32	/// 1.根据传入的合同号、发货计划号、材料号、准发计划号、运输方式、红冲标志查询出符合条件的材料。
+运输	SM00/p_sm00_25910/sm0006_trace.cpp	32	/// 1.根据传入的合同号、发货计划号、材料号、准发计划号、运输方式、红冲标志查询出符合条件的材料。
+运输	SM00/p_sm00_25910/sm0008_pro.cpp	208	//		// 按提单号读取运输方式，物料种类
+运输	SM00/p_sm00_25910/sm0008_pro.cpp	587	//		// 判运输方式是汽运还是铁运
+运输	SM00/p_sm00_25930/sm0008_pro.cpp	208	//		// 按提单号读取运输方式，物料种类
+运输	SM00/p_sm00_25930/sm0008_pro.cpp	587	//		// 判运输方式是汽运还是铁运
+运输	WM00/p_wm00_8100/wm000n_del.cpp	6	Description:	库区与出库运输方式对应关系删除
+运输	WM00/p_wm00_8100/wm000n_del.cpp	45	//RULE_TYPE 1-库区出库运输方式是否校验规则 0-库区出库运输方式校验规则
+运输	WM00/p_wm00_8100/wm000n_inq.cpp	6	Description:	库区与出库运输方式对应关系信息查询
+运输	WM00/p_wm00_8100/wm000n_ins.cpp	6	Description:	库区与出库运输方式对应关系表
+运输	WM00/p_wm00_8100/wm000n_ins.cpp	52	//RULE_TYPE 1-库区出库运输方式是否校验规则 0-库区出库运输方式校验规则
+运输	WM00/p_wm00_8100/wm000n_ins.cpp	76	//如果是库区出库方式校验规则，则目标库区、运输方式不能为空
+运输	WM00/p_wm00_8100/wm000n_upt.cpp	6	Description:	库区与出库运输方式对应关系修改
+运输	WM00/p_wm00_8100/wm000n_upt.cpp	43	//RULE_TYPE 1-库区出库运输方式是否校验规则 0-库区出库运输方式校验规则
+运输	WM00/p_wm00_8100/wm000n_upt.cpp	67	//如果是库区出库方式校验规则，则目标库区、运输方式不能为空
+运输	WMSM/libWMSM/f_wmsm_21a015_snd.cpp	6	Description: 铁路自备车运输作业计划
+运输	WMSM/p_wmsm_8120/wmsmsm12p_fre.cpp	36	/*运输方式*/
+运输	WMSM/p_wmsm_8120/wmsmsm12p_inq.cpp	36	/*运输方式*/
+运输	WMSM/p_wmsm_8120/wmsmsm12p_inq1.cpp	36	/*运输方式*/
+运输	WMSM/p_wmsm_8120/wmsmsm12p_zc.cpp	48	/*运输方式*/
+运输	WMSM/p_wmsm_8190/cm_a02109_rcv.cpp	176	//	twmsm61["TRANS_TYPE"] = bcls_rec->Tables["A02109"].Rows[0]["TRANS_TYPE"].ToString().Trim();					//运输方式
+调度	MMSM/libMMSM/f_e2t8m1_proc.cpp	538	//PONO  9开头的为调度室手动创建计划，不匹配命令坯
+调度	MMSM/libMMSM/f_e2t8m1_proc.cpp	645	//PONO  9开头的为调度室手动创建计划，不匹配命令坯
+调度	MMSM/libMMSM/f_e2t8m1_proc.cpp	756	//PONO  9开头的为调度室手动创建计划，不匹配命令坯
+调度	MMSM/libMMSM/f_e2t8m1_proc.cpp	893	//制造命令号 9 开头的是调度手动创建计划
+调度	MMSM/libMMSM/f_mmsm3301_rcv.cpp	539	//PONO  9开头的为调度室手动创建计划，不匹配命令坯
+调度	MMSM/libMMSM/f_mmsm3301_rcv.cpp	646	//PONO  9开头的为调度室手动创建计划，不匹配命令坯
+调度	MMSM/libMMSM/f_mmsm3301_rcv.cpp	757	//PONO  9开头的为调度室手动创建计划，不匹配命令坯
+调度	MMSM/libMMSM/f_mmsm3301_rcv.cpp	894	//制造命令号 9 开头的是调度手动创建计划
+调度	MMSM/p_mmsm_17660/wmsmshxcs_inq.cpp	6	Description: 石灰卸车调度查询
+调度	MMSM/p_mmsm_17660/wmsmshxc_inq.cpp	6	Description: 石灰卸车调度查询
+调度	PSSM/libPSSM/f_pssm11t_ins_pono.cpp	513	//对于脱硫，不应纳入炼钢调度中。模型计算及解消冲突没有意义。推算开始并记录在计划主表中即可
+调度	PSSM/libPSSM/f_pssm_chg_in.cpp	36	/// <para>3)如果本身未走过精炼，另外个计划已经走完精炼，则交换后该计划删除精炼，由调度人工确定。  </para>
+调度	PSSM/libPSSM/f_pssm_chg_in.cpp	902	//	//3 如果本身未走过精炼，另外个计划已经走完精炼，则交换后该计划删除精炼，由调度人工确定
+调度	PSSM/p_pssm_13070/pssm18a_chg_in.cpp	40	/// <para>3)如果本身未走过精炼，另外个计划已经走完精炼，则交换后该计划删除精炼，由调度人工确定。  </para>
+调度	PSSM/p_pssm_13070/pssm18a_chg_in.cpp	401	//3 如果本身未走过精炼，另外个计划已经走完精炼，则交换后该计划删除精炼，由调度人工确定
+调度	PSSM/p_pssm_13070/pssm18_chg_in.cpp	36	/// <para>3)如果本身未走过精炼，另外个计划已经走完精炼，则交换后该计划删除精炼，由调度人工确定。  </para>
+调度	PSSM/p_pssm_13070/pssm18_chg_in.cpp	904	//3 如果本身未走过精炼，另外个计划已经走完精炼，则交换后该计划删除精炼，由调度人工确定
+调度	PSSM/p_pssm_13070/pssm18_chg_in2.cpp	37	/// <para>3)如果本身未走过精炼，另外个计划已经走完精炼，则交换后该计划删除精炼，由调度人工确定。  </para>
+调度	PSSM/p_pssm_13070/pssm18_chg_in2.cpp	991	//	//3 如果本身未走过精炼，另外个计划已经走完精炼，则交换后该计划删除精炼，由调度人工确定
+调度	PSSM/p_pssm_13070/pssm18_chg_in_pono.cpp	36	/// <para>3)如果本身未走过精炼，另外个计划已经走完精炼，则交换后该计划删除精炼，由调度人工确定。  </para>
+调度	PSSM/p_pssm_13070/pssm18_chg_in_pono.cpp	324	//3 如果本身未走过精炼，另外个计划已经走完精炼，则交换后该计划删除精炼，由调度人工确定
+调度	TMSM/p_tmsm_7110/tmsm200av_f3.cpp	6	Description: 设备故障调度记录维护
+调度	TMSM/p_tmsm_7110/tmsm200av_inq.cpp	6	Description: 设备故障调度记录查询
+调度	TMSM/p_tmsm_7110/tmsm201av_f7.cpp	6	Description: 设备故障记录调度维护
+化验	QMTS/libQMTS/f_qmts_sample_no_snd.cpp	35	/// 向检化验系统发送试样号电文
+化验	QMTS/libQMTS/f_t8ed03_snd.cpp	41	//化验时间戳
+化验	QMTS/p_qmts_4700/qmtifa_inq.cpp	14	/// 查询氧化铁粉检化验数据
+化验	QMTS/p_qmts_4700/qmtifa_inq.cpp	22	/// <returns>查询氧化铁粉检化验数据</returns>
+化验	QMTS/p_qmts_4800/qmts28_del.cpp	6	Description: 删除宏观检化验委托信息
+化验	QMTS/p_qmts_4800/qmts28_del.cpp	17	///删除宏观检化验委托信息
+化验	QMTS/p_qmts_4800/qmts28_del.cpp	19	/// 1.删除宏观检化验委托信息
+化验	QMTS/p_qmts_4800/qmts28_del.cpp	22	/// <para>数据库表：TQMTS28(宏观检化验委托信息表)		   </para>
+化验	QMTS/p_qmts_4800/qmts28_del.cpp	54	//宏观检化验委托信息成分标准
+化验	QMTS/p_qmts_4800/qmts28_ins.cpp	6	Description: 新增宏观检化验委托信息
+化验	QMTS/p_qmts_4800/qmts28_ins.cpp	17	///新增宏观检化验委托信息
+化验	QMTS/p_qmts_4800/qmts28_ins.cpp	19	/// 1.新增宏观检化验委托信息
+化验	QMTS/p_qmts_4800/qmts28_ins.cpp	22	/// <para>数据库表：TQMTS28(宏观检化验委托信息表)		   </para>
+化验	QMTS/p_qmts_4800/qmts28_ins.cpp	57	//新增宏观检化验委托信息
+化验	QMTS/p_qmts_4800/qmts28_snd.cpp	22	/// <para>数据库表：TQMTS28(宏观检化验委托信息表)		   </para>
+化验	QMTS/p_qmts_4800/qmts28_snd.cpp	54	//宏观检化验委托信息成分标准
+化验	QMTS/p_qmts_4800/qmts28_upd.cpp	6	Description: 修改宏观检化验委托信息
+化验	QMTS/p_qmts_4800/qmts28_upd.cpp	17	///修改宏观检化验委托信息
+化验	QMTS/p_qmts_4800/qmts28_upd.cpp	19	/// 1.修改宏观检化验委托信息
+化验	QMTS/p_qmts_4800/qmts28_upd.cpp	22	/// <para>数据库表：TQMTS28(宏观检化验委托信息表)		   </para>
+化验	QMTS/p_qmts_4800/qmts28_upd.cpp	53	//宏观检化验委托信息成分标准
+检化验	QMTS/libQMTS/f_qmts_sample_no_snd.cpp	35	/// 向检化验系统发送试样号电文
+检化验	QMTS/p_qmts_4700/qmtifa_inq.cpp	14	/// 查询氧化铁粉检化验数据
+检化验	QMTS/p_qmts_4700/qmtifa_inq.cpp	22	/// <returns>查询氧化铁粉检化验数据</returns>
+检化验	QMTS/p_qmts_4800/qmts28_del.cpp	6	Description: 删除宏观检化验委托信息
+检化验	QMTS/p_qmts_4800/qmts28_del.cpp	17	///删除宏观检化验委托信息
+检化验	QMTS/p_qmts_4800/qmts28_del.cpp	19	/// 1.删除宏观检化验委托信息
+检化验	QMTS/p_qmts_4800/qmts28_del.cpp	22	/// <para>数据库表：TQMTS28(宏观检化验委托信息表)		   </para>
+检化验	QMTS/p_qmts_4800/qmts28_del.cpp	54	//宏观检化验委托信息成分标准
+检化验	QMTS/p_qmts_4800/qmts28_ins.cpp	6	Description: 新增宏观检化验委托信息
+检化验	QMTS/p_qmts_4800/qmts28_ins.cpp	17	///新增宏观检化验委托信息
+检化验	QMTS/p_qmts_4800/qmts28_ins.cpp	19	/// 1.新增宏观检化验委托信息
+检化验	QMTS/p_qmts_4800/qmts28_ins.cpp	22	/// <para>数据库表：TQMTS28(宏观检化验委托信息表)		   </para>
+检化验	QMTS/p_qmts_4800/qmts28_ins.cpp	57	//新增宏观检化验委托信息
+检化验	QMTS/p_qmts_4800/qmts28_snd.cpp	22	/// <para>数据库表：TQMTS28(宏观检化验委托信息表)		   </para>
+检化验	QMTS/p_qmts_4800/qmts28_snd.cpp	54	//宏观检化验委托信息成分标准
+检化验	QMTS/p_qmts_4800/qmts28_upd.cpp	6	Description: 修改宏观检化验委托信息
+检化验	QMTS/p_qmts_4800/qmts28_upd.cpp	17	///修改宏观检化验委托信息
+检化验	QMTS/p_qmts_4800/qmts28_upd.cpp	19	/// 1.修改宏观检化验委托信息
+检化验	QMTS/p_qmts_4800/qmts28_upd.cpp	22	/// <para>数据库表：TQMTS28(宏观检化验委托信息表)		   </para>
+检化验	QMTS/p_qmts_4800/qmts28_upd.cpp	53	//宏观检化验委托信息成分标准
+四级	MMSM/libMMSM/f_mmsm01_ins.cpp	1439	//20240104  太钢定制  所有判定在四级，三级不自动封锁。
+四级	MMSM/libMMSM/f_mmsm01_ins.cpp	1521	//20240104  太钢定制  所有判定在四级，三级不自动封锁。
+四级	MMSM/p_mmsm_17560/mmsm34f2_inq.cpp	156	//LG1---表示二钢，只对四级起作用
+四级	MMSM/p_mmsm_17560/mmsm34_1_inq.cpp	102	//LG1---表示二钢，只对四级起作用
+四级	MMSM/p_mmsm_17570/mmsm34f2_inq.cpp	156	//LG1---表示二钢，只对四级起作用
+四级	MMSM/p_mmsm_17570/mmsm34_1_inq.cpp	102	//LG1---表示二钢，只对四级起作用
+四级	MMSM/p_mmsm_17570/tpssm81f2_inq.cpp	98	//LG1---表示二钢，只对四级起作用
+四级	QMTS/libQMTS/f_210010_snd.cpp	324	//不锈钢发送 废钢比到四级
+四级	SM00/libSM00/f_sm00_md_ok.cpp	296	//如果是四级下发的计划，计算状态
+四级	WM00/libWM00/f_wm00_wm02_snd.cpp	50	////冷轧机组上料出库， 不需要发电文给四级 add liQing
+四级	WM00/libWM00/f_wm00_wm02_snd.cpp	57	////热轧机组上料出库， 不需要发电文给四级 add liQing
+四级	WM00/p_wm00_8100/wm41_confirm.cpp	46	//后续确定给四级发送电文
+薄板	MM00/p_mm00_18010/mm00sud5f2_inq.cpp	18	/// <returns>满足查询条件的薄板材料数据</returns>
+薄板	MM00/p_mm00_18010/mm00sue5f2_inq.cpp	6	Description: 薄板类合同超量材料清单查询
+薄板	MM00/p_mm00_18010/mm00sue5f2_inq.cpp	10	/// 薄板类合同超量材料清单查询
+薄板	PSSM/p_pssm_13030/pssm04_ldel.cpp	34	/// <para > 调用薄板材料申请函数，进行材料申请删除(调用函数f_pmom_pssm_upd_hpstatus)。 </para >
+薄板	PSSM/p_pssm_13050/pssm14f2_inq.cpp	91	// " THEN '厚板模式' ELSE '薄板模式' END AS PLAN_TYPE,"*/
+吊运	WMSM/libWMSM/f_wmsmsm_cranecmd_make.cpp	760	//创建吊运流水号
+吊运	WMSM/libWMSM/f_wmsmsm_cranecmd_make.cpp	1027	//创建吊运流水号
+吊运	WMSM/libWMSM/f_wmsmsm_crane_down.cpp	478	//2022-01-19  卸下后，吊运命令应该删除 。 待最后确认
+吊运	WMSM/p_wmsm_8130/wmsm01_crane_ins.cpp	68	//吊运命令生成
+吊运	WMSM/p_wmsm_8140/wmsmsma7_unload.cpp	104	//吊运命令生成
+SAP	CAAI/libCAAI/f_caai_jg.cpp	292	//	strcpy(s.msg, "发送SAP失败!");
+SAP	CAAI/libCAAI/f_caai_jg2.cpp	139	//		strcpy(s.msg, "发送SAP失败!");
+SAP	CAAI/libCAAI/f_caai_jg4.cpp	180	//		strcpy(s.msg, "发送SAP失败!");
+SAP	MMSM/libMMSM/f_mmsm_210036_snd.cpp	186	//SAP批次号   (CHAR(10)  (-----)) tmmsm34.sap_mat_no
+ERP	SM00/libSM00/f_xxsm05_snd.cpp	100	//epex.SetValue(block_name_master, "ORDER_NO_ERP", 0, order_no_erp);
+ERP	SM00/libSM00/f_xxsm05_snd.cpp	149	//epex.SetValue(block_name_master, "ORDER_NO_ERP", 0, order_no_erp);
+天车	MMSM/p_mmsm_17640/cm_ect803_rcv.cpp	17	///天车重量-计算好的净重量数据

@@ -1,0 +1,4 @@
+CHAT 14: #include "epex.h"
+CHAT 54: // 创建电文处理对象
+CHAT 55: EPEX epex;
+CHAT 628: inblock->Tables[0].Columns.Add(DT_STRING, "wxurl");

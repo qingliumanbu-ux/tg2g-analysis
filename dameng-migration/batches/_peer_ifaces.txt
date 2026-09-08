@@ -1,0 +1,83 @@
+
+### L4/四级/ERP/SAP (10个接口)
+CAAI/caai20_snd.cpp[snd] 月平衡抛sap 电文:
+MMSM/f_mmsm_210034_snd.cpp[snd] 二切实绩接收 发送L4电文 电文:210034
+MMSM/f_mmsm_210044_snd.cpp[snd] 钢坯切废实绩 发送L4电文 电文:210044
+MMSM/f_mmsm_210045_snd.cpp[snd] 钢坯切废实绩 发送L4电文 电文:210045
+MMSM/f_mmsm_210046_snd.cpp[snd] 钢坯初判等级 发送L4电文 电文:210046
+MMSM/f_mmsm_210047_snd.cpp[snd] 钢坯切废实绩 发送L4电文 电文:210047
+MMSM/f_mmsm_210048_snd.cpp[snd] 废品转正品 发送L4电文 电文:210048
+MMSM/f_mmsm_t80r91_snd.cpp[snd] 炉成本核算计算发送L4电文 电文:T80R91
+MMSM/f_mmsm_t82303_snd.cpp[snd] 二切实绩接收 发送L4电文 电文:T82303
+QMTS/f_210010_snd.cpp[snd] 成分发送L4 电文:
+
+### 能源 (8个接口)
+CAAI/cm_nyme01_rcv.cpp[rcv] 生产按炉/计划号能源消耗 电文:
+CAAI/cm_nyme02_rcv.cpp[rcv] 非生产按班能源信息 电文:
+CAAI/f_cm_mesac3_snd.cpp[snd] 能源消耗发送 电文:MESAC3
+MMSM/f_t8f004_snd.cpp[snd] 能源动态转炉发送 电文:
+MMSM/f_t8f005_snd.cpp[snd] 能源动态LF发送 电文:
+MMSM/f_t8f007_snd.cpp[snd] 能源AOD发送 电文:
+MMSM/f_t8fsb_snd.cpp[snd] 能源动态VOD发送 电文:
+MMSM/f_t8fse_snd.cpp[snd] 能源动态VOD发送 电文:
+
+### 运输/发货 (11个接口)
+MM00/cm_sm0009_rcv.cpp[rcv] 发货码单接收 电文:
+MMSM/f_mmsm_21a009_snd.cpp[snd] 汽运、铁路装车电文 电文:21A009
+MMSM/mmsm67car_snd.cpp[snd] 废钢装车 电文:
+SM00/f_smxx01_rcv.cpp[rcv] 发货/转库计划电文接收 电文:
+SM00/f_xxpa04_snd.cpp[snd] 铁运车皮材料信息给物流运输 电文:XXPA04
+SM00/f_xxsm01_snd.cpp[snd] 发货码单电文发送 电文:7000S4
+TMSM/f_tmsm_t8e2d1_snd.cpp[snd] 铁路装车线可走车 电文:T8E2D1
+WMSM/f_wmsm_21a009_snd.cpp[snd] 汽运、铁路装车电文 电文:21A009
+WMSM/f_wmsm_21a009_snd1.cpp[snd] 临钢坯装车实绩发送 电文:21A009
+WMSM/f_wmsm_21a015_snd.cpp[snd] 铁路自备车运输作业计划 电文:21A015
+WMSM/f_wmsm_21a017_snd.cpp[snd] 铁路装车线可走车 电文:21A017
+
+### L2/二级 (18个接口)
+MMSM/cm_1a1013_rcv.cpp[rcv] 接收二级转炉实绩 电文:
+MMSM/cm_1a1015_rcv.cpp[rcv] 接收二级转炉实绩 电文:
+MMSM/cm_1a1021_rcv.cpp[rcv] 接收二级转炉实绩 电文:
+MMSM/cm_1a1087_rcv.cpp[rcv] 接收二级板坯连铸切断实绩 电文:
+MMSM/f_mmsm3301_rcv.cpp[rcv] 接收二级板坯原始数据 电文:
+MMSM/f_mmsm_t83313_snd.cpp[snd] 一给原料L2-原料成分 电文:
+MMSM/f_mmsm_t8e2yb_snd.cpp[snd] 一给原料L2-原料成分 电文:
+MMSM/f_mmsm_t8e2yc_snd.cpp[snd] 一给原料L2-电炉加料数据 电文:
+MMSM/f_mmsm_t8e2yx_snd.cpp[snd] 一给原料L2-各工序料槽信息 电文:
+MMSM/f_mmsm_t8e2yy_snd.cpp[snd] 一给原料L2-各工序料仓物料信息 电文:
+PSSM/f_plan_delete_snd.cpp[snd] 发送计划状态信息至l2。 电文:T8E2S1
+PSSM/f_plan_delete_snd2.cpp[snd] 发送计划状态信息至l2。 电文:T8E2S1
+PSSM/f_plan_insert_snd.cpp[snd] 发送计划状态信息至l2。 电文:T8E2S1
+PSSM/f_plan_update_snd.cpp[snd] 发送计划状态信息至l2。 电文:
+PSSM/f_plan_update_snd2.cpp[snd] 发送计划状态信息至l2。 电文:T8E2S1
+PSSM/f_pssm_pas1p1_snd.cpp[snd] 发送出钢计划至L2。 电文:PAS1P1;PAS2P1;PAS3P1
+PSSM/f_pssm_pas1p2_snd.cpp[snd] 发送铸坯命令至L2。 电文:PAS1P2;PAS2P2;PAS3P2
+PSSM/f_pssm_pas1p3_snd.cpp[snd] 钢种变更下发L2电文。 电文:HMJL03;PAS1P3;PAS2P3;PAS3P3
+
+### 连铸 (7个接口)
+MMSM/cm_1a1087_rcv.cpp[rcv] 接收二级板坯连铸切断实绩 电文:
+MMSM/cm_200031_rcv.cpp[rcv] 接收PES连铸炉次实绩 电文:
+MMSM/f_t8f011_snd.cpp[snd] 连铸炉次实绩 电文:
+PSSM/f_pssm_paimp1_snd.cpp[snd] 发送连铸预计化至铁前 电文:PAIMP1
+QMTS/f_qm_002122_snd.cpp[snd] 工序制造标准_连铸（北） 电文:
+QMTS/f_t823sa_snd.cpp[snd] 连铸难度系数实绩 电文:
+QMTS/qm_002122_rcv.cpp[rcv] 工序制造标准_连铸（北） 电文:
+
+### 铁区/烧结/焦化 (9个接口)
+MMSM/cm_32t809_rcv.cpp[rcv] 铁区库存信息接收 电文:
+MMSM/f_mmsm_21b004_snd.cpp[snd] 一给铁区-质量数据 电文:
+MMSM/f_mmsm_21b005_snd.cpp[snd] 一给铁区-采购进厂卸货确认 电文:
+MMSM/f_mmsm_21b006_snd.cpp[snd] 一铁区系统-消耗实绩发送电文 电文:21B006
+MMSM/mmsm2a_snd.cpp[snd] 给资源铁区发消耗 电文:
+MMSM/mmsm2a_sndn.cpp[snd] 给资源铁区发消耗 电文:
+PSSM/f_pssm_paimp2_snd.cpp[snd] 发送停机实绩给铁区。 电文:PAIMP2
+PSSM/f_pssm_paimp3_snd.cpp[snd] 发送转炉开吹时刻给铁区。 电文:PAIMP3
+QMTS/f_qmts_21b004_snd.cpp[snd] 发送铁区质量数据 电文:
+
+### 计量 (6个接口)
+MMSM/cm_b02103_rcv.cpp[rcv] 接收计量信息 电文:
+MMSM/cm_ewt801_rcv.cpp[rcv] 一钢计量实绩接收 电文:
+MMSM/f_mmsm81_d021_handle_rcv.cpp[rcv] 一钢计量实绩接收 电文:
+MMSM/f_mmsm_21c004_snd.cpp[snd] 一资源系统-废钢料篮计量信息 电文:
+MMSM/mmsm81_d021_rcv.cpp[rcv] 一钢计量实绩接收 电文:
+SM00/f_sm00_xxjlwt_snd.cpp[snd] 计量委托发送 电文:P1J104;P3J104;P4J104;P5J104
