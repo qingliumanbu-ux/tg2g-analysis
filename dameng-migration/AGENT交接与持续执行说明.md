@@ -184,3 +184,13 @@ sql_id,module,repository,path,function,source_kind,anchor,original_comment_ancho
 ```
 
 接手成功的第一个可检查结果应是：现有两处改动未丢失；WMSM 模块范围和完整 SQL 已形成逐条台账；明确等价项继续转换；业务语义没有被擅自决定；WMSM 模块报告能区分源码完成、DM8 可执行和结果等价，并且 TMSM 尚未开始新的修改。
+
+## 5b. 分析文档库(独立 Git 仓库)
+
+- 位置:`D:/work/company/太钢二炼钢/analysis`(独立仓库,分支 dev,不含 Server/Client)。
+- 远程:https://gitlab.baocloud.cn/TGZ1Z/taigang-dm8-analysis.git (internal 可见性,TGZ1Z 组)。
+- 初始提交:e6c240e(2026-09-08,1,208 个文件;台账/报告/E2/批次记录/改前备份/转换规则技能库)。
+- 忽略项:`__pycache__/`、`*.pyc`、`batches/_*`(临时检索文件)。
+- 注意:`analysis` 目录属主为其他账户,git 需 safe.directory 白名单(已在本机 global 配置)。
+- 后续约定:每个转换批次结束时,本仓库与各模块代码仓库一同 commit + push(dev 分支)。
+- 原始 SQL 若含凭据仍按规范 `<REDACTED>` 处理后再入库。
