@@ -1,0 +1,10 @@
+{
+  "_说明": "离线校验用的达梦连接参数。密码不写在此文件，请用环境变量 DM8_PASSWORD 或在运行时交互输入。",
+  "java_home": "D:\\tools\\DBeaver\\jre",
+  "driver_jar_glob": "C:\\Users\\AIGC\\AppData\\Roaming\\DBeaverData\\drivers\\maven\\maven-central\\com.dameng\\DmJdbcDriver18-*.jar",
+  "driver_class": "dm.jdbc.driver.DmDriver",
+  "url": "jdbc:dm://10.76.53.52:5236",
+  "user": "",
+  "login_timeout_seconds": 15,
+  "query_timeout_seconds": 120
+}
